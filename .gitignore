@@ -75,4 +75,4 @@ venv.bak/
 temp/
 tmp/
 
-/finetune/config.py
+finetune/config.py
