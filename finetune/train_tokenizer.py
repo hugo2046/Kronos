@@ -1,4 +1,5 @@
 import os
+from pathlib import Path
 import sys
 import json
 import time
@@ -15,7 +16,8 @@ from torch.nn.parallel import DistributedDataParallel as DDP
 import comet_ml
 
 # Ensure project root is in path
-sys.path.append("../")
+sys.path.append(str(Path(__file__).parents[1]))
+
 from config import Config
 from dataset import QlibDataset
 from model.kronos import KronosTokenizer
@@ -128,10 +130,11 @@ def train_model(model, device, config, save_dir, logger, rank, world_size):
 
             # --- Gradient Accumulation Loop ---
             current_batch_total_loss = 0.0
+            time_steps = ori_batch_x.shape[1]
             for j in range(config['accumulation_steps']):
-                start_idx = j * (ori_batch_x.shape[0] // config['accumulation_steps'])
-                end_idx = (j + 1) * (ori_batch_x.shape[0] // config['accumulation_steps'])
-                batch_x = ori_batch_x[start_idx:end_idx]
+                start_idx = j * (time_steps // config['accumulation_steps'])
+                end_idx = (j + 1) * (time_steps // config['accumulation_steps'])
+                batch_x = ori_batch_x[:,start_idx:end_idx,:]
 
                 # Forward pass
                 zs, bsq_loss, _, _ = model(batch_x)
