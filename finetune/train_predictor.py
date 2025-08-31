@@ -1,6 +1,7 @@
 import os
 import sys
 import json
+from pathlib import Path
 import time
 from time import gmtime, strftime
 import torch.distributed as dist
@@ -12,7 +13,7 @@ from torch.nn.parallel import DistributedDataParallel as DDP
 import comet_ml
 
 # Ensure project root is in path
-sys.path.append('../')
+sys.path.append(str(Path(__file__).parents[1]))
 from config import Config
 from dataset import QlibDataset
 from model.kronos import KronosTokenizer, Kronos

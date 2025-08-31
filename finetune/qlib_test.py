@@ -3,6 +3,7 @@ import sys
 import argparse
 import pickle
 from collections import defaultdict
+from pathlib import Path
 
 import numpy as np
 import pandas as pd
@@ -10,7 +11,7 @@ import torch
 from torch.utils.data import Dataset, DataLoader
 from tqdm import trange, tqdm
 from matplotlib import pyplot as plt
-
+sys.path.insert(0, "/data1/hugo/workspace/qlib_ddb")
 import qlib
 from qlib.config import REG_CN
 from qlib.backtest import backtest, executor, CommonInfrastructure
@@ -20,7 +21,7 @@ from qlib.utils import flatten_dict
 from qlib.utils.time import Freq
 
 # Ensure project root is in the Python path
-sys.path.append("../")
+sys.path.append(str(Path(__file__).parents[1]))
 from config import Config
 from model.kronos import Kronos, KronosTokenizer, auto_regressive_inference
 
@@ -105,7 +106,7 @@ class QlibBacktest:
     def initialize_qlib(self):
         """Initializes the Qlib environment."""
         print("Initializing Qlib for backtesting...")
-        qlib.init(provider_uri=self.config.qlib_data_path, region=REG_CN)
+        qlib.init(database_uri=self.config.qlib_data_path, region=REG_CN)
 
     def run_single_backtest(self, signal_series: pd.Series) -> pd.DataFrame:
         """
@@ -135,7 +136,7 @@ class QlibBacktest:
             "benchmark": self.config.backtest_benchmark,
             "exchange_kwargs": {
                 "freq": "day", "limit_threshold": 0.095, "deal_price": "open",
-                "open_cost": 0.001, "close_cost": 0.0015, "min_cost": 5,
+                "open_cost": 0.001, "close_cost": 0.0015, "min_cost": 5,"codes": self.config.instrument
             },
             "executor": executor.SimulatorExecutor(**executor_config),
         }
@@ -194,9 +195,9 @@ class QlibBacktest:
         axes[1].legend()
         axes[1].set_xlabel("Date")
         axes[1].set_ylabel("Cumulative Excess Return")
-
+        
         plt.tight_layout()
-        plt.savefig("../figures/backtest_result_example.png", dpi=200)
+        plt.savefig(f"{self.config.backtest_results_figures_path}/backtest_result_example.png", dpi=200)
         plt.show()
 
 
@@ -257,7 +258,7 @@ def generate_predictions(config: dict, test_data: dict) -> dict[str, pd.DataFram
         dataset,
         batch_size=config['batch_size'] // config['sample_count'],
         shuffle=False,
-        num_workers=os.cpu_count() // 2,
+        num_workers=32,# os.cpu_count() // 2,
         collate_fn=collate_fn_for_inference
     )
 
@@ -301,6 +302,7 @@ def main():
     """Main function to set up config, run inference, and execute backtesting."""
     parser = argparse.ArgumentParser(description="Run Kronos Inference and Backtesting")
     parser.add_argument("--device", type=str, default="cuda:1", help="Device for inference (e.g., 'cuda:0', 'cpu')")
+    parser.add_argument('--only_backtest',type=bool,default=False,help='If True, only run backtesting using saved predictions.')
     args = parser.parse_args()
 
     # --- 1. Configuration Setup ---
@@ -335,16 +337,21 @@ def main():
     with open(test_data_path, 'rb') as f:
         test_data = pickle.load(f)
     print(test_data)
-    # --- 3. Generate Predictions ---
-    model_preds = generate_predictions(run_config, test_data)
 
-    # --- 4. Save Predictions ---
     save_dir = os.path.join(run_config['result_save_path'], run_config['result_name'])
     os.makedirs(save_dir, exist_ok=True)
     predictions_file = os.path.join(save_dir, "predictions.pkl")
-    print(f"Saving prediction signals to {predictions_file}...")
-    with open(predictions_file, 'wb') as f:
-        pickle.dump(model_preds, f)
+    
+    # --- 3. Generate Predictions ---
+    if args.only_backtest:
+        model_preds = generate_predictions(run_config, test_data)
+
+        # --- 4. Save Predictions ---
+    
+        print(f"Saving prediction signals to {predictions_file}...")
+   
+        with open(predictions_file, 'wb') as f:
+            pickle.dump(model_preds, f)
 
     # --- 5. Run Backtesting ---
     with open(predictions_file, 'rb') as f:
@@ -355,4 +362,52 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    # main()
+    base_config = Config()
+
+    # Create a dedicated dictionary for this run's configuration
+    run_config = {
+        'device': "cuda:0",
+        'data_path': base_config.dataset_path,
+        'result_save_path': base_config.backtest_result_path,
+        'result_name': base_config.backtest_save_folder_name,
+        'tokenizer_path': base_config.finetuned_tokenizer_path,
+        'model_path': base_config.finetuned_predictor_path,
+        'max_context': base_config.max_context,
+        'pred_len': base_config.predict_window,
+        'clip': base_config.clip,
+        'T': base_config.inference_T,
+        'top_k': base_config.inference_top_k,
+        'top_p': base_config.inference_top_p,
+        'sample_count': base_config.inference_sample_count,
+        'batch_size': base_config.backtest_batch_size,
+    }
+
+    print("--- Running with Configuration ---")
+    for key, val in run_config.items():
+        print(f"{key:>20}: {val}")
+    print("-" * 35)
+
+    # --- 2. Load Data ---
+    test_data_path = os.path.join(run_config['data_path'], "test_data.pkl")
+    print(f"Loading test data from {test_data_path}...")
+    with open(test_data_path, 'rb') as f:
+        test_data = pickle.load(f)
+    print(test_data)
+    # --- 3. Generate Predictions ---
+    # model_preds = generate_predictions(run_config, test_data)
+
+    # --- 4. Save Predictions ---
+    save_dir = os.path.join(run_config['result_save_path'], run_config['result_name'])
+    os.makedirs(save_dir, exist_ok=True)
+    predictions_file = os.path.join(save_dir, "predictions.pkl")
+    print(f"Saving prediction signals to {predictions_file}...")
+    # with open(predictions_file, 'wb') as f:
+    #     pickle.dump(model_preds, f)
+
+    # --- 5. Run Backtesting ---
+    with open(predictions_file, 'rb') as f:
+        model_preds = pickle.load(f)
+
+    backtester = QlibBacktest(base_config)
+    backtester.run_and_plot_results(model_preds)

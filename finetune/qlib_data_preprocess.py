@@ -1,7 +1,9 @@
 import os
+import sys
 import pickle
 import numpy as np
 import pandas as pd
+sys.path.insert(0, "/data1/hugo/workspace/qlib_ddb")
 import qlib
 from qlib.config import REG_CN
 from qlib.data import D
@@ -25,7 +27,7 @@ class QlibDataPreprocessor:
     def initialize_qlib(self):
         """Initializes the Qlib environment."""
         print("Initializing Qlib...")
-        qlib.init(provider_uri=self.config.qlib_data_path, region=REG_CN)
+        qlib.init(database_uri=self.config.qlib_data_path, region=REG_CN)
 
     def load_qlib_data(self):
         """
