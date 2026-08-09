@@ -46,32 +46,34 @@ def build_signal_frame(
     return df
 
 
-def compute_fwd_ret(
+def compute_fwd_ret_batch(
     provider,
     cfg: ExperimentConfig,
-    code: str,
+    codes: list[str],
     t: str,
     y_dates: pd.DatetimeIndex,
-) -> float:
-    """算单只股票的前向 10 日收益（事后评估用，不进信号）。
+) -> dict[str, float]:
+    """批量算 H 日前向收益（事后评估用，不进信号）。
+
+    一次 fetch 取 [t, y_end] 上全部 codes 的后复权 close，逐只算
+    ``close[y_end] / close[t] - 1``。比逐只 fetch 快两个数量级（单调仓日 ~300 只 1 次 fetch）。
 
     :param provider: :class:`kronos_qlib.QlibProvider`。
     :param cfg: 实验配置。
-    :param code: 股票代码。
+    :param codes: 本调仓日参与评估的股票代码列表。
     :param t: 调仓日 ``YYYY-MM-DD``。
     :param y_dates: 调仓日之后 H 个交易日（来自 ``build_inference_windows``）。
-    :returns: ``close[t+H] / close[t] - 1``（后复权 close-to-close）。
+    :returns: ``{code: fwd_ret}``，缺数据的 code 记 NaN。
     """
-    fetch_start = pd.Timestamp(t)
-    fetch_end = y_dates[-1]
-    # 复用 provider 取数：临时改区间与 instruments（_fetch_via 同款最小侵入）
+    t_ts = pd.Timestamp(t)
+    y_end = y_dates[-1]
     orig_start = provider._start_date
     orig_end = provider._end_date
     orig_inst = provider.instruments_
     try:
-        provider._start_date = fetch_start.strftime("%Y-%m-%d")
-        provider._end_date = fetch_end.strftime("%Y-%m-%d")
-        provider.instruments_ = [code]
+        provider._start_date = t_ts.strftime("%Y-%m-%d")
+        provider._end_date = y_end.strftime("%Y-%m-%d")
+        provider.instruments_ = codes
         df = provider.fetch(["$close"], freq="day")
     finally:
         provider._start_date = orig_start
@@ -79,13 +81,25 @@ def compute_fwd_ret(
         provider.instruments_ = orig_inst
 
     # df: MultiIndex(datetime, instrument)，level 0 = datetime
-    sub = df.xs(code, level="instrument") if "instrument" in df.index.names else df
-    sub = sub.sort_index()
-    if pd.Timestamp(t) not in sub.index or y_dates[-1] not in sub.index:
-        return np.nan
-    close_t = sub.loc[pd.Timestamp(t), "close"]
-    close_end = sub.loc[y_dates[-1], "close"]
-    return float(close_end / close_t - 1.0)
+    out: dict[str, float] = {}
+    for code in codes:
+        try:
+            sub = (
+                df.xs(code, level="instrument")
+                if "instrument" in df.index.names
+                else df
+            )
+            sub = sub.sort_index()
+        except KeyError:
+            out[code] = np.nan
+            continue
+        if t_ts not in sub.index or y_end not in sub.index:
+            out[code] = np.nan
+            continue
+        close_t = sub.loc[t_ts, "close"]
+        close_end = sub.loc[y_end, "close"]
+        out[code] = float(close_end / close_t - 1.0)
+    return out
 
 
 def run_inference_one_period(
@@ -133,18 +147,30 @@ def run_inference_one_period(
         verbose=False,
     )
 
+    # —— §4 无未来函数自查：构造 signal 用的最大日期 <= 调仓日 ——
+    # signal 仅来自 last_close（= df 末值）与 preds；df 的最大日期必须 <= t。
+    t_ts = pd.Timestamp(rebalance_date)
+    for j, df_w in enumerate(df_list):
+        x_end = pd.Timestamp(df_w.index[-1])
+        assert x_end <= t_ts, (
+            f"§4 无未来函数自查失败 {rebalance_date} 第{j}只 {codes[j]}："
+            f"窗口末值日期 {x_end.date()} > 调仓日 {rebalance_date}"
+        )
+
+    # —— 前向收益批量算（事后评估用，绝不回流入 signal）——
+    # y_ts 各只一致（同一调仓日），取第一只即可
+    y_dates = pd.DatetimeIndex(y_ts_list[0])
+    fwd_ret_map = compute_fwd_ret_batch(provider, cfg, codes, rebalance_date, y_dates)
+
     rows = []
     for j, pred_df in enumerate(preds):
         signal = compute_signal_from_preds(pred_df[cfg.signal_field], last_closes[j])
-        # 前向收益：用真实后复权 close 算，事后评估用
-        y_dates = pd.DatetimeIndex(y_ts_list[j])
-        fwd_ret = compute_fwd_ret(provider, cfg, codes[j], rebalance_date, y_dates)
         rows.append(
             {
                 "date": pd.Timestamp(rebalance_date),
                 "code": codes[j],
                 "signal": signal,
-                "fwd_ret_10d": fwd_ret,
+                "fwd_ret_10d": fwd_ret_map.get(codes[j], np.nan),
             }
         )
     period_df = pd.DataFrame(rows)
