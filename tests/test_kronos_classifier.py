@@ -143,8 +143,8 @@ def test_no_lookahead_leakage(tmp_path):
     """篡改 ``data[idx+L:]`` 与 ``close_series[idx+L:]`` 源头，特征逐位不变且标签必须改变。
 
     样本 idx=0 的特征窗为 ``data[0:L]``，t=L-1，标签依赖 ``close[L-1+H]``。
-    构造平稳 close（r≈0 → label 1），再单独放大 ``close[L-1+H]`` 使 r 远超阈值 → label 2。
-    特征窗 ``data[0:L]`` 完全不含被篡改位置，故特征逐位不变；标签则必然改变。
+    构造平稳 close（r≈0 → label 1），再整段放大 t 之后的所有行（含 close[t+H]）使 r 远超
+    阈值 → label 2。特征窗 ``data[0:L]`` 完全不含被篡改位置，故特征逐位不变；标签则必然改变。
     """
     # 构造平稳 close：标签依赖的 close[t+H] 原本使 r 落在 |r|<threshold 的“平”区间
     set_seed(5)
@@ -172,13 +172,13 @@ def test_no_lookahead_leakage(tmp_path):
     feat0, stamp0, label0 = ds[idx]
     assert int(label0) == 1, f"平稳序列首样本应为平(1)，得到 {int(label0)}"
 
-    # 从源头篡改：放大 close[t+H]（t=L-1，t+H=L-1+H），使其 r 远超阈值
+    # 从源头整段篡改：放大 t 之后所有行的特征列（前 6 列 OHLCV+amount）与 close_series，
+    # 堵住任何中间行泄露变体（而非仅放大 close[t+H] 单格）
     ds.close_series = ds.close_series.copy()
     ds.data = ds.data.copy()
     t_pos = idx + L - 1
-    ds.close_series[t_pos + H] *= 10.0
-    # data 数组里的 close 列（FEATURE_LIST 第 4 列，索引 3）同步篡改 t+H 行
-    ds.data[t_pos + H, 3] *= 10.0
+    ds.close_series[t_pos + 1:] *= 10.0
+    ds.data[t_pos + 1:, :6] *= 10.0
 
     feat1, stamp1, label1 = ds[idx]
 
