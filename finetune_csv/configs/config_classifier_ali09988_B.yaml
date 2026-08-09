@@ -1,0 +1,72 @@
+# Kronos 方向分类训练配置 · 方案 B（pretrained_probe 冻结主干 linear probe）
+# A/B 对照实验：本文件与 config_classifier_ali09988_A.yaml 除注释外仅差
+# classifier.backbone 及 classifier.paths 两个段落（共 4 行），其余逐字节相同。
+# 用法：python finetune_csv/train_classifier.py --config finetune_csv/configs/config_classifier_ali09988_B.yaml
+
+data:
+  data_path: "/home/user/workspace/Kronos/finetune_csv/data/HK_ali_09988_kline_5min_all.csv"
+  lookback_window: 90
+  predict_window: 10
+  clip: 5.0
+  train_ratio: 0.7
+  val_ratio: 0.15
+  test_ratio: 0.15
+
+classifier:
+  # 主干选择：pretrained_probe（方案 B：冻结预训练 Kronos 主干，仅训练 linear probe）
+  backbone: pretrained_probe
+
+  # 方案 A 架构（从头训练的判别式主干，小模型防过拟合）
+  architecture:
+    d_in: 6            # OHLCV + amount
+    d_model: 128
+    n_heads: 4
+    ff_dim: 256
+    n_layers: 4
+    n_classes: 3       # 跌/平/涨
+    learn_te: true
+    dropout: 0.1
+
+  # 方案 B 用的 Kronos 主干架构（默认与官方 Kronos-base 一致）
+  probe_architecture:
+    n_layers: 12
+    d_model: 832
+    n_heads: 16
+    ff_dim: 2048
+    s1_bits: 10
+    s2_bits: 10
+
+  # 方案 B 随机初始化 Tokenizer 兜底架构（预训练路径为空时使用，仅冒烟）
+  tokenizer_architecture:
+    d_model: 256
+    n_heads: 4
+    ff_dim: 512
+    n_enc_layers: 4
+    n_dec_layers: 4
+
+  # 涨跌平阈值：quantile 在训练集 r 分布的 30/70 分位数估计后冻结；fixed 用固定阈值
+  threshold:
+    mode: quantile          # quantile | fixed
+    fixed_threshold: 0.005  # fixed 模式下 ±0.5%
+    quantile_low: 0.30
+    quantile_high: 0.70
+
+  training:
+    epochs: 30
+    batch_size: 32
+    lr: 0.001
+    adam_beta1: 0.9
+    adam_beta2: 0.95
+    adam_weight_decay: 0.1
+    class_weighted: true            # 按训练集类别频率倒数加权
+    early_stop_patience: 5          # 按 val macro-F1 早停
+    grad_clip: 2.0
+    log_interval: 50
+    num_workers: 0
+    seed: 42
+
+  paths:
+    # 方案 B 加载官方预训练权重（首次从 HuggingFace 下载约百兆）
+    pretrained_tokenizer: "NeoQuasar/Kronos-Tokenizer-base"
+    pretrained_predictor: "NeoQuasar/Kronos-base"
+    save_dir: "./finetune_csv/finetuned/classifier"
