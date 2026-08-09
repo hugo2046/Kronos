@@ -1,0 +1,5 @@
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = [
+    "integration: 需要真实 DolphinDB 连接的集成测试（无 DOLPHINDB_URI 时自动跳过）",
+]
