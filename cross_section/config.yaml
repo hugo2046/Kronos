@@ -1,0 +1,38 @@
+# Kronos 截面 zero-shot 实验配置
+# 对应 docs/截面路径zero-shot测试计划_20260809.md（v2）§0 口径锚定，不可漂移。
+# 所有采样 / 回测口径在此锁定，阶段间禁止改这里"让结果好看"。
+
+# —— 数据层 ——
+data:
+  pool: csi300              # 沪深300，定员 300
+  lookback: 90              # 回看 L=90 个交易日
+  predict_len: 10           # 预测 H=10 个交易日
+  rebalance_freq: 10        # 每 10 个交易日一次调仓（与 H 对齐，不重叠）
+  backtest_start: 2022-01-04
+  backtest_end: 2026-07-22  # 最后一个调仓日（实测，§3.1 硬门禁）
+  data_end: 2026-08-07      # 真实数据末日
+  filter_pipe: null         # ST 过滤首轮不启用（计划 §7 局限性）
+
+# —— 推理 / 采样（zero-shot，不可漂移）——
+inference:
+  model_name: NeoQuasar/Kronos-base
+  tokenizer_name: NeoQuasar/Kronos-Tokenizer-base
+  T: 1.0
+  top_p: 0.9
+  top_k: 0
+  sample_count: 5           # predict_batch 内部对 5 次采样取均值
+  seed: 42
+  device: cuda:0
+  max_context: 512
+
+# —— 信号定义 ——
+signal:
+  # signal_t = mean(pred_close[t+1..t+H]) / close_t - 1
+  # 纯 close 路径，与计划 §0 公式逐字一致
+  field: close
+
+# —— 评估 ——
+evaluation:
+  n_groups: 5               # 分 5 组等权
+  cost_bps: 15              # 单边 15bp（多空换手上限 200% 每 10 日双边，粗算）
+  baselines: [momentum_10d, reversal_10d]
