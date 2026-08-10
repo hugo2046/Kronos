@@ -127,13 +127,13 @@ def cmd_paper(cfg: BaselineConfig, *, device: str) -> dict:
     main_rets = {t: suite["daily_rets"][t] for t in ("last", "mean", "max", "min", "M", "R", "P")}
     plot_dual(
         main_rets, suite["bench_idx_ret"],
-        title=f"Canonical Baseline 四变体 + 对照（论文窗口 {cfg.backtest_start}~{cfg.backtest_end}）",
+        title=f"Canonical Baseline 4 variants + controls (paper window {cfg.backtest_start}~{cfg.backtest_end})",
         out_path=FIG_DIR / "fig_paper_variants.png",
     )
     kda_rets = {t: suite["daily_rets"][t] for t in ("mean", "B1", "B2", "B3")}
     plot_dual(
         kda_rets, suite["bench_idx_ret"],
-        title=f"KDA 三臂 long-only 重评 vs mean（论文窗口 {cfg.backtest_start}~{cfg.backtest_end}）",
+        title=f"KDA 3 arms long-only re-eval vs mean (paper window {cfg.backtest_start}~{cfg.backtest_end})",
         out_path=FIG_DIR / "fig_paper_kda.png",
     )
 
@@ -218,13 +218,13 @@ def cmd_oos(cfg: BaselineConfig, *, device: str, paper_results: dict) -> dict:
     main_rets = {t: suite["daily_rets"][t] for t in ("last", "mean", "max", "min", "M", "R", "P")}
     plot_dual(
         main_rets, suite["bench_idx_ret"],
-        title=f"样本外四变体 + 对照（{cfg.backtest_start}~{cfg.backtest_end}，封盘）",
+        title=f"OOS 4 variants + controls ({cfg.backtest_start}~{cfg.backtest_end}, sealed)",
         out_path=FIG_DIR / "fig_oos_variants.png",
     )
     kda_rets = {t: suite["daily_rets"][t] for t in ("mean", "B1", "B2", "B3")}
     plot_dual(
         kda_rets, suite["bench_idx_ret"],
-        title=f"样本外 KDA 三臂 vs mean（{cfg.backtest_start}~{cfg.backtest_end}）",
+        title=f"OOS KDA 3 arms vs mean ({cfg.backtest_start}~{cfg.backtest_end})",
         out_path=FIG_DIR / "fig_oos_kda.png",
     )
 

@@ -62,7 +62,7 @@ def plot_dual(
         cum_bench.index, cum_bench.values,
         label="CSI300", color=CSI300_COLOR, linestyle="--", linewidth=1.4,
     )
-    axes[0].set_ylabel("累计收益（含成本）")
+    axes[0].set_ylabel("Cumulative return (with cost)")
     axes[0].set_title(title)
     axes[0].grid(True, alpha=0.3)
     axes[0].legend(loc="upper left", fontsize=9, ncol=2)
@@ -75,8 +75,8 @@ def plot_dual(
         color, ls = _style_for(label)
         axes[1].plot(cum_ex.index, cum_ex.values, label=label, color=color, linestyle=ls, linewidth=1.6)
     axes[1].axhline(0, color=CSI300_COLOR, linestyle="--", linewidth=1.0)
-    axes[1].set_ylabel(f"累计超额（相对 {beta_basis}，含成本）")
-    axes[1].set_xlabel("决策日")
+    axes[1].set_ylabel(f"Cumulative excess vs {beta_basis} (with cost)")
+    axes[1].set_xlabel("Decision date")
     axes[1].grid(True, alpha=0.3)
     axes[1].legend(loc="upper left", fontsize=9, ncol=2)
 
