@@ -132,14 +132,23 @@ def cmd_n_sensitivity(cfg: ReplicationConfig) -> None:
     pilot = rebalances[:21]
     logger.info(f"N 敏感性试点：{len(pilot)} 日，{pilot[0].date()}~{pilot[-1].date()}")
 
-    # 取次日收益做 RankIC（pilot 最后一天无次日，用 pilot+1 天）
+    # H 日前向收益做 RankIC 标签（与信号公式 mean(pred[t+1..t+H]) 同口径，
+    # 也与 cross_section 的 fwd_ret_10d 一致，可与论文窗口 +0.0389 直接对照）。
+    # **勘误（2026-08-10）**：首轮误用 1 日次日收益 shift(-1)，与 H=10 信号口径
+    # 不匹配，IC 失真。改为 close[t+H]/close[t]-1，挂在 t 行。
     from kronos_qlib import QlibProvider
 
-    p2 = QlibProvider(
-        cfg.pool,
-        cfg.backtest_start,
-        (pd.Timestamp(cfg.backtest_start) + pd.Timedelta(days=40)).strftime("%Y-%m-%d"),
-    )
+    fetch_end = (
+        pd.Timestamp(cfg.backtest_start) + pd.Timedelta(days=cfg.predict_len * 3)
+    ).strftime("%Y-%m-%d")
+    p2 = QlibProvider(cfg.pool, cfg.backtest_start, fetch_end)
+    px_raw = p2.fetch(["$close"], freq="day")
+    if "instrument" in px_raw.index.names:
+        px = px_raw["close"].unstack("instrument").sort_index()
+    else:
+        px = px_raw["close"].sort_index()
+    # H 日前向收益：fwd[t] = close[t+H]/close[t]-1，挂在决策日 t
+    fwd = px.shift(-cfg.predict_len) / px - 1.0
 
     results = {}
     for n in (5, 20):
@@ -151,14 +160,6 @@ def cmd_n_sensitivity(cfg: ReplicationConfig) -> None:
         cfg_n = replace(cfg, sample_count=n)
         sig_wide = run_kronos_signals(predictor, provider, cfg_n, pilot, progress_every=5)
 
-        # 次日收益（用于 RankIC，事后）
-        px_raw = p2.fetch(["$close"], freq="day")
-        if "instrument" in px_raw.index.names:
-            px = px_raw["close"].unstack("instrument").sort_index()
-        else:
-            px = px_raw["close"].sort_index()
-        fwd = px.pct_change().shift(-1)  # 次日收益
-        # 对齐
         common_days = sig_wide.index.intersection(fwd.index)
         from paper_replication.pipeline import compute_signal_rankic
 
@@ -174,10 +175,12 @@ def cmd_n_sensitivity(cfg: ReplicationConfig) -> None:
                     [sig_wide.loc[d].std() for d in common_days]
                 ).mean()
             ),
+            "n_days_used": len(common_days),
+            "label": f"fwd_ret_{cfg.predict_len}d (close[t+H]/close[t]-1)",
         }
         logger.info(
             f"N={n}: RankIC 均值={rankic_mean:+.4f} ICIR={results[n]['icir']:+.3f} "
-            f"信号截面 std={results[n]['signal_std_mean']:.4f}"
+            f"信号截面 std={results[n]['signal_std_mean']:.4f} (n={len(common_days)})"
         )
 
     # 落盘
@@ -188,14 +191,19 @@ def cmd_n_sensitivity(cfg: ReplicationConfig) -> None:
         json.dump(results, f, indent=2, ensure_ascii=False, default=str)
     logger.info(f"N 敏感性结果落盘 {out_path}")
 
-    # 判读：N=20 应 ≥ N=5（论文单调改善）
-    if results[20]["rankic_mean"] < results[5]["rankic_mean"]:
+    # 判读：N=20 应 ≥ N=5（论文单调改善）。但 n≈21 试点样本极小，
+    # IC 序列 std≈0.06 → 均值标准误 ≈ 0.013，量级显著大于 N 间差值。
+    # 故试点只作"明显反常才停"的粗筛，不作定量结论。
+    delta = results[20]["rankic_mean"] - results[5]["rankic_mean"]
+    se = results[5]["rankic_std"] / np.sqrt(max(results[5]["n_days_used"], 1))
+    logger.info(f"N 间差 ΔRankIC={delta:+.4f}，N=5 均值标准误≈{se:.4f}（试点样本小，仅粗筛）")
+    if delta < -2 * se:  # 明显反常（差值 < -2SE）才停
         logger.warning(
-            f"⚠️ N=20 RankIC ({results[20]['rankic_mean']:+.4f}) < N=5 "
-            f"({results[5]['rankic_mean']:+.4f})，与论文单调改善相悖，建议先停下排查"
+            f"⚠️ N=20 RankIC ({results[20]['rankic_mean']:+.4f}) 显著低于 N=5 "
+            f"({results[5]['rankic_mean']:+.4f})，超 2 倍标准误，建议先停下排查"
         )
     else:
-        logger.info("✓ N=20 ≥ N=5，与论文单调改善一致，继续全量")
+        logger.info("✓ N=20 vs N=5 差异在试点样本噪声内，与论文单调改善无显著矛盾，继续全量")
 
 
 def main() -> None:
