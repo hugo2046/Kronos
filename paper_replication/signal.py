@@ -81,6 +81,7 @@ def run_kronos_signals(
     rebalances: pd.DatetimeIndex,
     *,
     progress_every: int = 10,
+    checkpoint_path=None,
 ) -> pd.DataFrame:
     """逐交易日生成 Kronos 信号宽表（K 组）。
 
@@ -92,6 +93,8 @@ def run_kronos_signals(
     :param cfg: 复现配置。
     :param rebalances: 调仓日序列（每日）。
     :param progress_every: 每 N 日打印一次进度。
+    :param checkpoint_path: 可选，每 ``progress_every`` 日增量落盘到此路径
+        （断点续跑用——进程中断后下次启动从上次落盘点续）。
     :returns: 信号宽表 ``index=date, columns=code, values=signal``。
     """
     import torch
@@ -138,6 +141,14 @@ def run_kronos_signals(
                 f"Kronos 信号 [{i + 1}/{len(rebalances)}] {ds}: "
                 f"{len(codes)} 只，信号 std={np.std(list(day_signals.values())):.4f}"
             )
+            # 增量落盘（断点续跑）——每 progress_every 日把已完成日写盘，
+            # 进程中断后下次启动从 last 保存点续，不会全丢。
+            if checkpoint_path is not None:
+                from pathlib import Path
+
+                partial = pd.DataFrame(rows, index=rebalances[: i + 1])
+                partial.to_parquet(checkpoint_path)
+                logger.debug(f"checkpoint 落盘 {checkpoint_path}（{len(partial)} 日）")
 
     wide = pd.DataFrame(rows, index=rebalances)
     logger.info(f"Kronos 信号宽表：{wide.shape[0]} 日 × 平均 {wide.notna().sum(axis=1).mean():.0f} 只/日")

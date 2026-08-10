@@ -114,7 +114,13 @@ def cmd_kronos(cfg: ReplicationConfig, *, sample_count: int | None = None) -> No
 
         cfg = replace(cfg, sample_count=sample_count)
 
-    new_wide = run_kronos_signals(predictor, provider, cfg, pd.DatetimeIndex(pending))
+    new_wide = run_kronos_signals(
+        predictor,
+        provider,
+        cfg,
+        pd.DatetimeIndex(pending),
+        checkpoint_path=ckpt_path,
+    )
     combined = pd.concat([existing, new_wide]).sort_index()
     combined.to_parquet(ckpt_path)
     logger.info(f"K 组信号落盘 {ckpt_path}（累计 {len(combined)} 日）")
