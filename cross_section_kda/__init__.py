@@ -15,10 +15,30 @@ from cross_section_kda.kda_modules import (
     SwiGLU,
 )
 
+
+def __getattr__(name: str):
+    """惰性导出较重的网络类（导入 backbone/models 会拉 torch.nn，但不会触发 qlib）。
+
+    避免 ``import cross_section_kda`` 时一次性把所有子模块拉起。
+    """
+    if name in ("B1SupervisedHead", "B2LinearProbe", "B3KronosKdaHead", "count_trainable"):
+        from cross_section_kda import models as _models
+        return getattr(_models, name)
+    if name == "KronosFrozenBackbone":
+        from cross_section_kda.backbone import KronosFrozenBackbone as _B
+        return _B
+    raise AttributeError(f"module 'cross_section_kda' has no attribute {name!r}")
+
+
 __all__ = [
     "CausalDepthwiseConv1d",
     "KimiDeltaAttention",
     "KimiLinearBlock",
     "RMSNorm",
     "SwiGLU",
+    "B1SupervisedHead",
+    "B2LinearProbe",
+    "B3KronosKdaHead",
+    "KronosFrozenBackbone",
+    "count_trainable",
 ]
