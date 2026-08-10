@@ -81,7 +81,9 @@ def run_variant_signals(
         from pathlib import Path
 
         checkpoint_dir = Path(checkpoint_dir)
-        ckpt_paths = {v: checkpoint_dir / f"daily_signals_paper_{v}.parquet" for v in VARIANTS}
+        ckpt_paths = {
+            v: checkpoint_dir / f"daily_signals_{cfg.window}_{v}.parquet" for v in VARIANTS
+        }
         if all(p.exists() for p in ckpt_paths.values()):
             existing = {v: pd.read_parquet(ckpt_paths[v]) for v in VARIANTS}
             done_dates = set(pd.to_datetime(existing["mean"].index))
