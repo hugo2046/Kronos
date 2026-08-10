@@ -1,0 +1,40 @@
+# Kronos 论文口径复现配置（P0 · base 规格）
+# 对应 docs/论文口径复现计划_20260810.md §0 口径对齐表，不可漂移。
+# 所有采样 / 回测口径在此锁定，阶段间禁止改这里"让结果好看"。
+# 与 cross_section/config.yaml 的本质区别：每日调仓 + long-only top-k/drop-n（论文口径），
+# 而非每 10 日调仓 + 5 分组多空。
+
+# —— 数据层（计划 §0）——
+data:
+  pool: csi300              # 论文 csi300；csi800 在本 DDB 无市场，仅做 csi300
+  lookback: 90              # 回看 L=90 个交易日
+  predict_len: 10           # 预测 H=10 个交易日
+  backtest_start: 2024-07-01   # 论文窗口起点（预训练截止 2024-06 之后，时间隔离）
+  backtest_end: 2025-06-30     # 论文窗口终点
+  data_end: 2026-08-07      # 真实数据末日
+  filter_pipe: null         # ST 过滤首轮不启用（与 cross_section 一致，便于对照）
+
+# —— 推理 / 采样（计划 §3：N=20，对齐论文）——
+inference:
+  model_name: NeoQuasar/Kronos-base
+  tokenizer_name: NeoQuasar/Kronos-Tokenizer-base
+  T: 1.0
+  top_p: 0.9
+  top_k: 0
+  sample_count: 20          # 论文 N=20（predict_batch 内部对 20 次采样取均值）
+  seed: 42
+  device: cuda:0
+  max_context: 512
+
+# —— 信号定义（与 cross_section 同口径，§0 表 ✅ 本就一致）——
+signal:
+  # signal_t = mean(pred_close[t+1..t+H]) / close_t - 1
+  field: close
+
+# —— 组合引擎（计划 §2.1：论文 top-k/drop-n long-only）——
+portfolio:
+  top_k: 50                 # 目标持仓 k=50 等权（论文 CSI300 k=50）
+  drop_n: 5                 # 每日最大调入/调出 n=5（论文 CSI300 n=5）
+  min_hold: 5               # 最少持有 5 个交易日（论文）
+  cost_bps: 15              # 单边 0.15% 交易成本（论文）
+  baselines: [momentum_10d, reversal_10d]   # 计划 §4：M / R 免费基线
