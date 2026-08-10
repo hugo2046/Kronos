@@ -1,0 +1,18 @@
+{
+  "5": {
+    "rankic_mean": 0.009745820319054152,
+    "rankic_std": 0.04135549663444288,
+    "icir": 0.2356596126798138,
+    "signal_std_mean": 0.05059197006665475,
+    "n_days_used": 21,
+    "label": "fwd_ret_10d (close[t+H]/close[t]-1)"
+  },
+  "20": {
+    "rankic_mean": 0.005395824997960763,
+    "rankic_std": 0.03430745782577294,
+    "icir": 0.1572784852017579,
+    "signal_std_mean": 0.050008476924114684,
+    "n_days_used": 21,
+    "label": "fwd_ret_10d (close[t+H]/close[t]-1)"
+  }
+}

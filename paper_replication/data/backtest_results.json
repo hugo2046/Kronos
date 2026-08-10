@@ -1,0 +1,125 @@
+{
+  "config": {
+    "pool": "csi300",
+    "window": [
+      "2024-07-01",
+      "2025-06-30"
+    ],
+    "N": 20,
+    "top_k": 50,
+    "drop_n": 5,
+    "min_hold": 5,
+    "cost_bps": 15
+  },
+  "anchors": {
+    "paper_base_aer": 0.1911,
+    "paper_base_ir": 1.3782,
+    "source": "arXiv:2508.02739 Table 10 CSI300 (阶段 0 提取)"
+  },
+  "benchmarks": {
+    "index": "000300.SH csi300 市值加权",
+    "equal_weight": "同池等权（剥离 beta）",
+    "beta_gap": -0.04387944151521017
+  },
+  "groups": {
+    "P": {
+      "perf_idx": {
+        "name": "P",
+        "n_days": 241,
+        "aer": 0.04288614925476497,
+        "ir": 0.6103494033035587,
+        "max_drawdown": -0.052624337290885115,
+        "daily_turnover": 0.10187145562703945
+      },
+      "perf_ew": {
+        "name": "P",
+        "n_days": 242,
+        "aer": -0.001428812032588045,
+        "ir": -0.005787903597332303,
+        "max_drawdown": -0.04181407484048638,
+        "daily_turnover": 0.10187145562703945
+      }
+    },
+    "M": {
+      "perf_idx": {
+        "name": "M",
+        "n_days": 241,
+        "aer": -0.07858545615092327,
+        "ir": -0.4640180528046333,
+        "max_drawdown": -0.12443885792415321,
+        "daily_turnover": 0.09960639322838508
+      },
+      "perf_ew": {
+        "name": "M",
+        "n_days": 242,
+        "aer": -0.11690207267243669,
+        "ir": -0.8339738642418049,
+        "max_drawdown": -0.14500482672139314,
+        "daily_turnover": 0.09960639322838508
+      }
+    },
+    "R": {
+      "perf_idx": {
+        "name": "R",
+        "n_days": 241,
+        "aer": 0.006291354303163299,
+        "ir": 0.11185461193345954,
+        "max_drawdown": -0.09887868350247386,
+        "daily_turnover": 0.10389786142825096
+      },
+      "perf_ew": {
+        "name": "R",
+        "n_days": 242,
+        "aer": -0.03627054475219038,
+        "ir": -0.3292612148542376,
+        "max_drawdown": -0.08140489925709493,
+        "daily_turnover": 0.10389786142825096
+      }
+    },
+    "K": {
+      "perf_idx": {
+        "name": "K",
+        "n_days": 241,
+        "aer": 0.08989553475041157,
+        "ir": 0.782533373542374,
+        "max_drawdown": -0.05615079728333616,
+        "daily_turnover": 0.10236058879859192
+      },
+      "perf_ew": {
+        "name": "K",
+        "n_days": 242,
+        "aer": 0.04471574309728377,
+        "ir": 0.5191015341293336,
+        "max_drawdown": -0.0492557498728281,
+        "daily_turnover": 0.10236058879859192
+      }
+    }
+  },
+  "verdict": {
+    "beta_gap": -0.04387944151521017,
+    "engine_gate": {
+      "p_aer_ew": -0.001428812032588045,
+      "p_aer_ew_threshold": 0.03,
+      "passed": true,
+      "note": "P 组 AER(等权)=-0.14% < +3% → 引擎无 bug（等权基准剥离 beta），继续"
+    },
+    "anchor_compare": {
+      "paper_base_aer": 0.1911,
+      "paper_base_ir": 1.3782,
+      "k_aer_index": 0.08989553475041157,
+      "k_aer_eqw": 0.04471574309728377,
+      "k_ir_index": 0.782533373542374,
+      "beta_gap": -0.04387944151521017,
+      "replicated": false,
+      "note": "K 组 AER(指数)=+8.99%（选股 alpha=+4.47%）未达锚点同量级（差 -10.12%）"
+    },
+    "qualitative": {
+      "k_positive": true,
+      "k_ir_gt_05": "True",
+      "k_beats_M_R": true,
+      "passed": true,
+      "note": "K 组 AER(指数)>0 且 IR>0.5 且优于 M、R → 论文方向可复现（base 规格）"
+    },
+    "verdict": "论文方向可复现（base 规格），但未达锚点同量级"
+  }
+}
