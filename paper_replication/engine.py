@@ -72,8 +72,11 @@ def _daily_returns(
 
     :param px: 宽表 ``index=date, columns=code, values=后复权 close``。
     :returns: 同形状的日收益率 DataFrame。
+
+    ``fill_method=None`` 禁用 pandas 默认的前向填充——前向填充会把停牌/退市
+    缺失价格补成"零收益"，扭曲换手与超额统计。
     """
-    return px.pct_change()
+    return px.pct_change(fill_method=None)
 
 
 def run_portfolio(

@@ -35,7 +35,7 @@ class ReplicationConfig:
     tokenizer_name: str
     T: float
     top_p: float
-    top_k: int
+    sample_top_k: int       # 采样 top-k 过滤（config inference.top_k，0=不过滤）
     sample_count: int
     seed: int
     device: str
@@ -43,7 +43,7 @@ class ReplicationConfig:
     # —— 信号 ——
     signal_field: str
     # —— 组合引擎（论文 top-k/drop-n）——
-    top_k: int
+    top_k: int              # 持仓数（config portfolio.top_k = 50）
     drop_n: int
     min_hold: int
     cost_bps: float
@@ -66,7 +66,7 @@ class ReplicationConfig:
             tokenizer_name=raw["inference"]["tokenizer_name"],
             T=raw["inference"]["T"],
             top_p=raw["inference"]["top_p"],
-            top_k=raw["inference"]["top_k"],
+            sample_top_k=raw["inference"]["top_k"],
             sample_count=raw["inference"]["sample_count"],
             seed=raw["inference"]["seed"],
             device=raw["inference"]["device"],
