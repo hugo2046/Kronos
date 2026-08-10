@@ -1,0 +1,120 @@
+{
+  "segment": {
+    "start": "2024-07-12",
+    "end": "2026-07-22",
+    "n_periods": 50
+  },
+  "metrics": {
+    "B0": {
+      "factor_col": "signal_B0",
+      "n_periods": 50,
+      "rankic_mean": 0.018519970548070152,
+      "rankic_std": 0.17649844185239055,
+      "icir": 0.10492993792862376,
+      "t_stat": 0.7419667065881339,
+      "p_value": 0.4616493194838094,
+      "rankic_positive_ratio": 0.46,
+      "group_mean_returns": {
+        "0": 0.00883,
+        "1": 0.00728,
+        "2": 0.00677,
+        "3": 0.00487,
+        "4": 0.00635
+      },
+      "long_short_annualized_net": -0.1415941974920567,
+      "long_short_max_drawdown_net": -0.4397554410062052
+    },
+    "B1": {
+      "factor_col": "signal_B1",
+      "n_periods": 50,
+      "rankic_mean": -0.01605595965525896,
+      "rankic_std": 0.14066203940015623,
+      "icir": -0.11414564813455369,
+      "t_stat": -0.807131618388765,
+      "p_value": 0.42349131170264326,
+      "rankic_positive_ratio": 0.42,
+      "group_mean_returns": {
+        "0": 0.00716,
+        "1": 0.00749,
+        "2": 0.0076,
+        "3": 0.0079,
+        "4": 0.00399
+      },
+      "long_short_annualized_net": -0.14680716376085046,
+      "long_short_max_drawdown_net": -0.3343279075084058
+    },
+    "B2": {
+      "factor_col": "signal_B2",
+      "n_periods": 50,
+      "rankic_mean": -0.0007531673765539765,
+      "rankic_std": 0.1228564530893699,
+      "icir": -0.006130466553564731,
+      "t_stat": -0.04334894471862944,
+      "p_value": 0.9655995452217133,
+      "rankic_positive_ratio": 0.56,
+      "group_mean_returns": {
+        "0": 0.00607,
+        "1": 0.01025,
+        "2": 0.00781,
+        "3": 0.00635,
+        "4": 0.00364
+      },
+      "long_short_annualized_net": -0.1309024383420686,
+      "long_short_max_drawdown_net": -0.2885267931278198
+    },
+    "B3": {
+      "factor_col": "signal_B3",
+      "n_periods": 50,
+      "rankic_mean": 0.007479499870986076,
+      "rankic_std": 0.13455618969140423,
+      "icir": 0.055586442274709304,
+      "t_stat": 0.3930555027448153,
+      "p_value": 0.6959833849801647,
+      "rankic_positive_ratio": 0.54,
+      "group_mean_returns": {
+        "0": 0.00642,
+        "1": 0.00595,
+        "2": 0.00698,
+        "3": 0.00798,
+        "4": 0.00682
+      },
+      "long_short_annualized_net": -0.07198671132021695,
+      "long_short_max_drawdown_net": -0.31201774473115407
+    }
+  },
+  "paper_window_2024-07_2025-06": {
+    "B0": {
+      "n_periods": 24,
+      "rankic_mean": 0.038927251439856335,
+      "icir": 0.20873870870288092,
+      "t_stat": 1.0226066517790249
+    },
+    "B1": {
+      "n_periods": 24,
+      "rankic_mean": -0.028932638091572687,
+      "icir": -0.195100245721202,
+      "t_stat": -0.955792101417124
+    },
+    "B2": {
+      "n_periods": 24,
+      "rankic_mean": 0.0019749340433619783,
+      "icir": 0.01685170886230118,
+      "t_stat": 0.08255617601315023
+    },
+    "B3": {
+      "n_periods": 24,
+      "rankic_mean": -0.0011696323849063651,
+      "icir": -0.007339922854209581,
+      "t_stat": -0.0359581314884124
+    }
+  },
+  "verdict": {
+    "改造有效(B3>B0 且 B3>B1)": false,
+    "KDA头有独立贡献(B3>B2)": true,
+    "B0_RankIC": 0.018519970548070152,
+    "B1_RankIC": -0.01605595965525896,
+    "B2_RankIC": -0.0007531673765539765,
+    "B3_RankIC": 0.007479499870986076,
+    "预注册判据_B0_final_RankIC": 0.0185
+  }
+}

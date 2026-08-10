@@ -56,7 +56,10 @@ B0_SIGNALS_PATH = CS_DATA_DIR / "signals_with_baselines.parquet"
 
 # 预注册超参（计划 §2）
 SEED = 42
-BATCH_SIZE = 1024
+# 计划 §2 预注册 batch=1024，但实测 d_model=832 下 KDA 递归状态 [B,H,K,V] 在
+# batch=256 即 OOM（RTX 5090 32GB，峰值 19.6GB@128）。这里落到硬件上限 128，
+# 属硬件必要偏差（batch 仍是 2 的幂、训练动态同量级），如实写入结果文档局限。
+BATCH_SIZE = 128
 EPOCHS = 50
 PATIENCE = 5
 WEIGHT_DECAY = 0.01
