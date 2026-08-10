@@ -20,6 +20,52 @@ from loguru import logger
 from paper_replication.common import ReplicationConfig
 
 
+def predict_batch_chunked(
+    predictor,
+    df_list,
+    x_ts_list,
+    y_ts_list,
+    *,
+    pred_len: int,
+    T: float,
+    top_k: int,
+    top_p: float,
+    sample_count: int,
+    chunk_size: int = 32,
+    verbose: bool = False,
+):
+    """对 ``predict_batch`` 做显存友好的分块包装。
+
+    ``predict_batch`` 内部把 B 只股票 × sample_count 次采样一次性堆成
+    (B, seq, feat) 张量送 GPU，N=20 / B=299 时显存峰值超 RTX 5090 32GB（实测 OOM）。
+    按 ``chunk_size`` 切片逐块推理、块间清缓存，把单次显存峰值压到 chunk_size×N。
+
+    :param chunk_size: 单块股票数（默认 32；N=20 下 32×20=640 序列，实测安全）。
+    :returns: 与输入顺序一致的 ``pred_df`` 列表（与 ``predict_batch`` 同构）。
+    """
+    import torch
+
+    n = len(df_list)
+    out: list = []
+    for s in range(0, n, chunk_size):
+        e = min(s + chunk_size, n)
+        preds_chunk = predictor.predict_batch(
+            df_list=df_list[s:e],
+            x_timestamp_list=x_ts_list[s:e],
+            y_timestamp_list=y_ts_list[s:e],
+            pred_len=pred_len,
+            T=T,
+            top_k=top_k,
+            top_p=top_p,
+            sample_count=sample_count,
+            verbose=verbose,
+        )
+        out.extend(preds_chunk)
+        # 块间释放显存碎片（N=20 下连续块会累积 reserved-but-unallocated）
+        torch.cuda.empty_cache()
+    return out
+
+
 def compute_signal_from_preds(pred_close_path: pd.Series, last_close: float) -> float:
     """从一条预测 close 路径算 H 日平均预期收益率信号（与 cross_section/signal.py 同口径）。
 
@@ -69,16 +115,16 @@ def run_kronos_signals(
 
         last_closes = [df["close"].iloc[-1] for df in df_list]
         torch.manual_seed(cfg.seed)
-        preds = predictor.predict_batch(
-            df_list=df_list,
-            x_timestamp_list=x_ts_list,
-            y_timestamp_list=y_ts_list,
+        preds = predict_batch_chunked(
+            predictor,
+            df_list,
+            x_ts_list,
+            y_ts_list,
             pred_len=cfg.predict_len,
             T=cfg.T,
             top_k=cfg.sample_top_k,
             top_p=cfg.top_p,
             sample_count=cfg.sample_count,
-            verbose=False,
         )
         day_signals = {}
         for j, pred_df in enumerate(preds):

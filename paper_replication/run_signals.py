@@ -44,19 +44,15 @@ def build_provider(cfg: ReplicationConfig):
 
 
 def load_predictor(cfg: ReplicationConfig):
-    """加载 KronosPredictor（与 cross_section/stage3_pipeline.py 同口径）。"""
+    """加载 KronosPredictor（与 cross_section/stage2_pilot.py 同口径）。"""
     import sys
 
-    sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "model"))
-    from kronos import KronosPredictor  # type: ignore
+    sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+    from model import Kronos, KronosPredictor, KronosTokenizer
 
-    predictor = KronosPredictor(
-        model_name=cfg.model_name,
-        tokenizer_name=cfg.tokenizer_name,
-        device=cfg.device,
-        max_context_len=cfg.max_context,
-    )
-    return predictor
+    tokenizer = KronosTokenizer.from_pretrained(cfg.tokenizer_name)
+    model = Kronos.from_pretrained(cfg.model_name)
+    return KronosPredictor(model, tokenizer, device=cfg.device, max_context=cfg.max_context)
 
 
 def build_rebalances(cfg: ReplicationConfig):
