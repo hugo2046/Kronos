@@ -1,0 +1,39 @@
+{
+  "stage0_date": "2026-08-11",
+  "connection": {
+    "uri_masked": "dolphindb://admin:***@100.114.247.25:8848",
+    "analyzer_auth": "explicit uri param (plan §1.2), OK",
+    "qlib_provider": "same instance 100.114.247.25:8848"
+  },
+  "sw_l1_available": false,
+  "sw_l1_note": "$sw_l1 / $sw_l1_code / $industry_sw 三字段均全量非空但唯一值数=1（全常数），无行业区分力。analyzer.analyze_factor 将用 industry=None（计划 §5 降级）。",
+  "up_down_limit_status": {
+    "available": true,
+    "value_domain": [-1.0, 0.0, 1.0],
+    "semantics": {
+      "1.0": "涨停（close≈preclose×1.10, close==high；含一字板）",
+      "-1.0": "跌停（close≈preclose×0.90, close==low；含一字板）",
+      "0.0": "正常可交易"
+    },
+    "sample_Q1_2025_lo40": {"0.0": 2198, "1.0": 53, "-1.0": 29},
+    "qlib_bt_threshold_ok": "默认 ($up_down_limit_status==1, ==-1) 与语义一致：涨停拦截买入、跌停拦截卖出"
+  },
+  "high_limit_low_limit_fields": "全 0（未灌值），不可用作 limit 价；以 up_down_limit_status 为准",
+  "bucket_sample_size": {
+    "note": "月末 PIT 分档成员数（describe over 25 month-ends 2024-07..2026-07）",
+    "exst_lo5": {"mean": 263, "min": 260, "max": 266, "median": 263},
+    "exst_lo5_10": {"mean": 263, "min": 261, "max": 266, "median": 263},
+    "exst_mid45_55": {"mean": 526, "min": 521, "max": 532, "median": 526},
+    "withst_lo5": {"mean": 271, "min": 267, "max": 276, "median": 271},
+    "withst_lo5_10": {"mean": 272, "min": 268, "max": 277, "median": 271},
+    "withst_mid45_55": {"mean": 543, "min": 535, "max": 554, "median": 542}
+  },
+  "st_ratio": {"range": "2.6%~3.8% of ashares mother pool", "sample_2024_07_31": 0.026, "sample_2026_07_24": 0.038},
+  "n_month_ends": 25,
+  "mother_pool_size": {"2024-07-31": 5356, "2025-07-31": 5419, "2026-07-24": 5531},
+  "decisions": {
+    "industry": "industry=None（sw_l1 无区分力）",
+    "limit_threshold": "保持 qlib_bt 默认",
+    "halt_handling": "沿用 kronos_qlib windows.py 的 tradestatuscode==0 跳过（已知 caveat：真实取值域 -1/0/2/4，==0 仅命中 0；与 baseline_suite/csi300 对照同口径，非本档独有偏倚，记入局限）"
+  }
+}
