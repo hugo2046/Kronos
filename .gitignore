@@ -77,3 +77,6 @@ tmp/
 
 # WebUI prediction artifacts (generated, not tracked)
 webui/prediction_results/
+
+# KDA 训练曲线（同目录 .pt/.parquet 已忽略，.json 此前漏网）
+cross_section_kda/data/*_history.json
