@@ -175,13 +175,25 @@ def create_prediction_chart(historical_df, pred_df, y_timestamp, actual_df=None)
     :param y_timestamp: 预测段交易日 ``pd.Series``（长度 == pred_len）。
     :param actual_df: 可选对比段，含 ``timestamps`` 列 + OHLCVA。
     """
+    # ⚠️ 一律用 Python list 构造 trace，不要直接传 Series/ndarray：
+    # plotly.py ≥5 会把 **numpy 数组**序列化成 base64 二进制
+    # （``{"dtype": "f4", "bdata": "..."}``），**只有 plotly.js v3 能解析**；
+    # 前端若是旧版（如被官方冻结在 v1.58.5 的 plotly-latest 别名），candlestick
+    # 取不到 open/high/low/close，图表**静默空白且无报错**。传 list 则输出普通
+    # JSON 数组，对前端版本不敏感。由 test_chart_json_uses_plain_arrays 锁定。
+    def _ohlc(frame):
+        """取 OHLC 四列并转为 Python list（避免 base64 二进制序列化）。"""
+        return {k: frame[k].astype(float).tolist() for k in ('open', 'high', 'low', 'close')}
+
+    def _x(values):
+        """时间戳转 ISO 字符串 list（category 轴按标签渲染）。"""
+        return [pd.Timestamp(v).isoformat() for v in pd.Series(values)]
+
     fig = go.Figure()
 
     # 历史数据（K 线）
     fig.add_trace(go.Candlestick(
-        x=historical_df['timestamps'],
-        open=historical_df['open'], high=historical_df['high'],
-        low=historical_df['low'], close=historical_df['close'],
+        x=_x(historical_df['timestamps']), **_ohlc(historical_df),
         name=f'Historical ({len(historical_df)} bars)',
         increasing_line_color='#26A69A', decreasing_line_color='#EF5350'
     ))
@@ -189,9 +201,7 @@ def create_prediction_chart(historical_df, pred_df, y_timestamp, actual_df=None)
     # 预测数据（K 线，时间戳来自交易日历）
     if pred_df is not None and len(pred_df) > 0:
         fig.add_trace(go.Candlestick(
-            x=pd.Series(y_timestamp),
-            open=pred_df['open'], high=pred_df['high'],
-            low=pred_df['low'], close=pred_df['close'],
+            x=_x(y_timestamp), **_ohlc(pred_df),
             name=f'Prediction ({len(pred_df)} bars)',
             increasing_line_color='#66BB6A', decreasing_line_color='#FF7043'
         ))
@@ -199,9 +209,7 @@ def create_prediction_chart(historical_df, pred_df, y_timestamp, actual_df=None)
     # 对比实际数据（K 线）
     if actual_df is not None and len(actual_df) > 0:
         fig.add_trace(go.Candlestick(
-            x=actual_df['timestamps'],
-            open=actual_df['open'], high=actual_df['high'],
-            low=actual_df['low'], close=actual_df['close'],
+            x=_x(actual_df['timestamps']), **_ohlc(actual_df),
             name=f'Actual ({len(actual_df)} bars)',
             increasing_line_color='#FF9800', decreasing_line_color='#F44336'
         ))
@@ -214,7 +222,9 @@ def create_prediction_chart(historical_df, pred_df, y_timestamp, actual_df=None)
         # category 轴让连续交易日相邻无间隙——做到"K 线连续无周末空洞"。
         xaxis={'type': 'category', 'rangeslider': {'visible': False}},
     )
-    return json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
+    # 数组已在上方转为 Python list，此处输出即为纯 JSON 数组。
+    # 前端 CDN 亦锁定 plotly.js v3（见 templates/index.html），二者双保险。
+    return fig.to_json(engine="json")
 
 
 @app.route('/')

@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kronos Financial Prediction Web UI</title>
-    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <!-- 必须锁定 v3：plotly-latest 别名被官方冻结在 v1.58.5（v2 起停更），
+         无法解析 plotly.py ≥5 的 base64 二进制数组，会导致 K 线静默空白。 -->
+    <script src="https://cdn.plot.ly/plotly-3.0.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <style>
         * {

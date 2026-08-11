@@ -291,3 +291,56 @@ def test_predict_historical_mode_with_comparison(loaded_client):
     actuals = body["actual_data"]
     assert len(actuals) == 10, f"对比段应满 10 根，实际 {len(actuals)}"
     assert len(body["prediction_results"]) == 10
+
+
+# ============================================================
+# 回归测试：chart JSON 必须是纯数组（2026-08-11 缺陷）
+# ============================================================
+
+
+def test_chart_json_uses_plain_arrays():
+    """chart JSON 的 OHLC 必须是 list，不得是 base64 二进制 dict。
+
+    **缺陷背景（2026-08-11）**：``plotly.py >= 5`` 默认把数值数组序列化为
+    ``{"dtype": "f4", "bdata": "<base64>"}``，**只有 plotly.js v3 能解析**。
+    前端当时加载的 ``plotly-latest`` 别名被官方冻结在 v1.58.5，认不出该格式，
+    candlestick 取不到 open/high/low/close → **图表静默空白**（无报错）。
+
+    修复：后端 ``fig.to_json(engine="json")`` 输出纯数组 + 前端 CDN 锁定 v3。
+    本测试锁住后端这一侧——它在 curl/test-client 层即可验证，不依赖浏览器，
+    正是原验收（仅校验 trace 数与时间戳）漏掉这个缺陷的原因。
+    """
+    import json
+
+    from webui.app import create_prediction_chart
+
+    dates = pd.bdate_range("2026-01-01", periods=5)
+    hist = pd.DataFrame({
+        "timestamps": dates,
+        "open": np.arange(5, dtype="float32") + 10,
+        "high": np.arange(5, dtype="float32") + 11,
+        "low": np.arange(5, dtype="float32") + 9,
+        "close": np.arange(5, dtype="float32") + 10.5,
+        "volume": np.ones(5, dtype="float32"),
+        "amount": np.ones(5, dtype="float32"),
+    })
+    y_ts = pd.Series(pd.bdate_range("2026-01-08", periods=2))
+    pred = pd.DataFrame({
+        "open": np.array([15.0, 16.0], dtype="float32"),
+        "high": np.array([15.5, 16.5], dtype="float32"),
+        "low": np.array([14.5, 15.5], dtype="float32"),
+        "close": np.array([15.2, 16.2], dtype="float32"),
+    }, index=y_ts)
+
+    chart = json.loads(create_prediction_chart(hist, pred, y_ts))
+
+    assert len(chart["data"]) == 2, "应有历史 + 预测两个 trace"
+    for trace in chart["data"]:
+        for field in ("open", "high", "low", "close", "x"):
+            value = trace[field]
+            assert isinstance(value, list), (
+                f"trace[{trace.get('name')!r}][{field!r}] 应为 list，实际是 "
+                f"{type(value).__name__}={str(value)[:60]}——"
+                "base64 二进制格式会让旧版 plotly.js 静默渲染空白"
+            )
+        assert len(trace["open"]) > 0
