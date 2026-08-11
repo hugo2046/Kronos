@@ -334,13 +334,43 @@ def test_chart_json_uses_plain_arrays():
 
     chart = json.loads(create_prediction_chart(hist, pred, y_ts))
 
-    assert len(chart["data"]) == 2, "应有历史 + 预测两个 trace"
+    # 历史与预测各 1 条 K 线，均按涨跌着色；预测段靠背景色带区分，不靠改配色
+    kinds = [t["type"] for t in chart["data"]]
+    assert kinds == ["candlestick", "candlestick"], f"应为两条 K 线，实际 {kinds}"
+
+    hist_tr, pred_tr = chart["data"]
+    assert "Prediction" in (pred_tr.get("name") or "")
+    # 两段涨跌配色一致——读图不需要切换心智模型
+    for key in ("increasing", "decreasing"):
+        assert pred_tr[key]["line"]["color"] == hist_tr[key]["line"]["color"], (
+            f"预测段 {key} 配色应与历史段一致"
+        )
+    assert pred_tr["increasing"]["line"]["color"] != pred_tr["decreasing"]["line"]["color"], (
+        "K 线应按涨跌区分红绿"
+    )
+
+    # 预测区间必须有背景色带 + 顶部标签（区域标记）
+    shapes = chart["layout"].get("shapes") or []
+    rects = [s for s in shapes if s.get("type") == "rect"]
+    assert len(rects) == 1, f"预测区间应有 1 个背景色带，实际 {len(rects)}"
+    # 色带覆盖预测段：x0 在历史末根之后半格，宽度 == 预测根数
+    assert rects[0]["x1"] - rects[0]["x0"] == len(pred), "色带宽度应等于预测根数"
+    annos = [a for a in (chart["layout"].get("annotations") or [])
+             if a.get("text") == "Prediction"]
+    assert len(annos) == 1, "色带应带 'Prediction' 顶部标签"
+
     for trace in chart["data"]:
-        for field in ("open", "high", "low", "close", "x"):
+        # 按 trace 类型选应检字段：candlestick 有 OHLC，scatter 有 y
+        fields = ("open", "high", "low", "close", "x") if trace["type"] == "candlestick" else ("x", "y")
+        for field in fields:
             value = trace[field]
             assert isinstance(value, list), (
                 f"trace[{trace.get('name')!r}][{field!r}] 应为 list，实际是 "
                 f"{type(value).__name__}={str(value)[:60]}——"
                 "base64 二进制格式会让旧版 plotly.js 静默渲染空白"
             )
-        assert len(trace["open"]) > 0
+            assert len(value) > 0
+
+    # x 轴标签应为纯日期（不带时分秒），避免标签过长挤成竖排
+    x0 = chart["data"][0]["x"][0]
+    assert "T" not in x0 and len(x0) == 10, f"x 轴标签应为 YYYY-MM-DD，实际 {x0!r}"

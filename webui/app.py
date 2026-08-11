@@ -186,38 +186,59 @@ def create_prediction_chart(historical_df, pred_df, y_timestamp, actual_df=None)
         return {k: frame[k].astype(float).tolist() for k in ('open', 'high', 'low', 'close')}
 
     def _x(values):
-        """时间戳转 ISO 字符串 list（category 轴按标签渲染）。"""
-        return [pd.Timestamp(v).isoformat() for v in pd.Series(values)]
+        """时间戳转 ``YYYY-MM-DD`` 字符串 list（category 轴按标签渲染）。
+
+        只取日期不带时分秒——日频数据的时间部分恒为 00:00:00，完整 ISO 串会让
+        x 轴标签又长又挤。
+        """
+        return [pd.Timestamp(v).strftime('%Y-%m-%d') for v in pd.Series(values)]
 
     fig = go.Figure()
 
-    # 历史数据（K 线）
+    x_hist = _x(historical_df['timestamps'])
+
+    # 历史数据（K 线：真实成交形态，红绿涨跌语义成立）
     fig.add_trace(go.Candlestick(
-        x=_x(historical_df['timestamps']), **_ohlc(historical_df),
+        x=x_hist, **_ohlc(historical_df),
         name=f'Historical ({len(historical_df)} bars)',
         increasing_line_color='#26A69A', decreasing_line_color='#EF5350'
     ))
 
-    # 预测数据（K 线，时间戳来自交易日历）
+    # 预测数据（K 线，与历史同一套涨跌配色）
+    # 预测段与历史段的区分不靠改配色，而靠**背景色带 + 顶部标签**（见下方 add_vrect）,
+    # 这样 K 线本身的涨跌语义在两段保持一致，读图不需要切换心智模型。
+    x_pred = []
     if pred_df is not None and len(pred_df) > 0:
+        x_pred = _x(y_timestamp)
         fig.add_trace(go.Candlestick(
-            x=_x(y_timestamp), **_ohlc(pred_df),
+            x=x_pred, **_ohlc(pred_df),
             name=f'Prediction ({len(pred_df)} bars)',
-            increasing_line_color='#66BB6A', decreasing_line_color='#FF7043'
+            increasing_line_color='#26A69A', decreasing_line_color='#EF5350'
         ))
 
-    # 对比实际数据（K 线）
+    # 对比实际数据（K 线）——与预测段同 x 位置重叠展示，故保留独立配色以便区分
     if actual_df is not None and len(actual_df) > 0:
         fig.add_trace(go.Candlestick(
             x=_x(actual_df['timestamps']), **_ohlc(actual_df),
             name=f'Actual ({len(actual_df)} bars)',
-            increasing_line_color='#FF9800', decreasing_line_color='#F44336'
+            increasing_line_color='#FFB74D', decreasing_line_color='#FF8A65'
         ))
+
+    # 预测区间背景色带 + 顶部标签：用**区域标记**而非改 K 线配色来区分预测段。
+    # category 轴上 vrect 的 x 用类目下标（半格外扩，让色带覆盖首末两根柱的整宽）。
+    if x_pred:
+        n_hist = len(x_hist)
+        fig.add_vrect(
+            x0=n_hist - 0.5, x1=n_hist + len(x_pred) - 0.5,
+            fillcolor='#EF5350', opacity=0.12, line_width=0, layer='below',
+            annotation_text='Prediction', annotation_position='top',
+            annotation_font={'size': 13, 'color': '#B71C1C'},
+        )
 
     fig.update_layout(
         title='Kronos Prediction (daily, 后复权)',
         xaxis_title='Trading Day', yaxis_title='Price (后复权)',
-        template='plotly_white', height=600, showlegend=True,
+        template='plotly_white', height=600, showlegend=True, hovermode='x unified',
         # x 轴用 category 而非 date：plotly date 轴会把周末 / 节假日画成空白列，
         # category 轴让连续交易日相邻无间隙——做到"K 线连续无周末空洞"。
         xaxis={'type': 'category', 'rangeslider': {'visible': False}},
