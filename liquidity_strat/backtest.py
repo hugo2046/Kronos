@@ -177,8 +177,10 @@ def _topk_for_bucket(strat_df: pd.DataFrame, bucket: str, track: str) -> int:
 
 def _load_csi300_signal(start: str, end: str) -> pd.DataFrame:
     """复用 baseline_suite paper+oos mean，拼成流动性窗口宽表。"""
-    paper = pd.read_parquet(DATA_DIR.parent / "baseline_suite" / "data" / "daily_signals_paper_mean.parquet")
-    oos = pd.read_parquet(DATA_DIR.parent / "baseline_suite" / "data" / "daily_signals_oos_mean.parquet")
+    # DATA_DIR=liquidity_strat/data → repo 根需 .parent.parent
+    repo = DATA_DIR.parent.parent
+    paper = pd.read_parquet(repo / "baseline_suite" / "data" / "daily_signals_paper_mean.parquet")
+    oos = pd.read_parquet(repo / "baseline_suite" / "data" / "daily_signals_oos_mean.parquet")
     paper.index = pd.to_datetime(paper.index)
     oos.index = pd.to_datetime(oos.index)
     wide = pd.concat([paper, oos])

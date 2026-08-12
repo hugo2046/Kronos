@@ -175,6 +175,31 @@ def run_analysis(cfg: LiquidityConfig, *, tracks=(ST_TRACK_MAIN,)) -> dict:
                         f"(ann {s['spread_annualized']:+.4f}) t={s['spread_t_nw']:.2f} "
                         f"IC={s['ic_mean']:.4f} mono_rho={s['mono_rho']:.2f}"
                     )
+
+    # csi300 对照档信号层（复用 baseline_suite mean=K，计划 §2.1 不重算推理）。
+    # 其宽表成员已 PIT 烘焙（baseline_suite 按日 list_pool_at 生成），直接喂 analyze_factor。
+    # DATA_DIR=liquidity_strat/data → repo 根需 .parent.parent
+    repo = DATA_DIR.parent.parent
+    csi_path = repo / "baseline_suite" / "data" / "daily_signals_paper_mean.parquet"
+    csi_oos = repo / "baseline_suite" / "data" / "daily_signals_oos_mean.parquet"
+    if csi_path.exists() and csi_oos.exists():
+        csi = pd.read_parquet(csi_path)
+        csi_o = pd.read_parquet(csi_oos)
+        csi.index = pd.to_datetime(csi.index)
+        csi_o.index = pd.to_datetime(csi_o.index)
+        csi_wide = pd.concat([csi, csi_o])
+        csi_wide = csi_wide[~csi_wide.index.duplicated(keep="last")]
+        tag = f"{HIGH_LIQ_BUCKET}/{ST_TRACK_MAIN}/{SIGNAL_KRONOS}"
+        logger.info(f"analyze_factor [{tag}]（csi300 对照，复用 baseline mean）")
+        m = analyze_one(csi_wide, tag=tag)
+        results[f"{HIGH_LIQ_BUCKET}|{ST_TRACK_MAIN}|{SIGNAL_KRONOS}"] = m
+        if m.get("ok"):
+            s = m["period_10"]
+            logger.info(
+                f"[{tag}] P10 spread={s['spread_mean']:.5f} "
+                f"(ann {s['spread_annualized']:+.4f}) t={s['spread_t_nw']:.2f}"
+            )
+
     out = DATA_DIR / "analysis_signal_layer.json"
     out.write_text(json.dumps(results, ensure_ascii=False, indent=2), encoding="utf-8")
     logger.info(f"信号层分析落盘：{out}（{len(results)} 组）")
