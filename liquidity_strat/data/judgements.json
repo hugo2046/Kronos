@@ -1,0 +1,61 @@
+{
+  "1_gate": {
+    "desc": "P 组 lo5 的 spread 与对档等权超额均 |年化|<3%",
+    "evidence": {
+      "p_spread_ann": 0.0013899343010209259,
+      "p_excess_ann": 0.002766711387894638
+    },
+    "pass": true,
+    "block_on_fail": true
+  },
+  "2_signal_existence": {
+    "desc": "lo5 K 的 Q10−Q1（10期）spread 年化>0 且 t>2",
+    "evidence": {
+      "k_spread_ann": 0.0294600318213273,
+      "k_spread_t_nw": 2.600775860624342
+    },
+    "pass": true
+  },
+  "3_vs_reversal": {
+    "desc": "lo5 K 的 spread 与对档等权超额同时 > R（反转）同口径",
+    "evidence": {
+      "k_spread_ann": 0.0294600318213273,
+      "r_spread_ann": 0.03266108309961494,
+      "k_excess_ann": -0.02974406026851062,
+      "r_excess_ann": -0.10747803879060025
+    },
+    "pass": false
+  },
+  "4_monotonicity": {
+    "desc": "lo5→lo5_10→mid45_55→csi300 上 K 指标单调递减",
+    "evidence": {
+      "buckets": [
+        "lo5",
+        "lo5_10",
+        "mid45_55",
+        "csi300"
+      ],
+      "spread_ann": [
+        0.0294600318213273,
+        0.02346989737364552,
+        0.03754145551289099,
+        -0.008367662089323042
+      ],
+      "excess_ann": [
+        -0.02974406026851062,
+        0.031042105429402556,
+        0.06042825704468613,
+        0.011681519145412489
+      ]
+    },
+    "pass": false,
+    "partial": true
+  },
+  "5_economic": {
+    "desc": "lo5 K 经涨跌停+停牌+成本后的对档等权超额 > 0",
+    "evidence": {
+      "k_excess_ann": -0.02974406026851062
+    },
+    "pass": false
+  }
+}
