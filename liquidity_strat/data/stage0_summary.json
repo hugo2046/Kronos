@@ -1,9 +1,9 @@
 {
   "stage0_date": "2026-08-11",
   "connection": {
-    "uri_masked": "dolphindb://admin:***@100.114.247.25:8848",
+    "uri_masked": "dolphindb://admin:***@100.**.**.25:8848",
     "analyzer_auth": "explicit uri param (plan §1.2), OK",
-    "qlib_provider": "same instance 100.114.247.25:8848"
+    "qlib_provider": "same instance 100.**.**.25:8848"
   },
   "sw_l1_available": false,
   "sw_l1_note": "$sw_l1 / $sw_l1_code / $industry_sw 三字段均全量非空但唯一值数=1（全常数），无行业区分力。analyzer.analyze_factor 将用 industry=None（计划 §5 降级）。",
