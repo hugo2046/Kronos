@@ -1,0 +1,227 @@
+{
+  "stage": "2_dist_r3",
+  "signals": {
+    "S1": "neg_std",
+    "S2": "sharpe_like",
+    "S3": "q10"
+  },
+  "canonical_mean_oos_ew": -0.151,
+  "results": {
+    "paper": {
+      "R3": {
+        "perf_idx": {
+          "name": "R3",
+          "n_days": 241,
+          "aer": -0.15813922875060882,
+          "ir": -0.6854619961235776,
+          "max_drawdown": -0.2700190020026786,
+          "daily_turnover": 0.0
+        },
+        "perf_ew": {
+          "name": "R3",
+          "n_days": 242,
+          "aer": -0.19729798274936627,
+          "ir": -0.8028717047469968,
+          "max_drawdown": -0.29056590914154,
+          "daily_turnover": 0.0
+        }
+      },
+      "neg_std": {
+        "perf_idx": {
+          "name": "neg_std",
+          "n_days": 241,
+          "aer": 0.01816923720980812,
+          "ir": 0.2624971932693845,
+          "max_drawdown": -0.06325086215230946,
+          "daily_turnover": 0.10173832985364702
+        },
+        "perf_ew": {
+          "name": "neg_std",
+          "n_days": 242,
+          "aer": -0.02895774090551495,
+          "ir": -0.2179360820382434,
+          "max_drawdown": -0.11647014256169563,
+          "daily_turnover": 0.10173832985364702
+        }
+      },
+      "sharpe_like": {
+        "perf_idx": {
+          "name": "sharpe_like",
+          "n_days": 241,
+          "aer": 0.07467593451625287,
+          "ir": 0.7993638892703662,
+          "max_drawdown": -0.043305034710500845,
+          "daily_turnover": 0.10263944352584436
+        },
+        "perf_ew": {
+          "name": "sharpe_like",
+          "n_days": 242,
+          "aer": 0.029144880397727224,
+          "ir": 0.42062320473236187,
+          "max_drawdown": -0.042747937082829535,
+          "daily_turnover": 0.10263944352584436
+        }
+      },
+      "q10": {
+        "perf_idx": {
+          "name": "q10",
+          "n_days": 241,
+          "aer": 0.09995903519427318,
+          "ir": 0.9373759307606494,
+          "max_drawdown": -0.05095560929847853,
+          "daily_turnover": 0.10347018788052985
+        },
+        "perf_ew": {
+          "name": "q10",
+          "n_days": 242,
+          "aer": 0.053494709555113484,
+          "ir": 0.6412203917843569,
+          "max_drawdown": -0.051931221042384346,
+          "daily_turnover": 0.10347018788052985
+        }
+      },
+      "mean": {
+        "perf_idx": {
+          "name": "mean",
+          "n_days": 241,
+          "aer": 0.08989553475041157,
+          "ir": 0.782533373542374,
+          "max_drawdown": -0.05615079728333616,
+          "daily_turnover": 0.10236058879859192
+        },
+        "perf_ew": {
+          "name": "mean",
+          "n_days": 242,
+          "aer": 0.04471574309728377,
+          "ir": 0.5191015341293336,
+          "max_drawdown": -0.0492557498728281,
+          "daily_turnover": 0.10236058879859192
+        }
+      }
+    },
+    "oos": {
+      "R3": {
+        "perf_idx": {
+          "name": "R3",
+          "n_days": 259,
+          "aer": -0.12391387088732786,
+          "ir": -0.9365656289201946,
+          "max_drawdown": -0.23920225338751633,
+          "daily_turnover": 0.06309906241412346
+        },
+        "perf_ew": {
+          "name": "R3",
+          "n_days": 260,
+          "aer": -0.13190924815087757,
+          "ir": -1.4721681336562158,
+          "max_drawdown": -0.19678126196559287,
+          "daily_turnover": 0.06309906241412346
+        }
+      },
+      "neg_std": {
+        "perf_idx": {
+          "name": "neg_std",
+          "n_days": 259,
+          "aer": -0.17370844913522743,
+          "ir": -1.1043534384030038,
+          "max_drawdown": -0.2971029548652503,
+          "daily_turnover": 0.10236628829286648
+        },
+        "perf_ew": {
+          "name": "neg_std",
+          "n_days": 260,
+          "aer": -0.18079893235997613,
+          "ir": -1.4862798672039679,
+          "max_drawdown": -0.26309642706339076,
+          "daily_turnover": 0.10236628829286648
+        }
+      },
+      "sharpe_like": {
+        "perf_idx": {
+          "name": "sharpe_like",
+          "n_days": 259,
+          "aer": -0.1842007544650196,
+          "ir": -1.4008091820564574,
+          "max_drawdown": -0.2810530212643817,
+          "daily_turnover": 0.10258131047280936
+        },
+        "perf_ew": {
+          "name": "sharpe_like",
+          "n_days": 260,
+          "aer": -0.19165314467274186,
+          "ir": -1.977111070652858,
+          "max_drawdown": -0.2462834633344254,
+          "daily_turnover": 0.10258131047280936
+        }
+      },
+      "q10": {
+        "perf_idx": {
+          "name": "q10",
+          "n_days": 259,
+          "aer": -0.18765061093924518,
+          "ir": -1.4763907623174912,
+          "max_drawdown": -0.2709456991479665,
+          "daily_turnover": 0.10159272528611697
+        },
+        "perf_ew": {
+          "name": "q10",
+          "n_days": 260,
+          "aer": -0.19521680019317156,
+          "ir": -2.085330298729791,
+          "max_drawdown": -0.2344610091061562,
+          "daily_turnover": 0.10159272528611697
+        }
+      },
+      "mean": {
+        "perf_idx": {
+          "name": "mean",
+          "n_days": 259,
+          "aer": -0.14293484726903216,
+          "ir": -1.1208529649890662,
+          "max_drawdown": -0.23994835045458274,
+          "daily_turnover": 0.10243256103533965
+        },
+        "perf_ew": {
+          "name": "mean",
+          "n_days": 260,
+          "aer": -0.15102285882205024,
+          "ir": -1.6816129177930415,
+          "max_drawdown": -0.1989354573623302,
+          "daily_turnover": 0.10243256103533965
+        }
+      }
+    }
+  },
+  "dist_verdicts": {
+    "neg_std": {
+      "paper_ew": -0.02895774090551495,
+      "oos_ew": -0.18079893235997613,
+      "both_positive": false,
+      "beats_mean_oos_plus10pp": false,
+      "effective": false
+    },
+    "sharpe_like": {
+      "paper_ew": 0.029144880397727224,
+      "oos_ew": -0.19165314467274186,
+      "both_positive": false,
+      "beats_mean_oos_plus10pp": false,
+      "effective": false
+    },
+    "q10": {
+      "paper_ew": 0.053494709555113484,
+      "oos_ew": -0.19521680019317156,
+      "both_positive": false,
+      "beats_mean_oos_plus10pp": false,
+      "effective": false
+    }
+  },
+  "dist_summary": "路径分布统计不含增量 alpha（如实记录）",
+  "r3_verdict": {
+    "r3_paper_ew": -0.19729798274936627,
+    "r3_oos_ew": -0.13190924815087757,
+    "mean_paper_ew": 0.04471574309728377,
+    "mean_oos_ew": -0.15102285882205024,
+    "both_strong": false,
+    "verdict": "心虚度门控未两窗都强于纯 mean（不构成候选发现）"
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "stage": "2_b3_csi500",
+  "engine": {
+    "top_k": 100,
+    "drop_n": 10,
+    "min_hold": 5,
+    "cost_bps": 15
+  },
+  "benchmarks": {
+    "index": "000905.SH",
+    "equal_weight": "同池等权"
+  },
+  "results": {
+    "paper": {
+      "perf_idx": {
+        "name": "B3_csi500_paper",
+        "n_days": 241,
+        "aer": -0.05745782001512911,
+        "ir": -1.0162885805163948,
+        "max_drawdown": -0.07225331760394615,
+        "daily_turnover": 0.10275779667595202
+      },
+      "perf_ew": {
+        "name": "B3_csi500_paper",
+        "n_days": 242,
+        "aer": -0.12005693333832956,
+        "ir": -2.0897370446468937,
+        "max_drawdown": -0.1256813187242849,
+        "daily_turnover": 0.10275779667595202
+      }
+    },
+    "oos": {
+      "perf_idx": {
+        "name": "B3_csi500_oos",
+        "n_days": 259,
+        "aer": 0.02436830502797438,
+        "ir": 0.4025837569227273,
+        "max_drawdown": -0.07544693798770652,
+        "daily_turnover": 0.10208921065697303
+      },
+      "perf_ew": {
+        "name": "B3_csi500_oos",
+        "n_days": 260,
+        "aer": 0.03545423425617211,
+        "ir": 0.4496685076760262,
+        "max_drawdown": -0.08973347411581911,
+        "daily_turnover": 0.10208921065697303
+      }
+    }
+  },
+  "verdict": {
+    "oos_aer_ew": 0.03545423425617211,
+    "oos_aer_idx": 0.02436830502797438,
+    "survives": true,
+    "verdict": "B3 双截面存活（csi300+csi500），待前向确认——阶段 5 Mamba 时序头可立项"
+  }
+}
