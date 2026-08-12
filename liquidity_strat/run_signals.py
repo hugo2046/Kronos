@@ -90,11 +90,12 @@ def cmd_kronos(cfg: LiquidityConfig, limit: int | None) -> None:
     t0 = time.time()
     wide = run_kronos_signals(predictor, provider, cfg, cal, universe_map, checkpoint_dir=DATA_DIR)
     elapsed = time.time() - t0
-    n_days = wide.shape[0]
+    n_days = wide["mean"].shape[0]
     logger.info(f"Kronos 完成：{n_days} 日，耗时 {elapsed:.0f}s（{elapsed/max(n_days,1):.1f}s/日）")
-    out = DATA_DIR / "daily_signals_K_union.parquet"
-    wide.to_parquet(out)
-    logger.info(f"K union 落盘：{out}")
+    for v in ("last", "mean", "max", "min"):
+        out = DATA_DIR / f"daily_signals_K_{v}_union.parquet"
+        wide[v].to_parquet(out)
+        logger.info(f"K {v} union 落盘：{out}")
 
 
 def cmd_baselines(cfg: LiquidityConfig) -> None:

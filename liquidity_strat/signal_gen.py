@@ -155,6 +155,9 @@ def build_windows_for_codes(
     return df_list, x_ts_list, y_ts_list, codes, stats
 
 
+K_VARIANTS: tuple[str, ...] = ("last", "mean", "max", "min")
+
+
 def run_kronos_signals(
     predictor,
     provider,
@@ -164,20 +167,39 @@ def run_kronos_signals(
     *,
     progress_every: int = 5,
     checkpoint_dir: Path | None = DATA_DIR,
-) -> pd.DataFrame:
-    """逐日对 union 宇宙跑 Kronos canonical mean，断点续跑。
+) -> dict[str, pd.DataFrame]:
+    """逐日对 union 宇宙跑 Kronos，一次推理同时产出 4 变体 + 原始 close 路径，断点续跑。
 
-    :returns: union 宽表 ``index=date, columns=code, values=Kronos mean 信号``。
-        checkpoint：``<checkpoint_dir>/daily_signals_K_union.parquet``。
+    每条预测 close 路径（H 步，除以现价 close_t）聚合为与 baseline_suite 同口径的 4 变体：
+    ``last=vals[-1]/lc-1``、``mean=np.mean(vals)/lc-1``（canonical 主线，对拍基准）、
+    ``max``、``min``。同时落盘**原始预测 close 路径**（horizon 1..H）供查验/复算。
+
+    :returns: ``{variant: union_wide_df}``，四张宽表同 index 同 columns。
+    :落盘: ``daily_signals_K_{last,mean,max,min}_union.parquet``（4 宽表）+
+        ``pred_close_path_union.parquet``（长表 datetime/instrument/horizon/pred_close）。
     """
-    ckpt = Path(checkpoint_dir) / "daily_signals_K_union.parquet" if checkpoint_dir else None
-    rows: list[dict] = []
+    cdir = Path(checkpoint_dir) if checkpoint_dir else None
+    ckpt = {v: cdir / f"daily_signals_K_{v}_union.parquet" for v in K_VARIANTS} if cdir else None
+    ckpt_close = cdir / "pred_close_path_union.parquet" if cdir else None
+
+    rows: dict[str, list[dict]] = {v: [] for v in K_VARIANTS}
+    close_rows: list[tuple] = []  # (datetime, instrument, horizon, pred_close)
     done: set[pd.Timestamp] = set()
-    if ckpt and ckpt.exists():
-        existing = pd.read_parquet(ckpt)
-        done = set(pd.to_datetime(existing.index))
-        rows = [existing.loc[d].dropna().to_dict() for d in existing.index]
-        logger.info(f"K 断点续跑：已有 {len(done)} 日，跳过")
+    if cdir and all(p.exists() for p in ckpt.values()) and ckpt_close.exists():
+        existing = {v: pd.read_parquet(ckpt[v]) for v in K_VARIANTS}
+        done = set(pd.to_datetime(existing["mean"].index))
+        for v in K_VARIANTS:
+            rows[v] = [existing[v].loc[d].dropna().to_dict() for d in existing[v].index]
+        close_df = pd.read_parquet(ckpt_close)
+        close_rows = list(
+            zip(
+                pd.to_datetime(close_df["datetime"]),
+                close_df["instrument"],
+                close_df["horizon"],
+                close_df["pred_close"],
+            )
+        )
+        logger.info(f"K 断点续跑：已有 {len(done)} 日（4变体+close），跳过")
 
     pending = [d for d in trading_days if d not in done]
     logger.info(
@@ -189,14 +211,16 @@ def run_kronos_signals(
         ds = d.strftime("%Y-%m-%d")
         members = universe_map[d]
         if len(members) == 0:
-            rows.append({})
+            for v in K_VARIANTS:
+                rows[v].append({})
             continue
         df_list, x_ts_list, y_ts_list, codes, stats = build_windows_for_codes(
             provider, ds, members, lookback=cfg.lookback, predict_len=cfg.predict_len
         )
         if len(df_list) == 0:
             logger.warning(f"{ds}: union 无可用窗口（{stats}）")
-            rows.append({})
+            for v in K_VARIANTS:
+                rows[v].append({})
             continue
 
         last_closes = [df["close"].iloc[-1] for df in df_list]
@@ -212,34 +236,51 @@ def run_kronos_signals(
             top_p=cfg.top_p,
             sample_count=cfg.sample_count,
         )
-        day_sig: dict[str, float] = {}
+        day_sig: dict[str, dict[str, float]] = {v: {} for v in K_VARIANTS}
         for j, pred_df in enumerate(preds):
-            vals = pred_df[cfg.signal_field].values
-            day_sig[codes[j]] = float(np.mean(vals) / last_closes[j] - 1.0)
-        rows.append(day_sig)
+            vals = pred_df[cfg.signal_field].values  # H 步预测 close
+            lc = last_closes[j]
+            day_sig["last"][codes[j]] = float(vals[-1] / lc - 1.0)
+            day_sig["mean"][codes[j]] = float(np.mean(vals) / lc - 1.0)
+            day_sig["max"][codes[j]] = float(np.max(vals) / lc - 1.0)
+            day_sig["min"][codes[j]] = float(np.min(vals) / lc - 1.0)
+            for step, val in enumerate(vals, start=1):
+                close_rows.append((d, codes[j], step, float(val)))
+        for v in K_VARIANTS:
+            rows[v].append(day_sig[v])
 
         if (i + 1) % progress_every == 0 or i == 0:
             logger.info(
                 f"K [{i + 1}/{len(pending)}] {ds}: kept={stats['n_kept']}/{stats['n_pool']} "
-                f"std={np.std(list(day_sig.values())):.4f}"
+                f"mean_std={np.std(list(day_sig['mean'].values())):.4f}"
             )
-            if ckpt:
-                _dump_k(rows, trading_days, done, pending[: i + 1], ckpt)
+            if cdir:
+                _dump_all(rows, close_rows, trading_days, done, pending[: i + 1], ckpt, ckpt_close)
 
-    wide = pd.DataFrame(rows, index=trading_days)
-    if ckpt:
-        wide.to_parquet(ckpt)
-        logger.info(f"K 信号落盘：{ckpt}（{wide.shape[0]} 日 × {wide.shape[1]} 列）")
+    wide = {v: pd.DataFrame(rows[v], index=trading_days) for v in K_VARIANTS}
+    if cdir:
+        for v in K_VARIANTS:
+            wide[v].to_parquet(ckpt[v])
+        close_df = pd.DataFrame(close_rows, columns=["datetime", "instrument", "horizon", "pred_close"])
+        close_df.to_parquet(ckpt_close, index=False)
+        logger.info(
+            f"K 落盘：4 变体宽表 + {ckpt_close.name}（{len(close_df)} 条 close 路径点）"
+        )
     return wide
 
 
-def _dump_k(rows, trading_days, done, pending, ckpt) -> None:
+def _dump_all(rows, close_rows, trading_days, done, pending, ckpt, ckpt_close) -> None:
+    """把 4 变体宽表 + 原始 close 长表合并落盘（断点续跑用）。"""
     done_sorted = sorted(done)
     n_done = len(done_sorted)
-    done_rows = rows[:n_done] if n_done else []
-    new_rows = rows[n_done:]
-    all_idx = done_sorted + list(pending[: len(new_rows)])
-    pd.DataFrame(done_rows + new_rows, index=all_idx).to_parquet(ckpt)
+    for v in K_VARIANTS:
+        done_rows = rows[v][:n_done] if n_done else []
+        new_rows = rows[v][n_done:]
+        all_idx = done_sorted + list(pending[: len(new_rows)])
+        pd.DataFrame(done_rows + new_rows, index=all_idx).to_parquet(ckpt[v])
+    pd.DataFrame(close_rows, columns=["datetime", "instrument", "horizon", "pred_close"]).to_parquet(
+        ckpt_close, index=False
+    )
 
 
 def run_mr_signals(

@@ -41,7 +41,7 @@ TRADING_DAYS_PER_YEAR = 244
 _ANN_PERIOD10 = TRADING_DAYS_PER_YEAR / 10
 
 UNION_FILES = {
-    SIGNAL_KRONOS: DATA_DIR / "daily_signals_K_union.parquet",
+    SIGNAL_KRONOS: DATA_DIR / "daily_signals_K_mean_union.parquet",
     SIGNAL_MOM: DATA_DIR / "daily_signals_M_union.parquet",
     SIGNAL_REV: DATA_DIR / "daily_signals_R_union.parquet",
     SIGNAL_PLACEHOLDER: DATA_DIR / "daily_signals_P_union.parquet",
