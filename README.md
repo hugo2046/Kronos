@@ -49,6 +49,22 @@
 
 </div>
 
+---
+
+## 🇨🇳 本 Fork：A 股落地研究（先读这里）
+
+本仓库是 Kronos 的 fork，在其上做了 **6 轮 A 股量化选股的预注册实验**（全部封盘）。
+当前分支 `integration` = 上游代码 + `kronos_qlib` 数据层 + webui 改造；实验记录在各自的
+`feature/*` 分支上。
+
+**👉 [项目总览与分支索引](docs/项目总览与分支索引_20260812.md)** — 每个分支干了什么、
+跑出什么数、结论是什么、怎么继续。**新接手请从这一份开始读。**
+
+一句话结论：zero-shot Kronos-base 在 A 股截面上**没有可收割的独立 alpha**（信号本质接近
+含噪反动量代理，样本外证伪）；留下的价值是数据层、组合引擎与样本外验证方法论。
+
+---
+
 ## 📰 News
 *   🚩 **[2025.11.10]** Kronos has been accpeted by AAAI 2026.
 *   🚩 **[2025.08.17]** We have released the scripts for fine-tuning! Check them out to adapt Kronos to your own tasks.

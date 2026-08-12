@@ -1,0 +1,138 @@
+<svg viewBox="0 0 1400 800" xmlns="http://www.w3.org/2000/svg" font-family="'PingFang SC','Microsoft YaHei',system-ui,sans-serif">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#6B5E45"/>
+    </marker>
+    <marker id="arrR" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#B5493A"/>
+    </marker>
+    <marker id="arrG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#9A917F"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="1400" height="800" rx="14" fill="#F7F1DF"/>
+
+  <text x="30" y="42" font-size="21" font-weight="700" fill="#3A3226">Kronos 改造地图：五轮实验分别动了哪一层</text>
+  <text x="30" y="66" font-size="12" fill="#8A7F68">仿论文架构图口径 ｜ 蓝❄=冻结复用官方权重 · 橙=新增 · 红=替换 · 暗红虚线=删除重建 · 灰虚线=未探索</text>
+
+  <!-- ========== 主管线 ========== -->
+  <rect x="25" y="180" width="115" height="90" rx="10" fill="#FFFFFF" stroke="#B9AE95" stroke-width="1.5"/>
+  <text x="82" y="215" font-size="13" font-weight="600" fill="#3A3226" text-anchor="middle">输入窗口</text>
+  <text x="82" y="236" font-size="12" fill="#6B6152" text-anchor="middle">90 日 OHLCVA</text>
+  <line x1="140" y1="225" x2="168" y2="225" stroke="#6B5E45" stroke-width="1.8" marker-end="url(#arr)"/>
+
+  <rect x="172" y="165" width="185" height="120" rx="12" fill="#FFFFFF" stroke="#3D5A80" stroke-width="2.2"/>
+  <rect x="270" y="153" width="76" height="22" rx="11" fill="#D7E3F4" stroke="#3D5A80" stroke-width="1"/>
+  <text x="308" y="168" font-size="12" fill="#29496B" text-anchor="middle">❄ 冻结</text>
+  <text x="264" y="200" font-size="13.5" font-weight="700" fill="#29496B" text-anchor="middle">① K-line Tokenizer</text>
+  <text x="264" y="222" font-size="12" fill="#4A5A70" text-anchor="middle">Encoder + BSQ 分层量化</text>
+  <text x="264" y="241" font-size="11" fill="#7A8698" text-anchor="middle">s1: 2¹⁰ 码 · s2: 2¹⁰ 码</text>
+  <text x="264" y="272" font-size="10.5" fill="#8A7F68" text-anchor="middle">R1B · R2 · R3 · R4 · R5 原样复用</text>
+  <line x1="357" y1="225" x2="385" y2="225" stroke="#6B5E45" stroke-width="1.8" marker-end="url(#arr)"/>
+
+  <rect x="389" y="180" width="135" height="90" rx="10" fill="#FFFFFF" stroke="#B9AE95" stroke-width="1.5"/>
+  <rect x="404" y="200" width="16" height="16" rx="4" fill="#CFE6D8" stroke="#5F8F72"/>
+  <rect x="422" y="200" width="16" height="16" rx="4" fill="#F4E3B5" stroke="#B99C4D"/>
+  <rect x="448" y="200" width="16" height="16" rx="4" fill="#CFE6D8" stroke="#5F8F72"/>
+  <rect x="466" y="200" width="16" height="16" rx="4" fill="#F4E3B5" stroke="#B99C4D"/>
+  <text x="494" y="213" font-size="13" fill="#6B6152">…</text>
+  <text x="456" y="252" font-size="11.5" fill="#6B6152" text-anchor="middle">s1 / s2 离散 token 序列</text>
+  <line x1="524" y1="225" x2="552" y2="225" stroke="#6B5E45" stroke-width="1.8" marker-end="url(#arr)"/>
+
+  <rect x="556" y="165" width="205" height="120" rx="12" fill="#FFFFFF" stroke="#3D5A80" stroke-width="2.2"/>
+  <rect x="672" y="153" width="76" height="22" rx="11" fill="#D7E3F4" stroke="#3D5A80" stroke-width="1"/>
+  <text x="710" y="168" font-size="12" fill="#29496B" text-anchor="middle">❄ 冻结</text>
+  <text x="658" y="202" font-size="13.5" font-weight="700" fill="#29496B" text-anchor="middle">② Causal Transformer ×N</text>
+  <text x="658" y="224" font-size="12" fill="#4A5A70" text-anchor="middle">+ RMSNorm → 隐状态 h</text>
+  <text x="658" y="248" font-size="11" fill="#7A8698" text-anchor="middle">base：12 层 · d=832 · 102.3M</text>
+  <text x="560" y="305" font-size="11.5" font-weight="700" fill="#A03A2B">⚠ 五轮定位出的真瓶颈：表示的 regime 依赖</text>
+  <text x="560" y="322" font-size="10.5" fill="#A03A2B">（R3 的 B2 崩塌 + R5 样本外证伪，均指向此层）</text>
+
+  <line x1="761" y1="225" x2="798" y2="225" stroke="#6B5E45" stroke-width="1.8"/>
+  <circle cx="806" cy="225" r="5" fill="#6B5E45"/>
+  <text x="806" y="207" font-size="11" fill="#6B5E45" text-anchor="middle">h_t</text>
+
+  <!-- ========== 上路：原版生成路径 ========== -->
+  <path d="M 806 220 L 806 115 L 834 115" fill="none" stroke="#6B5E45" stroke-width="1.8" marker-end="url(#arr)"/>
+  <rect x="838" y="62" width="200" height="106" rx="12" fill="#FFFFFF" stroke="#3D5A80" stroke-width="2.2"/>
+  <rect x="950" y="50" width="76" height="22" rx="11" fill="#D7E3F4" stroke="#3D5A80" stroke-width="1"/>
+  <text x="988" y="65" font-size="12" fill="#29496B" text-anchor="middle">❄ 冻结</text>
+  <text x="938" y="96" font-size="13.5" font-weight="700" fill="#29496B" text-anchor="middle">③ 生成双头</text>
+  <text x="938" y="118" font-size="11.5" fill="#4A5A70" text-anchor="middle">Header s1 → Cross-Attn</text>
+  <text x="938" y="136" font-size="11.5" fill="#4A5A70" text-anchor="middle">→ Header s2（token 分布）</text>
+  <line x1="1038" y1="115" x2="1056" y2="115" stroke="#6B5E45" stroke-width="1.8" marker-end="url(#arr)"/>
+  <rect x="1060" y="62" width="130" height="106" rx="12" fill="#FFFFFF" stroke="#3D5A80" stroke-width="2.2"/>
+  <text x="1125" y="96" font-size="12.5" font-weight="600" fill="#29496B" text-anchor="middle">采样 ×N</text>
+  <text x="1125" y="116" font-size="11.5" fill="#4A5A70" text-anchor="middle">+ Decoder</text>
+  <text x="1125" y="134" font-size="11.5" fill="#4A5A70" text-anchor="middle">还原价格路径</text>
+  <line x1="1190" y1="115" x2="1208" y2="115" stroke="#6B5E45" stroke-width="1.8" marker-end="url(#arr)"/>
+
+  <rect x="1212" y="40" width="170" height="150" rx="12" fill="#FDEBD2" stroke="#C87F2F" stroke-width="2.2"/>
+  <rect x="1290" y="28" width="80" height="22" rx="11" fill="#F6D9AE" stroke="#C87F2F" stroke-width="1"/>
+  <text x="1330" y="43" font-size="12" fill="#8A5312" text-anchor="middle">＋ 新增</text>
+  <text x="1297" y="70" font-size="13" font-weight="700" fill="#8A5312" text-anchor="middle">④ 消费层（我们建）</text>
+  <text x="1297" y="92" font-size="10.8" fill="#8A5312" text-anchor="middle">四聚合 last/mean/max/min</text>
+  <text x="1297" y="109" font-size="10.8" fill="#8A5312" text-anchor="middle">÷ 现价 → 截面信号</text>
+  <text x="1297" y="130" font-size="10.8" fill="#8A5312" text-anchor="middle">long-only top-k/drop-n 引擎</text>
+  <text x="1297" y="147" font-size="10.8" fill="#8A5312" text-anchor="middle">双基准 AER / IR</text>
+  <text x="1297" y="172" font-size="10.5" fill="#8A7F68" text-anchor="middle">R2 · R4 · R5</text>
+  <text x="1297" y="212" font-size="11" fill="#4C7A4C" text-anchor="middle">论文窗口 +8.99% ✅</text>
+  <text x="1297" y="229" font-size="11" fill="#A03A2B" text-anchor="middle">样本外 −14.3% ❌（R5 证伪）</text>
+
+  <!-- ========== 中路：替换头 ========== -->
+  <path d="M 806 230 L 806 375 L 834 375" fill="none" stroke="#B5493A" stroke-width="1.8" marker-end="url(#arrR)"/>
+  <rect x="838" y="322" width="265" height="106" rx="12" fill="#FAE3DF" stroke="#B5493A" stroke-width="2.2"/>
+  <rect x="946" y="310" width="150" height="22" rx="11" fill="#F3CCC5" stroke="#B5493A" stroke-width="1"/>
+  <text x="1021" y="325" font-size="12" fill="#7E2A1E" text-anchor="middle">⇄ 替换（③ 被摘除）</text>
+  <text x="970" y="356" font-size="12" font-weight="700" fill="#7E2A1E" text-anchor="middle">判别头，直接接在 ② 的 h 上</text>
+  <text x="970" y="378" font-size="11" fill="#8E4437" text-anchor="middle">R1-B 分类头 ｜ R3-B2 linear probe（833 参数）</text>
+  <text x="970" y="396" font-size="11" fill="#8E4437" text-anchor="middle">R3-B3 KDA×2（delta-rule 记忆 + 细粒度衰减门）</text>
+  <line x1="1103" y1="375" x2="1121" y2="375" stroke="#B5493A" stroke-width="1.8" marker-end="url(#arrR)"/>
+  <rect x="1125" y="337" width="120" height="76" rx="10" fill="#FFFFFF" stroke="#B9AE95" stroke-width="1.5"/>
+  <text x="1185" y="370" font-size="12.5" font-weight="600" fill="#3A3226" text-anchor="middle">截面得分</text>
+  <text x="1185" y="390" font-size="11" fill="#6B6152" text-anchor="middle">（监督训练）</text>
+  <text x="838" y="452" font-size="11" fill="#A03A2B">多空 / long-only 两口径均未达标；B2（仅 833 参数）样本外崩塌 ⇒ 把瓶颈定位到 ②，与头架构无关</text>
+
+  <!-- ========== 下路：未探索 ========== -->
+  <path d="M 806 230 L 806 531 L 834 531" fill="none" stroke="#9A917F" stroke-width="1.6" stroke-dasharray="6 4" marker-end="url(#arrG)"/>
+  <rect x="838" y="496" width="330" height="70" rx="12" fill="#F0EBDC" stroke="#9A917F" stroke-width="1.6" stroke-dasharray="7 5"/>
+  <text x="1003" y="524" font-size="12" fill="#6B6152" text-anchor="middle">token 分布直接读出：熵 / 集中度 / 概率加权期望</text>
+  <text x="1003" y="546" font-size="11" fill="#8A7F68" text-anchor="middle">—— 未探索；仍是 ② 的读出，绕不过其瓶颈</text>
+
+  <!-- ========== 方案A：删除重建 ========== -->
+  <rect x="25" y="496" width="560" height="92" rx="12" fill="#FBF0EC" stroke="#8E2F23" stroke-width="1.8" stroke-dasharray="8 5"/>
+  <rect x="45" y="484" width="104" height="22" rx="11" fill="#F0D4CC" stroke="#8E2F23" stroke-width="1"/>
+  <text x="97" y="499" font-size="12" fill="#7E2A1E" text-anchor="middle">✂ 删除重建</text>
+  <text x="45" y="528" font-size="12.5" font-weight="700" fill="#7E2A1E">R1-方案A（wiw 思路，刻意设为对照组）</text>
+  <text x="45" y="549" font-size="11.5" fill="#8E4437">①②③ 全部删除，从头训练 0.68M 判别式模型（连续特征 + 小 Transformer + 分类头）</text>
+  <text x="45" y="570" font-size="11.5" fill="#8E4437">结果 A ≈ B（macro-F1 差 0.0037）：数据量小时，删掉预训练不亏也不赚</text>
+
+  <!-- ========== 图例 ========== -->
+  <line x1="30" y1="612" x2="1370" y2="612" stroke="#D8CFB8" stroke-width="1.2"/>
+  <text x="30" y="638" font-size="13" font-weight="700" fill="#3A3226">五轮实验索引</text>
+  <g font-size="11.5" fill="#5A5140">
+    <rect x="30" y="650" width="30" height="19" rx="9" fill="#EDE5CE" stroke="#B9AE95"/><text x="45" y="664" text-anchor="middle" font-weight="700">R1</text>
+    <text x="68" y="664">方向分类头 A/B —— 单标的择时分类证伪</text>
+    <rect x="30" y="676" width="30" height="19" rx="9" fill="#EDE5CE" stroke="#B9AE95"/><text x="45" y="690" text-anchor="middle" font-weight="700">R2</text>
+    <text x="68" y="690">zero-shot 截面（10 日多空）—— 未过门槛，后证系口径不可比</text>
+    <rect x="30" y="702" width="30" height="19" rx="9" fill="#EDE5CE" stroke="#B9AE95"/><text x="45" y="716" text-anchor="middle" font-weight="700">R3</text>
+    <text x="68" y="716">冻结表示 + KDA 头五臂 —— 改造未达标，定位瓶颈在 ②</text>
+    <rect x="30" y="728" width="30" height="19" rx="9" fill="#EDE5CE" stroke="#B9AE95"/><text x="45" y="742" text-anchor="middle" font-weight="700">R4</text>
+    <text x="68" y="742">论文口径复现（每日 long-only）—— +8.99% / IR 0.78，方向可复现</text>
+    <rect x="30" y="754" width="30" height="19" rx="9" fill="#EDE5CE" stroke="#B9AE95"/><text x="45" y="768" text-anchor="middle" font-weight="700">R5</text>
+    <text x="68" y="768">canonical baseline + 真样本外 —— 四变体全塌方，封盘</text>
+  </g>
+  <g font-size="11.5" fill="#5A5140">
+    <rect x="740" y="650" width="26" height="17" rx="5" fill="#FFFFFF" stroke="#3D5A80" stroke-width="2"/>
+    <text x="776" y="663">❄ 冻结复用 —— 官方权重原样，五轮均未动 ①②</text>
+    <rect x="740" y="676" width="26" height="17" rx="5" fill="#FDEBD2" stroke="#C87F2F" stroke-width="2"/>
+    <text x="776" y="689">新增（组合工程 / 消费层）—— 唯一产生过正收益的改动</text>
+    <rect x="740" y="702" width="26" height="17" rx="5" fill="#FAE3DF" stroke="#B5493A" stroke-width="2"/>
+    <text x="776" y="715">替换（判别头）—— 两种评估口径下全部未达标</text>
+    <rect x="740" y="728" width="26" height="17" rx="5" fill="#FBF0EC" stroke="#8E2F23" stroke-width="1.6" stroke-dasharray="5 3"/>
+    <text x="776" y="741">删除重建（对照组）—— 证明预训练在小数据下红利有限</text>
+    <rect x="740" y="754" width="26" height="17" rx="5" fill="#F0EBDC" stroke="#9A917F" stroke-width="1.6" stroke-dasharray="5 3"/>
+    <text x="776" y="767">未探索 —— token 分布统计量读出</text>
+  </g>
+</svg>
