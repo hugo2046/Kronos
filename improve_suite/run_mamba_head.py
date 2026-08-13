@@ -111,12 +111,20 @@ def _load_backbone(device: str):
 
 def _extract_day_hidden(backbone, x_norm: torch.Tensor, stamp: torch.Tensor,
                         device: str, chunk: int = 128) -> torch.Tensor:
-    """对一个调仓日的 [N,90,6] 分块过冻结主干，返回 CPU 上 [N,90,832]。"""
+    """对一个调仓日的 [N,90,6] 分块过冻结主干，返回 CPU 上 [N,90,832]。
+
+    每日末尾 ``empty_cache`` 释放碎片化显存——长序列（train+es ~580 日）逐日前向
+    会留下碎片，实测会在 es 段触发异常（数据本身无误，见对拍诊断）。
+    """
     hiddens: list[torch.Tensor] = []
     with torch.no_grad():
         for i in range(0, len(x_norm), chunk):
-            h = backbone.extract(x_norm[i:i + chunk].to(device), stamp[i:i + chunk].to(device))
-            hiddens.append(h.cpu())
+            xb = x_norm[i:i + chunk].to(device)
+            sb = stamp[i:i + chunk].to(device)
+            hiddens.append(backbone.extract(xb, sb).cpu())
+            del xb, sb
+    if device.startswith("cuda"):
+        torch.cuda.empty_cache()
     return torch.cat(hiddens, dim=0)
 
 
@@ -145,22 +153,34 @@ def build_and_save_cache(backbone, device: str, *, verify_n: int = 3) -> dict:
     # —— train 扁平 ——
     tr_hidden, tr_y = [], []
     refs: list[dict] = []
-    for b in train_batches:
+    n_train_days = len(train_batches)
+    for di, b in enumerate(train_batches):
         h = _extract_day_hidden(backbone, b.x_norm, b.stamp, device)  # [N,90,832]
         tr_hidden.append(h)
         tr_y.append(torch.from_numpy(b.y_z))
-        # 收集对拍参考样本（前若干日各抽 1）
+        # 收集对拍参考样本（前若干日各抽 1）—— 切片保留 batch 维 [1,90,*]，避免
+        # verify 时 backbone.extract 收到 2D 张量（encode 要求 [B,T,d_in]）。
         if len(refs) < verify_n:
             idx = 0
-            refs.append({"x": b.x_norm[idx].clone(), "stamp": b.stamp[idx].clone(), "hidden": h[idx].clone()})
+            refs.append({"x": b.x_norm[idx:idx + 1].clone(),
+                         "stamp": b.stamp[idx:idx + 1].clone(),
+                         "hidden": h[idx:idx + 1].clone()})
+        if (di + 1) % 50 == 0 or di == 0:
+            logger.info(f"  cache train [{di + 1}/{n_train_days}] {b.date.date()} "
+                        f"GPU={torch.cuda.memory_allocated() / 1e9:.1f}GB")
     train_hidden = torch.cat(tr_hidden, dim=0)
     train_y = torch.cat(tr_y, dim=0)
+    del tr_hidden, tr_y  # 释放逐日引用，降低 es 段前的内存压力
 
     # —— es 按日 ——
     es_days: list[dict] = []
-    for b in es_batches:
+    n_es_days = len(es_batches)
+    for di, b in enumerate(es_batches):
         h = _extract_day_hidden(backbone, b.x_norm, b.stamp, device)
         es_days.append({"date": b.date, "hidden": h, "fwd_ret_raw": b.fwd_ret_raw, "codes": b.codes})
+        if (di + 1) % 20 == 0 or di == 0:
+            logger.info(f"  cache es [{di + 1}/{n_es_days}] {b.date.date()} "
+                        f"GPU={torch.cuda.memory_allocated() / 1e9:.1f}GB")
 
     cache = {"train": {"hidden": train_hidden, "y": train_y}, "es": es_days, "refs": refs}
 

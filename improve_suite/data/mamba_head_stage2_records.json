@@ -1,0 +1,31 @@
+{
+  "stage": "2_train",
+  "records": {
+    "T1_s42": {
+      "n_trainable": 1089793,
+      "best_es_rankic": 0.10867058618160086,
+      "n_epochs_run": 7
+    },
+    "T1_s43": {
+      "n_trainable": 1089793,
+      "best_es_rankic": 0.10777265775662229,
+      "n_epochs_run": 7
+    },
+    "T1_s44": {
+      "n_trainable": 1089793,
+      "best_es_rankic": 0.12531677718014442,
+      "n_epochs_run": 6
+    },
+    "D1_s43": {
+      "n_trainable": 15275745,
+      "best_es_rankic": 0.05933503300021888,
+      "n_epochs_run": 8
+    },
+    "D1_s44": {
+      "n_trainable": 15275745,
+      "best_es_rankic": 0.06915471841186617,
+      "n_epochs_run": 9
+    }
+  },
+  "note": "D1 在线训练骨干（B3KronosKdaHead.forward 不可改，无法吃缓存）"
+}

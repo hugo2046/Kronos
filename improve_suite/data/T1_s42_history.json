@@ -1,0 +1,52 @@
+{
+  "arm": "T1",
+  "seed": 42,
+  "n_trainable": 1089793,
+  "best_es_rankic": 0.10867058618160086,
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 1.0579997405490944,
+      "es_rankic": 0.08356462617235004
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.9943457799684763,
+      "es_rankic": 0.10867058618160086
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.9846005354840612,
+      "es_rankic": 0.09294214730986239
+    },
+    {
+      "epoch": 4,
+      "train_loss": 0.9677710612110131,
+      "es_rankic": 0.10254641887521022
+    },
+    {
+      "epoch": 5,
+      "train_loss": 0.9286175399423727,
+      "es_rankic": 0.07231057644892074
+    },
+    {
+      "epoch": 6,
+      "train_loss": 0.8233748387187017,
+      "es_rankic": 0.055250927445899566
+    },
+    {
+      "epoch": 7,
+      "train_loss": 0.5759999742849768,
+      "es_rankic": 0.02981270032392137
+    }
+  ],
+  "n_epochs_run": 7,
+  "cfg": {
+    "lr": 0.0003,
+    "weight_decay": 0.01,
+    "batch_size": 128,
+    "epochs": 50,
+    "patience": 5,
+    "seed": 42
+  }
+}
