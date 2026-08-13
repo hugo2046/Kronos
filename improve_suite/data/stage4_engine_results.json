@@ -1,0 +1,23 @@
+{
+  "stage": "4_engine",
+  "level": "R-1",
+  "oos_perf_idx": {
+    "name": "stage4_R-1_oos",
+    "n_days": 259,
+    "aer": -0.0085125833983839,
+    "ir": -0.04531613918139083,
+    "max_drawdown": -0.10422436074587693,
+    "daily_turnover": 0.10282295933709695
+  },
+  "oos_perf_ew": {
+    "name": "stage4_R-1_oos",
+    "n_days": 260,
+    "aer": -0.020628724934786402,
+    "ir": -0.30517378090991937,
+    "max_drawdown": -0.08927250463815417,
+    "daily_turnover": 0.10282295933709695
+  },
+  "b1_oos_ew": -0.1374,
+  "survives": false,
+  "verdict": "未达引擎判据（oos AER(等权)=-2.06% ≤ -3.74%）"
+}
