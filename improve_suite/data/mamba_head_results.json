@@ -1,0 +1,528 @@
+{
+  "experiment": "mamba_head_b3_extension",
+  "date": "2026-08-13",
+  "models": [
+    "T0",
+    "T1_s42",
+    "T1_s43",
+    "T1_s44",
+    "D1_s43",
+    "D1_s44"
+  ],
+  "engine": {
+    "csi300": {
+      "cfg": {
+        "top_k": 50,
+        "drop_n": 5,
+        "min_hold": 5,
+        "cost_bps": 15.0
+      },
+      "index": "000300.SH",
+      "equal_weight": "同池等权"
+    },
+    "csi500": {
+      "cfg": {
+        "top_k": 100,
+        "drop_n": 10,
+        "min_hold": 5,
+        "cost_bps": 15.0
+      },
+      "index": "000905.SH",
+      "equal_weight": "同池等权"
+    }
+  },
+  "windows": {
+    "paper": "2024-07-01~2025-06-30",
+    "oos": "2025-07-01~2026-07-24"
+  },
+  "results": {
+    "T0": {
+      "paper": {
+        "csi300": {
+          "perf_idx": {
+            "name": "csi300_paper_idx",
+            "n_days": 241,
+            "aer": -0.09199746197232528,
+            "ir": -1.188753006237083,
+            "max_drawdown": -0.1366725237762283,
+            "daily_turnover": 0.10219826832536824
+          },
+          "perf_ew": {
+            "name": "csi300_paper_ew",
+            "n_days": 242,
+            "aer": -0.13013894211178467,
+            "ir": -1.543110162446984,
+            "max_drawdown": -0.17372071536303713,
+            "daily_turnover": 0.10219826832536824
+          }
+        },
+        "csi500": {
+          "perf_idx": {
+            "name": "csi500_paper_idx",
+            "n_days": 241,
+            "aer": -0.05745782001512911,
+            "ir": -1.0162885805163948,
+            "max_drawdown": -0.07225331760394615,
+            "daily_turnover": 0.10275779667595202
+          },
+          "perf_ew": {
+            "name": "csi500_paper_ew",
+            "n_days": 242,
+            "aer": -0.12005693333832956,
+            "ir": -2.0897370446468937,
+            "max_drawdown": -0.1256813187242849,
+            "daily_turnover": 0.10275779667595202
+          }
+        }
+      },
+      "oos": {
+        "csi300": {
+          "perf_idx": {
+            "name": "csi300_oos_idx",
+            "n_days": 259,
+            "aer": 0.03534068981539207,
+            "ir": 0.41665795420175644,
+            "max_drawdown": -0.0894577178411411,
+            "daily_turnover": 0.10263525024056434
+          },
+          "perf_ew": {
+            "name": "csi300_oos_ew",
+            "n_days": 260,
+            "aer": 0.018945975286796646,
+            "ir": 0.23084297516196467,
+            "max_drawdown": -0.09587735082490101,
+            "daily_turnover": 0.10263525024056434
+          }
+        },
+        "csi500": {
+          "perf_idx": {
+            "name": "csi500_oos_idx",
+            "n_days": 259,
+            "aer": 0.02436830502797438,
+            "ir": 0.4025837569227273,
+            "max_drawdown": -0.07544693798770652,
+            "daily_turnover": 0.10208921065697303
+          },
+          "perf_ew": {
+            "name": "csi500_oos_ew",
+            "n_days": 260,
+            "aer": 0.03545423425617211,
+            "ir": 0.4496685076760262,
+            "max_drawdown": -0.08973347411581911,
+            "daily_turnover": 0.10208921065697303
+          }
+        }
+      }
+    },
+    "T1_s42": {
+      "paper": {
+        "csi300": {
+          "perf_idx": {
+            "name": "csi300_paper_idx",
+            "n_days": 241,
+            "aer": -0.04253339552110491,
+            "ir": -0.6214167184177001,
+            "max_drawdown": -0.07589232960917514,
+            "daily_turnover": 0.10253295798070175
+          },
+          "perf_ew": {
+            "name": "csi300_paper_ew",
+            "n_days": 242,
+            "aer": -0.08194883596043312,
+            "ir": -1.3553677127341461,
+            "max_drawdown": -0.09939236856501377,
+            "daily_turnover": 0.10253295798070175
+          }
+        },
+        "csi500": {
+          "perf_idx": {
+            "name": "csi500_paper_idx",
+            "n_days": 241,
+            "aer": -0.02329594630027132,
+            "ir": -0.438046798887755,
+            "max_drawdown": -0.07239119923204851,
+            "daily_turnover": 0.10288413718712232
+          },
+          "perf_ew": {
+            "name": "csi500_paper_ew",
+            "n_days": 242,
+            "aer": -0.08807693803002414,
+            "ir": -1.7984296572516154,
+            "max_drawdown": -0.0993950316957628,
+            "daily_turnover": 0.10288413718712232
+          }
+        }
+      },
+      "oos": {
+        "csi300": {
+          "perf_idx": {
+            "name": "csi300_oos_idx",
+            "n_days": 259,
+            "aer": -0.21414820321245298,
+            "ir": -2.6936874427297663,
+            "max_drawdown": -0.2551941602925206,
+            "daily_turnover": 0.10281286660868388
+          },
+          "perf_ew": {
+            "name": "csi300_oos_ew",
+            "n_days": 260,
+            "aer": -0.22372426673221268,
+            "ir": -3.6957840679792344,
+            "max_drawdown": -0.24205499879155212,
+            "daily_turnover": 0.10281286660868388
+          }
+        },
+        "csi500": {
+          "perf_idx": {
+            "name": "csi500_oos_idx",
+            "n_days": 259,
+            "aer": -0.15757319550173599,
+            "ir": -1.7405089751056442,
+            "max_drawdown": -0.230640539835266,
+            "daily_turnover": 0.10407736129485644
+          },
+          "perf_ew": {
+            "name": "csi500_oos_ew",
+            "n_days": 260,
+            "aer": -0.14390858911629512,
+            "ir": -2.762011259001478,
+            "max_drawdown": -0.15934330414230502,
+            "daily_turnover": 0.10407736129485644
+          }
+        }
+      }
+    },
+    "T1_s43": {
+      "paper": {
+        "csi300": {
+          "perf_idx": {
+            "name": "csi300_paper_idx",
+            "n_days": 241,
+            "aer": -0.1162035343104425,
+            "ir": -1.654706810125054,
+            "max_drawdown": -0.14265392611185823,
+            "daily_turnover": 0.10157009284974129
+          },
+          "perf_ew": {
+            "name": "csi300_paper_ew",
+            "n_days": 242,
+            "aer": -0.15307832910966757,
+            "ir": -2.0165444599959312,
+            "max_drawdown": -0.17935116720755762,
+            "daily_turnover": 0.10157009284974129
+          }
+        },
+        "csi500": {
+          "perf_idx": {
+            "name": "csi500_paper_idx",
+            "n_days": 241,
+            "aer": -0.07044655458282612,
+            "ir": -1.1614431745489167,
+            "max_drawdown": -0.10993798695189472,
+            "daily_turnover": 0.10165605487779153
+          },
+          "perf_ew": {
+            "name": "csi500_paper_ew",
+            "n_days": 242,
+            "aer": -0.1324105212507627,
+            "ir": -2.0111047149515104,
+            "max_drawdown": -0.1506168631511573,
+            "daily_turnover": 0.10165605487779153
+          }
+        }
+      },
+      "oos": {
+        "csi300": {
+          "perf_idx": {
+            "name": "csi300_oos_idx",
+            "n_days": 259,
+            "aer": -0.06010057691895632,
+            "ir": -0.5798365679363823,
+            "max_drawdown": -0.1381849401468277,
+            "daily_turnover": 0.10239940898922774
+          },
+          "perf_ew": {
+            "name": "csi300_oos_ew",
+            "n_days": 260,
+            "aer": -0.07588802629844393,
+            "ir": -0.5932271259708258,
+            "max_drawdown": -0.1416610141481246,
+            "daily_turnover": 0.10239940898922774
+          }
+        },
+        "csi500": {
+          "perf_idx": {
+            "name": "csi500_oos_idx",
+            "n_days": 259,
+            "aer": -0.018919240674902915,
+            "ir": -0.20711186114997832,
+            "max_drawdown": -0.07153969906134694,
+            "daily_turnover": 0.10307127624177016
+          },
+          "perf_ew": {
+            "name": "csi500_oos_ew",
+            "n_days": 260,
+            "aer": -0.011314736302145412,
+            "ir": -0.029078659885092624,
+            "max_drawdown": -0.1676290027612819,
+            "daily_turnover": 0.10307127624177016
+          }
+        }
+      }
+    },
+    "T1_s44": {
+      "paper": {
+        "csi300": {
+          "perf_idx": {
+            "name": "csi300_paper_idx",
+            "n_days": 241,
+            "aer": -0.14972936889239663,
+            "ir": -2.2372686109379036,
+            "max_drawdown": -0.17079252901627007,
+            "daily_turnover": 0.1017700678491888
+          },
+          "perf_ew": {
+            "name": "csi300_paper_ew",
+            "n_days": 242,
+            "aer": -0.18574086067577833,
+            "ir": -2.2703095569919443,
+            "max_drawdown": -0.20595303617381344,
+            "daily_turnover": 0.1017700678491888
+          }
+        },
+        "csi500": {
+          "perf_idx": {
+            "name": "csi500_paper_idx",
+            "n_days": 241,
+            "aer": -0.06821348437239882,
+            "ir": -1.2162038505317612,
+            "max_drawdown": -0.08598388803836299,
+            "daily_turnover": 0.10255641514851042
+          },
+          "perf_ew": {
+            "name": "csi500_paper_ew",
+            "n_days": 242,
+            "aer": -0.13025870483219137,
+            "ir": -2.1441494052999865,
+            "max_drawdown": -0.13601392172902738,
+            "daily_turnover": 0.10255641514851042
+          }
+        }
+      },
+      "oos": {
+        "csi300": {
+          "perf_idx": {
+            "name": "csi300_oos_idx",
+            "n_days": 259,
+            "aer": -0.1537028011500733,
+            "ir": -1.8007012269906357,
+            "max_drawdown": -0.191325429932516,
+            "daily_turnover": 0.1027250736951828
+          },
+          "perf_ew": {
+            "name": "csi300_oos_ew",
+            "n_days": 260,
+            "aer": -0.1644859663924515,
+            "ir": -2.3641532251966217,
+            "max_drawdown": -0.180034327599235,
+            "daily_turnover": 0.1027250736951828
+          }
+        },
+        "csi500": {
+          "perf_idx": {
+            "name": "csi500_oos_idx",
+            "n_days": 259,
+            "aer": -0.06067580017211194,
+            "ir": -0.6013393809241147,
+            "max_drawdown": -0.15335049800471323,
+            "daily_turnover": 0.10310061665681693
+          },
+          "perf_ew": {
+            "name": "csi500_oos_ew",
+            "n_days": 260,
+            "aer": -0.04595243311316266,
+            "ir": -0.7752558321860956,
+            "max_drawdown": -0.0718498319920452,
+            "daily_turnover": 0.10310061665681693
+          }
+        }
+      }
+    },
+    "D1_s43": {
+      "paper": {
+        "csi300": {
+          "perf_idx": {
+            "name": "csi300_paper_idx",
+            "n_days": 241,
+            "aer": 0.09442712187174251,
+            "ir": 1.1673048785339781,
+            "max_drawdown": -0.05476391543591275,
+            "daily_turnover": 0.10199804499375918
+          },
+          "perf_ew": {
+            "name": "csi300_paper_ew",
+            "n_days": 242,
+            "aer": 0.04981566228419676,
+            "ir": 0.8120137705682332,
+            "max_drawdown": -0.05509074727157126,
+            "daily_turnover": 0.10199804499375918
+          }
+        },
+        "csi500": {
+          "perf_idx": {
+            "name": "csi500_paper_idx",
+            "n_days": 241,
+            "aer": -0.020934752890219177,
+            "ir": -0.3842496436307737,
+            "max_drawdown": -0.05115104726540676,
+            "daily_turnover": 0.10304189938282178
+          },
+          "perf_ew": {
+            "name": "csi500_paper_ew",
+            "n_days": 242,
+            "aer": -0.0856462199083502,
+            "ir": -1.9222387171198336,
+            "max_drawdown": -0.09191797811860347,
+            "daily_turnover": 0.10304189938282178
+          }
+        }
+      },
+      "oos": {
+        "csi300": {
+          "perf_idx": {
+            "name": "csi300_oos_idx",
+            "n_days": 259,
+            "aer": -0.1555584275474493,
+            "ir": -1.521515221246565,
+            "max_drawdown": -0.2236716819651614,
+            "daily_turnover": 0.10305436820938037
+          },
+          "perf_ew": {
+            "name": "csi300_oos_ew",
+            "n_days": 260,
+            "aer": -0.16554609079149285,
+            "ir": -2.107541154161517,
+            "max_drawdown": -0.19676449096652127,
+            "daily_turnover": 0.10305436820938037
+          }
+        },
+        "csi500": {
+          "perf_idx": {
+            "name": "csi500_oos_idx",
+            "n_days": 259,
+            "aer": -0.13489190294514852,
+            "ir": -1.4454431732860082,
+            "max_drawdown": -0.22782271365435236,
+            "daily_turnover": 0.10167793777699653
+          },
+          "perf_ew": {
+            "name": "csi500_oos_ew",
+            "n_days": 260,
+            "aer": -0.12103185898119828,
+            "ir": -2.154573871415131,
+            "max_drawdown": -0.14930013391416208,
+            "daily_turnover": 0.10167793777699653
+          }
+        }
+      }
+    },
+    "D1_s44": {
+      "paper": {
+        "csi300": {
+          "perf_idx": {
+            "name": "csi300_paper_idx",
+            "n_days": 241,
+            "aer": -0.002368364883379215,
+            "ir": 0.007785397945380144,
+            "max_drawdown": -0.0686704428823709,
+            "daily_turnover": 0.10291227581333523
+          },
+          "perf_ew": {
+            "name": "csi300_paper_ew",
+            "n_days": 242,
+            "aer": -0.04308411471608298,
+            "ir": -0.6402214196837811,
+            "max_drawdown": -0.07719044142164833,
+            "daily_turnover": 0.10291227581333523
+          }
+        },
+        "csi500": {
+          "perf_idx": {
+            "name": "csi500_paper_idx",
+            "n_days": 241,
+            "aer": -0.0013022207531608876,
+            "ir": 0.0028522195913217295,
+            "max_drawdown": -0.03859086626966679,
+            "daily_turnover": 0.10271921048849082
+          },
+          "perf_ew": {
+            "name": "csi500_paper_ew",
+            "n_days": 242,
+            "aer": -0.06747607052992155,
+            "ir": -1.3501665804064935,
+            "max_drawdown": -0.0657222965112596,
+            "daily_turnover": 0.10271921048849082
+          }
+        }
+      },
+      "oos": {
+        "csi300": {
+          "perf_idx": {
+            "name": "csi300_oos_idx",
+            "n_days": 259,
+            "aer": -0.13578714901025768,
+            "ir": -1.3567985745464035,
+            "max_drawdown": -0.204621417635233,
+            "daily_turnover": 0.10211386190584072
+          },
+          "perf_ew": {
+            "name": "csi300_oos_ew",
+            "n_days": 260,
+            "aer": -0.14634640368454022,
+            "ir": -1.8600833692367782,
+            "max_drawdown": -0.17235926749395647,
+            "daily_turnover": 0.10211386190584072
+          }
+        },
+        "csi500": {
+          "perf_idx": {
+            "name": "csi500_oos_idx",
+            "n_days": 259,
+            "aer": -0.20133421106905702,
+            "ir": -2.001749510873707,
+            "max_drawdown": -0.2926056341901053,
+            "daily_turnover": 0.10305565976752684
+          },
+          "perf_ew": {
+            "name": "csi500_oos_ew",
+            "n_days": 260,
+            "aer": -0.1880356532024401,
+            "ir": -2.7986718406305733,
+            "max_drawdown": -0.22396850506507604,
+            "daily_turnover": 0.10305565976752684
+          }
+        }
+      }
+    }
+  },
+  "judgment": {
+    "median_seed": 44,
+    "seed_scores_oos_aer_ew_mean": {
+      "s42": -0.1838164279242539,
+      "s43": -0.04360138130029467,
+      "s44": -0.10521919975280708
+    },
+    "b3_t0_oos_aer_ew": {
+      "csi300": 0.018945975286796646,
+      "csi500": 0.03545423425617211
+    },
+    "criterion_1_survive": false,
+    "criterion_2_improve_2pp": false,
+    "criterion_3_representation": false,
+    "criterion_4_d1_fragile": true,
+    "criterion_5_all_fail": true,
+    "kda_positive_seeds_csi300": 1,
+    "mamba_positive_seeds_csi300": 0
+  },
+  "capacity_note": "B3/D1 head 实测 15.3M 可训练参数（非计划 §0 所述 ~1M）；T1=1.09M。T1↔B3/D1 对照被容量混淆（~14×），判读降级为'机制+容量联合差异'，详见结果文档。"
+}
