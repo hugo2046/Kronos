@@ -1,0 +1,29 @@
+{
+  "n_universe": 759,
+  "n_fetched": 757,
+  "coverage": 0.9974,
+  "n_train_symbols": 755,
+  "n_val_symbols": 755,
+  "n_rows_train": 1809268,
+  "n_rows_val": 85149,
+  "train_range": [
+    "2014-01-02",
+    "2024-12-31"
+  ],
+  "val_range": [
+    "2025-01-02",
+    "2025-06-30"
+  ],
+  "n_dropped_nan_rows": 46,
+  "n_short_symbols": 2,
+  "dataset_path": "/home/user/workspace/Kronos/finetune_suite/data",
+  "fields": [
+    "$open",
+    "$high",
+    "$low",
+    "$close",
+    "$volume",
+    "$amount"
+  ],
+  "universe_rule": "csi300 PIT union at each 01-01/07-01, 2011~2025"
+}

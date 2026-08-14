@@ -1,0 +1,147 @@
+import os
+from pathlib import Path
+
+_SUITE_DIR = Path(__file__).resolve().parent
+
+
+class Config:
+    """
+    Configuration class for the entire project.
+
+    复制自 finetune/config.py，仅改计划 §2 声明的字段（其余与官方逐字一致）：
+    1. train/val 时间窗 = 计划 §1 冻结窗口（2011-01-01~2024-12-31 /
+       2025-01-01~2025-06-30）；
+    2. epochs = 15（两阶段同，微调非从头训 + 夜间预算，跑前冻结；官方 30）；
+    3. 预训练底座 = Kronos-base + Tokenizer-base（用户拍板 base 规格，
+       与 paper_replication/config.yaml 的 model_name/tokenizer_name 同源；
+       官方默认 small + Tokenizer-base）；
+    4. dataset_path / save_path 指向 finetune_suite/data|outputs（绝对路径，
+       免 cwd 依赖）；
+    5. use_comet = False（无 Comet 凭据，不联网实验跟踪）；
+    6. dataset_end_time 对齐 val 末 2025-06-30（官方 2025-06-05；本套件
+       数据边界由 build_dataset.py 落盘决定，该字段仅作声明性边界）。
+    """
+
+    def __init__(self):
+        # =================================================================
+        # Data & Feature Parameters
+        # =================================================================
+        # TODO: Update this path to your Qlib data directory.
+        self.qlib_data_path = "~/.qlib/qlib_data/cn_data"
+        self.instrument = 'csi300'
+
+        # Overall time range for data loading from Qlib.
+        self.dataset_begin_time = "2011-01-01"
+        self.dataset_end_time = '2025-06-30'
+
+        # Sliding window parameters for creating samples.
+        self.lookback_window = 90  # Number of past time steps for input.
+        self.predict_window = 10  # Number of future time steps for prediction.
+        self.max_context = 512  # Maximum context length for the model.
+
+        # Features to be used from the raw data.
+        self.feature_list = ['open', 'high', 'low', 'close', 'vol', 'amt']
+        # Time-based features to be generated.
+        self.time_feature_list = ['minute', 'hour', 'weekday', 'day', 'month']
+
+        # =================================================================
+        # Dataset Splitting & Paths
+        # =================================================================
+        # Note: The validation/test set starts earlier than the training/validation set ends
+        # to account for the `lookback_window`.
+        self.train_time_range = ["2011-01-01", "2024-12-31"]
+        self.val_time_range = ["2025-01-01", "2025-06-30"]
+        self.test_time_range = ["2024-04-01", "2025-06-05"]
+        self.backtest_time_range = ["2024-07-01", "2025-06-05"]
+
+        # Directory to save the processed, pickled datasets.
+        self.dataset_path = str(_SUITE_DIR / "data")
+
+        # =================================================================
+        # Training Hyperparameters
+        # =================================================================
+        self.clip = 5.0  # Clipping value for normalized data to prevent outliers.
+
+        self.epochs = 15
+        self.log_interval = 100  # Log training status every N batches.
+        self.batch_size = 50  # Batch size per GPU.
+
+        # Number of samples to draw for one "epoch" of training/validation.
+        # This is useful for large datasets where a true epoch is too long.
+        self.n_train_iter = 2000 * self.batch_size
+        self.n_val_iter = 400 * self.batch_size
+
+        # Learning rates for different model components.
+        self.tokenizer_learning_rate = 2e-4
+        self.predictor_learning_rate = 4e-5
+
+        # Gradient accumulation to simulate a larger batch size.
+        self.accumulation_steps = 1
+
+        # AdamW optimizer parameters.
+        self.adam_beta1 = 0.9
+        self.adam_beta2 = 0.95
+        self.adam_weight_decay = 0.1
+
+        # Miscellaneous
+        self.seed = 100  # Global random seed for reproducibility.
+
+        # =================================================================
+        # Experiment Logging & Saving
+        # =================================================================
+        self.use_comet = False  # finetune_suite：无 Comet 凭据，关闭联网跟踪
+        self.comet_config = {
+            # It is highly recommended to load secrets from environment variables
+            # for security purposes. Example: os.getenv("COMET_API_KEY")
+            "api_key": "YOUR_COMET_API_KEY",
+            "project_name": "Kronos-Finetune-Demo",
+            "workspace": "your_comet_workspace"  # TODO: Change to your Comet ML workspace name
+        }
+        self.comet_tag = 'finetune_suite_f1'
+        self.comet_name = 'finetune_suite_f1'
+
+        # Base directory for saving model checkpoints and results.
+        # Using a general 'outputs' directory is a common practice.
+        self.save_path = str(_SUITE_DIR / "outputs" / "models")
+        self.tokenizer_save_folder_name = 'finetune_tokenizer_f1'
+        self.predictor_save_folder_name = 'finetune_predictor_f1'
+        self.backtest_save_folder_name = 'finetune_backtest_f1'
+
+        # Path for backtesting results.
+        self.backtest_result_path = str(_SUITE_DIR / "outputs" / "backtest_results")
+
+        # =================================================================
+        # Model & Checkpoint Paths
+        # =================================================================
+        # These can be local paths or Hugging Face Hub model identifiers.
+        self.pretrained_tokenizer_path = "NeoQuasar/Kronos-Tokenizer-base"
+        self.pretrained_predictor_path = "NeoQuasar/Kronos-base"
+
+        # Paths to the fine-tuned models, derived from the save_path.
+        # These will be generated automatically during training.
+        self.finetuned_tokenizer_path = f"{self.save_path}/{self.tokenizer_save_folder_name}/checkpoints/best_model"
+        self.finetuned_predictor_path = f"{self.save_path}/{self.predictor_save_folder_name}/checkpoints/best_model"
+
+        # =================================================================
+        # Backtesting Parameters
+        # =================================================================
+        self.backtest_n_symbol_hold = 50  # Number of symbols to hold in the portfolio.
+        self.backtest_n_symbol_drop = 5  # Number of symbols to drop from the pool.
+        self.backtest_hold_thresh = 5  # Minimum holding period for a stock.
+        self.inference_T = 0.6
+        self.inference_top_p = 0.9
+        self.inference_top_k = 0
+        self.inference_sample_count = 5
+        self.backtest_batch_size = 1000
+        self.backtest_benchmark = self._set_benchmark(self.instrument)
+
+    def _set_benchmark(self, instrument):
+        dt_benchmark = {
+            'csi800': "SH000906",
+            'csi1000': "SH000852",
+            'csi300': "SH000300",
+        }
+        if instrument in dt_benchmark:
+            return dt_benchmark[instrument]
+        else:
+            raise ValueError(f"Benchmark not defined for instrument: {instrument}")
