@@ -1,0 +1,20 @@
+[805588:MainThread](2026-08-14 15:54:28,255) INFO - qlib.Initialization - [config.py:441] - default_conf: client.
+[805588:MainThread](2026-08-14 15:54:28,599) INFO - qlib.ddb_features - [ddb_features.py:116] - 已注册 qlib 兼容函数到 DolphinDB 会话
+[805588:MainThread](2026-08-14 15:54:28,600) INFO - qlib.Initialization - [__init__.py:94] - qlib successfully initialized based on client settings.
+[805588:MainThread](2026-08-14 15:54:28,600) INFO - qlib.Initialization - [__init__.py:111] - data_path={'__DEFAULT_FREQ': 'DolphinDB(dolphindb://admin:***@100.**.**.25:***)'}
+2026-08-14 15:54:28.600 | INFO     | kronos_qlib.provider:init_qlib_once:108 - Qlib 初始化成功 - URI: dolphindb://admin:***@100.**.**.25:***
+2026-08-14 15:54:28.977 | INFO     | paper_replication.signal:build_px_tradeable:279 - 价格/可交易宽表：134 日 × 336 列；日均不可交易 2.5 只
+2026-08-14 15:54:29.208 | INFO     | paper_replication.benchmark:probe_index_benchmark:43 - 指数基准 000300.SH：133 行，累计 -1.45%
+2026-08-14 15:54:29.209 | INFO     | paper_replication.benchmark:build_pool_equal_weight_benchmark:64 - 同池等权基准：134 行，累计 -3.61%
+2026-08-14 15:54:29.210 | INFO     | baseline_suite.pipeline:build_dual_benchmarks:54 - 双基准 [backtest]：指数累计 -1.45% / 等权累计 -3.61% / beta_gap=+2.16%
+2026-08-14 15:54:29.412 | INFO     | baseline_suite.pipeline:run_group:84 - [M] AER(指数)=+30.94% IR=+1.598 | AER(等权)=+36.02% IR=+1.749 | MDD=-7.60% 日均换手=9.81% (n=133)
+2026-08-14 15:54:29.617 | INFO     | baseline_suite.pipeline:run_group:84 - [F0_min] AER(指数)=-21.15% IR=-1.522 | AER(等权)=-17.20% IR=-1.761 | MDD=-19.33% 日均换手=10.50% (n=133)
+2026-08-14 15:54:29.821 | INFO     | baseline_suite.pipeline:run_group:84 - [F0_max] AER(指数)=-21.80% IR=-1.451 | AER(等权)=-17.77% IR=-1.738 | MDD=-21.31% 日均换手=10.62% (n=133)
+2026-08-14 15:54:30.026 | INFO     | baseline_suite.pipeline:run_group:84 - [F0_last] AER(指数)=-22.06% IR=-1.458 | AER(等权)=-18.04% IR=-1.748 | MDD=-21.57% 日均换手=10.60% (n=133)
+2026-08-14 15:54:30.229 | INFO     | baseline_suite.pipeline:run_group:84 - [F0_mean] AER(指数)=-21.22% IR=-1.451 | AER(等权)=-17.23% IR=-1.683 | MDD=-20.07% 日均换手=10.60% (n=133)
+2026-08-14 15:54:30.439 | INFO     | baseline_suite.pipeline:run_group:84 - [F1_min] AER(指数)=+2.90% IR=+0.333 | AER(等权)=+7.13% IR=+0.682 | MDD=-5.81% 日均换手=10.38% (n=133)
+2026-08-14 15:54:30.649 | INFO     | baseline_suite.pipeline:run_group:84 - [F1_max] AER(指数)=-7.54% IR=-0.421 | AER(等权)=-4.34% IR=-0.119 | MDD=-13.43% 日均换手=10.30% (n=133)
+2026-08-14 15:54:30.856 | INFO     | baseline_suite.pipeline:run_group:84 - [F1_last] AER(指数)=-8.61% IR=-0.631 | AER(等权)=-5.19% IR=-0.238 | MDD=-9.87% 日均换手=10.19% (n=133)
+2026-08-14 15:54:31.068 | INFO     | baseline_suite.pipeline:run_group:84 - [F1_mean] AER(指数)=-7.78% IR=-0.613 | AER(等权)=-4.24% IR=-0.207 | MDD=-9.37% 日均换手=10.30% (n=133)
+2026-08-14 15:54:31.387 | INFO     | __main__:main:153 - backtest 结果落盘 /home/user/workspace/Kronos/finetune_suite/data/backtest_results.json
+2026-08-14 15:54:31.387 | INFO     | __main__:main:154 - === 预注册判定：部分判据通过（见各条），按计划 §7 触发条件后续 ===

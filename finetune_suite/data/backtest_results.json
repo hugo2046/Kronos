@@ -1,0 +1,201 @@
+{
+  "window": "backtest",
+  "period": [
+    "2026-01-01",
+    "2026-07-24"
+  ],
+  "benchmarks": {
+    "index": "000300.SH csi300 市值加权",
+    "equal_weight": "同池等权",
+    "beta_gap": 0.021588702728619902
+  },
+  "engine": {
+    "top_k": 50,
+    "drop_n": 5,
+    "min_hold": 5,
+    "cost_bps": 15
+  },
+  "groups": {
+    "M": {
+      "perf_idx": {
+        "name": "M",
+        "n_days": 133,
+        "aer": 0.3093954343633567,
+        "ir": 1.5979676208322402,
+        "max_drawdown": -0.0759683902013999,
+        "daily_turnover": 0.09813828849747999
+      },
+      "perf_ew": {
+        "name": "M",
+        "n_days": 134,
+        "aer": 0.3602406106687832,
+        "ir": 1.748601824465884,
+        "max_drawdown": -0.08159048800725965,
+        "daily_turnover": 0.09813828849747999
+      }
+    },
+    "F0_min": {
+      "perf_idx": {
+        "name": "F0_min",
+        "n_days": 133,
+        "aer": -0.21148342161676348,
+        "ir": -1.5217446911711787,
+        "max_drawdown": -0.19332940190403713,
+        "daily_turnover": 0.10502905231803211
+      },
+      "perf_ew": {
+        "name": "F0_min",
+        "n_days": 134,
+        "aer": -0.17197542033444113,
+        "ir": -1.761178317411157,
+        "max_drawdown": -0.11362709303837981,
+        "daily_turnover": 0.10502905231803211
+      }
+    },
+    "F0_max": {
+      "perf_idx": {
+        "name": "F0_max",
+        "n_days": 133,
+        "aer": -0.2179946457444194,
+        "ir": -1.4506890869187703,
+        "max_drawdown": -0.21309047384111512,
+        "daily_turnover": 0.1061624088394108
+      },
+      "perf_ew": {
+        "name": "F0_max",
+        "n_days": 134,
+        "aer": -0.17772763163597205,
+        "ir": -1.7382643038603927,
+        "max_drawdown": -0.1392328325400125,
+        "daily_turnover": 0.1061624088394108
+      }
+    },
+    "F0_last": {
+      "perf_idx": {
+        "name": "F0_last",
+        "n_days": 133,
+        "aer": -0.22059195826061795,
+        "ir": -1.457734501720623,
+        "max_drawdown": -0.215667661518954,
+        "daily_turnover": 0.10604888150718675
+      },
+      "perf_ew": {
+        "name": "F0_last",
+        "n_days": 134,
+        "aer": -0.18036646084263275,
+        "ir": -1.7481372344997144,
+        "max_drawdown": -0.14345800115007024,
+        "daily_turnover": 0.10604888150718675
+      }
+    },
+    "F0_mean": {
+      "perf_idx": {
+        "name": "F0_mean",
+        "n_days": 133,
+        "aer": -0.2122276396437357,
+        "ir": -1.4514547570808747,
+        "max_drawdown": -0.2007176300209832,
+        "daily_turnover": 0.10595036114552128
+      },
+      "perf_ew": {
+        "name": "F0_mean",
+        "n_days": 134,
+        "aer": -0.17228282346767132,
+        "ir": -1.6831396859397056,
+        "max_drawdown": -0.12330140103771237,
+        "daily_turnover": 0.10595036114552128
+      }
+    },
+    "F1_min": {
+      "perf_idx": {
+        "name": "F1_min",
+        "n_days": 133,
+        "aer": 0.028960879562570208,
+        "ir": 0.3334205570244081,
+        "max_drawdown": -0.058070695926396576,
+        "daily_turnover": 0.10380406277393227
+      },
+      "perf_ew": {
+        "name": "F1_min",
+        "n_days": 134,
+        "aer": 0.07132985600198616,
+        "ir": 0.6817491340982625,
+        "max_drawdown": -0.06804365491018893,
+        "daily_turnover": 0.10380406277393227
+      }
+    },
+    "F1_max": {
+      "perf_idx": {
+        "name": "F1_max",
+        "n_days": 133,
+        "aer": -0.07535095332642405,
+        "ir": -0.42107550319864284,
+        "max_drawdown": -0.13426128610169097,
+        "daily_turnover": 0.10299336070667452
+      },
+      "perf_ew": {
+        "name": "F1_max",
+        "n_days": 134,
+        "aer": -0.04335003272382232,
+        "ir": -0.11896346252090588,
+        "max_drawdown": -0.18364200845206446,
+        "daily_turnover": 0.10299336070667452
+      }
+    },
+    "F1_last": {
+      "perf_idx": {
+        "name": "F1_last",
+        "n_days": 133,
+        "aer": -0.08613849997096201,
+        "ir": -0.6311532963992075,
+        "max_drawdown": -0.09872247743270035,
+        "daily_turnover": 0.1018539829485452
+      },
+      "perf_ew": {
+        "name": "F1_last",
+        "n_days": 134,
+        "aer": -0.0518747520439965,
+        "ir": -0.23836350712481644,
+        "max_drawdown": -0.14508116001052562,
+        "daily_turnover": 0.1018539829485452
+      }
+    },
+    "F1_mean": {
+      "perf_idx": {
+        "name": "F1_mean",
+        "n_days": 133,
+        "aer": -0.07780918782085977,
+        "ir": -0.6128082042990813,
+        "max_drawdown": -0.09369873279704877,
+        "daily_turnover": 0.10302838772090513
+      },
+      "perf_ew": {
+        "name": "F1_mean",
+        "n_days": 134,
+        "aer": -0.04239278614591724,
+        "ir": -0.20694340655605448,
+        "max_drawdown": -0.12395014746975674,
+        "daily_turnover": 0.10302838772090513
+      }
+    }
+  },
+  "four_variant_exploratory": {
+    "F1_min": "较 mean 高 +11.37%（> 3pp）→ 仅探索性观察，留待前向独立验证"
+  },
+  "verdict": {
+    "criterion_1_survival": {
+      "passed": false,
+      "note": "mean AER(等权)=-4.24% ≤ 0 或 AER(指数)=-7.78% ≤ 0 → 存活不成立"
+    },
+    "criterion_2_improvement": {
+      "passed": true,
+      "note": "微调相对零样本有实质改善（≥ +10pp）"
+    },
+    "criterion_3_M_reference_only": "M 为 regime 依赖的免费基线，仅参照不判定",
+    "criterion_4_failure": {
+      "triggered": false,
+      "note": "部分判据通过（见各条），按计划 §7 触发条件后续"
+    },
+    "verdict": "部分判据通过（见各条），按计划 §7 触发条件后续"
+  }
+}

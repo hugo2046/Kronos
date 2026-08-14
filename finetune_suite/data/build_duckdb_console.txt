@@ -1,0 +1,40 @@
+/home/user/workspace/Kronos/finetune_suite/build_duckdb.py:43: FutureWarning: The previous implementation of stack is deprecated and will be removed in a future version of pandas. See the What's New notes for pandas 2.1.0 for details. Specify future_stack=True to adopt the new implementation and silence this warning.
+  long = wide.stack(dropna=True).rename("value").reset_index()
+/home/user/workspace/Kronos/finetune_suite/build_duckdb.py:43: FutureWarning: The previous implementation of stack is deprecated and will be removed in a future version of pandas. See the What's New notes for pandas 2.1.0 for details. Specify future_stack=True to adopt the new implementation and silence this warning.
+  long = wide.stack(dropna=True).rename("value").reset_index()
+/home/user/workspace/Kronos/finetune_suite/build_duckdb.py:43: FutureWarning: The previous implementation of stack is deprecated and will be removed in a future version of pandas. See the What's New notes for pandas 2.1.0 for details. Specify future_stack=True to adopt the new implementation and silence this warning.
+  long = wide.stack(dropna=True).rename("value").reset_index()
+/home/user/workspace/Kronos/finetune_suite/build_duckdb.py:43: FutureWarning: The previous implementation of stack is deprecated and will be removed in a future version of pandas. See the What's New notes for pandas 2.1.0 for details. Specify future_stack=True to adopt the new implementation and silence this warning.
+  long = wide.stack(dropna=True).rename("value").reset_index()
+/home/user/workspace/Kronos/finetune_suite/build_duckdb.py:43: FutureWarning: The previous implementation of stack is deprecated and will be removed in a future version of pandas. See the What's New notes for pandas 2.1.0 for details. Specify future_stack=True to adopt the new implementation and silence this warning.
+  long = wide.stack(dropna=True).rename("value").reset_index()
+/home/user/workspace/Kronos/finetune_suite/build_duckdb.py:43: FutureWarning: The previous implementation of stack is deprecated and will be removed in a future version of pandas. See the What's New notes for pandas 2.1.0 for details. Specify future_stack=True to adopt the new implementation and silence this warning.
+  long = wide.stack(dropna=True).rename("value").reset_index()
+/home/user/workspace/Kronos/finetune_suite/build_duckdb.py:43: FutureWarning: The previous implementation of stack is deprecated and will be removed in a future version of pandas. See the What's New notes for pandas 2.1.0 for details. Specify future_stack=True to adopt the new implementation and silence this warning.
+  long = wide.stack(dropna=True).rename("value").reset_index()
+/home/user/workspace/Kronos/finetune_suite/build_duckdb.py:43: FutureWarning: The previous implementation of stack is deprecated and will be removed in a future version of pandas. See the What's New notes for pandas 2.1.0 for details. Specify future_stack=True to adopt the new implementation and silence this warning.
+  long = wide.stack(dropna=True).rename("value").reset_index()
+/home/user/workspace/Kronos/finetune_suite/build_duckdb.py:43: FutureWarning: The previous implementation of stack is deprecated and will be removed in a future version of pandas. See the What's New notes for pandas 2.1.0 for details. Specify future_stack=True to adopt the new implementation and silence this warning.
+  long = wide.stack(dropna=True).rename("value").reset_index()
+2026-08-14 15:55:01.396 | INFO     | __main__:main:106 - 长表合计 356514 行（arm×variant 分布见下）
+arm  variant
+F0   last       39563
+     max        39563
+     mean       39563
+     min        39563
+F1   last       39563
+     max        39563
+     mean       39563
+     min        39563
+M    -          40010
+Traceback (most recent call last):
+  File "/home/user/workspace/Kronos/finetune_suite/build_duckdb.py", line 155, in <module>
+    main()
+    ~~~~^^
+  File "/home/user/workspace/Kronos/finetune_suite/build_duckdb.py", line 119, in main
+    con.execute("CREATE TABLE runs (arm TEXT, window TEXT, config_json TEXT, created_at TEXT)")
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_duckdb.ParserException: Parser Error: syntax error at or near "window"
+
+LINE 1: CREATE TABLE runs (arm TEXT, window TEXT, config_json TEXT, created_at TEXT)
+                                     ^
