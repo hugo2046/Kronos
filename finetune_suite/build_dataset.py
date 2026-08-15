@@ -16,6 +16,7 @@ lookback+predict+1 行的股票从两个 pkl 中剔除（同官方 preprocess �
 """
 from __future__ import annotations
 
+import argparse
 import json
 import pickle
 import sys
@@ -113,13 +114,33 @@ def build_pickles(provider, cfg: Config, universe: list[str] | None = None) -> d
         "n_short_symbols": n_short_symbols,
         "dataset_path": str(out_dir),
         "fields": FETCH_FIELDS,
-        "universe_rule": "csi300 PIT union at each 01-01/07-01, 2011~2025",
+        "universe_rule": (
+            f"{getattr(cfg, 'instrument', 'csi300')} PIT union at each "
+            "01-01/07-01, 2011~2025"
+        ),
     }
     return stats
 
 
 def main() -> None:
+    # === finetune_ashares 声明改动（计划 §2 0.2：diff 仅限 pool 传参）===
+    # --pool ashares：唯一变量 = 训练语料池；采样年份/清洗规则/窗口逐字不动。
+    # 注：计划 §1 写"(2014~2025 采样)"——DDB 日频地板 2014-01-02，2011~2013 采样
+    # 独有的 12 只成分股在 DDB 零数据、被既有"无数据跳过"规则剔除，两种采样
+    # 产生完全等价语料（2026-08-15 实测），故代码保持 2011~2025 不变。
+    parser = argparse.ArgumentParser(description="DDB → 官方微调格式 pickle 适配器")
+    parser.add_argument(
+        "--pool",
+        default="csi300",
+        choices=["csi300", "ashares"],
+        help="股票池（20260815 计划 §1：G1 唯一变量=csi300→ashares）",
+    )
+    args = parser.parse_args()
+
     cfg = Config()
+    if args.pool != "csi300":
+        cfg.instrument = args.pool
+        cfg.dataset_path = str(Path(cfg.dataset_path) / args.pool)  # 不覆盖第 4 轮 pkl
     # 延迟 import：单测无需 DolphinDB
     from kronos_qlib.provider import QlibProvider
 

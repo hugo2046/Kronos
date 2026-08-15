@@ -1,0 +1,29 @@
+{
+  "n_universe": 8391,
+  "n_fetched": 5642,
+  "coverage": 0.6724,
+  "n_train_symbols": 5599,
+  "n_val_symbols": 5599,
+  "n_rows_train": 10287748,
+  "n_rows_val": 630247,
+  "train_range": [
+    "2014-01-02",
+    "2024-12-31"
+  ],
+  "val_range": [
+    "2025-01-02",
+    "2025-06-30"
+  ],
+  "n_dropped_nan_rows": 378,
+  "n_short_symbols": 43,
+  "dataset_path": "/home/user/workspace/Kronos/finetune_suite/data/ashares",
+  "fields": [
+    "$open",
+    "$high",
+    "$low",
+    "$close",
+    "$volume",
+    "$amount"
+  ],
+  "universe_rule": "ashares PIT union at each 01-01/07-01, 2011~2025"
+}
