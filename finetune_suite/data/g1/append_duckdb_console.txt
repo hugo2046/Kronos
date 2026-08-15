@@ -1,0 +1,16 @@
+$ /home/user/miniconda3/envs/quant/bin/python finetune_suite/append_duckdb.py
+追加长表合计 307144 行（arm×variant 分布见下）
+arm  variant
+G0   last       37223
+     max        37223
+     mean       37223
+     min        37223
+G1   last       39563
+     max        39563
+     mean       39563
+     min        39563
+追加完成：signals 总 663656 行（本次 +307144），runs 追加 2 行
+对拍 G0/mean/2025-09-26: 295 值, max|Δ|=0.0e+00 → 一致
+对拍 G1/mean/2026-04-17: 294 值, max|Δ|=0.0e+00 → 一致
+对拍 G1/min/2026-04-17: 294 值, max|Δ|=0.0e+00 → 一致
+DuckDB 追加归档完成：/home/user/workspace/Kronos/finetune_suite/data/signals.duckdb

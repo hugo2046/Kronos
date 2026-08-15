@@ -1,0 +1,8 @@
+{
+    "start_time": "2026-08-15T05-46-14",
+    "save_directory": "/home/user/workspace/Kronos/finetune_suite/outputs/models/finetune_tokenizer_g1",
+    "world_size": 1,
+    "final_result": {
+        "best_val_loss": 0.009176275634765625
+    }
+}
