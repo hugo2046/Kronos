@@ -1,0 +1,33 @@
+[1666118:MainThread](2026-08-15 17:03:10,454) INFO - qlib.Initialization - [config.py:441] - default_conf: client.
+[1666118:MainThread](2026-08-15 17:03:10,787) INFO - qlib.ddb_features - [ddb_features.py:116] - 已注册 qlib 兼容函数到 DolphinDB 会话
+[1666118:MainThread](2026-08-15 17:03:10,787) INFO - qlib.Initialization - [__init__.py:94] - qlib successfully initialized based on client settings.
+[1666118:MainThread](2026-08-15 17:03:10,787) INFO - qlib.Initialization - [__init__.py:111] - data_path={'__DEFAULT_FREQ': 'DolphinDB(dolphindb://admin:***@100.**.**.25:***)'}
+2026-08-15 17:03:10.787 | INFO     | kronos_qlib.provider:init_qlib_once:108 - Qlib 初始化成功 - URI: dolphindb://admin:***@100.**.**.25:***
+2026-08-15 17:03:11.101 | INFO     | paper_replication.signal:build_px_tradeable:279 - 价格/可交易宽表：134 日 × 336 列；日均不可交易 2.5 只
+2026-08-15 17:03:11.304 | INFO     | paper_replication.benchmark:probe_index_benchmark:43 - 指数基准 000300.SH：133 行，累计 -1.45%
+2026-08-15 17:03:11.305 | INFO     | paper_replication.benchmark:build_pool_equal_weight_benchmark:64 - 同池等权基准：134 行，累计 -3.61%
+2026-08-15 17:03:11.306 | INFO     | baseline_suite.pipeline:build_dual_benchmarks:54 - 双基准 [backtest]：指数累计 -1.45% / 等权累计 -3.61% / beta_gap=+2.16%
+2026-08-15 17:03:11.508 | INFO     | baseline_suite.pipeline:run_group:84 - [M] AER(指数)=+30.94% IR=+1.598 | AER(等权)=+36.02% IR=+1.749 | MDD=-7.60% 日均换手=9.81% (n=133)
+2026-08-15 17:03:11.709 | INFO     | baseline_suite.pipeline:run_group:84 - [F0_min] AER(指数)=-21.15% IR=-1.522 | AER(等权)=-17.20% IR=-1.761 | MDD=-19.33% 日均换手=10.50% (n=133)
+2026-08-15 17:03:11.910 | INFO     | baseline_suite.pipeline:run_group:84 - [F0_max] AER(指数)=-21.80% IR=-1.451 | AER(等权)=-17.77% IR=-1.738 | MDD=-21.31% 日均换手=10.62% (n=133)
+2026-08-15 17:03:12.113 | INFO     | baseline_suite.pipeline:run_group:84 - [F0_last] AER(指数)=-22.06% IR=-1.458 | AER(等权)=-18.04% IR=-1.748 | MDD=-21.57% 日均换手=10.60% (n=133)
+2026-08-15 17:03:12.314 | INFO     | baseline_suite.pipeline:run_group:84 - [F0_mean] AER(指数)=-21.22% IR=-1.451 | AER(等权)=-17.23% IR=-1.683 | MDD=-20.07% 日均换手=10.60% (n=133)
+2026-08-15 17:03:12.522 | INFO     | baseline_suite.pipeline:run_group:84 - [F1_min] AER(指数)=+2.90% IR=+0.333 | AER(等权)=+7.13% IR=+0.682 | MDD=-5.81% 日均换手=10.38% (n=133)
+2026-08-15 17:03:12.729 | INFO     | baseline_suite.pipeline:run_group:84 - [F1_max] AER(指数)=-7.54% IR=-0.421 | AER(等权)=-4.34% IR=-0.119 | MDD=-13.43% 日均换手=10.30% (n=133)
+2026-08-15 17:03:12.936 | INFO     | baseline_suite.pipeline:run_group:84 - [F1_last] AER(指数)=-8.61% IR=-0.631 | AER(等权)=-5.19% IR=-0.238 | MDD=-9.87% 日均换手=10.19% (n=133)
+2026-08-15 17:03:13.144 | INFO     | baseline_suite.pipeline:run_group:84 - [F1_mean] AER(指数)=-7.78% IR=-0.613 | AER(等权)=-4.24% IR=-0.207 | MDD=-9.37% 日均换手=10.30% (n=133)
+2026-08-15 17:03:13.350 | INFO     | baseline_suite.pipeline:run_group:84 - [G1_min] AER(指数)=+13.44% IR=+1.133 | AER(等权)=+17.63% IR=+1.159 | MDD=-5.86% 日均换手=10.32% (n=133)
+2026-08-15 17:03:13.567 | INFO     | baseline_suite.pipeline:run_group:84 - [G1_max] AER(指数)=+25.43% IR=+1.321 | AER(等权)=+29.28% IR=+1.229 | MDD=-14.88% 日均换手=10.25% (n=133)
+2026-08-15 17:03:13.774 | INFO     | baseline_suite.pipeline:run_group:84 - [G1_last] AER(指数)=+14.68% IR=+0.918 | AER(等权)=+18.44% IR=+0.918 | MDD=-11.68% 日均换手=10.24% (n=133)
+2026-08-15 17:03:13.982 | INFO     | baseline_suite.pipeline:run_group:84 - [G1_mean] AER(指数)=+10.66% IR=+0.715 | AER(等权)=+14.33% IR=+0.758 | MDD=-12.51% 日均换手=10.25% (n=133)
+2026-08-15 17:03:13.982 | INFO     | __main__:main:336 - 对拍 F1_mean: 复跑 -4.2393% vs 冻结 -4.2400% 一致
+2026-08-15 17:03:13.982 | INFO     | __main__:main:336 - 对拍 F0_mean: 复跑 -17.2283% vs 冻结 -17.2300% 一致
+2026-08-15 17:03:13.982 | INFO     | __main__:main:336 - 对拍 M: 复跑 +36.0241% vs 冻结 +36.0200% 一致
+2026-08-15 17:03:13.983 | INFO     | __main__:main:383 - G1 backtest+判读落盘 /home/user/workspace/Kronos/finetune_suite/data/g1/g1_backtest_results.json
+=== 预注册判据 1~5 封盘判读 ===
+[criterion_1_mechanism] 通过：best epoch = 1，但 val 存在 epoch≥2 改善（epoch [6, 11, 12, 14, 15]）→ 非单调恶化，墙有后移迹象
+[criterion_2_improvement] 通过：G1_mean AER(等权)=+14.33% ≥ -1.24%（F1_mean -4.24% + 3pp）→ 更多语料带来更多修复
+[criterion_3_survival] 通过：G1_mean 双基准 AER 均为正 → 首个存活 Kronos 系信号（单种子，待前向确认）
+[criterion_4_g0_stability] 通过：F1_mean@2025H2 较 F0_mean 同窗 +19.89% ≥ +5pp → 第 4 轮改善跨时段复现
+[criterion_5_route_closed] 未通过/未触发：判据 1/2 至少一项通过 → 路线未关闭（按 §7 触发条件后续）
+机制证据：G1 predictor best_epoch=1，逐 epoch val=[3.2291, 3.2419, 3.2448, 3.2496, 3.2558, 3.2491, 3.2512, 3.2533, 3.2579, 3.2599, 3.2593, 3.2583, 3.2585, 3.2577, 3.2568]
