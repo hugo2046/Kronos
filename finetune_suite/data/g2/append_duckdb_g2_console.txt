@@ -1,0 +1,16 @@
+$ /home/user/miniconda3/envs/quant/bin/python finetune_suite/append_duckdb_g2.py
+追加长表合计 614288 行（arm×variant 分布见下）
+arm     variant
+G2S101  last       76786
+        max        76786
+        mean       76786
+        min        76786
+G2S102  last       76786
+        max        76786
+        mean       76786
+        min        76786
+追加完成：signals 总 1277944 行（本次 +614288），runs 追加 2 行
+对拍 G2S101/mean/backtest/2026-04-17: 294 值, max|Δ|=0.0e+00 → 一致
+对拍 G2S101/min/2025h2/2025-09-26: 295 值, max|Δ|=0.0e+00 → 一致
+对拍 G2S102/mean/2025h2/2025-09-26: 295 值, max|Δ|=0.0e+00 → 一致
+DuckDB 追加归档完成：/home/user/workspace/Kronos/finetune_suite/data/signals.duckdb

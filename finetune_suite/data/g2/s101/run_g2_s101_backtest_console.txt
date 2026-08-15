@@ -1,0 +1,647 @@
+2026-08-16 03:04:57.120 | INFO     | __main__:run_one:70 - G2 臂配置：seed=101 window=backtest_G2S101 [2026-01-01~2026-07-24] pool=csi300 N=20 T=1.0 top_p=0.9 推理seed=42
+2026-08-16 03:04:57.120 | INFO     | __main__:run_one:75 - G2 权重（唯一变量=训练种子）：model=/home/user/workspace/Kronos/finetune_suite/outputs/models/finetune_predictor_g2_s101/checkpoints/best_model
+2026-08-16 03:04:57.120 | INFO     | __main__:run_one:76 -                              tokenizer=/home/user/workspace/Kronos/finetune_suite/outputs/models/finetune_tokenizer_g1/checkpoints/best_model（共享复用）
+[2046556:MainThread](2026-08-16 03:04:57,478) INFO - qlib.Initialization - [config.py:441] - default_conf: client.
+[2046556:MainThread](2026-08-16 03:04:57,863) INFO - qlib.ddb_features - [ddb_features.py:116] - 已注册 qlib 兼容函数到 DolphinDB 会话
+[2046556:MainThread](2026-08-16 03:04:57,864) INFO - qlib.Initialization - [__init__.py:94] - qlib successfully initialized based on client settings.
+[2046556:MainThread](2026-08-16 03:04:57,864) INFO - qlib.Initialization - [__init__.py:111] - data_path={'__DEFAULT_FREQ': 'DolphinDB(dolphindb://admin:***@100.**.**.25:***)'}
+2026-08-16 03:04:57.864 | INFO     | kronos_qlib.provider:init_qlib_once:108 - Qlib 初始化成功 - URI: dolphindb://admin:***@100.**.**.25:***
+2026-08-16 03:04:58.523 | INFO     | __main__:_load_g2_predictor:92 - 加载 G2 tokenizer（G1 共享）：/home/user/workspace/Kronos/finetune_suite/outputs/models/finetune_tokenizer_g1/checkpoints/best_model
+2026-08-16 03:04:58.540 | INFO     | __main__:_load_g2_predictor:94 - 加载 G2 predictor：/home/user/workspace/Kronos/finetune_suite/outputs/models/finetune_predictor_g2_s101/checkpoints/best_model
+2026-08-16 03:04:59.343 | INFO     | baseline_suite.signal:run_variant_signals:95 - 四变体信号 [backtest_G2S101]：134 日总计，134 日待跑（N=20）
+2026-08-16 03:04:59.908 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2026-01-05, pool=csi300, lookback=90, predict_len=10): pool=300 kept=295 skipped_short=0 skipped_halt=5
+[W816 03:05:04.670890365 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:05:11.648406582 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:05:18.635952388 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:05:25.626644075 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:05:32.627388047 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:05:39.636770032 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:05:46.657199615 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:05:53.677988322 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:06:00.707561927 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+2026-08-16 03:06:04.648 | INFO     | baseline_suite.signal:run_variant_signals:136 - 四变体信号 [1/134] 2026-01-05: 295 只，mean std=0.0169
+2026-08-16 03:06:04.687 | DEBUG    | baseline_suite.signal:_dump_partial:164 - 四变体 checkpoint 落盘（1 日）
+2026-08-16 03:06:05.186 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2026-01-06, pool=csi300, lookback=90, predict_len=10): pool=300 kept=295 skipped_short=0 skipped_halt=5
+[W816 03:06:08.159324477 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:06:16.256363455 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:06:23.349340167 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:06:30.454037925 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:06:37.551177864 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:06:44.642883623 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:06:51.735237259 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:06:58.824154977 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:07:05.917437046 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+2026-08-16 03:07:11.031 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2026-01-07, pool=csi300, lookback=90, predict_len=10): pool=300 kept=295 skipped_short=0 skipped_halt=5
+[W816 03:07:14.024381682 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:07:21.145523244 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:07:29.270853332 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:07:36.385465963 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:07:43.491892307 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:07:50.588283463 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:07:57.674372890 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:08:04.758790570 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:08:11.831876838 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+2026-08-16 03:08:16.980 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2026-01-08, pool=csi300, lookback=90, predict_len=10): pool=300 kept=295 skipped_short=0 skipped_halt=5
+[W816 03:08:21.672167550 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:08:27.117599987 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:08:35.946681104 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:08:42.073439765 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:08:49.198555812 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:08:57.331450555 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:09:04.452734176 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:09:11.562641211 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:09:18.664235101 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+2026-08-16 03:09:23.181 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2026-01-09, pool=csi300, lookback=90, predict_len=10): pool=300 kept=295 skipped_short=0 skipped_halt=5
+[W816 03:09:26.181935185 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 482148352, total: 33667612672).
+[W816 03:09:34.324381580 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:09:41.470263975 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:09:48.603485511 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:09:55.740671426 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:10:02.870772160 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:10:09.994317763 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:10:16.113517032 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:10:24.219717260 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+2026-08-16 03:10:29.325 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2026-01-12, pool=csi300, lookback=90, predict_len=10): pool=300 kept=295 skipped_short=0 skipped_halt=5
+[W816 03:10:33.331773039 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:10:40.162570534 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:10:48.301410111 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:10:55.441105798 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:11:02.573950732 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:11:09.698339286 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:11:16.818915831 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:11:23.932354367 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:11:30.030288355 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+2026-08-16 03:11:35.586 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2026-01-13, pool=csi300, lookback=90, predict_len=10): pool=300 kept=295 skipped_short=0 skipped_halt=5
+[W816 03:11:39.593455350 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 482148352, total: 33667612672).
+[W816 03:11:46.738075216 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:11:53.875981726 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:12:00.004619076 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:12:07.125893222 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:12:15.240023735 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:12:22.340232955 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:12:29.439758029 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:12:36.530189436 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+2026-08-16 03:12:41.599 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2026-01-14, pool=csi300, lookback=90, predict_len=10): pool=300 kept=295 skipped_short=0 skipped_halt=5
+[W816 03:12:46.287079132 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:12:53.419815635 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:13:00.557640111 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:13:07.691170750 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:13:14.826977246 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:13:21.944549250 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:13:28.059425842 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:13:35.182154821 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:13:43.285469079 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+2026-08-16 03:13:47.763 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2026-01-15, pool=csi300, lookback=90, predict_len=10): pool=300 kept=295 skipped_short=0 skipped_halt=5
+[W816 03:13:51.765276711 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:13:58.915693261 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:14:05.064623009 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:14:13.203551621 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:14:20.333128694 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:14:27.456811446 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:14:34.575653417 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:14:41.684810129 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:14:48.789134461 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+2026-08-16 03:14:53.883 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2026-01-16, pool=csi300, lookback=90, predict_len=10): pool=300 kept=295 skipped_short=0 skipped_halt=5
+[W816 03:14:58.577239386 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:15:05.709900070 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:15:12.850571763 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:15:19.975618023 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:15:26.090857294 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:15:34.198926763 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:15:41.297007316 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:15:48.397443851 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:15:55.482561042 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+2026-08-16 03:15:59.459 | INFO     | baseline_suite.signal:run_variant_signals:136 - 四变体信号 [10/134] 2026-01-16: 295 只，mean std=0.0181
+2026-08-16 03:15:59.498 | DEBUG    | baseline_suite.signal:_dump_partial:164 - 四变体 checkpoint 落盘（10 日）
+2026-08-16 03:16:00.121 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2026-01-19, pool=csi300, lookback=90, predict_len=10): pool=300 kept=295 skipped_short=0 skipped_halt=5
+[W816 03:16:03.127253851 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:16:11.275931647 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:16:18.426944066 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:16:25.569358709 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:16:32.710624691 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:16:39.864637477 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:16:46.002215859 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:16:53.132897763 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:17:01.263137091 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+2026-08-16 03:17:06.399 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2026-01-20, pool=csi300, lookback=90, predict_len=10): pool=300 kept=295 skipped_short=0 skipped_halt=5
+[W816 03:17:10.089199564 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 482148352, total: 33667612672).
+[W816 03:17:18.227731045 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:17:25.365292571 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:17:32.494381707 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:17:39.622378457 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:17:46.736784967 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:17:53.848543455 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:18:00.950875183 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:18:07.047227663 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+2026-08-16 03:18:12.525 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2026-01-21, pool=csi300, lookback=90, predict_len=10): pool=300 kept=295 skipped_short=0 skipped_halt=5
+[W816 03:18:16.535981467 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:18:23.678959574 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:18:30.818533443 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:18:37.949439191 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:18:44.077572977 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:18:52.201623421 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:18:59.313847697 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:19:06.416473391 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:19:13.515167724 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+2026-08-16 03:19:18.595 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2026-01-22, pool=csi300, lookback=90, predict_len=10): pool=300 kept=296 skipped_short=0 skipped_halt=4
+[W816 03:19:23.284676572 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:19:30.426256058 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:19:37.567663802 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:19:44.696825226 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:19:51.824819777 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:19:58.942115297 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:20:05.054391593 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:20:12.161444971 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:20:20.262796473 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+2026-08-16 03:20:24.956 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2026-01-23, pool=csi300, lookback=90, predict_len=10): pool=300 kept=296 skipped_short=0 skipped_halt=4
+[W816 03:20:28.966140257 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:20:35.109835852 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:20:43.266743075 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:20:50.412759907 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:20:57.551916273 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:21:04.691989130 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:21:11.820048862 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:21:18.942884316 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:21:25.054286225 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+2026-08-16 03:21:31.344 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2026-01-26, pool=csi300, lookback=90, predict_len=10): pool=300 kept=296 skipped_short=0 skipped_halt=4
+[W816 03:21:35.044680684 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:21:42.499110819 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:21:49.653312719 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:21:56.802208084 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:22:03.953542165 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:22:10.094030630 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:22:18.231933363 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:22:25.363966027 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:22:32.489067627 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+2026-08-16 03:22:37.814 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2026-01-27, pool=csi300, lookback=90, predict_len=10): pool=300 kept=296 skipped_short=0 skipped_halt=4
+[W816 03:22:42.503690148 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:22:49.647310144 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:22:56.777158286 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:23:03.925704823 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:23:10.061531272 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:23:17.186021228 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:23:25.314204748 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:23:32.430572890 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:23:39.539096884 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+2026-08-16 03:23:44.353 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2026-01-28, pool=csi300, lookback=90, predict_len=10): pool=300 kept=296 skipped_short=0 skipped_halt=4
+[W816 03:23:48.361714940 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:23:55.507690624 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:24:02.657786087 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:24:09.808760256 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:24:16.958220364 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:24:23.104448497 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:24:31.239805913 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:24:38.372291028 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:24:45.494944288 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+2026-08-16 03:24:50.795 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2026-01-29, pool=csi300, lookback=90, predict_len=10): pool=300 kept=296 skipped_short=0 skipped_halt=4
+[W816 03:24:55.485148675 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:25:02.627412721 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:25:09.763547932 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:25:16.899698059 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:25:23.025305200 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:25:30.141234297 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:25:38.248710345 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:25:45.339045452 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:25:52.423731438 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+2026-08-16 03:25:57.088 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2026-01-30, pool=csi300, lookback=90, predict_len=10): pool=300 kept=296 skipped_short=0 skipped_halt=4
+[W816 03:26:00.098297211 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:26:08.250152634 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:26:15.385942099 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:26:22.524720328 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:26:29.657943324 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:26:36.784252593 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:26:43.907548080 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:26:50.022278451 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:26:57.124136706 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+2026-08-16 03:27:02.945 | INFO     | baseline_suite.signal:run_variant_signals:136 - 四变体信号 [20/134] 2026-01-30: 296 只，mean std=0.0253
+2026-08-16 03:27:02.990 | DEBUG    | baseline_suite.signal:_dump_partial:164 - 四变体 checkpoint 落盘（20 日）
+2026-08-16 03:27:03.450 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2026-02-02, pool=csi300, lookback=90, predict_len=10): pool=300 kept=296 skipped_short=0 skipped_halt=4
+[W816 03:27:07.146485228 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:27:15.282893036 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:27:22.419322416 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:27:29.552591655 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:27:36.678009666 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:27:43.798189118 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:27:50.902097367 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:27:57.016221398 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:28:04.122634528 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+2026-08-16 03:28:09.799 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2026-02-03, pool=csi300, lookback=90, predict_len=10): pool=300 kept=296 skipped_short=0 skipped_halt=4
+[W816 03:28:13.801499097 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:28:20.955163909 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:28:27.099254186 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:28:35.249146008 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:28:42.393999808 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:28:49.534522684 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:28:56.668402726 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:29:03.798291777 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:29:10.919114252 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+2026-08-16 03:29:16.214 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2026-02-04, pool=csi300, lookback=90, predict_len=10): pool=300 kept=296 skipped_short=0 skipped_halt=4
+[W816 03:29:20.907267940 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:29:27.051304657 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:29:34.184477763 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:29:42.317287272 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:29:49.439812328 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:29:56.551984509 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:30:03.664041160 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:30:10.759774040 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:30:17.855419062 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+2026-08-16 03:30:22.540 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2026-02-05, pool=csi300, lookback=90, predict_len=10): pool=300 kept=296 skipped_short=0 skipped_halt=4
+[W816 03:30:26.549004513 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:30:33.695347928 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:30:40.837008605 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:30:47.967620514 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:30:54.096714415 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:31:02.347482904 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:31:09.461116990 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:31:16.578210037 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:31:23.683772125 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+2026-08-16 03:31:28.969 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2026-02-06, pool=csi300, lookback=90, predict_len=10): pool=300 kept=295 skipped_short=0 skipped_halt=5
+[W816 03:31:33.667455748 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:31:40.817265537 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:31:47.273556738 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:31:54.109373511 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:32:02.248159488 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:32:09.379450235 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:32:16.515878210 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:32:23.637805373 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:32:30.751933530 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+2026-08-16 03:32:35.241 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2026-02-09, pool=csi300, lookback=90, predict_len=10): pool=300 kept=295 skipped_short=0 skipped_halt=5
+[W816 03:32:39.249320384 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:32:46.396492601 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:32:53.535724356 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:33:00.661065410 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:33:07.782957091 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:33:14.899494128 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:33:21.999923508 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:33:28.094299856 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:33:35.184688755 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+2026-08-16 03:33:41.248 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2026-02-10, pool=csi300, lookback=90, predict_len=10): pool=300 kept=295 skipped_short=0 skipped_halt=5
+[W816 03:33:45.943138934 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:33:52.082703296 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:34:00.224357435 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:34:07.360171778 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:34:14.486502716 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:34:21.600548161 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:34:28.705994121 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:34:35.806375812 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:34:42.899398622 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+2026-08-16 03:34:47.382 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2026-02-11, pool=csi300, lookback=90, predict_len=10): pool=300 kept=295 skipped_short=0 skipped_halt=5
+[W816 03:34:51.386353110 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:34:58.533004910 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:35:05.675225644 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:35:12.812061791 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:35:19.938985852 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:35:26.051190587 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:35:33.157447366 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:35:41.256829356 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:35:48.346333440 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+2026-08-16 03:35:53.436 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2026-02-12, pool=csi300, lookback=90, predict_len=10): pool=300 kept=295 skipped_short=0 skipped_halt=5
+[W816 03:35:57.130501750 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:36:05.269498096 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:36:12.405643123 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:36:19.534575192 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:36:26.656707942 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:36:33.771784840 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:36:40.880678107 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:36:47.984245239 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:36:54.071447794 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+2026-08-16 03:36:59.557 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2026-02-13, pool=csi300, lookback=90, predict_len=10): pool=300 kept=295 skipped_short=0 skipped_halt=5
+[W816 03:37:03.568419676 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:37:10.712341324 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:37:17.850383155 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:37:24.987857198 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:37:31.107110568 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:37:39.227496857 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:37:46.332400219 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:37:53.428094772 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:38:00.517542821 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+2026-08-16 03:38:05.135 | INFO     | baseline_suite.signal:run_variant_signals:136 - 四变体信号 [30/134] 2026-02-13: 295 只，mean std=0.0154
+2026-08-16 03:38:05.181 | DEBUG    | baseline_suite.signal:_dump_partial:164 - 四变体 checkpoint 落盘（30 日）
+2026-08-16 03:38:05.617 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2026-02-24, pool=csi300, lookback=90, predict_len=10): pool=300 kept=295 skipped_short=0 skipped_halt=5
+[W816 03:38:10.451744961 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:38:17.595730265 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:38:24.739829774 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:38:31.868407296 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:38:38.994237730 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:38:45.112527361 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:38:53.223936024 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:39:00.328253592 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:39:07.417842384 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+2026-08-16 03:39:11.895 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2026-02-25, pool=csi300, lookback=90, predict_len=10): pool=300 kept=294 skipped_short=0 skipped_halt=6
+[W816 03:39:15.901811018 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:39:22.057290875 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:39:29.198219471 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:39:37.338956749 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:39:44.472873642 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:39:51.598888232 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:39:58.713749139 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:40:05.819916034 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:40:12.909944697 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+2026-08-16 03:40:17.696 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2026-02-26, pool=csi300, lookback=90, predict_len=10): pool=300 kept=294 skipped_short=0 skipped_halt=6
+[W816 03:40:22.388392762 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:40:29.526642206 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:40:36.656269642 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:40:43.770554687 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:40:50.886739807 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:40:57.987432335 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:41:04.079965614 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:41:11.177852593 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:41:19.260550236 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+2026-08-16 03:41:23.471 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2026-02-27, pool=csi300, lookback=90, predict_len=10): pool=300 kept=294 skipped_short=0 skipped_halt=6
+[W816 03:41:27.479182360 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:41:34.635450369 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:41:41.780042048 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:41:48.921451523 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:41:55.065265690 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:42:03.201231559 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:42:10.329479778 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:42:17.451251301 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:42:24.568838394 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+2026-08-16 03:42:29.387 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2026-03-02, pool=csi300, lookback=90, predict_len=10): pool=300 kept=294 skipped_short=0 skipped_halt=6
+[W816 03:42:33.085051088 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:42:41.235403220 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:42:48.375311677 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:42:55.522875972 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:43:02.655715414 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:43:09.789284410 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:43:16.920316996 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:43:23.043424667 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:43:30.156653465 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+2026-08-16 03:43:35.364 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2026-03-03, pool=csi300, lookback=90, predict_len=10): pool=300 kept=294 skipped_short=0 skipped_halt=6
+[W816 03:43:39.371771880 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:43:46.519890127 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:43:53.668754846 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:44:00.811878479 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:44:07.957294417 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:44:14.100546590 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:44:22.243147951 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:44:29.377686569 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:44:36.501173856 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+2026-08-16 03:44:41.342 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2026-03-04, pool=csi300, lookback=90, predict_len=10): pool=300 kept=294 skipped_short=0 skipped_halt=6
+[W816 03:44:45.037675119 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:44:52.179303419 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:45:00.334142221 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:45:07.472213800 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:45:14.599153629 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:45:21.724260118 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:45:28.840136682 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:45:35.954200213 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:45:42.067501487 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+2026-08-16 03:45:47.274 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2026-03-05, pool=csi300, lookback=90, predict_len=10): pool=300 kept=294 skipped_short=0 skipped_halt=6
+[W816 03:45:51.282902740 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:45:58.426359644 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:46:05.571792704 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:46:12.716662401 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:46:19.862105173 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:46:26.995517872 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:46:33.127381474 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:46:41.247051239 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:46:48.357837874 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+2026-08-16 03:46:53.322 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2026-03-06, pool=csi300, lookback=90, predict_len=10): pool=300 kept=294 skipped_short=0 skipped_halt=6
+[W816 03:46:57.327109137 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:47:04.156560388 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:47:12.295350660 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:47:19.443337507 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:47:26.575474166 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:47:33.711365541 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:47:40.840681347 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:47:47.962257751 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:47:54.068780295 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+2026-08-16 03:47:59.285 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2026-03-09, pool=csi300, lookback=90, predict_len=10): pool=300 kept=294 skipped_short=0 skipped_halt=6
+[W816 03:48:03.293121241 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:48:10.446862222 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:48:17.587768382 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:48:24.718304992 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:48:31.841894470 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:48:38.961834219 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:48:45.072535007 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:48:52.178033130 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:49:00.271280922 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+2026-08-16 03:49:04.611 | INFO     | baseline_suite.signal:run_variant_signals:136 - 四变体信号 [40/134] 2026-03-09: 294 只，mean std=0.0231
+2026-08-16 03:49:04.656 | DEBUG    | baseline_suite.signal:_dump_partial:164 - 四变体 checkpoint 落盘（40 日）
+2026-08-16 03:49:05.105 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2026-03-10, pool=csi300, lookback=90, predict_len=10): pool=300 kept=294 skipped_short=0 skipped_halt=6
+[W816 03:49:09.802852769 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:49:16.948472823 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:49:23.088177534 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:49:31.221731526 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:49:38.349365653 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:49:45.467402987 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:49:52.578270588 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:49:59.679759140 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:50:06.764537725 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+2026-08-16 03:50:10.974 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2026-03-11, pool=csi300, lookback=90, predict_len=10): pool=300 kept=294 skipped_short=0 skipped_halt=6
+[W816 03:50:14.977872169 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:50:21.130065171 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:50:29.276611264 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:50:36.411876213 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:50:43.544501917 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:50:50.663907015 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:50:57.775290395 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:51:04.883585910 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:51:11.983243839 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+2026-08-16 03:51:16.776 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2026-03-12, pool=csi300, lookback=90, predict_len=10): pool=300 kept=294 skipped_short=0 skipped_halt=6
+[W816 03:51:21.466884833 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:51:28.602302269 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:51:35.721797626 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:51:42.845392171 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:51:49.963248978 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:51:56.077324400 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:52:03.171319782 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:52:11.259209280 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:52:18.336436669 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+2026-08-16 03:52:22.542 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2026-03-13, pool=csi300, lookback=90, predict_len=10): pool=300 kept=294 skipped_short=0 skipped_halt=6
+[W816 03:52:26.548964975 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:52:33.700896975 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:52:40.851488321 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:52:47.996699359 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:52:54.134426976 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:53:02.265425182 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:53:09.393303399 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:53:16.510317553 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:53:23.617838254 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+2026-08-16 03:53:28.419 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2026-03-16, pool=csi300, lookback=90, predict_len=10): pool=300 kept=294 skipped_short=0 skipped_halt=6
+[W816 03:53:32.119759058 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:53:40.269344855 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:53:47.424554988 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:53:54.569766000 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:54:01.704135055 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:54:08.831061652 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:54:15.949951748 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:54:22.058474469 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:54:29.164810251 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+2026-08-16 03:54:34.492 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2026-03-17, pool=csi300, lookback=90, predict_len=10): pool=300 kept=294 skipped_short=0 skipped_halt=6
+[W816 03:54:38.192156525 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 482148352, total: 33667612672).
+[W816 03:54:46.345976416 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:54:52.800133226 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:54:59.942565377 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:55:06.084746733 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:55:14.223945099 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:55:21.356964687 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:55:28.482809420 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:55:35.599036023 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+2026-08-16 03:55:40.431 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2026-03-18, pool=csi300, lookback=90, predict_len=10): pool=300 kept=294 skipped_short=0 skipped_halt=6
+[W816 03:55:44.121889413 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:55:52.259803136 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:55:59.398744123 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:56:06.524440549 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:56:13.643146109 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:56:20.762382495 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:56:27.866981629 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:56:34.964529790 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:56:41.051988187 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+2026-08-16 03:56:46.259 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2026-03-19, pool=csi300, lookback=90, predict_len=10): pool=300 kept=294 skipped_short=0 skipped_halt=6
+[W816 03:56:50.266871540 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:56:57.415370184 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:57:04.564499888 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:57:11.708524015 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:57:18.853326915 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:57:25.985627587 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:57:32.117506050 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:57:40.240356970 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:57:47.360229937 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+2026-08-16 03:57:52.201 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2026-03-20, pool=csi300, lookback=90, predict_len=10): pool=300 kept=294 skipped_short=0 skipped_halt=6
+[W816 03:57:56.889542851 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:58:03.032970537 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:58:10.164613036 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:58:18.299887723 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:58:25.421867634 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:58:32.542294867 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:58:39.651068527 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:58:46.744428044 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+[W816 03:58:53.826577243 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 513802240 bytes (free: 486342656, total: 33667612672).
+2026-08-16 03:58:58.030 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2026-03-23, pool=csi300, lookback=90, predict_len=10): pool=300 kept=294 skipped_short=0 skipped_halt=6
+[W816 03:59:01.044537393 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:59:08.195565348 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:59:16.339922644 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:59:23.488398732 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:59:30.622559558 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:59:37.751670735 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:59:44.871141269 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+[W816 03:59:51.985338978 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 509607936 bytes (free: 486342656, total: 33667612672).
+2026-08-16 03:59:58.197 | INFO     | baseline_suite.signal:run_variant_signals:136 - 四变体信号 [50/134] 2026-03-23: 294 只，mean std=0.0160
+2026-08-16 03:59:58.240 | DEBUG    | baseline_suite.signal:_dump_partial:164 - 四变体 checkpoint 落盘（50 日）
+2026-08-16 03:59:58.682 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2026-03-24, pool=csi300, lookback=90, predict_len=10): pool=300 kept=294 skipped_short=0 skipped_halt=6
+2026-08-16 04:00:08.578 | INFO     | __main__:run_one:70 - G2 臂配置：seed=101 window=backtest_G2S101 [2026-01-01~2026-07-24] pool=csi300 N=20 T=1.0 top_p=0.9 推理seed=42
+2026-08-16 04:00:08.578 | INFO     | __main__:run_one:75 - G2 权重（唯一变量=训练种子）：model=/home/user/workspace/Kronos/finetune_suite/outputs/models/finetune_predictor_g2_s101/checkpoints/best_model
+2026-08-16 04:00:08.578 | INFO     | __main__:run_one:76 -                              tokenizer=/home/user/workspace/Kronos/finetune_suite/outputs/models/finetune_tokenizer_g1/checkpoints/best_model（共享复用）
+[2072517:MainThread](2026-08-16 04:00:08,920) INFO - qlib.Initialization - [config.py:441] - default_conf: client.
+[2072517:MainThread](2026-08-16 04:00:09,287) INFO - qlib.ddb_features - [ddb_features.py:116] - 已注册 qlib 兼容函数到 DolphinDB 会话
+[2072517:MainThread](2026-08-16 04:00:09,287) INFO - qlib.Initialization - [__init__.py:94] - qlib successfully initialized based on client settings.
+[2072517:MainThread](2026-08-16 04:00:09,288) INFO - qlib.Initialization - [__init__.py:111] - data_path={'__DEFAULT_FREQ': 'DolphinDB(dolphindb://admin:***@100.**.**.25:***)'}
+2026-08-16 04:00:09.288 | INFO     | kronos_qlib.provider:init_qlib_once:108 - Qlib 初始化成功 - URI: dolphindb://admin:***@100.**.**.25:***
+2026-08-16 04:00:09.920 | INFO     | __main__:_load_g2_predictor:92 - 加载 G2 tokenizer（G1 共享）：/home/user/workspace/Kronos/finetune_suite/outputs/models/finetune_tokenizer_g1/checkpoints/best_model
+2026-08-16 04:00:09.937 | INFO     | __main__:_load_g2_predictor:94 - 加载 G2 predictor：/home/user/workspace/Kronos/finetune_suite/outputs/models/finetune_predictor_g2_s101/checkpoints/best_model
+2026-08-16 04:00:10.598 | INFO     | baseline_suite.signal:run_variant_signals:92 - 四变体断点续跑：已有 50 日，跳过
+2026-08-16 04:00:10.598 | INFO     | baseline_suite.signal:run_variant_signals:95 - 四变体信号 [backtest_G2S101]：134 日总计，84 日待跑（N=20）
+2026-08-16 04:00:11.024 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2026-03-24, pool=csi300, lookback=90, predict_len=10): pool=300 kept=294 skipped_short=0 skipped_halt=6
+2026-08-16 04:00:42.220 | INFO     | baseline_suite.signal:run_variant_signals:136 - 四变体信号 [1/84] 2026-03-24: 294 只，mean std=0.0142
+2026-08-16 04:00:42.261 | DEBUG    | baseline_suite.signal:_dump_partial:164 - 四变体 checkpoint 落盘（51 日）
+2026-08-16 04:00:42.701 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2026-03-25, pool=csi300, lookback=90, predict_len=10): pool=300 kept=294 skipped_short=0 skipped_halt=6
+2026-08-16 04:01:14.215 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2026-03-26, pool=csi300, lookback=90, predict_len=10): pool=300 kept=294 skipped_short=0 skipped_halt=6
+2026-08-16 04:01:45.877 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2026-03-27, pool=csi300, lookback=90, predict_len=10): pool=300 kept=294 skipped_short=0 skipped_halt=6
+2026-08-16 04:02:17.452 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2026-03-30, pool=csi300, lookback=90, predict_len=10): pool=300 kept=294 skipped_short=0 skipped_halt=6
+2026-08-16 04:02:49.077 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2026-03-31, pool=csi300, lookback=90, predict_len=10): pool=300 kept=294 skipped_short=0 skipped_halt=6
+2026-08-16 04:03:20.665 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2026-04-01, pool=csi300, lookback=90, predict_len=10): pool=300 kept=294 skipped_short=0 skipped_halt=6
+2026-08-16 04:03:52.285 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2026-04-02, pool=csi300, lookback=90, predict_len=10): pool=300 kept=294 skipped_short=0 skipped_halt=6
+2026-08-16 04:04:23.893 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2026-04-03, pool=csi300, lookback=90, predict_len=10): pool=300 kept=294 skipped_short=0 skipped_halt=6
+2026-08-16 04:04:55.473 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2026-04-07, pool=csi300, lookback=90, predict_len=10): pool=300 kept=294 skipped_short=0 skipped_halt=6
+2026-08-16 04:05:26.646 | INFO     | baseline_suite.signal:run_variant_signals:136 - 四变体信号 [10/84] 2026-04-07: 294 只，mean std=0.0178
+2026-08-16 04:05:26.690 | DEBUG    | baseline_suite.signal:_dump_partial:164 - 四变体 checkpoint 落盘（60 日）
+2026-08-16 04:05:27.251 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2026-04-08, pool=csi300, lookback=90, predict_len=10): pool=300 kept=294 skipped_short=0 skipped_halt=6
+2026-08-16 04:05:58.833 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2026-04-09, pool=csi300, lookback=90, predict_len=10): pool=300 kept=294 skipped_short=0 skipped_halt=6
+2026-08-16 04:06:30.431 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2026-04-10, pool=csi300, lookback=90, predict_len=10): pool=300 kept=294 skipped_short=0 skipped_halt=6
+2026-08-16 04:07:02.007 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2026-04-13, pool=csi300, lookback=90, predict_len=10): pool=300 kept=294 skipped_short=0 skipped_halt=6
+2026-08-16 04:07:33.590 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2026-04-14, pool=csi300, lookback=90, predict_len=10): pool=300 kept=294 skipped_short=0 skipped_halt=6
+2026-08-16 04:08:05.263 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2026-04-15, pool=csi300, lookback=90, predict_len=10): pool=300 kept=294 skipped_short=0 skipped_halt=6
+2026-08-16 04:08:36.969 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2026-04-16, pool=csi300, lookback=90, predict_len=10): pool=300 kept=294 skipped_short=0 skipped_halt=6
+2026-08-16 04:09:08.617 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2026-04-17, pool=csi300, lookback=90, predict_len=10): pool=300 kept=294 skipped_short=0 skipped_halt=6
+2026-08-16 04:09:40.428 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2026-04-20, pool=csi300, lookback=90, predict_len=10): pool=300 kept=293 skipped_short=0 skipped_halt=7
+2026-08-16 04:10:11.990 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2026-04-21, pool=csi300, lookback=90, predict_len=10): pool=300 kept=293 skipped_short=0 skipped_halt=7
+2026-08-16 04:10:43.032 | INFO     | baseline_suite.signal:run_variant_signals:136 - 四变体信号 [20/84] 2026-04-21: 293 只，mean std=0.0218
+2026-08-16 04:10:43.075 | DEBUG    | baseline_suite.signal:_dump_partial:164 - 四变体 checkpoint 落盘（70 日）
+2026-08-16 04:10:43.614 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2026-04-22, pool=csi300, lookback=90, predict_len=10): pool=300 kept=293 skipped_short=0 skipped_halt=7
+2026-08-16 04:11:15.186 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2026-04-23, pool=csi300, lookback=90, predict_len=10): pool=300 kept=293 skipped_short=0 skipped_halt=7
+2026-08-16 04:11:46.778 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2026-04-24, pool=csi300, lookback=90, predict_len=10): pool=300 kept=293 skipped_short=0 skipped_halt=7
+2026-08-16 04:12:18.351 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2026-04-27, pool=csi300, lookback=90, predict_len=10): pool=300 kept=293 skipped_short=0 skipped_halt=7
+2026-08-16 04:12:49.930 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2026-04-28, pool=csi300, lookback=90, predict_len=10): pool=300 kept=293 skipped_short=0 skipped_halt=7
+2026-08-16 04:13:21.636 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2026-04-29, pool=csi300, lookback=90, predict_len=10): pool=300 kept=293 skipped_short=0 skipped_halt=7
+2026-08-16 04:13:53.199 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2026-04-30, pool=csi300, lookback=90, predict_len=10): pool=300 kept=293 skipped_short=0 skipped_halt=7
+2026-08-16 04:14:24.775 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2026-05-06, pool=csi300, lookback=90, predict_len=10): pool=300 kept=293 skipped_short=0 skipped_halt=7
+2026-08-16 04:14:56.333 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2026-05-07, pool=csi300, lookback=90, predict_len=10): pool=300 kept=293 skipped_short=0 skipped_halt=7
+2026-08-16 04:15:27.950 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2026-05-08, pool=csi300, lookback=90, predict_len=10): pool=300 kept=295 skipped_short=0 skipped_halt=5
+2026-08-16 04:15:59.219 | INFO     | baseline_suite.signal:run_variant_signals:136 - 四变体信号 [30/84] 2026-05-08: 295 只，mean std=0.0156
+2026-08-16 04:15:59.264 | DEBUG    | baseline_suite.signal:_dump_partial:164 - 四变体 checkpoint 落盘（80 日）
+2026-08-16 04:15:59.780 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2026-05-11, pool=csi300, lookback=90, predict_len=10): pool=300 kept=295 skipped_short=0 skipped_halt=5
+2026-08-16 04:16:31.590 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2026-05-12, pool=csi300, lookback=90, predict_len=10): pool=300 kept=295 skipped_short=0 skipped_halt=5
+2026-08-16 04:17:03.503 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2026-05-13, pool=csi300, lookback=90, predict_len=10): pool=300 kept=295 skipped_short=0 skipped_halt=5
+2026-08-16 04:17:35.321 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2026-05-14, pool=csi300, lookback=90, predict_len=10): pool=300 kept=295 skipped_short=0 skipped_halt=5
+2026-08-16 04:18:07.111 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2026-05-15, pool=csi300, lookback=90, predict_len=10): pool=300 kept=295 skipped_short=0 skipped_halt=5
+2026-08-16 04:18:38.917 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2026-05-18, pool=csi300, lookback=90, predict_len=10): pool=300 kept=295 skipped_short=0 skipped_halt=5
+2026-08-16 04:19:10.707 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2026-05-19, pool=csi300, lookback=90, predict_len=10): pool=300 kept=295 skipped_short=0 skipped_halt=5
+2026-08-16 04:19:42.515 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2026-05-20, pool=csi300, lookback=90, predict_len=10): pool=300 kept=295 skipped_short=0 skipped_halt=5
+2026-08-16 04:20:14.295 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2026-05-21, pool=csi300, lookback=90, predict_len=10): pool=300 kept=295 skipped_short=0 skipped_halt=5
+2026-08-16 04:20:46.074 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2026-05-22, pool=csi300, lookback=90, predict_len=10): pool=300 kept=296 skipped_short=0 skipped_halt=4
+2026-08-16 04:21:17.558 | INFO     | baseline_suite.signal:run_variant_signals:136 - 四变体信号 [40/84] 2026-05-22: 296 只，mean std=0.0178
+2026-08-16 04:21:17.605 | DEBUG    | baseline_suite.signal:_dump_partial:164 - 四变体 checkpoint 落盘（90 日）
+2026-08-16 04:21:18.082 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2026-05-25, pool=csi300, lookback=90, predict_len=10): pool=300 kept=296 skipped_short=0 skipped_halt=4
+2026-08-16 04:21:49.953 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2026-05-26, pool=csi300, lookback=90, predict_len=10): pool=300 kept=296 skipped_short=0 skipped_halt=4
+2026-08-16 04:22:21.814 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2026-05-27, pool=csi300, lookback=90, predict_len=10): pool=300 kept=296 skipped_short=0 skipped_halt=4
+2026-08-16 04:22:53.660 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2026-05-28, pool=csi300, lookback=90, predict_len=10): pool=300 kept=296 skipped_short=0 skipped_halt=4
+2026-08-16 04:23:25.554 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2026-05-29, pool=csi300, lookback=90, predict_len=10): pool=300 kept=296 skipped_short=0 skipped_halt=4
+2026-08-16 04:23:57.399 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2026-06-01, pool=csi300, lookback=90, predict_len=10): pool=300 kept=296 skipped_short=0 skipped_halt=4
+2026-08-16 04:24:29.387 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2026-06-02, pool=csi300, lookback=90, predict_len=10): pool=300 kept=296 skipped_short=0 skipped_halt=4
+2026-08-16 04:25:01.220 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2026-06-03, pool=csi300, lookback=90, predict_len=10): pool=300 kept=297 skipped_short=0 skipped_halt=3
+2026-08-16 04:25:33.184 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2026-06-04, pool=csi300, lookback=90, predict_len=10): pool=300 kept=297 skipped_short=0 skipped_halt=3
+2026-08-16 04:26:05.125 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2026-06-05, pool=csi300, lookback=90, predict_len=10): pool=300 kept=297 skipped_short=0 skipped_halt=3
+2026-08-16 04:26:36.573 | INFO     | baseline_suite.signal:run_variant_signals:136 - 四变体信号 [50/84] 2026-06-05: 297 只，mean std=0.0198
+2026-08-16 04:26:36.620 | DEBUG    | baseline_suite.signal:_dump_partial:164 - 四变体 checkpoint 落盘（100 日）
+2026-08-16 04:26:37.118 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2026-06-08, pool=csi300, lookback=90, predict_len=10): pool=300 kept=297 skipped_short=0 skipped_halt=3
+2026-08-16 04:27:09.059 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2026-06-09, pool=csi300, lookback=90, predict_len=10): pool=300 kept=297 skipped_short=0 skipped_halt=3
+2026-08-16 04:27:41.035 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2026-06-10, pool=csi300, lookback=90, predict_len=10): pool=300 kept=297 skipped_short=0 skipped_halt=3
+2026-08-16 04:28:13.119 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2026-06-11, pool=csi300, lookback=90, predict_len=10): pool=300 kept=297 skipped_short=0 skipped_halt=3
+2026-08-16 04:28:45.079 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2026-06-12, pool=csi300, lookback=90, predict_len=10): pool=300 kept=297 skipped_short=0 skipped_halt=3
+2026-08-16 04:29:17.026 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2026-06-15, pool=csi300, lookback=90, predict_len=10): pool=300 kept=297 skipped_short=0 skipped_halt=3
+2026-08-16 04:29:49.000 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2026-06-16, pool=csi300, lookback=90, predict_len=10): pool=300 kept=297 skipped_short=0 skipped_halt=3
+2026-08-16 04:30:20.962 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2026-06-17, pool=csi300, lookback=90, predict_len=10): pool=300 kept=297 skipped_short=0 skipped_halt=3
+2026-08-16 04:30:52.906 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2026-06-18, pool=csi300, lookback=90, predict_len=10): pool=300 kept=297 skipped_short=0 skipped_halt=3
+2026-08-16 04:31:24.892 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2026-06-22, pool=csi300, lookback=90, predict_len=10): pool=300 kept=297 skipped_short=0 skipped_halt=3
+2026-08-16 04:31:56.484 | INFO     | baseline_suite.signal:run_variant_signals:136 - 四变体信号 [60/84] 2026-06-22: 297 只，mean std=0.0213
+2026-08-16 04:31:56.536 | DEBUG    | baseline_suite.signal:_dump_partial:164 - 四变体 checkpoint 落盘（110 日）
+2026-08-16 04:31:57.020 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2026-06-23, pool=csi300, lookback=90, predict_len=10): pool=300 kept=297 skipped_short=0 skipped_halt=3
+2026-08-16 04:32:28.995 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2026-06-24, pool=csi300, lookback=90, predict_len=10): pool=300 kept=297 skipped_short=0 skipped_halt=3
+2026-08-16 04:33:00.930 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2026-06-25, pool=csi300, lookback=90, predict_len=10): pool=300 kept=297 skipped_short=0 skipped_halt=3
+2026-08-16 04:33:32.886 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2026-06-26, pool=csi300, lookback=90, predict_len=10): pool=300 kept=297 skipped_short=0 skipped_halt=3
+2026-08-16 04:34:04.831 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2026-06-29, pool=csi300, lookback=90, predict_len=10): pool=300 kept=296 skipped_short=0 skipped_halt=4
+2026-08-16 04:34:36.713 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2026-06-30, pool=csi300, lookback=90, predict_len=10): pool=300 kept=296 skipped_short=0 skipped_halt=4
+2026-08-16 04:35:08.683 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2026-07-01, pool=csi300, lookback=90, predict_len=10): pool=300 kept=296 skipped_short=0 skipped_halt=4
+2026-08-16 04:35:40.550 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2026-07-02, pool=csi300, lookback=90, predict_len=10): pool=300 kept=296 skipped_short=0 skipped_halt=4
+2026-08-16 04:36:12.384 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2026-07-03, pool=csi300, lookback=90, predict_len=10): pool=300 kept=296 skipped_short=0 skipped_halt=4
+2026-08-16 04:36:44.238 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2026-07-06, pool=csi300, lookback=90, predict_len=10): pool=300 kept=297 skipped_short=0 skipped_halt=3
+2026-08-16 04:37:15.705 | INFO     | baseline_suite.signal:run_variant_signals:136 - 四变体信号 [70/84] 2026-07-06: 297 只，mean std=0.0219
+2026-08-16 04:37:15.757 | DEBUG    | baseline_suite.signal:_dump_partial:164 - 四变体 checkpoint 落盘（120 日）
+2026-08-16 04:37:16.237 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2026-07-07, pool=csi300, lookback=90, predict_len=10): pool=300 kept=297 skipped_short=0 skipped_halt=3
+2026-08-16 04:37:48.214 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2026-07-08, pool=csi300, lookback=90, predict_len=10): pool=300 kept=297 skipped_short=0 skipped_halt=3
+2026-08-16 04:38:20.161 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2026-07-09, pool=csi300, lookback=90, predict_len=10): pool=300 kept=297 skipped_short=0 skipped_halt=3
+2026-08-16 04:38:52.265 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2026-07-10, pool=csi300, lookback=90, predict_len=10): pool=300 kept=297 skipped_short=0 skipped_halt=3
+2026-08-16 04:39:24.242 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2026-07-13, pool=csi300, lookback=90, predict_len=10): pool=300 kept=297 skipped_short=0 skipped_halt=3
+2026-08-16 04:39:56.202 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2026-07-14, pool=csi300, lookback=90, predict_len=10): pool=300 kept=297 skipped_short=0 skipped_halt=3
+2026-08-16 04:40:28.157 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2026-07-15, pool=csi300, lookback=90, predict_len=10): pool=300 kept=297 skipped_short=0 skipped_halt=3
+2026-08-16 04:41:00.098 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2026-07-16, pool=csi300, lookback=90, predict_len=10): pool=300 kept=297 skipped_short=0 skipped_halt=3
+2026-08-16 04:41:32.065 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2026-07-17, pool=csi300, lookback=90, predict_len=10): pool=300 kept=297 skipped_short=0 skipped_halt=3
+2026-08-16 04:42:04.028 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2026-07-20, pool=csi300, lookback=90, predict_len=10): pool=300 kept=297 skipped_short=0 skipped_halt=3
+2026-08-16 04:42:35.612 | INFO     | baseline_suite.signal:run_variant_signals:136 - 四变体信号 [80/84] 2026-07-20: 297 只，mean std=0.0232
+2026-08-16 04:42:35.666 | DEBUG    | baseline_suite.signal:_dump_partial:164 - 四变体 checkpoint 落盘（130 日）
+2026-08-16 04:42:36.171 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2026-07-21, pool=csi300, lookback=90, predict_len=10): pool=300 kept=298 skipped_short=0 skipped_halt=2
+2026-08-16 04:43:08.223 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2026-07-22, pool=csi300, lookback=90, predict_len=10): pool=300 kept=298 skipped_short=0 skipped_halt=2
+2026-08-16 04:43:40.313 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2026-07-23, pool=csi300, lookback=90, predict_len=10): pool=300 kept=298 skipped_short=0 skipped_halt=2
+2026-08-16 04:44:12.372 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2026-07-24, pool=csi300, lookback=90, predict_len=10): pool=300 kept=298 skipped_short=0 skipped_halt=2
+2026-08-16 04:44:43.960 | INFO     | baseline_suite.signal:run_variant_signals:147 - last 信号宽表 [backtest_G2S101]：134 日 × 平均 295 只/日
+2026-08-16 04:44:43.962 | INFO     | baseline_suite.signal:run_variant_signals:147 - mean 信号宽表 [backtest_G2S101]：134 日 × 平均 295 只/日
+2026-08-16 04:44:43.965 | INFO     | baseline_suite.signal:run_variant_signals:147 - max 信号宽表 [backtest_G2S101]：134 日 × 平均 295 只/日
+2026-08-16 04:44:43.968 | INFO     | baseline_suite.signal:run_variant_signals:147 - min 信号宽表 [backtest_G2S101]：134 日 × 平均 295 只/日
+2026-08-16 04:44:43.980 | INFO     | __main__:run_one:85 - G2S101 backtest last 落盘 daily_signals_backtest_G2S101_last.parquet（134 日）
+2026-08-16 04:44:43.991 | INFO     | __main__:run_one:85 - G2S101 backtest mean 落盘 daily_signals_backtest_G2S101_mean.parquet（134 日）
+2026-08-16 04:44:44.002 | INFO     | __main__:run_one:85 - G2S101 backtest max 落盘 daily_signals_backtest_G2S101_max.parquet（134 日）
+2026-08-16 04:44:44.013 | INFO     | __main__:run_one:85 - G2S101 backtest min 落盘 daily_signals_backtest_G2S101_min.parquet（134 日）
+Loading weights from local directory
+Loading weights from local directory
