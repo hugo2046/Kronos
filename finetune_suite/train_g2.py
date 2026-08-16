@@ -29,11 +29,15 @@ class G2Config(G1Config):
 
     tokenizer 路径继承 G1Config（finetune_tokenizer_g1，共享条款）；
     语料/超参/epochs/数据窗口零改动。
+    seed 101/102 = 计划 §1 核心；103/104 = 跑前增补 D-seed+（2026-08-16
+    增补条款，5 种子面板加厚，仍共享 G1 tokenizer）。
     """
 
     def __init__(self, seed: int = 101):
         super().__init__()
-        assert seed in (101, 102), "G2 计划冻结：仅 seed=101/102 两个新种子"
+        assert seed in (101, 102, 103, 104), (
+            "G2 冻结：seed ∈ {101,102}（核心）∪ {103,104}（增补 D-seed+）"
+        )
         self.seed = seed
         self.predictor_save_folder_name = f"finetune_predictor_g2_s{seed}"
         self.comet_tag = self.comet_name = f"finetune_suite_g2_s{seed}"
@@ -68,6 +72,8 @@ def main(seed: int) -> None:
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="G2 predictor 种子重训（101/102）")
-    parser.add_argument("--seed", type=int, choices=[101, 102], required=True)
+    parser = argparse.ArgumentParser(
+        description="G2 predictor 种子重训（核心 101/102 + 增补 D-seed+ 103/104）"
+    )
+    parser.add_argument("--seed", type=int, choices=[101, 102, 103, 104], required=True)
     main(parser.parse_args().seed)

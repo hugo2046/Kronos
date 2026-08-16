@@ -1,0 +1,8 @@
+{
+    "start_time": "2026-08-15T23-53-23",
+    "save_directory": "/home/user/workspace/Kronos/finetune_suite/outputs/models/finetune_tokenizer_dtok",
+    "world_size": 1,
+    "final_result": {
+        "best_val_loss": 0.00915970458984375
+    }
+}

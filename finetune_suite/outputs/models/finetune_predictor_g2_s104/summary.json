@@ -1,0 +1,8 @@
+{
+    "start_time": "2026-08-16T02-12-26",
+    "save_directory": "/home/user/workspace/Kronos/finetune_suite/outputs/models/finetune_predictor_g2_s104",
+    "world_size": 1,
+    "final_result": {
+        "best_val_loss": 3.234708557128906
+    }
+}

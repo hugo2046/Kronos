@@ -1,0 +1,19 @@
+$ /home/user/miniconda3/envs/quant/bin/python finetune_suite/append_duckdb_g2.py   # 第二批：增补臂（逐臂幂等，核心臂已归档跳过）
+arm     variant
+DTOK    last       39563
+        max        39563
+        mean       39563
+        min        39563
+G2S103  last       39563
+        max        39563
+        mean       39563
+        min        39563
+G2S104  last       39563
+        max        39563
+        mean       39563
+        min        39563
+追加完成：signals 总 1752700 行，runs 追加 3 行
+对拍 G2S103/mean/backtest/2026-04-17: 294 值, max|Δ|=0.0e+00 → 一致
+对拍 G2S104/mean/backtest/2026-04-17: 294 值, max|Δ|=0.0e+00 → 一致
+对拍 DTOK/mean/backtest/2026-04-17: 294 值, max|Δ|=0.0e+00 → 一致
+DuckDB 追加归档完成：/home/user/workspace/Kronos/finetune_suite/data/signals.duckdb

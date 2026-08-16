@@ -33,7 +33,8 @@ def test_g2_config_single_variable():
     from finetune_suite.train_g2 import G2Config
 
     g1 = G1Config()
-    for seed in (101, 102):
+    # 101/102 = 计划 §1 核心；103/104 = 跑前增补 D-seed+（均共享 G1 tokenizer）
+    for seed in (101, 102, 103, 104):
         g2 = G2Config(seed=seed)
         drift = [f for f in _PROTOCOL_FIELDS if getattr(g1, f) != getattr(g2, f)]
         assert not drift, f"seed={seed} 协议字段漂移：{drift}"
@@ -46,6 +47,27 @@ def test_g2_config_single_variable():
         assert g2.finetuned_tokenizer_path == g1.finetuned_tokenizer_path
         # G1 seed=100 权重目录不被 G2 触碰
         assert g2.predictor_save_folder_name != g1.predictor_save_folder_name
+
+
+def test_dtok_config_full_pipeline_seed():
+    """增补臂 D-tok：tokenizer+predictor 全管线 seed=101（补 tokenizer 种子洞）。"""
+    from finetune_suite.train_dtok import DtokConfig
+    from finetune_suite.train_g1 import G1Config
+
+    g1 = G1Config()
+    dt = DtokConfig()
+    drift = [
+        f for f in _PROTOCOL_FIELDS
+        if f not in ("finetuned_tokenizer_path", "tokenizer_save_folder_name")
+        and getattr(g1, f) != getattr(dt, f)
+    ]
+    assert not drift, f"D-tok 协议字段漂移：{drift}"
+    assert dt.seed == 101
+    assert dt.tokenizer_save_folder_name == "finetune_tokenizer_dtok"
+    assert dt.predictor_save_folder_name == "finetune_predictor_dtok"
+    # D-tok 用自己的 tokenizer（与共享 G1 tokenizer 的 s101 形成对照）
+    assert dt.finetuned_tokenizer_path != g1.finetuned_tokenizer_path
+    assert dt.finetuned_tokenizer_path.endswith("finetune_tokenizer_dtok/checkpoints/best_model")
 
 
 def _case(s100_ew, s101_ew, s102_ew, idx=None, h2=None, f0_h2=-0.10):
@@ -129,3 +151,25 @@ def test_g2_signals_alignment():
                 assert pd.read_parquet(p).index.equals(ref_idx), (
                     f"{p.name} 索引与 {window} 窗对照不一致"
                 )
+
+
+def test_g2_supp_signals_alignment():
+    """增补臂（D-seed+ 103/104 与 D-tok）backtest 窗信号对齐（只跑 backtest，增补条款）。"""
+    import pandas as pd
+
+    from finetune_suite.run_g2_signals import arm_tag
+
+    repo = __import__("pathlib").Path(__file__).resolve().parents[1]
+    ref_idx = pd.read_parquet(
+        repo / "finetune_suite" / "data" / "daily_signals_backtest_M.parquet"
+    ).index
+    for seed, sub in ((103, "s103"), (104, "s104"), ("dtok", "dtok")):
+        paths = [
+            repo / "finetune_suite" / "data" / "g2" / sub
+            / f"daily_signals_backtest_{arm_tag(seed)}_{v}.parquet"
+            for v in ("last", "mean", "max", "min")
+        ]
+        missing = [p.name for p in paths if not p.exists()]
+        assert not missing, f"{sub} 信号缺失 {missing}：先跑增补臂推理"
+        for p in paths:
+            assert pd.read_parquet(p).index.equals(ref_idx), f"{p.name} 索引不一致"

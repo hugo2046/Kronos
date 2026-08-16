@@ -43,15 +43,28 @@ WINDOW_DEFS = {
 }
 
 
-def arm_tag(seed: int) -> str:
-    return f"G2S{seed}"
+def arm_tag(seed) -> str:
+    """种子臂标签：101 → G2S101；'dtok' → DTOK（增补 37aba7d）。"""
+    return f"G2S{seed}" if isinstance(seed, int) else "DTOK"
 
 
-def build_g2_config(seed: int, window: str) -> BaselineConfig:
-    """oos 口径 + 指定窗 + **唯一变量=训练种子产出的权重**（推理 seed 恒 42）。"""
-    from finetune_suite.train_g2 import G2Config
+def build_g2_config(seed, window: str) -> BaselineConfig:
+    """oos 口径 + 指定窗 + **唯一变量=训练种子产出的权重**（推理 seed 恒 42）。
 
-    g2 = G2Config(seed=seed)
+    seed ∈ {101,102}（核心，两窗）| {103,104}（增补 D-seed+，仅 backtest）
+    | 'dtok'（增补 D-tok 全管线 seed=101，仅 backtest）。
+    """
+    if isinstance(seed, int):
+        from finetune_suite.train_g2 import G2Config
+
+        g2 = G2Config(seed=seed)
+        tokenizer_path = g2.finetuned_tokenizer_path  # G1 tokenizer 共享复用
+    else:
+        from finetune_suite.train_dtok import DtokConfig
+
+        g2 = DtokConfig()
+        tokenizer_path = g2.finetuned_tokenizer_path  # D-tok 自训 tokenizer
+
     start, end = WINDOW_DEFS[window]
     return replace(
         BaselineConfig.load(window="oos"),
@@ -59,12 +72,13 @@ def build_g2_config(seed: int, window: str) -> BaselineConfig:
         backtest_start=start,
         backtest_end=end,
         model_name=g2.finetuned_predictor_path,
-        tokenizer_name=g2.finetuned_tokenizer_path,  # G1 tokenizer 共享复用
+        tokenizer_name=tokenizer_path,
     )
 
 
-def run_one(seed: int, window: str) -> None:
-    out_dir = G2_DIR / f"s{seed}"
+def run_one(seed, window: str) -> None:
+    sub = "dtok" if seed == "dtok" else f"s{seed}"
+    out_dir = G2_DIR / sub
     out_dir.mkdir(parents=True, exist_ok=True)
     cfg = build_g2_config(seed, window)
     logger.info(
@@ -98,10 +112,15 @@ def _load_g2_predictor(cfg: BaselineConfig):
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="G2 种子臂两窗四变体推理")
-    parser.add_argument("--seed", type=int, choices=[101, 102], required=True)
+    parser.add_argument("--seed", required=True,
+                        help="101/102（核心两窗）| 103/104（增补 D-seed+）| dtok（增补 D-tok）")
     parser.add_argument("--window", choices=list(WINDOW_DEFS), required=True)
     args = parser.parse_args()
-    run_one(args.seed, args.window)
+    seed = args.seed if args.seed == "dtok" else int(args.seed)
+    # 增补条款（37aba7d）：增补臂只跑 backtest 窗（省预算），2025H2 不做
+    if (seed in (103, 104) or seed == "dtok") and args.window != "backtest":
+        parser.error("增补臂（103/104/dtok）仅跑 backtest 窗（增补条款）")
+    run_one(seed, args.window)
 
 
 if __name__ == "__main__":
