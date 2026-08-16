@@ -1,0 +1,2 @@
+date,file,sha256,n_stocks,created_utc,late
+2026-08-14,signals_2026-08-14.parquet,d8678b0b215e36004ec76badce87d10cc3985e511fb3f5a16f0f305cfe9485c9,298,2026-08-16T06:38:28+00:00,true
