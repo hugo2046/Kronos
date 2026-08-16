@@ -75,3 +75,4 @@ venv.bak/
 temp/
 tmp/
 .python-version
+finetune_suite/registry/cron.log
