@@ -39,6 +39,32 @@ G1_CORPUS_DIR = _PKG_DIR.parent / "finetune_suite" / "data" / "ashares"
 OUT_DIR = _PKG_DIR / "data"
 
 
+def filter_to_calendar(
+    data: dict[str, pd.DataFrame], calendar: pd.DatetimeIndex
+) -> tuple[dict[str, pd.DataFrame], dict]:
+    """交易日历内连接过滤（跑前修订 f322654 纵深防御）。
+
+    DDB 2026-08-17 曾清理 2024-01-01 两条非交易日污染记录；本过滤保证任何
+    非日历行（若源再有）在建料期被剔除并透明计数，而非进入训练窗口。
+    纵深防御断言（main 内）：过滤后**所有**日期 ∈ 日历。
+    """
+    cal = pd.DatetimeIndex(calendar)
+    out: dict[str, pd.DataFrame] = {}
+    n_dropped = 0
+    touched: list[str] = []
+    for sym, df in data.items():
+        keep = df.index.isin(cal)
+        n_bad = int((~keep).sum())
+        if n_bad:
+            touched.append(sym)
+            n_dropped += n_bad
+            out[sym] = df[keep]
+        else:
+            out[sym] = df
+    stats = {"n_offcalendar_dropped": n_dropped, "symbols_touched": touched}
+    return out, stats
+
+
 def attach_market_context(
     data: dict[str, pd.DataFrame], mkt: pd.DataFrame
 ) -> dict[str, pd.DataFrame]:
@@ -91,12 +117,23 @@ def main() -> None:
             "n_days": len(index_close),
         },
         "warmup_from": "tencent ifzq.gtimg.cn sh000300（2013 段，对拍 DDB 2014 重叠段后采用）",
+        "calendar_filter": {},  # 跑前修订 f322654：日历内连接过滤统计（纵深防御）
         "splits": {},
     }
     for split in ("train", "val"):
         src_path = G1_CORPUS_DIR / f"{split}_data.pkl"
         with open(src_path, "rb") as f:
             data = pickle.load(f)
+        data, filt_stats = filter_to_calendar(data, mkt.index)
+        stats["calendar_filter"][split] = filt_stats
+        # 纵深防御断言：过滤后所有日期 ∈ 交易日历（市场表日历）
+        residual = pd.DatetimeIndex(
+            [d for df in data.values() for d in df.index if d not in mkt.index]
+        )
+        assert len(residual) == 0, (
+            f"{split} 过滤后仍残留非日历日期 {len(residual)} 行"
+            f"（首 {residual[0].date()}）——升级报告"
+        )
         out_data = attach_market_context(data, mkt)
 
         out_path = OUT_DIR / f"{split}_data.pkl"

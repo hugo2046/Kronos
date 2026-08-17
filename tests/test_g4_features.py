@@ -219,6 +219,49 @@ class TestSurgeryCopy:
 
 
 # ============================================================
+# 支撑：交易日历内连接过滤（跑前修订 f322654 纵深防御）
+# ============================================================
+class TestCalendarFilter:
+    def test_calendar_filter(self) -> None:
+        """非交易日（污染）行被内连接过滤并计数，交易日行逐位保留。"""
+        from g4_features.build_dataset import filter_to_calendar
+
+        close = _synthetic_index()
+        data = _synthetic_stocks(close.index)
+        cal = close.index  # 市场日历（真实交易日集）
+
+        # 注入 2 条非日历行（周末型污染；合成日历 = bdate_range 不含周末）
+        polluted = data["C000"].copy()
+        bad_dates = pd.DatetimeIndex(
+            [pd.Timestamp("2014-01-04"), pd.Timestamp("2014-01-05")]
+        )  # 周六 + 周日
+        injected = pd.concat(
+            [polluted, pd.DataFrame({c: 1.0 for c in BASE_COLS}, index=bad_dates)]
+        ).sort_index()
+        data2 = dict(data)
+        data2["C000"] = injected
+
+        out, stats = filter_to_calendar(data2, cal)
+        assert stats["n_offcalendar_dropped"] == 2
+        assert stats["symbols_touched"] == ["C000"]
+        # 交易日行逐位保留
+        pd.testing.assert_frame_equal(out["C000"], data["C000"], check_freq=False)
+        # 未受污染的股票原样
+        pd.testing.assert_frame_equal(out["C001"], data["C001"], check_freq=False)
+
+    def test_calendar_filter_clean_noop(self) -> None:
+        """清洁语料过滤为无操作（0 行被滤）——跑前修订的确认性检查路径。"""
+        from g4_features.build_dataset import filter_to_calendar
+
+        close = _synthetic_index()
+        data = _synthetic_stocks(close.index)
+        out, stats = filter_to_calendar(data, close.index)
+        assert stats["n_offcalendar_dropped"] == 0
+        for sym in data:
+            pd.testing.assert_frame_equal(out[sym], data[sym], check_freq=False)
+
+
+# ============================================================
 # 支撑：市场列因果性（无前视）
 # ============================================================
 class TestMarketContextCausality:

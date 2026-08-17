@@ -22,6 +22,16 @@
     "n_days": 3157
   },
   "warmup_from": "tencent ifzq.gtimg.cn sh000300（2013 段，对拍 DDB 2014 重叠段后采用）",
+  "calendar_filter": {
+    "train": {
+      "n_offcalendar_dropped": 0,
+      "symbols_touched": []
+    },
+    "val": {
+      "n_offcalendar_dropped": 0,
+      "symbols_touched": []
+    }
+  },
   "splits": {
     "train": {
       "n_symbols": 5599,
@@ -31,7 +41,7 @@
         "2024-12-31"
       ],
       "market_join_coverage": 1.0,
-      "pkl_bytes": 577911171,
+      "pkl_bytes": 578011981,
       "source_pkl_bytes": 330638175
     },
     "val": {
@@ -42,7 +52,7 @@
         "2025-06-30"
       ],
       "market_join_coverage": 1.0,
-      "pkl_bytes": 37021677,
+      "pkl_bytes": 37124338,
       "source_pkl_bytes": 21552822
     }
   }
