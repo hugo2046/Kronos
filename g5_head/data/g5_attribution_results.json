@@ -1,0 +1,89 @@
+{
+  "experiment": "g5_stage0_attribution",
+  "date": "2026-08-17",
+  "precommitment": {
+    "threshold": 0.6,
+    "metric": "backtest 窗 mean(|G1_top50 ∩ M_top50|/50)",
+    "source": "docs/G5预测头魔改实验计划_20260817.md §1（提交 8aa6564 冻结）"
+  },
+  "windows": {
+    "backtest": [
+      "2026-01-01",
+      "2026-07-24"
+    ],
+    "2025h2": [
+      "2025-07-01",
+      "2025-12-31"
+    ]
+  },
+  "overlap": {
+    "backtest": {
+      "G1_mean_vs_M": 0.36149253731343284,
+      "G1_mean_vs_F0_mean": 0.11820895522388057
+    },
+    "2025h2": {
+      "G1_mean_vs_M": 0.30460317460317465,
+      "G1_mean_vs_F0_mean": 0.14142857142857143
+    }
+  },
+  "rank_corr": {
+    "backtest": {
+      "corr_G1_vs_M": 0.008382551221234165,
+      "corr_G1_vs_negR": 0.008382551221234165,
+      "corr_G1_vs_F0_mean": -0.006560208043726028
+    },
+    "2025h2": {
+      "corr_G1_vs_M": -0.006337728515662431,
+      "corr_G1_vs_negR": -0.006337728515662431,
+      "corr_G1_vs_F0_mean": -0.0075510879352467435
+    }
+  },
+  "market_cap": {
+    "probe": {
+      "$market_value": {
+        "rows": 900,
+        "nonzero": 0
+      },
+      "$mktcap": {
+        "rows": 900,
+        "nonzero": 0
+      },
+      "$total_mv": {
+        "rows": 900,
+        "nonzero": 0
+      },
+      "$float_mv": {
+        "rows": 900,
+        "nonzero": 0
+      },
+      "$negotiable_mv": {
+        "rows": 900,
+        "nonzero": 0
+      },
+      "$cap": {
+        "rows": 900,
+        "nonzero": 0
+      },
+      "$total_share": {
+        "rows": 900,
+        "nonzero": 0
+      },
+      "$float_share": {
+        "rows": 900,
+        "nonzero": 0
+      },
+      "$marketcap": {
+        "rows": 900,
+        "nonzero": 0
+      }
+    },
+    "has_market_cap": false,
+    "skipped": true
+  },
+  "verdict": {
+    "metric": 0.36149253731343284,
+    "threshold": 0.6,
+    "verdict": "G1 含非动量增量",
+    "note": "backtest 窗持仓重合度 36.1% ≤ 60% → C2 按原设计解读；正交化报告项仍做（对称性）"
+  }
+}

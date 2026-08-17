@@ -1,0 +1,47 @@
+2026-08-17 13:39:58.907 | INFO     | __main__:main:178 - 引擎口径：csi300 top_k=50 drop_n=5 min_hold=5 cost_bps=15
+2026-08-17 13:39:58.907 | INFO     | __main__:main:194 - ======================================================================
+2026-08-17 13:39:58.907 | INFO     | __main__:main:195 - 窗口 backtest：('2026-01-01', '2026-07-24')
+2026-08-17 13:39:58.953 | INFO     | __main__:_load_window:98 - [backtest] 信号就绪：134 日（2026-01-05~2026-07-24）
+2026-08-17 13:39:58.954 | INFO     | __main__:main:198 - [backtest] 0.1 持仓重合度（引擎重放，top_k=50）
+[2618541:MainThread](2026-08-17 13:39:59,032) INFO - qlib.Initialization - [config.py:441] - default_conf: client.
+[2618541:MainThread](2026-08-17 13:39:59,402) INFO - qlib.ddb_features - [ddb_features.py:116] - 已注册 qlib 兼容函数到 DolphinDB 会话
+[2618541:MainThread](2026-08-17 13:39:59,402) INFO - qlib.Initialization - [__init__.py:94] - qlib successfully initialized based on client settings.
+[2618541:MainThread](2026-08-17 13:39:59,403) INFO - qlib.Initialization - [__init__.py:111] - data_path={'__DEFAULT_FREQ': 'DolphinDB(dolphindb://admin:***@100.**.**.25:***)'}
+2026-08-17 13:39:59.403 | INFO     | kronos_qlib.provider:init_qlib_once:108 - Qlib 初始化成功 - URI: dolphindb://admin:***@100.**.**.25:***
+2026-08-17 13:39:59.724 | INFO     | paper_replication.signal:build_px_tradeable:279 - 价格/可交易宽表：134 日 × 336 列；日均不可交易 2.5 只
+2026-08-17 13:39:59.893 | INFO     | __main__:_holdings_overlap:129 - [backtest] G1_mean 持仓重放：134 日，日均 50.0 只（top_k=50）
+2026-08-17 13:40:00.057 | INFO     | __main__:_holdings_overlap:129 - [backtest] M 持仓重放：134 日，日均 50.0 只（top_k=50）
+2026-08-17 13:40:00.221 | INFO     | __main__:_holdings_overlap:129 - [backtest] F0_mean 持仓重放：134 日，日均 50.0 只（top_k=50）
+2026-08-17 13:40:00.221 | INFO     | __main__:main:201 - [backtest] 重合度 G1_mean_vs_M：0.3615（36.1%）
+2026-08-17 13:40:00.221 | INFO     | __main__:main:201 - [backtest] 重合度 G1_mean_vs_F0_mean：0.1182（11.8%）
+2026-08-17 13:40:00.221 | INFO     | __main__:main:204 - [backtest] 0.2 信号截面秩相关（逐日 Spearman 均值）
+2026-08-17 13:40:00.328 | INFO     | __main__:_rank_corr:150 -   corr(G1_mean, M)：134 日均值 +0.0084
+2026-08-17 13:40:00.434 | INFO     | __main__:_rank_corr:150 -   corr(G1_mean, −R)：134 日均值 +0.0084
+2026-08-17 13:40:00.540 | INFO     | __main__:_rank_corr:150 -   corr(G1_mean, F0_mean)：134 日均值 -0.0066
+2026-08-17 13:40:00.540 | INFO     | __main__:main:194 - ======================================================================
+2026-08-17 13:40:00.540 | INFO     | __main__:main:195 - 窗口 2025h2：('2025-07-01', '2025-12-31')
+2026-08-17 13:40:00.577 | INFO     | __main__:_load_window:98 - [2025h2] 信号就绪：126 日（2025-07-01~2025-12-31）
+2026-08-17 13:40:00.577 | INFO     | __main__:main:198 - [2025h2] 0.1 持仓重合度（引擎重放，top_k=50）
+2026-08-17 13:40:00.682 | INFO     | paper_replication.signal:build_px_tradeable:279 - 价格/可交易宽表：126 日 × 337 列；日均不可交易 4.6 只
+2026-08-17 13:40:00.843 | INFO     | __main__:_holdings_overlap:129 - [2025h2] G1_mean 持仓重放：126 日，日均 50.0 只（top_k=50）
+2026-08-17 13:40:00.998 | INFO     | __main__:_holdings_overlap:129 - [2025h2] M 持仓重放：126 日，日均 50.0 只（top_k=50）
+2026-08-17 13:40:01.154 | INFO     | __main__:_holdings_overlap:129 - [2025h2] F0_mean 持仓重放：126 日，日均 50.0 只（top_k=50）
+2026-08-17 13:40:01.154 | INFO     | __main__:main:201 - [2025h2] 重合度 G1_mean_vs_M：0.3046（30.5%）
+2026-08-17 13:40:01.154 | INFO     | __main__:main:201 - [2025h2] 重合度 G1_mean_vs_F0_mean：0.1414（14.1%）
+2026-08-17 13:40:01.154 | INFO     | __main__:main:204 - [2025h2] 0.2 信号截面秩相关（逐日 Spearman 均值）
+2026-08-17 13:40:01.255 | INFO     | __main__:_rank_corr:150 -   corr(G1_mean, M)：126 日均值 -0.0063
+2026-08-17 13:40:01.355 | INFO     | __main__:_rank_corr:150 -   corr(G1_mean, −R)：126 日均值 -0.0063
+2026-08-17 13:40:01.456 | INFO     | __main__:_rank_corr:150 -   corr(G1_mean, F0_mean)：126 日均值 -0.0076
+2026-08-17 13:40:01.456 | INFO     | __main__:main:212 - ======================================================================
+2026-08-17 13:40:01.456 | INFO     | __main__:main:213 - 0.3 市值字段探查（provider 无市值则披露跳过）
+2026-08-17 13:40:05.176 | INFO     | __main__:main:216 - 0.3 跳过：DDB 无市值字段（候选全零）——按计划披露跳过
+2026-08-17 13:40:05.177 | INFO     | __main__:main:234 - 归因结果落盘 → /home/user/workspace/Kronos/g5_head/data/g5_attribution_results.json
+
+==== G5 阶段 0 归因判定（对照 §1 预承诺）====
+backtest G1_mean vs M 持仓重合度 = 0.3615（阈值 60%）
+[backtest] 重合度 G1~M 0.3615 | G1~F0 0.1182
+[backtest] 秩相关 G1~M +0.0084 | G1~(−R) +0.0084 | G1~F0 -0.0066
+[2025h2] 重合度 G1~M 0.3046 | G1~F0 0.1414
+[2025h2] 秩相关 G1~M -0.0063 | G1~(−R) -0.0063 | G1~F0 -0.0076
+0.3 市值画像：跳过（DDB 无市值字段）
+判定：G1 含非动量增量——backtest 窗持仓重合度 36.1% ≤ 60% → C2 按原设计解读；正交化报告项仍做（对称性）
