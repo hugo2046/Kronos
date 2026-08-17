@@ -1,0 +1,48 @@
+{
+  "experiment": "g5_stage1_train",
+  "date": "2026-08-17",
+  "records": {
+    "H-kda_s42": {
+      "n_trainable": 1209937,
+      "best_es_rankic": 0.07775277300825785,
+      "n_epochs_run": 7,
+      "elapsed_s": 618.4614689350128
+    },
+    "H-kda_s43": {
+      "n_trainable": 1209937,
+      "best_es_rankic": 0.04338378418664193,
+      "n_epochs_run": 10,
+      "elapsed_s": 857.6125020980835
+    },
+    "H-kda_s44": {
+      "n_trainable": 1209937,
+      "best_es_rankic": 0.033607427600163726,
+      "n_epochs_run": 6,
+      "elapsed_s": 509.90853667259216
+    },
+    "H-mamba_s42": {
+      "n_trainable": 1089793,
+      "best_es_rankic": 0.10980224564513176,
+      "n_epochs_run": 11,
+      "elapsed_s": 4516.037245988846
+    },
+    "H-mamba_s43": {
+      "n_trainable": 1089793,
+      "best_es_rankic": 0.09944971017839427,
+      "n_epochs_run": 14,
+      "elapsed_s": 5881.905682325363
+    },
+    "H-mamba_s44": {
+      "n_trainable": 1089793,
+      "best_es_rankic": 0.11257653564530928,
+      "n_epochs_run": 14,
+      "elapsed_s": 5747.995445728302
+    },
+    "H-lin_s42": {
+      "n_trainable": 833,
+      "best_es_rankic": 0.10564379829101382,
+      "n_epochs_run": 16,
+      "elapsed_s": 113.85375142097473
+    }
+  }
+}

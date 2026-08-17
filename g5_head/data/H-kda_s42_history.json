@@ -1,0 +1,53 @@
+{
+  "arm": "H-kda",
+  "seed": 42,
+  "n_trainable": 1209937,
+  "best_es_rankic": 0.07775277300825785,
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 0.9847689116282385,
+      "es_rankic": 0.03319220839749447
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.5787764771177202,
+      "es_rankic": 0.07775277300825785
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.2945922541207281,
+      "es_rankic": 0.04209415186133134
+    },
+    {
+      "epoch": 4,
+      "train_loss": 0.20097535749231407,
+      "es_rankic": 0.04633372650978905
+    },
+    {
+      "epoch": 5,
+      "train_loss": 0.16570015826994408,
+      "es_rankic": 0.04777232485849083
+    },
+    {
+      "epoch": 6,
+      "train_loss": 0.14512689727377112,
+      "es_rankic": 0.03599316719101195
+    },
+    {
+      "epoch": 7,
+      "train_loss": 0.12616034872329604,
+      "es_rankic": 0.03884155310786637
+    }
+  ],
+  "n_epochs_run": 7,
+  "elapsed_s": 618.4614689350128,
+  "cfg": {
+    "lr": 0.0003,
+    "weight_decay": 0.01,
+    "batch_size": 128,
+    "epochs": 50,
+    "patience": 5,
+    "seed": 42
+  }
+}
