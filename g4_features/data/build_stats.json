@@ -1,0 +1,49 @@
+{
+  "source_corpus": "/home/user/workspace/Kronos/finetune_suite/data/ashares",
+  "market_cols": [
+    "idx_ret",
+    "mkt_vol",
+    "ma200_gate"
+  ],
+  "nine_cols": [
+    "open",
+    "high",
+    "low",
+    "close",
+    "vol",
+    "amt",
+    "idx_ret",
+    "mkt_vol",
+    "ma200_gate"
+  ],
+  "index_series": {
+    "first": "2012-07-02",
+    "last": "2025-06-30",
+    "n_days": 3157
+  },
+  "warmup_from": "tencent ifzq.gtimg.cn sh000300（2013 段，对拍 DDB 2014 重叠段后采用）",
+  "splits": {
+    "train": {
+      "n_symbols": 5599,
+      "n_rows": 10287748,
+      "date_range": [
+        "2014-01-02",
+        "2024-12-31"
+      ],
+      "market_join_coverage": 1.0,
+      "pkl_bytes": 577911171,
+      "source_pkl_bytes": 330638175
+    },
+    "val": {
+      "n_symbols": 5599,
+      "n_rows": 630247,
+      "date_range": [
+        "2025-01-02",
+        "2025-06-30"
+      ],
+      "market_join_coverage": 1.0,
+      "pkl_bytes": 37021677,
+      "source_pkl_bytes": 21552822
+    }
+  }
+}
