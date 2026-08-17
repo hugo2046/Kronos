@@ -1,0 +1,370 @@
+2026-08-17 20:33:37.565 | INFO     | g5_head.backbone_g1:load_g1_backbone:24 - 加载 G1 tokenizer：/home/user/workspace/Kronos/finetune_suite/outputs/models/finetune_tokenizer_g1/checkpoints/best_model
+2026-08-17 20:33:37.793 | INFO     | g5_head.backbone_g1:load_g1_backbone:26 - 加载 G1 predictor：/home/user/workspace/Kronos/finetune_suite/outputs/models/finetune_predictor_g1/checkpoints/best_model
+2026-08-17 20:33:38.444 | INFO     | __main__:_load_models:118 - 载入 H-kda_s42 ← H-kda_s42_best.pt（es_RankIC=+0.0778）
+2026-08-17 20:33:38.596 | INFO     | __main__:_load_models:118 - 载入 H-kda_s43 ← H-kda_s43_best.pt（es_RankIC=+0.0434）
+2026-08-17 20:33:38.714 | INFO     | __main__:_load_models:118 - 载入 H-kda_s44 ← H-kda_s44_best.pt（es_RankIC=+0.0336）
+2026-08-17 20:33:38.861 | INFO     | __main__:_load_models:118 - 载入 H-mamba_s42 ← H-mamba_s42_best.pt（es_RankIC=+0.1098）
+2026-08-17 20:33:38.986 | INFO     | __main__:_load_models:118 - 载入 H-mamba_s43 ← H-mamba_s43_best.pt（es_RankIC=+0.0994）
+2026-08-17 20:33:39.146 | INFO     | __main__:_load_models:118 - 载入 H-mamba_s44 ← H-mamba_s44_best.pt（es_RankIC=+0.1126）
+2026-08-17 20:33:39.266 | INFO     | __main__:_load_models:118 - 载入 H-lin_s42 ← H-lin_s42_best.pt（es_RankIC=+0.1056）
+2026-08-17 20:33:39.267 | INFO     | __main__:main:375 - ======================================================================
+2026-08-17 20:33:39.267 | INFO     | __main__:main:376 - 窗口 backtest：('2026-01-01', '2026-07-24')
+[2715813:MainThread](2026-08-17 20:33:39,335) INFO - qlib.Initialization - [config.py:441] - default_conf: client.
+[2715813:MainThread](2026-08-17 20:33:39,711) INFO - qlib.ddb_features - [ddb_features.py:116] - 已注册 qlib 兼容函数到 DolphinDB 会话
+[2715813:MainThread](2026-08-17 20:33:39,711) INFO - qlib.Initialization - [__init__.py:94] - qlib successfully initialized based on client settings.
+[2715813:MainThread](2026-08-17 20:33:39,711) INFO - qlib.Initialization - [__init__.py:111] - data_path={'__DEFAULT_FREQ': 'DolphinDB(dolphindb://admin:***@100.**.**.25:***)'}
+2026-08-17 20:33:39.711 | INFO     | kronos_qlib.provider:init_qlib_once:108 - Qlib 初始化成功 - URI: dolphindb://admin:***@100.**.**.25:***
+2026-08-17 20:33:40.479 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2026-01-05): kept=295 short=0 halt=5 fwd_ret mean=0.02080 std=0.07666
+2026-08-17 20:33:40.838 | INFO     | __main__:score_window:155 -   score [backtest] [1/134] 2026-01-05: 295 只
+2026-08-17 20:33:41.523 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2026-01-06): kept=295 short=0 halt=5 fwd_ret mean=0.00475 std=0.07372
+2026-08-17 20:33:42.445 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2026-01-07): kept=295 short=0 halt=5 fwd_ret mean=0.00658 std=0.08027
+2026-08-17 20:33:43.373 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2026-01-08): kept=295 short=0 halt=5 fwd_ret mean=0.01051 std=0.07885
+2026-08-17 20:33:44.296 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2026-01-09): kept=295 short=0 halt=5 fwd_ret mean=0.00568 std=0.07716
+2026-08-17 20:33:45.217 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2026-01-12): kept=295 short=0 halt=5 fwd_ret mean=-0.00505 std=0.08598
+2026-08-17 20:33:46.150 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2026-01-13): kept=295 short=0 halt=5 fwd_ret mean=-0.00351 std=0.08261
+2026-08-17 20:33:47.060 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2026-01-14): kept=295 short=0 halt=5 fwd_ret mean=0.00164 std=0.09365
+2026-08-17 20:33:47.975 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2026-01-15): kept=295 short=0 halt=5 fwd_ret mean=0.00974 std=0.08860
+2026-08-17 20:33:48.886 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2026-01-16): kept=295 short=0 halt=5 fwd_ret mean=-0.00019 std=0.08184
+2026-08-17 20:33:49.803 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2026-01-19): kept=295 short=0 halt=5 fwd_ret mean=-0.02665 std=0.06310
+2026-08-17 20:33:50.712 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2026-01-20): kept=295 short=0 halt=5 fwd_ret mean=-0.01261 std=0.07070
+2026-08-17 20:33:51.624 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2026-01-21): kept=295 short=0 halt=5 fwd_ret mean=0.00023 std=0.07961
+2026-08-17 20:33:52.539 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2026-01-22): kept=296 short=0 halt=4 fwd_ret mean=-0.00901 std=0.06838
+2026-08-17 20:33:53.451 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2026-01-23): kept=296 short=0 halt=4 fwd_ret mean=-0.01513 std=0.06531
+2026-08-17 20:33:54.365 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2026-01-26): kept=296 short=0 halt=4 fwd_ret mean=-0.00179 std=0.06621
+2026-08-17 20:33:55.276 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2026-01-27): kept=296 short=0 halt=4 fwd_ret mean=0.00456 std=0.06691
+2026-08-17 20:33:56.191 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2026-01-28): kept=296 short=0 halt=4 fwd_ret mean=0.00346 std=0.07207
+2026-08-17 20:33:57.110 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2026-01-29): kept=296 short=0 halt=4 fwd_ret mean=-0.00165 std=0.07658
+2026-08-17 20:33:58.022 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2026-01-30): kept=296 short=0 halt=4 fwd_ret mean=-0.00059 std=0.06494
+2026-08-17 20:33:58.261 | INFO     | __main__:score_window:155 -   score [backtest] [20/134] 2026-01-30: 296 只
+2026-08-17 20:33:58.937 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2026-02-02): kept=296 short=0 halt=4 fwd_ret mean=0.03364 std=0.07544
+2026-08-17 20:33:59.856 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2026-02-03): kept=296 short=0 halt=4 fwd_ret mean=0.02296 std=0.06299
+2026-08-17 20:34:00.792 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2026-02-04): kept=296 short=0 halt=4 fwd_ret mean=0.01245 std=0.07577
+2026-08-17 20:34:01.706 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2026-02-05): kept=296 short=0 halt=4 fwd_ret mean=0.02108 std=0.08775
+2026-08-17 20:34:02.618 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2026-02-06): kept=295 short=0 halt=5 fwd_ret mean=0.02606 std=0.09872
+2026-08-17 20:34:03.530 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2026-02-09): kept=295 short=0 halt=5 fwd_ret mean=-0.00361 std=0.09805
+2026-08-17 20:34:04.455 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2026-02-10): kept=295 short=0 halt=5 fwd_ret mean=-0.01617 std=0.09346
+2026-08-17 20:34:05.368 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2026-02-11): kept=295 short=0 halt=5 fwd_ret mean=-0.00901 std=0.09117
+2026-08-17 20:34:06.282 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2026-02-12): kept=295 short=0 halt=5 fwd_ret mean=-0.00389 std=0.08008
+2026-08-17 20:34:07.201 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2026-02-13): kept=295 short=0 halt=5 fwd_ret mean=0.00074 std=0.09385
+2026-08-17 20:34:08.122 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2026-02-24): kept=295 short=0 halt=5 fwd_ret mean=-0.00225 std=0.07472
+2026-08-17 20:34:09.032 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2026-02-25): kept=294 short=0 halt=6 fwd_ret mean=-0.00046 std=0.08311
+2026-08-17 20:34:09.943 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2026-02-26): kept=294 short=0 halt=6 fwd_ret mean=-0.00026 std=0.09432
+2026-08-17 20:34:10.858 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2026-02-27): kept=294 short=0 halt=6 fwd_ret mean=-0.00867 std=0.08865
+2026-08-17 20:34:11.768 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2026-03-02): kept=294 short=0 halt=6 fwd_ret mean=-0.01428 std=0.07648
+2026-08-17 20:34:12.691 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2026-03-03): kept=294 short=0 halt=6 fwd_ret mean=-0.00770 std=0.06438
+2026-08-17 20:34:13.601 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2026-03-04): kept=294 short=0 halt=6 fwd_ret mean=0.00437 std=0.06415
+2026-08-17 20:34:14.511 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2026-03-05): kept=294 short=0 halt=6 fwd_ret mean=-0.01956 std=0.07248
+2026-08-17 20:34:15.427 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2026-03-06): kept=294 short=0 halt=6 fwd_ret mean=-0.03397 std=0.07540
+2026-08-17 20:34:16.345 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2026-03-09): kept=294 short=0 halt=6 fwd_ret mean=-0.05861 std=0.07380
+2026-08-17 20:34:16.582 | INFO     | __main__:score_window:155 -   score [backtest] [40/134] 2026-03-09: 294 只
+2026-08-17 20:34:17.260 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2026-03-10): kept=294 short=0 halt=6 fwd_ret mean=-0.05349 std=0.07264
+2026-08-17 20:34:18.174 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2026-03-11): kept=294 short=0 halt=6 fwd_ret mean=-0.04797 std=0.06077
+2026-08-17 20:34:19.087 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2026-03-12): kept=294 short=0 halt=6 fwd_ret mean=-0.06030 std=0.06104
+2026-08-17 20:34:20.002 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2026-03-13): kept=294 short=0 halt=6 fwd_ret mean=-0.04838 std=0.05730
+2026-08-17 20:34:20.915 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2026-03-16): kept=294 short=0 halt=6 fwd_ret mean=-0.04757 std=0.05156
+2026-08-17 20:34:21.831 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2026-03-17): kept=294 short=0 halt=6 fwd_ret mean=-0.04913 std=0.05607
+2026-08-17 20:34:22.745 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2026-03-18): kept=294 short=0 halt=6 fwd_ret mean=-0.03578 std=0.05462
+2026-08-17 20:34:23.658 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2026-03-19): kept=294 short=0 halt=6 fwd_ret mean=-0.02709 std=0.06464
+2026-08-17 20:34:24.570 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2026-03-20): kept=294 short=0 halt=6 fwd_ret mean=-0.02982 std=0.06505
+2026-08-17 20:34:25.493 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2026-03-23): kept=294 short=0 halt=6 fwd_ret mean=0.00569 std=0.06848
+2026-08-17 20:34:26.411 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2026-03-24): kept=294 short=0 halt=6 fwd_ret mean=0.02117 std=0.06405
+2026-08-17 20:34:27.325 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2026-03-25): kept=294 short=0 halt=6 fwd_ret mean=-0.00152 std=0.06427
+2026-08-17 20:34:28.244 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2026-03-26): kept=294 short=0 halt=6 fwd_ret mean=0.02288 std=0.06921
+2026-08-17 20:34:29.153 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2026-03-27): kept=294 short=0 halt=6 fwd_ret mean=0.01743 std=0.07085
+2026-08-17 20:34:30.068 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2026-03-30): kept=294 short=0 halt=6 fwd_ret mean=0.02918 std=0.07353
+2026-08-17 20:34:30.980 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2026-03-31): kept=294 short=0 halt=6 fwd_ret mean=0.03531 std=0.07044
+2026-08-17 20:34:31.918 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2026-04-01): kept=294 short=0 halt=6 fwd_ret mean=0.02586 std=0.06708
+2026-08-17 20:34:32.831 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2026-04-02): kept=294 short=0 halt=6 fwd_ret mean=0.03219 std=0.08674
+2026-08-17 20:34:33.746 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2026-04-03): kept=294 short=0 halt=6 fwd_ret mean=0.05134 std=0.08700
+2026-08-17 20:34:34.666 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2026-04-07): kept=294 short=0 halt=6 fwd_ret mean=0.05024 std=0.08701
+2026-08-17 20:34:34.905 | INFO     | __main__:score_window:155 -   score [backtest] [60/134] 2026-04-07: 294 只
+2026-08-17 20:34:35.583 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2026-04-08): kept=294 short=0 halt=6 fwd_ret mean=0.02160 std=0.08144
+2026-08-17 20:34:36.495 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2026-04-09): kept=294 short=0 halt=6 fwd_ret mean=0.02846 std=0.07585
+2026-08-17 20:34:37.416 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2026-04-10): kept=294 short=0 halt=6 fwd_ret mean=0.01390 std=0.06536
+2026-08-17 20:34:38.361 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2026-04-13): kept=294 short=0 halt=6 fwd_ret mean=0.01378 std=0.07026
+2026-08-17 20:34:39.280 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2026-04-14): kept=294 short=0 halt=6 fwd_ret mean=0.00267 std=0.06698
+2026-08-17 20:34:40.194 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2026-04-15): kept=294 short=0 halt=6 fwd_ret mean=0.01624 std=0.06774
+2026-08-17 20:34:41.238 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2026-04-16): kept=294 short=0 halt=6 fwd_ret mean=0.00825 std=0.07265
+2026-08-17 20:34:42.284 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2026-04-17): kept=294 short=0 halt=6 fwd_ret mean=0.02411 std=0.07985
+2026-08-17 20:34:43.330 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2026-04-20): kept=293 short=0 halt=7 fwd_ret mean=0.01868 std=0.07801
+2026-08-17 20:34:44.371 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2026-04-21): kept=293 short=0 halt=7 fwd_ret mean=0.01630 std=0.07267
+2026-08-17 20:34:45.411 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2026-04-22): kept=293 short=0 halt=7 fwd_ret mean=0.02512 std=0.07903
+2026-08-17 20:34:46.455 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2026-04-23): kept=293 short=0 halt=7 fwd_ret mean=0.02265 std=0.08140
+2026-08-17 20:34:47.491 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2026-04-24): kept=293 short=0 halt=7 fwd_ret mean=0.03443 std=0.09082
+2026-08-17 20:34:48.526 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2026-04-27): kept=293 short=0 halt=7 fwd_ret mean=0.01496 std=0.07721
+2026-08-17 20:34:49.562 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2026-04-28): kept=293 short=0 halt=7 fwd_ret mean=0.00592 std=0.08511
+2026-08-17 20:34:50.601 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2026-04-29): kept=293 short=0 halt=7 fwd_ret mean=-0.00896 std=0.09509
+2026-08-17 20:34:51.636 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2026-04-30): kept=293 short=0 halt=7 fwd_ret mean=-0.00045 std=0.09761
+2026-08-17 20:34:52.675 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2026-05-06): kept=293 short=0 halt=7 fwd_ret mean=-0.01698 std=0.09272
+2026-08-17 20:34:53.711 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2026-05-07): kept=293 short=0 halt=7 fwd_ret mean=-0.03297 std=0.08229
+2026-08-17 20:34:54.749 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2026-05-08): kept=295 short=0 halt=5 fwd_ret mean=-0.02458 std=0.09747
+2026-08-17 20:34:54.987 | INFO     | __main__:score_window:155 -   score [backtest] [80/134] 2026-05-08: 295 只
+2026-08-17 20:34:55.786 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2026-05-11): kept=295 short=0 halt=5 fwd_ret mean=-0.02865 std=0.10430
+2026-08-17 20:34:56.831 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2026-05-12): kept=295 short=0 halt=5 fwd_ret mean=-0.02135 std=0.11010
+2026-08-17 20:34:57.876 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2026-05-13): kept=295 short=0 halt=5 fwd_ret mean=-0.03800 std=0.09921
+2026-08-17 20:34:58.917 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2026-05-14): kept=295 short=0 halt=5 fwd_ret mean=-0.02556 std=0.10819
+2026-08-17 20:34:59.961 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2026-05-15): kept=295 short=0 halt=5 fwd_ret mean=-0.01703 std=0.09592
+2026-08-17 20:35:01.003 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2026-05-18): kept=295 short=0 halt=5 fwd_ret mean=-0.01040 std=0.08142
+2026-08-17 20:35:02.043 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2026-05-19): kept=295 short=0 halt=5 fwd_ret mean=-0.01643 std=0.08652
+2026-08-17 20:35:03.107 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2026-05-20): kept=295 short=0 halt=5 fwd_ret mean=-0.01388 std=0.09161
+2026-08-17 20:35:04.152 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2026-05-21): kept=295 short=0 halt=5 fwd_ret mean=-0.01018 std=0.09911
+2026-08-17 20:35:05.162 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2026-05-22): kept=296 short=0 halt=4 fwd_ret mean=-0.02542 std=0.07537
+2026-08-17 20:35:06.193 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2026-05-25): kept=296 short=0 halt=4 fwd_ret mean=-0.05321 std=0.07893
+2026-08-17 20:35:07.202 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2026-05-26): kept=296 short=0 halt=4 fwd_ret mean=-0.04366 std=0.07768
+2026-08-17 20:35:08.216 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2026-05-27): kept=296 short=0 halt=4 fwd_ret mean=-0.04088 std=0.07521
+2026-08-17 20:35:09.228 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2026-05-28): kept=296 short=0 halt=4 fwd_ret mean=-0.03999 std=0.07809
+2026-08-17 20:35:10.234 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2026-05-29): kept=296 short=0 halt=4 fwd_ret mean=-0.02401 std=0.07115
+2026-08-17 20:35:11.243 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2026-06-01): kept=296 short=0 halt=4 fwd_ret mean=-0.01129 std=0.08340
+2026-08-17 20:35:12.261 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2026-06-02): kept=296 short=0 halt=4 fwd_ret mean=-0.01843 std=0.08314
+2026-08-17 20:35:13.270 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2026-06-03): kept=297 short=0 halt=3 fwd_ret mean=-0.01193 std=0.08943
+2026-08-17 20:35:14.283 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2026-06-04): kept=297 short=0 halt=3 fwd_ret mean=-0.01358 std=0.08604
+2026-08-17 20:35:15.293 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2026-06-05): kept=297 short=0 halt=3 fwd_ret mean=0.01865 std=0.10878
+2026-08-17 20:35:15.532 | INFO     | __main__:score_window:155 -   score [backtest] [100/134] 2026-06-05: 297 只
+2026-08-17 20:35:16.305 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2026-06-08): kept=297 short=0 halt=3 fwd_ret mean=0.02434 std=0.12107
+2026-08-17 20:35:17.316 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2026-06-09): kept=297 short=0 halt=3 fwd_ret mean=0.00606 std=0.11925
+2026-08-17 20:35:18.327 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2026-06-10): kept=297 short=0 halt=3 fwd_ret mean=0.01910 std=0.13959
+2026-08-17 20:35:19.336 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2026-06-11): kept=297 short=0 halt=3 fwd_ret mean=-0.00251 std=0.13424
+2026-08-17 20:35:20.341 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2026-06-12): kept=297 short=0 halt=3 fwd_ret mean=-0.00434 std=0.14161
+2026-08-17 20:35:21.355 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2026-06-15): kept=297 short=0 halt=3 fwd_ret mean=-0.01172 std=0.13632
+2026-08-17 20:35:22.368 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2026-06-16): kept=297 short=0 halt=3 fwd_ret mean=0.00137 std=0.12007
+2026-08-17 20:35:23.377 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2026-06-17): kept=297 short=0 halt=3 fwd_ret mean=-0.01990 std=0.09225
+2026-08-17 20:35:24.389 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2026-06-18): kept=297 short=0 halt=3 fwd_ret mean=-0.00052 std=0.08682
+2026-08-17 20:35:25.400 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2026-06-22): kept=297 short=0 halt=3 fwd_ret mean=-0.01902 std=0.08815
+2026-08-17 20:35:26.409 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2026-06-23): kept=297 short=0 halt=3 fwd_ret mean=-0.01542 std=0.07644
+2026-08-17 20:35:27.415 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2026-06-24): kept=297 short=0 halt=3 fwd_ret mean=-0.01809 std=0.08837
+2026-08-17 20:35:28.426 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2026-06-25): kept=297 short=0 halt=3 fwd_ret mean=-0.01385 std=0.09173
+2026-08-17 20:35:29.436 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2026-06-26): kept=297 short=0 halt=3 fwd_ret mean=0.01130 std=0.09937
+2026-08-17 20:35:30.450 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2026-06-29): kept=296 short=0 halt=4 fwd_ret mean=-0.01802 std=0.10544
+2026-08-17 20:35:31.459 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2026-06-30): kept=296 short=0 halt=4 fwd_ret mean=-0.00681 std=0.10405
+2026-08-17 20:35:32.474 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2026-07-01): kept=296 short=0 halt=4 fwd_ret mean=-0.01025 std=0.10885
+2026-08-17 20:35:33.503 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2026-07-02): kept=296 short=0 halt=4 fwd_ret mean=-0.00445 std=0.11038
+2026-08-17 20:35:34.509 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2026-07-03): kept=296 short=0 halt=4 fwd_ret mean=-0.03910 std=0.11364
+2026-08-17 20:35:35.516 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2026-07-06): kept=297 short=0 halt=3 fwd_ret mean=-0.02801 std=0.12497
+2026-08-17 20:35:35.755 | INFO     | __main__:score_window:155 -   score [backtest] [120/134] 2026-07-06: 297 只
+2026-08-17 20:35:36.521 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2026-07-07): kept=297 short=0 halt=3 fwd_ret mean=0.00138 std=0.10714
+2026-08-17 20:35:37.539 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2026-07-08): kept=297 short=0 halt=3 fwd_ret mean=0.01287 std=0.10694
+2026-08-17 20:35:38.556 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2026-07-09): kept=297 short=0 halt=3 fwd_ret mean=0.01024 std=0.12412
+2026-08-17 20:35:39.564 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2026-07-10): kept=297 short=0 halt=3 fwd_ret mean=-0.01442 std=0.10703
+2026-08-17 20:35:40.575 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2026-07-13): kept=297 short=0 halt=3 fwd_ret mean=0.01492 std=0.08904
+2026-08-17 20:35:41.578 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2026-07-14): kept=297 short=0 halt=3 fwd_ret mean=-0.00872 std=0.10954
+2026-08-17 20:35:42.583 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2026-07-15): kept=297 short=0 halt=3 fwd_ret mean=-0.00639 std=0.09803
+2026-08-17 20:35:43.586 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2026-07-16): kept=297 short=0 halt=3 fwd_ret mean=0.00173 std=0.11348
+2026-08-17 20:35:44.597 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2026-07-17): kept=297 short=0 halt=3 fwd_ret mean=0.03565 std=0.08481
+2026-08-17 20:35:45.603 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2026-07-20): kept=297 short=0 halt=3 fwd_ret mean=0.01491 std=0.07638
+2026-08-17 20:35:46.629 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2026-07-21): kept=298 short=0 halt=2 fwd_ret mean=0.00104 std=0.07373
+2026-08-17 20:35:47.648 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2026-07-22): kept=298 short=0 halt=2 fwd_ret mean=0.00791 std=0.06634
+2026-08-17 20:35:48.657 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2026-07-23): kept=298 short=0 halt=2 fwd_ret mean=0.00004 std=0.05454
+2026-08-17 20:35:49.666 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2026-07-24): kept=298 short=0 halt=2 fwd_ret mean=0.03330 std=0.07219
+2026-08-17 20:35:49.936 | INFO     | __main__:score_window:160 - [backtest] H-kda_s42 信号落盘（134 日，平均 295 只/日）
+2026-08-17 20:35:49.947 | INFO     | __main__:score_window:160 - [backtest] H-kda_s43 信号落盘（134 日，平均 295 只/日）
+2026-08-17 20:35:49.958 | INFO     | __main__:score_window:160 - [backtest] H-kda_s44 信号落盘（134 日，平均 295 只/日）
+2026-08-17 20:35:49.968 | INFO     | __main__:score_window:160 - [backtest] H-mamba_s42 信号落盘（134 日，平均 295 只/日）
+2026-08-17 20:35:49.979 | INFO     | __main__:score_window:160 - [backtest] H-mamba_s43 信号落盘（134 日，平均 295 只/日）
+2026-08-17 20:35:49.989 | INFO     | __main__:score_window:160 - [backtest] H-mamba_s44 信号落盘（134 日，平均 295 只/日）
+2026-08-17 20:35:49.999 | INFO     | __main__:score_window:160 - [backtest] H-lin_s42 信号落盘（134 日，平均 295 只/日）
+2026-08-17 20:35:50.144 | INFO     | __main__:main:390 - [backtest] 引擎宇宙：338 列（冻结口径轮次并集）
+2026-08-17 20:35:50.522 | INFO     | paper_replication.signal:build_px_tradeable:279 - 价格/可交易宽表：134 日 × 336 列；日均不可交易 2.5 只
+2026-08-17 20:35:50.810 | INFO     | paper_replication.benchmark:probe_index_benchmark:43 - 指数基准 000300.SH：133 行，累计 -1.45%
+2026-08-17 20:35:50.811 | INFO     | paper_replication.benchmark:build_pool_equal_weight_benchmark:64 - 同池等权基准：134 行，累计 -3.61%
+2026-08-17 20:35:50.812 | INFO     | baseline_suite.pipeline:build_dual_benchmarks:54 - 双基准 [g5_backtest]：指数累计 -1.45% / 等权累计 -3.61% / beta_gap=+2.16%
+2026-08-17 20:35:51.032 | INFO     | baseline_suite.pipeline:run_group:84 - [H-kda_s42] AER(指数)=-17.46% IR=-1.431 | AER(等权)=-13.48% IR=-1.558 | MDD=-18.10% 日均换手=10.50% (n=133)
+2026-08-17 20:35:51.240 | INFO     | baseline_suite.pipeline:run_group:84 - [H-kda_s43] AER(指数)=-18.31% IR=-1.320 | AER(等权)=-14.32% IR=-1.371 | MDD=-19.86% 日均换手=10.50% (n=133)
+2026-08-17 20:35:51.446 | INFO     | baseline_suite.pipeline:run_group:84 - [H-kda_s44] AER(指数)=-23.35% IR=-2.184 | AER(等权)=-19.65% IR=-2.643 | MDD=-17.91% 日均换手=10.44% (n=133)
+2026-08-17 20:35:51.653 | INFO     | baseline_suite.pipeline:run_group:84 - [H-mamba_s42] AER(指数)=-27.91% IR=-2.221 | AER(等权)=-24.31% IR=-2.629 | MDD=-23.86% 日均换手=10.48% (n=133)
+2026-08-17 20:35:51.861 | INFO     | baseline_suite.pipeline:run_group:84 - [H-mamba_s43] AER(指数)=-25.20% IR=-2.051 | AER(等权)=-21.47% IR=-2.550 | MDD=-21.42% 日均换手=10.49% (n=133)
+2026-08-17 20:35:52.078 | INFO     | baseline_suite.pipeline:run_group:84 - [H-mamba_s44] AER(指数)=-12.04% IR=-0.789 | AER(等权)=-7.70% IR=-0.724 | MDD=-22.63% 日均换手=10.43% (n=133)
+2026-08-17 20:35:52.287 | INFO     | baseline_suite.pipeline:run_group:84 - [H-lin_s42] AER(指数)=-6.45% IR=-0.403 | AER(等权)=-1.95% IR=-0.149 | MDD=-17.48% 日均换手=10.52% (n=133)
+2026-08-17 20:35:52.495 | INFO     | baseline_suite.pipeline:run_group:84 - [G1_mean] AER(指数)=+10.66% IR=+0.715 | AER(等权)=+14.33% IR=+0.758 | MDD=-12.51% 日均换手=10.25% (n=133)
+2026-08-17 20:35:52.495 | INFO     | __main__:main:405 - 对拍在位者 G1_mean：复跑 +14.3332% vs 冻结 +14.3300% 一致
+2026-08-17 20:35:54.033 | INFO     | paper_replication.signal:build_px_tradeable:279 - 价格/可交易宽表：134 日 × 336 列；日均不可交易 2.5 只
+2026-08-17 20:35:54.319 | INFO     | paper_replication.benchmark:probe_index_benchmark:43 - 指数基准 000300.SH：133 行，累计 -1.45%
+2026-08-17 20:35:54.320 | INFO     | paper_replication.benchmark:build_pool_equal_weight_benchmark:64 - 同池等权基准：134 行，累计 -3.61%
+2026-08-17 20:35:54.321 | INFO     | baseline_suite.pipeline:build_dual_benchmarks:54 - 双基准 [g5_backtest]：指数累计 -1.45% / 等权累计 -3.61% / beta_gap=+2.16%
+2026-08-17 20:35:54.528 | INFO     | baseline_suite.pipeline:run_group:84 - [H-kda_s42] AER(指数)=-14.56% IR=-1.127 | AER(等权)=-10.42% IR=-1.175 | MDD=-17.72% 日均换手=10.51% (n=133)
+2026-08-17 20:35:54.737 | INFO     | baseline_suite.pipeline:run_group:84 - [H-kda_s43] AER(指数)=-19.82% IR=-1.449 | AER(等权)=-15.90% IR=-1.527 | MDD=-20.81% 日均换手=10.51% (n=133)
+2026-08-17 20:35:54.948 | INFO     | baseline_suite.pipeline:run_group:84 - [H-kda_s44] AER(指数)=-21.38% IR=-2.004 | AER(等权)=-17.61% IR=-2.376 | MDD=-17.36% 日均换手=10.44% (n=133)
+2026-08-17 20:35:55.160 | INFO     | baseline_suite.pipeline:run_group:84 - [H-mamba_s42] AER(指数)=-26.61% IR=-2.097 | AER(等权)=-22.96% IR=-2.424 | MDD=-23.46% 日均换手=10.48% (n=133)
+2026-08-17 20:35:55.373 | INFO     | baseline_suite.pipeline:run_group:84 - [H-mamba_s43] AER(指数)=-24.92% IR=-2.002 | AER(等权)=-21.16% IR=-2.510 | MDD=-21.30% 日均换手=10.50% (n=133)
+2026-08-17 20:35:55.581 | INFO     | baseline_suite.pipeline:run_group:84 - [H-mamba_s44] AER(指数)=-12.90% IR=-0.845 | AER(等权)=-8.59% IR=-0.807 | MDD=-22.57% 日均换手=10.42% (n=133)
+2026-08-17 20:35:55.792 | INFO     | baseline_suite.pipeline:run_group:84 - [H-lin_s42] AER(指数)=-5.93% IR=-0.364 | AER(等权)=-1.40% IR=-0.096 | MDD=-17.92% 日均换手=10.51% (n=133)
+2026-08-17 20:35:55.792 | INFO     | __main__:main:413 - [backtest] 正交化附表完成（7 模型）
+2026-08-17 20:35:55.792 | INFO     | __main__:main:375 - ======================================================================
+2026-08-17 20:35:55.792 | INFO     | __main__:main:376 - 窗口 2025h2：('2025-07-01', '2025-12-31')
+2026-08-17 20:35:56.209 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2025-07-01): kept=295 short=0 halt=5 fwd_ret mean=0.02212 std=0.05692
+2026-08-17 20:35:56.447 | INFO     | __main__:score_window:155 -   score [2025h2] [1/126] 2025-07-01: 295 只
+2026-08-17 20:35:56.859 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2025-07-02): kept=295 short=0 halt=5 fwd_ret mean=0.01907 std=0.05442
+2026-08-17 20:35:57.503 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2025-07-03): kept=295 short=0 halt=5 fwd_ret mean=0.02197 std=0.05702
+2026-08-17 20:35:58.151 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2025-07-04): kept=295 short=0 halt=5 fwd_ret mean=0.02750 std=0.05765
+2026-08-17 20:35:58.793 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2025-07-07): kept=295 short=0 halt=5 fwd_ret mean=0.04169 std=0.06336
+2026-08-17 20:35:59.444 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2025-07-08): kept=295 short=0 halt=5 fwd_ret mean=0.04196 std=0.06121
+2026-08-17 20:36:00.089 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2025-07-09): kept=295 short=0 halt=5 fwd_ret mean=0.04276 std=0.06487
+2026-08-17 20:36:00.737 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2025-07-10): kept=295 short=0 halt=5 fwd_ret mean=0.05013 std=0.07299
+2026-08-17 20:36:01.391 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2025-07-11): kept=295 short=0 halt=5 fwd_ret mean=0.04244 std=0.06495
+2026-08-17 20:36:02.037 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2025-07-14): kept=295 short=0 halt=5 fwd_ret mean=0.04088 std=0.06718
+2026-08-17 20:36:02.680 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2025-07-15): kept=295 short=0 halt=5 fwd_ret mean=0.04731 std=0.07289
+2026-08-17 20:36:03.333 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2025-07-16): kept=295 short=0 halt=5 fwd_ret mean=0.04889 std=0.07374
+2026-08-17 20:36:03.980 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2025-07-17): kept=295 short=0 halt=5 fwd_ret mean=0.01914 std=0.06566
+2026-08-17 20:36:04.636 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2025-07-18): kept=296 short=0 halt=4 fwd_ret mean=0.00906 std=0.05418
+2026-08-17 20:36:05.283 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2025-07-21): kept=296 short=0 halt=4 fwd_ret mean=0.00109 std=0.04805
+2026-08-17 20:36:05.927 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2025-07-22): kept=296 short=0 halt=4 fwd_ret mean=-0.00227 std=0.05196
+2026-08-17 20:36:06.576 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2025-07-23): kept=296 short=0 halt=4 fwd_ret mean=0.00423 std=0.04856
+2026-08-17 20:36:07.223 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2025-07-24): kept=296 short=0 halt=4 fwd_ret mean=-0.00757 std=0.04740
+2026-08-17 20:36:07.882 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2025-07-25): kept=296 short=0 halt=4 fwd_ret mean=-0.00514 std=0.04395
+2026-08-17 20:36:08.525 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2025-07-28): kept=296 short=0 halt=4 fwd_ret mean=0.00076 std=0.04045
+2026-08-17 20:36:08.765 | INFO     | __main__:score_window:155 -   score [2025h2] [20/126] 2025-07-28: 296 只
+2026-08-17 20:36:09.174 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2025-07-29): kept=296 short=0 halt=4 fwd_ret mean=-0.00138 std=0.04587
+2026-08-17 20:36:09.823 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2025-07-30): kept=296 short=0 halt=4 fwd_ret mean=0.00529 std=0.05238
+2026-08-17 20:36:10.468 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2025-07-31): kept=296 short=0 halt=4 fwd_ret mean=0.01829 std=0.05193
+2026-08-17 20:36:11.115 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2025-08-01): kept=296 short=0 halt=4 fwd_ret mean=0.03328 std=0.05879
+2026-08-17 20:36:11.760 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2025-08-04): kept=295 short=0 halt=5 fwd_ret mean=0.04096 std=0.06816
+2026-08-17 20:36:12.410 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2025-08-05): kept=295 short=0 halt=5 fwd_ret mean=0.03095 std=0.07132
+2026-08-17 20:36:13.057 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2025-08-06): kept=296 short=0 halt=4 fwd_ret mean=0.03878 std=0.07323
+2026-08-17 20:36:13.720 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2025-08-07): kept=296 short=0 halt=4 fwd_ret mean=0.04281 std=0.07105
+2026-08-17 20:36:14.379 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2025-08-08): kept=297 short=0 halt=3 fwd_ret mean=0.06478 std=0.09673
+2026-08-17 20:36:15.030 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2025-08-11): kept=297 short=0 halt=3 fwd_ret mean=0.07793 std=0.10082
+2026-08-17 20:36:15.685 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2025-08-12): kept=297 short=0 halt=3 fwd_ret mean=0.07335 std=0.08886
+2026-08-17 20:36:16.332 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2025-08-13): kept=295 short=0 halt=5 fwd_ret mean=0.04953 std=0.08781
+2026-08-17 20:36:16.982 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2025-08-14): kept=295 short=0 halt=5 fwd_ret mean=0.07297 std=0.11065
+2026-08-17 20:36:17.627 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2025-08-15): kept=295 short=0 halt=5 fwd_ret mean=0.06584 std=0.11054
+2026-08-17 20:36:18.292 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2025-08-18): kept=295 short=0 halt=5 fwd_ret mean=0.06137 std=0.11576
+2026-08-17 20:36:18.969 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2025-08-19): kept=295 short=0 halt=5 fwd_ret mean=0.05069 std=0.09363
+2026-08-17 20:36:19.649 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2025-08-20): kept=295 short=0 halt=5 fwd_ret mean=0.02848 std=0.09938
+2026-08-17 20:36:20.316 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2025-08-21): kept=295 short=0 halt=5 fwd_ret mean=0.00749 std=0.08299
+2026-08-17 20:36:20.993 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2025-08-22): kept=295 short=0 halt=5 fwd_ret mean=0.01148 std=0.10151
+2026-08-17 20:36:21.660 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2025-08-25): kept=295 short=0 halt=5 fwd_ret mean=0.00095 std=0.09353
+2026-08-17 20:36:21.899 | INFO     | __main__:score_window:155 -   score [2025h2] [40/126] 2025-08-25: 295 只
+2026-08-17 20:36:22.338 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2025-08-26): kept=295 short=0 halt=5 fwd_ret mean=-0.00545 std=0.09033
+2026-08-17 20:36:23.009 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2025-08-27): kept=295 short=0 halt=5 fwd_ret mean=0.00842 std=0.08432
+2026-08-17 20:36:23.679 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2025-08-28): kept=295 short=0 halt=5 fwd_ret mean=0.01193 std=0.08277
+2026-08-17 20:36:24.349 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2025-08-29): kept=295 short=0 halt=5 fwd_ret mean=0.00147 std=0.07103
+2026-08-17 20:36:25.015 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2025-09-01): kept=294 short=0 halt=6 fwd_ret mean=-0.00217 std=0.07370
+2026-08-17 20:36:25.677 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2025-09-02): kept=294 short=0 halt=6 fwd_ret mean=0.00726 std=0.07198
+2026-08-17 20:36:26.342 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2025-09-03): kept=294 short=0 halt=6 fwd_ret mean=0.02274 std=0.06760
+2026-08-17 20:36:27.010 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2025-09-04): kept=294 short=0 halt=6 fwd_ret mean=0.02639 std=0.08085
+2026-08-17 20:36:27.677 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2025-09-05): kept=295 short=0 halt=5 fwd_ret mean=0.00683 std=0.06631
+2026-08-17 20:36:28.349 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2025-09-08): kept=295 short=0 halt=5 fwd_ret mean=-0.00088 std=0.07585
+2026-08-17 20:36:29.016 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2025-09-09): kept=295 short=0 halt=5 fwd_ret mean=0.00312 std=0.08682
+2026-08-17 20:36:29.680 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2025-09-10): kept=295 short=0 halt=5 fwd_ret mean=0.01617 std=0.08392
+2026-08-17 20:36:30.355 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2025-09-11): kept=295 short=0 halt=5 fwd_ret mean=0.00177 std=0.07632
+2026-08-17 20:36:31.023 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2025-09-12): kept=295 short=0 halt=5 fwd_ret mean=0.00136 std=0.06936
+2026-08-17 20:36:31.686 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2025-09-15): kept=295 short=0 halt=5 fwd_ret mean=0.01331 std=0.07337
+2026-08-17 20:36:32.359 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2025-09-16): kept=295 short=0 halt=5 fwd_ret mean=0.02203 std=0.07980
+2026-08-17 20:36:33.037 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2025-09-17): kept=295 short=0 halt=5 fwd_ret mean=0.03487 std=0.09166
+2026-08-17 20:36:33.703 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2025-09-18): kept=295 short=0 halt=5 fwd_ret mean=0.03399 std=0.07826
+2026-08-17 20:36:34.376 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2025-09-19): kept=295 short=0 halt=5 fwd_ret mean=0.02835 std=0.08550
+2026-08-17 20:36:35.048 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2025-09-22): kept=295 short=0 halt=5 fwd_ret mean=0.02074 std=0.08032
+2026-08-17 20:36:35.287 | INFO     | __main__:score_window:155 -   score [2025h2] [60/126] 2025-09-22: 295 只
+2026-08-17 20:36:35.714 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2025-09-23): kept=295 short=0 halt=5 fwd_ret mean=0.03515 std=0.07679
+2026-08-17 20:36:36.382 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2025-09-24): kept=295 short=0 halt=5 fwd_ret mean=0.02344 std=0.07316
+2026-08-17 20:36:37.049 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2025-09-25): kept=295 short=0 halt=5 fwd_ret mean=-0.00285 std=0.07718
+2026-08-17 20:36:37.720 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2025-09-26): kept=295 short=0 halt=5 fwd_ret mean=0.00493 std=0.06695
+2026-08-17 20:36:38.388 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2025-09-29): kept=295 short=0 halt=5 fwd_ret mean=0.00152 std=0.06316
+2026-08-17 20:36:39.061 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2025-09-30): kept=295 short=0 halt=5 fwd_ret mean=-0.00983 std=0.06769
+2026-08-17 20:36:39.729 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2025-10-09): kept=295 short=0 halt=5 fwd_ret mean=-0.02277 std=0.07097
+2026-08-17 20:36:40.403 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2025-10-10): kept=295 short=0 halt=5 fwd_ret mean=-0.00495 std=0.05538
+2026-08-17 20:36:41.068 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2025-10-13): kept=295 short=0 halt=5 fwd_ret mean=0.01056 std=0.06189
+2026-08-17 20:36:41.738 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2025-10-14): kept=295 short=0 halt=5 fwd_ret mean=0.01356 std=0.07153
+2026-08-17 20:36:42.410 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2025-10-15): kept=295 short=0 halt=5 fwd_ret mean=0.01669 std=0.06836
+2026-08-17 20:36:43.077 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2025-10-16): kept=295 short=0 halt=5 fwd_ret mean=0.01235 std=0.06585
+2026-08-17 20:36:43.755 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2025-10-17): kept=295 short=0 halt=5 fwd_ret mean=0.02604 std=0.06455
+2026-08-17 20:36:44.420 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2025-10-20): kept=295 short=0 halt=5 fwd_ret mean=0.02694 std=0.06887
+2026-08-17 20:36:45.094 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2025-10-21): kept=297 short=0 halt=3 fwd_ret mean=0.00742 std=0.06573
+2026-08-17 20:36:45.765 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2025-10-22): kept=297 short=0 halt=3 fwd_ret mean=0.01462 std=0.08179
+2026-08-17 20:36:46.434 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2025-10-23): kept=297 short=0 halt=3 fwd_ret mean=0.02266 std=0.08251
+2026-08-17 20:36:47.115 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2025-10-24): kept=297 short=0 halt=3 fwd_ret mean=0.01626 std=0.08753
+2026-08-17 20:36:47.788 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2025-10-27): kept=297 short=0 halt=3 fwd_ret mean=0.01408 std=0.08989
+2026-08-17 20:36:48.459 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2025-10-28): kept=297 short=0 halt=3 fwd_ret mean=0.01175 std=0.09805
+2026-08-17 20:36:48.698 | INFO     | __main__:score_window:155 -   score [2025h2] [80/126] 2025-10-28: 297 只
+2026-08-17 20:36:49.130 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2025-10-29): kept=297 short=0 halt=3 fwd_ret mean=-0.00970 std=0.07825
+2026-08-17 20:36:49.803 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2025-10-30): kept=297 short=0 halt=3 fwd_ret mean=0.00390 std=0.06995
+2026-08-17 20:36:50.470 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2025-10-31): kept=297 short=0 halt=3 fwd_ret mean=-0.00006 std=0.06313
+2026-08-17 20:36:51.138 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2025-11-03): kept=297 short=0 halt=3 fwd_ret mean=-0.01029 std=0.05538
+2026-08-17 20:36:51.808 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2025-11-04): kept=297 short=0 halt=3 fwd_ret mean=-0.00983 std=0.04860
+2026-08-17 20:36:52.473 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2025-11-05): kept=297 short=0 halt=3 fwd_ret mean=-0.00986 std=0.05500
+2026-08-17 20:36:53.142 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2025-11-06): kept=297 short=0 halt=3 fwd_ret mean=-0.02680 std=0.05607
+2026-08-17 20:36:53.822 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2025-11-07): kept=297 short=0 halt=3 fwd_ret mean=-0.04979 std=0.05616
+2026-08-17 20:36:54.488 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2025-11-10): kept=297 short=0 halt=3 fwd_ret mean=-0.05678 std=0.05145
+2026-08-17 20:36:55.158 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2025-11-11): kept=297 short=0 halt=3 fwd_ret mean=-0.04249 std=0.04905
+2026-08-17 20:36:55.829 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2025-11-12): kept=297 short=0 halt=3 fwd_ret mean=-0.03665 std=0.04330
+2026-08-17 20:36:56.497 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2025-11-13): kept=297 short=0 halt=3 fwd_ret mean=-0.04541 std=0.04645
+2026-08-17 20:36:57.165 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2025-11-14): kept=297 short=0 halt=3 fwd_ret mean=-0.02916 std=0.04709
+2026-08-17 20:36:57.836 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2025-11-17): kept=297 short=0 halt=3 fwd_ret mean=-0.01287 std=0.05287
+2026-08-17 20:36:58.514 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2025-11-18): kept=297 short=0 halt=3 fwd_ret mean=-0.01104 std=0.05400
+2026-08-17 20:36:59.182 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2025-11-19): kept=297 short=0 halt=3 fwd_ret mean=-0.01615 std=0.05507
+2026-08-17 20:36:59.853 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2025-11-20): kept=295 short=0 halt=5 fwd_ret mean=-0.01097 std=0.05470
+2026-08-17 20:37:00.533 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2025-11-21): kept=295 short=0 halt=5 fwd_ret mean=0.02099 std=0.06125
+2026-08-17 20:37:01.209 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2025-11-24): kept=295 short=0 halt=5 fwd_ret mean=0.02398 std=0.07356
+2026-08-17 20:37:01.878 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2025-11-25): kept=295 short=0 halt=5 fwd_ret mean=0.00789 std=0.06983
+2026-08-17 20:37:02.116 | INFO     | __main__:score_window:155 -   score [2025h2] [100/126] 2025-11-25: 295 只
+2026-08-17 20:37:02.551 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2025-11-26): kept=295 short=0 halt=5 fwd_ret mean=0.00947 std=0.06101
+2026-08-17 20:37:03.229 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2025-11-27): kept=295 short=0 halt=5 fwd_ret mean=-0.00043 std=0.05784
+2026-08-17 20:37:03.907 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2025-11-28): kept=295 short=0 halt=5 fwd_ret mean=0.00280 std=0.05817
+2026-08-17 20:37:04.573 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2025-12-01): kept=295 short=0 halt=5 fwd_ret mean=-0.01261 std=0.05331
+2026-08-17 20:37:05.248 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2025-12-02): kept=295 short=0 halt=5 fwd_ret mean=-0.01595 std=0.04971
+2026-08-17 20:37:05.919 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2025-12-03): kept=295 short=0 halt=5 fwd_ret mean=0.00332 std=0.05285
+2026-08-17 20:37:06.593 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2025-12-04): kept=295 short=0 halt=5 fwd_ret mean=0.00009 std=0.04545
+2026-08-17 20:37:07.265 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2025-12-05): kept=295 short=0 halt=5 fwd_ret mean=-0.00234 std=0.04243
+2026-08-17 20:37:07.932 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2025-12-08): kept=295 short=0 halt=5 fwd_ret mean=-0.00002 std=0.04294
+2026-08-17 20:37:08.612 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2025-12-09): kept=295 short=0 halt=5 fwd_ret mean=0.00693 std=0.04631
+2026-08-17 20:37:09.284 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2025-12-10): kept=295 short=0 halt=5 fwd_ret mean=0.00917 std=0.04389
+2026-08-17 20:37:09.956 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2025-12-11): kept=295 short=0 halt=5 fwd_ret mean=0.02228 std=0.04366
+2026-08-17 20:37:10.625 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2025-12-12): kept=295 short=0 halt=5 fwd_ret mean=0.01949 std=0.05003
+2026-08-17 20:37:11.296 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2025-12-15): kept=295 short=0 halt=5 fwd_ret mean=0.02010 std=0.05137
+2026-08-17 20:37:11.966 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2025-12-16): kept=295 short=0 halt=5 fwd_ret mean=0.03204 std=0.06024
+2026-08-17 20:37:12.640 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2025-12-17): kept=295 short=0 halt=5 fwd_ret mean=0.01451 std=0.06161
+2026-08-17 20:37:13.610 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2025-12-18): kept=295 short=0 halt=5 fwd_ret mean=0.03397 std=0.06905
+2026-08-17 20:37:14.535 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2025-12-19): kept=294 short=0 halt=6 fwd_ret mean=0.04623 std=0.07781
+2026-08-17 20:37:15.466 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2025-12-22): kept=294 short=0 halt=6 fwd_ret mean=0.03723 std=0.07095
+2026-08-17 20:37:16.394 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2025-12-23): kept=294 short=0 halt=6 fwd_ret mean=0.03713 std=0.07816
+2026-08-17 20:37:16.632 | INFO     | __main__:score_window:155 -   score [2025h2] [120/126] 2025-12-23: 294 只
+2026-08-17 20:37:17.340 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2025-12-24): kept=294 short=0 halt=6 fwd_ret mean=0.03985 std=0.08814
+2026-08-17 20:37:18.295 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2025-12-25): kept=294 short=0 halt=6 fwd_ret mean=0.05010 std=0.10685
+2026-08-17 20:37:24.025 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2025-12-26): kept=294 short=0 halt=6 fwd_ret mean=0.03933 std=0.09253
+2026-08-17 20:37:24.957 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2025-12-29): kept=295 short=0 halt=5 fwd_ret mean=0.04025 std=0.09770
+2026-08-17 20:37:25.880 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2025-12-30): kept=295 short=0 halt=5 fwd_ret mean=0.03591 std=0.08741
+2026-08-17 20:37:26.808 | DEBUG    | cross_section_kda.data:build_daily_samples:269 - build_daily_samples(2025-12-31): kept=295 short=0 halt=5 fwd_ret mean=0.03221 std=0.08220
+2026-08-17 20:37:27.071 | INFO     | __main__:score_window:160 - [2025h2] H-kda_s42 信号落盘（126 日，平均 295 只/日）
+2026-08-17 20:37:27.081 | INFO     | __main__:score_window:160 - [2025h2] H-kda_s43 信号落盘（126 日，平均 295 只/日）
+2026-08-17 20:37:27.091 | INFO     | __main__:score_window:160 - [2025h2] H-kda_s44 信号落盘（126 日，平均 295 只/日）
+2026-08-17 20:37:27.101 | INFO     | __main__:score_window:160 - [2025h2] H-mamba_s42 信号落盘（126 日，平均 295 只/日）
+2026-08-17 20:37:27.110 | INFO     | __main__:score_window:160 - [2025h2] H-mamba_s43 信号落盘（126 日，平均 295 只/日）
+2026-08-17 20:37:27.121 | INFO     | __main__:score_window:160 - [2025h2] H-mamba_s44 信号落盘（126 日，平均 295 只/日）
+2026-08-17 20:37:27.131 | INFO     | __main__:score_window:160 - [2025h2] H-lin_s42 信号落盘（126 日，平均 295 只/日）
+2026-08-17 20:37:27.246 | INFO     | __main__:main:390 - [2025h2] 引擎宇宙：338 列（冻结口径轮次并集）
+2026-08-17 20:37:27.348 | INFO     | paper_replication.signal:build_px_tradeable:279 - 价格/可交易宽表：126 日 × 337 列；日均不可交易 4.6 只
+2026-08-17 20:37:27.403 | INFO     | paper_replication.benchmark:probe_index_benchmark:43 - 指数基准 000300.SH：125 行，累计 +17.43%
+2026-08-17 20:37:27.404 | INFO     | paper_replication.benchmark:build_pool_equal_weight_benchmark:64 - 同池等权基准：126 行，累计 +22.16%
+2026-08-17 20:37:27.405 | INFO     | baseline_suite.pipeline:build_dual_benchmarks:54 - 双基准 [g5_2025h2]：指数累计 +17.43% / 等权累计 +22.16% / beta_gap=-4.74%
+2026-08-17 20:37:27.601 | INFO     | baseline_suite.pipeline:run_group:84 - [H-kda_s42] AER(指数)=-7.85% IR=-0.891 | AER(等权)=-14.85% IR=-1.817 | MDD=-9.93% 日均换手=10.50% (n=125)
+2026-08-17 20:37:27.799 | INFO     | baseline_suite.pipeline:run_group:84 - [H-kda_s43] AER(指数)=-20.56% IR=-2.430 | AER(等权)=-26.48% IR=-3.483 | MDD=-12.81% 日均换手=10.49% (n=125)
+2026-08-17 20:37:27.995 | INFO     | baseline_suite.pipeline:run_group:84 - [H-kda_s44] AER(指数)=-2.24% IR=-0.327 | AER(等权)=-9.65% IR=-1.900 | MDD=-4.54% 日均换手=10.48% (n=125)
+2026-08-17 20:37:28.192 | INFO     | baseline_suite.pipeline:run_group:84 - [H-mamba_s42] AER(指数)=-15.86% IR=-2.036 | AER(等权)=-22.16% IR=-3.232 | MDD=-10.82% 日均换手=10.52% (n=125)
+2026-08-17 20:37:28.391 | INFO     | baseline_suite.pipeline:run_group:84 - [H-mamba_s43] AER(指数)=-13.78% IR=-1.669 | AER(等权)=-20.24% IR=-2.821 | MDD=-10.14% 日均换手=10.54% (n=125)
+2026-08-17 20:37:28.592 | INFO     | baseline_suite.pipeline:run_group:84 - [H-mamba_s44] AER(指数)=-8.63% IR=-1.254 | AER(等权)=-15.51% IR=-2.844 | MDD=-5.68% 日均换手=10.47% (n=125)
+2026-08-17 20:37:28.793 | INFO     | baseline_suite.pipeline:run_group:84 - [H-lin_s42] AER(指数)=-10.09% IR=-1.253 | AER(等权)=-16.86% IR=-2.393 | MDD=-9.38% 日均换手=10.49% (n=125)
+2026-08-17 20:37:28.994 | INFO     | baseline_suite.pipeline:run_group:84 - [G1_mean] AER(指数)=+14.84% IR=+1.401 | AER(等权)=+5.95% IR=+0.622 | MDD=-6.25% 日均换手=10.39% (n=125)
+2026-08-17 20:37:30.179 | INFO     | paper_replication.signal:build_px_tradeable:279 - 价格/可交易宽表：126 日 × 337 列；日均不可交易 4.6 只
+2026-08-17 20:37:30.234 | INFO     | paper_replication.benchmark:probe_index_benchmark:43 - 指数基准 000300.SH：125 行，累计 +17.43%
+2026-08-17 20:37:30.235 | INFO     | paper_replication.benchmark:build_pool_equal_weight_benchmark:64 - 同池等权基准：126 行，累计 +22.16%
+2026-08-17 20:37:30.236 | INFO     | baseline_suite.pipeline:build_dual_benchmarks:54 - 双基准 [g5_2025h2]：指数累计 +17.43% / 等权累计 +22.16% / beta_gap=-4.74%
+2026-08-17 20:37:30.435 | INFO     | baseline_suite.pipeline:run_group:84 - [H-kda_s42] AER(指数)=-8.20% IR=-0.921 | AER(等权)=-15.17% IR=-1.836 | MDD=-10.55% 日均换手=10.49% (n=125)
+2026-08-17 20:37:30.642 | INFO     | baseline_suite.pipeline:run_group:84 - [H-kda_s43] AER(指数)=-19.37% IR=-2.265 | AER(等权)=-25.39% IR=-3.298 | MDD=-12.88% 日均换手=10.50% (n=125)
+2026-08-17 20:37:30.840 | INFO     | baseline_suite.pipeline:run_group:84 - [H-kda_s44] AER(指数)=-1.25% IR=-0.168 | AER(等权)=-8.75% IR=-1.698 | MDD=-3.94% 日均换手=10.50% (n=125)
+2026-08-17 20:37:31.040 | INFO     | baseline_suite.pipeline:run_group:84 - [H-mamba_s42] AER(指数)=-15.95% IR=-2.095 | AER(等权)=-22.25% IR=-3.329 | MDD=-11.48% 日均换手=10.51% (n=125)
+2026-08-17 20:37:31.237 | INFO     | baseline_suite.pipeline:run_group:84 - [H-mamba_s43] AER(指数)=-11.56% IR=-1.395 | AER(等权)=-18.20% IR=-2.565 | MDD=-9.70% 日均换手=10.53% (n=125)
+2026-08-17 20:37:31.441 | INFO     | baseline_suite.pipeline:run_group:84 - [H-mamba_s44] AER(指数)=-5.34% IR=-0.741 | AER(等权)=-12.49% IR=-2.205 | MDD=-4.65% 日均换手=10.49% (n=125)
+2026-08-17 20:37:31.641 | INFO     | baseline_suite.pipeline:run_group:84 - [H-lin_s42] AER(指数)=-9.47% IR=-1.162 | AER(等权)=-16.29% IR=-2.306 | MDD=-8.93% 日均换手=10.49% (n=125)
+2026-08-17 20:37:31.641 | INFO     | __main__:main:413 - [2025h2] 正交化附表完成（7 模型）
+2026-08-17 20:37:31.642 | INFO     | __main__:main:430 - 阶段 2 全表 + 判读落盘 → /home/user/workspace/Kronos/g5_head/data/g5_stage2_results.json
+Loading weights from local directory
+Loading weights from local directory
+
+==== G5 阶段 2 预注册判据 J1~J5 封盘判读 ====
+[H-kda] 中位种子=H-kda_s43 | backtest AER(等权)=-14.32% AER(指数)=-18.31% | 2025H2 AER(等权)=-26.48%
+        J1=False J2=False J3=None J4=None 注册=False
+[H-mamba] 中位种子=H-mamba_s43 | backtest AER(等权)=-21.47% AER(指数)=-25.20% | 2025H2 AER(等权)=-20.24%
+        J1=False J2=False J3=None J4=None 注册=False
+[H-lin] backtest AER(等权)=-1.95%（机制锚点）
+[J5 命题否定] True
+[在位者重叠带] {'H-kda': False, 'H-mamba': False}
+[注册触发] 无
