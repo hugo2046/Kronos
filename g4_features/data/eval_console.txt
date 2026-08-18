@@ -1,0 +1,125 @@
+2026-08-18 08:19:32.837 | INFO     | __main__:main:332 - [backtest] 引擎宇宙：338 列（冻结口径轮次并集）
+[3099153:MainThread](2026-08-18 08:19:33,209) INFO - qlib.Initialization - [config.py:441] - default_conf: client.
+[3099153:MainThread](2026-08-18 08:19:33,545) INFO - qlib.ddb_features - [ddb_features.py:116] - 已注册 qlib 兼容函数到 DolphinDB 会话
+[3099153:MainThread](2026-08-18 08:19:33,545) INFO - qlib.Initialization - [__init__.py:94] - qlib successfully initialized based on client settings.
+[3099153:MainThread](2026-08-18 08:19:33,546) INFO - qlib.Initialization - [__init__.py:111] - data_path={'__DEFAULT_FREQ': 'DolphinDB(dolphindb://admin:***@100.**.**.25:***)'}
+2026-08-18 08:19:33.546 | INFO     | kronos_qlib.provider:init_qlib_once:108 - Qlib 初始化成功 - URI: dolphindb://admin:***@100.**.**.25:***
+2026-08-18 08:19:33.722 | INFO     | paper_replication.signal:build_px_tradeable:279 - 价格/可交易宽表：134 日 × 336 列；日均不可交易 2.5 只
+2026-08-18 08:19:33.821 | INFO     | paper_replication.benchmark:probe_index_benchmark:43 - 指数基准 000300.SH：133 行，累计 -1.45%
+2026-08-18 08:19:33.822 | INFO     | paper_replication.benchmark:build_pool_equal_weight_benchmark:64 - 同池等权基准：134 行，累计 -3.61%
+2026-08-18 08:19:33.823 | INFO     | baseline_suite.pipeline:build_dual_benchmarks:54 - 双基准 [g4_backtest]：指数累计 -1.45% / 等权累计 -3.61% / beta_gap=+2.16%
+2026-08-18 08:19:34.038 | INFO     | baseline_suite.pipeline:run_group:84 - [G4S100_last] AER(指数)=+5.56% IR=+0.397 | AER(等权)=+9.05% IR=+0.505 | MDD=-10.59% 日均换手=10.37% (n=133)
+2026-08-18 08:19:34.248 | INFO     | baseline_suite.pipeline:run_group:84 - [G4S100_mean] AER(指数)=+8.97% IR=+0.575 | AER(等权)=+12.55% IR=+0.648 | MDD=-10.65% 日均换手=10.36% (n=133)
+2026-08-18 08:19:34.462 | INFO     | baseline_suite.pipeline:run_group:84 - [G4S100_max] AER(指数)=-0.39% IR=+0.074 | AER(等权)=+2.83% IR=+0.235 | MDD=-14.39% 日均换手=10.33% (n=133)
+2026-08-18 08:19:34.681 | INFO     | baseline_suite.pipeline:run_group:84 - [G4S100_min] AER(指数)=+8.76% IR=+0.704 | AER(等权)=+12.82% IR=+0.834 | MDD=-10.20% 日均换手=10.32% (n=133)
+2026-08-18 08:19:34.847 | INFO     | paper_replication.signal:build_px_tradeable:279 - 价格/可交易宽表：134 日 × 336 列；日均不可交易 2.5 只
+2026-08-18 08:19:34.946 | INFO     | paper_replication.benchmark:probe_index_benchmark:43 - 指数基准 000300.SH：133 行，累计 -1.45%
+2026-08-18 08:19:34.947 | INFO     | paper_replication.benchmark:build_pool_equal_weight_benchmark:64 - 同池等权基准：134 行，累计 -3.61%
+2026-08-18 08:19:34.948 | INFO     | baseline_suite.pipeline:build_dual_benchmarks:54 - 双基准 [g4_backtest]：指数累计 -1.45% / 等权累计 -3.61% / beta_gap=+2.16%
+2026-08-18 08:19:35.166 | INFO     | baseline_suite.pipeline:run_group:84 - [G4S101_last] AER(指数)=-0.77% IR=+0.039 | AER(等权)=+2.60% IR=+0.226 | MDD=-13.39% 日均换手=10.37% (n=133)
+2026-08-18 08:19:35.379 | INFO     | baseline_suite.pipeline:run_group:84 - [G4S101_mean] AER(指数)=+8.07% IR=+0.548 | AER(等权)=+11.68% IR=+0.629 | MDD=-10.03% 日均换手=10.32% (n=133)
+2026-08-18 08:19:35.592 | INFO     | baseline_suite.pipeline:run_group:84 - [G4S101_max] AER(指数)=+2.38% IR=+0.219 | AER(等权)=+5.69% IR=+0.355 | MDD=-12.64% 日均换手=10.25% (n=133)
+2026-08-18 08:19:35.806 | INFO     | baseline_suite.pipeline:run_group:84 - [G4S101_min] AER(指数)=+2.23% IR=+0.240 | AER(等权)=+6.01% IR=+0.445 | MDD=-10.28% 日均换手=10.41% (n=133)
+2026-08-18 08:19:35.972 | INFO     | paper_replication.signal:build_px_tradeable:279 - 价格/可交易宽表：134 日 × 336 列；日均不可交易 2.5 只
+2026-08-18 08:19:36.070 | INFO     | paper_replication.benchmark:probe_index_benchmark:43 - 指数基准 000300.SH：133 行，累计 -1.45%
+2026-08-18 08:19:36.071 | INFO     | paper_replication.benchmark:build_pool_equal_weight_benchmark:64 - 同池等权基准：134 行，累计 -3.61%
+2026-08-18 08:19:36.072 | INFO     | baseline_suite.pipeline:build_dual_benchmarks:54 - 双基准 [g4_backtest]：指数累计 -1.45% / 等权累计 -3.61% / beta_gap=+2.16%
+2026-08-18 08:19:36.293 | INFO     | baseline_suite.pipeline:run_group:84 - [G4S102_last] AER(指数)=-18.38% IR=-0.978 | AER(等权)=-15.60% IR=-0.607 | MDD=-19.65% 日均换手=10.33% (n=133)
+2026-08-18 08:19:36.513 | INFO     | baseline_suite.pipeline:run_group:84 - [G4S102_mean] AER(指数)=-2.44% IR=-0.048 | AER(等权)=+0.85% IR=+0.148 | MDD=-15.20% 日均换手=10.33% (n=133)
+2026-08-18 08:19:36.735 | INFO     | baseline_suite.pipeline:run_group:84 - [G4S102_max] AER(指数)=-7.14% IR=-0.296 | AER(等权)=-4.10% IR=-0.060 | MDD=-16.06% 日均换手=10.31% (n=133)
+2026-08-18 08:19:36.956 | INFO     | baseline_suite.pipeline:run_group:84 - [G4S102_min] AER(指数)=+1.50% IR=+0.174 | AER(等权)=+5.24% IR=+0.375 | MDD=-13.31% 日均换手=10.38% (n=133)
+2026-08-18 08:19:37.130 | INFO     | paper_replication.signal:build_px_tradeable:279 - 价格/可交易宽表：134 日 × 336 列；日均不可交易 2.5 只
+2026-08-18 08:19:37.227 | INFO     | paper_replication.benchmark:probe_index_benchmark:43 - 指数基准 000300.SH：133 行，累计 -1.45%
+2026-08-18 08:19:37.228 | INFO     | paper_replication.benchmark:build_pool_equal_weight_benchmark:64 - 同池等权基准：134 行，累计 -3.61%
+2026-08-18 08:19:37.229 | INFO     | baseline_suite.pipeline:build_dual_benchmarks:54 - 双基准 [g4_backtest]：指数累计 -1.45% / 等权累计 -3.61% / beta_gap=+2.16%
+2026-08-18 08:19:37.442 | INFO     | baseline_suite.pipeline:run_group:84 - [G1_mean_ref] AER(指数)=+10.66% IR=+0.715 | AER(等权)=+14.33% IR=+0.758 | MDD=-12.51% 日均换手=10.25% (n=133)
+2026-08-18 08:19:37.442 | INFO     | __main__:main:362 - 对拍在位者 G1_mean：复跑 +14.3332% vs 冻结 +14.3300% 一致
+2026-08-18 08:19:37.607 | INFO     | paper_replication.signal:build_px_tradeable:279 - 价格/可交易宽表：134 日 × 336 列；日均不可交易 2.5 只
+2026-08-18 08:19:37.704 | INFO     | paper_replication.benchmark:probe_index_benchmark:43 - 指数基准 000300.SH：133 行，累计 -1.45%
+2026-08-18 08:19:37.705 | INFO     | paper_replication.benchmark:build_pool_equal_weight_benchmark:64 - 同池等权基准：134 行，累计 -3.61%
+2026-08-18 08:19:37.706 | INFO     | baseline_suite.pipeline:build_dual_benchmarks:54 - 双基准 [g4_backtest]：指数累计 -1.45% / 等权累计 -3.61% / beta_gap=+2.16%
+2026-08-18 08:19:37.922 | INFO     | baseline_suite.pipeline:run_group:84 - [G1_last] AER(指数)=+14.68% IR=+0.918 | AER(等权)=+18.44% IR=+0.918 | MDD=-11.68% 日均换手=10.24% (n=133)
+2026-08-18 08:19:38.136 | INFO     | baseline_suite.pipeline:run_group:84 - [G1_mean] AER(指数)=+10.66% IR=+0.715 | AER(等权)=+14.33% IR=+0.758 | MDD=-12.51% 日均换手=10.25% (n=133)
+2026-08-18 08:19:38.349 | INFO     | baseline_suite.pipeline:run_group:84 - [G1_max] AER(指数)=+25.43% IR=+1.321 | AER(等权)=+29.28% IR=+1.229 | MDD=-14.88% 日均换手=10.25% (n=133)
+2026-08-18 08:19:38.560 | INFO     | baseline_suite.pipeline:run_group:84 - [G1_min] AER(指数)=+13.44% IR=+1.133 | AER(等权)=+17.63% IR=+1.159 | MDD=-5.86% 日均换手=10.32% (n=133)
+2026-08-18 08:19:38.726 | INFO     | paper_replication.signal:build_px_tradeable:279 - 价格/可交易宽表：134 日 × 336 列；日均不可交易 2.5 只
+2026-08-18 08:19:38.824 | INFO     | paper_replication.benchmark:probe_index_benchmark:43 - 指数基准 000300.SH：133 行，累计 -1.45%
+2026-08-18 08:19:38.826 | INFO     | paper_replication.benchmark:build_pool_equal_weight_benchmark:64 - 同池等权基准：134 行，累计 -3.61%
+2026-08-18 08:19:38.826 | INFO     | baseline_suite.pipeline:build_dual_benchmarks:54 - 双基准 [g4_backtest]：指数累计 -1.45% / 等权累计 -3.61% / beta_gap=+2.16%
+2026-08-18 08:19:39.043 | INFO     | baseline_suite.pipeline:run_group:84 - [G2S101_last] AER(指数)=+15.59% IR=+1.056 | AER(等权)=+19.50% IR=+1.033 | MDD=-11.87% 日均换手=10.20% (n=133)
+2026-08-18 08:19:39.256 | INFO     | baseline_suite.pipeline:run_group:84 - [G2S101_mean] AER(指数)=+24.84% IR=+1.644 | AER(等权)=+29.06% IR=+1.492 | MDD=-10.08% 日均换手=10.32% (n=133)
+2026-08-18 08:19:39.470 | INFO     | baseline_suite.pipeline:run_group:84 - [G2S101_max] AER(指数)=+17.97% IR=+1.032 | AER(等权)=+21.76% IR=+1.008 | MDD=-15.69% 日均换手=10.22% (n=133)
+2026-08-18 08:19:39.686 | INFO     | baseline_suite.pipeline:run_group:84 - [G2S101_min] AER(指数)=+18.11% IR=+1.750 | AER(等权)=+22.67% IR=+1.758 | MDD=-5.88% 日均换手=10.32% (n=133)
+2026-08-18 08:19:39.854 | INFO     | paper_replication.signal:build_px_tradeable:279 - 价格/可交易宽表：134 日 × 336 列；日均不可交易 2.5 只
+2026-08-18 08:19:39.951 | INFO     | paper_replication.benchmark:probe_index_benchmark:43 - 指数基准 000300.SH：133 行，累计 -1.45%
+2026-08-18 08:19:39.952 | INFO     | paper_replication.benchmark:build_pool_equal_weight_benchmark:64 - 同池等权基准：134 行，累计 -3.61%
+2026-08-18 08:19:39.952 | INFO     | baseline_suite.pipeline:build_dual_benchmarks:54 - 双基准 [g4_backtest]：指数累计 -1.45% / 等权累计 -3.61% / beta_gap=+2.16%
+2026-08-18 08:19:40.167 | INFO     | baseline_suite.pipeline:run_group:84 - [G2S102_last] AER(指数)=+9.93% IR=+0.758 | AER(等权)=+13.86% IR=+0.835 | MDD=-9.51% 日均换手=10.26% (n=133)
+2026-08-18 08:19:40.378 | INFO     | baseline_suite.pipeline:run_group:84 - [G2S102_mean] AER(指数)=+14.64% IR=+1.094 | AER(等权)=+18.67% IR=+1.082 | MDD=-8.84% 日均换手=10.32% (n=133)
+2026-08-18 08:19:40.589 | INFO     | baseline_suite.pipeline:run_group:84 - [G2S102_max] AER(指数)=+28.89% IR=+1.617 | AER(等权)=+33.07% IR=+1.485 | MDD=-13.70% 日均换手=10.27% (n=133)
+2026-08-18 08:19:40.802 | INFO     | baseline_suite.pipeline:run_group:84 - [G2S102_min] AER(指数)=+16.55% IR=+1.549 | AER(等权)=+21.13% IR=+1.669 | MDD=-6.54% 日均换手=10.34% (n=133)
+2026-08-18 08:19:40.878 | INFO     | __main__:main:332 - [2025h2] 引擎宇宙：338 列（冻结口径轮次并集）
+2026-08-18 08:19:41.002 | INFO     | paper_replication.signal:build_px_tradeable:279 - 价格/可交易宽表：126 日 × 337 列；日均不可交易 4.6 只
+2026-08-18 08:19:41.066 | INFO     | paper_replication.benchmark:probe_index_benchmark:43 - 指数基准 000300.SH：125 行，累计 +17.43%
+2026-08-18 08:19:41.068 | INFO     | paper_replication.benchmark:build_pool_equal_weight_benchmark:64 - 同池等权基准：126 行，累计 +22.16%
+2026-08-18 08:19:41.068 | INFO     | baseline_suite.pipeline:build_dual_benchmarks:54 - 双基准 [g4_2025h2]：指数累计 +17.43% / 等权累计 +22.16% / beta_gap=-4.74%
+2026-08-18 08:19:41.269 | INFO     | baseline_suite.pipeline:run_group:84 - [G4S100_last] AER(指数)=+25.96% IR=+2.053 | AER(等权)=+16.05% IR=+1.299 | MDD=-9.83% 日均换手=10.41% (n=125)
+2026-08-18 08:19:41.470 | INFO     | baseline_suite.pipeline:run_group:84 - [G4S100_mean] AER(指数)=+18.57% IR=+1.469 | AER(等权)=+9.29% IR=+0.776 | MDD=-9.46% 日均换手=10.38% (n=125)
+2026-08-18 08:19:41.672 | INFO     | baseline_suite.pipeline:run_group:84 - [G4S100_max] AER(指数)=+32.38% IR=+2.204 | AER(等权)=+21.86% IR=+1.499 | MDD=-9.91% 日均换手=10.40% (n=125)
+2026-08-18 08:19:41.873 | INFO     | baseline_suite.pipeline:run_group:84 - [G4S100_min] AER(指数)=+25.81% IR=+2.710 | AER(等权)=+15.93% IR=+1.685 | MDD=-4.84% 日均换手=10.45% (n=125)
+2026-08-18 08:19:41.984 | INFO     | paper_replication.signal:build_px_tradeable:279 - 价格/可交易宽表：126 日 × 337 列；日均不可交易 4.6 只
+2026-08-18 08:19:42.046 | INFO     | paper_replication.benchmark:probe_index_benchmark:43 - 指数基准 000300.SH：125 行，累计 +17.43%
+2026-08-18 08:19:42.047 | INFO     | paper_replication.benchmark:build_pool_equal_weight_benchmark:64 - 同池等权基准：126 行，累计 +22.16%
+2026-08-18 08:19:42.048 | INFO     | baseline_suite.pipeline:build_dual_benchmarks:54 - 双基准 [g4_2025h2]：指数累计 +17.43% / 等权累计 +22.16% / beta_gap=-4.74%
+2026-08-18 08:19:42.246 | INFO     | baseline_suite.pipeline:run_group:84 - [G4S101_last] AER(指数)=+21.15% IR=+1.702 | AER(等权)=+11.64% IR=+0.964 | MDD=-7.91% 日均换手=10.40% (n=125)
+2026-08-18 08:19:42.447 | INFO     | baseline_suite.pipeline:run_group:84 - [G4S101_mean] AER(指数)=+29.22% IR=+2.234 | AER(等权)=+19.03% IR=+1.485 | MDD=-7.19% 日均换手=10.42% (n=125)
+2026-08-18 08:19:42.649 | INFO     | baseline_suite.pipeline:run_group:84 - [G4S101_max] AER(指数)=+23.59% IR=+1.686 | AER(等权)=+13.85% IR=+1.021 | MDD=-7.86% 日均换手=10.41% (n=125)
+2026-08-18 08:19:42.850 | INFO     | baseline_suite.pipeline:run_group:84 - [G4S101_min] AER(指数)=+10.68% IR=+1.174 | AER(等权)=+2.10% IR=+0.271 | MDD=-5.22% 日均换手=10.43% (n=125)
+2026-08-18 08:19:42.962 | INFO     | paper_replication.signal:build_px_tradeable:279 - 价格/可交易宽表：126 日 × 337 列；日均不可交易 4.6 只
+2026-08-18 08:19:43.024 | INFO     | paper_replication.benchmark:probe_index_benchmark:43 - 指数基准 000300.SH：125 行，累计 +17.43%
+2026-08-18 08:19:43.025 | INFO     | paper_replication.benchmark:build_pool_equal_weight_benchmark:64 - 同池等权基准：126 行，累计 +22.16%
+2026-08-18 08:19:43.026 | INFO     | baseline_suite.pipeline:build_dual_benchmarks:54 - 双基准 [g4_2025h2]：指数累计 +17.43% / 等权累计 +22.16% / beta_gap=-4.74%
+2026-08-18 08:19:43.225 | INFO     | baseline_suite.pipeline:run_group:84 - [G4S102_last] AER(指数)=+23.66% IR=+1.759 | AER(等权)=+13.90% IR=+1.050 | MDD=-8.59% 日均换手=10.46% (n=125)
+2026-08-18 08:19:43.425 | INFO     | baseline_suite.pipeline:run_group:84 - [G4S102_mean] AER(指数)=+32.79% IR=+2.278 | AER(等权)=+22.27% IR=+1.573 | MDD=-8.03% 日均换手=10.44% (n=125)
+2026-08-18 08:19:43.628 | INFO     | baseline_suite.pipeline:run_group:84 - [G4S102_max] AER(指数)=+27.63% IR=+1.923 | AER(等权)=+17.53% IR=+1.238 | MDD=-7.71% 日均换手=10.43% (n=125)
+2026-08-18 08:19:43.831 | INFO     | baseline_suite.pipeline:run_group:84 - [G4S102_min] AER(指数)=+14.03% IR=+1.520 | AER(等权)=+5.14% IR=+0.578 | MDD=-4.77% 日均换手=10.44% (n=125)
+2026-08-18 08:19:43.943 | INFO     | paper_replication.signal:build_px_tradeable:279 - 价格/可交易宽表：126 日 × 337 列；日均不可交易 4.6 只
+2026-08-18 08:19:44.006 | INFO     | paper_replication.benchmark:probe_index_benchmark:43 - 指数基准 000300.SH：125 行，累计 +17.43%
+2026-08-18 08:19:44.007 | INFO     | paper_replication.benchmark:build_pool_equal_weight_benchmark:64 - 同池等权基准：126 行，累计 +22.16%
+2026-08-18 08:19:44.008 | INFO     | baseline_suite.pipeline:build_dual_benchmarks:54 - 双基准 [g4_2025h2]：指数累计 +17.43% / 等权累计 +22.16% / beta_gap=-4.74%
+2026-08-18 08:19:44.209 | INFO     | baseline_suite.pipeline:run_group:84 - [G1_mean_ref] AER(指数)=+14.84% IR=+1.401 | AER(等权)=+5.95% IR=+0.622 | MDD=-6.25% 日均换手=10.39% (n=125)
+2026-08-18 08:19:44.322 | INFO     | paper_replication.signal:build_px_tradeable:279 - 价格/可交易宽表：126 日 × 337 列；日均不可交易 4.6 只
+2026-08-18 08:19:44.383 | INFO     | paper_replication.benchmark:probe_index_benchmark:43 - 指数基准 000300.SH：125 行，累计 +17.43%
+2026-08-18 08:19:44.384 | INFO     | paper_replication.benchmark:build_pool_equal_weight_benchmark:64 - 同池等权基准：126 行，累计 +22.16%
+2026-08-18 08:19:44.385 | INFO     | baseline_suite.pipeline:build_dual_benchmarks:54 - 双基准 [g4_2025h2]：指数累计 +17.43% / 等权累计 +22.16% / beta_gap=-4.74%
+2026-08-18 08:19:44.585 | INFO     | baseline_suite.pipeline:run_group:84 - [G1_last] AER(指数)=+16.94% IR=+1.558 | AER(等权)=+7.85% IR=+0.778 | MDD=-5.09% 日均换手=10.35% (n=125)
+2026-08-18 08:19:44.788 | INFO     | baseline_suite.pipeline:run_group:84 - [G1_mean] AER(指数)=+14.84% IR=+1.401 | AER(等权)=+5.95% IR=+0.622 | MDD=-6.25% 日均换手=10.39% (n=125)
+2026-08-18 08:19:44.988 | INFO     | baseline_suite.pipeline:run_group:84 - [G1_max] AER(指数)=+17.74% IR=+1.402 | AER(等权)=+8.55% IR=+0.721 | MDD=-6.44% 日均换手=10.33% (n=125)
+2026-08-18 08:19:45.192 | INFO     | baseline_suite.pipeline:run_group:84 - [G1_min] AER(指数)=+2.36% IR=+0.348 | AER(等权)=-5.48% IR=-0.735 | MDD=-4.97% 日均换手=10.42% (n=125)
+2026-08-18 08:19:45.304 | INFO     | paper_replication.signal:build_px_tradeable:279 - 价格/可交易宽表：126 日 × 337 列；日均不可交易 4.6 只
+2026-08-18 08:19:45.366 | INFO     | paper_replication.benchmark:probe_index_benchmark:43 - 指数基准 000300.SH：125 行，累计 +17.43%
+2026-08-18 08:19:45.367 | INFO     | paper_replication.benchmark:build_pool_equal_weight_benchmark:64 - 同池等权基准：126 行，累计 +22.16%
+2026-08-18 08:19:45.368 | INFO     | baseline_suite.pipeline:build_dual_benchmarks:54 - 双基准 [g4_2025h2]：指数累计 +17.43% / 等权累计 +22.16% / beta_gap=-4.74%
+2026-08-18 08:19:45.567 | INFO     | baseline_suite.pipeline:run_group:84 - [G2S101_last] AER(指数)=+13.37% IR=+1.187 | AER(等权)=+4.57% IR=+0.454 | MDD=-7.59% 日均换手=10.30% (n=125)
+2026-08-18 08:19:45.766 | INFO     | baseline_suite.pipeline:run_group:84 - [G2S101_mean] AER(指数)=+20.56% IR=+1.854 | AER(等权)=+11.16% IR=+1.065 | MDD=-5.27% 日均换手=10.35% (n=125)
+2026-08-18 08:19:45.966 | INFO     | baseline_suite.pipeline:run_group:84 - [G2S101_max] AER(指数)=+27.26% IR=+2.015 | AER(等权)=+17.25% IR=+1.317 | MDD=-6.15% 日均换手=10.37% (n=125)
+2026-08-18 08:19:46.172 | INFO     | baseline_suite.pipeline:run_group:84 - [G2S101_min] AER(指数)=+3.59% IR=+0.514 | AER(等权)=-4.35% IR=-0.580 | MDD=-5.46% 日均换手=10.41% (n=125)
+2026-08-18 08:19:46.285 | INFO     | paper_replication.signal:build_px_tradeable:279 - 价格/可交易宽表：126 日 × 337 列；日均不可交易 4.6 只
+2026-08-18 08:19:46.347 | INFO     | paper_replication.benchmark:probe_index_benchmark:43 - 指数基准 000300.SH：125 行，累计 +17.43%
+2026-08-18 08:19:46.348 | INFO     | paper_replication.benchmark:build_pool_equal_weight_benchmark:64 - 同池等权基准：126 行，累计 +22.16%
+2026-08-18 08:19:46.349 | INFO     | baseline_suite.pipeline:build_dual_benchmarks:54 - 双基准 [g4_2025h2]：指数累计 +17.43% / 等权累计 +22.16% / beta_gap=-4.74%
+2026-08-18 08:19:46.552 | INFO     | baseline_suite.pipeline:run_group:84 - [G2S102_last] AER(指数)=+13.49% IR=+1.294 | AER(等权)=+4.68% IR=+0.498 | MDD=-7.00% 日均换手=10.31% (n=125)
+2026-08-18 08:19:46.751 | INFO     | baseline_suite.pipeline:run_group:84 - [G2S102_mean] AER(指数)=+12.61% IR=+1.289 | AER(等权)=+3.90% IR=+0.452 | MDD=-6.73% 日均换手=10.40% (n=125)
+2026-08-18 08:19:46.949 | INFO     | baseline_suite.pipeline:run_group:84 - [G2S102_max] AER(指数)=+25.90% IR=+2.100 | AER(等权)=+16.01% IR=+1.343 | MDD=-8.06% 日均换手=10.36% (n=125)
+2026-08-18 08:19:47.156 | INFO     | baseline_suite.pipeline:run_group:84 - [G2S102_min] AER(指数)=+3.92% IR=+0.548 | AER(等权)=-4.05% IR=-0.531 | MDD=-6.54% 日均换手=10.40% (n=125)
+2026-08-18 08:19:47.157 | INFO     | __main__:main:398 - G4 封盘判读落盘 /home/user/workspace/Kronos/g4_features/data/g4_stage2_results.json
+=== 预注册判据 J1~J5 一次封盘 ===
+[J1_survival] 通过/触发：中位 s101 AER(等权)=+11.68% / AER(指数)=+8.07% 双正 → 存活
+[J2_increment] 未通过/未触发：中位 AER(等权)=+11.68% vs 门槛 +16.33%，AER(指数)=+8.07% vs 门槛 +12.66% → 未达增量门槛
+[J3_neutral_band] 未通过/未触发：中位 +11.68% 不在中性带
+[J4_cross_window] 未通过/未触发：J2 未过，J4 不适用
+[J5_rejection] 通过/触发：中位 +11.68% ≤ +12.33%（G1−2pp）→ 市场上下文损害或无增量，特征路线关闭，不做特征搜索
+[registration] 未通过/未触发：未触发注册（J2∧J4 至少一项未过）
+中位种子：s101（backtest AER 等权 +11.68% / 指数 +8.07%）
+三种子中位对中位：G4 ss101 +11.68% vs G1 s102 +18.67%
+措辞约束：G4 中位落入 G1 五种子分布内部 → 两族分布并列呈现，不得以单点差宣称优劣

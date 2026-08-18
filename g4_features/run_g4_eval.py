@@ -271,8 +271,8 @@ def plot_bar(full_table: dict, judgment: dict) -> None:
     aers, colors, labels = [], [], []
     for key in order:
         arm, s, v = key.split("_")
-        aers.append(full_table[f"{s}@backtest"][v]["perf_ew"]["aer"] if arm == "G4"
-                    else full_table[f"G1_{s}@backtest"][v]["perf_ew"]["aer"])
+        tab_key = (f"G4_{s}" if arm == "G4" else f"G1_{s}") + "@backtest"
+        aers.append(full_table[tab_key][v]["perf_ew"]["aer"])
         colors.append(FAMILY_COLORS["G4" if arm == "G4" else "G1"][s])
         labels.append(key)
     fig, ax = plt.subplots(figsize=(14, 6))
@@ -306,10 +306,10 @@ def main() -> None:
     for window in ("backtest", "2025h2"):
         for s in SEEDS:
             p = DATA_DIR / f"s{s}" / f"daily_signals_{window}_{G4_ARMS[s]}_{{v}}.parquet"
-            missing = [v for v in VARIANTS if not p.format(v=v).exists()]
+            missing = [v for v in VARIANTS if not Path(str(p).format(v=v)).exists()]
             assert not missing, f"[{window}] G4 s{s} 信号缺失 {missing}——禁止评估（落盘前置纪律）"
             g4_signals[(window, s)] = {
-                v: pd.read_parquet(p.format(v=v)) for v in VARIANTS
+                v: pd.read_parquet(str(p).format(v=v)) for v in VARIANTS
             }
         # 在位者（对拍锚）+ G1 族三种子（同宇宙复跑对照）
         inc_signals[window] = {"G1_mean_ref": pd.read_parquet(INCUMBENT_PARQUET[window])}
@@ -337,7 +337,7 @@ def main() -> None:
                        for v, df in g4_signals[(window, s)].items()}
             results, ctx = engine_window(signals, window, universe_cols)
             for v in VARIANTS:
-                full_table.setdefault(f"{s}@{window}", {})[v] = {
+                full_table.setdefault(f"G4_s{s}@{window}", {})[v] = {
                     "perf_ew": results[f"{G4_ARMS[s]}_{v}"]["perf_ew"],
                     "perf_idx": results[f"{G4_ARMS[s]}_{v}"]["perf_idx"],
                 }
@@ -369,7 +369,7 @@ def main() -> None:
                        for v, df in g1_signals[(window, s)].items()}
             results, ctx1 = engine_window(signals, window, universe_cols)
             for v in VARIANTS:
-                full_table.setdefault(f"G1_{s}@{window}", {})[v] = {
+                full_table.setdefault(f"G1_s{s}@{window}", {})[v] = {
                     "perf_ew": results[f"{G1_ARMS[s]}_{v}"]["perf_ew"],
                     "perf_idx": results[f"{G1_ARMS[s]}_{v}"]["perf_idx"],
                 }
@@ -413,7 +413,7 @@ def main() -> None:
     print(f"中位种子：{judgment['median_seed']}（backtest AER 等权 "
           f"{judgment['median_backtest']['aer_ew']:+.2%} / 指数 "
           f"{judgment['median_backtest']['aer_idx']:+.2%}）")
-    print(f"三种子中位对中位：G4 s{judgment['median_seed']} "
+    print(f"三种子中位对中位：G4 {judgment['median_seed']} "
           f"{judgment['median_backtest']['aer_ew']:+.2%} vs G1 "
           f"{judgment['g1_three_seed_median']['median_seed']} "
           f"{judgment['g1_three_seed_median']['median_aer_ew']:+.2%}")
