@@ -1,0 +1,416 @@
+/home/user/miniconda3/envs/quant/lib/python3.13/site-packages/torch/distributed/c10d_logger.py:83: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  return func(*args, **kwargs)
+[rank0]:[W817 21:36:10.269409206 ProcessGroupNCCL.cpp:5276] Guessing device ID based on global rank. This can cause a hang if rank to GPU mapping is heterogeneous. You can specify device_id in init_process_group()
+[DDP Setup] Global Rank: 0/1, Local Rank (GPU): 0 on device 0
+[G4] seed=100 stage=tokenizer dataset_path=/home/user/workspace/Kronos/g4_features/data
+[G4] feature_list=['open', 'high', 'low', 'close', 'vol', 'amt', 'idx_ret', 'mkt_vol', 'ma200_gate']
+[G4] epochs=15 batch=50 n_train_iter=100000 n_val_iter=20000 tok_lr=0.0002 pred_lr=4e-05
+Loading weights from local directory
+Tokenizer Model Size: 4.0M
+warm-start：/home/user/workspace/Kronos/finetune_suite/outputs/models/finetune_tokenizer_g1/checkpoints/best_model → 6→9 列零初始化手术
+[Rank 0] BATCHSIZE (per GPU): 50
+[Rank 0] Effective total batch size: 50
+[Rank 0] Creating distributed dataloaders...
+[TRAIN] Pre-computing sample indices...
+[TRAIN] Found 9731385 possible samples. Using 100000 per epoch.
+[VAL] Pre-computing sample indices...
+[VAL] Found 91383 possible samples. Using 20000 per epoch.
+[Rank 0] Train dataset size: 100000, Validation dataset size: 20000
+[Rank 0] Dataloaders created. Train steps/epoch: 2000, Val steps: 400
+[Rank 0, Epoch 1/15, Step 100/2000] LR 0.000025, Loss: 0.2826
+[Rank 0, Epoch 1/15, Step 200/2000] LR 0.000041, Loss: 0.2727
+[Rank 0, Epoch 1/15, Step 300/2000] LR 0.000065, Loss: 0.2436
+[Rank 0, Epoch 1/15, Step 400/2000] LR 0.000095, Loss: 0.2450
+[Rank 0, Epoch 1/15, Step 500/2000] LR 0.000126, Loss: 0.1650
+[Rank 0, Epoch 1/15, Step 600/2000] LR 0.000155, Loss: 0.1479
+[Rank 0, Epoch 1/15, Step 700/2000] LR 0.000179, Loss: 0.1017
+[Rank 0, Epoch 1/15, Step 800/2000] LR 0.000195, Loss: 0.0693
+[Rank 0, Epoch 1/15, Step 900/2000] LR 0.000200, Loss: 0.0531
+[Rank 0, Epoch 1/15, Step 1000/2000] LR 0.000200, Loss: 0.0419
+[Rank 0, Epoch 1/15, Step 1100/2000] LR 0.000200, Loss: 0.0447
+[Rank 0, Epoch 1/15, Step 1200/2000] LR 0.000200, Loss: 0.0293
+[Rank 0, Epoch 1/15, Step 1300/2000] LR 0.000200, Loss: 0.0230
+[Rank 0, Epoch 1/15, Step 1400/2000] LR 0.000200, Loss: 0.0275
+[Rank 0, Epoch 1/15, Step 1500/2000] LR 0.000200, Loss: 0.0230
+[Rank 0, Epoch 1/15, Step 1600/2000] LR 0.000200, Loss: 0.0217
+[Rank 0, Epoch 1/15, Step 1700/2000] LR 0.000200, Loss: 0.0206
+[Rank 0, Epoch 1/15, Step 1800/2000] LR 0.000200, Loss: 0.0203
+[Rank 0, Epoch 1/15, Step 1900/2000] LR 0.000199, Loss: 0.0170
+[Rank 0, Epoch 1/15, Step 2000/2000] LR 0.000199, Loss: 0.0265
+/home/user/miniconda3/envs/quant/lib/python3.13/site-packages/torch/distributed/c10d_logger.py:83: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  return func(*args, **kwargs)
+
+--- Epoch 1/15 Summary ---
+Validation Loss: 0.0432
+Time This Epoch: 0:00:27
+Total Time Elapsed: 0:00:39
+
+Best model saved to /home/user/workspace/Kronos/g4_features/outputs/models/finetune_tokenizer_g4_s100/checkpoints/best_model (Val Loss: 0.0432)
+[Rank 0, Epoch 2/15, Step 100/2000] LR 0.000199, Loss: 0.0164
+[Rank 0, Epoch 2/15, Step 200/2000] LR 0.000199, Loss: 0.0151
+[Rank 0, Epoch 2/15, Step 300/2000] LR 0.000199, Loss: 0.0116
+[Rank 0, Epoch 2/15, Step 400/2000] LR 0.000199, Loss: 0.0123
+[Rank 0, Epoch 2/15, Step 500/2000] LR 0.000199, Loss: 0.0147
+[Rank 0, Epoch 2/15, Step 600/2000] LR 0.000198, Loss: 0.0175
+[Rank 0, Epoch 2/15, Step 700/2000] LR 0.000198, Loss: 0.0137
+[Rank 0, Epoch 2/15, Step 800/2000] LR 0.000198, Loss: 0.0151
+[Rank 0, Epoch 2/15, Step 900/2000] LR 0.000198, Loss: 0.0117
+[Rank 0, Epoch 2/15, Step 1000/2000] LR 0.000197, Loss: 0.0127
+[Rank 0, Epoch 2/15, Step 1100/2000] LR 0.000197, Loss: 0.0083
+[Rank 0, Epoch 2/15, Step 1200/2000] LR 0.000197, Loss: 0.0083
+[Rank 0, Epoch 2/15, Step 1300/2000] LR 0.000197, Loss: 0.0106
+[Rank 0, Epoch 2/15, Step 1400/2000] LR 0.000196, Loss: 0.0066
+[Rank 0, Epoch 2/15, Step 1500/2000] LR 0.000196, Loss: 0.0095
+[Rank 0, Epoch 2/15, Step 1600/2000] LR 0.000196, Loss: 0.0108
+[Rank 0, Epoch 2/15, Step 1700/2000] LR 0.000195, Loss: 0.0092
+[Rank 0, Epoch 2/15, Step 1800/2000] LR 0.000195, Loss: 0.0036
+[Rank 0, Epoch 2/15, Step 1900/2000] LR 0.000195, Loss: 0.0108
+[Rank 0, Epoch 2/15, Step 2000/2000] LR 0.000194, Loss: 0.0078
+
+--- Epoch 2/15 Summary ---
+Validation Loss: 0.0398
+Time This Epoch: 0:00:27
+Total Time Elapsed: 0:01:06
+
+Best model saved to /home/user/workspace/Kronos/g4_features/outputs/models/finetune_tokenizer_g4_s100/checkpoints/best_model (Val Loss: 0.0398)
+[Rank 0, Epoch 3/15, Step 100/2000] LR 0.000194, Loss: 0.0091
+[Rank 0, Epoch 3/15, Step 200/2000] LR 0.000194, Loss: 0.0058
+[Rank 0, Epoch 3/15, Step 300/2000] LR 0.000193, Loss: 0.0057
+[Rank 0, Epoch 3/15, Step 400/2000] LR 0.000193, Loss: 0.0062
+[Rank 0, Epoch 3/15, Step 500/2000] LR 0.000193, Loss: 0.0059
+[Rank 0, Epoch 3/15, Step 600/2000] LR 0.000192, Loss: 0.0053
+[Rank 0, Epoch 3/15, Step 700/2000] LR 0.000192, Loss: 0.0071
+[Rank 0, Epoch 3/15, Step 800/2000] LR 0.000191, Loss: 0.0069
+[Rank 0, Epoch 3/15, Step 900/2000] LR 0.000191, Loss: 0.0071
+[Rank 0, Epoch 3/15, Step 1000/2000] LR 0.000190, Loss: 0.0027
+[Rank 0, Epoch 3/15, Step 1100/2000] LR 0.000190, Loss: 0.0072
+[Rank 0, Epoch 3/15, Step 1200/2000] LR 0.000189, Loss: 0.0086
+[Rank 0, Epoch 3/15, Step 1300/2000] LR 0.000189, Loss: 0.0039
+[Rank 0, Epoch 3/15, Step 1400/2000] LR 0.000188, Loss: 0.0028
+[Rank 0, Epoch 3/15, Step 1500/2000] LR 0.000188, Loss: 0.0028
+[Rank 0, Epoch 3/15, Step 1600/2000] LR 0.000187, Loss: 0.0054
+[Rank 0, Epoch 3/15, Step 1700/2000] LR 0.000187, Loss: 0.0056
+[Rank 0, Epoch 3/15, Step 1800/2000] LR 0.000186, Loss: 0.0038
+[Rank 0, Epoch 3/15, Step 1900/2000] LR 0.000186, Loss: 0.0026
+[Rank 0, Epoch 3/15, Step 2000/2000] LR 0.000185, Loss: 0.0047
+
+--- Epoch 3/15 Summary ---
+Validation Loss: 0.0326
+Time This Epoch: 0:00:27
+Total Time Elapsed: 0:01:33
+
+Best model saved to /home/user/workspace/Kronos/g4_features/outputs/models/finetune_tokenizer_g4_s100/checkpoints/best_model (Val Loss: 0.0326)
+[Rank 0, Epoch 4/15, Step 100/2000] LR 0.000185, Loss: 0.0034
+[Rank 0, Epoch 4/15, Step 200/2000] LR 0.000184, Loss: 0.0107
+[Rank 0, Epoch 4/15, Step 300/2000] LR 0.000183, Loss: 0.0045
+[Rank 0, Epoch 4/15, Step 400/2000] LR 0.000183, Loss: 0.0072
+[Rank 0, Epoch 4/15, Step 500/2000] LR 0.000182, Loss: 0.0045
+[Rank 0, Epoch 4/15, Step 600/2000] LR 0.000182, Loss: 0.0051
+[Rank 0, Epoch 4/15, Step 700/2000] LR 0.000181, Loss: 0.0034
+[Rank 0, Epoch 4/15, Step 800/2000] LR 0.000180, Loss: 0.0008
+[Rank 0, Epoch 4/15, Step 900/2000] LR 0.000180, Loss: 0.0012
+[Rank 0, Epoch 4/15, Step 1000/2000] LR 0.000179, Loss: 0.0045
+[Rank 0, Epoch 4/15, Step 1100/2000] LR 0.000178, Loss: 0.0005
+[Rank 0, Epoch 4/15, Step 1200/2000] LR 0.000178, Loss: 0.0002
+[Rank 0, Epoch 4/15, Step 1300/2000] LR 0.000177, Loss: 0.0018
+[Rank 0, Epoch 4/15, Step 1400/2000] LR 0.000176, Loss: 0.0022
+[Rank 0, Epoch 4/15, Step 1500/2000] LR 0.000176, Loss: 0.0027
+[Rank 0, Epoch 4/15, Step 1600/2000] LR 0.000175, Loss: 0.0017
+[Rank 0, Epoch 4/15, Step 1700/2000] LR 0.000174, Loss: 0.0017
+[Rank 0, Epoch 4/15, Step 1800/2000] LR 0.000174, Loss: 0.0006
+[Rank 0, Epoch 4/15, Step 1900/2000] LR 0.000173, Loss: 0.0046
+[Rank 0, Epoch 4/15, Step 2000/2000] LR 0.000172, Loss: 0.0027
+
+--- Epoch 4/15 Summary ---
+Validation Loss: 0.0354
+Time This Epoch: 0:00:27
+Total Time Elapsed: 0:02:01
+
+[Rank 0, Epoch 5/15, Step 100/2000] LR 0.000171, Loss: 0.0018
+[Rank 0, Epoch 5/15, Step 200/2000] LR 0.000171, Loss: 0.0028
+[Rank 0, Epoch 5/15, Step 300/2000] LR 0.000170, Loss: 0.0007
+[Rank 0, Epoch 5/15, Step 400/2000] LR 0.000169, Loss: 0.0031
+[Rank 0, Epoch 5/15, Step 500/2000] LR 0.000168, Loss: 0.0019
+[Rank 0, Epoch 5/15, Step 600/2000] LR 0.000167, Loss: -0.0006
+[Rank 0, Epoch 5/15, Step 700/2000] LR 0.000167, Loss: 0.0027
+[Rank 0, Epoch 5/15, Step 800/2000] LR 0.000166, Loss: 0.0021
+[Rank 0, Epoch 5/15, Step 900/2000] LR 0.000165, Loss: 0.0031
+[Rank 0, Epoch 5/15, Step 1000/2000] LR 0.000164, Loss: -0.0001
+[Rank 0, Epoch 5/15, Step 1100/2000] LR 0.000163, Loss: 0.0021
+[Rank 0, Epoch 5/15, Step 1200/2000] LR 0.000162, Loss: 0.0001
+[Rank 0, Epoch 5/15, Step 1300/2000] LR 0.000162, Loss: -0.0006
+[Rank 0, Epoch 5/15, Step 1400/2000] LR 0.000161, Loss: -0.0015
+[Rank 0, Epoch 5/15, Step 1500/2000] LR 0.000160, Loss: 0.0002
+[Rank 0, Epoch 5/15, Step 1600/2000] LR 0.000159, Loss: 0.0021
+[Rank 0, Epoch 5/15, Step 1700/2000] LR 0.000158, Loss: 0.0039
+[Rank 0, Epoch 5/15, Step 1800/2000] LR 0.000157, Loss: -0.0020
+[Rank 0, Epoch 5/15, Step 1900/2000] LR 0.000156, Loss: 0.0001
+[Rank 0, Epoch 5/15, Step 2000/2000] LR 0.000155, Loss: 0.0024
+
+--- Epoch 5/15 Summary ---
+Validation Loss: 0.0300
+Time This Epoch: 0:00:27
+Total Time Elapsed: 0:02:28
+
+Best model saved to /home/user/workspace/Kronos/g4_features/outputs/models/finetune_tokenizer_g4_s100/checkpoints/best_model (Val Loss: 0.0300)
+[Rank 0, Epoch 6/15, Step 100/2000] LR 0.000155, Loss: 0.0017
+[Rank 0, Epoch 6/15, Step 200/2000] LR 0.000154, Loss: -0.0015
+[Rank 0, Epoch 6/15, Step 300/2000] LR 0.000153, Loss: 0.0033
+[Rank 0, Epoch 6/15, Step 400/2000] LR 0.000152, Loss: 0.0011
+[Rank 0, Epoch 6/15, Step 500/2000] LR 0.000151, Loss: -0.0005
+[Rank 0, Epoch 6/15, Step 600/2000] LR 0.000150, Loss: 0.0003
+[Rank 0, Epoch 6/15, Step 700/2000] LR 0.000149, Loss: 0.0003
+[Rank 0, Epoch 6/15, Step 800/2000] LR 0.000148, Loss: -0.0016
+[Rank 0, Epoch 6/15, Step 900/2000] LR 0.000147, Loss: 0.0025
+[Rank 0, Epoch 6/15, Step 1000/2000] LR 0.000146, Loss: 0.0003
+[Rank 0, Epoch 6/15, Step 1100/2000] LR 0.000145, Loss: 0.0045
+[Rank 0, Epoch 6/15, Step 1200/2000] LR 0.000144, Loss: -0.0011
+[Rank 0, Epoch 6/15, Step 1300/2000] LR 0.000143, Loss: -0.0020
+[Rank 0, Epoch 6/15, Step 1400/2000] LR 0.000142, Loss: -0.0019
+[Rank 0, Epoch 6/15, Step 1500/2000] LR 0.000141, Loss: -0.0005
+[Rank 0, Epoch 6/15, Step 1600/2000] LR 0.000140, Loss: 0.0024
+[Rank 0, Epoch 6/15, Step 1700/2000] LR 0.000139, Loss: -0.0026
+[Rank 0, Epoch 6/15, Step 1800/2000] LR 0.000138, Loss: -0.0010
+[Rank 0, Epoch 6/15, Step 1900/2000] LR 0.000137, Loss: -0.0014
+[Rank 0, Epoch 6/15, Step 2000/2000] LR 0.000136, Loss: 0.0002
+
+--- Epoch 6/15 Summary ---
+Validation Loss: 0.0323
+Time This Epoch: 0:00:27
+Total Time Elapsed: 0:02:55
+
+[Rank 0, Epoch 7/15, Step 100/2000] LR 0.000135, Loss: 0.0006
+[Rank 0, Epoch 7/15, Step 200/2000] LR 0.000134, Loss: -0.0008
+[Rank 0, Epoch 7/15, Step 300/2000] LR 0.000133, Loss: 0.0000
+[Rank 0, Epoch 7/15, Step 400/2000] LR 0.000132, Loss: 0.0068
+[Rank 0, Epoch 7/15, Step 500/2000] LR 0.000131, Loss: 0.0037
+[Rank 0, Epoch 7/15, Step 600/2000] LR 0.000130, Loss: 0.0008
+[Rank 0, Epoch 7/15, Step 700/2000] LR 0.000129, Loss: -0.0004
+[Rank 0, Epoch 7/15, Step 800/2000] LR 0.000128, Loss: 0.0010
+[Rank 0, Epoch 7/15, Step 900/2000] LR 0.000127, Loss: 0.0019
+[Rank 0, Epoch 7/15, Step 1000/2000] LR 0.000126, Loss: 0.0011
+[Rank 0, Epoch 7/15, Step 1100/2000] LR 0.000125, Loss: -0.0013
+[Rank 0, Epoch 7/15, Step 1200/2000] LR 0.000124, Loss: -0.0028
+[Rank 0, Epoch 7/15, Step 1300/2000] LR 0.000123, Loss: -0.0016
+[Rank 0, Epoch 7/15, Step 1400/2000] LR 0.000122, Loss: 0.0003
+[Rank 0, Epoch 7/15, Step 1500/2000] LR 0.000121, Loss: 0.0018
+[Rank 0, Epoch 7/15, Step 1600/2000] LR 0.000120, Loss: 0.0005
+[Rank 0, Epoch 7/15, Step 1700/2000] LR 0.000119, Loss: -0.0024
+[Rank 0, Epoch 7/15, Step 1800/2000] LR 0.000118, Loss: -0.0025
+[Rank 0, Epoch 7/15, Step 1900/2000] LR 0.000117, Loss: -0.0019
+[Rank 0, Epoch 7/15, Step 2000/2000] LR 0.000116, Loss: -0.0023
+
+--- Epoch 7/15 Summary ---
+Validation Loss: 0.0344
+Time This Epoch: 0:00:27
+Total Time Elapsed: 0:03:23
+
+[Rank 0, Epoch 8/15, Step 100/2000] LR 0.000115, Loss: -0.0021
+[Rank 0, Epoch 8/15, Step 200/2000] LR 0.000113, Loss: -0.0041
+[Rank 0, Epoch 8/15, Step 300/2000] LR 0.000112, Loss: -0.0021
+[Rank 0, Epoch 8/15, Step 400/2000] LR 0.000111, Loss: -0.0029
+[Rank 0, Epoch 8/15, Step 500/2000] LR 0.000110, Loss: -0.0015
+[Rank 0, Epoch 8/15, Step 600/2000] LR 0.000109, Loss: -0.0007
+[Rank 0, Epoch 8/15, Step 700/2000] LR 0.000108, Loss: -0.0043
+[Rank 0, Epoch 8/15, Step 800/2000] LR 0.000107, Loss: -0.0036
+[Rank 0, Epoch 8/15, Step 900/2000] LR 0.000106, Loss: -0.0009
+[Rank 0, Epoch 8/15, Step 1000/2000] LR 0.000105, Loss: -0.0014
+[Rank 0, Epoch 8/15, Step 1100/2000] LR 0.000104, Loss: -0.0009
+[Rank 0, Epoch 8/15, Step 1200/2000] LR 0.000103, Loss: 0.0005
+[Rank 0, Epoch 8/15, Step 1300/2000] LR 0.000102, Loss: -0.0015
+[Rank 0, Epoch 8/15, Step 1400/2000] LR 0.000101, Loss: -0.0019
+[Rank 0, Epoch 8/15, Step 1500/2000] LR 0.000099, Loss: -0.0023
+[Rank 0, Epoch 8/15, Step 1600/2000] LR 0.000098, Loss: -0.0014
+[Rank 0, Epoch 8/15, Step 1700/2000] LR 0.000097, Loss: -0.0040
+[Rank 0, Epoch 8/15, Step 1800/2000] LR 0.000096, Loss: -0.0017
+[Rank 0, Epoch 8/15, Step 1900/2000] LR 0.000095, Loss: -0.0004
+[Rank 0, Epoch 8/15, Step 2000/2000] LR 0.000094, Loss: -0.0008
+
+--- Epoch 8/15 Summary ---
+Validation Loss: 0.0331
+Time This Epoch: 0:00:27
+Total Time Elapsed: 0:03:50
+
+[Rank 0, Epoch 9/15, Step 100/2000] LR 0.000093, Loss: -0.0007
+[Rank 0, Epoch 9/15, Step 200/2000] LR 0.000092, Loss: -0.0039
+[Rank 0, Epoch 9/15, Step 300/2000] LR 0.000091, Loss: -0.0041
+[Rank 0, Epoch 9/15, Step 400/2000] LR 0.000090, Loss: -0.0031
+[Rank 0, Epoch 9/15, Step 500/2000] LR 0.000089, Loss: -0.0036
+[Rank 0, Epoch 9/15, Step 600/2000] LR 0.000088, Loss: 0.0005
+[Rank 0, Epoch 9/15, Step 700/2000] LR 0.000087, Loss: 0.0011
+[Rank 0, Epoch 9/15, Step 800/2000] LR 0.000085, Loss: -0.0036
+[Rank 0, Epoch 9/15, Step 900/2000] LR 0.000084, Loss: -0.0051
+[Rank 0, Epoch 9/15, Step 1000/2000] LR 0.000083, Loss: -0.0027
+[Rank 0, Epoch 9/15, Step 1100/2000] LR 0.000082, Loss: -0.0013
+[Rank 0, Epoch 9/15, Step 1200/2000] LR 0.000081, Loss: -0.0017
+[Rank 0, Epoch 9/15, Step 1300/2000] LR 0.000080, Loss: -0.0050
+[Rank 0, Epoch 9/15, Step 1400/2000] LR 0.000079, Loss: -0.0024
+[Rank 0, Epoch 9/15, Step 1500/2000] LR 0.000078, Loss: -0.0010
+[Rank 0, Epoch 9/15, Step 1600/2000] LR 0.000077, Loss: 0.0015
+[Rank 0, Epoch 9/15, Step 1700/2000] LR 0.000076, Loss: -0.0038
+[Rank 0, Epoch 9/15, Step 1800/2000] LR 0.000075, Loss: -0.0049
+[Rank 0, Epoch 9/15, Step 1900/2000] LR 0.000074, Loss: -0.0052
+[Rank 0, Epoch 9/15, Step 2000/2000] LR 0.000073, Loss: 0.0035
+
+--- Epoch 9/15 Summary ---
+Validation Loss: 0.0332
+Time This Epoch: 0:00:27
+Total Time Elapsed: 0:04:18
+
+[Rank 0, Epoch 10/15, Step 100/2000] LR 0.000072, Loss: -0.0019
+[Rank 0, Epoch 10/15, Step 200/2000] LR 0.000071, Loss: -0.0019
+[Rank 0, Epoch 10/15, Step 300/2000] LR 0.000070, Loss: -0.0034
+[Rank 0, Epoch 10/15, Step 400/2000] LR 0.000069, Loss: -0.0024
+[Rank 0, Epoch 10/15, Step 500/2000] LR 0.000068, Loss: -0.0015
+[Rank 0, Epoch 10/15, Step 600/2000] LR 0.000067, Loss: -0.0045
+[Rank 0, Epoch 10/15, Step 700/2000] LR 0.000066, Loss: -0.0025
+[Rank 0, Epoch 10/15, Step 800/2000] LR 0.000065, Loss: -0.0025
+[Rank 0, Epoch 10/15, Step 900/2000] LR 0.000064, Loss: 0.0000
+[Rank 0, Epoch 10/15, Step 1000/2000] LR 0.000063, Loss: -0.0025
+[Rank 0, Epoch 10/15, Step 1100/2000] LR 0.000062, Loss: -0.0053
+[Rank 0, Epoch 10/15, Step 1200/2000] LR 0.000061, Loss: -0.0004
+[Rank 0, Epoch 10/15, Step 1300/2000] LR 0.000060, Loss: -0.0022
+[Rank 0, Epoch 10/15, Step 1400/2000] LR 0.000059, Loss: -0.0043
+[Rank 0, Epoch 10/15, Step 1500/2000] LR 0.000058, Loss: 0.0002
+[Rank 0, Epoch 10/15, Step 1600/2000] LR 0.000057, Loss: -0.0018
+[Rank 0, Epoch 10/15, Step 1700/2000] LR 0.000056, Loss: -0.0012
+[Rank 0, Epoch 10/15, Step 1800/2000] LR 0.000055, Loss: -0.0044
+[Rank 0, Epoch 10/15, Step 1900/2000] LR 0.000054, Loss: -0.0004
+[Rank 0, Epoch 10/15, Step 2000/2000] LR 0.000053, Loss: -0.0043
+
+--- Epoch 10/15 Summary ---
+Validation Loss: 0.0373
+Time This Epoch: 0:00:27
+Total Time Elapsed: 0:04:45
+
+[Rank 0, Epoch 11/15, Step 100/2000] LR 0.000052, Loss: -0.0024
+[Rank 0, Epoch 11/15, Step 200/2000] LR 0.000051, Loss: -0.0042
+[Rank 0, Epoch 11/15, Step 300/2000] LR 0.000050, Loss: -0.0037
+[Rank 0, Epoch 11/15, Step 400/2000] LR 0.000049, Loss: -0.0028
+[Rank 0, Epoch 11/15, Step 500/2000] LR 0.000048, Loss: 0.0010
+[Rank 0, Epoch 11/15, Step 600/2000] LR 0.000047, Loss: -0.0038
+[Rank 0, Epoch 11/15, Step 700/2000] LR 0.000046, Loss: -0.0068
+[Rank 0, Epoch 11/15, Step 800/2000] LR 0.000045, Loss: -0.0020
+[Rank 0, Epoch 11/15, Step 900/2000] LR 0.000044, Loss: -0.0022
+[Rank 0, Epoch 11/15, Step 1000/2000] LR 0.000044, Loss: -0.0047
+[Rank 0, Epoch 11/15, Step 1100/2000] LR 0.000043, Loss: -0.0039
+[Rank 0, Epoch 11/15, Step 1200/2000] LR 0.000042, Loss: -0.0035
+[Rank 0, Epoch 11/15, Step 1300/2000] LR 0.000041, Loss: -0.0029
+[Rank 0, Epoch 11/15, Step 1400/2000] LR 0.000040, Loss: -0.0038
+[Rank 0, Epoch 11/15, Step 1500/2000] LR 0.000039, Loss: -0.0041
+[Rank 0, Epoch 11/15, Step 1600/2000] LR 0.000038, Loss: -0.0016
+[Rank 0, Epoch 11/15, Step 1700/2000] LR 0.000038, Loss: -0.0032
+[Rank 0, Epoch 11/15, Step 1800/2000] LR 0.000037, Loss: -0.0021
+[Rank 0, Epoch 11/15, Step 1900/2000] LR 0.000036, Loss: -0.0042
+[Rank 0, Epoch 11/15, Step 2000/2000] LR 0.000035, Loss: -0.0029
+
+--- Epoch 11/15 Summary ---
+Validation Loss: 0.0375
+Time This Epoch: 0:00:27
+Total Time Elapsed: 0:05:12
+
+[Rank 0, Epoch 12/15, Step 100/2000] LR 0.000034, Loss: -0.0034
+[Rank 0, Epoch 12/15, Step 200/2000] LR 0.000033, Loss: -0.0016
+[Rank 0, Epoch 12/15, Step 300/2000] LR 0.000033, Loss: -0.0012
+[Rank 0, Epoch 12/15, Step 400/2000] LR 0.000032, Loss: -0.0032
+[Rank 0, Epoch 12/15, Step 500/2000] LR 0.000031, Loss: -0.0022
+[Rank 0, Epoch 12/15, Step 600/2000] LR 0.000030, Loss: -0.0041
+[Rank 0, Epoch 12/15, Step 700/2000] LR 0.000029, Loss: -0.0009
+[Rank 0, Epoch 12/15, Step 800/2000] LR 0.000029, Loss: -0.0047
+[Rank 0, Epoch 12/15, Step 900/2000] LR 0.000028, Loss: -0.0046
+[Rank 0, Epoch 12/15, Step 1000/2000] LR 0.000027, Loss: -0.0035
+[Rank 0, Epoch 12/15, Step 1100/2000] LR 0.000026, Loss: -0.0007
+[Rank 0, Epoch 12/15, Step 1200/2000] LR 0.000026, Loss: -0.0007
+[Rank 0, Epoch 12/15, Step 1300/2000] LR 0.000025, Loss: -0.0061
+[Rank 0, Epoch 12/15, Step 1400/2000] LR 0.000024, Loss: -0.0020
+[Rank 0, Epoch 12/15, Step 1500/2000] LR 0.000024, Loss: -0.0046
+[Rank 0, Epoch 12/15, Step 1600/2000] LR 0.000023, Loss: -0.0033
+[Rank 0, Epoch 12/15, Step 1700/2000] LR 0.000022, Loss: -0.0038
+[Rank 0, Epoch 12/15, Step 1800/2000] LR 0.000022, Loss: -0.0038
+[Rank 0, Epoch 12/15, Step 1900/2000] LR 0.000021, Loss: 0.0003
+[Rank 0, Epoch 12/15, Step 2000/2000] LR 0.000020, Loss: -0.0040
+
+--- Epoch 12/15 Summary ---
+Validation Loss: 0.0373
+Time This Epoch: 0:00:27
+Total Time Elapsed: 0:05:40
+
+[Rank 0, Epoch 13/15, Step 100/2000] LR 0.000020, Loss: 0.0017
+[Rank 0, Epoch 13/15, Step 200/2000] LR 0.000019, Loss: -0.0061
+[Rank 0, Epoch 13/15, Step 300/2000] LR 0.000018, Loss: 0.0001
+[Rank 0, Epoch 13/15, Step 400/2000] LR 0.000018, Loss: -0.0050
+[Rank 0, Epoch 13/15, Step 500/2000] LR 0.000017, Loss: -0.0026
+[Rank 0, Epoch 13/15, Step 600/2000] LR 0.000017, Loss: -0.0041
+[Rank 0, Epoch 13/15, Step 700/2000] LR 0.000016, Loss: -0.0045
+[Rank 0, Epoch 13/15, Step 800/2000] LR 0.000015, Loss: -0.0032
+[Rank 0, Epoch 13/15, Step 900/2000] LR 0.000015, Loss: -0.0038
+[Rank 0, Epoch 13/15, Step 1000/2000] LR 0.000014, Loss: -0.0030
+[Rank 0, Epoch 13/15, Step 1100/2000] LR 0.000014, Loss: -0.0008
+[Rank 0, Epoch 13/15, Step 1200/2000] LR 0.000013, Loss: -0.0035
+[Rank 0, Epoch 13/15, Step 1300/2000] LR 0.000013, Loss: -0.0045
+[Rank 0, Epoch 13/15, Step 1400/2000] LR 0.000012, Loss: -0.0040
+[Rank 0, Epoch 13/15, Step 1500/2000] LR 0.000012, Loss: -0.0047
+[Rank 0, Epoch 13/15, Step 1600/2000] LR 0.000011, Loss: -0.0031
+[Rank 0, Epoch 13/15, Step 1700/2000] LR 0.000011, Loss: -0.0041
+[Rank 0, Epoch 13/15, Step 1800/2000] LR 0.000010, Loss: -0.0043
+[Rank 0, Epoch 13/15, Step 1900/2000] LR 0.000010, Loss: -0.0041
+[Rank 0, Epoch 13/15, Step 2000/2000] LR 0.000009, Loss: -0.0035
+
+--- Epoch 13/15 Summary ---
+Validation Loss: 0.0365
+Time This Epoch: 0:00:27
+Total Time Elapsed: 0:06:07
+
+[Rank 0, Epoch 14/15, Step 100/2000] LR 0.000009, Loss: -0.0022
+[Rank 0, Epoch 14/15, Step 200/2000] LR 0.000008, Loss: -0.0033
+[Rank 0, Epoch 14/15, Step 300/2000] LR 0.000008, Loss: -0.0036
+[Rank 0, Epoch 14/15, Step 400/2000] LR 0.000007, Loss: -0.0049
+[Rank 0, Epoch 14/15, Step 500/2000] LR 0.000007, Loss: -0.0017
+[Rank 0, Epoch 14/15, Step 600/2000] LR 0.000007, Loss: -0.0029
+[Rank 0, Epoch 14/15, Step 700/2000] LR 0.000006, Loss: -0.0038
+[Rank 0, Epoch 14/15, Step 800/2000] LR 0.000006, Loss: -0.0046
+[Rank 0, Epoch 14/15, Step 900/2000] LR 0.000006, Loss: -0.0014
+[Rank 0, Epoch 14/15, Step 1000/2000] LR 0.000005, Loss: -0.0022
+[Rank 0, Epoch 14/15, Step 1100/2000] LR 0.000005, Loss: -0.0037
+[Rank 0, Epoch 14/15, Step 1200/2000] LR 0.000005, Loss: -0.0049
+[Rank 0, Epoch 14/15, Step 1300/2000] LR 0.000004, Loss: -0.0042
+[Rank 0, Epoch 14/15, Step 1400/2000] LR 0.000004, Loss: -0.0035
+[Rank 0, Epoch 14/15, Step 1500/2000] LR 0.000004, Loss: -0.0035
+[Rank 0, Epoch 14/15, Step 1600/2000] LR 0.000003, Loss: -0.0036
+[Rank 0, Epoch 14/15, Step 1700/2000] LR 0.000003, Loss: -0.0022
+[Rank 0, Epoch 14/15, Step 1800/2000] LR 0.000003, Loss: -0.0015
+[Rank 0, Epoch 14/15, Step 1900/2000] LR 0.000003, Loss: -0.0007
+[Rank 0, Epoch 14/15, Step 2000/2000] LR 0.000002, Loss: -0.0026
+
+--- Epoch 14/15 Summary ---
+Validation Loss: 0.0373
+Time This Epoch: 0:00:27
+Total Time Elapsed: 0:06:35
+
+[Rank 0, Epoch 15/15, Step 100/2000] LR 0.000002, Loss: -0.0034
+[Rank 0, Epoch 15/15, Step 200/2000] LR 0.000002, Loss: -0.0035
+[Rank 0, Epoch 15/15, Step 300/2000] LR 0.000002, Loss: 0.0002
+[Rank 0, Epoch 15/15, Step 400/2000] LR 0.000001, Loss: -0.0043
+[Rank 0, Epoch 15/15, Step 500/2000] LR 0.000001, Loss: -0.0027
+[Rank 0, Epoch 15/15, Step 600/2000] LR 0.000001, Loss: -0.0049
+[Rank 0, Epoch 15/15, Step 700/2000] LR 0.000001, Loss: -0.0046
+[Rank 0, Epoch 15/15, Step 800/2000] LR 0.000001, Loss: -0.0056
+[Rank 0, Epoch 15/15, Step 900/2000] LR 0.000001, Loss: -0.0044
+[Rank 0, Epoch 15/15, Step 1000/2000] LR 0.000001, Loss: -0.0034
+[Rank 0, Epoch 15/15, Step 1100/2000] LR 0.000000, Loss: -0.0069
+[Rank 0, Epoch 15/15, Step 1200/2000] LR 0.000000, Loss: -0.0035
+[Rank 0, Epoch 15/15, Step 1300/2000] LR 0.000000, Loss: -0.0050
+[Rank 0, Epoch 15/15, Step 1400/2000] LR 0.000000, Loss: -0.0040
+[Rank 0, Epoch 15/15, Step 1500/2000] LR 0.000000, Loss: -0.0012
+[Rank 0, Epoch 15/15, Step 1600/2000] LR 0.000000, Loss: -0.0070
+[Rank 0, Epoch 15/15, Step 1700/2000] LR 0.000000, Loss: -0.0002
+[Rank 0, Epoch 15/15, Step 1800/2000] LR 0.000000, Loss: -0.0050
+[Rank 0, Epoch 15/15, Step 1900/2000] LR 0.000000, Loss: -0.0053
+[Rank 0, Epoch 15/15, Step 2000/2000] LR 0.000000, Loss: -0.0042
+
+--- Epoch 15/15 Summary ---
+Validation Loss: 0.0372
+Time This Epoch: 0:00:27
+Total Time Elapsed: 0:07:02
+
+Training finished. Summary file saved.

@@ -1,0 +1,15 @@
+{
+    "start_time": "2026-08-17T13-43-43",
+    "save_directory": "/home/user/workspace/Kronos/g4_features/outputs/models/finetune_predictor_g4_s100",
+    "world_size": 1,
+    "seed": 100,
+    "stage": "predictor",
+    "warm_start": {
+        "tokenizer": "/home/user/workspace/Kronos/finetune_suite/outputs/models/finetune_tokenizer_g1/checkpoints/best_model",
+        "predictor": "/home/user/workspace/Kronos/finetune_suite/outputs/models/finetune_predictor_g1/checkpoints/best_model",
+        "surgery": "expand_tokenizer_6to9（tokenizer 阶段；predictor 原形装载零手术）"
+    },
+    "final_result": {
+        "best_val_loss": 4.972509765625
+    }
+}

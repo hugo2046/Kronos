@@ -1,0 +1,24 @@
+[skip-train] g4_features/outputs/models/finetune_tokenizer_g4_s100 已完成
+[train] seed=100 stage=predictor start=2026-08-17_21:43:41
+[train] seed=100 stage=predictor done=2026-08-17_22:27:53
+[train] seed=101 stage=tokenizer start=2026-08-17_22:27:53
+[train] seed=101 stage=tokenizer done=2026-08-17_22:35:03
+[train] seed=101 stage=predictor start=2026-08-17_22:35:03
+[train] seed=101 stage=predictor done=2026-08-17_23:19:16
+[train] seed=102 stage=tokenizer start=2026-08-17_23:19:16
+[train] seed=102 stage=tokenizer done=2026-08-17_23:26:22
+[train] seed=102 stage=predictor start=2026-08-17_23:26:22
+[train] seed=102 stage=predictor done=2026-08-18_00:10:35
+[infer] seed=100 window=backtest start=2026-08-18_00:10:35
+[infer] seed=100 window=backtest done=2026-08-18_01:21:40
+[infer] seed=100 window=2025h2 start=2026-08-18_01:21:40
+[infer] seed=100 window=2025h2 done=2026-08-18_02:28:21
+[infer] seed=101 window=backtest start=2026-08-18_02:28:21
+[infer] seed=101 window=backtest done=2026-08-18_03:39:25
+[infer] seed=101 window=2025h2 start=2026-08-18_03:39:25
+[infer] seed=101 window=2025h2 done=2026-08-18_04:46:06
+[infer] seed=102 window=backtest start=2026-08-18_04:46:06
+[infer] seed=102 window=backtest done=2026-08-18_05:57:10
+[infer] seed=102 window=2025h2 start=2026-08-18_05:57:10
+[infer] seed=102 window=2025h2 done=2026-08-18_07:03:53
+STAGE1_ALL_DONE 2026-08-18_07:03:53
