@@ -1,0 +1,174 @@
+2026-08-18 10:01:20.210 | INFO     | __main__:run_one:100 - W85 臂配置：seed=100 window=2025h2_W85S100 [2025-07-01~2025-12-31] pool=csi300 L=8 H=5 N=20 T=1.0 top_p=0.9 推理seed=42
+2026-08-18 10:01:20.211 | INFO     | __main__:run_one:106 - G1 族权重（只读复用）：model=/home/user/workspace/Kronos/finetune_suite/outputs/models/finetune_predictor_g1/checkpoints/best_model
+2026-08-18 10:01:20.211 | INFO     | __main__:run_one:107 -                         tokenizer=/home/user/workspace/Kronos/finetune_suite/outputs/models/finetune_tokenizer_g1/checkpoints/best_model
+[3134540:MainThread](2026-08-18 10:01:20,549) INFO - qlib.Initialization - [config.py:441] - default_conf: client.
+[3134540:MainThread](2026-08-18 10:01:20,931) INFO - qlib.ddb_features - [ddb_features.py:116] - 已注册 qlib 兼容函数到 DolphinDB 会话
+[3134540:MainThread](2026-08-18 10:01:20,931) INFO - qlib.Initialization - [__init__.py:94] - qlib successfully initialized based on client settings.
+[3134540:MainThread](2026-08-18 10:01:20,932) INFO - qlib.Initialization - [__init__.py:111] - data_path={'__DEFAULT_FREQ': 'DolphinDB(dolphindb://admin:***@100.**.**.25:***)'}
+2026-08-18 10:01:20.932 | INFO     | kronos_qlib.provider:init_qlib_once:108 - Qlib 初始化成功 - URI: dolphindb://admin:***@100.**.**.25:***
+2026-08-18 10:01:21.605 | INFO     | __main__:_load_w85_predictor:154 - 加载 G1 族 tokenizer：/home/user/workspace/Kronos/finetune_suite/outputs/models/finetune_tokenizer_g1/checkpoints/best_model
+2026-08-18 10:01:21.622 | INFO     | __main__:_load_w85_predictor:156 - 加载 G1 族 predictor：/home/user/workspace/Kronos/finetune_suite/outputs/models/finetune_predictor_g1/checkpoints/best_model
+2026-08-18 10:01:22.258 | INFO     | baseline_suite.signal:run_variant_signals:95 - 四变体信号 [2025h2_W85S100]：126 日总计，126 日待跑（N=20）
+2026-08-18 10:01:22.496 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2025-07-01, pool=csi300, lookback=8, predict_len=5): pool=300 kept=300 skipped_short=0 skipped_halt=0
+2026-08-18 10:01:24.937 | INFO     | baseline_suite.signal:run_variant_signals:136 - 四变体信号 [1/126] 2025-07-01: 300 只，mean std=0.0068
+2026-08-18 10:01:24.978 | DEBUG    | baseline_suite.signal:_dump_partial:164 - 四变体 checkpoint 落盘（1 日）
+2026-08-18 10:01:25.209 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2025-07-02, pool=csi300, lookback=8, predict_len=5): pool=300 kept=300 skipped_short=0 skipped_halt=0
+2026-08-18 10:01:27.699 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2025-07-03, pool=csi300, lookback=8, predict_len=5): pool=300 kept=300 skipped_short=0 skipped_halt=0
+2026-08-18 10:01:30.277 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2025-07-04, pool=csi300, lookback=8, predict_len=5): pool=300 kept=300 skipped_short=0 skipped_halt=0
+2026-08-18 10:01:32.775 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2025-07-07, pool=csi300, lookback=8, predict_len=5): pool=300 kept=300 skipped_short=0 skipped_halt=0
+2026-08-18 10:01:35.262 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2025-07-08, pool=csi300, lookback=8, predict_len=5): pool=300 kept=300 skipped_short=0 skipped_halt=0
+2026-08-18 10:01:37.766 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2025-07-09, pool=csi300, lookback=8, predict_len=5): pool=300 kept=300 skipped_short=0 skipped_halt=0
+2026-08-18 10:01:40.265 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2025-07-10, pool=csi300, lookback=8, predict_len=5): pool=300 kept=300 skipped_short=0 skipped_halt=0
+2026-08-18 10:01:42.759 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2025-07-11, pool=csi300, lookback=8, predict_len=5): pool=300 kept=300 skipped_short=0 skipped_halt=0
+2026-08-18 10:01:45.245 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2025-07-14, pool=csi300, lookback=8, predict_len=5): pool=300 kept=300 skipped_short=0 skipped_halt=0
+2026-08-18 10:01:47.507 | INFO     | baseline_suite.signal:run_variant_signals:136 - 四变体信号 [10/126] 2025-07-14: 300 只，mean std=0.0066
+2026-08-18 10:01:47.664 | DEBUG    | baseline_suite.signal:_dump_partial:164 - 四变体 checkpoint 落盘（10 日）
+2026-08-18 10:01:47.890 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2025-07-15, pool=csi300, lookback=8, predict_len=5): pool=300 kept=300 skipped_short=0 skipped_halt=0
+2026-08-18 10:01:50.383 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2025-07-16, pool=csi300, lookback=8, predict_len=5): pool=300 kept=300 skipped_short=0 skipped_halt=0
+2026-08-18 10:01:52.886 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2025-07-17, pool=csi300, lookback=8, predict_len=5): pool=300 kept=300 skipped_short=0 skipped_halt=0
+2026-08-18 10:01:55.380 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2025-07-18, pool=csi300, lookback=8, predict_len=5): pool=300 kept=300 skipped_short=0 skipped_halt=0
+2026-08-18 10:01:57.877 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2025-07-21, pool=csi300, lookback=8, predict_len=5): pool=300 kept=300 skipped_short=0 skipped_halt=0
+2026-08-18 10:02:00.380 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2025-07-22, pool=csi300, lookback=8, predict_len=5): pool=300 kept=300 skipped_short=0 skipped_halt=0
+2026-08-18 10:02:02.877 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2025-07-23, pool=csi300, lookback=8, predict_len=5): pool=300 kept=300 skipped_short=0 skipped_halt=0
+2026-08-18 10:02:05.473 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2025-07-24, pool=csi300, lookback=8, predict_len=5): pool=300 kept=300 skipped_short=0 skipped_halt=0
+2026-08-18 10:02:07.969 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2025-07-25, pool=csi300, lookback=8, predict_len=5): pool=300 kept=300 skipped_short=0 skipped_halt=0
+2026-08-18 10:02:10.462 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2025-07-28, pool=csi300, lookback=8, predict_len=5): pool=300 kept=300 skipped_short=0 skipped_halt=0
+2026-08-18 10:02:12.731 | INFO     | baseline_suite.signal:run_variant_signals:136 - 四变体信号 [20/126] 2025-07-28: 300 只，mean std=0.0083
+2026-08-18 10:02:12.773 | DEBUG    | baseline_suite.signal:_dump_partial:164 - 四变体 checkpoint 落盘（20 日）
+2026-08-18 10:02:13.002 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2025-07-29, pool=csi300, lookback=8, predict_len=5): pool=300 kept=300 skipped_short=0 skipped_halt=0
+2026-08-18 10:02:15.497 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2025-07-30, pool=csi300, lookback=8, predict_len=5): pool=300 kept=300 skipped_short=0 skipped_halt=0
+2026-08-18 10:02:17.988 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2025-07-31, pool=csi300, lookback=8, predict_len=5): pool=300 kept=300 skipped_short=0 skipped_halt=0
+2026-08-18 10:02:20.616 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2025-08-01, pool=csi300, lookback=8, predict_len=5): pool=300 kept=300 skipped_short=0 skipped_halt=0
+2026-08-18 10:02:23.122 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2025-08-04, pool=csi300, lookback=8, predict_len=5): pool=300 kept=299 skipped_short=0 skipped_halt=1
+2026-08-18 10:02:25.602 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2025-08-05, pool=csi300, lookback=8, predict_len=5): pool=300 kept=299 skipped_short=0 skipped_halt=1
+2026-08-18 10:02:28.083 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2025-08-06, pool=csi300, lookback=8, predict_len=5): pool=300 kept=299 skipped_short=0 skipped_halt=1
+2026-08-18 10:02:30.563 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2025-08-07, pool=csi300, lookback=8, predict_len=5): pool=300 kept=299 skipped_short=0 skipped_halt=1
+2026-08-18 10:02:33.047 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2025-08-08, pool=csi300, lookback=8, predict_len=5): pool=300 kept=299 skipped_short=0 skipped_halt=1
+2026-08-18 10:02:35.532 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2025-08-11, pool=csi300, lookback=8, predict_len=5): pool=300 kept=299 skipped_short=0 skipped_halt=1
+2026-08-18 10:02:37.787 | INFO     | baseline_suite.signal:run_variant_signals:136 - 四变体信号 [30/126] 2025-08-11: 299 只，mean std=0.0090
+2026-08-18 10:02:37.948 | DEBUG    | baseline_suite.signal:_dump_partial:164 - 四变体 checkpoint 落盘（30 日）
+2026-08-18 10:02:38.179 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2025-08-12, pool=csi300, lookback=8, predict_len=5): pool=300 kept=299 skipped_short=0 skipped_halt=1
+2026-08-18 10:02:40.653 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2025-08-13, pool=csi300, lookback=8, predict_len=5): pool=300 kept=297 skipped_short=0 skipped_halt=3
+2026-08-18 10:02:43.111 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2025-08-14, pool=csi300, lookback=8, predict_len=5): pool=300 kept=297 skipped_short=0 skipped_halt=3
+2026-08-18 10:02:45.573 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2025-08-15, pool=csi300, lookback=8, predict_len=5): pool=300 kept=297 skipped_short=0 skipped_halt=3
+2026-08-18 10:02:48.043 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2025-08-18, pool=csi300, lookback=8, predict_len=5): pool=300 kept=297 skipped_short=0 skipped_halt=3
+2026-08-18 10:02:50.509 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2025-08-19, pool=csi300, lookback=8, predict_len=5): pool=300 kept=297 skipped_short=0 skipped_halt=3
+2026-08-18 10:02:52.983 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2025-08-20, pool=csi300, lookback=8, predict_len=5): pool=300 kept=297 skipped_short=0 skipped_halt=3
+2026-08-18 10:02:55.568 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2025-08-21, pool=csi300, lookback=8, predict_len=5): pool=300 kept=297 skipped_short=0 skipped_halt=3
+2026-08-18 10:02:58.038 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2025-08-22, pool=csi300, lookback=8, predict_len=5): pool=300 kept=297 skipped_short=0 skipped_halt=3
+2026-08-18 10:03:00.510 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2025-08-25, pool=csi300, lookback=8, predict_len=5): pool=300 kept=297 skipped_short=0 skipped_halt=3
+2026-08-18 10:03:02.754 | INFO     | baseline_suite.signal:run_variant_signals:136 - 四变体信号 [40/126] 2025-08-25: 297 只，mean std=0.0142
+2026-08-18 10:03:02.799 | DEBUG    | baseline_suite.signal:_dump_partial:164 - 四变体 checkpoint 落盘（40 日）
+2026-08-18 10:03:03.027 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2025-08-26, pool=csi300, lookback=8, predict_len=5): pool=300 kept=297 skipped_short=0 skipped_halt=3
+2026-08-18 10:03:05.504 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2025-08-27, pool=csi300, lookback=8, predict_len=5): pool=300 kept=298 skipped_short=0 skipped_halt=2
+2026-08-18 10:03:07.983 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2025-08-28, pool=csi300, lookback=8, predict_len=5): pool=300 kept=299 skipped_short=0 skipped_halt=1
+2026-08-18 10:03:10.590 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2025-08-29, pool=csi300, lookback=8, predict_len=5): pool=300 kept=299 skipped_short=0 skipped_halt=1
+2026-08-18 10:03:13.069 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2025-09-01, pool=csi300, lookback=8, predict_len=5): pool=300 kept=298 skipped_short=0 skipped_halt=2
+2026-08-18 10:03:15.548 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2025-09-02, pool=csi300, lookback=8, predict_len=5): pool=300 kept=298 skipped_short=0 skipped_halt=2
+2026-08-18 10:03:18.027 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2025-09-03, pool=csi300, lookback=8, predict_len=5): pool=300 kept=298 skipped_short=0 skipped_halt=2
+2026-08-18 10:03:20.505 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2025-09-04, pool=csi300, lookback=8, predict_len=5): pool=300 kept=298 skipped_short=0 skipped_halt=2
+2026-08-18 10:03:22.986 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2025-09-05, pool=csi300, lookback=8, predict_len=5): pool=300 kept=299 skipped_short=0 skipped_halt=1
+2026-08-18 10:03:25.484 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2025-09-08, pool=csi300, lookback=8, predict_len=5): pool=300 kept=299 skipped_short=0 skipped_halt=1
+2026-08-18 10:03:27.744 | INFO     | baseline_suite.signal:run_variant_signals:136 - 四变体信号 [50/126] 2025-09-08: 299 只，mean std=0.0135
+2026-08-18 10:03:27.909 | DEBUG    | baseline_suite.signal:_dump_partial:164 - 四变体 checkpoint 落盘（50 日）
+2026-08-18 10:03:28.135 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2025-09-09, pool=csi300, lookback=8, predict_len=5): pool=300 kept=299 skipped_short=0 skipped_halt=1
+2026-08-18 10:03:30.618 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2025-09-10, pool=csi300, lookback=8, predict_len=5): pool=300 kept=299 skipped_short=0 skipped_halt=1
+2026-08-18 10:03:33.100 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2025-09-11, pool=csi300, lookback=8, predict_len=5): pool=300 kept=299 skipped_short=0 skipped_halt=1
+2026-08-18 10:03:35.589 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2025-09-12, pool=csi300, lookback=8, predict_len=5): pool=300 kept=299 skipped_short=0 skipped_halt=1
+2026-08-18 10:03:38.084 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2025-09-15, pool=csi300, lookback=8, predict_len=5): pool=300 kept=299 skipped_short=0 skipped_halt=1
+2026-08-18 10:03:40.567 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2025-09-16, pool=csi300, lookback=8, predict_len=5): pool=300 kept=299 skipped_short=0 skipped_halt=1
+2026-08-18 10:03:43.057 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2025-09-17, pool=csi300, lookback=8, predict_len=5): pool=300 kept=299 skipped_short=0 skipped_halt=1
+2026-08-18 10:03:45.659 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2025-09-18, pool=csi300, lookback=8, predict_len=5): pool=300 kept=300 skipped_short=0 skipped_halt=0
+2026-08-18 10:03:48.147 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2025-09-19, pool=csi300, lookback=8, predict_len=5): pool=300 kept=300 skipped_short=0 skipped_halt=0
+2026-08-18 10:03:50.646 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2025-09-22, pool=csi300, lookback=8, predict_len=5): pool=300 kept=300 skipped_short=0 skipped_halt=0
+2026-08-18 10:03:52.918 | INFO     | baseline_suite.signal:run_variant_signals:136 - 四变体信号 [60/126] 2025-09-22: 300 只，mean std=0.0133
+2026-08-18 10:03:52.964 | DEBUG    | baseline_suite.signal:_dump_partial:164 - 四变体 checkpoint 落盘（60 日）
+2026-08-18 10:03:53.192 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2025-09-23, pool=csi300, lookback=8, predict_len=5): pool=300 kept=300 skipped_short=0 skipped_halt=0
+2026-08-18 10:03:55.701 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2025-09-24, pool=csi300, lookback=8, predict_len=5): pool=300 kept=300 skipped_short=0 skipped_halt=0
+2026-08-18 10:03:58.201 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2025-09-25, pool=csi300, lookback=8, predict_len=5): pool=300 kept=300 skipped_short=0 skipped_halt=0
+2026-08-18 10:04:00.820 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2025-09-26, pool=csi300, lookback=8, predict_len=5): pool=300 kept=300 skipped_short=0 skipped_halt=0
+2026-08-18 10:04:03.325 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2025-09-29, pool=csi300, lookback=8, predict_len=5): pool=300 kept=300 skipped_short=0 skipped_halt=0
+2026-08-18 10:04:05.818 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2025-09-30, pool=csi300, lookback=8, predict_len=5): pool=300 kept=300 skipped_short=0 skipped_halt=0
+2026-08-18 10:04:08.320 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2025-10-09, pool=csi300, lookback=8, predict_len=5): pool=300 kept=300 skipped_short=0 skipped_halt=0
+2026-08-18 10:04:10.828 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2025-10-10, pool=csi300, lookback=8, predict_len=5): pool=300 kept=300 skipped_short=0 skipped_halt=0
+2026-08-18 10:04:13.332 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2025-10-13, pool=csi300, lookback=8, predict_len=5): pool=300 kept=300 skipped_short=0 skipped_halt=0
+2026-08-18 10:04:15.832 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2025-10-14, pool=csi300, lookback=8, predict_len=5): pool=300 kept=300 skipped_short=0 skipped_halt=0
+2026-08-18 10:04:18.109 | INFO     | baseline_suite.signal:run_variant_signals:136 - 四变体信号 [70/126] 2025-10-14: 300 只，mean std=0.0169
+2026-08-18 10:04:18.276 | DEBUG    | baseline_suite.signal:_dump_partial:164 - 四变体 checkpoint 落盘（70 日）
+2026-08-18 10:04:18.504 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2025-10-15, pool=csi300, lookback=8, predict_len=5): pool=300 kept=300 skipped_short=0 skipped_halt=0
+2026-08-18 10:04:21.007 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2025-10-16, pool=csi300, lookback=8, predict_len=5): pool=300 kept=300 skipped_short=0 skipped_halt=0
+2026-08-18 10:04:23.497 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2025-10-17, pool=csi300, lookback=8, predict_len=5): pool=300 kept=300 skipped_short=0 skipped_halt=0
+2026-08-18 10:04:25.995 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2025-10-20, pool=csi300, lookback=8, predict_len=5): pool=300 kept=300 skipped_short=0 skipped_halt=0
+2026-08-18 10:04:28.494 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2025-10-21, pool=csi300, lookback=8, predict_len=5): pool=300 kept=300 skipped_short=0 skipped_halt=0
+2026-08-18 10:04:30.998 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2025-10-22, pool=csi300, lookback=8, predict_len=5): pool=300 kept=300 skipped_short=0 skipped_halt=0
+2026-08-18 10:04:33.501 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2025-10-23, pool=csi300, lookback=8, predict_len=5): pool=300 kept=300 skipped_short=0 skipped_halt=0
+2026-08-18 10:04:36.115 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2025-10-24, pool=csi300, lookback=8, predict_len=5): pool=300 kept=300 skipped_short=0 skipped_halt=0
+2026-08-18 10:04:38.640 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2025-10-27, pool=csi300, lookback=8, predict_len=5): pool=300 kept=300 skipped_short=0 skipped_halt=0
+2026-08-18 10:04:41.155 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2025-10-28, pool=csi300, lookback=8, predict_len=5): pool=300 kept=300 skipped_short=0 skipped_halt=0
+2026-08-18 10:04:43.423 | INFO     | baseline_suite.signal:run_variant_signals:136 - 四变体信号 [80/126] 2025-10-28: 300 只，mean std=0.0120
+2026-08-18 10:04:43.471 | DEBUG    | baseline_suite.signal:_dump_partial:164 - 四变体 checkpoint 落盘（80 日）
+2026-08-18 10:04:43.724 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2025-10-29, pool=csi300, lookback=8, predict_len=5): pool=300 kept=300 skipped_short=0 skipped_halt=0
+2026-08-18 10:04:46.237 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2025-10-30, pool=csi300, lookback=8, predict_len=5): pool=300 kept=300 skipped_short=0 skipped_halt=0
+2026-08-18 10:04:48.756 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2025-10-31, pool=csi300, lookback=8, predict_len=5): pool=300 kept=300 skipped_short=0 skipped_halt=0
+2026-08-18 10:04:51.409 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2025-11-03, pool=csi300, lookback=8, predict_len=5): pool=300 kept=300 skipped_short=0 skipped_halt=0
+2026-08-18 10:04:53.927 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2025-11-04, pool=csi300, lookback=8, predict_len=5): pool=300 kept=300 skipped_short=0 skipped_halt=0
+2026-08-18 10:04:56.444 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2025-11-05, pool=csi300, lookback=8, predict_len=5): pool=300 kept=300 skipped_short=0 skipped_halt=0
+2026-08-18 10:04:58.970 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2025-11-06, pool=csi300, lookback=8, predict_len=5): pool=300 kept=300 skipped_short=0 skipped_halt=0
+2026-08-18 10:05:01.484 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2025-11-07, pool=csi300, lookback=8, predict_len=5): pool=300 kept=300 skipped_short=0 skipped_halt=0
+2026-08-18 10:05:03.997 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2025-11-10, pool=csi300, lookback=8, predict_len=5): pool=300 kept=300 skipped_short=0 skipped_halt=0
+2026-08-18 10:05:06.513 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2025-11-11, pool=csi300, lookback=8, predict_len=5): pool=300 kept=300 skipped_short=0 skipped_halt=0
+2026-08-18 10:05:08.778 | INFO     | baseline_suite.signal:run_variant_signals:136 - 四变体信号 [90/126] 2025-11-11: 300 只，mean std=0.0101
+2026-08-18 10:05:08.953 | DEBUG    | baseline_suite.signal:_dump_partial:164 - 四变体 checkpoint 落盘（90 日）
+2026-08-18 10:05:09.158 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2025-11-12, pool=csi300, lookback=8, predict_len=5): pool=300 kept=300 skipped_short=0 skipped_halt=0
+2026-08-18 10:05:11.630 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2025-11-13, pool=csi300, lookback=8, predict_len=5): pool=300 kept=300 skipped_short=0 skipped_halt=0
+2026-08-18 10:05:14.103 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2025-11-14, pool=csi300, lookback=8, predict_len=5): pool=300 kept=300 skipped_short=0 skipped_halt=0
+2026-08-18 10:05:16.574 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2025-11-17, pool=csi300, lookback=8, predict_len=5): pool=300 kept=300 skipped_short=0 skipped_halt=0
+2026-08-18 10:05:19.059 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2025-11-18, pool=csi300, lookback=8, predict_len=5): pool=300 kept=300 skipped_short=0 skipped_halt=0
+2026-08-18 10:05:21.538 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2025-11-19, pool=csi300, lookback=8, predict_len=5): pool=300 kept=300 skipped_short=0 skipped_halt=0
+2026-08-18 10:05:24.010 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2025-11-20, pool=csi300, lookback=8, predict_len=5): pool=300 kept=298 skipped_short=0 skipped_halt=2
+2026-08-18 10:05:26.590 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2025-11-21, pool=csi300, lookback=8, predict_len=5): pool=300 kept=298 skipped_short=0 skipped_halt=2
+2026-08-18 10:05:29.044 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2025-11-24, pool=csi300, lookback=8, predict_len=5): pool=300 kept=298 skipped_short=0 skipped_halt=2
+2026-08-18 10:05:31.502 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2025-11-25, pool=csi300, lookback=8, predict_len=5): pool=300 kept=298 skipped_short=0 skipped_halt=2
+2026-08-18 10:05:33.751 | INFO     | baseline_suite.signal:run_variant_signals:136 - 四变体信号 [100/126] 2025-11-25: 298 只，mean std=0.0079
+2026-08-18 10:05:33.803 | DEBUG    | baseline_suite.signal:_dump_partial:164 - 四变体 checkpoint 落盘（100 日）
+2026-08-18 10:05:34.011 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2025-11-26, pool=csi300, lookback=8, predict_len=5): pool=300 kept=298 skipped_short=0 skipped_halt=2
+2026-08-18 10:05:36.459 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2025-11-27, pool=csi300, lookback=8, predict_len=5): pool=300 kept=298 skipped_short=0 skipped_halt=2
+2026-08-18 10:05:38.917 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2025-11-28, pool=csi300, lookback=8, predict_len=5): pool=300 kept=298 skipped_short=0 skipped_halt=2
+2026-08-18 10:05:41.494 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2025-12-01, pool=csi300, lookback=8, predict_len=5): pool=300 kept=298 skipped_short=0 skipped_halt=2
+2026-08-18 10:05:43.943 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2025-12-02, pool=csi300, lookback=8, predict_len=5): pool=300 kept=298 skipped_short=0 skipped_halt=2
+2026-08-18 10:05:46.388 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2025-12-03, pool=csi300, lookback=8, predict_len=5): pool=300 kept=298 skipped_short=0 skipped_halt=2
+2026-08-18 10:05:48.842 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2025-12-04, pool=csi300, lookback=8, predict_len=5): pool=300 kept=298 skipped_short=0 skipped_halt=2
+2026-08-18 10:05:51.307 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2025-12-05, pool=csi300, lookback=8, predict_len=5): pool=300 kept=298 skipped_short=0 skipped_halt=2
+2026-08-18 10:05:53.759 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2025-12-08, pool=csi300, lookback=8, predict_len=5): pool=300 kept=298 skipped_short=0 skipped_halt=2
+2026-08-18 10:05:56.216 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2025-12-09, pool=csi300, lookback=8, predict_len=5): pool=300 kept=298 skipped_short=0 skipped_halt=2
+2026-08-18 10:05:58.462 | INFO     | baseline_suite.signal:run_variant_signals:136 - 四变体信号 [110/126] 2025-12-09: 298 只，mean std=0.0099
+2026-08-18 10:05:58.640 | DEBUG    | baseline_suite.signal:_dump_partial:164 - 四变体 checkpoint 落盘（110 日）
+2026-08-18 10:05:58.847 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2025-12-10, pool=csi300, lookback=8, predict_len=5): pool=300 kept=298 skipped_short=0 skipped_halt=2
+2026-08-18 10:06:01.306 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2025-12-11, pool=csi300, lookback=8, predict_len=5): pool=300 kept=298 skipped_short=0 skipped_halt=2
+2026-08-18 10:06:03.759 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2025-12-12, pool=csi300, lookback=8, predict_len=5): pool=300 kept=298 skipped_short=0 skipped_halt=2
+2026-08-18 10:06:06.212 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2025-12-15, pool=csi300, lookback=8, predict_len=5): pool=300 kept=298 skipped_short=0 skipped_halt=2
+2026-08-18 10:06:08.663 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2025-12-16, pool=csi300, lookback=8, predict_len=5): pool=300 kept=298 skipped_short=0 skipped_halt=2
+2026-08-18 10:06:11.135 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2025-12-17, pool=csi300, lookback=8, predict_len=5): pool=300 kept=298 skipped_short=0 skipped_halt=2
+2026-08-18 10:06:13.587 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2025-12-18, pool=csi300, lookback=8, predict_len=5): pool=300 kept=298 skipped_short=0 skipped_halt=2
+2026-08-18 10:06:16.162 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2025-12-19, pool=csi300, lookback=8, predict_len=5): pool=300 kept=297 skipped_short=0 skipped_halt=3
+2026-08-18 10:06:18.600 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2025-12-22, pool=csi300, lookback=8, predict_len=5): pool=300 kept=297 skipped_short=0 skipped_halt=3
+2026-08-18 10:06:21.044 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2025-12-23, pool=csi300, lookback=8, predict_len=5): pool=300 kept=297 skipped_short=0 skipped_halt=3
+2026-08-18 10:06:23.293 | INFO     | baseline_suite.signal:run_variant_signals:136 - 四变体信号 [120/126] 2025-12-23: 297 只，mean std=0.0101
+2026-08-18 10:06:23.347 | DEBUG    | baseline_suite.signal:_dump_partial:164 - 四变体 checkpoint 落盘（120 日）
+2026-08-18 10:06:23.552 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2025-12-24, pool=csi300, lookback=8, predict_len=5): pool=300 kept=297 skipped_short=0 skipped_halt=3
+2026-08-18 10:06:26.080 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2025-12-25, pool=csi300, lookback=8, predict_len=5): pool=300 kept=297 skipped_short=0 skipped_halt=3
+2026-08-18 10:06:28.596 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2025-12-26, pool=csi300, lookback=8, predict_len=5): pool=300 kept=297 skipped_short=0 skipped_halt=3
+2026-08-18 10:06:31.237 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2025-12-29, pool=csi300, lookback=8, predict_len=5): pool=300 kept=299 skipped_short=0 skipped_halt=1
+2026-08-18 10:06:33.767 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2025-12-30, pool=csi300, lookback=8, predict_len=5): pool=300 kept=298 skipped_short=0 skipped_halt=2
+2026-08-18 10:06:36.283 | INFO     | kronos_qlib.windows:build_inference_windows:165 - build_inference_windows(2025-12-31, pool=csi300, lookback=8, predict_len=5): pool=300 kept=298 skipped_short=0 skipped_halt=2
+2026-08-18 10:06:38.535 | INFO     | baseline_suite.signal:run_variant_signals:147 - last 信号宽表 [2025h2_W85S100]：126 日 × 平均 299 只/日
+2026-08-18 10:06:38.537 | INFO     | baseline_suite.signal:run_variant_signals:147 - mean 信号宽表 [2025h2_W85S100]：126 日 × 平均 299 只/日
+2026-08-18 10:06:38.539 | INFO     | baseline_suite.signal:run_variant_signals:147 - max 信号宽表 [2025h2_W85S100]：126 日 × 平均 299 只/日
+2026-08-18 10:06:38.542 | INFO     | baseline_suite.signal:run_variant_signals:147 - min 信号宽表 [2025h2_W85S100]：126 日 × 平均 299 只/日
+2026-08-18 10:06:38.554 | INFO     | __main__:run_one:116 - W85S100 2025h2 last 落盘 daily_signals_2025h2_W85S100_last.parquet（126 日）
+2026-08-18 10:06:38.566 | INFO     | __main__:run_one:116 - W85S100 2025h2 mean 落盘 daily_signals_2025h2_W85S100_mean.parquet（126 日）
+2026-08-18 10:06:38.576 | INFO     | __main__:run_one:116 - W85S100 2025h2 max 落盘 daily_signals_2025h2_W85S100_max.parquet（126 日）
+2026-08-18 10:06:38.587 | INFO     | __main__:run_one:116 - W85S100 2025h2 min 落盘 daily_signals_2025h2_W85S100_min.parquet（126 日）
+2026-08-18 10:06:38.619 | INFO     | __main__:_assert_aligned:147 - 对齐断言通过：3 个在位者参照日期索引一致（126 日）
+Loading weights from local directory
+Loading weights from local directory
