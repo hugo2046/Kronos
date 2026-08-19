@@ -52,7 +52,8 @@ def _runs_row(arm: str) -> tuple[str, str, str, str]:
         "predictor_path": model,
         "inference": (
             "L=90/H=10/N=50/T=1.0/top_p=0.9/seed=42 "
-            "（除 sample_count=50 外逐字 paper_replication/config.yaml canonical）"
+            "（除 sample_count=50 外逐字 paper_replication/config.yaml canonical；"
+            "显存分块 chunk_size=12 = 等序列数预算 12×50≤32×20，仅显存管理非引擎参数）"
         ),
         "windows_note": (
             "仅 backtest（预算裁定 N=50 成本 ≈2.5×，2025h2 不跑，跑前声明）"

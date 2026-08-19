@@ -13,7 +13,10 @@
     - 窗口边界逐字 import 自既有常量（backtest=第 4 轮 BACKTEST_START/END），
       不自定义；**2025h2 不提供**（预算裁定跑前声明，runner 不暴露该选项）；
     - G1 族三种子权重映射（s100=G1，s101/102=G2S101/102，tokenizer 共享 G1）
-      与训练模块派生路径一致且在盘（G1 权重只读纪律）。
+      与训练模块派生路径一致且在盘（G1 权重只读纪律）；
+    - 显存分块：N=50 等序列数预算缩块（chunk_size×50 ≤ 32×20=640，
+      仅显存管理非引擎参数），运行时替换 baseline_suite.signal 命名空间引用，
+      既有文件零改动。
 """
 from __future__ import annotations
 
@@ -122,3 +125,19 @@ class TestN50Config:
             assert Path(cfg.tokenizer_name).exists(), (
                 f"s{seed} tokenizer 不在盘：{cfg.tokenizer_name}"
             )
+
+    def test_chunk_size_memory_budget(self) -> None:
+        """N=50 等序列数预算缩块：12×50=600 ≤ 32×20=640（实测安全预算）。
+
+        显存管理非引擎参数；运行时替换 baseline_suite.signal 命名空间中的
+        predict_batch_chunked 引用（partial 绑定 chunk_size），既有文件零改动。
+        """
+        import baseline_suite.signal as bs
+        from paper_replication.signal import predict_batch_chunked
+
+        from n50_amplify.run_n50_signals import N50_CHUNK_SIZE, _patch_chunk_size_for_n50
+
+        assert N50_CHUNK_SIZE * 50 <= 32 * 20, "超出 N=20 实测安全的序列数预算"
+        _patch_chunk_size_for_n50()
+        assert bs.predict_batch_chunked.func is predict_batch_chunked
+        assert bs.predict_batch_chunked.keywords["chunk_size"] == N50_CHUNK_SIZE

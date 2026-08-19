@@ -51,6 +51,28 @@ WINDOW_DEFS = {
 # G1 族三种子权重映射（g4_features.run_g4_signals._assert_aligned 同款口径）
 G1_FAMILY_ARMS = {100: "G1", 101: "G2S101", 102: "G2S102"}
 
+# N=50 显存分块（等序列数预算）：predict_batch_chunked 按股票数分块（默认 32，
+# N=20 实测安全 = 32×20=640 序列/块）；N=50 沿用 32 → 1600 序列/块，首跑第 3 日
+# CUDA OOM（碎片累积）。缩到 12×50=600 ≤ 640。仅显存管理，非引擎参数。
+N50_CHUNK_SIZE = 12
+
+
+def _patch_chunk_size_for_n50() -> None:
+    """运行时把 baseline_suite.signal 中的分块引用绑定为 chunk_size=N50_CHUNK_SIZE。
+
+    只替换本包进程内的命名空间引用（既有文件零改动）；分块对逐股预测
+    数学透明，固定 chunk_size 下全程确定性可复现。2026-08-19 首跑以
+    默认 32 分块存下的 1 日 checkpoint 已删除，134 日全部以统一 12 分块重算。
+    """
+    from functools import partial
+
+    import baseline_suite.signal as bs
+    from paper_replication.signal import predict_batch_chunked
+
+    bs.predict_batch_chunked = partial(
+        predict_batch_chunked, chunk_size=N50_CHUNK_SIZE
+    )
+
 
 def _g1_family_paths(seed: int) -> tuple[str, str]:
     """G1 族权重路径：s100=G1；s101/102=G2S{seed}（tokenizer 共享 G1）。"""
@@ -104,6 +126,7 @@ def run_one(seed: int) -> None:
     rebalances = build_rebalances(cfg)
     provider = build_provider(cfg)
     predictor = _load_predictor(cfg)
+    _patch_chunk_size_for_n50()
     wide = run_variant_signals(predictor, provider, cfg, rebalances, checkpoint_dir=out_dir)
     for v in VARIANTS:
         out = out_dir / f"daily_signals_backtest_{arm_tag(seed)}_{v}.parquet"
