@@ -1,0 +1,17 @@
+2026-08-20 10:19:45.464 | INFO     | __main__:main:84 - 已归档臂 ['DTOK', 'F0', 'F1', 'G0', 'G1', 'G1N50S100', 'G1N50S101', 'G1N50S102', 'G2S101', 'G2S102', 'G2S103', 'G2S104', 'G4S100', 'G4S101', 'G4S102', 'M', 'W85S100', 'W85S101', 'W85S102']；本次追加 ['C4S100', 'C4S101', 'C4S102']
+/home/user/workspace/Kronos/finetune_suite/build_duckdb.py:43: FutureWarning: The previous implementation of stack is deprecated and will be removed in a future version of pandas. See the What's New notes for pandas 2.1.0 for details. Specify future_stack=True to adopt the new implementation and silence this warning.
+  long = wide.stack(dropna=True).rename("value").reset_index()
+/home/user/workspace/Kronos/finetune_suite/build_duckdb.py:43: FutureWarning: The previous implementation of stack is deprecated and will be removed in a future version of pandas. See the What's New notes for pandas 2.1.0 for details. Specify future_stack=True to adopt the new implementation and silence this warning.
+  long = wide.stack(dropna=True).rename("value").reset_index()
+/home/user/workspace/Kronos/finetune_suite/build_duckdb.py:43: FutureWarning: The previous implementation of stack is deprecated and will be removed in a future version of pandas. See the What's New notes for pandas 2.1.0 for details. Specify future_stack=True to adopt the new implementation and silence this warning.
+  long = wide.stack(dropna=True).rename("value").reset_index()
+2026-08-20 10:19:45.517 | INFO     | __main__:main:93 - 追加长表合计 233985 行
+2026-08-20 10:19:45.604 | INFO     | __main__:main:103 - 追加完成：signals 总 4316367 行，runs 追加 3 行
+2026-08-20 10:19:45.616 | INFO     | __main__:main:120 - 对拍 C4S100/c4/2026-01-09：308 只，max|Δ|=0.0e+00 一致
+2026-08-20 10:19:45.626 | INFO     | __main__:main:120 - 对拍 C4S101/c4/2026-01-09：308 只，max|Δ|=0.0e+00 一致
+2026-08-20 10:19:45.634 | INFO     | __main__:main:120 - 对拍 C4S102/c4/2026-01-09：308 只，max|Δ|=0.0e+00 一致
+2026-08-20 10:19:45.641 | INFO     | __main__:main:124 - C4 臂 DuckDB 追加完成
+arm     variant
+C4S100  c4         77995
+C4S101  c4         77995
+C4S102  c4         77995
