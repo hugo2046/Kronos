@@ -1,0 +1,220 @@
+<title>Kronos 改造图谱</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;700&family=Noto+Sans+SC:wght@400;500;700&family=JetBrains+Mono:wght@400;700&display=swap">
+<style>
+:root{
+  --ground:#F1F3F6; --surface:#FFFFFF; --surface-2:#E9EDF2;
+  --ink:#15202B; --ink-2:#4A5666; --ink-3:#7A8798;
+  --line:#D3DAE3;
+  --live:#1F5FA9; --live-soft:#E4EDF8;
+  --dead:#A2544A; --dead-soft:#F6E9E7;
+  --neutral-chip:#EEF1F5;
+  --shadow:0 1px 2px rgba(21,32,43,.05),0 8px 24px -16px rgba(21,32,43,.25);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --ground:#0E141B; --surface:#161E27; --surface-2:#1D2731;
+    --ink:#E7ECF2; --ink-2:#A8B4C2; --ink-3:#7A8798;
+    --line:#2A3642;
+    --live:#78AEEA; --live-soft:#16283C;
+    --dead:#D9908A; --dead-soft:#33211F;
+    --neutral-chip:#1D2731;
+    --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px -16px rgba(0,0,0,.8);
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#0E141B; --surface:#161E27; --surface-2:#1D2731;
+  --ink:#E7ECF2; --ink-2:#A8B4C2; --ink-3:#7A8798;
+  --line:#2A3642;
+  --live:#78AEEA; --live-soft:#16283C;
+  --dead:#D9908A; --dead-soft:#33211F;
+  --neutral-chip:#1D2731;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px -16px rgba(0,0,0,.8);
+}
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--ground); color:var(--ink);
+  font-family:"Noto Sans SC",-apple-system,"PingFang SC","Hiragino Sans GB",sans-serif;
+  font-size:15px; line-height:1.65; -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:1080px; margin:0 auto; padding:56px 24px 96px; display:flex; flex-direction:column; gap:40px}
+header.page{display:flex; flex-direction:column; gap:12px; border-bottom:1px solid var(--line); padding-bottom:28px}
+.eyebrow{font-family:"JetBrains Mono",monospace; font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--ink-3)}
+h1{font-family:"Noto Serif SC",serif; font-weight:700; font-size:clamp(28px,4.2vw,42px); line-height:1.2; margin:0; text-wrap:balance}
+.lede{color:var(--ink-2); max-width:64ch; margin:0}
+.legend{display:flex; flex-wrap:wrap; gap:10px 20px; align-items:center; font-size:13px; color:var(--ink-2)}
+.key{display:inline-flex; align-items:center; gap:7px}
+.swatch{width:26px; height:12px; border-radius:3px; border:1.5px solid var(--line); background:var(--neutral-chip)}
+.swatch.live{border-color:var(--live); background:var(--live-soft)}
+.swatch.dead{border-color:var(--dead); background:var(--dead-soft); border-style:dashed}
+.arm{background:var(--surface); border:1px solid var(--line); border-radius:10px; box-shadow:var(--shadow); padding:22px 22px 18px; display:flex; flex-direction:column; gap:16px}
+.arm.live{border-color:var(--live)}
+.arm-head{display:flex; flex-wrap:wrap; align-items:baseline; gap:10px 14px}
+.arm-id{font-family:"JetBrains Mono",monospace; font-weight:700; font-size:13px; letter-spacing:.06em; color:var(--ink-3); background:var(--surface-2); padding:3px 8px; border-radius:5px}
+.arm.live .arm-id{color:var(--live); background:var(--live-soft)}
+.arm-head h2{font-family:"Noto Serif SC",serif; font-size:19px; font-weight:500; margin:0; letter-spacing:.01em}
+.verdict{margin-inline-start:auto; font-family:"JetBrains Mono",monospace; font-size:12px; font-weight:700; padding:4px 10px; border-radius:999px; white-space:nowrap; font-variant-numeric:tabular-nums}
+.verdict.live{color:var(--live); background:var(--live-soft)}
+.verdict.dead{color:var(--dead); background:var(--dead-soft)}
+.rail-scroll{overflow-x:auto; padding:22px 2px 6px; margin:-14px -2px 0}
+.rail{display:flex; align-items:stretch; gap:0; min-width:max-content}
+.node{position:relative; min-width:104px; max-width:150px; border:1.5px solid var(--line); background:var(--neutral-chip); border-radius:8px; padding:9px 11px; display:flex; flex-direction:column; gap:3px}
+.node .n-name{font-size:13px; font-weight:500; line-height:1.35}
+.node .n-detail{font-family:"JetBrains Mono",monospace; font-size:10.5px; color:var(--ink-3); line-height:1.4; font-variant-numeric:tabular-nums}
+.node.changed{background:var(--dead-soft); border-color:var(--dead); border-style:dashed}
+.node.changed .n-detail{color:var(--dead)}
+.node.kept{background:var(--live-soft); border-color:var(--live)}
+.node.kept .n-detail{color:var(--live)}
+.tag{position:absolute; top:-11px; left:9px; font-family:"JetBrains Mono",monospace; font-size:9.5px; font-weight:700; letter-spacing:.08em; padding:1px 6px; border-radius:4px; white-space:nowrap}
+.node.changed .tag{color:var(--surface); background:var(--dead)}
+.node.kept .tag{color:var(--surface); background:var(--live)}
+.arrow{align-self:center; padding:0 7px; color:var(--ink-3); font-size:13px; flex:none}
+.note{margin:0; font-size:13.5px; color:var(--ink-2); border-inline-start:2px solid var(--line); padding-inline-start:12px}
+.arm.live .note{border-inline-start-color:var(--live)}
+.note b{color:var(--ink); font-weight:500}
+.chain{background:var(--surface); border:1px solid var(--line); border-radius:10px; padding:22px; box-shadow:var(--shadow); display:flex; flex-direction:column; gap:14px}
+.chain h2{font-family:"Noto Serif SC",serif; font-size:19px; font-weight:500; margin:0}
+.chain-rail{display:flex; flex-wrap:wrap; align-items:center; gap:6px}
+.step{border:1.5px solid var(--line); border-radius:8px; padding:9px 13px; background:var(--neutral-chip); display:flex; flex-direction:column; gap:2px; min-width:150px}
+.step.win{border-color:var(--live); background:var(--live-soft)}
+.step .s-t{font-size:13px; font-weight:500}
+.step .s-v{font-family:"JetBrains Mono",monospace; font-size:12px; font-variant-numeric:tabular-nums; color:var(--ink-2)}
+.step.win .s-v{color:var(--live); font-weight:700}
+footer{color:var(--ink-3); font-size:12.5px; border-top:1px solid var(--line); padding-top:20px; display:flex; flex-direction:column; gap:6px}
+footer code{font-family:"JetBrains Mono",monospace; font-size:11.5px}
+@media (max-width:640px){ .wrap{padding:36px 16px 72px; gap:28px} .verdict{margin-inline-start:0} }
+@media (prefers-reduced-motion:no-preference){
+  .arm,.chain{animation:rise .5s cubic-bezier(.2,.7,.3,1) backwards}
+  .arm:nth-of-type(2){animation-delay:.04s} .arm:nth-of-type(3){animation-delay:.08s}
+  .arm:nth-of-type(4){animation-delay:.12s} .arm:nth-of-type(5){animation-delay:.16s}
+  @keyframes rise{from{opacity:0; transform:translateY(8px)}to{opacity:1; transform:none}}
+}
+</style>
+
+<div class="wrap">
+<header class="page">
+  <span class="eyebrow">A股 · 2026-08 · 34 挑 1</span>
+  <h1>Kronos 改造图谱：每一次动刀，动的是哪一层</h1>
+  <p class="lede">同一条六段流水线画六遍。灰色 = 与在位者完全相同；<b>点亮的格子就是这一轮唯一被改动的地方</b>。蓝 = 改完活下来，陶土虚线 = 改完被判据关闭。全部评估口径一致：csi300 池、top50/drop5、最少持有 5 日、单边 15bp、双基准。</p>
+  <div class="legend">
+    <span class="key"><span class="swatch"></span>未改动</span>
+    <span class="key"><span class="swatch live"></span>改动且存活</span>
+    <span class="key"><span class="swatch dead"></span>改动且关闭</span>
+  </div>
+</header>
+
+<section class="arm live">
+  <div class="arm-head">
+    <span class="arm-id">G1</span><h2>在位者 · 全 A 语料微调</h2>
+    <span class="verdict live">+18.67% 中位</span>
+  </div>
+  <div class="rail-scroll"><div class="rail">
+    <div class="node"><span class="n-name">原始 K 线</span><span class="n-detail">90 天 · OHLCVA</span></div><span class="arrow">→</span>
+    <div class="node kept"><span class="tag">第一阶段训练</span><span class="n-name">tokenizer</span><span class="n-detail">全A微调 · 5599股</span></div><span class="arrow">→</span>
+    <div class="node kept"><span class="tag">第二阶段训练</span><span class="n-name">predictor</span><span class="n-detail">全A微调 · 2014–2024</span></div><span class="arrow">→</span>
+    <div class="node"><span class="n-name">AR 生成</span><span class="n-detail">未来10天 × 20条路径</span></div><span class="arrow">→</span>
+    <div class="node"><span class="n-name">mean 聚合</span><span class="n-detail">均价/现价 − 1</span></div><span class="arrow">→</span>
+    <div class="node"><span class="n-name">组合引擎</span><span class="n-detail">csi300 top50</span></div>
+  </div></div>
+  <p class="note">唯一被证明有效的改动：<b>只换权重，不动架构</b>。零样本 −17% → csi300 微调 −4% → 全 A 微调 +14~29%（5 种子全正）。下面五轮都是在这条流水线上继续动刀。</p>
+</section>
+
+<section class="arm">
+  <div class="arm-head">
+    <span class="arm-id">G4</span><h2>输入侧 · 加市场上下文特征</h2>
+    <span class="verdict dead">关闭 · 中位 +11.68%</span>
+  </div>
+  <div class="rail-scroll"><div class="rail">
+    <div class="node changed"><span class="tag">改这里</span><span class="n-name">原始 K 线 + 3 列</span><span class="n-detail">指数收益/波动/MA200</span></div><span class="arrow">→</span>
+    <div class="node changed"><span class="tag">随之扩列</span><span class="n-name">tokenizer</span><span class="n-detail">6→9 列 · 零初始化</span></div><span class="arrow">→</span>
+    <div class="node"><span class="n-name">predictor</span><span class="n-detail">同 G1 协议重训</span></div><span class="arrow">→</span>
+    <div class="node"><span class="n-name">AR 生成</span><span class="n-detail">未来10天 × 20条</span></div><span class="arrow">→</span>
+    <div class="node"><span class="n-name">mean 聚合</span><span class="n-detail">同 G1</span></div><span class="arrow">→</span>
+    <div class="node"><span class="n-name">组合引擎</span><span class="n-detail">同 G1</span></div>
+  </div></div>
+  <p class="note">让模型看见"现在是牛市还是熊市"。结果低于否定线（+12.33%），过拟合墙没被推动（best 仍在 epoch 1）。<b>事后按噪声底重述：不是更差，是未证明更好。</b></p>
+</section>
+
+<section class="arm">
+  <div class="arm-head">
+    <span class="arm-id">G5</span><h2>输出侧 · 拆掉自回归，换监督头</h2>
+    <span class="verdict dead">关闭 · 中位 −14.32%</span>
+  </div>
+  <div class="rail-scroll"><div class="rail">
+    <div class="node"><span class="n-name">原始 K 线</span><span class="n-detail">同 G1</span></div><span class="arrow">→</span>
+    <div class="node"><span class="n-name">tokenizer</span><span class="n-detail">G1 权重 · 冻结</span></div><span class="arrow">→</span>
+    <div class="node"><span class="n-name">predictor</span><span class="n-detail">G1 权重 · 冻结</span></div><span class="arrow">→</span>
+    <div class="node changed"><span class="tag">整段替换</span><span class="n-name">取隐状态</span><span class="n-detail">[90 × 832] 直读</span></div><span class="arrow">→</span>
+    <div class="node changed"><span class="tag">换成这个</span><span class="n-name">监督头打分</span><span class="n-detail">KDA / Mamba / 线性</span></div><span class="arrow">→</span>
+    <div class="node"><span class="n-name">组合引擎</span><span class="n-detail">同 G1</span></div>
+  </div></div>
+  <p class="note">把"生成 20 条未来路径再平均"整段砍掉，改成从隐状态直接打分。七次训练全负，<b>833 个参数的裸线性反而是三个头里最好的</b>。定论：alpha 住在生成过程本身，不在隐状态里等着被读出来。</p>
+</section>
+
+<section class="arm">
+  <div class="arm-head">
+    <span class="arm-id">G7</span><h2>推理窗口 · 8 天看 5 天</h2>
+    <span class="verdict dead">关闭 · 中位 −22.04%</span>
+  </div>
+  <div class="rail-scroll"><div class="rail">
+    <div class="node changed"><span class="tag">改这里</span><span class="n-name">原始 K 线</span><span class="n-detail">90 天 → 8 天</span></div><span class="arrow">→</span>
+    <div class="node"><span class="n-name">tokenizer</span><span class="n-detail">G1 权重 · 不动</span></div><span class="arrow">→</span>
+    <div class="node"><span class="n-name">predictor</span><span class="n-detail">G1 权重 · 不动</span></div><span class="arrow">→</span>
+    <div class="node changed"><span class="tag">改这里</span><span class="n-name">AR 生成</span><span class="n-detail">未来10天 → 5天</span></div><span class="arrow">→</span>
+    <div class="node"><span class="n-name">mean 聚合</span><span class="n-detail">同 G1</span></div><span class="arrow">→</span>
+    <div class="node"><span class="n-name">组合引擎</span><span class="n-detail">同 G1</span></div>
+  </div></div>
+  <p class="note">零训练，只换两个推理参数。12 个格子全负，与在位者差 −40.7pp——<b>远超噪声底，方向铁定</b>。微调学到的是 90 天量级的长程语法，砍上下文等于砍掉最值钱的部分。</p>
+</section>
+
+<section class="arm">
+  <div class="arm-head">
+    <span class="arm-id">N50</span><h2>采样数 · 20 条路径加到 50 条</h2>
+    <span class="verdict dead">关闭 · 中位 +13.90%</span>
+  </div>
+  <div class="rail-scroll"><div class="rail">
+    <div class="node"><span class="n-name">原始 K 线</span><span class="n-detail">同 G1</span></div><span class="arrow">→</span>
+    <div class="node"><span class="n-name">tokenizer</span><span class="n-detail">G1 权重 · 不动</span></div><span class="arrow">→</span>
+    <div class="node"><span class="n-name">predictor</span><span class="n-detail">G1 权重 · 不动</span></div><span class="arrow">→</span>
+    <div class="node changed"><span class="tag">改这里</span><span class="n-name">AR 生成</span><span class="n-detail">20 条 → 50 条路径</span></div><span class="arrow">→</span>
+    <div class="node"><span class="n-name">mean 聚合</span><span class="n-detail">同 G1</span></div><span class="arrow">→</span>
+    <div class="node"><span class="n-name">组合引擎</span><span class="n-detail">同 G1</span></div>
+  </div></div>
+  <p class="note">论文说采样越多越准，我们把曲线往外延一格。同种子配对差 +4.8 / −15.6 / −4.8pp——<b>方向分裂，极差 20.4pp</b>。这一夜真正的收获不是结论，是量到了噪声底：以后 ±2pp 级的判据线一律作废。</p>
+</section>
+
+<section class="arm">
+  <div class="arm-head">
+    <span class="arm-id">C4</span><h2>后处理 · 三值化 + 半衰期加权</h2>
+    <span class="verdict dead">关闭 · 中位 −2.65%</span>
+  </div>
+  <div class="rail-scroll"><div class="rail">
+    <div class="node"><span class="n-name">原始 K 线</span><span class="n-detail">同 G1</span></div><span class="arrow">→</span>
+    <div class="node"><span class="n-name">tokenizer</span><span class="n-detail">G1 权重 · 不动</span></div><span class="arrow">→</span>
+    <div class="node"><span class="n-name">predictor</span><span class="n-detail">G1 权重 · 不动</span></div><span class="arrow">→</span>
+    <div class="node"><span class="n-name">AR 生成</span><span class="n-detail">同 G1</span></div><span class="arrow">→</span>
+    <div class="node"><span class="n-name">mean 聚合</span><span class="n-detail">同 G1</span></div><span class="arrow">→</span>
+    <div class="node changed"><span class="tag">插入新层</span><span class="n-name">时间维处理</span><span class="n-detail">±2%三值化 · 30日半衰期</span></div><span class="arrow">→</span>
+    <div class="node"><span class="n-name">组合引擎</span><span class="n-detail">同 G1</span></div>
+  </div></div>
+  <p class="note">威科夫 WSS 式构造：把每天的信号压成 +1/0/−1，再对过去 30 天加权求和。2025 下半年一度领先，2026 年 1 月市场转向后持续阴跌半年。<b>平滑 = 记忆，记忆 = 滞后，滞后在切换期致命。</b>附带发现：引擎每天强制换 5 只股票，机械换手约 10%/日，信号层再平滑也压不下去。</p>
+</section>
+
+<div class="chain">
+  <h2>唯一起作用的那条线：喂进去的数据</h2>
+  <div class="chain-rail">
+    <div class="step"><span class="s-t">F0 · 官方权重零样本</span><span class="s-v">−17.23%</span></div>
+    <span class="arrow">→</span>
+    <div class="step"><span class="s-t">F1 · csi300 语料微调</span><span class="s-v">−4.24%</span></div>
+    <span class="arrow">→</span>
+    <div class="step win"><span class="s-t">G1 · 全 A 语料微调</span><span class="s-v">+14.33% ~ +29.06%</span></div>
+  </div>
+  <p class="note">五轮改造动遍了输入、输出、窗口、采样、后处理，全部关闭；<b>唯一推动过成绩的杠杆是训练语料的规模</b>。论文架构的每个关节都是承重的——能动的只有喂给它的数据。</p>
+</div>
+
+<footer>
+  <span>评估窗为半污染窗（结果曾被研究者看过），一切结论上限为「待前向确认」；干净的前向数据自 2026-07-25 起逐日盖章积累，2026-11 一次开封。</span>
+  <span><code>G1 = Kronos-base + 全A(2014–2024, 5599股)两阶段微调 · 推理 L=90/H=10/N=20/T=1.0/seed=42</code></span>
+</footer>
+</div>
