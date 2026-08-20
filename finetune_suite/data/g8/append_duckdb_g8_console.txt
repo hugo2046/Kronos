@@ -1,0 +1,44 @@
+2026-08-20 23:52:14.207 | INFO     | __main__:main:71 - 已归档臂 ['C4S100', 'C4S101', 'C4S102', 'DTOK', 'F0', 'F1', 'G0', 'G1', 'G1N50S100', 'G1N50S101', 'G1N50S102', 'G2S101', 'G2S102', 'G2S103', 'G2S104', 'G4S100', 'G4S101', 'G4S102', 'M', 'W85S100', 'W85S101', 'W85S102']；本次追加 ['G8S100', 'G8S101', 'G8S102']
+/home/user/workspace/Kronos/finetune_suite/build_duckdb.py:43: FutureWarning: The previous implementation of stack is deprecated and will be removed in a future version of pandas. See the What's New notes for pandas 2.1.0 for details. Specify future_stack=True to adopt the new implementation and silence this warning.
+  long = wide.stack(dropna=True).rename("value").reset_index()
+/home/user/workspace/Kronos/finetune_suite/build_duckdb.py:43: FutureWarning: The previous implementation of stack is deprecated and will be removed in a future version of pandas. See the What's New notes for pandas 2.1.0 for details. Specify future_stack=True to adopt the new implementation and silence this warning.
+  long = wide.stack(dropna=True).rename("value").reset_index()
+/home/user/workspace/Kronos/finetune_suite/build_duckdb.py:43: FutureWarning: The previous implementation of stack is deprecated and will be removed in a future version of pandas. See the What's New notes for pandas 2.1.0 for details. Specify future_stack=True to adopt the new implementation and silence this warning.
+  long = wide.stack(dropna=True).rename("value").reset_index()
+/home/user/workspace/Kronos/finetune_suite/build_duckdb.py:43: FutureWarning: The previous implementation of stack is deprecated and will be removed in a future version of pandas. See the What's New notes for pandas 2.1.0 for details. Specify future_stack=True to adopt the new implementation and silence this warning.
+  long = wide.stack(dropna=True).rename("value").reset_index()
+/home/user/workspace/Kronos/finetune_suite/build_duckdb.py:43: FutureWarning: The previous implementation of stack is deprecated and will be removed in a future version of pandas. See the What's New notes for pandas 2.1.0 for details. Specify future_stack=True to adopt the new implementation and silence this warning.
+  long = wide.stack(dropna=True).rename("value").reset_index()
+/home/user/workspace/Kronos/finetune_suite/build_duckdb.py:43: FutureWarning: The previous implementation of stack is deprecated and will be removed in a future version of pandas. See the What's New notes for pandas 2.1.0 for details. Specify future_stack=True to adopt the new implementation and silence this warning.
+  long = wide.stack(dropna=True).rename("value").reset_index()
+/home/user/workspace/Kronos/finetune_suite/build_duckdb.py:43: FutureWarning: The previous implementation of stack is deprecated and will be removed in a future version of pandas. See the What's New notes for pandas 2.1.0 for details. Specify future_stack=True to adopt the new implementation and silence this warning.
+  long = wide.stack(dropna=True).rename("value").reset_index()
+/home/user/workspace/Kronos/finetune_suite/build_duckdb.py:43: FutureWarning: The previous implementation of stack is deprecated and will be removed in a future version of pandas. See the What's New notes for pandas 2.1.0 for details. Specify future_stack=True to adopt the new implementation and silence this warning.
+  long = wide.stack(dropna=True).rename("value").reset_index()
+/home/user/workspace/Kronos/finetune_suite/build_duckdb.py:43: FutureWarning: The previous implementation of stack is deprecated and will be removed in a future version of pandas. See the What's New notes for pandas 2.1.0 for details. Specify future_stack=True to adopt the new implementation and silence this warning.
+  long = wide.stack(dropna=True).rename("value").reset_index()
+/home/user/workspace/Kronos/finetune_suite/build_duckdb.py:43: FutureWarning: The previous implementation of stack is deprecated and will be removed in a future version of pandas. See the What's New notes for pandas 2.1.0 for details. Specify future_stack=True to adopt the new implementation and silence this warning.
+  long = wide.stack(dropna=True).rename("value").reset_index()
+/home/user/workspace/Kronos/finetune_suite/build_duckdb.py:43: FutureWarning: The previous implementation of stack is deprecated and will be removed in a future version of pandas. See the What's New notes for pandas 2.1.0 for details. Specify future_stack=True to adopt the new implementation and silence this warning.
+  long = wide.stack(dropna=True).rename("value").reset_index()
+/home/user/workspace/Kronos/finetune_suite/build_duckdb.py:43: FutureWarning: The previous implementation of stack is deprecated and will be removed in a future version of pandas. See the What's New notes for pandas 2.1.0 for details. Specify future_stack=True to adopt the new implementation and silence this warning.
+  long = wide.stack(dropna=True).rename("value").reset_index()
+2026-08-20 23:52:14.335 | INFO     | __main__:main:81 - 追加长表合计 474756 行（arm×variant 分布见下）
+2026-08-20 23:52:14.495 | INFO     | __main__:main:91 - 追加完成：signals 总 4791123 行，runs 追加 3 行
+2026-08-20 23:52:14.536 | INFO     | __main__:main:111 - DuckDB 追加归档完成：/home/user/workspace/Kronos/finetune_suite/data/signals.duckdb
+arm     variant
+G8S100  last       39563
+        max        39563
+        mean       39563
+        min        39563
+G8S101  last       39563
+        max        39563
+        mean       39563
+        min        39563
+G8S102  last       39563
+        max        39563
+        mean       39563
+        min        39563
+对拍 G8S100/mean/backtest/2026-04-17: 294 值, max|Δ|=0.0e+00 → 一致
+对拍 G8S101/mean/backtest/2026-04-17: 294 值, max|Δ|=0.0e+00 → 一致
+对拍 G8S102/mean/backtest/2026-04-17: 294 值, max|Δ|=0.0e+00 → 一致
