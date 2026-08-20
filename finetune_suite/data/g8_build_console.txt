@@ -1,0 +1,36 @@
+[436088:MainThread](2026-08-20 15:20:51,667) INFO - qlib.Initialization - [config.py:441] - default_conf: client.
+[436088:MainThread](2026-08-20 15:20:52,048) INFO - qlib.ddb_features - [ddb_features.py:116] - 已注册 qlib 兼容函数到 DolphinDB 会话
+[436088:MainThread](2026-08-20 15:20:52,048) INFO - qlib.Initialization - [__init__.py:94] - qlib successfully initialized based on client settings.
+[436088:MainThread](2026-08-20 15:20:52,048) INFO - qlib.Initialization - [__init__.py:111] - data_path={'__DEFAULT_FREQ': 'DolphinDB(dolphindb://admin:***@100.**.**.25:***)'}
+2026-08-20 15:20:52.048 | INFO     | kronos_qlib.provider:init_qlib_once:108 - Qlib 初始化成功 - URI: dolphindb://admin:***@100.**.**.25:***
+[G8-data] train=['2011-01-01', '2025-06-30'] val=['2025-07-01', '2025-12-31']
+[G8-data] dataset_end=2025-12-31 → /home/user/workspace/Kronos/finetune_suite/data/g8
+{
+  "n_universe": 8391,
+  "n_fetched": 5643,
+  "coverage": 0.6725,
+  "n_train_symbols": 5641,
+  "n_val_symbols": 5641,
+  "n_rows_train": 10920054,
+  "n_rows_val": 681739,
+  "train_range": [
+    "2014-01-02",
+    "2025-06-30"
+  ],
+  "val_range": [
+    "2025-07-01",
+    "2025-12-31"
+  ],
+  "n_dropped_nan_rows": 0,
+  "n_short_symbols": 2,
+  "dataset_path": "/home/user/workspace/Kronos/finetune_suite/data/g8",
+  "fields": [
+    "$open",
+    "$high",
+    "$low",
+    "$close",
+    "$volume",
+    "$amount"
+  ],
+  "universe_rule": "ashares PIT union at each 01-01/07-01, 2011~2025"
+}
