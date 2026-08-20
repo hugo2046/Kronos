@@ -1,0 +1,39 @@
+2026-08-20 10:24:33.659 | INFO     | __main__:main:354 - [merged] 引擎宇宙：338 列（两窗冻结口径并集）
+[344731:MainThread](2026-08-20 10:24:34,111) INFO - qlib.Initialization - [config.py:441] - default_conf: client.
+[344731:MainThread](2026-08-20 10:24:34,461) INFO - qlib.ddb_features - [ddb_features.py:116] - 已注册 qlib 兼容函数到 DolphinDB 会话
+[344731:MainThread](2026-08-20 10:24:34,461) INFO - qlib.Initialization - [__init__.py:94] - qlib successfully initialized based on client settings.
+[344731:MainThread](2026-08-20 10:24:34,461) INFO - qlib.Initialization - [__init__.py:111] - data_path={'__DEFAULT_FREQ': 'DolphinDB(dolphindb://admin:***@100.**.**.25:***)'}
+2026-08-20 10:24:34.461 | INFO     | kronos_qlib.provider:init_qlib_once:108 - Qlib 初始化成功 - URI: dolphindb://admin:***@100.**.**.25:***
+2026-08-20 10:24:34.860 | INFO     | paper_replication.signal:build_px_tradeable:279 - 价格/可交易宽表：230 日 × 337 列；日均不可交易 3.9 只
+2026-08-20 10:24:35.101 | INFO     | paper_replication.benchmark:probe_index_benchmark:43 - 指数基准 000300.SH：229 行，累计 +12.20%
+2026-08-20 10:24:35.103 | INFO     | paper_replication.benchmark:build_pool_equal_weight_benchmark:64 - 同池等权基准：230 行，累计 +11.23%
+2026-08-20 10:24:35.104 | INFO     | baseline_suite.pipeline:build_dual_benchmarks:54 - 双基准 [c4_merged]：指数累计 +12.20% / 等权累计 +11.23% / beta_gap=+0.97%
+2026-08-20 10:24:35.469 | INFO     | __main__:engine_window:157 - [C4S100_c4] AER(指数)=-0.72% IR=+0.028 | AER(等权)=-0.33% IR=+0.076 | MDD=-16.76% 日均换手=10.00% (n=229)
+2026-08-20 10:24:35.835 | INFO     | __main__:engine_window:157 - [G1_mean] AER(指数)=+11.87% IR=+0.870 | AER(等权)=+12.43% IR=+0.775 | MDD=-13.05% 日均换手=10.14% (n=229)
+2026-08-20 10:24:36.200 | INFO     | __main__:engine_window:157 - [C4S101_c4] AER(指数)=-3.17% IR=-0.173 | AER(等权)=-2.65% IR=-0.078 | MDD=-13.08% 日均换手=9.94% (n=229)
+2026-08-20 10:24:36.566 | INFO     | __main__:engine_window:157 - [G2S101_mean] AER(指数)=+24.36% IR=+1.763 | AER(等权)=+25.03% IR=+1.520 | MDD=-10.08% 日均换手=10.17% (n=229)
+2026-08-20 10:24:36.936 | INFO     | __main__:engine_window:157 - [C4S102_c4] AER(指数)=-4.59% IR=-0.346 | AER(等权)=-4.03% IR=-0.201 | MDD=-13.74% 日均换手=10.02% (n=229)
+2026-08-20 10:24:37.301 | INFO     | __main__:engine_window:157 - [G2S102_mean] AER(指数)=+14.15% IR=+1.181 | AER(等权)=+14.86% IR=+1.039 | MDD=-8.83% 日均换手=10.18% (n=229)
+2026-08-20 10:24:37.301 | INFO     | __main__:main:379 - 评估窗 230 日（2025h2 96 + backtest 134，预热 30 日已烧，评估首日 2025-08-12）
+2026-08-20 10:24:37.696 | INFO     | paper_replication.signal:build_px_tradeable:279 - 价格/可交易宽表：134 日 × 336 列；日均不可交易 2.5 只
+2026-08-20 10:24:37.917 | INFO     | paper_replication.benchmark:probe_index_benchmark:43 - 指数基准 000300.SH：133 行，累计 -1.45%
+2026-08-20 10:24:37.918 | INFO     | paper_replication.benchmark:build_pool_equal_weight_benchmark:64 - 同池等权基准：134 行，累计 -3.61%
+2026-08-20 10:24:37.918 | INFO     | baseline_suite.pipeline:build_dual_benchmarks:54 - 双基准 [c4_backtest]：指数累计 -1.45% / 等权累计 -3.61% / beta_gap=+2.16%
+2026-08-20 10:24:38.129 | INFO     | __main__:engine_window:157 - [G1_mean] AER(指数)=+10.66% IR=+0.715 | AER(等权)=+14.33% IR=+0.758 | MDD=-12.51% 日均换手=10.25% (n=133)
+2026-08-20 10:24:38.343 | INFO     | __main__:engine_window:157 - [G2S101_mean] AER(指数)=+24.84% IR=+1.644 | AER(等权)=+29.06% IR=+1.492 | MDD=-10.08% 日均换手=10.32% (n=133)
+2026-08-20 10:24:38.558 | INFO     | __main__:engine_window:157 - [G2S102_mean] AER(指数)=+14.64% IR=+1.094 | AER(等权)=+18.67% IR=+1.082 | MDD=-8.84% 日均换手=10.32% (n=133)
+2026-08-20 10:24:38.558 | INFO     | __main__:main:415 - 对拍锚：s100 复跑 +14.3332% vs 冻结 +14.3300%；s102 复跑 +18.6706% vs 冻结 +18.6700% 一致
+2026-08-20 10:24:38.558 | INFO     | __main__:main:438 - C4 封盘判读落盘 /home/user/workspace/Kronos/c4_temporal/data/c4_results.json
+=== 预注册判据 T1~T5 一次封盘 ===
+[T1_survival] 未通过/未触发：中位 s101 全期 AER(等权)=-2.65% / AER(指数)=-3.17% → 未双正 → 存活失败
+[T3_significant_gain] 未通过/未触发：中位对中位价差 -17.51% vs 噪声底 +26% → 未超噪声底
+[T4_turnover_dividend] 未通过/未触发：C4 族中位日均换手 10.00% vs G1 族中位 10.17% 的 2/3 （6.78%）→ 降换手未达 2/3 线
+[T5_rejection] 通过/触发：中位 s101 全期 AER(等权)=-2.65% → ≤ 0：三值化+平滑损害信号，时间维处理该形态关闭，不做阈值/半衰期搜索
+[registration] 未通过/未触发：未触发注册——不改 run_registry.py，不改既有登记列与 C1/C2/C3 规则
+中位种子：s101（全期 AER 等权 -2.65% / 指数 -3.17%）
+三种子中位对中位：C4 s101 -2.65% vs G1 s102 +14.86%（价差 -17.51%）
+同种子配对差 AER(等权) C4−G1（T2 必列）：
+  [full] s100: -12.76%  s101: -27.68%  s102: -18.89%
+  [2025h2] s100: +4.76%  s101: -10.65%  s102: -3.45%
+  [backtest] s100: -24.69%  s101: -40.07%  s102: -29.68%
+日均换手（全期）：C4 族中位 10.00% vs G1 族中位 10.17%
