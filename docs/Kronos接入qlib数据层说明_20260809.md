@@ -53,6 +53,27 @@ members = p.list_pool_at("csi300", "2025-06-16")
 ⚠️ reshape 一律按 level **名**（`unstack("instrument")` / `xs(code, level="instrument")`），
 禁止按位置 `unstack(level=0)`——`swap_level=True` 下 level 0 是 datetime，按位置会**静默转置矩阵**。
 
+### 2.1.1 剔除 ST 股票（filter_pipe + STFilter）
+
+`filter_pipe` 挂在 `fetch()` 上（不是构造函数），透传给内部 `QlibDataLoader`：
+
+```python
+from kronos_qlib import QlibProvider
+from qlib.data.filter import STFilter
+
+p = QlibProvider("ashares", "2024-01-01", "2026-08-09")
+
+# ST / *ST 区间内的行不出现在结果中
+df = p.fetch(["$close", "$volume"], filter_pipe=[STFilter()])
+```
+
+`STFilter` 按 Wind `AShareST` 的 ST 区间对股票池做差集（设计文档见 quant-qlib
+`docs/superpowers/specs/2026-08-06-st股票过滤-design.md`），可正交叠加于任意
+基础池；ST 区间数据需先经 `examples/初始创建ddb数据库/sync_st.py` 同步。
+
+⚠️ 前提是 provider 构造时 `instruments` 传 **str 市场名**——传代码 list 时
+`filter_pipe` 只 warning 不生效（见陷阱 5）。
+
 ### 2.2 构造 Kronos 推理窗口（build_inference_windows）
 
 ```python
