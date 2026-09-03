@@ -5,11 +5,14 @@
 - ``test_registry_idempotent``：同日重复 register_one 不重复追加——manifest
   恰一行、DuckDB 行数不变、直接跳过（幂等保护，计划冻结机制）；
 - ``test_registry_no_lookahead``：登记日 d 的一切取数边界 ≤ d——动量/MA200/
-  可交易掩码/provider 构造即使存在 d+1..d+5 数据也不触碰。
+  可交易掩码/provider 构造即使存在 d+1..d+5 数据也不触碰；
+- ``test_gap_*``：断档区间 2026-08-19 ~ 2026-08-20（结算计划附录A/B，永久
+  复算级）——auto 解析剔除 + 数据滞后时静默留空 + 显式 --date 拒绝，绝不补造。
 """
 from __future__ import annotations
 
 import json
+import sys
 from pathlib import Path
 
 import numpy as np
@@ -92,6 +95,47 @@ def test_registry_idempotent(tmp_path, monkeypatch):
     con.close()
     assert n1 == 2 * 14  # 2 股 × (12 种子变体 + M + tradeable)
     assert n_meta >= 3  # ma200_gate / index_close / pool 等
+
+
+# ---------------------------------------------------------------------------
+# 断档防补造（附录A/B：2026-08-19 ~ 2026-08-20 永久复算级，如实留白）
+# ---------------------------------------------------------------------------
+GAP_CAL = pd.DatetimeIndex(
+    ["2026-08-17", "2026-08-18", "2026-08-19", "2026-08-20", "2026-08-21"]
+)
+
+
+def test_gap_dates_skipped_in_auto():
+    assert rr.GAP_DATES == (pd.Timestamp("2026-08-19"), pd.Timestamp("2026-08-20"))
+    # last=08-18、latest=08-21：断档两日剔除，只登 08-21（当日 late=False）
+    got = rr.resolve_registration_dates(
+        GAP_CAL, last_registered=pd.Timestamp("2026-08-18"),
+        latest_available=pd.Timestamp("2026-08-21"),
+        today=pd.Timestamp("2026-08-21"),
+    )
+    assert got == [(pd.Timestamp("2026-08-21"), False)]
+
+
+def test_gap_dates_empty_when_data_lag():
+    # 数据滞后（latest 仍为 08-20）：剔除断档后为空 → 静默跳过，绝不补造
+    got = rr.resolve_registration_dates(
+        GAP_CAL, last_registered=pd.Timestamp("2026-08-18"),
+        latest_available=pd.Timestamp("2026-08-20"),
+        today=pd.Timestamp("2026-08-21"),
+    )
+    assert got == []
+
+
+def test_gap_date_explicit_refused(monkeypatch):
+    # 显式 --date 断档日：在触碰 DDB/登记前即拒绝（双重猴补防真实副作用）
+    def _must_not_touch(*a, **k):
+        raise AssertionError("断档日拒绝必须先于 DDB 探测/登记发生")
+
+    monkeypatch.setattr(rr, "_latest_available_date", _must_not_touch)
+    monkeypatch.setattr(rr, "register_one", _must_not_touch)
+    monkeypatch.setattr(sys, "argv", ["run_registry.py", "--date", "2026-08-19"])
+    with pytest.raises(AssertionError, match="复算级"):
+        rr.main()
 
 
 # ---------------------------------------------------------------------------

@@ -51,6 +51,11 @@ MANIFEST_PATH = REGISTRY_DIR / "MANIFEST.csv"
 
 MANIFEST_HEADER = ["date", "file", "sha256", "n_stocks", "created_utc", "late"]
 
+# 断档披露（docs/forward结算计划_20260818.md 附录A/B）：cron 停止事件致
+# 2026-08-19 ~ 2026-08-20 永久复算级——如实留白，不补造登记。auto 补登与
+# 显式 --date 双路径一律拒绝登记断档日（2026-08-21 恢复登记起生效）。
+GAP_DATES = (pd.Timestamp("2026-08-19"), pd.Timestamp("2026-08-20"))
+
 # 三种子 predictor（s100=G1 封盘权重只读；s101/s102=G2 重训）；tokenizer 共享 G1
 SEED_MODEL_PATHS = {
     "s100": "finetune_predictor_g1",
@@ -75,6 +80,7 @@ def resolve_registration_dates(
     - 首日（无登记历史）：只登最新可得日（不回填历史——事前登记自首日起）；
     - 常规：补 (last_registered, latest_available] 内的交易日，当日登记
       late=false、迟补 late=true；
+    - 断档日（GAP_DATES，附录A/B 披露）：一律剔除——永久复算级留白，不补造；
     - 无新数据：空列表（cron 节假日/周末触发 → 静默跳过）。
     """
     if latest_available <= (last_registered or pd.Timestamp.min):
@@ -85,6 +91,7 @@ def resolve_registration_dates(
     ]
     if last_registered is None:
         pending = pending[-1:]  # 首日只登最新可得日
+    pending = pending[(pending < GAP_DATES[0]) | (pending > GAP_DATES[1])]
     return [(d, bool(d.date() != today.date())) for d in pending]
 
 
@@ -379,6 +386,10 @@ def main() -> None:
             register_one(d, late=late)
     else:
         d = pd.Timestamp(args.date)
+        assert not (GAP_DATES[0] <= d <= GAP_DATES[1]), (
+            f"登记日 {d.date()} 落在断档区间 {GAP_DATES[0].date()}~{GAP_DATES[1].date()}"
+            "（永久复算级留白，结算计划附录A/B）——拒绝补造登记"
+        )
         assert d <= today, f"登记日 {d.date()} 晚于今日（拒绝未来日期）"
         assert d == _latest_available_date() or d < _latest_available_date(), (
             "登记日无已收盘数据（断言当日 K 线已收盘失败）"
