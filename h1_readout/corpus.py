@@ -121,14 +121,26 @@ def _load_symbol_tables(pool: str) -> dict[str, dict]:
 
 def _build_es_days() -> list[EvalDay]:
     """早停段 = csi300 PIT × 2025H1，R1 早停口径逐字（``build_daily_samples``：
-    PIT 成员、停牌剔除、日历窗语义——与 R1 的 g5 缓存/打分路径同源）。"""
+    PIT 成员、停牌剔除、日历窗语义——与 R1 的 g5 缓存/打分路径同源）。
+
+    **标签上界（计划 §1 合法性前提）**：早停决策日的 +10 交易日标签必须留在
+    2025-06-30 内——否则溢出到 2025H2 评估窗开头，违反"早停段为 2025H1"的
+    半污染声明。故决策日上界 = 日历上 2025-06-30 回退 10 个交易日。
+    """
     from cross_section_kda.data import build_daily_samples
     from kronos_qlib import QlibProvider
 
     provider = QlibProvider("csi300", ES_START, ES_END)
     days = provider.trading_days(ES_START, ES_END)
+    # 标签上界：最后决策日 = 06-30 前 10 个交易日（t+10 恰为 06-30）
+    es_cal = provider.trading_days(ES_START, ES_END)
+    max_decision = es_cal[-11] if len(es_cal) >= 11 else es_cal[0]
+    logger.info(f"早停决策日上界 {max_decision.date()}（其 +10 标签 = {es_cal[-1].date()}，"
+                f"留在 2025H1 内）")
     out: list[EvalDay] = []
     for d in days:
+        if d > max_decision:
+            continue
         b = build_daily_samples(provider, date=d.strftime("%Y-%m-%d"), pool="csi300")
         if b is None or len(b.codes) < MIN_CROSS_SECTION:
             continue

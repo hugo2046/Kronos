@@ -52,17 +52,17 @@ def test_label_purge() -> None:
     max_train_day = max(d.date for d in train_days)
     assert str(max_train_day.date()) == TRAIN_LABEL_END, "末日决策日应恰为 2024-12-17"
 
-    # 早停段：决策日与标签日均 ∈ 2025H1（build_daily_samples 的 provider 边界
-    # 保证 t+10 缺日即整日跳过；此处对语料日历内的日子复核）
+    # 早停段：决策日与标签日均 ∈ 2025H1（决策日上界 = 06-30 回退 10 交易日，
+    # +10 标签恰为 06-30——不溢出到 2025H2 评估窗）
     es_days = corpus.es_days
     assert len(es_days) > 100, f"2025H1 早停日应 ~110+，实测 {len(es_days)}"
     n_cal = len(cal)
     for d in es_days:
         assert ES_START <= str(d.date.date()) <= ES_END
-        c = cal_pos.get(d.date)
-        if c is not None and c + 10 < n_cal:
-            assert str(cal[c + 10].date()) <= ES_END, (
-                f"早停标签 {cal[c + 10].date()} 越过 2025-06-30")
+        c = cal_pos[d.date]
+        assert c + 10 < n_cal, f"早停日 {d.date.date()} 距语料日历末不足 10 日"
+        assert str(cal[c + 10].date()) <= ES_END, (
+            f"早停标签 {cal[c + 10].date()} 越过 2025-06-30（溢出 2025H2 评估窗）")
 
     # 训练段与早停段之间 ≥ 10 交易日 purge（2024-12-18~12-31）
     gap = cal_pos[es_days[0].date] - cal_pos[max_train_day] - 1
