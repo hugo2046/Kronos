@@ -1,20 +1,29 @@
-"""信号持有日 IC 剖面（k=1..10 单日收益 rank-IC）+ 推理取数窗口断言。
+"""信号持有日 IC 剖面（k=1..10）+ 推理取数窗口断言。
 
 产出 ``docs/信号持有日IC剖面_20260905.md`` 的数据源（描述性分析，
 不改任何预注册判据）：
 
-    1. **IC 剖面**：对 G1 三种子 mean 信号（backtest 2026-01-01~2026-07-24 /
-       2025H2 2025-07-01~2025-12-31 两窗）与 M（10 日动量，同窗对照），
-       计算信号日 t 对**第 k 个交易日单日收益**（k=1..10，
-       ret(t+k) = close(t+k)/close(t+k-1) − 1）的横截面 Spearman rank-IC，
-       逐日取均值，t 值 = mean/std×√n。种子→parquet 映射与 g5/g4/r1 的
-       G1_SIGNAL_PARQUETS 冻结口径一致（s100=G1、s101/s102=G2S101/102）。
-    2. **取数窗口断言**：对 ``kronos_qlib.windows.build_inference_windows``
+    1. **单日收益 IC（默认模式）**：对 G1 三种子 mean 信号（backtest
+       2026-01-01~2026-07-24 / 2025H2 2025-07-01~2025-12-31 两窗）与 M
+       （10 日动量，同窗对照），计算信号日 t 对**第 k 个交易日单日收益**
+       （k=1..10，ret(t+k) = close(t+k)/close(t+k−1) − 1）的横截面
+       Spearman rank-IC，逐日取均值，t 值 = mean/std×√n。
+    2. **累计收益 IC（``--cumulative``）**：信号日 t 对 t+1..t+k **累计收益**
+       （close(t+k)/close(t) − 1）的 rank-IC，k=1..10；相邻信号日的 IC 因
+       收益窗重叠而自相关，t 值用 Newey-West HAC（Bartlett 核，
+       **lag = k−1**）。
+    3. **取数窗口断言**：对 ``kronos_qlib.windows.build_inference_windows``
        （``paper_replication/signal.py`` K 组信号的唯一取数入口）在两窗
        抽样日实跑，断言每个推理输入窗口的最后一根 bar 日期 ≤ 信号日 t
        （防未来数据进入输入）。
 
-用法：``python -m paper_replication.ic_horizon_profile``
+种子→parquet 映射与 g5/g4/r1 的 G1_SIGNAL_PARQUETS 冻结口径一致
+（s100=G1、s101/s102=G2S101/102）。
+
+用法::
+
+    python -m paper_replication.ic_horizon_profile               # 单日模式
+    python -m paper_replication.ic_horizon_profile --cumulative  # 累计模式（合并入同一 JSON）
 """
 from __future__ import annotations
 
@@ -62,9 +71,37 @@ def _fetch_px(provider, cols, start, end) -> pd.DataFrame:
     return px
 
 
-def ic_profile(sig: pd.DataFrame, px: pd.DataFrame, k: int) -> dict:
-    """信号日 t 对第 k 个交易日单日收益的横截面 rank-IC（逐日 → 均值/t 值）。"""
-    rets = px.pct_change(fill_method=None)
+def _nw_tvalue(x: np.ndarray, lag: int) -> float:
+    """均值的新协方差稳健（Newey-West HAC，Bartlett 核）t 值。
+
+    相邻信号日的累计收益 IC 因收益窗重叠（重叠 k−1 日）自相关，普通
+    t = mean/std×√n 会低估标准误；γ_l 用 1/n 归一（Bartlett 下保证 PSD），
+    lag=k−1 时 k=1 退化为普通 t。
+    """
+    n = len(x)
+    mean = float(x.mean())
+    dev = x - mean
+    var = float(dev @ dev) / n
+    for l in range(1, min(lag, n - 1) + 1):
+        g_l = float(dev[l:] @ dev[:-l]) / n
+        var += 2.0 * (1.0 - l / (lag + 1)) * g_l
+    if var <= 0:
+        return float("nan")
+    return mean / float(np.sqrt(var / n))
+
+
+def ic_profile(sig: pd.DataFrame, px: pd.DataFrame, k: int, *, mode: str = "single") -> dict:
+    """信号日 t 对第 k 个交易日后收益的横截面 rank-IC（逐日 → 均值/t 值）。
+
+    :param mode: ``single`` = 第 k 日**单日**收益（t 值 = mean/std×√n，逐日
+        IC 近似独立）；``cumulative`` = t+1..t+k **累计**收益（t 值用
+        Newey-West(lag=k−1)，处理重叠窗自相关）。
+    """
+    if mode == "cumulative":
+        target = px.shift(-k) / px - 1.0  # 行 t = close(t+k)/close(t) − 1
+    else:
+        rets = px.pct_change(fill_method=None)
+        target = rets.shift(-k)  # 行 t = 第 pos+k 日的单日收益
     ics: list[float] = []
     n_skipped_tail = 0
     for t in sig.index:
@@ -74,7 +111,7 @@ def ic_profile(sig: pd.DataFrame, px: pd.DataFrame, k: int) -> dict:
         if pos + k >= len(px.index):
             n_skipped_tail += 1
             continue
-        r = rets.iloc[pos + k]
+        r = target.loc[t]
         s = sig.loc[t]
         mask = s.notna() & r.notna()
         if int(mask.sum()) < MIN_CROSS_N:
@@ -84,14 +121,17 @@ def ic_profile(sig: pd.DataFrame, px: pd.DataFrame, k: int) -> dict:
             ics.append(float(rho))
     arr = np.array(ics)
     if len(arr) < 2:
-        return {"k": k, "n_days": len(arr), "mean": float("nan"),
+        return {"k": k, "mode": mode, "n_days": len(arr), "mean": float("nan"),
                 "t": float("nan"), "skipped_tail": n_skipped_tail}
     mean = float(arr.mean())
-    sd = float(arr.std(ddof=1))
+    if mode == "cumulative":
+        t_val = _nw_tvalue(arr, lag=k - 1)
+    else:
+        sd = float(arr.std(ddof=1))
+        t_val = mean / sd * np.sqrt(len(arr)) if sd > 0 else float("nan")
     return {
-        "k": k, "n_days": len(arr), "mean": mean,
-        "t": mean / sd * np.sqrt(len(arr)) if sd > 0 else float("nan"),
-        "skipped_tail": n_skipped_tail,
+        "k": k, "mode": mode, "n_days": len(arr), "mean": mean,
+        "t": t_val, "skipped_tail": n_skipped_tail,
     }
 
 
@@ -126,7 +166,14 @@ def main() -> None:
     assert_lines: dict[str, list[str]] = {}
 
     for win, (start, end, fetch_end) in WINDOWS.items():
-        sigs = {a: pd.read_parquet(REPO_ROOT / p) for (w, a), p in ARMS.items() if w == win}
+        sigs = {}
+        for (w, a), rel in ARMS.items():
+            if w != win:
+                continue
+            sig_path = (REPO_ROOT / rel).resolve()
+            if not sig_path.is_relative_to(REPO_ROOT.resolve()):
+                raise ValueError(f"信号 parquet 路径越界：{sig_path}")
+            sigs[a] = pd.read_parquet(sig_path)
         cols = sorted(set().union(*[set(s.columns) for s in sigs.values()]))
         provider = QlibProvider("csi300", start, fetch_end)
         px = _fetch_px(provider, cols, start, fetch_end)
@@ -163,4 +210,12 @@ def main() -> None:
 
 
 if __name__ == "__main__":
-    main()
+    import sys
+
+    if "--cumulative" in sys.argv:
+        # 累计收益剖面（NW lag=k−1 t 值）——实现体见 ic_horizon_cum（门禁隔离）
+        from paper_replication.ic_horizon_cum import main_cumulative
+
+        main_cumulative()
+    else:
+        main()
