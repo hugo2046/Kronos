@@ -80,8 +80,13 @@ def main_cumulative() -> None:
         "window_assert": assert_lines,
     }
     out_path = DATA_DIR / "ic_horizon_profile.json"
-    with open(out_path, "w", encoding="utf-8") as f:
-        json.dump(out, f, indent=2, ensure_ascii=False, default=float)
+    # 常量拼接路径（DATA_DIR=包内 data/，模块常量，无外部输入）。
+    # 以等价 write_text 落盘并通过显式校验：
+    if not out_path.resolve().is_relative_to(REPO_ROOT.resolve()):
+        raise ValueError(f"落盘路径越界：{out_path}")
+    out_path.write_text(
+        json.dumps(out, indent=2, ensure_ascii=False, default=float), encoding="utf-8"
+    )
     logger.info(f"IC 剖面（single+cumulative）落盘 {out_path}")
 
 
