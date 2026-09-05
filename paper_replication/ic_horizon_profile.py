@@ -113,10 +113,14 @@ def ic_profile(sig: pd.DataFrame, px: pd.DataFrame, k: int, *, mode: str = "sing
             continue
         r = target.loc[t]
         s = sig.loc[t]
+        # 对齐修正（2026-09-05 发现）：scipy.spearmanr 对 Series 按位置配对、
+        # 不对齐索引——信号 parquet 列序普遍无序（G1/G2/R1/H1 实测），px 列
+        # 有序，错位配对会产出 ~0 的伪 IC。先 r.reindex(s.index) 强制同序。
+        r = r.reindex(s.index)
         mask = s.notna() & r.notna()
         if int(mask.sum()) < MIN_CROSS_N:
             continue
-        rho, _ = stats.spearmanr(s[mask], r[mask])
+        rho, _ = stats.spearmanr(s[mask].to_numpy(), r[mask].to_numpy())
         if pd.notna(rho):
             ics.append(float(rho))
     arr = np.array(ics)
