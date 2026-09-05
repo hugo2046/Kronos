@@ -26,6 +26,8 @@ from loguru import logger
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 MSG_PATH = REPO_ROOT / ".git" / "DISCLOSURE_MSG.txt"
+# 可选暂存清单（固定路径，每行一个相对路径；缺失则回落到上面的 STAGED 默认值）
+STAGED_PATH = REPO_ROOT / ".git" / "DISCLOSURE_STAGED.txt"
 
 # 本批暂存清单（相对仓库根；数据 json 与 backtest_results.json 同目录同待遇）
 STAGED: tuple[str, ...] = (
@@ -46,7 +48,14 @@ def main() -> None:
         raise FileNotFoundError(
             f"提交信息缺失：{MSG_PATH}（先用 Write 工具写入，含披露三件套）"
         )
-    for rel in STAGED:
+    staged = STAGED
+    if STAGED_PATH.is_file():
+        staged = tuple(
+            ln.strip() for ln in STAGED_PATH.read_text(encoding="utf-8").splitlines()
+            if ln.strip() and not ln.strip().startswith("#")
+        )
+        logger.info(f"暂存清单来自 {STAGED_PATH.name}（{len(staged)} 项）")
+    for rel in staged:
         subprocess.run(
             ["git", "add", rel], cwd=REPO_ROOT, check=True, capture_output=True, text=True
         )
