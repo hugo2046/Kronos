@@ -1,0 +1,669 @@
+{
+ "schema": "dhead-artifacts-manifest/v1",
+ "generated": "2026-09-05T12:40:45+0800",
+ "note": "脱敏：仅相对名/sha256/大小/关键摘要；凭据与 URI 不入册（preflight 原件含指纹但无凭据）",
+ "artifacts_root": "Kronos-dhead-artifacts（Debian 外置目录，不入 git）",
+ "total_bytes": 214360946,
+ "entries": [
+  {
+   "path": "eval-pilot-fidelity/summary.json",
+   "bytes": 744
+  },
+  {
+   "path": "preflight-20260905T113643.json",
+   "bytes": 1139,
+   "summary": {
+    "ok": true,
+    "gpu": "NVIDIA GeForce RTX 5090"
+   }
+  },
+  {
+   "path": "prepare-main-diag-e1a154e95c63/arrays.npz",
+   "bytes": 14398572,
+   "sha256": "bad2959121b1397bb460da081150dc294e83c57ca7318b8d20c202054551df57"
+  },
+  {
+   "path": "prepare-main-diag-e1a154e95c63/manifest.json",
+   "bytes": 758904
+  },
+  {
+   "path": "prepare-main-train-da29122f5383/arrays.npz",
+   "bytes": 101590099
+  },
+  {
+   "path": "prepare-main-train-da29122f5383/manifest.json",
+   "bytes": 6128133
+  },
+  {
+   "path": "prepare-main-val-112f84e79f92/arrays.npz",
+   "bytes": 7202532,
+   "sha256": "45155a4a8238c83b9a443ff1662ed543e522379880bd3e08fb4c2f7561a32b6e"
+  },
+  {
+   "path": "prepare-main-val-112f84e79f92/manifest.json",
+   "bytes": 379190
+  },
+  {
+   "path": "prepare-pilot-train-f775d2930cb7/arrays.npz",
+   "bytes": 6362598,
+   "sha256": "a1731fc0fdfada82a8c3fdf4bde416d88d0e1b36a032006d36d69700c43ffd7b"
+  },
+  {
+   "path": "prepare-pilot-train-f775d2930cb7/manifest.json",
+   "bytes": 382722
+  },
+  {
+   "path": "prepare-pilot-val-aba0a894fa7c/arrays.npz",
+   "bytes": 1810196,
+   "sha256": "2fce56f4cf1080f1b9fed7a1cbd7aee7ec235dce047e4d510713e2cc38aebf0a"
+  },
+  {
+   "path": "prepare-pilot-val-aba0a894fa7c/manifest.json",
+   "bytes": 95752,
+   "content_hash": "aba0a894fa7c",
+   "protocol": "47915bc0c3d3"
+  },
+  {
+   "path": "teacher-pilot-train-f775d2930cb7/day-2014-01-02.npz",
+   "bytes": 11504,
+   "sha256": "5942ae1c8837720206c35d8d476d9879bfa5b77924acb49cb9d55493ee497517"
+  },
+  {
+   "path": "teacher-pilot-train-f775d2930cb7/day-2014-03-10.npz",
+   "bytes": 11504,
+   "sha256": "1faff51d0850c7b957a76e67f81843d3058bc342122e68a82b5dc1fb2116ea1c"
+  },
+  {
+   "path": "teacher-pilot-train-f775d2930cb7/day-2014-05-12.npz",
+   "bytes": 11504,
+   "sha256": "bd6a142c1c4126d72ac6384da119a2b8b1435d3dfbfa84ea8b69fb14c4e3cb0a"
+  },
+  {
+   "path": "teacher-pilot-train-f775d2930cb7/day-2014-07-10.npz",
+   "bytes": 11504,
+   "sha256": "1c1a6065654f3fa5a519123daebb23e58cb29411f968dce2584d0db92733fbc1"
+  },
+  {
+   "path": "teacher-pilot-train-f775d2930cb7/day-2014-09-10.npz",
+   "bytes": 11504,
+   "sha256": "6560691631bb3fd534f9e5abf03e2eb22fcb72f978063fc18a447e64ea2d843a"
+  },
+  {
+   "path": "teacher-pilot-train-f775d2930cb7/day-2014-11-14.npz",
+   "bytes": 11504,
+   "sha256": "120ab4d22b6753f5eb761eae18ba83e5e376c59a6fa1a039cbfcee27133050c6"
+  },
+  {
+   "path": "teacher-pilot-train-f775d2930cb7/day-2015-01-15.npz",
+   "bytes": 11504,
+   "sha256": "c56d23113efc834960977c47d8f5a3800eb91c3235122346192f03d2e0f4045a"
+  },
+  {
+   "path": "teacher-pilot-train-f775d2930cb7/day-2015-03-24.npz",
+   "bytes": 11504,
+   "sha256": "e585b728a6278cfe0c4d8a99561b3070d6488a0f0af93cf984b663a4c4f0e5b3"
+  },
+  {
+   "path": "teacher-pilot-train-f775d2930cb7/day-2015-05-25.npz",
+   "bytes": 11504,
+   "sha256": "57dba39de4ac333fd36a998414a2589d5d12365560427db8b9d03733ce7ecf64"
+  },
+  {
+   "path": "teacher-pilot-train-f775d2930cb7/day-2015-07-23.npz",
+   "bytes": 11504,
+   "sha256": "21b761f23218f6f1bf3f918bed67bb367a384f925c289ecf9c65ffa5b2d4350f"
+  },
+  {
+   "path": "teacher-pilot-train-f775d2930cb7/day-2015-09-24.npz",
+   "bytes": 11504,
+   "sha256": "b477b98d4a1811ef66653e8b835d19452e44c97f7048c2b678d73b88aa3669e0"
+  },
+  {
+   "path": "teacher-pilot-train-f775d2930cb7/day-2015-11-30.npz",
+   "bytes": 11504,
+   "sha256": "17c9741b013f338999c057b1d56a9b3a28253bf930b41d847dbcf09540bcb8bb"
+  },
+  {
+   "path": "teacher-pilot-train-f775d2930cb7/day-2016-01-28.npz",
+   "bytes": 11504,
+   "sha256": "78e9461b5e3d463f9b5581a785a69ae1595a893f2a6dfbe7ba9aa27cb63883c7"
+  },
+  {
+   "path": "teacher-pilot-train-f775d2930cb7/day-2016-04-05.npz",
+   "bytes": 11504,
+   "sha256": "f40c79c317b5eaea8af61acae8d10c679b6c4f8975bccaca44960f28c7dd54a2"
+  },
+  {
+   "path": "teacher-pilot-train-f775d2930cb7/day-2016-06-06.npz",
+   "bytes": 11504,
+   "sha256": "4f722074393646c80f1a69e195540bc37898e9a78a0517813b4613028d1ba75f"
+  },
+  {
+   "path": "teacher-pilot-train-f775d2930cb7/day-2016-08-05.npz",
+   "bytes": 11504,
+   "sha256": "92a76098a2cf53a4accfaf7acedd2e417bb7f98e74f2137f6961ec1ac83587af"
+  },
+  {
+   "path": "teacher-pilot-train-f775d2930cb7/day-2016-10-13.npz",
+   "bytes": 11504,
+   "sha256": "7b254fce63899e2dc4df95e64d564d14dc2cf5e8a739e946007745a7b5924224"
+  },
+  {
+   "path": "teacher-pilot-train-f775d2930cb7/day-2016-12-13.npz",
+   "bytes": 11504,
+   "sha256": "a7b80819c748a86f71d28028553085b2039bda44f0b8f985de669b63364ad539"
+  },
+  {
+   "path": "teacher-pilot-train-f775d2930cb7/day-2017-02-17.npz",
+   "bytes": 11504,
+   "sha256": "d82e3480983ccd1159190462dfbfcf9901eb92b164a92b4b1e49da279d9c55aa"
+  },
+  {
+   "path": "teacher-pilot-train-f775d2930cb7/day-2017-04-20.npz",
+   "bytes": 11504,
+   "sha256": "108be39ffb452e46d3a4aaff557cce0443fce11d2cf2d764c0cd1ab734f28cbf"
+  },
+  {
+   "path": "teacher-pilot-train-f775d2930cb7/day-2017-06-23.npz",
+   "bytes": 11504,
+   "sha256": "afa1fa93ac4ab3d1ff2a7aff10858c52759ba069ff8f6c210fc50196b6edca95"
+  },
+  {
+   "path": "teacher-pilot-train-f775d2930cb7/day-2017-08-22.npz",
+   "bytes": 11504,
+   "sha256": "9772e9a0aa15af5d46d0b2e7de907e18d1da4fadad2f2cdf6eb6c79868c81a8e"
+  },
+  {
+   "path": "teacher-pilot-train-f775d2930cb7/day-2017-10-26.npz",
+   "bytes": 11504,
+   "sha256": "3e3f6b91f5c4528841c40b8a52bb34bee9c47a701c0512ad9c02124f463e6d79"
+  },
+  {
+   "path": "teacher-pilot-train-f775d2930cb7/day-2017-12-25.npz",
+   "bytes": 11504,
+   "sha256": "e6928e8d84d3f65e055d8ed4544c0975cdbb4b98a10e1bb4ada5bd2f5ae65dd2"
+  },
+  {
+   "path": "teacher-pilot-train-f775d2930cb7/day-2018-03-02.npz",
+   "bytes": 11504,
+   "sha256": "df2bb9d3ba67db9fab6b59d14b2554b094811280b5e86a8ae08d14935fb83edc"
+  },
+  {
+   "path": "teacher-pilot-train-f775d2930cb7/day-2018-05-07.npz",
+   "bytes": 11504,
+   "sha256": "be11a65d421216ffa763cabcdf6cf7e749bc160b80846f93812153dbb0993d0d"
+  },
+  {
+   "path": "teacher-pilot-train-f775d2930cb7/day-2018-07-05.npz",
+   "bytes": 11504,
+   "sha256": "70fbf85e49312d34ea3f46d40da5d276e3688459cc5c3c55fdc222dbf79d1515"
+  },
+  {
+   "path": "teacher-pilot-train-f775d2930cb7/day-2018-09-04.npz",
+   "bytes": 11504,
+   "sha256": "46272d8a5fd0899e525ec66920c76b632e103e4cd54b85a87a536df60c18df4d"
+  },
+  {
+   "path": "teacher-pilot-train-f775d2930cb7/day-2018-11-09.npz",
+   "bytes": 11504,
+   "sha256": "25a1a75713f52957e569d6d8bc0a1aee606fdb4811be300ee6f4e34e48ef05f7"
+  },
+  {
+   "path": "teacher-pilot-train-f775d2930cb7/day-2019-01-10.npz",
+   "bytes": 11504,
+   "sha256": "b58feb1815be858573508907e07a713dd2f4b9dcc247e383ba3882c008f2e5c5"
+  },
+  {
+   "path": "teacher-pilot-train-f775d2930cb7/day-2019-03-19.npz",
+   "bytes": 11504,
+   "sha256": "7ec730cc7247818e2bfe2ad080ff4a8d6c4baafa70d3bcdd82e081467cace914"
+  },
+  {
+   "path": "teacher-pilot-train-f775d2930cb7/day-2019-05-22.npz",
+   "bytes": 11504,
+   "sha256": "e611e0f72ccb6ccd44a7c6c201128d90f8adcabeb82651b4a275e16a5cb199ac"
+  },
+  {
+   "path": "teacher-pilot-train-f775d2930cb7/day-2019-07-22.npz",
+   "bytes": 11504,
+   "sha256": "d5aa864aa0f5b0071db529fe11535166bcc8d4dc8610a5a2f06d008a3a2281c0"
+  },
+  {
+   "path": "teacher-pilot-train-f775d2930cb7/day-2019-09-19.npz",
+   "bytes": 11504,
+   "sha256": "28ebe850be048ea8ceefb7db7715f0f27001531b283184e9474936b4b3d89388"
+  },
+  {
+   "path": "teacher-pilot-train-f775d2930cb7/day-2019-11-26.npz",
+   "bytes": 11504,
+   "sha256": "2bebc2a675ec634738411b0489c8a8a431ee634781dbdf12d7b9ad4836150ad1"
+  },
+  {
+   "path": "teacher-pilot-train-f775d2930cb7/day-2020-02-03.npz",
+   "bytes": 11504,
+   "sha256": "406b8d1d7f7861fa8756dcd766cb75177c034258a6bdd3569b55cb50e3fcaeec"
+  },
+  {
+   "path": "teacher-pilot-train-f775d2930cb7/day-2020-04-01.npz",
+   "bytes": 11504,
+   "sha256": "a7226f8a52ac92f37abe3458f0a76d6756215ce4ec59c949011fad0a8b239453"
+  },
+  {
+   "path": "teacher-pilot-train-f775d2930cb7/day-2020-06-05.npz",
+   "bytes": 11504,
+   "sha256": "2f0e1190e8f23ee6c9daa7621af137f755ab4acf2a0cea078254908b49c41707"
+  },
+  {
+   "path": "teacher-pilot-train-f775d2930cb7/day-2020-08-06.npz",
+   "bytes": 11504,
+   "sha256": "9a82b5537076e5781ab54aad2a6d3dc23b47fc69bd21d5e74de6fd7a6314966e"
+  },
+  {
+   "path": "teacher-pilot-train-f775d2930cb7/day-2020-10-13.npz",
+   "bytes": 11504,
+   "sha256": "d85c9f8065577209fe321a69ee452b80c95cecdd0c3420eae273df8c3b63aed8"
+  },
+  {
+   "path": "teacher-pilot-train-f775d2930cb7/day-2020-12-11.npz",
+   "bytes": 11504,
+   "sha256": "ac9b403c7c285d74f7ecc9407e7ffeb43dd81ebdd9cf96c7b1df368b5f2f9593"
+  },
+  {
+   "path": "teacher-pilot-train-f775d2930cb7/day-2021-02-10.npz",
+   "bytes": 11504,
+   "sha256": "e14e15b79c1a87709d39eb8e0d4a2ce818aa4d712d537e57e7cc4420fdd59703"
+  },
+  {
+   "path": "teacher-pilot-train-f775d2930cb7/day-2021-04-19.npz",
+   "bytes": 11504,
+   "sha256": "0cbc11de8337425e054587b45d7972fe0d735607189ddce4d1ab861aa02058fd"
+  },
+  {
+   "path": "teacher-pilot-train-f775d2930cb7/day-2021-06-22.npz",
+   "bytes": 11504,
+   "sha256": "f85baf8bb4c9f21113eb1d69e2f3a1bd059d9bef5a89f9aa86204c5b545f9e83"
+  },
+  {
+   "path": "teacher-pilot-train-f775d2930cb7/day-2021-08-20.npz",
+   "bytes": 11504,
+   "sha256": "8735ef661a69357e7698f38e176c86909914b0f7509bbcd6315f97a398ef2b3c"
+  },
+  {
+   "path": "teacher-pilot-train-f775d2930cb7/day-2021-10-28.npz",
+   "bytes": 11504,
+   "sha256": "e88a5db1a21c00304b6549ea66072a5807fd567801ea31729d1ffa837b3e0fbf"
+  },
+  {
+   "path": "teacher-pilot-train-f775d2930cb7/day-2021-12-27.npz",
+   "bytes": 11504,
+   "sha256": "21827af068e1fa19c7a403d9a8134fe134b216f641cae70be81e88f39770f604"
+  },
+  {
+   "path": "teacher-pilot-train-f775d2930cb7/day-2022-03-04.npz",
+   "bytes": 11504,
+   "sha256": "bc9c9a8ee160ed4249a518e971ec22d32e3eb41fab3a5bdb42aaa21ed9f4398b"
+  },
+  {
+   "path": "teacher-pilot-train-f775d2930cb7/day-2022-05-10.npz",
+   "bytes": 11504,
+   "sha256": "ce8b138e3d5ce4c03956283d4a78b6777eed2ab78700ab071f14c44150fc9bd9"
+  },
+  {
+   "path": "teacher-pilot-train-f775d2930cb7/day-2022-07-08.npz",
+   "bytes": 11504,
+   "sha256": "bfb3e2c28926e3be03fabd9608e5e5afa0c4c32a472db5f205b77de45e106217"
+  },
+  {
+   "path": "teacher-pilot-train-f775d2930cb7/day-2022-09-07.npz",
+   "bytes": 11504,
+   "sha256": "90c259075b7fe56b7e81d5a0d7f582cd8b8d45d0178804bae6f141f9aceeaa19"
+  },
+  {
+   "path": "teacher-pilot-train-f775d2930cb7/day-2022-11-14.npz",
+   "bytes": 11504,
+   "sha256": "b7fbf3b060961dcd89a1e20db24a2db1ea051b750c18275dcfba701f60546ccd"
+  },
+  {
+   "path": "teacher-pilot-train-f775d2930cb7/day-2023-01-12.npz",
+   "bytes": 11504,
+   "sha256": "79f8b15c437253d63bb23c649fa98b7349e7fd326b427cd24737b76d70bf41b6"
+  },
+  {
+   "path": "teacher-pilot-train-f775d2930cb7/day-2023-03-20.npz",
+   "bytes": 11504,
+   "sha256": "040e95ed8a0fc0fb937de2ba0e1d709027120e104b4f3e15a12b4846ae280cef"
+  },
+  {
+   "path": "teacher-pilot-train-f775d2930cb7/day-2023-05-24.npz",
+   "bytes": 11504,
+   "sha256": "6f88b8172df424c3e113e986059a1a4722e270345a1db0ec75f2c5a6e353835a"
+  },
+  {
+   "path": "teacher-pilot-train-f775d2930cb7/day-2023-07-25.npz",
+   "bytes": 11504,
+   "sha256": "d50f09493e2896dc67e4b900300f1498191a9b07d196308778284c82ba282919"
+  },
+  {
+   "path": "teacher-pilot-train-f775d2930cb7/day-2023-09-21.npz",
+   "bytes": 11504,
+   "sha256": "ce09c560799c96f13193cfda16cd9f6312619763d46714ce8c906f9395c8bf0a"
+  },
+  {
+   "path": "teacher-pilot-train-f775d2930cb7/day-2023-11-29.npz",
+   "bytes": 11504,
+   "sha256": "04398191c0b5fd7e97f53816183aaa825001a581319ef1e56a80adbcdd8c25a9"
+  },
+  {
+   "path": "teacher-pilot-train-f775d2930cb7/day-2024-01-29.npz",
+   "bytes": 11504,
+   "sha256": "48fe8f4c37b059ed32f48792fd618c360d4a6c5ee7b7af982f4c131dd5887533"
+  },
+  {
+   "path": "teacher-pilot-train-f775d2930cb7/day-2024-04-08.npz",
+   "bytes": 11504,
+   "sha256": "57bd1dd39c718ac10e05bbb8ca092549929e26e2c88461822eb07c50ff7d7276"
+  },
+  {
+   "path": "teacher-pilot-train-f775d2930cb7/day-2024-06-12.npz",
+   "bytes": 11504,
+   "sha256": "9386baf0f8849af9dea8bcbdf857d2fd564835242a769a786be16a53d7baa49d"
+  },
+  {
+   "path": "teacher-pilot-train-f775d2930cb7/day-2024-08-09.npz",
+   "bytes": 11504,
+   "sha256": "988dd7747943872d035d981a7ff6bc8baad3c93cacd5d06d3f131d20ba0e92bf"
+  },
+  {
+   "path": "teacher-pilot-train-f775d2930cb7/day-2024-10-17.npz",
+   "bytes": 11504,
+   "sha256": "30dfdd7b4de7e2dbc03c9f0b7c4cedb5826295c932c612e88991e570a875d6c5"
+  },
+  {
+   "path": "teacher-pilot-train-f775d2930cb7/day-2024-12-17.npz",
+   "bytes": 11504,
+   "sha256": "f2586aa3b4738cd74a7130d9662b914d3f64f5e68b258ac776de5b24d50b4b68"
+  },
+  {
+   "path": "teacher-pilot-train-f775d2930cb7/teacher_run.json",
+   "bytes": 3686,
+   "protocol": "47915bc0c3d3",
+   "weight_hash": "cf341b1436d9"
+  },
+  {
+   "path": "teacher-pilot-val-aba0a894fa7c/day-2025-01-02.npz",
+   "bytes": 11504,
+   "sha256": "eac85ba607bd732e175bb1d0d5f2520897a18132781388474409a7943616274d"
+  },
+  {
+   "path": "teacher-pilot-val-aba0a894fa7c/day-2025-01-13.npz",
+   "bytes": 11504,
+   "sha256": "1818d2fed550bdb509631229b27abc6389be988bd4bacd5cdc71fc0039467f67"
+  },
+  {
+   "path": "teacher-pilot-val-aba0a894fa7c/day-2025-01-22.npz",
+   "bytes": 11504,
+   "sha256": "890a3f373bee5dcbc1ccff703ef491a225ce8d11a2b1e0f4dd4991f28d69bbf0"
+  },
+  {
+   "path": "teacher-pilot-val-aba0a894fa7c/day-2025-02-10.npz",
+   "bytes": 11504,
+   "sha256": "03f51f5d441328a01b926cdb0bac0c341f6cddeb611799a12b9ff6e8307132f6"
+  },
+  {
+   "path": "teacher-pilot-val-aba0a894fa7c/day-2025-02-19.npz",
+   "bytes": 11504,
+   "sha256": "299f18c0458d448ca566bde52477ea9c126b96784f0ba593fa88516d483205e4"
+  },
+  {
+   "path": "teacher-pilot-val-aba0a894fa7c/day-2025-02-28.npz",
+   "bytes": 11504,
+   "sha256": "2d641d2c13b7442e79089b11273b33fc7ac26dc87cdc6e7c94daf683ac78131f"
+  },
+  {
+   "path": "teacher-pilot-val-aba0a894fa7c/day-2025-03-11.npz",
+   "bytes": 11504,
+   "sha256": "dcc37db6e199eba440413c9f8719ba671825e0cbc2b4b0e241ee7dfe89092f78"
+  },
+  {
+   "path": "teacher-pilot-val-aba0a894fa7c/day-2025-03-20.npz",
+   "bytes": 11504,
+   "sha256": "1f19fcdf02354b769cdfc4ebf254ef514b1e5a1926b5a9d27f9236334e77c6d0"
+  },
+  {
+   "path": "teacher-pilot-val-aba0a894fa7c/day-2025-03-31.npz",
+   "bytes": 11504,
+   "sha256": "89c4aaf00d682c74761f77d3c4ee7c60bcfac5cc6529ed6aaed15e8dcf4f2ad1"
+  },
+  {
+   "path": "teacher-pilot-val-aba0a894fa7c/day-2025-04-10.npz",
+   "bytes": 11504,
+   "sha256": "eef1ee344de12ea194bfc1ac6f909d2bc6a6c573ace5cf4f86e005c7f6f5afd4"
+  },
+  {
+   "path": "teacher-pilot-val-aba0a894fa7c/day-2025-04-21.npz",
+   "bytes": 11504,
+   "sha256": "e26afd1516047cbafe585f9b059e332bdd9899dfd188e5df854acc385144669d"
+  },
+  {
+   "path": "teacher-pilot-val-aba0a894fa7c/day-2025-04-30.npz",
+   "bytes": 11504,
+   "sha256": "77b6c222c4807e5c0723b4846903a2714dbf140bb92c829dcb000be6b4bd9899"
+  },
+  {
+   "path": "teacher-pilot-val-aba0a894fa7c/day-2025-05-14.npz",
+   "bytes": 11504,
+   "sha256": "9ac274450fae731c25c3a6b9da8cb1d66c756e587da9d9bc9704df9884b734e2"
+  },
+  {
+   "path": "teacher-pilot-val-aba0a894fa7c/day-2025-05-23.npz",
+   "bytes": 11504,
+   "sha256": "d3d07f8b2c484300e0fda6721253c3f9d930c3ded2966544a667a9406cef99db"
+  },
+  {
+   "path": "teacher-pilot-val-aba0a894fa7c/day-2025-06-04.npz",
+   "bytes": 11504,
+   "sha256": "cce0c421876dd4e95241792f26f32bc93e81be1ba8286b43dd7a21b7854fbe91"
+  },
+  {
+   "path": "teacher-pilot-val-aba0a894fa7c/day-2025-06-16.npz",
+   "bytes": 11504,
+   "sha256": "43a3f6434d3748ee0a22a7701f9f440e9227843af1dc088a5e16b1d8358539fb"
+  },
+  {
+   "path": "teacher-pilot-val-aba0a894fa7c/teacher_run.json",
+   "bytes": 1238,
+   "protocol": "47915bc0c3d3",
+   "weight_hash": "cf341b1436d9"
+  },
+  {
+   "path": "train-pilot-D0-s42/epoch-0.pt",
+   "bytes": 2321531,
+   "sha256": "0accf4efcfb4a2c50ca5354a3ba5bbed134eab4cf1d5aee0ad86fdcf8b4a4f45"
+  },
+  {
+   "path": "train-pilot-D0-s42/epoch-1.pt",
+   "bytes": 2321595,
+   "sha256": "d9f16e0d593943aa448430e03b282aa2a893b5f5f13977ed514cc3a90548e482"
+  },
+  {
+   "path": "train-pilot-D0-s42/epoch-10.pt",
+   "bytes": 2322689,
+   "sha256": "1841512a8e6641211ab0239b67fcb313e33bc888f3b041403176e034c0dcbdee"
+  },
+  {
+   "path": "train-pilot-D0-s42/epoch-11.pt",
+   "bytes": 2322817,
+   "sha256": "13861a8f7aaeed61f295240b06b007dcab86f0066fe806c8edb158674abd60bd"
+  },
+  {
+   "path": "train-pilot-D0-s42/epoch-12.pt",
+   "bytes": 2322881,
+   "sha256": "16b1fb2dcf208c2fb69d0dd3295e272f55cc15c4d6deb0a0bd74f97a03a27de7"
+  },
+  {
+   "path": "train-pilot-D0-s42/epoch-13.pt",
+   "bytes": 2323009,
+   "sha256": "6b2ae80359a0225cdd02f53fc0b3067d52c90022f72e182b930fffe2124f55b8"
+  },
+  {
+   "path": "train-pilot-D0-s42/epoch-14.pt",
+   "bytes": 2323137,
+   "sha256": "ac8c9a8b8da1745f2b5987250a50ebb51510b047dbb44b93046faa4d38c6bfe0"
+  },
+  {
+   "path": "train-pilot-D0-s42/epoch-2.pt",
+   "bytes": 2321723,
+   "sha256": "c87d7fd6a62e1f6d366e4829b1d5726f93932cc779898659fb32e862b5fb86a3"
+  },
+  {
+   "path": "train-pilot-D0-s42/epoch-3.pt",
+   "bytes": 2321851,
+   "sha256": "fbaa6c3f4e5564fb12eeb7edfda6e7311d6f511a7677e1e4e7db87f08c4a2c17"
+  },
+  {
+   "path": "train-pilot-D0-s42/epoch-4.pt",
+   "bytes": 2321979,
+   "sha256": "34500677e57c17c58f48bcca2ff08f115a390a26d332d0e893c0222f6bf75cd7"
+  },
+  {
+   "path": "train-pilot-D0-s42/epoch-5.pt",
+   "bytes": 2322043,
+   "sha256": "7bf3ec4a96bd9aad5efa1991904372aed04fe319dd390fbb38e51c692afa7f42"
+  },
+  {
+   "path": "train-pilot-D0-s42/epoch-6.pt",
+   "bytes": 2322171,
+   "sha256": "9de4202f8e1c6317cf334ac05ded7f2dca778b282388397a90e7b2e51072bc67"
+  },
+  {
+   "path": "train-pilot-D0-s42/epoch-7.pt",
+   "bytes": 2322299,
+   "sha256": "2d66ae2611e86b5d1c342681e7a56903a44d2674984588aa569b72627978c49a"
+  },
+  {
+   "path": "train-pilot-D0-s42/epoch-8.pt",
+   "bytes": 2322363,
+   "sha256": "cdacfdff4cf5464536cdd06a73a094a4ed8a95bce8a063b0d044eb05be643c1f"
+  },
+  {
+   "path": "train-pilot-D0-s42/epoch-9.pt",
+   "bytes": 2322491,
+   "sha256": "839cf03d7ab7ceca3b672ecd86df3f2f8fd253ad0b329e615d4cddd5f419f152"
+  },
+  {
+   "path": "train-pilot-D0-s42/epoch-last.pt",
+   "bytes": 2323277,
+   "sha256": "1a44d823bdeb282811da6f4f466f53283dd6d4b7180b6a1a0258fe72815ee04f"
+  },
+  {
+   "path": "train-pilot-D0-s42/result.json",
+   "bytes": 4248,
+   "summary": {
+    "arm": "D0",
+    "seed": 42,
+    "best_epoch": 12,
+    "epochs": 15
+   }
+  },
+  {
+   "path": "train-pilot-D0-s42/train_identity.json",
+   "bytes": 458,
+   "protocol": "47915bc0c3d3"
+  },
+  {
+   "path": "train-pilot-S-s42/epoch-0.pt",
+   "bytes": 2321531,
+   "sha256": "55be769a1d76d6b67c157533a1ea2f542e43151b6b6c6bd625b1c583a19a57c7"
+  },
+  {
+   "path": "train-pilot-S-s42/epoch-1.pt",
+   "bytes": 2321595,
+   "sha256": "d2ad5b0f778ae7240da4eba4897067f72c736cbeeb8884984f25916c54e65c2f"
+  },
+  {
+   "path": "train-pilot-S-s42/epoch-10.pt",
+   "bytes": 2322689,
+   "sha256": "0d2190ca6d4e9fbd2f3727feca23aadfcabc932bc4192934b59ed58775e70037"
+  },
+  {
+   "path": "train-pilot-S-s42/epoch-11.pt",
+   "bytes": 2322817,
+   "sha256": "22d381be43f66884ee41b31570e400ea602cfe5b43fd2082d8866709a2a9d3fe"
+  },
+  {
+   "path": "train-pilot-S-s42/epoch-12.pt",
+   "bytes": 2322881,
+   "sha256": "7fef88e54a38a021975155318c4f40aae2aae77a26bcc55f26dfaae3f92dc9ee"
+  },
+  {
+   "path": "train-pilot-S-s42/epoch-13.pt",
+   "bytes": 2323009,
+   "sha256": "ff98ff4b41bd74a8c5d239f5938c4982927d846fbf6ddb1e6964eef261180ebd"
+  },
+  {
+   "path": "train-pilot-S-s42/epoch-14.pt",
+   "bytes": 2323137,
+   "sha256": "669997d121d4b1e47d80f26bbb7743e8527699ec7df3e6a34e4e37419d1bf60f"
+  },
+  {
+   "path": "train-pilot-S-s42/epoch-2.pt",
+   "bytes": 2321723,
+   "sha256": "eeaf7b16075e751b7d6ec9ee0104770434047d7d858d2e1a55a787290243af4d"
+  },
+  {
+   "path": "train-pilot-S-s42/epoch-3.pt",
+   "bytes": 2321851,
+   "sha256": "a7010f2d83fea2ab28b8090de1a2e6ae357930f553d25afb57311d46b002cb4b"
+  },
+  {
+   "path": "train-pilot-S-s42/epoch-4.pt",
+   "bytes": 2321979,
+   "sha256": "ba5e80bb8edbedc8c68cbbfc672b7eb10c91213a7f1b4555ef835e3c9da9fcf2"
+  },
+  {
+   "path": "train-pilot-S-s42/epoch-5.pt",
+   "bytes": 2322043,
+   "sha256": "98c9527d9d839682ed2605b6136850f0377f6afbe77a953a5c1b1c2a645be7d2"
+  },
+  {
+   "path": "train-pilot-S-s42/epoch-6.pt",
+   "bytes": 2322171,
+   "sha256": "98efffcea7b134a8d1d8df0a4577e3fdeb36fc704658f74676eba748fcd4fa6a"
+  },
+  {
+   "path": "train-pilot-S-s42/epoch-7.pt",
+   "bytes": 2322299,
+   "sha256": "c415e3f4fb234f0261143134d5ca490dde1a2e7c7139ff2c2a347ce4b8b17e15"
+  },
+  {
+   "path": "train-pilot-S-s42/epoch-8.pt",
+   "bytes": 2322363,
+   "sha256": "f9eef165b2443c0ebb6ed127d134be4ba1c0659895d231b81b1c18946d5d7031"
+  },
+  {
+   "path": "train-pilot-S-s42/epoch-9.pt",
+   "bytes": 2322491,
+   "sha256": "d4877a27a7842cd3a3ea2048a457b19de15023f1296552decf946f83eabcbd0f"
+  },
+  {
+   "path": "train-pilot-S-s42/epoch-last.pt",
+   "bytes": 2323277,
+   "sha256": "d573600ce5cf5cbf58d2b946ee3b6e37fdafc2d33e24cde061f215b8eb117ee1"
+  },
+  {
+   "path": "train-pilot-S-s42/result.json",
+   "bytes": 4246,
+   "summary": {
+    "arm": "S",
+    "seed": 42,
+    "best_epoch": 13,
+    "epochs": 15
+   }
+  },
+  {
+   "path": "train-pilot-S-s42/train_identity.json",
+   "bytes": 457,
+   "protocol": "47915bc0c3d3"
+  }
+ ]
+}
