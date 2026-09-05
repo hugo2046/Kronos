@@ -4,7 +4,11 @@
 ``finetune_suite/data/signals.duckdb`` 只追加不重建，逐臂幂等：
 
 - arm=H1a-lin/H1a-kda/H1b-lin/H1b-kda（_s{seed} 后缀并入 arm 字符串）：
-  每臂 8 组（4 变体 × 2 窗）；
+  **读出头为确定性打分（单前向 decode，无 AR 采样）→ 每臂每窗 1 组，
+  variant 固定 "mean"**（不落 last/max/min 重复副本；与
+  ``run_h1_signals`` 的单文件产物口径一致——2026-09-05 修复：原稿按
+  g5 式 4 变体循环找 ``_{v}.parquet``，与打分器产物互相矛盾，两轮夜跑
+  均在此 FileNotFoundError）；
 - ``runs`` 元数据按臂追加（语料/协议/在线前向 JSON）；
 - 写入后每臂抽 (arm, mean, backtest 中位日) 与源 parquet 逐值对拍（贴输出）。
 
@@ -24,7 +28,6 @@ from loguru import logger
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from baseline_suite.common import VARIANTS
 from finetune_suite.build_duckdb import _long_from_wide
 from h1_readout.corpus import ES_END, ES_START, TRAIN_LABEL_END, TRAIN_START
 from h1_readout.run_h1_signals import WINDOW_BOUNDS
@@ -53,7 +56,7 @@ def _runs_row(arm: str, seed: int) -> tuple[str, str, str, str]:
 
 def _pick_backtest_day(con, arm_tag: str) -> tuple[str, dict[str, float], pd.Series]:
     wide = pd.read_parquet(
-        H1_DATA_DIR / arm_tag.rsplit("_s", 1)[0] / f"daily_signals_backtest_{arm_tag}_mean.parquet")
+        H1_DATA_DIR / arm_tag.rsplit("_s", 1)[0] / f"daily_signals_backtest_{arm_tag}.parquet")
     d = wide.index[len(wide) // 2]
     qdate = str(d.date())
     row_all = con.execute(
@@ -86,10 +89,9 @@ def main() -> None:
     for tag in todo:
         arm = tag.rsplit("_s", 1)[0]
         for window in WINDOW_BOUNDS:
-            for v in VARIANTS:
-                wide = pd.read_parquet(
-                    H1_DATA_DIR / arm / f"daily_signals_{window}_{tag}_{v}.parquet")
-                tables.append(_long_from_wide(tag, v, wide))
+            wide = pd.read_parquet(
+                H1_DATA_DIR / arm / f"daily_signals_{window}_{tag}.parquet")
+            tables.append(_long_from_wide(tag, "mean", wide))
     append_df = pd.concat(tables, ignore_index=True)
     logger.info(f"追加长表合计 {len(append_df)} 行（arm×variant 分布见下）")
     print(append_df.groupby(["arm", "variant"]).size().to_string())
