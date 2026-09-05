@@ -47,6 +47,12 @@ PILOT_BUDGET = BudgetSpec(
 )
 MAIN_BUDGET = BudgetSpec()
 
+#: 收益尺度口径白名单（v1.1 方案 A）：
+#: - ``train_real_std``：v1 行为，``max(std_train(y_real[:,h]), 0.01)``；
+#: - ``teacher_r0_std``：蒸馏目标 replica0 的逐期限 ``max(std, 0.01)``
+#:   （v1.1 仅注册接口，本轮实验不使用）。
+SCALE_SOURCES: frozenset[str] = frozenset({"train_real_std", "teacher_r0_std"})
+
 #: profile → 预算（§8.1）；未知 profile 在 CLI 层显式报错
 PROFILES: dict[str, BudgetSpec] = {"pilot": PILOT_BUDGET, "main": MAIN_BUDGET}
 
@@ -119,6 +125,14 @@ class DHeadConfig:
     lora_last_layers: int = 2          # 仅末两层
     lora_targets: tuple[str, ...] = ("q_proj", "v_proj")
     lora_lr: float = 1e-5
+    # —— 收益尺度口径（v1.1 方案 A：接口注册，默认=v1 行为不变）——
+    scale_source: str = "train_real_std"
+
+    def __post_init__(self) -> None:
+        if self.scale_source not in SCALE_SOURCES:
+            raise ValueError(
+                f"scale_source 非法：{self.scale_source}（可选 {sorted(SCALE_SOURCES)}）"
+            )
 
     # ------------------------------------------------------------------
     # 便捷构造
@@ -166,9 +180,18 @@ class DHeadConfig:
 
 
 def _canonical(obj: Any) -> Any:
-    """协议对象的 canonical 形式（tuple→list，dataclass→dict，float 原样）。"""
+    """协议对象的 canonical 形式（tuple→list，dataclass→dict，float 原样）。
+
+    接口字段中性排除：v1.1 新增字段取**默认值**时行为与 v1 完全一致，
+    从 hash 中剔除以保持 v1 协议 hash 稳定（旧清单不失配）；一旦改为
+    非默认值即参与 hash（= 新协议，全链产物隔离）。
+    """
     if dataclasses.is_dataclass(obj) and not isinstance(obj, type):
-        return _canonical(dataclasses.asdict(obj))
+        d = dataclasses.asdict(obj)
+        for k, v_default in _DEFAULT_NEUTRAL_FIELDS.items():
+            if d.get(k) == v_default:
+                d.pop(k, None)
+        return _canonical(d)
     if isinstance(obj, dict):
         return {k: _canonical(v) for k, v in sorted(obj.items())}
     if isinstance(obj, (list, tuple)):
@@ -176,6 +199,12 @@ def _canonical(obj: Any) -> Any:
     if isinstance(obj, (str, int, float, bool)) or obj is None:
         return obj
     raise TypeError(f"协议 hash 不支持类型 {type(obj)}")
+
+
+#: 取默认值时行为与 v1 逐字一致的接口字段（默认→不入协议 hash）
+_DEFAULT_NEUTRAL_FIELDS: dict[str, Any] = {
+    "scale_source": "train_real_std",
+}
 
 
 def protocol_hash(cfg: DHeadConfig) -> str:

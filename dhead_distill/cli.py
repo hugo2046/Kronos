@@ -63,19 +63,43 @@ def _artifact_root() -> Path:
     return env.artifact_root
 
 
-def _load_manifest(profile: str, split: str) -> "object":
-    """按 profile/split 找最新 prepare 产物并装载（协议校验在身份环节）。"""
+def _load_manifest(profile: str, split: str, cfg: DHeadConfig | None = None) -> "DayManifest":
+    """按 profile/split 装载 prepare 产物（v1 修复 #4：协议过滤 + 内容校验）。
+
+    候选目录先按 ``manifest.json`` 的 protocol/profile/split 过滤（cfg 给出
+    时必须与 ``protocol_hash(cfg)`` 一致——防协议漂移后误用旧清单），
+    多个匹配取 mtime 最新；装载时重算内容 hash 防静默损坏。
+    """
+    from dhead_distill.config import protocol_hash as _ph
     from dhead_distill.data import DayManifest
 
     root = _artifact_root()
-    cands = sorted(
+    cands = [
         p for p in root.glob(f"prepare-{profile}-{split}-*") if p.is_dir()
-    )
+    ]
     if not cands:
         raise FileNotFoundError(
             f"未找到 prepare 产物：prepare-{profile}-{split}-*（先运行 prepare）"
         )
-    return DayManifest.load(cands[-1].name)
+    want_protocol = _ph(cfg) if cfg is not None else None
+    matched = []
+    for p in cands:
+        try:
+            meta = json.loads((p / "manifest.json").read_text("utf-8"))
+        except (OSError, json.JSONDecodeError):
+            continue
+        if meta.get("profile") != profile or meta.get("split") != split:
+            continue
+        if want_protocol is not None and meta.get("protocol") != want_protocol:
+            continue
+        matched.append(p)
+    if not matched:
+        raise FileNotFoundError(
+            f"prepare 产物与当前协议不匹配：prepare-{profile}-{split}-* "
+            f"(protocol={str(want_protocol)[:12]})——请用当前配置重跑 prepare"
+        )
+    matched.sort(key=lambda p: p.stat().st_mtime)
+    return DayManifest.load(matched[-1].name, verify=True)
 
 
 def _require_gpu() -> str:
@@ -207,7 +231,12 @@ def cmd_prepare(args: argparse.Namespace) -> int:
 
 
 def _load_predictor(env) -> tuple:
-    """装载 G1 tokenizer+predictor（只读；返回 (predictor, 联合权重hash)）。"""
+    """装载 G1 tokenizer+predictor（只读；返回 (predictor, 联合权重hash)）。
+
+    v1 修复 #1：装载后强制 eval——G1 ffn/resid dropout=0.2，train 态生成
+    会把 dropout 噪声注入教师目标与全部 replica（v1 教师分片因此作废，
+    由 teacher identity 的 model_eval 字段隔离）。
+    """
     from model import Kronos, KronosPredictor, KronosTokenizer
 
     logger.info(f"加载 G1 tokenizer（只读）：{env.g1_tokenizer}")
@@ -218,6 +247,9 @@ def _load_predictor(env) -> tuple:
     predictor = KronosPredictor(
         model.to(device), tokenizer.to(device), device=device, max_context=512,
     )
+    from dhead_distill.teacher import ensure_teacher_eval
+
+    ensure_teacher_eval(predictor)
     w_hash = hashlib.sha256(
         _sha256_file(env.g1_tokenizer / "model.safetensors").encode()
         + _sha256_file(env.g1_predictor / "model.safetensors").encode()
@@ -263,10 +295,24 @@ def cmd_teacher(args: argparse.Namespace) -> int:
 # ======================================================================
 
 
-def _train_scale(train_manifest) -> np.ndarray:
-    """scale[h] = max(std_train(y[:,h]), 0.01)（§4.3，冻结）。"""
-    y = np.stack([s.y_real for s in train_manifest.samples])  # [N,10]
-    return np.maximum(y.std(axis=0), 0.01).astype(np.float32)
+def _train_scale(train_manifest, cfg: DHeadConfig | None = None,
+                 teacher_targets: np.ndarray | None = None) -> np.ndarray:
+    """期限尺度 scale[h]（§4.3 冻结；v1.1 方案 A：口径可配置）。
+
+    - ``train_real_std``（默认，= v1 行为）：``max(std_train(y_real[:,h]),0.01)``；
+    - ``teacher_r0_std``：蒸馏目标 replica0 的 ``max(std, 0.01)``（需传
+      teacher_targets [N,R,10]；v1.1 仅注册接口，本轮实验不使用）。
+    """
+    source = cfg.scale_source if cfg is not None else "train_real_std"
+    if source == "train_real_std":
+        y = np.stack([s.y_real for s in train_manifest.samples])  # [N,10]
+        return np.maximum(y.std(axis=0), 0.01).astype(np.float32)
+    if source == "teacher_r0_std":
+        if teacher_targets is None:
+            raise ValueError("scale_source=teacher_r0_std 需要教师目标数组")
+        return np.maximum(
+            teacher_targets[:, 0, :].std(axis=0), 0.01).astype(np.float32)
+    raise ValueError(f"未知 scale_source：{source}")
 
 
 def _train_run_name(profile: str, arm: str, seed: int) -> str:
@@ -317,24 +363,28 @@ def cmd_train(args: argparse.Namespace) -> int:
     env = resolve_env()
     device = _require_gpu()
 
-    train_m = _load_manifest(profile, "train")
-    val_m = _load_manifest(profile, "val")
+    train_m = _load_manifest(profile, "train", cfg)
+    val_m = _load_manifest(profile, "val", cfg)
 
     def _targets(m) -> np.ndarray:
-        """只读已生成的教师分片（身份由 teacher 命令写入的 run manifest 保证）。"""
-        from dhead_distill.data import safe_artifact_dir as sad
-        from dhead_distill.teacher import TeacherRunner as TR
+        """只读已生成的教师分片（v1 修复 #4：身份核验装载，含权重指纹比对）。"""
+        from dhead_distill.teacher import TeacherRunner
 
-        r = TR.__new__(TR)
-        r.manifest = m
-        r.replicas = cfg.teacher_replicas
-        r.predict_len = cfg.predict_len
-        r.run_dir = sad(f"teacher-{profile}-{m.split}-{m.content_hash[:12]}")
+        w_now = hashlib.sha256(
+            _sha256_file(env.g1_tokenizer / "model.safetensors").encode()
+            + _sha256_file(env.g1_predictor / "model.safetensors").encode()
+        ).hexdigest()
+        r = TeacherRunner.load_verified(
+            m, replicas=cfg.teacher_replicas, predict_len=cfg.predict_len,
+            expected_weight_hash=w_now,
+        )
         return r.load_targets_array()[0]
 
     train_teacher = _targets(train_m)
     val_teacher = _targets(val_m)
-    scale = _train_scale(train_m)
+    scale = _train_scale(train_m, cfg,
+                         train_teacher if cfg.scale_source == "teacher_r0_std"
+                         else None)
 
     # —— 底座与头 ——
     from dhead_distill.backbone import load_g1_student
@@ -350,12 +400,13 @@ def cmd_train(args: argparse.Namespace) -> int:
     lora_named = None
     max_epochs_override = None
     disable_early_stop = False
+    _require_arm_ready(profile, arm, seed)   # v1 修复 #5：前置臂显式门禁
     if arm == "D1":
         head.load_state_dict(_load_head_ckpt(profile, "D0", seed,
                                              _best_epoch_of(profile, "D0", seed)))
         logger.info(f"D1 ← D0 best-D checkpoint（epoch {_best_epoch_of(profile, 'D0', seed)}）")
     elif arm == "D2":
-        _require_d2_gate(profile)
+        _require_d2_gate(profile, seed)
         head.load_state_dict(_load_head_ckpt(profile, "D1", seed,
                                              _best_epoch_of(profile, "D1", seed)))
         lora_named = inject_lora(
@@ -395,8 +446,8 @@ def cmd_train(args: argparse.Namespace) -> int:
     return 0
 
 
-def _require_d2_gate(profile: str) -> None:
-    """D2 解锁核验（§8.3：由验证数据的保真/改进条件决定）。"""
+def _require_d2_gate(profile: str, seed: int) -> None:
+    """D2 解锁核验（§8.3；v1 修复 #5：门禁文件须与请求 seed 一致）。"""
     from dhead_distill.data import safe_artifact_dir
 
     gate_path = safe_artifact_dir(f"eval-{profile}-fidelity") / "summary.json"
@@ -405,9 +456,39 @@ def _require_d2_gate(profile: str) -> None:
             "D2 未解锁：先运行 evaluate --stage fidelity（§8.3 条件未核验）"
         )
     doc = json.loads(gate_path.read_text("utf-8"))
+    if doc.get("seed") != seed:
+        raise RuntimeError(
+            f"D2 门禁 seed 不匹配：门禁文件为 seed={doc.get('seed')}，"
+            f"请求 seed={seed}——每个 seed 须独立过门禁（§8.3）"
+        )
     if not doc.get("d2_unlocked", False):
         raise RuntimeError(
             f"D2 未解锁：保真/改进条件未满足——{doc.get('d2_reason', '未知原因')}"
+        )
+
+
+def _require_arm_ready(profile: str, arm: str, seed: int) -> None:
+    """臂前置检查（v1 修复 #5：初始化链依赖显式报错，不裸抛 FileNotFoundError）。
+
+    D1←D0、D2←D1（另需门禁）、S-long←D0+D1、D1-cont←D1+D2。
+    """
+    from dhead_distill.data import safe_artifact_dir
+
+    def _has(a: str) -> bool:
+        return (safe_artifact_dir(_train_run_name(profile, a, seed))
+                / "result.json").exists()
+
+    deps = {
+        "D1": ["D0"],
+        "D2": ["D1"],
+        "S-long": ["D0", "D1"],
+        "D1-cont": ["D1", "D2"],
+    }.get(arm, [])
+    missing = [a for a in deps if not _has(a)]
+    if missing:
+        raise RuntimeError(
+            f"臂 {arm} 的前置结果缺失：{missing}（seed={seed}）——"
+            f"请先按链路顺序训练"
         )
 
 
@@ -464,16 +545,12 @@ def _load_ckpt_path(profile: str, arm: str, seed: int) -> Path:
 
 
 def _teacher_array_for(profile: str, manifest, cfg) -> np.ndarray:
-    """装载教师 [N,R,10] 分片（与 manifest 对齐）。"""
+    """装载教师 [N,R,10] 分片（v1 修复 #4：身份核验装载）。"""
     from dhead_distill.teacher import TeacherRunner
 
-    r = TeacherRunner.__new__(TeacherRunner)
-    r.manifest = manifest
-    r.replicas = cfg.teacher_replicas
-    r.predict_len = cfg.predict_len
-    from dhead_distill.data import safe_artifact_dir as sad
-
-    r.run_dir = sad(f"teacher-{profile}-{manifest.split}-{manifest.content_hash[:12]}")
+    r = TeacherRunner.load_verified(
+        manifest, replicas=cfg.teacher_replicas, predict_len=cfg.predict_len,
+    )
     return r.load_targets_array()[0]
 
 
@@ -506,10 +583,10 @@ def _eval_fidelity(profile: str, seed: int, cfg) -> int:
     from dhead_distill.data import safe_artifact_dir
     from dhead_distill.evaluate import fidelity_gate, fidelity_metrics
 
-    val_m = _load_manifest(profile, "val")
+    val_m = _load_manifest(profile, "val", cfg)
     val_teacher = _teacher_array_for(profile, val_m, cfg)
     days = _days_for_eval(val_m, val_teacher, cfg)
-    scale = np.asarray(_train_scale(_load_manifest(profile, "train")))
+    scale = np.asarray(_train_scale(_load_manifest(profile, "train", cfg), cfg))
 
     summary: dict = {"stage": "fidelity", "profile": profile, "seed": seed,
                      "split": "val", "arms": {}}
@@ -535,25 +612,24 @@ def _eval_fidelity(profile: str, seed: int, cfg) -> int:
             f"gate={'PASS' if met['gate']['passed'] else 'FAIL'}"
         )
 
-    # D2 解锁（§8.3）：D0 验证保真通过 ∧ D1 验证 task 优于 D0 ∧ D1 E/R≤2
+    # D2 解锁（§8.3；v1 修复 #2：统一 val_task 口径，经 evaluate.d2_unlock_condition）
     d0, d1 = summary["arms"].get("D0"), summary["arms"].get("D1")
     unlocked, reason = False, "D0/D1 结果不齐"
     if d0 and d1:
         from dhead_distill.data import safe_artifact_dir as sad
+        from dhead_distill.evaluate import d2_unlock_condition
 
-        d0_task = json.loads((sad(_train_run_name(profile, "D0", seed))
-                              / "result.json").read_text("utf-8"))
-        d1_task = json.loads((sad(_train_run_name(profile, "D1", seed))
-                              / "result.json").read_text("utf-8"))
-        best_d0 = min(h["val_loss"] for h in d0_task["history"])
-        best_d1 = min(h["val_loss"] for h in d1_task["history"])
-        conds = {
-            "d0_fidelity_passed": bool(d0["gate"]["passed"]),
-            "d1_beats_d0_val": bool(best_d1 < best_d0),
-            "d1_ratio_le_2": bool(d1["ratio"] <= 2.0),
-        }
-        unlocked = all(conds.values())
-        reason = f"条件 {conds}"
+        d0_res = json.loads((sad(_train_run_name(profile, "D0", seed))
+                             / "result.json").read_text("utf-8"))
+        d1_res = json.loads((sad(_train_run_name(profile, "D1", seed))
+                             / "result.json").read_text("utf-8"))
+        verdict = d2_unlock_condition(d0_res["history"], d1_res["history"],
+                                      d0, d1)
+        unlocked = verdict["unlocked"]
+        reason = (f"条件 {verdict['conditions']} "
+                  f"(D0 val_task*={verdict['best_d0_val_task']:.4f}, "
+                  f"D1 val_task*={verdict['best_d1_val_task']:.4f})")
+        summary["d2_unlock_detail"] = verdict
     summary["d2_unlocked"] = unlocked
     summary["d2_reason"] = reason
 
@@ -571,7 +647,7 @@ def _eval_prediction(profile: str, seed: int, cfg) -> int:
         block_bootstrap_paired_diff, daily_rank_ic, holm_correction,
     )
 
-    diag_m = _load_manifest(profile, "diag")
+    diag_m = _load_manifest(profile, "diag", cfg)
     teacher = _teacher_array_for(profile, diag_m, cfg)
     days = _days_for_eval(diag_m, teacher, cfg)
 

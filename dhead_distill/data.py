@@ -197,8 +197,12 @@ class DayManifest:
         return d
 
     @staticmethod
-    def load(name: str) -> "DayManifest":
-        """从 save 产物目录装载（JSON 反序列化 + NPZ 数组，安全无 pickle）。"""
+    def load(name: str, *, verify: bool = False) -> "DayManifest":
+        """从 save 产物目录装载（JSON 反序列化 + NPZ 数组，安全无 pickle）。
+
+        :param verify: True 时重算内容 hash 与存储值比对（防静默损坏/篡改，
+            v1 修复 #4 的一部分；train/evaluate 入口应开启）。
+        """
         d = safe_artifact_dir(name)
         meta = json.loads((d / "manifest.json").read_text("utf-8"))
         arrs = dict(np.load(d / "arrays.npz", allow_pickle=False))
@@ -221,6 +225,13 @@ class DayManifest:
                 Sample(date=pd.Timestamp(sm["date"]), code=sm["code"],
                        y_real=arrs["y_real"][i], label_ok=sm["label_ok"])
             )
+        if verify:
+            recomputed = content_hash(m)
+            if recomputed != m.content_hash:
+                raise RuntimeError(
+                    f"清单内容校验失败：存储 {m.content_hash[:12]} ≠ 重算 "
+                    f"{recomputed[:12]}（{name}）——拒绝使用可能损坏/被改的清单"
+                )
         return m
 
 

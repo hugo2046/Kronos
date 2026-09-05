@@ -143,8 +143,13 @@ class LoRALinear(nn.Module):
         self.rank = rank
         self.scale = alpha / rank
         self.lora_dropout = nn.Dropout(dropout)
-        self.lora_A = nn.Linear(base.in_features, rank, bias=False)
-        self.lora_B = nn.Linear(rank, base.out_features, bias=False)
+        # v1 修复 #3：A/B 与被包装权重同 device/dtype（否则 D2 在 CUDA 上
+        # 产生 CPU 参数，优化器/反传设备失配）
+        dev, dt = base.weight.device, base.weight.dtype
+        self.lora_A = nn.Linear(base.in_features, rank, bias=False,
+                                device=dev, dtype=dt)
+        self.lora_B = nn.Linear(rank, base.out_features, bias=False,
+                                device=dev, dtype=dt)
         nn.init.kaiming_normal_(self.lora_A.weight, nonlinearity="linear")
         nn.init.zeros_(self.lora_B.weight)
 

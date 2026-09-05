@@ -166,13 +166,42 @@ def evaluate_economic_gate(*, engine_verified: bool,
         "reason": (
             "引擎与执行器均已核验，允许输出经济回放指标"
             if allowed else
-            "拒绝输出可交易/胜出结论：回测引擎争议未独立复核或缺少经验证执行器"
+            "拒绝输出可交易/胜出结论：回测引擎争议未独立复核或缺少经验验证执行器"
             "（方案 §8.4——不得把'已有引擎'自动视为门禁通过）"
         ),
+    }
+
+
+def d2_unlock_condition(
+    d0_history: list[dict], d1_history: list[dict],
+    d0_fidelity: dict, d1_fidelity: dict,
+) -> dict:
+    """D2 解锁三条件（§8.3，v1 修复 #2：**统一 val_task 口径**比较）。
+
+    v1 缺陷：D0 按 val_d、D1 按 val_task 各取最优再直接比较——跨口径。
+    正确语义：D1 验证 ``S+0.05I`` 优于 D0 的验证 ``S+0.05I``（两臂 history
+    均记录 val_task，无需换算）。
+
+    :param d0_history/d1_history: 两臂逐 epoch 训练历史（含 val_task 键）。
+    :param d0_fidelity/d1_fidelity: fidelity_metrics 输出（含 ratio/gate）。
+    """
+    best_d0 = min(h["val_task"] for h in d0_history)
+    best_d1 = min(h["val_task"] for h in d1_history)
+    conds = {
+        "d0_fidelity_passed": bool(d0_fidelity["gate"]["passed"]),
+        "d1_beats_d0_val_task": bool(best_d1 < best_d0),
+        "d1_ratio_le_2": bool(d1_fidelity["ratio"] <= 2.0),
+    }
+    return {
+        "conditions": conds,
+        "unlocked": all(conds.values()),
+        "best_d0_val_task": best_d0,
+        "best_d1_val_task": best_d1,
     }
 
 
 __all__ = [
     "fidelity_metrics", "fidelity_gate", "daily_rank_ic",
     "block_bootstrap_paired_diff", "holm_correction", "evaluate_economic_gate",
+    "d2_unlock_condition",
 ]

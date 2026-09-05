@@ -40,6 +40,20 @@ def teacher_seed(protocol: str, date: str, code: str, replica: int) -> int:
     return int.from_bytes(digest[:8], "big")
 
 
+def ensure_teacher_eval(predictor) -> None:
+    """教师恒 eval（§4.2「全部 eval」的落地——v1 诊断修复 #1）。
+
+    G1 predictor 配置 ``ffn_dropout_p=resid_dropout_p=0.2``：train 态生成会把
+    dropout 噪声注入教师目标与全部 replica。装载后必须调用本函数；
+    ``TeacherRunner.identity`` 携带 ``model_eval=True``，eval 修复前后的
+    教师分片按身份隔离，绝不混用。
+    """
+    predictor.model.eval()
+    predictor.tokenizer.eval()
+    if predictor.model.training or predictor.tokenizer.training:
+        raise RuntimeError("教师 eval 设置失败：model/tokenizer 仍在 train 态")
+
+
 class TeacherRunner:
     """按日期分片的教师目标生成器（可中断、可恢复、可核验）。
 
@@ -83,6 +97,8 @@ class TeacherRunner:
             "n_paths": n_paths, "replicas": replicas,
             "T": teacher_T, "top_p": teacher_top_p, "top_k": teacher_top_k,
             "predict_len": predict_len, "dtype": "float32",
+            # v1 修复 #1/#4：eval 模式入身份——dropout 态教师分片与本轮隔离
+            "model_eval": True,
         }
         run_name = (
             f"teacher-{manifest.profile}-{manifest.split}"
@@ -255,6 +271,61 @@ class TeacherRunner:
             rows.append(shard["y"][idx])
             keys.append((d_iso, s.code))
         return np.stack(rows), keys
+
+    @classmethod
+    def load_verified(
+        cls,
+        manifest: DayManifest,
+        *,
+        replicas: int,
+        predict_len: int,
+        expected_weight_hash: Optional[str] = None,
+    ) -> "TeacherRunner":
+        """只读装载已生成的教师分片，并核验 run 身份（v1 修复 #4）。
+
+        替代 ``__new__`` 直通式装载：protocol / 清单内容 hash / replicas /
+        predict_len / model_eval 逐一比对 ``teacher_run.json``；
+        ``expected_weight_hash`` 给出时（train/evaluate 命令应传当前 G1
+        权重指纹）也比对，杜绝权重漂移后混用旧分片。任何不一致直接报错。
+
+        :returns: 绑定 run_dir 的只读 runner（无 predict_fn，不可再生成）。
+        """
+        from dhead_distill.data import safe_artifact_dir as sad
+
+        run_dir = sad(
+            f"teacher-{manifest.profile}-{manifest.split}"
+            f"-{manifest.content_hash[:12]}"
+        )
+        manifest_path = run_dir / "teacher_run.json"
+        if not manifest_path.exists():
+            raise FileNotFoundError(
+                f"教师 run manifest 不存在：{manifest_path}（先运行 teacher）"
+            )
+        stored = json.loads(manifest_path.read_text("utf-8"))
+        expect = {
+            "protocol": manifest.protocol,
+            "manifest_content_hash": manifest.content_hash,
+            "replicas": replicas,
+            "predict_len": predict_len,
+            "model_eval": True,
+        }
+        if expected_weight_hash is not None:
+            expect["weight_hash"] = expected_weight_hash
+        for k, v in expect.items():
+            if stored.get(k) != v:
+                raise RuntimeError(
+                    f"教师缓存身份不一致（{k}：缓存 {stored.get(k)!r} ≠ "
+                    f"本次 {v!r}）——拒绝混用，请重跑 teacher 生成"
+                )
+        r = cls.__new__(cls)
+        r.manifest = manifest
+        r._predict_fn = None
+        r.weight_hash = stored.get("weight_hash")
+        r.n_paths = stored.get("n_paths")
+        r.replicas = replicas
+        r.predict_len = predict_len
+        r.run_dir = run_dir
+        return r
 
 
 def combined_weight_hash(tokenizer_hash: str, predictor_hash: str) -> str:
