@@ -84,6 +84,7 @@ def _runner(tmp_path, monkeypatch, m, weight_hash="w" * 64, n_paths=4, replicas=
         replicas=replicas,
         teacher_T=1.0, teacher_top_p=0.9, teacher_top_k=0,
         predict_len=10,
+        model_eval_verified=True,  # 假教师无 dropout，断言语义由测试方担保
     )
 
 
@@ -126,6 +127,7 @@ def test_replica_order_and_batch_independence(tmp_path, monkeypatch) -> None:
         n_paths=base.n_paths, replicas=base.replicas,
         teacher_T=base.teacher_T, teacher_top_p=base.teacher_top_p,
         teacher_top_k=base.teacher_top_k, predict_len=base.predict_len,
+        model_eval_verified=True,
     )
     rev = r2.run()
 
@@ -157,6 +159,7 @@ def test_resume_after_partial_completion(tmp_path, monkeypatch) -> None:
         n_paths=base.n_paths, replicas=base.replicas,
         teacher_T=base.teacher_T, teacher_top_p=base.teacher_top_p,
         teacher_top_k=base.teacher_top_k, predict_len=base.predict_len,
+        model_eval_verified=True,
     )
     with pytest.raises(Boom):
         r_crash.run()
@@ -168,6 +171,7 @@ def test_resume_after_partial_completion(tmp_path, monkeypatch) -> None:
         n_paths=base.n_paths, replicas=base.replicas,
         teacher_T=base.teacher_T, teacher_top_p=base.teacher_top_p,
         teacher_top_k=base.teacher_top_k, predict_len=base.predict_len,
+        model_eval_verified=True,
     )
     resumed = r_resume.run()
 

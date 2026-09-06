@@ -120,25 +120,29 @@ def block_bootstrap_paired_diff(
     diff_by_day: np.ndarray, *, block: int = 10, n_boot: int = 2000,
     seed: int = 20260905,
 ) -> dict:
-    """按日期整体的区块 bootstrap：配对差均值 95% 区间（块长假设已知）。"""
+    """移动区块 bootstrap：配对差均值 95% 区间（块长假设已知）。
+
+    R4 修正（复核 20260906）：块起点**有放回均匀抽样、不排序**（旧实现对
+    起点排序会系统性压平覆盖、扭曲抽样分布）；拼接后截断到 n 为标准 MBB。
+    抽样单位声明：入参序列须为**逐交易日**（或等间隔观测）的日级序列；
+    稀疏/非等间隔序列上"10 个观测"≠"10 个交易日"，不得据此输出显著性
+    结论（本函数只产区间，不做检验）。
+    """
     x = np.asarray(diff_by_day, dtype=np.float64)
     n = len(x)
     if n < block:
-        raise ValueError(f"日数 {n} < 块长 {block}，无法区块 bootstrap")
+        raise ValueError(f"观测数 {n} < 块长 {block}，无法区块 bootstrap")
     n_blocks = int(np.ceil(n / block))
     rng = np.random.default_rng(seed)
-    start_max = n - block
-    boots = np.empty(n_boot)
-    for b in range(n_boot):
-        idx = np.sort(rng.integers(0, start_max + 1, n_blocks))
-        segs = [x[s: s + block] for s in idx]
-        sample = np.concatenate(segs)[:n]
-        boots[b] = sample.mean()
+    starts = rng.integers(0, n - block + 1, size=(n_boot, n_blocks))
+    idx = starts[..., None] + np.arange(block)[None, None, :]
+    boots = x[idx].reshape(n_boot, -1)[:, :n].mean(axis=1)
     lo, hi = np.percentile(boots, [2.5, 97.5])
     return {
         "lo": float(lo), "hi": float(hi),
-        "point": float(x.mean()), "n_days": n, "block": block,
+        "point": float(x.mean()), "n_obs": n, "block": block,
         "n_boot": n_boot, "seed": seed,
+        "sampling_unit": "trading_day_series(等间隔)",
     }
 
 
@@ -172,36 +176,55 @@ def evaluate_economic_gate(*, engine_verified: bool,
     }
 
 
+def _selected_row(result: dict, arm: str) -> dict:
+    """取该臂 result.json 中 **实际选中** checkpoint（best_epoch）的 history 行。
+
+    R1（复核 20260906）：比较必须绑定选中的模型，不得跨 epoch 重选最优；
+    best_epoch 缺失 / epoch 重复 / 对应行不存在 → 显式报错。
+    """
+    best = result.get("best_epoch")
+    hist = result.get("history") or []
+    if best is None:
+        raise ValueError(f"{arm} result.json 缺 best_epoch——无法绑定选中 checkpoint")
+    epochs = [h.get("epoch") for h in hist]
+    if len(set(epochs)) != len(epochs):
+        raise ValueError(f"{arm} history 存在重复 epoch：{epochs}")
+    rows = [h for h in hist if h.get("epoch") == best]
+    if not rows:
+        raise ValueError(f"{arm} best_epoch={best} 在 history 中不存在对应行")
+    return rows[0]
+
+
 def d2_unlock_condition(
-    d0_history: list[dict], d1_history: list[dict],
+    d0_result: dict, d1_result: dict,
     d0_fidelity: dict, d1_fidelity: dict,
 ) -> dict:
-    """D2 解锁三条件（§8.3，v1 修复 #2：**统一 val_task 口径**比较）。
+    """D2 解锁三条件（§8.3；R1：**按实际选中 checkpoint** 比较）。
 
-    v1 缺陷：D0 按 val_d、D1 按 val_task 各取最优再直接比较——跨口径。
-    正确语义：D1 验证 ``S+0.05I`` 优于 D0 的验证 ``S+0.05I``（两臂 history
-    均记录 val_task，无需换算）。
-
-    :param d0_history/d1_history: 两臂逐 epoch 训练历史（含 val_task 键）。
-    :param d0_fidelity/d1_fidelity: fidelity_metrics 输出（含 ratio/gate）。
+    - D0 用其 best-D checkpoint（按 val_d 选出）那一行的 ``val_task``；
+    - D1 用其 best-task checkpoint 那一行的 ``val_task``；
+    - 禁止把 D0 换成 best-task epoch 来凑比较口径。
     """
-    best_d0 = min(h["val_task"] for h in d0_history)
-    best_d1 = min(h["val_task"] for h in d1_history)
+    d0_row = _selected_row(d0_result, "D0")
+    d1_row = _selected_row(d1_result, "D1")
     conds = {
         "d0_fidelity_passed": bool(d0_fidelity["gate"]["passed"]),
-        "d1_beats_d0_val_task": bool(best_d1 < best_d0),
+        "d1_beats_d0_val_task": bool(
+            d1_row["val_task"] < d0_row["val_task"]),
         "d1_ratio_le_2": bool(d1_fidelity["ratio"] <= 2.0),
     }
     return {
         "conditions": conds,
         "unlocked": all(conds.values()),
-        "best_d0_val_task": best_d0,
-        "best_d1_val_task": best_d1,
+        "d0_selected_epoch": d0_row["epoch"],
+        "d1_selected_epoch": d1_row["epoch"],
+        "d0_selected_val_task": d0_row["val_task"],
+        "d1_selected_val_task": d1_row["val_task"],
     }
 
 
 __all__ = [
     "fidelity_metrics", "fidelity_gate", "daily_rank_ic",
     "block_bootstrap_paired_diff", "holm_correction", "evaluate_economic_gate",
-    "d2_unlock_condition",
+    "d2_unlock_condition", "_selected_row",
 ]

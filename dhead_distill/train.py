@@ -30,17 +30,19 @@ from loguru import logger
 
 from dhead_distill.backbone import StudentBackbone
 from dhead_distill.config import DHeadConfig, protocol_hash
-from dhead_distill.data import DayManifest, safe_artifact_dir, window_zscore_clip
+from dhead_distill.data import (
+    DayManifest, affine_restore_params, safe_artifact_dir, window_zscore_clip,
+)
 from dhead_distill.head import MultiHorizonHead
 from dhead_distill.losses import daily_ic_loss, normalized_mse
 
 #: 合法训练臂（T 是教师基线，不训练）
 TRAIN_ARMS = ("D0", "S", "D1", "D2", "S-long", "D1-cont")
 
-#: checkpoint 选择指标白名单：只许 train/val（§5：不依据诊断/回放收益选 epoch）
+#: checkpoint 选择指标白名单：只许 train/val + 诊断计数（不依据诊断/回放收益选 epoch）
 _ALLOWED_METRIC_KEYS = frozenset(
     {"epoch", "train_loss", "val_loss", "val_task", "val_d", "val_s", "val_i",
-     "seconds"}
+     "seconds", "grad_norm", "nonfinite"}
 )
 
 
@@ -78,6 +80,16 @@ def _val_criterion_arm(arm: str) -> str:
     return "val_d" if arm == "D0" else "val_task"
 
 
+def _package_code_hash() -> str:
+    """dhead_distill 包源码指纹（R3：学生身份绑定代码 hash）。"""
+    h = hashlib.sha256()
+    pkg_dir = Path(__file__).resolve().parent
+    for f in sorted(pkg_dir.glob("*.py")):
+        h.update(f.name.encode("utf-8"))
+        h.update(f.read_bytes())
+    return h.hexdigest()
+
+
 def day_order(seed: int, epoch: int, n: int) -> list[int]:
     """确定性日序：SHA256 派生的 Fisher-Yates 混洗（可复现实验排序用）。
 
@@ -94,7 +106,13 @@ def day_order(seed: int, epoch: int, n: int) -> list[int]:
 
 @dataclass
 class DayTensor:
-    """一个决策日的物化批（清单顺序即批内顺序）。"""
+    """一个决策日的物化批（清单顺序即批内顺序）。
+
+    ``a``/``b``：R2 仿射还原系数 ``[B]``，由各样本历史 90 日原始 close 算出
+    （:func:`dhead_distill.data.affine_restore_params`）——只在
+    ``output_space="normalized_close_affine_return"`` 时被消费，**不来自
+    未来标签**，经显式张量字段传递（无隐藏全局状态）。
+    """
 
     date_iso: str
     x_norm: torch.Tensor      # [B,90,6]
@@ -102,6 +120,9 @@ class DayTensor:
     y_stamp: torch.Tensor     # [B,10,5]
     y_real: torch.Tensor      # [B,10]
     y_teacher: torch.Tensor   # [B,10]（replica 0）
+    y_teacher_r1: torch.Tensor  # [B,10]（replica 1，独立保真诊断用）
+    a: torch.Tensor           # [B] 仿射还原系数（R2）
+    b: torch.Tensor           # [B]
 
 
 def _materialize_days(m: DayManifest, teacher: np.ndarray) -> list[DayTensor]:
@@ -111,7 +132,7 @@ def _materialize_days(m: DayManifest, teacher: np.ndarray) -> list[DayTensor]:
     for i, s in enumerate(m.samples):
         idx_by_date.setdefault(s.date.strftime("%Y-%m-%d"), []).append(i)
     for d_iso, idxs in idx_by_date.items():
-        xs, ys, yt = [], [], []
+        xs, ys, yt, yt1, aa, bb = [], [], [], [], [], []
         for i in idxs:
             s = m.samples[i]
             key = (d_iso, s.code)
@@ -119,6 +140,10 @@ def _materialize_days(m: DayManifest, teacher: np.ndarray) -> list[DayTensor]:
                                          eps=1e-5, clip=5.0))
             ys.append(s.y_real)
             yt.append(teacher[i, 0])
+            yt1.append(teacher[i, 1])
+            a_i, b_i = affine_restore_params(m.x_raw[key])  # 只用历史 90 行
+            aa.append(a_i)
+            bb.append(b_i)
         days.append(
             DayTensor(
                 date_iso=d_iso,
@@ -129,6 +154,9 @@ def _materialize_days(m: DayManifest, teacher: np.ndarray) -> list[DayTensor]:
                     np.tile(m.y_stamp[d_iso][None], (len(idxs), 1, 1))),
                 y_real=torch.from_numpy(np.stack(ys)),
                 y_teacher=torch.from_numpy(np.stack(yt)),
+                y_teacher_r1=torch.from_numpy(np.stack(yt1)),
+                a=torch.tensor(aa, dtype=torch.float32),
+                b=torch.tensor(bb, dtype=torch.float32),
             )
         )
     return days
@@ -167,6 +195,8 @@ class UnifiedTrainer:
         max_epochs_override: Optional[int] = None,
         disable_early_stop: bool = False,
         hidden_cache: Optional[dict] = None,
+        output_space: str = "raw_return",
+        backbone_weight_hash: str = "",
     ):
         if arm not in TRAIN_ARMS:
             raise ValueError(f"未知臂：{arm}（可选 {TRAIN_ARMS}；T 为教师基线不训练）")
@@ -220,6 +250,11 @@ class UnifiedTrainer:
             "scale_hash": hashlib.sha256(
                 np.asarray(scale, dtype=np.float32).tobytes()).hexdigest(),
             "lora": bool(self._lora_named),
+            # R3：学生身份绑定——输出语义 / 底座权重指纹 / 代码指纹；
+            # 旧 checkpoint（无这些字段）不得当作新语义起点（装载层校验）。
+            "output_space": output_space,
+            "backbone_weight_hash": backbone_weight_hash,
+            "code_hash": _package_code_hash(),
             # 注：max_epochs / disable_early_stop 不入身份——延长训练
             # （断点续跑、S-long/D1-cont 预算匹配）是合法恢复场景
         }
@@ -305,9 +340,14 @@ class UnifiedTrainer:
             return self.backbone.extract(x, stamp)
 
     def _day_losses(self, batch: DayTensor) -> dict[str, torch.Tensor]:
-        """单日各损失（FP32；IC 在同日截面内计算）。"""
+        """单日各损失（FP32；IC 在同日截面内计算；R2 按输出语义还原）。"""
         hidden = self._hidden(batch).to(self.device)
-        pred = self.head(hidden, batch.y_stamp.to(self.device))
+        y_stamp = batch.y_stamp.to(self.device)
+        if self.identity["output_space"] == "normalized_close_affine_return":
+            pred = self.head(hidden, y_stamp, batch.a.to(self.device),
+                             batch.b.to(self.device))
+        else:
+            pred = self.head(hidden, y_stamp)
         y_real = batch.y_real.to(self.device)
         y_teacher = batch.y_teacher.to(self.device)
         s = normalized_mse(pred, y_real, self.scale_t)
@@ -317,7 +357,10 @@ class UnifiedTrainer:
             i = daily_ic_loss(pred, y_real)
         else:
             i = torch.zeros((), device=self.device)
-        return {"s": s, "d": d, "i": i, "task": arm_loss(self.arm, s, d, i)}
+        nonfinite = int((~torch.isfinite(pred)).sum())
+        return {"s": s, "d": d, "i": i, "nonfinite": nonfinite,
+                "pred": pred.detach(),
+                "task": arm_loss(self.arm, s, d, i)}
 
     def _clip_params(self) -> list:
         """梯度裁剪参数集：头 + （若 D2）LoRA。"""
@@ -330,14 +373,17 @@ class UnifiedTrainer:
         self.head.train()
         self.backbone.eval()  # 底座恒 eval（LoRA 可训但 dropout 关闭）
         order = day_order(self.seed, epoch, len(self.train_days))
-        tr_loss = 0.0
+        tr_loss, grad_norm_sum, nonfinite = 0.0, 0.0, 0
         for oi in order:
             losses = self._day_losses(self.train_days[oi])
             self.optimizer.zero_grad(set_to_none=True)
             losses["task"].backward()
-            torch.nn.utils.clip_grad_norm_(self._clip_params(), self.cfg.grad_clip)
+            gn = torch.nn.utils.clip_grad_norm_(
+                self._clip_params(), self.cfg.grad_clip)
+            grad_norm_sum += float(gn) if torch.isfinite(gn) else float("inf")
             self.optimizer.step()
             tr_loss += float(losses["task"])
+            nonfinite += int(losses["nonfinite"])
         tr_loss /= max(len(order), 1)
 
         self.head.eval()
@@ -347,6 +393,7 @@ class UnifiedTrainer:
                 losses = self._day_losses(batch)
                 for k in val:
                     val[k] += float(losses[k])
+                nonfinite += int(losses["nonfinite"])
         n = max(len(self.val_days), 1)
         val = {k: v / n for k, v in val.items()}
         val_task = val["s"] + 0.05 * val["i"]
@@ -355,6 +402,8 @@ class UnifiedTrainer:
             "val_d": val["d"], "val_s": val["s"], "val_i": val["i"],
             "val_task": val_task,
             "val_loss": val["d"] if self.arm == "D0" else val_task,
+            "grad_norm": grad_norm_sum / max(len(order), 1),
+            "nonfinite": nonfinite,
         }
 
     # ------------------------------------------------------------------

@@ -79,7 +79,14 @@ class TeacherRunner:
         teacher_top_k: int,
         predict_len: int,
         fork_devices: Optional[Sequence[str]] = None,
+        namespace: str = "v1",
+        model_eval_verified: bool = False,
     ):
+        if predict_fn is not None and not model_eval_verified:
+            raise ValueError(
+                "生成路径必须在 ensure_teacher_eval(predictor) 断言通过后"
+                "传 model_eval_verified=True——不能只信任写死的 model_eval 标记"
+            )
         self.manifest = manifest
         self._predict_fn = predict_fn
         self.weight_hash = weight_hash
@@ -91,17 +98,21 @@ class TeacherRunner:
         self.predict_len = predict_len
         self.fork_devices = list(fork_devices) if fork_devices is not None else None
         self.identity = {
+            "schema": 2,  # R3：schema 版本（v1 旧 manifest 无此字段 → 不混用）
+            "namespace": namespace,
             "protocol": manifest.protocol,
             "manifest_content_hash": manifest.content_hash,
             "weight_hash": weight_hash,
             "n_paths": n_paths, "replicas": replicas,
             "T": teacher_T, "top_p": teacher_top_p, "top_k": teacher_top_k,
             "predict_len": predict_len, "dtype": "float32",
-            # v1 修复 #1/#4：eval 模式入身份——dropout 态教师分片与本轮隔离
+            # v1 修复 #1/#4 + R3：eval 模式入身份——dropout 态教师分片与
+            # 本轮隔离；model_eval_verified 由调用方在 ensure_teacher_eval
+            # 实际断言后置 True（生成路径强制），装载路径按记录核验。
             "model_eval": True,
         }
         run_name = (
-            f"teacher-{manifest.profile}-{manifest.split}"
+            f"teacher-{namespace}-{manifest.profile}-{manifest.split}"
             f"-{manifest.content_hash[:12]}"
         )
         self.run_dir: Path = safe_artifact_dir(run_name)
@@ -154,8 +165,20 @@ class TeacherRunner:
     def _shard_path(self, date_iso: str) -> Path:
         return self.run_dir / f"day-{date_iso}.npz"
 
+    def _shard_content_hash(self, codes: np.ndarray, y: np.ndarray,
+                            close_t: np.ndarray) -> str:
+        """分片内容 SHA256（R3：done=1 不当内容校验，逐位可检篡改）。"""
+        h = hashlib.sha256()
+        h.update(np.ascontiguousarray(codes).tobytes())
+        h.update(np.ascontiguousarray(y, dtype=np.float32).tobytes())
+        h.update(np.ascontiguousarray(close_t, dtype=np.float64).tobytes())
+        return h.hexdigest()
+
     def _load_verified_shard(self, date_iso: str) -> Optional[dict]:
-        """读分片并核验完成键；不存在或未完成 → None（重新生成）。"""
+        """读分片并核验：完成键 + 内容 hash + 形状 + 有限性 + 样本键对齐。
+
+        任何一项不过 → None（生成路径重新生成；装载路径由调用方报错）。
+        """
         p = self._shard_path(date_iso)
         if not p.exists():
             return None
@@ -163,10 +186,33 @@ class TeacherRunner:
             z = np.load(p, allow_pickle=False)
             if int(z["done"]) != 1:
                 return None
+            codes = np.asarray(z["codes"])
+            y = np.asarray(z["y_teacher"], dtype=np.float32)
+            close_t = np.asarray(z["close_t"], dtype=np.float64)
+            stored_hash = str(z["content_sha256"])
+            # 内容 hash 重算（改一个数也会被发现）
+            if stored_hash != self._shard_content_hash(codes, y, close_t):
+                logger.warning(f"教师分片内容 hash 不符：{p.name}——视为损坏")
+                return None
+            # 形状 + 有限性 + 样本键
+            if y.ndim != 3 or y.shape[1] != self.replicas \
+                    or y.shape[2] != self.predict_len:
+                logger.warning(f"教师分片形状异常：{p.name} {y.shape}")
+                return None
+            if not (np.isfinite(y).all() and np.isfinite(close_t).all()):
+                logger.warning(f"教师分片含非有限值：{p.name}")
+                return None
+            day_codes = [
+                s.code for s in self.manifest.samples
+                if s.date.strftime("%Y-%m-%d") == date_iso
+            ]
+            if sorted(codes.tolist()) != sorted(day_codes):
+                logger.warning(f"教师分片样本键与清单不符：{p.name}")
+                return None
             return {
-                "codes": [str(c) for c in z["codes"]],
-                "y": z["y_teacher"].astype(np.float32),
-                "close_t": z["close_t"].astype(np.float64),
+                "codes": [str(c) for c in codes],
+                "y": y,
+                "close_t": close_t,
             }
         except Exception:  # noqa: BLE001 - 损坏分片视为未完成，重新生成
             logger.warning(f"教师分片损坏，将重新生成：{p.name}")
@@ -174,18 +220,23 @@ class TeacherRunner:
 
     def _write_shard(self, date_iso: str, codes: list[str],
                      y: np.ndarray, close_t: np.ndarray) -> None:
-        """原子落盘 + 重读核验完成键（不靠文件存在当完成）。"""
+        """原子落盘 + 重读核验（完成键 + 内容 hash + 形状，R3）。"""
         p = self._shard_path(date_iso)
+        codes_arr = np.array(codes)
+        y32 = y.astype(np.float32)
+        ct64 = close_t.astype(np.float64)
+        content = self._shard_content_hash(codes_arr, y32, ct64)
         # 临时文件名必须以 .npz 结尾：np.savez 对非 .npz 后缀会再追加 .npz
         tmp = self.run_dir / f"day-{date_iso}.tmp.npz"
         np.savez(
-            tmp, codes=np.array(codes), y_teacher=y.astype(np.float32),
-            close_t=close_t.astype(np.float64), done=np.int64(1),
+            tmp, codes=codes_arr, y_teacher=y32, close_t=ct64,
+            done=np.int64(1), content_sha256=np.array(content),
         )
         tmp.replace(p)
-        # 落盘后核验：重读 + 校验完成键与形状
+        # 落盘后核验：重读 + 内容 hash + 完成键与形状
         z = np.load(p, allow_pickle=False)
-        assert int(z["done"]) == 1 and z["y_teacher"].shape == y.shape
+        assert int(z["done"]) == 1 and z["y_teacher"].shape == y32.shape
+        assert str(z["content_sha256"]) == content
 
     # ------------------------------------------------------------------
     # 生成
@@ -280,29 +331,39 @@ class TeacherRunner:
         replicas: int,
         predict_len: int,
         expected_weight_hash: Optional[str] = None,
+        namespace: str = "v1",
+        n_paths: Optional[int] = None,
+        teacher_T: Optional[float] = None,
+        teacher_top_p: Optional[float] = None,
+        teacher_top_k: Optional[int] = None,
     ) -> "TeacherRunner":
-        """只读装载已生成的教师分片，并核验 run 身份（v1 修复 #4）。
+        """只读装载已生成的教师分片，并核验 run 身份（v1 修复 #4 + R3）。
 
-        替代 ``__new__`` 直通式装载：protocol / 清单内容 hash / replicas /
-        predict_len / model_eval 逐一比对 ``teacher_run.json``；
-        ``expected_weight_hash`` 给出时（train/evaluate 命令应传当前 G1
-        权重指纹）也比对，杜绝权重漂移后混用旧分片。任何不一致直接报错。
+        逐字段比对 ``teacher_run.json``：schema/namespace/protocol/清单内容
+        hash/replicas/predict_len/model_eval，以及给出期望值时的
+        weight_hash / n_paths / T / top_p / top_k——train 与 evaluate 两条
+        入口都应传当前 G1 权重指纹与完整教师协议，闭环权重漂移与协议漂移。
+        任何不一致直接报错（旧 v1 目录不含 schema/namespace 字段 → 天然
+        拒绝，不会被新代码误用）。
 
         :returns: 绑定 run_dir 的只读 runner（无 predict_fn，不可再生成）。
         """
         from dhead_distill.data import safe_artifact_dir as sad
 
         run_dir = sad(
-            f"teacher-{manifest.profile}-{manifest.split}"
+            f"teacher-{namespace}-{manifest.profile}-{manifest.split}"
             f"-{manifest.content_hash[:12]}"
         )
         manifest_path = run_dir / "teacher_run.json"
         if not manifest_path.exists():
             raise FileNotFoundError(
-                f"教师 run manifest 不存在：{manifest_path}（先运行 teacher）"
+                f"教师 run manifest 不存在：{manifest_path}（先运行 teacher，"
+                f"namespace={namespace}）"
             )
         stored = json.loads(manifest_path.read_text("utf-8"))
-        expect = {
+        expect: dict = {
+            "schema": 2,
+            "namespace": namespace,
             "protocol": manifest.protocol,
             "manifest_content_hash": manifest.content_hash,
             "replicas": replicas,
@@ -311,11 +372,20 @@ class TeacherRunner:
         }
         if expected_weight_hash is not None:
             expect["weight_hash"] = expected_weight_hash
+        if n_paths is not None:
+            expect["n_paths"] = n_paths
+        if teacher_T is not None:
+            expect["T"] = teacher_T
+        if teacher_top_p is not None:
+            expect["top_p"] = teacher_top_p
+        if teacher_top_k is not None:
+            expect["top_k"] = teacher_top_k
         for k, v in expect.items():
             if stored.get(k) != v:
                 raise RuntimeError(
                     f"教师缓存身份不一致（{k}：缓存 {stored.get(k)!r} ≠ "
-                    f"本次 {v!r}）——拒绝混用，请重跑 teacher 生成"
+                    f"本次 {v!r}，namespace={namespace}）——拒绝混用，"
+                    f"请重跑 teacher 生成"
                 )
         r = cls.__new__(cls)
         r.manifest = manifest

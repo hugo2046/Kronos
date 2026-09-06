@@ -86,6 +86,44 @@ def window_zscore_clip(x: np.ndarray, *, eps: float, clip: float) -> np.ndarray:
     return np.clip(z, -clip, clip).astype(np.float32)
 
 
+#: close 在 feature_cols（open,high,low,close,volume,amount）中的列下标
+CLOSE_COL = 3
+
+
+def affine_restore_params(x_raw: np.ndarray, *, eps: float = 1e-5,
+                          close_col: int = CLOSE_COL) -> tuple[float, float]:
+    """R2 仿射还原系数 (a_i, b_i)：只由该样本过去 90 日**原始** close 算出。
+
+    契约（docs/DHead复核与最小试验修订要求_20260906.md §R2）::
+
+        mu    = mean(close_hist)                 # float64，np.mean
+        denom = std(close_hist, ddof=0) + eps    # float64，np.std 总体
+        a     = denom / close_t
+        b     = (mu - close_t) / close_t
+        r_hat = a * z_hat + b                    # ≡ z*denom/ct + mu/ct − 1
+                                             # ≡ close_pred/close_t − 1（教师公式）
+
+    与 ``KronosPredictor.predict`` 的 close 反归一化**逐位同源**：predict 在
+    float64 窗口上做同款 np.mean/np.std（eps=1e-5、ddof=0），再
+    ``pred*(std+1e-5)+mean``；本函数输入即教师生成所用的同一 x_raw（存储
+    float32 → 双方一致地 astype(float64)），故 r_hat 与
+    ``y_teacher = pred_close/close_t − 1`` 代数等价、数值同精度。
+    未来数据不参与 a/b（只用历史 90 行）。
+    """
+    close = np.asarray(x_raw, dtype=np.float64)[:, close_col]
+    mu = float(close.mean())
+    denom = float(close.std()) + eps  # 总体标准差（ddof=0），与 predict 一致
+    close_t = float(close[-1])
+    if not (np.isfinite(mu) and np.isfinite(denom) and close_t > 0
+            and np.isfinite(close_t)):
+        raise ValueError(
+            f"仿射还原系数非有限/非正 close_t：mu={mu} denom={denom} close_t={close_t}"
+        )
+    a = denom / close_t
+    b = (mu - close_t) / close_t
+    return float(a), float(b)
+
+
 def equal_interval(cands: list[pd.Timestamp], n: int) -> list[pd.Timestamp]:
     """排序候选日上 ``np.linspace(0, n-1, min(n,len), dtype=int)`` 等间隔取日。"""
     if n <= 0 or not cands:

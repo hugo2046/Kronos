@@ -37,16 +37,20 @@ class MultiHorizonHead(nn.Module):
         n_heads: int = 4,
         n_horizons: int = 10,
         calendar_cardinalities: Sequence[int] = (60, 24, 7, 32, 13),
+        output_space: str = "raw_return",
     ) -> None:
         super().__init__()
         if len(calendar_cardinalities) != 5:
             raise ValueError("future_stamp 须为 5 列（minute/hour/weekday/day/month）")
         if d_model <= 0 or head_dim <= 0:
             raise ValueError("d_model / head_dim 须为正")
+        if output_space not in ("raw_return", "normalized_close_affine_return"):
+            raise ValueError(f"未知 output_space：{output_space}")
         self.d_model = d_model
         self.head_dim = head_dim
         self.n_horizons = n_horizons
         self.cardinalities = tuple(int(c) for c in calendar_cardinalities)
+        self.output_space = output_space
 
         self.proj = nn.Linear(d_model, head_dim)
         self.calendar_embeddings = nn.ModuleList(
@@ -85,11 +89,23 @@ class MultiHorizonHead(nn.Module):
                     f"实测 [{int(col.min())},{int(col.max())}]"
                 )
 
-    def forward(self, hidden: torch.Tensor, future_stamp: torch.Tensor) -> torch.Tensor:
+    def forward(
+        self, hidden: torch.Tensor, future_stamp: torch.Tensor,
+        a: torch.Tensor | None = None, b: torch.Tensor | None = None,
+    ) -> torch.Tensor:
         """前向：历史隐状态 + 未来日历 → ``[B,n_horizons]`` 收益预测。
+
+        两种输出语义（R2，由 ``output_space`` 冻结于构造/协议身份）：
+
+        - ``raw_return``（v1）：直接输出原始收益，禁止传 a/b；
+        - ``normalized_close_affine_return``：输出标准化未来 close z，
+          经逐样本仿射还原 ``r_hat = a_i·z + b_i``（a/b 只由历史 90 日原始
+          close 算出，见 :func:`dhead_distill.data.affine_restore_params`；
+          a/b 必须显式传入，缺失报错——不靠隐藏全局状态）。
 
         :param hidden: 冻结底座隐状态 ``[B,T,d_model]``。
         :param future_stamp: 未来日历 ``[B,H,5]``。
+        :param a/b: ``[B]`` 仿射还原系数（仅 affine 语义）。
         :returns: ``[B,H]`` 各期限收益预测（原始小数单位）。
         """
         self.validate_future_stamp(future_stamp)
@@ -101,7 +117,20 @@ class MultiHorizonHead(nn.Module):
         )
         query = self.horizon_embedding.weight.unsqueeze(0) + calendar
         pooled, _ = self.attn(query, memory, memory, need_weights=False)
-        return self.out(self.norm(query + pooled)).squeeze(-1)
+        z = self.out(self.norm(query + pooled)).squeeze(-1)
+        if self.output_space == "raw_return":
+            if a is not None or b is not None:
+                raise ValueError("output_space=raw_return 不接受仿射系数 a/b")
+            return z
+        if a is None or b is None:
+            raise ValueError(
+                "output_space=normalized_close_affine_return 必须传入逐样本 a/b"
+            )
+        if a.shape != z.shape[:1] or b.shape != z.shape[:1]:
+            raise ValueError(
+                f"a/b 形状 {tuple(a.shape)}/{tuple(b.shape)} 须为 [B]={tuple(z.shape[:1])}"
+            )
+        return a.unsqueeze(-1) * z + b.unsqueeze(-1)
 
     def parameter_summary(self) -> dict:
         """实测参数统计（§4.1：记录实测可训练参数数目，不依赖估计文字）。"""
@@ -114,6 +143,7 @@ class MultiHorizonHead(nn.Module):
             "head_dim": self.head_dim,
             "n_horizons": self.n_horizons,
             "calendar_cardinalities": list(self.cardinalities),
+            "output_space": self.output_space,
         }
 
 

@@ -64,13 +64,13 @@ def _artifact_root() -> Path:
 
 
 def _load_manifest(profile: str, split: str, cfg: DHeadConfig | None = None) -> "DayManifest":
-    """按 profile/split 装载 prepare 产物（v1 修复 #4：协议过滤 + 内容校验）。
+    """按 profile/split 装载 prepare 产物（v1 修复 #4 + R3：数据集级协议过滤）。
 
-    候选目录先按 ``manifest.json`` 的 protocol/profile/split 过滤（cfg 给出
-    时必须与 ``protocol_hash(cfg)`` 一致——防协议漂移后误用旧清单），
-    多个匹配取 mtime 最新；装载时重算内容 hash 防静默损坏。
+    过滤用 :func:`dataset_protocol_hash(cfg)`——学生级字段（输出语义/损失
+    尺度口径）不影响清单选取（A/B 两臂共用同一冻结清单），任何数据侧字段
+    变化仍失配；装载时重算内容 hash 防静默损坏。
     """
-    from dhead_distill.config import protocol_hash as _ph
+    from dhead_distill.config import dataset_protocol_hash
     from dhead_distill.data import DayManifest
 
     root = _artifact_root()
@@ -81,7 +81,7 @@ def _load_manifest(profile: str, split: str, cfg: DHeadConfig | None = None) -> 
         raise FileNotFoundError(
             f"未找到 prepare 产物：prepare-{profile}-{split}-*（先运行 prepare）"
         )
-    want_protocol = _ph(cfg) if cfg is not None else None
+    want_protocol = dataset_protocol_hash(cfg) if cfg is not None else None
     matched = []
     for p in cands:
         try:
@@ -95,8 +95,8 @@ def _load_manifest(profile: str, split: str, cfg: DHeadConfig | None = None) -> 
         matched.append(p)
     if not matched:
         raise FileNotFoundError(
-            f"prepare 产物与当前协议不匹配：prepare-{profile}-{split}-* "
-            f"(protocol={str(want_protocol)[:12]})——请用当前配置重跑 prepare"
+            f"prepare 产物与当前数据集协议不匹配：prepare-{profile}-{split}-* "
+            f"(dataset_protocol={str(want_protocol)[:12]})——请用当前配置重跑 prepare"
         )
     matched.sort(key=lambda p: p.stat().st_mtime)
     return DayManifest.load(matched[-1].name, verify=True)
@@ -258,15 +258,19 @@ def _load_predictor(env) -> tuple:
 
 
 def cmd_teacher(args: argparse.Namespace) -> int:
-    """教师 3-replica 生成（真实 G1 只在本命令内加载）。"""
+    """教师 3-replica 生成（真实 G1 只在本命令内加载；R3 支持 namespace）。"""
+    from dhead_distill.teacher import ensure_teacher_eval
+
+    _require_profile_gate(args.profile)  # R4：main teacher 入口实检 pilot 门禁
     cfg = DHeadConfig.with_profile(args.profile)
     env = resolve_env()
     predictor, w_hash = _load_predictor(env)
+    ensure_teacher_eval(predictor)  # 生成前实际断言（R3：不只信写死标记）
     splits = args.splits.split(",") if args.splits else ["train", "val"]
     for split in splits:
         from dhead_distill.teacher import TeacherRunner
 
-        m = _load_manifest(args.profile, split)
+        m = _load_manifest(args.profile, split, cfg)
         runner = TeacherRunner(
             manifest=m,
             predict_fn=predictor.predict,
@@ -278,6 +282,8 @@ def cmd_teacher(args: argparse.Namespace) -> int:
             teacher_top_k=cfg.teacher_top_k,
             predict_len=cfg.predict_len,
             fork_devices=["cuda:0"],
+            namespace=args.namespace,
+            model_eval_verified=True,
         )
         t0 = time.time()
         runner.run()
@@ -293,6 +299,14 @@ def cmd_teacher(args: argparse.Namespace) -> int:
 # ======================================================================
 # train
 # ======================================================================
+
+
+def _g1_weight_hash(env) -> str:
+    """当前 G1 权重联合指纹（train/evaluate 装载教师分片时比对，R3）。"""
+    return hashlib.sha256(
+        _sha256_file(env.g1_tokenizer / "model.safetensors").encode()
+        + _sha256_file(env.g1_predictor / "model.safetensors").encode()
+    ).hexdigest()
 
 
 def _train_scale(train_manifest, cfg: DHeadConfig | None = None,
@@ -319,14 +333,27 @@ def _train_run_name(profile: str, arm: str, seed: int) -> str:
     return f"train-{profile}-{arm}-s{seed}"
 
 
-def _load_head_ckpt(profile: str, arm: str, seed: int, epoch: int):
-    """读指定臂 best epoch 的 head state_dict（dhead_distill.train 产物）。"""
+def _load_head_ckpt(profile: str, arm: str, seed: int, epoch: int,
+                    run_prefix: str = "train-", *,
+                    output_space: str = "raw_return"):
+    """读指定臂 best epoch 的 head state_dict（含 R2 语义守卫）。
+
+    checkpoint 身份的 ``output_space`` 必须与当前请求一致；v1 旧 ckpt
+    （无该字段）不得当作新语义（affine）的起点。
+    """
     import torch
 
     from dhead_distill.data import safe_artifact_dir
 
-    d = safe_artifact_dir(_train_run_name(profile, arm, seed))
+    d = safe_artifact_dir(f"{run_prefix}{profile}-{arm}-s{seed}")
     ck = torch.load(d / f"epoch-{epoch}.pt", weights_only=True)
+    ck_os = ck.get("identity", {}).get("output_space")
+    if ck_os != output_space:
+        raise RuntimeError(
+            f"checkpoint 输出语义不匹配：{arm} epoch{epoch} ckpt 为 "
+            f"{ck_os!r}，当前请求 {output_space!r}——旧语义权重禁止作为"
+            f"新语义起点（R2）"
+        )
     return ck["head"]
 
 
@@ -359,6 +386,7 @@ def cmd_train(args: argparse.Namespace) -> int:
     if arm not in TRAIN_ARMS:
         logger.error(f"未知臂：{arm}（可选 {TRAIN_ARMS}；T 为教师基线不训练）")
         return 2
+    _require_profile_gate(profile)   # R4：main/D1 扩大入口实检 pilot 门禁
     cfg = DHeadConfig.with_profile(profile)
     env = resolve_env()
     device = _require_gpu()
@@ -367,16 +395,15 @@ def cmd_train(args: argparse.Namespace) -> int:
     val_m = _load_manifest(profile, "val", cfg)
 
     def _targets(m) -> np.ndarray:
-        """只读已生成的教师分片（v1 修复 #4：身份核验装载，含权重指纹比对）。"""
+        """只读教师分片（R3 闭环：权重指纹 + 完整教师协议核验）。"""
         from dhead_distill.teacher import TeacherRunner
 
-        w_now = hashlib.sha256(
-            _sha256_file(env.g1_tokenizer / "model.safetensors").encode()
-            + _sha256_file(env.g1_predictor / "model.safetensors").encode()
-        ).hexdigest()
         r = TeacherRunner.load_verified(
             m, replicas=cfg.teacher_replicas, predict_len=cfg.predict_len,
-            expected_weight_hash=w_now,
+            expected_weight_hash=_g1_weight_hash(env),
+            namespace=args.namespace,
+            n_paths=cfg.teacher_n_paths, teacher_T=cfg.teacher_T,
+            teacher_top_p=cfg.teacher_top_p, teacher_top_k=cfg.teacher_top_k,
         )
         return r.load_targets_array()[0]
 
@@ -395,6 +422,7 @@ def cmd_train(args: argparse.Namespace) -> int:
         d_model=cfg.d_model, head_dim=cfg.head_dim, n_heads=cfg.head_n_heads,
         n_horizons=cfg.n_horizons,
         calendar_cardinalities=cfg.calendar_cardinalities,
+        output_space=cfg.output_space,
     ).to(device)
 
     lora_named = None
@@ -402,13 +430,17 @@ def cmd_train(args: argparse.Namespace) -> int:
     disable_early_stop = False
     _require_arm_ready(profile, arm, seed)   # v1 修复 #5：前置臂显式门禁
     if arm == "D1":
-        head.load_state_dict(_load_head_ckpt(profile, "D0", seed,
-                                             _best_epoch_of(profile, "D0", seed)))
+        head.load_state_dict(
+            _load_head_ckpt(profile, "D0", seed,
+                            _best_epoch_of(profile, "D0", seed),
+                            output_space=cfg.output_space))
         logger.info(f"D1 ← D0 best-D checkpoint（epoch {_best_epoch_of(profile, 'D0', seed)}）")
     elif arm == "D2":
-        _require_d2_gate(profile, seed)
-        head.load_state_dict(_load_head_ckpt(profile, "D1", seed,
-                                             _best_epoch_of(profile, "D1", seed)))
+        _require_d2_gate(profile, seed, cfg)
+        head.load_state_dict(
+            _load_head_ckpt(profile, "D1", seed,
+                            _best_epoch_of(profile, "D1", seed),
+                            output_space=cfg.output_space))
         lora_named = inject_lora(
             backbone, rank=cfg.lora_rank, alpha=cfg.lora_alpha,
             dropout=cfg.lora_dropout, targets=cfg.lora_targets)
@@ -423,8 +455,10 @@ def cmd_train(args: argparse.Namespace) -> int:
                 / "result.json").exists():
             logger.error("D1-cont 须在 D2 之后运行（步数匹配对象）")
             return 2
-        head.load_state_dict(_load_head_ckpt(profile, "D1", seed,
-                                             _best_epoch_of(profile, "D1", seed)))
+        head.load_state_dict(
+            _load_head_ckpt(profile, "D1", seed,
+                            _best_epoch_of(profile, "D1", seed),
+                            output_space=cfg.output_space))
         max_epochs_override = _arm_epochs(profile, "D2", seed)
         disable_early_stop = True
         logger.info(f"D1-cont ← D1 best-task 起点，延长 {max_epochs_override} epoch")
@@ -437,6 +471,8 @@ def cmd_train(args: argparse.Namespace) -> int:
         lora_named=lora_named,
         max_epochs_override=max_epochs_override,
         disable_early_stop=disable_early_stop,
+        output_space=cfg.output_space,
+        backbone_weight_hash=_g1_weight_hash(env),
     )
     res = trainer.fit()
     logger.info(
@@ -446,8 +482,9 @@ def cmd_train(args: argparse.Namespace) -> int:
     return 0
 
 
-def _require_d2_gate(profile: str, seed: int) -> None:
-    """D2 解锁核验（§8.3；v1 修复 #5：门禁文件须与请求 seed 一致）。"""
+def _require_d2_gate(profile: str, seed: int, cfg: DHeadConfig) -> None:
+    """D2 解锁核验（§8.3；R4：profile/seed/协议/数据/选中点全身份比对）。"""
+    from dhead_distill.config import dataset_protocol_hash, protocol_hash
     from dhead_distill.data import safe_artifact_dir
 
     gate_path = safe_artifact_dir(f"eval-{profile}-fidelity") / "summary.json"
@@ -456,14 +493,47 @@ def _require_d2_gate(profile: str, seed: int) -> None:
             "D2 未解锁：先运行 evaluate --stage fidelity（§8.3 条件未核验）"
         )
     doc = json.loads(gate_path.read_text("utf-8"))
-    if doc.get("seed") != seed:
-        raise RuntimeError(
-            f"D2 门禁 seed 不匹配：门禁文件为 seed={doc.get('seed')}，"
-            f"请求 seed={seed}——每个 seed 须独立过门禁（§8.3）"
-        )
+    checks = {
+        "seed": (doc.get("seed"), seed),
+        "protocol": (doc.get("protocol"), protocol_hash(cfg)),
+        "dataset_protocol": (
+            doc.get("dataset_protocol"), dataset_protocol_hash(cfg)),
+        "output_space": (doc.get("output_space"), cfg.output_space),
+    }
+    for k, (got, want) in checks.items():
+        if got != want:
+            raise RuntimeError(
+                f"D2 门禁 {k} 不匹配：门禁文件 {got!r} ≠ 当前 {want!r}——"
+                f"协议/数据/语义变化后须重新过 fidelity 门禁（R4）"
+            )
     if not doc.get("d2_unlocked", False):
         raise RuntimeError(
             f"D2 未解锁：保真/改进条件未满足——{doc.get('d2_reason', '未知原因')}"
+        )
+
+
+def _require_profile_gate(profile: str) -> None:
+    """R4：main 侧 teacher/train（含 D1 扩大）必须实检 pilot 门禁。
+
+    前置 result.json 存在 ≠ 门禁通过——main 入口要求 pilot fidelity 摘要
+    存在且 D0 保真门禁 PASS（§8.2 冻结规则）。pilot 门禁未过时 main 全锁。
+    """
+    from dhead_distill.data import safe_artifact_dir
+
+    if profile != "main":
+        return
+    gate_path = safe_artifact_dir("eval-pilot-fidelity") / "summary.json"
+    if not gate_path.exists():
+        raise RuntimeError(
+            "main 入口被拒：pilot fidelity 门禁未运行（先 evaluate --profile "
+            "pilot --stage fidelity）——R4：不得以'存在结果文件'替代门禁"
+        )
+    doc = json.loads(gate_path.read_text("utf-8"))
+    d0 = (doc.get("arms") or {}).get("D0") or {}
+    if not (d0.get("gate") or {}).get("passed", False):
+        raise RuntimeError(
+            "main 入口被拒：pilot D0 保真门禁未通过（§8.2 冻结规则，"
+            f"gate={d0.get('gate')}）"
         )
 
 
@@ -497,8 +567,13 @@ def _require_arm_ready(profile: str, arm: str, seed: int) -> None:
 # ======================================================================
 
 
-def _predict_arm(profile: str, arm: str, seed: int, manifest, cfg) -> np.ndarray:
-    """用某臂 best checkpoint 在清单上推理，返回 [N,10]（按 samples 顺序）。"""
+def _predict_arm(profile: str, arm: str, seed: int, manifest, cfg,
+                 run_prefix: str = "train-") -> np.ndarray:
+    """用某臂 best checkpoint 在清单上推理，返回 [N,10]（按 samples 顺序）。
+
+    R2：按 checkpoint 的输出语义调用（affine 需逐样本 a/b，由
+    ``_materialize_days`` 从历史 90 日算出）。
+    """
     import torch
 
     from dhead_distill.backbone import inject_lora, load_g1_student
@@ -512,14 +587,20 @@ def _predict_arm(profile: str, arm: str, seed: int, manifest, cfg) -> np.ndarray
         d_model=cfg.d_model, head_dim=cfg.head_dim, n_heads=cfg.head_n_heads,
         n_horizons=cfg.n_horizons,
         calendar_cardinalities=cfg.calendar_cardinalities,
+        output_space=cfg.output_space,
     ).to(device)
-    head.load_state_dict(_load_head_ckpt(profile, arm, seed,
-                                         _best_epoch_of(profile, arm, seed)))
+    head.load_state_dict(
+        _load_head_ckpt(profile, arm, seed, _best_epoch_of(profile, arm, seed),
+                        run_prefix=run_prefix, output_space=cfg.output_space))
     head.eval()
     if arm == "D2":
         inject_lora(backbone, rank=cfg.lora_rank, alpha=cfg.lora_alpha,
                     dropout=cfg.lora_dropout, targets=cfg.lora_targets)
-        ck = torch.load(_load_ckpt_path(profile, arm, seed), weights_only=True)
+        from dhead_distill.data import safe_artifact_dir
+
+        d = safe_artifact_dir(f"{run_prefix}{profile}-{arm}-s{seed}")
+        ck = torch.load(d / f"epoch-{_best_epoch_of(profile, arm, seed)}.pt",
+                        weights_only=True)
         if "lora" in ck:
             # inject_lora 的名字相对 kronos 前缀，补 "kronos." 后整体装载
             lora_state = {f"kronos.{k}": v for k, v in ck["lora"].items()}
@@ -528,11 +609,17 @@ def _predict_arm(profile: str, arm: str, seed: int, manifest, cfg) -> np.ndarray
     days = _materialize_days(manifest, np.zeros((len(manifest.samples),
                                                  cfg.teacher_replicas, 10),
                                                 dtype=np.float32))
+    affine = cfg.output_space == "normalized_close_affine_return"
     preds = []
     with torch.no_grad():
         for b in days:
             h = backbone.extract(b.x_norm.to(device), b.x_stamp.to(device))
-            preds.append(head(h, b.y_stamp.to(device)).cpu().numpy())
+            y_stamp = b.y_stamp.to(device)
+            if affine:
+                p = head(h, y_stamp, b.a.to(device), b.b.to(device))
+            else:
+                p = head(h, y_stamp)
+            preds.append(p.cpu().numpy())
     return np.concatenate(preds, axis=0)
 
 
@@ -544,12 +631,17 @@ def _load_ckpt_path(profile: str, arm: str, seed: int) -> Path:
     return p
 
 
-def _teacher_array_for(profile: str, manifest, cfg) -> np.ndarray:
-    """装载教师 [N,R,10] 分片（v1 修复 #4：身份核验装载）。"""
+def _teacher_array_for(profile: str, manifest, cfg,
+                       namespace: str = "v1") -> np.ndarray:
+    """装载教师 [N,R,10] 分片（R3：评价路径同样核验权重指纹+完整协议）。"""
     from dhead_distill.teacher import TeacherRunner
 
     r = TeacherRunner.load_verified(
         manifest, replicas=cfg.teacher_replicas, predict_len=cfg.predict_len,
+        expected_weight_hash=_g1_weight_hash(resolve_env()),
+        namespace=namespace,
+        n_paths=cfg.teacher_n_paths, teacher_T=cfg.teacher_T,
+        teacher_top_p=cfg.teacher_top_p, teacher_top_k=cfg.teacher_top_k,
     )
     return r.load_targets_array()[0]
 
@@ -572,24 +664,39 @@ def cmd_evaluate(args: argparse.Namespace) -> int:
     cfg = DHeadConfig.with_profile(args.profile)
     seed = args.seed
     if args.stage == "fidelity":
-        return _eval_fidelity(args.profile, seed, cfg)
+        return _eval_fidelity(args.profile, seed, cfg, args.namespace)
     if args.stage == "prediction":
-        return _eval_prediction(args.profile, seed, cfg)
+        return _eval_prediction(args.profile, seed, cfg, args.namespace)
     return _eval_economic(args.profile, cfg)
 
 
-def _eval_fidelity(profile: str, seed: int, cfg) -> int:
-    """保真门禁：val 清单上逐臂 E/R/Spearman + D2 解锁判定（§8.2/§8.3）。"""
+def _eval_fidelity(profile: str, seed: int, cfg, namespace: str = "v1") -> int:
+    """保真门禁：val 清单上逐臂 E/R/Spearman + D2 解锁判定（§8.2/§8.3 + R1/R3/R4）。"""
+    from dhead_distill.config import dataset_protocol_hash, protocol_hash
     from dhead_distill.data import safe_artifact_dir
     from dhead_distill.evaluate import fidelity_gate, fidelity_metrics
+    from dhead_distill.train import _package_code_hash
 
     val_m = _load_manifest(profile, "val", cfg)
-    val_teacher = _teacher_array_for(profile, val_m, cfg)
+    train_m = _load_manifest(profile, "train", cfg)
+    val_teacher = _teacher_array_for(profile, val_m, cfg, namespace)
     days = _days_for_eval(val_m, val_teacher, cfg)
-    scale = np.asarray(_train_scale(_load_manifest(profile, "train", cfg), cfg))
+    scale = np.asarray(_train_scale(train_m, cfg))
 
-    summary: dict = {"stage": "fidelity", "profile": profile, "seed": seed,
-                     "split": "val", "arms": {}}
+    summary: dict = {
+        "stage": "fidelity", "profile": profile, "seed": seed,
+        "split": "val", "arms": {},
+        # R3/R4：summary 绑定代码/权重/清单/协议/输出语义——D2 门禁逐项比对
+        "protocol": protocol_hash(cfg),
+        "dataset_protocol": dataset_protocol_hash(cfg),
+        "output_space": cfg.output_space,
+        "code_hash": _package_code_hash(),
+        "weight_hash": _g1_weight_hash(resolve_env()),
+        "train_manifest_hash": train_m.content_hash,
+        "val_manifest_hash": val_m.content_hash,
+        "scale_hash": __import__("hashlib").sha256(
+            np.asarray(scale, dtype=np.float32).tobytes()).hexdigest(),
+    }
     for arm in ("D0", "D1", "D2"):
         from dhead_distill.data import safe_artifact_dir as sad
 
@@ -612,7 +719,7 @@ def _eval_fidelity(profile: str, seed: int, cfg) -> int:
             f"gate={'PASS' if met['gate']['passed'] else 'FAIL'}"
         )
 
-    # D2 解锁（§8.3；v1 修复 #2：统一 val_task 口径，经 evaluate.d2_unlock_condition）
+    # D2 解锁（§8.3；R1：按实际选中 checkpoint 比较，经 evaluate.d2_unlock_condition）
     d0, d1 = summary["arms"].get("D0"), summary["arms"].get("D1")
     unlocked, reason = False, "D0/D1 结果不齐"
     if d0 and d1:
@@ -623,13 +730,17 @@ def _eval_fidelity(profile: str, seed: int, cfg) -> int:
                              / "result.json").read_text("utf-8"))
         d1_res = json.loads((sad(_train_run_name(profile, "D1", seed))
                              / "result.json").read_text("utf-8"))
-        verdict = d2_unlock_condition(d0_res["history"], d1_res["history"],
-                                      d0, d1)
+        verdict = d2_unlock_condition(d0_res, d1_res, d0, d1)
         unlocked = verdict["unlocked"]
         reason = (f"条件 {verdict['conditions']} "
-                  f"(D0 val_task*={verdict['best_d0_val_task']:.4f}, "
-                  f"D1 val_task*={verdict['best_d1_val_task']:.4f})")
+                  f"(D0 选中 e{verdict['d0_selected_epoch']} "
+                  f"val_task={verdict['d0_selected_val_task']:.4f}，"
+                  f"D1 选中 e{verdict['d1_selected_epoch']} "
+                  f"val_task={verdict['d1_selected_val_task']:.4f})")
         summary["d2_unlock_detail"] = verdict
+        # R1：fidelity 分数绑定同一 checkpoint 身份
+        summary["arms"]["D0"]["selected_epoch"] = verdict["d0_selected_epoch"]
+        summary["arms"]["D1"]["selected_epoch"] = verdict["d1_selected_epoch"]
     summary["d2_unlocked"] = unlocked
     summary["d2_reason"] = reason
 
@@ -640,15 +751,16 @@ def _eval_fidelity(profile: str, seed: int, cfg) -> int:
     return 0
 
 
-def _eval_prediction(profile: str, seed: int, cfg) -> int:
-    """真实标签指标 + 配对 bootstrap（诊断清单，§8.4）。"""
+def _eval_prediction(profile: str, seed: int, cfg,
+                     namespace: str = "v1") -> int:
+    """真实标签指标 + 配对 bootstrap（诊断清单，§8.4；R4：p 值显式未实现）。"""
     from dhead_distill.data import safe_artifact_dir
     from dhead_distill.evaluate import (
-        block_bootstrap_paired_diff, daily_rank_ic, holm_correction,
+        block_bootstrap_paired_diff, daily_rank_ic,
     )
 
     diag_m = _load_manifest(profile, "diag", cfg)
-    teacher = _teacher_array_for(profile, diag_m, cfg)
+    teacher = _teacher_array_for(profile, diag_m, cfg, namespace)
     days = _days_for_eval(diag_m, teacher, cfg)
 
     arms = [a for a in ("D0", "S", "D1", "D2", "S-long", "D1-cont")
@@ -656,7 +768,8 @@ def _eval_prediction(profile: str, seed: int, cfg) -> int:
                 / "result.json").exists()]
     preds: dict[str, dict[int, np.ndarray]] = {}
     summary: dict = {"stage": "prediction", "profile": profile, "seed": seed,
-                     "split": "diag", "arms": {}}
+                     "split": "diag", "arms": {},
+                     "namespace": namespace}
     for arm in arms:
         p_all = _predict_arm(profile, arm, seed, diag_m, cfg)
         preds[arm] = {k: v for k, v in enumerate(p_all)}
@@ -697,14 +810,10 @@ def _eval_prediction(profile: str, seed: int, cfg) -> int:
             pairs[f"{a}-{b}"] = ci
             logger.info(f"paired {a}−{b}: 点估计 {ci['point']:+.4f} "
                         f"95%CI [{ci['lo']:+.4f}, {ci['hi']:+.4f}]")
-    if len(pairs) == 2:
-        # 两项均检验 → Holm 校正（用平价正态近似 p 值示意，报告原区间为主）
-        from scipy import stats as sps
-
-        pvals = [2 * (1 - sps.norm.cdf(abs(ci["point"] /
-                     max(np.sqrt(max(ci["hi"] - ci["lo"], 1e-12) ** 2 / 4 / 10), 1e-9))))
-                 for ci in pairs.values()]
-        summary["holm_adjusted_p"] = holm_correction(pvals)
+    # R4：显著性检验（p 值 / Holm）显式标为未实现——旧"示意公式"是错误统计，
+    # 已删除；实现时须配数学独立测试。bootstrap 区间含抽样单位声明。
+    summary["p_values"] = None
+    summary["p_value_status"] = "not_implemented（复核 20260906 R4 禁用示意公式）"
     summary["paired"] = pairs
 
     out_dir = safe_artifact_dir(f"eval-{profile}-prediction")
@@ -746,17 +855,26 @@ def build_parser() -> argparse.ArgumentParser:
     tp = sub.add_parser("teacher", help="教师 3-replica 生成")
     tp.add_argument("--profile", required=True, choices=sorted(PROFILES))
     tp.add_argument("--splits", default="", help="默认 train,val")
+    tp.add_argument("--namespace", default="v1",
+                    help="run 命名空间（R3：新旧产物共存，如 v11-rev2）")
 
     tr = sub.add_parser("train", help="训练臂")
     tr.add_argument("--profile", required=True, choices=sorted(PROFILES))
     tr.add_argument("--arm", required=True)
     tr.add_argument("--seed", type=int, default=42)
+    tr.add_argument("--namespace", default="v1",
+                    help="教师分片命名空间（须与 teacher 生成一致）")
 
     ev = sub.add_parser("evaluate", help="评价与阶段门禁")
     ev.add_argument("--profile", required=True, choices=sorted(PROFILES))
     ev.add_argument("--stage", required=True,
                     choices=["fidelity", "prediction", "economic"])
     ev.add_argument("--seed", type=int, default=42)
+    ev.add_argument("--namespace", default="v1",
+                    help="教师分片命名空间（须与 teacher 生成一致）")
+
+    mf = sub.add_parser("minimal-fit", help="v1.1 rev2 最小拟合试验（A/B 两臂）")
+    mf.add_argument("--namespace", default="v11-rev2")
     return p
 
 
@@ -772,6 +890,10 @@ def main(argv: list[str] | None = None) -> int:
         return cmd_train(args)
     if args.cmd == "evaluate":
         return cmd_evaluate(args)
+    if args.cmd == "minimal-fit":
+        from dhead_distill.minimal_fit import run
+
+        return run(args.namespace)
     logger.error(f"未知命令：{args.cmd}")
     return 2
 

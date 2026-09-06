@@ -53,6 +53,11 @@ MAIN_BUDGET = BudgetSpec()
 #:   （v1.1 仅注册接口，本轮实验不使用）。
 SCALE_SOURCES: frozenset[str] = frozenset({"train_real_std", "teacher_r0_std"})
 
+#: 学生输出语义白名单（R2）
+OUTPUT_SPACES: frozenset[str] = frozenset(
+    {"raw_return", "normalized_close_affine_return"}
+)
+
 #: profile → 预算（§8.1）；未知 profile 在 CLI 层显式报错
 PROFILES: dict[str, BudgetSpec] = {"pilot": PILOT_BUDGET, "main": MAIN_BUDGET}
 
@@ -127,11 +132,20 @@ class DHeadConfig:
     lora_lr: float = 1e-5
     # —— 收益尺度口径（v1.1 方案 A：接口注册，默认=v1 行为不变）——
     scale_source: str = "train_real_std"
+    # —— 学生输出语义（R2，复核 20260906）：默认=v1 raw-return 行为；
+    # "normalized_close_affine_return" = 头输出标准化未来 close z，经逐样本
+    # 仿射还原为收益（a/b 只由历史 90 日算出，见 data.affine_restore_params）——
+    # 学生语义变化即新协议（不入中性集），旧 checkpoint 不得作新语义起点。
+    output_space: str = "raw_return"
 
     def __post_init__(self) -> None:
         if self.scale_source not in SCALE_SOURCES:
             raise ValueError(
                 f"scale_source 非法：{self.scale_source}（可选 {sorted(SCALE_SOURCES)}）"
+            )
+        if self.output_space not in OUTPUT_SPACES:
+            raise ValueError(
+                f"output_space 非法：{self.output_space}（可选 {sorted(OUTPUT_SPACES)}）"
             )
 
     # ------------------------------------------------------------------
@@ -204,7 +218,19 @@ def _canonical(obj: Any) -> Any:
 #: 取默认值时行为与 v1 逐字一致的接口字段（默认→不入协议 hash）
 _DEFAULT_NEUTRAL_FIELDS: dict[str, Any] = {
     "scale_source": "train_real_std",
+    "output_space": "raw_return",
 }
+
+
+def dataset_protocol_hash(cfg: DHeadConfig) -> str:
+    """数据集级协议 hash（R3：dataset / teacher / student 身份分离）。
+
+    学生级字段（输出语义、损失尺度口径）强制取默认后计算——清单（dataset
+    identity）的选取只由数据侧字段决定：A/B 两臂（不同 output_space）共用
+    同一份冻结清单，而任何数据侧字段变化仍会失配。
+    """
+    neutral = replace(cfg, **{k: v for k, v in _DEFAULT_NEUTRAL_FIELDS.items()})
+    return protocol_hash(neutral)
 
 
 def protocol_hash(cfg: DHeadConfig) -> str:
