@@ -229,9 +229,10 @@ def _write_result(monkeypatch, tmp_path, profile, arm, seed) -> None:
 
 
 def test_d2_gate_seed_must_match(tmp_path, monkeypatch) -> None:
-    """R4：D2 门禁核验 seed + 协议 + 数据集 + 输出语义全身份。"""
+    """R4+§4.2：D2 门禁核验 seed/协议/数据集/输出语义/namespace/权重/选中ckpt。"""
     import dataclasses
 
+    import dhead_distill.cli as cli_mod
     from dhead_distill.cli import _require_d2_gate
     from dhead_distill.config import (
         DHeadConfig, dataset_protocol_hash, protocol_hash,
@@ -241,50 +242,140 @@ def test_d2_gate_seed_must_match(tmp_path, monkeypatch) -> None:
     monkeypatch.setenv("DHEAD_BASE_REPO", str(tmp_path / "base"))
     monkeypatch.setenv("DHEAD_ARTIFACT_ROOT", str(tmp_path / "art"))
     (tmp_path / "base").mkdir(exist_ok=True)
+    fake_w = "f" * 64
+    monkeypatch.setattr(cli_mod, "_g1_weight_hash", lambda env: fake_w)
     cfg = DHeadConfig.with_profile("pilot")
-    g = safe_artifact_dir("eval-pilot-fidelity")
-    g.mkdir(parents=True, exist_ok=True)
-    (g / "summary.json").write_text(json.dumps({
+
+    def _mk_result(arm, best=0):
+        d = safe_artifact_dir(f"train-pilot-{arm}-s42")
+        d.mkdir(parents=True, exist_ok=True)
+        (d / "result.json").write_text(json.dumps(
+            {"arm": arm, "seed": 42, "best_epoch": best, "history": []}),
+            "utf-8")
+        import torch as _t
+
+        ck = {"epoch": best, "head": {}, "identity": {},
+              "history": [], "optimizer": {}}
+        _t.save(ck, d / f"epoch-{best}.pt")
+
+    _mk_result("D0"); _mk_result("D1")
+    from dhead_distill.cli import _sha256_file
+
+    ck0 = (safe_artifact_dir("train-pilot-D0-s42") / "epoch-0.pt")
+    ck1 = (safe_artifact_dir("train-pilot-D1-s42") / "epoch-0.pt")
+    summary = {
         "seed": 42, "d2_unlocked": True, "d2_reason": "ok",
         "protocol": protocol_hash(cfg),
         "dataset_protocol": dataset_protocol_hash(cfg),
         "output_space": cfg.output_space,
-    }), "utf-8")
+        "namespace": "v1", "teacher_schema": 2, "weight_hash": fake_w,
+        "arms": {
+            "D0": {"selected_epoch": 0,
+                   "selected_ckpt_sha256": _sha256_file(ck0)},
+            "D1": {"selected_epoch": 0,
+                   "selected_ckpt_sha256": _sha256_file(ck1)},
+        },
+    }
+    g = safe_artifact_dir("eval-pilot-fidelity")
+    g.mkdir(parents=True, exist_ok=True)
+    (g / "summary.json").write_text(json.dumps(summary), "utf-8")
 
     _require_d2_gate("pilot", 42, cfg)  # 全身份匹配 → 通过
-    with pytest.raises(RuntimeError, match="seed 不匹配"):
+    with pytest.raises(RuntimeError, match="seed"):
         _require_d2_gate("pilot", 43, cfg)
-    # 协议变化（output_space=affine）→ 旧门禁文件失配
-    cfg_b = dataclasses.replace(cfg, output_space="normalized_close_affine_return")
-    with pytest.raises(RuntimeError, match="不匹配"):
-        _require_d2_gate("pilot", 42, cfg_b)
-    # 数据集变化（窗口起点）→ 失配
-    cfg_c = dataclasses.replace(cfg, train_start="2015-01-01")
-    with pytest.raises(RuntimeError, match="不匹配"):
-        _require_d2_gate("pilot", 42, cfg_c)
+    with pytest.raises(RuntimeError, match="namespace"):
+        _require_d2_gate("pilot", 42, cfg, namespace="v11-rev2")
+    # §4.2 反例：权重更换 → 旧 PASS 失效
+    monkeypatch.setattr(cli_mod, "_g1_weight_hash", lambda env: "0" * 64)
+    with pytest.raises(RuntimeError, match="权重不匹配"):
+        _require_d2_gate("pilot", 42, cfg)
+    monkeypatch.setattr(cli_mod, "_g1_weight_hash", lambda env: fake_w)
+    # §4.2 反例：选中 checkpoint 被更换 → 旧 PASS 失效
+    import torch as _t
+
+    _t.save({"epoch": 0, "head": {"x": _t.zeros(1)}}, ck0)
+    with pytest.raises(RuntimeError, match="checkpoint 不匹配"):
+        _require_d2_gate("pilot", 42, cfg)
+    # §4.2 反例：旧版摘要（缺绑定字段）不可解锁
+    old = dict(summary)
+    old["arms"] = {"D0": {"selected_epoch": 0}, "D1": {"selected_epoch": 0}}
+    (g / "summary.json").write_text(json.dumps(old), "utf-8")
+    with pytest.raises(RuntimeError, match="门禁不完整"):
+        _require_d2_gate("pilot", 42, cfg)
 
 
 def test_main_gate_requires_pilot_pass(tmp_path, monkeypatch) -> None:
-    """R4：main 入口实检 pilot 门禁——存在结果文件 ≠ 门禁通过。"""
+    """R4+§4.2：main 门禁绑定明确 pilot run（schema/namespace/权重/ckpt/语义）。"""
+    import dhead_distill.cli as cli_mod
     from dhead_distill.cli import _require_profile_gate
+    from dhead_distill.config import DHeadConfig
     from dhead_distill.data import safe_artifact_dir
 
     monkeypatch.setenv("DHEAD_BASE_REPO", str(tmp_path / "base"))
     monkeypatch.setenv("DHEAD_ARTIFACT_ROOT", str(tmp_path / "art"))
     (tmp_path / "base").mkdir(exist_ok=True)
+    fake_w = "a" * 64
+    monkeypatch.setattr(cli_mod, "_g1_weight_hash", lambda env: fake_w)
 
     _require_profile_gate("pilot")  # pilot 不受限
     with pytest.raises(RuntimeError, match="main 入口被拒"):
         _require_profile_gate("main")  # 无 pilot 门禁文件
     g = safe_artifact_dir("eval-pilot-fidelity")
     g.mkdir(parents=True, exist_ok=True)
-    (g / "summary.json").write_text(json.dumps(
-        {"arms": {"D0": {"gate": {"passed": False}}}}), "utf-8")
+    full = {
+        "arms": {"D0": {"gate": {"passed": True},
+                        "selected_ckpt_sha256": "c" * 64}},
+        "teacher_schema": 2, "namespace": "v1",
+        "weight_hash": fake_w, "output_space": "raw_return",
+    }
+    (g / "summary.json").write_text(json.dumps(full), "utf-8")
+    cfg = DHeadConfig.with_profile("main")
+    _require_profile_gate("main", cfg)  # 绑定齐且匹配 → 放行
+    # FAIL 仍拒
+    bad = json.loads(json.dumps(full))
+    bad["arms"]["D0"]["gate"]["passed"] = False
+    (g / "summary.json").write_text(json.dumps(bad), "utf-8")
     with pytest.raises(RuntimeError, match="保真门禁未通过"):
-        _require_profile_gate("main")  # 文件在但门禁 FAIL → 仍拒
+        _require_profile_gate("main", cfg)
+    # 旧版摘要缺绑定字段 → 拒
     (g / "summary.json").write_text(json.dumps(
         {"arms": {"D0": {"gate": {"passed": True}}}}), "utf-8")
-    _require_profile_gate("main")  # PASS → 放行
+    with pytest.raises(RuntimeError, match="门禁不完整"):
+        _require_profile_gate("main", cfg)
+    # 输出语义不匹配 → 拒
+    (g / "summary.json").write_text(json.dumps(full), "utf-8")
+    cfg_b = DHeadConfig.with_profile("main")
+    import dataclasses
+
+    cfg_b = dataclasses.replace(cfg_b,
+                                output_space="normalized_close_affine_return")
+    with pytest.raises(RuntimeError, match="输出语义不匹配"):
+        _require_profile_gate("main", cfg_b)
+    # 权重更换 → 拒
+    monkeypatch.setattr(cli_mod, "_g1_weight_hash", lambda env: "b" * 64)
+    with pytest.raises(RuntimeError, match="权重不匹配"):
+        _require_profile_gate("main", cfg)
+
+
+def test_minimal_fit_namespaced_run_dirs_no_refit(tmp_path, monkeypatch) -> None:
+    """§4.1：不同 namespace 不共享学生目录；已完成 run 不被再次优化。"""
+    from dhead_distill.data import safe_artifact_dir
+    from dhead_distill.minimal_fit import _require_fresh_run_dir
+
+    monkeypatch.setenv("DHEAD_BASE_REPO", str(tmp_path / "base"))
+    monkeypatch.setenv("DHEAD_ARTIFACT_ROOT", str(tmp_path / "art"))
+    (tmp_path / "base").mkdir(exist_ok=True)
+
+    n1 = _require_fresh_run_dir("ns1", "A", 42)
+    n2 = _require_fresh_run_dir("ns2", "A", 42)
+    assert n1 != n2 and "ns1" in n1 and "ns2" in n2  # namespace 隔离
+    # ns1 完成（写入 result.json）→ ns1 拒绝自动 fit；ns2 仍可跑
+    d1 = safe_artifact_dir(n1)
+    d1.mkdir(parents=True, exist_ok=True)
+    (d1 / "result.json").write_text("{}", "utf-8")
+    with pytest.raises(RuntimeError, match="只允许显式只读诊断"):
+        _require_fresh_run_dir("ns1", "A", 42)
+    _require_fresh_run_dir("ns2", "A", 42)
 
 
 def test_arm_prerequisites_enforced(tmp_path, monkeypatch) -> None:

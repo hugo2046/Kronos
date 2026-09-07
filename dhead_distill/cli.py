@@ -261,7 +261,7 @@ def cmd_teacher(args: argparse.Namespace) -> int:
     """教师 3-replica 生成（真实 G1 只在本命令内加载；R3 支持 namespace）。"""
     from dhead_distill.teacher import ensure_teacher_eval
 
-    _require_profile_gate(args.profile)  # R4：main teacher 入口实检 pilot 门禁
+    _require_profile_gate(args.profile)  # R4/§4.2：main teacher 入口实检 pilot 门禁
     cfg = DHeadConfig.with_profile(args.profile)
     env = resolve_env()
     predictor, w_hash = _load_predictor(env)
@@ -386,7 +386,7 @@ def cmd_train(args: argparse.Namespace) -> int:
     if arm not in TRAIN_ARMS:
         logger.error(f"未知臂：{arm}（可选 {TRAIN_ARMS}；T 为教师基线不训练）")
         return 2
-    _require_profile_gate(profile)   # R4：main/D1 扩大入口实检 pilot 门禁
+    _require_profile_gate(profile, cfg)   # R4/§4.2：main/D1 扩大入口实检 pilot 门禁
     cfg = DHeadConfig.with_profile(profile)
     env = resolve_env()
     device = _require_gpu()
@@ -436,7 +436,7 @@ def cmd_train(args: argparse.Namespace) -> int:
                             output_space=cfg.output_space))
         logger.info(f"D1 ← D0 best-D checkpoint（epoch {_best_epoch_of(profile, 'D0', seed)}）")
     elif arm == "D2":
-        _require_d2_gate(profile, seed, cfg)
+        _require_d2_gate(profile, seed, cfg, args.namespace)
         head.load_state_dict(
             _load_head_ckpt(profile, "D1", seed,
                             _best_epoch_of(profile, "D1", seed),
@@ -482,8 +482,15 @@ def cmd_train(args: argparse.Namespace) -> int:
     return 0
 
 
-def _require_d2_gate(profile: str, seed: int, cfg: DHeadConfig) -> None:
-    """D2 解锁核验（§8.3；R4：profile/seed/协议/数据/选中点全身份比对）。"""
+def _require_d2_gate(profile: str, seed: int, cfg: DHeadConfig,
+                     namespace: str = "v1") -> None:
+    """D2 解锁核验（§8.3 + R4 + 复核 20260906 §4.2 全身份闭环）。
+
+    在 seed/协议/数据集/输出语义之上，再**实加载**当前前置 result 的选中
+    checkpoint 文件 hash 与当前 G1 权重指纹，与 fidelity summary 绑定值比对
+    ——更换 checkpoint/权重/namespace 后，旧 PASS 不再解锁；summary 缺任一
+    绑定字段（旧版摘要）一律拒绝（门禁不完整 = 锁定）。
+    """
     from dhead_distill.config import dataset_protocol_hash, protocol_hash
     from dhead_distill.data import safe_artifact_dir
 
@@ -499,12 +506,38 @@ def _require_d2_gate(profile: str, seed: int, cfg: DHeadConfig) -> None:
         "dataset_protocol": (
             doc.get("dataset_protocol"), dataset_protocol_hash(cfg)),
         "output_space": (doc.get("output_space"), cfg.output_space),
+        "namespace": (doc.get("namespace"), namespace),
+        "teacher_schema": (doc.get("teacher_schema"), 2),
     }
     for k, (got, want) in checks.items():
         if got != want:
             raise RuntimeError(
                 f"D2 门禁 {k} 不匹配：门禁文件 {got!r} ≠ 当前 {want!r}——"
-                f"协议/数据/语义变化后须重新过 fidelity 门禁（R4）"
+                f"须重新过 fidelity 门禁（R4/§4.2）"
+            )
+    # §4.2：当前权重指纹 vs summary 绑定值
+    w_now = _g1_weight_hash(resolve_env())
+    if doc.get("weight_hash") != w_now:
+        raise RuntimeError(
+            f"D2 门禁权重不匹配：summary={str(doc.get('weight_hash'))[:12]} "
+            f"≠ 当前={w_now[:12]}——权重更换后旧 PASS 失效"
+        )
+    # §4.2：前置臂选中 checkpoint 实际文件 hash vs summary 绑定值
+    for arm in ("D0", "D1"):
+        a = (doc.get("arms") or {}).get(arm) or {}
+        bound = a.get("selected_ckpt_sha256")
+        sel = a.get("selected_epoch")
+        if not bound or sel is None:
+            raise RuntimeError(
+                f"D2 门禁不完整：summary 缺 {arm} 选中 checkpoint 绑定——"
+                f"旧版摘要不可解锁，请重跑 evaluate --stage fidelity"
+            )
+        ck = (safe_artifact_dir(_train_run_name(profile, arm, seed))
+              / f"epoch-{sel}.pt")
+        if not ck.exists() or _sha256_file(ck) != bound:
+            raise RuntimeError(
+                f"D2 门禁 checkpoint 不匹配：{arm} epoch-{sel} 实际 hash ≠ "
+                f"summary 绑定值——checkpoint 被更换后旧 PASS 失效"
             )
     if not doc.get("d2_unlocked", False):
         raise RuntimeError(
@@ -512,11 +545,13 @@ def _require_d2_gate(profile: str, seed: int, cfg: DHeadConfig) -> None:
         )
 
 
-def _require_profile_gate(profile: str) -> None:
-    """R4：main 侧 teacher/train（含 D1 扩大）必须实检 pilot 门禁。
+def _require_profile_gate(profile: str, cfg: DHeadConfig | None = None) -> None:
+    """R4 + §4.2：main 入口绑定**明确的 pilot run**，不只读布尔值。
 
-    前置 result.json 存在 ≠ 门禁通过——main 入口要求 pilot fidelity 摘要
-    存在且 D0 保真门禁 PASS（§8.2 冻结规则）。pilot 门禁未过时 main 全锁。
+    pilot 与 main 样本预算不同 → **不**要求完整 protocol hash 相等；预声明的
+    允许差异（profile/budget/protocol/清单）记录映射，其余必须逐项一致：
+    teacher schema/namespace、输出语义、权重指纹（当前 G1 vs summary）、
+    D0 选中 checkpoint 绑定。任一绑定缺失（旧版摘要）→ 拒绝（不完整=锁定）。
     """
     from dhead_distill.data import safe_artifact_dir
 
@@ -535,6 +570,37 @@ def _require_profile_gate(profile: str) -> None:
             "main 入口被拒：pilot D0 保真门禁未通过（§8.2 冻结规则，"
             f"gate={d0.get('gate')}）"
         )
+    # §4.2：run 身份绑定（缺字段=旧版摘要=门禁不完整=拒绝）
+    required = {
+        "teacher_schema": doc.get("teacher_schema"),
+        "namespace": doc.get("namespace"),
+        "weight_hash": doc.get("weight_hash"),
+        "output_space": doc.get("output_space"),
+        "selected_ckpt": d0.get("selected_ckpt_sha256"),
+    }
+    missing = [k for k, v in required.items() if not v]
+    if missing:
+        raise RuntimeError(
+            f"main 门禁不完整：pilot summary 缺绑定字段 {missing}——"
+            f"旧版摘要不可解锁 main，请用当前代码重跑 pilot fidelity"
+        )
+    if cfg is not None and doc["output_space"] != cfg.output_space:
+        raise RuntimeError(
+            f"main 门禁输出语义不匹配：pilot={doc['output_space']!r} ≠ "
+            f"main={cfg.output_space!r}"
+        )
+    w_now = _g1_weight_hash(resolve_env())
+    if doc["weight_hash"] != w_now:
+        raise RuntimeError(
+            f"main 门禁权重不匹配：pilot summary={doc['weight_hash'][:12]} "
+            f"≠ 当前 G1={w_now[:12]}——权重更换后须重过 pilot 门禁"
+        )
+    # 预声明允许差异（pilot/main 预算不同），记录映射不比对
+    logger.info(
+        f"main 门禁通过（绑定 pilot run：namespace={doc['namespace']}，"
+        f"schema={doc['teacher_schema']}，D0 ckpt={required['selected_ckpt'][:12]}；"
+        f"允许差异：profile/budget/protocol/清单 hash（pilot↔main 预算不同）"
+    )
 
 
 def _require_arm_ready(profile: str, arm: str, seed: int) -> None:
@@ -685,8 +751,8 @@ def _eval_fidelity(profile: str, seed: int, cfg, namespace: str = "v1") -> int:
 
     summary: dict = {
         "stage": "fidelity", "profile": profile, "seed": seed,
-        "split": "val", "arms": {},
-        # R3/R4：summary 绑定代码/权重/清单/协议/输出语义——D2 门禁逐项比对
+        "split": "val", "arms": {}, "namespace": namespace,
+        # R3/R4：summary 绑定代码/权重/清单/协议/输出语义——D2/main 门禁逐项比对
         "protocol": protocol_hash(cfg),
         "dataset_protocol": dataset_protocol_hash(cfg),
         "output_space": cfg.output_space,
@@ -696,6 +762,7 @@ def _eval_fidelity(profile: str, seed: int, cfg, namespace: str = "v1") -> int:
         "val_manifest_hash": val_m.content_hash,
         "scale_hash": __import__("hashlib").sha256(
             np.asarray(scale, dtype=np.float32).tobytes()).hexdigest(),
+        "teacher_schema": 2,
     }
     for arm in ("D0", "D1", "D2"):
         from dhead_distill.data import safe_artifact_dir as sad
@@ -738,9 +805,13 @@ def _eval_fidelity(profile: str, seed: int, cfg, namespace: str = "v1") -> int:
                   f"D1 选中 e{verdict['d1_selected_epoch']} "
                   f"val_task={verdict['d1_selected_val_task']:.4f})")
         summary["d2_unlock_detail"] = verdict
-        # R1：fidelity 分数绑定同一 checkpoint 身份
-        summary["arms"]["D0"]["selected_epoch"] = verdict["d0_selected_epoch"]
-        summary["arms"]["D1"]["selected_epoch"] = verdict["d1_selected_epoch"]
+        # R1：fidelity 分数绑定同一 checkpoint 身份；§4.2：绑定选中 ckpt 文件 hash
+        for arm, sel in (("D0", verdict["d0_selected_epoch"]),
+                         ("D1", verdict["d1_selected_epoch"])):
+            summary["arms"][arm]["selected_epoch"] = sel
+            ck_path = (sad(_train_run_name(profile, arm, seed))
+                       / f"epoch-{sel}.pt")
+            summary["arms"][arm]["selected_ckpt_sha256"] = _sha256_file(ck_path)
     summary["d2_unlocked"] = unlocked
     summary["d2_reason"] = reason
 
@@ -875,6 +946,13 @@ def build_parser() -> argparse.ArgumentParser:
 
     mf = sub.add_parser("minimal-fit", help="v1.1 rev2 最小拟合试验（A/B 两臂）")
     mf.add_argument("--namespace", default="v11-rev2")
+
+    zd = sub.add_parser("zero-diag", help="零训练归因诊断（只读既有 run）")
+    zd.add_argument("--teacher-namespace", default="v11-rev2")
+    zd.add_argument("--run-a", default="v11rev2-A-s42",
+                    help="A 臂历史 run 目录名（显式，须过归属校验）")
+    zd.add_argument("--run-b", default="v11rev2-B-s42")
+    zd.add_argument("--summary", default="v11rev2-minimal-fit-v11-rev2")
     return p
 
 
@@ -894,6 +972,11 @@ def main(argv: list[str] | None = None) -> int:
         from dhead_distill.minimal_fit import run
 
         return run(args.namespace)
+    if args.cmd == "zero-diag":
+        from dhead_distill.zero_train_diag import run_diag
+
+        return run_diag(args.teacher_namespace, args.run_a, args.run_b,
+                        args.summary)
     logger.error(f"未知命令：{args.cmd}")
     return 2
 

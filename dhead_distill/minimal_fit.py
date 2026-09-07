@@ -94,6 +94,24 @@ def _day_metrics(trainer: UnifiedTrainer) -> dict:
     }
 
 
+def _require_fresh_run_dir(namespace: str, arm: str, seed: int):
+    """§4.1：运行目录含 namespace；已完成的 run 只允许显式只读诊断。
+
+    不同 namespace 不共享/不误恢复学生目录；历史 e5f10c3 目录（无
+    namespace 段）保持原样不受影响。返回本 namespace 的 run 目录名。
+    """
+    from dhead_distill.data import safe_artifact_dir
+
+    run_name = f"v11rev2-{namespace}-{arm}-s{seed}"
+    d = safe_artifact_dir(run_name)
+    if (d / "result.json").exists():
+        raise RuntimeError(
+            f"run 已完成：{run_name}——按 §4.1 只允许显式只读诊断"
+            f"（zero_train_diag），不自动继续训练；如需重跑请更换 namespace"
+        )
+    return run_name
+
+
 def run(namespace: str) -> int:
     """执行最小试验（教师重生成 → A/B 两臂 → 指标与结论文档数据落盘）。"""
     from dhead_distill.cli import _g1_weight_hash, _load_manifest, _load_predictor
@@ -177,6 +195,9 @@ def run(namespace: str) -> int:
     from dhead_distill.head import MultiHorizonHead
 
     results = {}
+    # §4.1：命名空间化目录 + 已完成 run 拒绝自动 fit（守卫逻辑可单测）
+    for arm_name in ("A", "B"):
+        _require_fresh_run_dir(namespace, arm_name, SEED)
     for arm_name, output_space in (("A", "raw_return"),
                                    ("B", "normalized_close_affine_return")):
         import dataclasses
@@ -195,7 +216,8 @@ def run(namespace: str) -> int:
             arm="D0", cfg=cfg, backbone=backbone, head=head, scale=scale,
             train_manifest=sub, val_manifest=sub,   # 同 8 日：过拟合检验
             train_teacher=teacher_arr, val_teacher=teacher_arr,
-            run_name=f"v11rev2-{arm_name}-s{SEED}", seed=SEED, device=device,
+            run_name=f"v11rev2-{namespace}-{arm_name}-s{SEED}",
+            seed=SEED, device=device,
             max_epochs_override=MAX_EPOCHS, disable_early_stop=True,
             output_space=output_space, backbone_weight_hash=w_hash,
         )
