@@ -1,0 +1,19 @@
+{
+  "arm": "M",
+  "seed": 42,
+  "init_hash": "78aceadadfe316f66fea05bf964eda799792755c67c7a925cc1e5472da2df769",
+  "steps": 2,
+  "seconds": 0.16964292526245117,
+  "seconds_per_step": 0.08482146263122559,
+  "peak_gb": 0.9099717140197754,
+  "extrapolated_six_runs_hours": 4.241073131561279,
+  "val_ic": {
+    "epoch": 1,
+    "train_loss": 0.07232542335987091,
+    "val_rankic_main": 0.06346413646552924,
+    "val_rankic_h1": -0.0020857610294590908,
+    "val_rankic_h5": 0.005204241459652073,
+    "val_rankic_h10": 0.06346413646552924,
+    "val_rankic_h20": -0.17989699029396658
+  }
+}

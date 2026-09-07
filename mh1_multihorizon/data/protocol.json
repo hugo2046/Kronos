@@ -1,0 +1,122 @@
+{
+  "experiment": "MH1",
+  "plan": "docs/TimesFM多期限监督实验计划_20260907.md",
+  "frozen_at": "2026-09-07T14:48:22",
+  "design": {
+    "horizons": [
+      1,
+      5,
+      10,
+      20
+    ],
+    "main_horizon_idx": 2,
+    "pool": "csi300",
+    "lookback": 90,
+    "clip": 5.0,
+    "head": "LayerNorm(d)→Linear(d,128)→GELU→Linear(128,4)",
+    "batch": 128,
+    "lr": 0.0003,
+    "wd": 0.01,
+    "steps_per_epoch": 2000,
+    "epochs": 15,
+    "seeds": [
+      42,
+      43,
+      44
+    ],
+    "arms": [
+      "S",
+      "M"
+    ],
+    "run_order": [
+      "S42",
+      "M42",
+      "S43",
+      "M43",
+      "S44",
+      "M44"
+    ],
+    "precision": "fp32",
+    "min_train_cross": 128,
+    "ic_min_stocks": 30,
+    "nw_lag": 9
+  },
+  "g1_weights": {
+    "tokenizer_sha256": "5ca43492146cd93da2f9dd5528009aa6bd882f2a448ff4c6bd3c1b0ab08609ee",
+    "predictor_sha256": "4f2382138138e85ea1c543d43ade2de2373e4168a995e34fd43cbca2895c2fe2",
+    "d_model": 832,
+    "tokenizer_path": "/home/user/workspace/Kronos/finetune_suite/outputs/models/finetune_tokenizer_g1/checkpoints/best_model",
+    "predictor_path": "/home/user/workspace/Kronos/finetune_suite/outputs/models/finetune_predictor_g1/checkpoints/best_model",
+    "seed_evidence": "finetune_suite/config.py:87 seed=100 + docs/扩语料微调实验结果_20260815.md（单次 seed=100）"
+  },
+  "corpus_pkl": {
+    "train": {
+      "path": "/home/user/workspace/Kronos/finetune_suite/data/train_data.pkl",
+      "sha256": "387ca69ef259691881caa9211e8e14e7fafa5136a594c44271ddea1637f6611d",
+      "n_symbols": 755,
+      "date_min": "2014-01-02",
+      "date_max": "2024-12-31"
+    },
+    "val": {
+      "path": "/home/user/workspace/Kronos/finetune_suite/data/val_data.pkl",
+      "sha256": "1adc5c142eccfe7c7e271c6fb9cb6584607d9a9ebcaabc3444ace56180ed95a6",
+      "n_symbols": 755,
+      "date_min": "2025-01-02",
+      "date_max": "2025-06-30"
+    }
+  },
+  "segments": {
+    "train": {
+      "source": "union pkl（G1 同源，H1a 同口径）",
+      "n_days": 2567,
+      "n_samples": 1726535,
+      "skipped_days_lt_min": 0,
+      "excluded_missing_label_endpoint": 584,
+      "excluded_short_window": 481,
+      "excluded_bad_denominator": 0,
+      "decision_min": "2014-05-19",
+      "decision_max": "2024-12-03",
+      "label_endpoint_min": "2014-06-17",
+      "label_endpoint_max": "2024-12-31"
+    },
+    "val": {
+      "source": "qlib PIT csi300（H1 早停段同口径）",
+      "n_days": 97,
+      "decision_min": "2025-01-02",
+      "decision_max": "2025-05-30",
+      "n_samples": 28503,
+      "label_endpoint_max": "2025-06-30",
+      "excluded_missing_label_total": 0
+    },
+    "W3": {
+      "source": "qlib PIT csi300（H1 打分同口径；+20 终点留段内）",
+      "n_days": 106,
+      "decision_min": "2025-07-01",
+      "decision_max": "2025-12-03",
+      "n_samples": 31329,
+      "label_endpoint_max": "2025-12-31"
+    },
+    "W4": {
+      "source": "qlib PIT csi300（H1 打分同口径；+20 终点留段内）",
+      "n_days": 114,
+      "decision_min": "2026-01-05",
+      "decision_max": "2026-06-26",
+      "n_samples": 33624,
+      "label_endpoint_max": "2026-07-24"
+    },
+    "forward_cutoff": "2026-07-24",
+    "purge": 20
+  },
+  "cron": {
+    "entries": [
+      "30 16 * * 1-5 cd /home/user/workspace/Kronos && /home/user/miniconda3/envs/quant/bin/python finetune_suite/run_registry.py --date auto >> finetune_suite/registry/cron.log 2>&1",
+      "15 18 * * 1-5 cd /home/user/dockerspace/ys-data-dashboard && docker compose run --rm --build ys-data-coverage >> /home/user/ys-data-coverage.log 2>&1"
+    ],
+    "guard": [
+      "16:25",
+      "16:45"
+    ],
+    "note": "16:30 登记任务优先；守卫窗内训练进程释放 GPU（08-20 OOM 教训）"
+  },
+  "budget_gpu_hours": 12.0
+}

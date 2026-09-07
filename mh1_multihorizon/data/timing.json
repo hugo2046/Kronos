@@ -1,0 +1,47 @@
+{
+  "n_samples": 128,
+  "S42_full_history_to_score": {
+    "p50_ms": 57.70994443446398,
+    "p95_ms": 57.904699724167585,
+    "peak_gb": 0.8757247924804688,
+    "n_samples": 128,
+    "reps": 30
+  },
+  "S42_hidden_to_score": {
+    "p50_ms": 0.03842869773507118,
+    "p95_ms": 0.04236968234181404,
+    "peak_gb": 0.46985340118408203,
+    "n_samples": 128,
+    "reps": 30
+  },
+  "M42_full_history_to_score": {
+    "p50_ms": 57.775197084993124,
+    "p95_ms": 57.877914141863585,
+    "peak_gb": 0.8757247924804688,
+    "n_samples": 128,
+    "reps": 30
+  },
+  "M42_hidden_to_score": {
+    "p50_ms": 0.037610530853271484,
+    "p95_ms": 0.040188664570450776,
+    "peak_gb": 0.46985340118408203,
+    "n_samples": 128,
+    "reps": 30
+  },
+  "g1_generative_ref": {
+    "p50_ms": 13189.082727767527,
+    "p95_ms": 13212.140820361674,
+    "peak_gb": 12.933431625366211,
+    "n_samples": 128,
+    "reps": 3,
+    "n_samples_kept": 128,
+    "params": {
+      "pred_len": 10,
+      "sample_count": 20,
+      "T": 1.0,
+      "top_p": 0.9,
+      "protocol": "1 warmup + 3 reps（成本缩减，非 10+30）",
+      "includes": "predictor 端到端（含内部预处理/归一化/解码）"
+    }
+  }
+}
