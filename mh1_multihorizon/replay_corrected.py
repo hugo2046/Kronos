@@ -468,6 +468,59 @@ def cmd_replay() -> None:
                 f"{identity_check['max_abs_identity_err']:.2e}；证据哈希前后一致")
 
 
+def save_transactions(trades, path: Path) -> None:
+    """真实交易日志落盘（计划 §3 任务 A：全字段可 round-trip，非字符串化）。
+
+    ``sold``/``bought`` 以 pyarrow list 列原生存储，读回即 Python list——
+    禁止把列表转成不可解析字符串。
+    """
+    df = trades.to_frame()
+    path.parent.mkdir(parents=True, exist_ok=True)
+    df.to_parquet(path, index=False)
+
+
+GRID_AUDIT_DIR = Path(__file__).resolve().parent / "data" / "grid_audit_20260908"
+
+
+def cmd_transactions() -> None:
+    """补证：14 固定臂窗只重放一次，落盘真实交易日志并与 correction 对拍。
+
+    逐日净收益与 ``correction_20260908/daily/`` 逐值对拍（绝对误差 ≤1e-12）；
+    差异非零先查数据版本/接线（断言失败即停），不覆盖历史结果。
+    """
+    cfg = _require_preflight()
+    frames = {w: pd.read_parquet(SOURCE_DATA / f"signals_{w}.parquet")
+              for w in WINDOW_BOUNDS}
+    tx_dir = GRID_AUDIT_DIR / "transactions"
+    tx_dir.mkdir(parents=True, exist_ok=True)
+    max_err = 0.0
+    n_files = 0
+    for wname in WINDOW_BOUNDS:
+        _meta, per_run = replay_window(wname, frames)
+        for name, payload in per_run.items():
+            save_transactions(payload["trades"],
+                              tx_dir / f"{wname}_{name}.parquet")
+            n_files += 1
+            daily = payload["daily"]["net_return"]
+            old = pd.read_parquet(
+                Path(__file__).resolve().parent / "data" /
+                "correction_20260908" / "daily" / f"{wname}_{name}.parquet")
+            err = float((daily - old["net_return"].reindex(daily.index))
+                        .abs().max())
+            max_err = max(max_err, err)
+            assert err <= 1e-12, (
+                f"{wname} {name} 逐日净收益与 correction 不一致：max|Δ|={err:.3e}"
+                "（先查数据版本与接线，不覆盖历史结果）")
+            logger.info(f"[tx] {wname} {name}: 交易日志落盘，逐日净收益对拍"
+                        f"max|Δ|={err:.1e} OK")
+    (GRID_AUDIT_DIR / "transactions_summary.json").write_text(
+        json.dumps({"batch": cfg["batch"], "n_files": n_files,
+                    "max_abs_daily_net_err": max_err,
+                    "created_at": datetime.now().isoformat(timespec="seconds")},
+                   ensure_ascii=False, indent=2), encoding="utf-8")
+    logger.info(f"[tx] 补证完成：{n_files} 份交易日志；逐日净收益最大误差 {max_err:.1e}")
+
+
 def cmd_pool_audit() -> None:
     """任务 D：训练池 PIT 偏差取证（只读重建样本键 + 逐日交集，零训练）。"""
     from kronos_qlib import QlibProvider
@@ -534,7 +587,7 @@ def cmd_pool_audit() -> None:
 def main() -> int:
     parser = argparse.ArgumentParser(description="MH1 纠偏 v2 重放 CLI")
     parser.add_argument("--stage", required=True,
-                        choices=["preflight", "replay", "pool-audit"])
+                        choices=["preflight", "replay", "pool-audit", "transactions"])
     args = parser.parse_args()
     log_dir = Path(__file__).resolve().parent / "data" / "logs"
     log_dir.mkdir(parents=True, exist_ok=True)
@@ -543,6 +596,8 @@ def main() -> int:
         cmd_preflight()
     elif args.stage == "replay":
         cmd_replay()
+    elif args.stage == "transactions":
+        cmd_transactions()
     else:
         cmd_pool_audit()
     return 0

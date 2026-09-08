@@ -80,11 +80,13 @@ def test_old_wiring_used_old_engine() -> None:
 
 
 def test_engine_attachment_not_wired_to_old_engine(monkeypatch) -> None:
-    """旧 run_group 哨兵 + 合成 fetcher 下，纠正版 engine_attachment 仍成功，
-    且真实 v2 ``run_portfolio_v2`` 被直接调用（防"单测过、生产走旧引擎"）。"""
+    """旧 run_group 哨兵 + 六完整合成臂（不触任何 /home/user 真实数据）下，
+    纠正版 engine_attachment 仍成功，且真实 v2 ``run_portfolio_v2`` 调用
+    次数恰等于臂数（防"单测过、生产走旧引擎"，也防读真实 G1 parquet）。"""
     import baseline_suite.pipeline as bp
     import paper_replication.engine_v2 as v2
     from mh1_multihorizon import evaluate as ev
+    from mh1_multihorizon.replay_corrected import RUNS
 
     def _sentinel(*a, **k):  # pragma: no cover - 触发即失败
         raise AssertionError("生产入口仍在调用旧引擎 run_group")
@@ -105,26 +107,23 @@ def test_engine_attachment_not_wired_to_old_engine(monkeypatch) -> None:
 
     px, trd, uls = _synth_market(n_days=30)
     sig_dates = list(px.index[::5])
-    sig = _signal_frame(px, sig_dates)
-
-    class _Day:
-        date = px.index[0]
-        codes = list(px.columns)
+    rows = []
+    for run in RUNS:                      # 六臂完整合成（同日期同股票）
+        for d in sig_dates:
+            for i, c in enumerate(px.columns):
+                rows.append({"date": str(d.date()), "instrument": c,
+                             "arm": run[0], "seed": int(run[1:]),
+                             "h10": float(i + 1)})
+    frames = {"W3": pd.DataFrame(rows)}
 
     def _fetcher(window, universe_cols):
         return px, trd, uls, pd.Series(0.0, index=px.index)
 
-    frames = {"W3": None}     # 信号由 fetcher 世界给出（见下）
-    wide = sig
-    frames = {"W3": pd.DataFrame({
-        "date": [str(d.date()) for d in sig_dates for _ in px.columns],
-        "instrument": list(px.columns) * len(sig_dates),
-        "arm": "S", "seed": 42, "h10": 1.0})}
-    out = ev.engine_attachment(
-        frames, windows={"W3": [_Day()]}, fetcher=_fetcher,
-        window_bounds={"W3": ("2025-07-01", str(px.index[-1].date()))})
-    assert called["v2"] > 0, "engine_attachment 未直调 run_portfolio_v2"
-    assert "S42" in out["results"] or "S42@W3" in str(out["results"])
+    out = ev.engine_attachment(frames, windows={"W3": []}, fetcher=_fetcher,
+                               with_g1_mean=False)
+    assert called["v2"] == len(RUNS), (
+        f"v2 调用数 {called['v2']} != 臂数 {len(RUNS)}")
+    assert set(out["results"]) == set(RUNS)
     meta_cfg = out["meta"]["W3"]["engine"]["config"]
     assert meta_cfg["fix_delay_1"] is True      # 真实 asdict，非手写元数据
     assert meta_cfg["fix_double_sided_cost"] is True
@@ -227,6 +226,29 @@ def test_window_bounds_and_calendar() -> None:
     assert grid.index.equals(cal)
     assert grid.notna().sum().sum() == len(sig_dates) * 2   # 仅信号日有值
     assert grid.index.max() <= pd.Timestamp("2026-07-24")
+
+
+def test_transactions_roundtrip(tmp_path) -> None:
+    """交易日志全字段持久化 round-trip：日期/列表/数值逐项可解析核对。"""
+    from mh1_multihorizon.replay_corrected import replay_one, save_transactions
+
+    px, trd, uls = _synth_market(n_days=30)
+    sig = _signal_frame(px, list(px.index[::5]))
+    out = replay_one(sig, px, trd, uls, top_k=2, drop_n=2, min_hold=1)
+    tf = out["trades"].to_frame().reset_index(drop=True)
+    p = tmp_path / "tx" / "W3_TEST.parquet"
+    save_transactions(out["trades"], p)
+    back = pd.read_parquet(p)
+
+    assert list(back.columns) == list(tf.columns)
+    assert back["date"].equals(tf["date"])
+    assert back["decision_date"].equals(tf["decision_date"])
+    for col in ("sold", "bought"):     # 列表列：读回即原生 list，逐元素核对
+        for a, b in zip(back[col], tf[col]):
+            assert list(a) == list(b)
+    for col in ("freed", "bought_amt", "cost",
+                "turnover_one_side", "turnover_double"):
+        assert np.allclose(back[col].to_numpy(), tf[col].to_numpy())
 
 
 def test_evidence_hashes_preserved(tmp_path, monkeypatch) -> None:
