@@ -1,0 +1,97 @@
+{
+  "experiment": "G10H-pilot",
+  "frozen_at": "2026-09-08T11:14:49.554200",
+  "env": {
+    "interpreter": "/home/user/miniconda3/envs/quant/bin/python",
+    "torch": "2.13.0+cu130",
+    "gpu": "NVIDIA GeForce RTX 5090",
+    "git_head": "65cf30ef69c21af22da18ea7cf50efe14ba6be52"
+  },
+  "design": {
+    "arms": [
+      "A0",
+      "A1"
+    ],
+    "seed": 100,
+    "epochs": 15,
+    "batch": 50,
+    "n_train_iter": 100000,
+    "n_val_iter": 20000,
+    "lr": 4e-05,
+    "adam": {
+      "betas": [
+        0.9,
+        0.95
+      ],
+      "wd": 0.1
+    },
+    "onecycle": {
+      "pct_start": 0.03,
+      "div_factor": 10
+    },
+    "grad_clip": 3.0,
+    "fp32": true,
+    "a1_allowed": [
+      "head.proj_s1.bias",
+      "head.proj_s1.weight",
+      "head.proj_s2.bias",
+      "head.proj_s2.weight"
+    ],
+    "a1_param_count": 1705984,
+    "a0_param_count": 102310592,
+    "predictor_start": "NeoQuasar/Kronos-base",
+    "tokenizer_sha256": "5ca43492146cd93da2f9dd5528009aa6bd882f2a448ff4c6bd3c1b0ab08609ee",
+    "official_base_dir": "/home/user/.cache/huggingface/hub/models--NeoQuasar--Kronos-base/snapshots/2b554741eca47781b64468546e77fef3e85130e6",
+    "d_model": 832
+  },
+  "inference": {
+    "lookback": 90,
+    "pred_len": 10,
+    "sample_count": 20,
+    "T": 1.0,
+    "top_p": 0.9,
+    "top_k": 0,
+    "clip": 5,
+    "max_context": 512,
+    "variant": "mean",
+    "seed": 100
+  },
+  "windows": {
+    "W3": {
+      "bounds": [
+        "2025-07-01",
+        "2025-12-31"
+      ],
+      "n_days": 126,
+      "first": "2025-07-01",
+      "last": "2025-12-31"
+    },
+    "W4": {
+      "bounds": [
+        "2026-01-01",
+        "2026-07-24"
+      ],
+      "n_days": 134,
+      "first": "2026-01-05",
+      "last": "2026-07-24"
+    }
+  },
+  "forward_cutoff": "2026-07-24",
+  "g1_full_signals_sha256": {
+    "W3": "9352b40302eb34c714bfebd808481b625a21d2f7f4f668ccca15cda0cfe21d66",
+    "W4": "453e2aeae7fe4bee8ce8fa62a9908da0843d5ad8b52777cd3b299a84cc4a3e36"
+  },
+  "corpus": {
+    "ashares": "/home/user/workspace/Kronos/finetune_suite/data/ashares",
+    "sha256": {
+      "train_data.pkl": "df33857e891fc28e40298314cf74def4dcb8ae58dafab822810f34ee96ad4480",
+      "val_data.pkl": "1c7e5436d5c2121b0ca79c69a2e432af33039621f422cb514a9157f890d4473b"
+    },
+    "note": "原 G1 同源全 A 历史语料（非逐日 csi300 PIT，披露）"
+  },
+  "guard": [
+    "16:25",
+    "16:45"
+  ],
+  "budget_gpu_hours": 12.0
+}

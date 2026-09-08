@@ -1,0 +1,37 @@
+{
+  "preflight": {
+    "at": "2026-09-08T11:14:49",
+    "protocol_sha256": "fe7afc7b3dbce0e0115092437a2fd62d760870e6ef7b556e8bebb8ac00a732a6"
+  },
+  "smoke": {
+    "at": "2026-09-08T11:16:31",
+    "seconds": 28.631267309188843,
+    "train_est_hours": 0.11929694712162017,
+    "init_match": true,
+    "digest_match": true
+  },
+  "train": {
+    "at": "2026-09-08T22:31:38",
+    "protocol_sha256": "fe7afc7b3dbce0e0115092437a2fd62d760870e6ef7b556e8bebb8ac00a732a6",
+    "best": {
+      "A0": {
+        "epoch": 1,
+        "ce": 3.2290621930360794
+      },
+      "A1": {
+        "epoch": 15,
+        "ce": 3.298541872501373
+      }
+    }
+  },
+  "evaluate": {
+    "at": "2026-09-09T00:55:54",
+    "protocol_sha256": "fe7afc7b3dbce0e0115092437a2fd62d760870e6ef7b556e8bebb8ac00a732a6",
+    "criteria": {
+      "I_info_retained": false,
+      "P_vs_A0_e15": false,
+      "S_stability": true,
+      "E_econ_filter": false
+    }
+  }
+}
