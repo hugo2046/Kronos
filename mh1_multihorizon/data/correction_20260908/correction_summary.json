@@ -1,0 +1,47 @@
+{
+  "protocol_conformance": false,
+  "created_at": "2026-09-08T08:52:00",
+  "plan": "docs/MH1纠偏与G10状态核对计划_20260908.md（交接提交 9d5128f）",
+  "nonconformance_reasons": [
+    {
+      "id": "training-pool",
+      "fact": "训练池为历史成分并集（union pkl），非原计划的逐日 csi300 PIT",
+      "evidence": "pool_audit.parquet：2567 日样本 578~737（均值 672.6），非 t 日 PIT 成员样本占比均值 55.1%"
+    },
+    {
+      "id": "criterion4-hardcoded",
+      "fact": "run.py:cmd_evaluate 将判据 4 直接设为 True，非门禁真实聚合",
+      "evidence": "judge_summary.json criteria.4 = 硬编码；本文件将其更正为不符合"
+    },
+    {
+      "id": "engine-mislabel",
+      "fact": "原 engine_v2_attachment.json/nav 图经 baseline_suite.pipeline 走旧引擎（paper_replication.engine），delay=1 元数据与实际调用无关",
+      "evidence": "tests/test_mh1_replay_corrected.py::test_old_wiring_used_old_engine（模块身份对拍）；replay_summary.json 为真实 v2 复算"
+    }
+  ],
+  "original_ic_verdict_unchanged": {
+    "note": "IC 判读与训练产物不改写；delta 两窗反向、判据 1/2 未触发的封盘结论维持",
+    "judge_summary_sha256": "381ee72371ee7a8131561c7691027265e42ee2d281fe416df414fa92e3728627",
+    "criteria": {
+      "1_m_main_pos_both_windows_and_combined_t2": false,
+      "2_delta_pos_both_windows_and_combined_t2": false,
+      "3_two_of_three_seeds_pos_both_windows": true,
+      "4_gates_protocol_tests_training": true,
+      "pass_all": false
+    },
+    "windows_delta_mean": {
+      "W3": 0.021234298278637858,
+      "W4": -0.008130789383399532
+    }
+  },
+  "timing_wording_correction": {
+    "old": "229× 精确加速",
+    "corrected": "读出 ~58ms 与生成式 ~13.2s 为不同预处理边界/计时协议的两种工作负载历史参考，非同等预测能力下的精确加速比；本轮未追加 GPU 计时"
+  },
+  "artifacts": {
+    "manifest_before": "3fbae0b0e2418d1a9431069c7af40384aad68f71b2f62d0a865878e9b7636603",
+    "replay_summary": "8c51f4db12c0233f36f9c4005f26224f34bad1a300d7a1e49b19934846d2ca47",
+    "pool_audit_summary": "ce128e0ccb4a81d494a064d24d274453eb58e93a718c99fb2b283c5fda06b040",
+    "engine": "paper_replication.engine_v2（EngineConfigV2 六修正全开 + ew 掩码修正）"
+  }
+}

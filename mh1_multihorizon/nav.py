@@ -165,7 +165,66 @@ def plot(navs: dict[str, pd.DataFrame]) -> list[Path]:
     return paths
 
 
+def plot_corrected() -> list[Path]:
+    """纠偏模式（20260908）：只读 ``replay_corrected`` 落盘的逐日毛/净序列
+    画真实 v2 超额净值；不经旧 ``run_group``，不覆盖旧图（新文件名 *_v2）。"""
+    import matplotlib
+
+    matplotlib.use("Agg")
+    import matplotlib.pyplot as plt
+
+    from mh1_multihorizon.replay_corrected import CORR_DIR, RUNS
+
+    plt.rcParams["font.family"] = ["Noto Sans CJK HK", "sans-serif"]
+    plt.rcParams["axes.unicode_minus"] = False
+    IMG_DIR.mkdir(parents=True, exist_ok=True)
+    paths: list[Path] = []
+    titles = {"W3": "W3（2025-07~2025-12，106 个决策日）",
+              "W4": "W4（2026-01~2026-07，114 个决策日）"}
+    for bench_col, label in (("bench_idx_ret", "相对 000300 指数基准"),
+                             ("bench_ew_ret", "相对同池等权基准(v2 掩码)")):
+        fig, axes = plt.subplots(2, 1, figsize=(9.5, 8.2))
+        for ax, wname in zip(axes, ("W3", "W4")):
+            for name in (*RUNS, "G1_mean"):
+                daily = pd.read_parquet(CORR_DIR / "daily" / f"{wname}_{name}.parquet")
+                bench = daily[bench_col]
+                for kind, ls, lw in (("net", "-", 1.2), ("gross", "--", 0.9)):
+                    ex = (daily[f"{kind}_return"] - bench).dropna()
+                    nav = (1.0 + ex).cumprod()
+                    color, base_ls = STYLE[name]
+                    ax.plot(nav.index, nav, color=color, linestyle=ls,
+                            linewidth=1.8 if (name == "G1_mean" and kind == "net")
+                            else lw,
+                            label=f"{name.replace('_', ' ')}{'·毛' if kind == 'gross' else ''}")
+            ax.axhline(1.0, color="grey", linewidth=0.6, alpha=0.7)
+            ax.set_title(titles[wname], fontsize=10)
+            ax.set_ylabel("累计超额净值（毛/净）", fontsize=9)
+            ax.grid(alpha=0.25)
+            h, l = ax.get_legend_handles_labels()
+            ax.legend(h[::2], [x for x in l if "·毛" not in x],
+                      fontsize=7.5, ncol=4, loc="best")
+        fig.suptitle(f"MH1 六臂 + G1_mean · 真实 engine_v2 毛/净超额净值 · {label}"
+                     f"（delay=1/双边15bp/涨跌停禁成交/top50；G1_mean 同网格；"
+                     f"虚线=毛收益）", fontsize=10.5)
+        fig.tight_layout(rect=(0, 0, 1, 0.95))
+        out = IMG_DIR / f"mh1_nav_v2_{bench_col.replace('bench_', '').replace('_ret', '')}.png"
+        fig.savefig(out, dpi=150)
+        plt.close(fig)
+        paths.append(out)
+        logger.info(f"纠偏图落盘 {out}")
+    return paths
+
+
 def main() -> int:
+    import argparse
+
+    parser = argparse.ArgumentParser(description="MH1 净值（旧引擎保留 + v2 纠偏）")
+    parser.add_argument("--corrected", action="store_true",
+                        help="纠偏模式：只读 replay_corrected 逐日序列画真实 v2 图")
+    args = parser.parse_args()
+    if args.corrected:
+        plot_corrected()
+        return 0
     navs = run_nav()
     plot(navs)
     return 0

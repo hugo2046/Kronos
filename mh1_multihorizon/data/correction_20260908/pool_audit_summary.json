@@ -1,0 +1,15 @@
+{
+  "n_days": 2567,
+  "samples_min_max": [
+    578,
+    737
+  ],
+  "samples_mean": 672.5886248539151,
+  "nonmember_ratio_mean": 0.551389638775511,
+  "nonmember_ratio_max": 0.5929443690637721,
+  "decision_range": [
+    "2014-05-19",
+    "2024-12-03"
+  ],
+  "note": "历史并集训练口径 vs t 日 PIT 成分交集，逐日统计（只读取证）"
+}

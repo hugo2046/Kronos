@@ -1,0 +1,86 @@
+{
+  "batch": "20260908_084930",
+  "window_bounds": {
+    "W3": [
+      "2025-07-01",
+      "2025-12-31"
+    ],
+    "W4": [
+      "2026-01-01",
+      "2026-07-24"
+    ]
+  },
+  "forward_cutoff": "2026-07-24",
+  "runs": [
+    "S42",
+    "M42",
+    "S43",
+    "M43",
+    "S44",
+    "M44"
+  ],
+  "g1_mean_parquet": {
+    "W3": "/home/user/workspace/Kronos/g5_head/data/daily_signals_2025h2_G1_mean.parquet",
+    "W4": "/home/user/workspace/Kronos/finetune_suite/data/g1/daily_signals_backtest_G1_mean.parquet"
+  },
+  "protocol_sha256": "2516998a2106fa8b2630b27bb34cf6742b70c3c6e8e33b564b46b4e28297f9ff",
+  "evidence_manifest": {
+    "/home/user/workspace/Kronos/mh1_multihorizon/data/signals_W3.parquet": "74ef56c5c7192f29956978855c1558a6a7e7f5c718fa2f6fd751e9ab417dace6",
+    "/home/user/workspace/Kronos/mh1_multihorizon/data/signals_W4.parquet": "2d48619b3ffd1302dce2e452ff5a5002bbe8a1bddb8c412122a642021d33a713",
+    "/home/user/workspace/Kronos/mh1_multihorizon/data/protocol.json": "2516998a2106fa8b2630b27bb34cf6742b70c3c6e8e33b564b46b4e28297f9ff",
+    "/home/user/workspace/Kronos/mh1_multihorizon/data/protocol.json.sha256": "c27f4289cf9fafa3e8d832f87df95c06140f9d3cb97a4f19385fdef629e53a37",
+    "/home/user/workspace/Kronos/mh1_multihorizon/data/judge_summary.json": "381ee72371ee7a8131561c7691027265e42ee2d281fe416df414fa92e3728627",
+    "/home/user/workspace/Kronos/mh1_multihorizon/data/engine_v2_attachment.json": "fc4092b03429b986575234b5bad103d652c81b6bc5f8c460306b7cc3fb6924c5",
+    "/home/user/workspace/Kronos/mh1_multihorizon/data/timing.json": "e531938556f36e9fd04996ec6a141314c70dd19c6ab3bc345c172cab44d08f3c",
+    "/home/user/workspace/Kronos/mh1_multihorizon/data/manifest.json": "38b3c31d106854af8a900bba4defa93c2a9f031e7baa632e8b1bb7725301886a",
+    "/home/user/workspace/Kronos/mh1_multihorizon/data/nav_W3.parquet": "c803322beca29dd79dfaa68062b214c2246d1aa40802ac36c48233467004b6b1",
+    "/home/user/workspace/Kronos/mh1_multihorizon/data/nav_W4.parquet": "b1e99d5ab16ed397f224df3f285ec1dffcae040379b121af32c65333c94678e7",
+    "/home/user/workspace/Kronos/mh1_multihorizon/data/stage_state.json": "3790229f5c6a137f9ab14d33ad0072f0f8bae14a9bc4d8afbfc8342f7413215c",
+    "/home/user/workspace/Kronos/mh1_multihorizon/data/gpu_budget.json": "310cde63e5b5f61593ac3d3d64bddb758c7e211945f45e88e9a6ba18a927ca96",
+    "/home/user/workspace/Kronos/mh1_multihorizon/data/run_S42_best.pt": "a38147ba6a45490ab672905169e71cffdc9b7359f74283859bd1d9a938f9e277",
+    "/home/user/workspace/Kronos/mh1_multihorizon/data/run_M42_best.pt": "4adc448f4c25b13f74f4ea5b6a317036930d8dc947a75744b4c4bfa220f11bd8",
+    "/home/user/workspace/Kronos/mh1_multihorizon/data/run_S43_best.pt": "f4fddd670bac72467aec6e161c305ce0716701184bb4a3b7e4d48efceb8ffc18",
+    "/home/user/workspace/Kronos/mh1_multihorizon/data/run_M43_best.pt": "010d26aa0f5fd00205a12a610f7d2cf55d5970473606882bcfe12dc706c8a436",
+    "/home/user/workspace/Kronos/mh1_multihorizon/data/run_S44_best.pt": "d9ffd09175daedae1bb0493028d5f46495a119716326008d0af78fcf3d72e9c2",
+    "/home/user/workspace/Kronos/mh1_multihorizon/data/run_M44_best.pt": "f43628cb53a7eb3533fdde852c0d5558461eddfe4bbc44b553ac51217d171695",
+    "/home/user/workspace/Kronos/mh1_multihorizon/data/run_S42_history.json": "a385877e4153c5253ba0e32f1323401d6bb7c718811e27e07bf900a51be73b83",
+    "/home/user/workspace/Kronos/mh1_multihorizon/data/run_M42_history.json": "54282a8659fa19e2f6e6b948ee80e2dbd4ac48f7f0f0c08619c7bedb3bf3b592",
+    "/home/user/workspace/Kronos/mh1_multihorizon/data/run_S43_history.json": "705dcdbdb6dc71639bf089aae3528731074b3402a2f821333fa0ff1f8d4c3946",
+    "/home/user/workspace/Kronos/mh1_multihorizon/data/run_M43_history.json": "a334e37bb585fc60c8c47f4b331d211c305a185850fc14ebe4f5c4b786bcd3a5",
+    "/home/user/workspace/Kronos/mh1_multihorizon/data/run_S44_history.json": "9de2e7c09aacc91bfba7395047b68abc8300e490d401e588e77fde5d4339a91b",
+    "/home/user/workspace/Kronos/mh1_multihorizon/data/run_M44_history.json": "58e4e400d0e2a813a0e0601d12716f1ae8f1e7145c318a0a2e9a5c798863bbc9",
+    "/home/user/workspace/Kronos/mh1_multihorizon/data/logs/smoke.log": "1c8cc4ea4ba2f0a1217ef161b1d4763ff0fd57b40c8853afd4370f559ce7b50a",
+    "/home/user/workspace/Kronos/mh1_multihorizon/data/logs/train.log": "f65a6d061990eb9532f4eceb0a52e5a365cfdaba9591f4b513ba6e4560a646c6",
+    "/home/user/workspace/Kronos/mh1_multihorizon/data/logs/evaluate.log": "6f20c4ad5a9bcf51f9eefe5d489518a1374d29b99d6a8be9bff1ef0e5eea2079",
+    "/home/user/workspace/Kronos/mh1_multihorizon/data/logs/nav.log": "85fddb964ed2eece36f3eb9b6546ba344af82066cc881ce4463f458feab57aaf",
+    "/home/user/workspace/Kronos/g5_head/data/daily_signals_2025h2_G1_mean.parquet": "9352b40302eb34c714bfebd808481b625a21d2f7f4f668ccca15cda0cfe21d66",
+    "/home/user/workspace/Kronos/finetune_suite/data/g1/daily_signals_backtest_G1_mean.parquet": "453e2aeae7fe4bee8ce8fa62a9908da0843d5ad8b52777cd3b299a84cc4a3e36",
+    "/home/user/workspace/Kronos/finetune_suite/data/g0/daily_signals_2025h2_G0_min.parquet": "a38fb7a4c36a4dc97c8224302cd4ad10032b18d6c2dd87a6389cc78bfadc0064",
+    "/home/user/workspace/Kronos/finetune_suite/data/g0/daily_signals_2025h2_G0_max.parquet": "714bc4f26779876946167539840ee547e8f67fcc8d9a8716442c750fed178a1d",
+    "/home/user/workspace/Kronos/finetune_suite/data/g0/daily_signals_2025h2_G0_last.parquet": "dfc1d14b2f9cf3f4f93995c4b63728d83dbbd5a081efe72f03c68b8ef17257fb",
+    "/home/user/workspace/Kronos/finetune_suite/data/g0/daily_signals_2025h2_G0_mean.parquet": "67a5648cc8482387cbae19e1dba26252525c6ef7497ed7ceac6e4dde3bdbb7ec",
+    "/home/user/workspace/Kronos/finetune_suite/data/g0/daily_signals_2025h2_F0_min.parquet": "d1b49bd33a35cbe7e26987ffcc47355c61dcfe614d8dcd6202fe352337285a89",
+    "/home/user/workspace/Kronos/finetune_suite/data/g0/daily_signals_2025h2_F0_max.parquet": "65ba903bd7b313444e4977683813d3052e59204d38d720e6c8163e08990327d5",
+    "/home/user/workspace/Kronos/finetune_suite/data/g0/daily_signals_2025h2_F0_last.parquet": "ebc0d7e65f5fb018902420a8a24efe095a3e5956009b3de5d44cc6698d425aa6",
+    "/home/user/workspace/Kronos/finetune_suite/data/g0/daily_signals_2025h2_F0_mean.parquet": "b3d5bd8d1d900525f3889a36173da8ae74fad8841682956ab00d3b1bc3ef1456",
+    "/home/user/workspace/Kronos/finetune_suite/data/g0/daily_signals_2025h2_M.parquet": "ff0291b9c1dd3f9a873ec8ce01d3f0b090fb33061baf238c1110c28eab16a707",
+    "/home/user/workspace/Kronos/finetune_suite/data/g1/daily_signals_backtest_G1_min.parquet": "0cdd1b8414accaec3e6aae49465cb63cc5314714c5425aa8f3dcb1303de00ee2",
+    "/home/user/workspace/Kronos/finetune_suite/data/g1/daily_signals_backtest_G1_max.parquet": "e833a45e93d11845108b5306c298f587a66df777a44be36c08e8c3065b075263",
+    "/home/user/workspace/Kronos/finetune_suite/data/g1/daily_signals_backtest_G1_last.parquet": "ebc69b8e2e2fac8f8de3dc651be119e0d603dc7b93b6c3e8128adac5682b0b30",
+    "/home/user/workspace/Kronos/finetune_suite/data/daily_signals_backtest_F1_min.parquet": "ce1a2e1487d33e4c414c0522cb879ce11c6b095dd66acef60211861994e2259c",
+    "/home/user/workspace/Kronos/finetune_suite/data/daily_signals_backtest_F1_max.parquet": "24b44559b9088969e802d9802b6e5e10f53d252195938825f8075c269b4d5510",
+    "/home/user/workspace/Kronos/finetune_suite/data/daily_signals_backtest_F1_last.parquet": "1a7af12d357d926dfaff9f32c62ece5ebefbee56d6592228fee191b15bd7d622",
+    "/home/user/workspace/Kronos/finetune_suite/data/daily_signals_backtest_F1_mean.parquet": "1b389a1343d2d2013407c5b4c75c6edb93f4cc3ea3f33216ea11381433cb2c25",
+    "/home/user/workspace/Kronos/finetune_suite/data/daily_signals_backtest_F0_min.parquet": "7c262aa17949be6710605a77a36aba3b14434f327c27d6845f88e2aca46cddd6",
+    "/home/user/workspace/Kronos/finetune_suite/data/daily_signals_backtest_F0_max.parquet": "a256688f320362b0b270981105a773ea48b900d40c615273c2c72828f463cf18",
+    "/home/user/workspace/Kronos/finetune_suite/data/daily_signals_backtest_F0_last.parquet": "d299d474558fd35f8eb7a6d35d1f62c6e40e0718f9fd635a123ee2ace75cc9fc",
+    "/home/user/workspace/Kronos/finetune_suite/data/daily_signals_backtest_F0_mean.parquet": "b20f6bdb79a40d4535265b15ccf1b43b5550153c20de29fad9e5df472a5194d7",
+    "/home/user/workspace/Kronos/finetune_suite/data/daily_signals_backtest_M.parquet": "4e89a6ebd6b846b9dabe382660132d3c61f16f57585a2cc35aff6226d61e903d"
+  },
+  "n_evidence_files": 51,
+  "missing_evidence": [
+    "/home/user/workspace/Kronos/mh1_multihorizon/data/logs/preflight.log"
+  ],
+  "engine": "paper_replication.engine_v2（EngineConfigV2 默认六修正全开）",
+  "created_at": "2026-09-08T08:49:30"
+}

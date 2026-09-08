@@ -1,0 +1,1141 @@
+{
+  "batch": "20260908_084930",
+  "created_at": "2026-09-08T08:50:20",
+  "protocol_sha256": "2516998a2106fa8b2630b27bb34cf6742b70c3c6e8e33b564b46b4e28297f9ff",
+  "window_bounds": {
+    "W3": [
+      "2025-07-01",
+      "2025-12-31"
+    ],
+    "W4": [
+      "2026-01-01",
+      "2026-07-24"
+    ]
+  },
+  "identity_check": {
+    "max_abs_identity_err": 0.0,
+    "max_abs_cost_formula_err": 5.421010862427522e-20
+  },
+  "rows": [
+    {
+      "arm": "S42",
+      "self": {
+        "gross": {
+          "name": "S42|gross",
+          "n_days": 126,
+          "aer": 0.3845299017809489,
+          "ir": 2.6803035066771206,
+          "max_drawdown": -0.052615976198060244,
+          "daily_turnover": 0.08841403574169844
+        },
+        "net": {
+          "name": "S42|net",
+          "n_days": 126,
+          "aer": 0.2990005999172638,
+          "ir": 2.1673135138745043,
+          "max_drawdown": -0.05546686766174169,
+          "daily_turnover": 0.08841403574169844
+        }
+      },
+      "excess_idx": {
+        "n_common": 125,
+        "gross": {
+          "name": "S42|gi",
+          "n_days": 125,
+          "aer": -0.0013975062778189828,
+          "ir": 0.018944200854840162,
+          "max_drawdown": -0.07429653149362714,
+          "daily_turnover": 0.08841403574169844
+        },
+        "net": {
+          "name": "S42|ni",
+          "n_days": 125,
+          "aer": -0.06364151634967563,
+          "ir": -0.8320783597487623,
+          "max_drawdown": -0.09111880459973187,
+          "daily_turnover": 0.08841403574169844
+        },
+        "rule": "扣费前已无正超额"
+      },
+      "excess_ew": {
+        "n_common": 105,
+        "gross": {
+          "name": "S42|ge",
+          "n_days": 105,
+          "aer": 0.01806704683910776,
+          "ir": 0.27930759131532024,
+          "max_drawdown": -0.07862149937521934,
+          "daily_turnover": 0.08841403574169844
+        },
+        "net": {
+          "name": "S42|ne",
+          "n_days": 105,
+          "aer": -0.05628132950274567,
+          "ir": -0.7485857929278384,
+          "max_drawdown": -0.09536563252113173,
+          "daily_turnover": 0.08841403574169844
+        },
+        "rule": "费用使该项由正转非正"
+      },
+      "sum_cost": 0.031920505510362004,
+      "nav_drag_end": 0.03692341214151962,
+      "n_trade_days": 126,
+      "window": "W3",
+      "engine_config": {
+        "top_k": 50,
+        "drop_n": 5,
+        "min_hold": 5,
+        "cost_bps": 15.0,
+        "fix_double_sided_cost": true,
+        "fix_delay_1": true,
+        "fix_limit_block": true,
+        "fix_new_leg_drift": true,
+        "fix_annualization_252": true
+      },
+      "engine_modules": {
+        "run": "paper_replication.engine_v2.run_portfolio_v2",
+        "limits": "paper_replication.engine_v2.build_limit_masks"
+      }
+    },
+    {
+      "arm": "M42",
+      "self": {
+        "gross": {
+          "name": "M42|gross",
+          "n_days": 126,
+          "aer": 0.2926940537537426,
+          "ir": 2.3421389172806157,
+          "max_drawdown": -0.05998740752269349,
+          "daily_turnover": 0.0884795275501233
+        },
+        "net": {
+          "name": "M42|net",
+          "n_days": 126,
+          "aer": 0.21275988732207063,
+          "ir": 1.7741814564107141,
+          "max_drawdown": -0.06506996776049001,
+          "daily_turnover": 0.0884795275501233
+        }
+      },
+      "excess_idx": {
+        "n_common": 125,
+        "gross": {
+          "name": "M42|gi",
+          "n_days": 125,
+          "aer": -0.07117561302886988,
+          "ir": -0.7190213922711828,
+          "max_drawdown": -0.08578042304737299,
+          "daily_turnover": 0.0884795275501233
+        },
+        "net": {
+          "name": "M42|ni",
+          "n_days": 125,
+          "aer": -0.12912899036433845,
+          "ir": -1.3884753375883805,
+          "max_drawdown": -0.10182033307331229,
+          "daily_turnover": 0.0884795275501233
+        },
+        "rule": "扣费前已无正超额"
+      },
+      "excess_ew": {
+        "n_common": 105,
+        "gross": {
+          "name": "M42|ge",
+          "n_days": 105,
+          "aer": -0.036515871447880155,
+          "ir": -0.40296417935680373,
+          "max_drawdown": -0.08635607287035496,
+          "daily_turnover": 0.0884795275501233
+        },
+        "net": {
+          "name": "M42|ne",
+          "n_days": 105,
+          "aer": -0.10699699026258624,
+          "ir": -1.3091928301314486,
+          "max_drawdown": -0.10238567652639463,
+          "daily_turnover": 0.0884795275501233
+        },
+        "rule": "扣费前已无正超额"
+      },
+      "sum_cost": 0.03194526141394661,
+      "nav_drag_end": 0.035713261921966666,
+      "n_trade_days": 126,
+      "window": "W3",
+      "engine_config": {
+        "top_k": 50,
+        "drop_n": 5,
+        "min_hold": 5,
+        "cost_bps": 15.0,
+        "fix_double_sided_cost": true,
+        "fix_delay_1": true,
+        "fix_limit_block": true,
+        "fix_new_leg_drift": true,
+        "fix_annualization_252": true
+      },
+      "engine_modules": {
+        "run": "paper_replication.engine_v2.run_portfolio_v2",
+        "limits": "paper_replication.engine_v2.build_limit_masks"
+      }
+    },
+    {
+      "arm": "S43",
+      "self": {
+        "gross": {
+          "name": "S43|gross",
+          "n_days": 126,
+          "aer": 0.208299349901357,
+          "ir": 1.8463728029921727,
+          "max_drawdown": -0.042742918291166054,
+          "daily_turnover": 0.08811734759109875
+        },
+        "net": {
+          "name": "S43|net",
+          "n_days": 126,
+          "aer": 0.13386660820806773,
+          "ir": 1.2432517177269569,
+          "max_drawdown": -0.047964301115340446,
+          "daily_turnover": 0.08811734759109875
+        }
+      },
+      "excess_idx": {
+        "n_common": 125,
+        "gross": {
+          "name": "S43|gi",
+          "n_days": 125,
+          "aer": -0.13324150728655892,
+          "ir": -1.3940225977798513,
+          "max_drawdown": -0.13528146413999675,
+          "daily_turnover": 0.08811734759109875
+        },
+        "net": {
+          "name": "S43|ni",
+          "n_days": 125,
+          "aer": -0.18711630528425427,
+          "ir": -2.0411821303415194,
+          "max_drawdown": -0.15097510107121637,
+          "daily_turnover": 0.08811734759109875
+        },
+        "rule": "扣费前已无正超额"
+      },
+      "excess_ew": {
+        "n_common": 105,
+        "gross": {
+          "name": "S43|ge",
+          "n_days": 105,
+          "aer": -0.11290874094209069,
+          "ir": -1.2374834658196348,
+          "max_drawdown": -0.1392397093484652,
+          "daily_turnover": 0.08811734759109875
+        },
+        "net": {
+          "name": "S43|ne",
+          "n_days": 105,
+          "aer": -0.17756718486578915,
+          "ir": -2.0465637240998853,
+          "max_drawdown": -0.1548620865611926,
+          "daily_turnover": 0.08811734759109875
+        },
+        "rule": "扣费前已无正超额"
+      },
+      "sum_cost": 0.03180835738943533,
+      "nav_drag_end": 0.03439497776769418,
+      "n_trade_days": 126,
+      "window": "W3",
+      "engine_config": {
+        "top_k": 50,
+        "drop_n": 5,
+        "min_hold": 5,
+        "cost_bps": 15.0,
+        "fix_double_sided_cost": true,
+        "fix_delay_1": true,
+        "fix_limit_block": true,
+        "fix_new_leg_drift": true,
+        "fix_annualization_252": true
+      },
+      "engine_modules": {
+        "run": "paper_replication.engine_v2.run_portfolio_v2",
+        "limits": "paper_replication.engine_v2.build_limit_masks"
+      }
+    },
+    {
+      "arm": "M43",
+      "self": {
+        "gross": {
+          "name": "M43|gross",
+          "n_days": 126,
+          "aer": 0.4368697495773457,
+          "ir": 2.98559791073917,
+          "max_drawdown": -0.056917754881815275,
+          "daily_turnover": 0.08829828152854331
+        },
+        "net": {
+          "name": "M43|net",
+          "n_days": 126,
+          "aer": 0.34822616855587873,
+          "ir": 2.470837320458103,
+          "max_drawdown": -0.059770535175565076,
+          "daily_turnover": 0.08829828152854331
+        }
+      },
+      "excess_idx": {
+        "n_common": 125,
+        "gross": {
+          "name": "M43|gi",
+          "n_days": 125,
+          "aer": 0.03690745742252877,
+          "ir": 0.5345385137351981,
+          "max_drawdown": -0.0501001453909099,
+          "daily_turnover": 0.08829828152854331
+        },
+        "net": {
+          "name": "M43|ni",
+          "n_days": 125,
+          "aer": -0.027632985092283735,
+          "ir": -0.34942723045175966,
+          "max_drawdown": -0.06730910639772403,
+          "daily_turnover": 0.08829828152854331
+        },
+        "rule": "费用使该项由正转非正"
+      },
+      "excess_ew": {
+        "n_common": 105,
+        "gross": {
+          "name": "M43|ge",
+          "n_days": 105,
+          "aer": 0.04616784550909059,
+          "ir": 0.7226891813385689,
+          "max_drawdown": -0.05360364243546034,
+          "daily_turnover": 0.08829828152854331
+        },
+        "net": {
+          "name": "M43|ne",
+          "n_days": 105,
+          "aer": -0.0302034316577785,
+          "ir": -0.4361256858712141,
+          "max_drawdown": -0.07075004220537351,
+          "daily_turnover": 0.08829828152854331
+        },
+        "rule": "费用使该项由正转非正"
+      },
+      "sum_cost": 0.031876750417789375,
+      "nav_drag_end": 0.03756360198238218,
+      "n_trade_days": 126,
+      "window": "W3",
+      "engine_config": {
+        "top_k": 50,
+        "drop_n": 5,
+        "min_hold": 5,
+        "cost_bps": 15.0,
+        "fix_double_sided_cost": true,
+        "fix_delay_1": true,
+        "fix_limit_block": true,
+        "fix_new_leg_drift": true,
+        "fix_annualization_252": true
+      },
+      "engine_modules": {
+        "run": "paper_replication.engine_v2.run_portfolio_v2",
+        "limits": "paper_replication.engine_v2.build_limit_masks"
+      }
+    },
+    {
+      "arm": "S44",
+      "self": {
+        "gross": {
+          "name": "S44|gross",
+          "n_days": 126,
+          "aer": 0.2791237807149791,
+          "ir": 2.1743588076378835,
+          "max_drawdown": -0.04208378004926272,
+          "daily_turnover": 0.08882140192068241
+        },
+        "net": {
+          "name": "S44|net",
+          "n_days": 126,
+          "aer": 0.19970839489695913,
+          "ir": 1.62302812609043,
+          "max_drawdown": -0.04470969751532783,
+          "daily_turnover": 0.08882140192068241
+        }
+      },
+      "excess_idx": {
+        "n_common": 125,
+        "gross": {
+          "name": "S44|gi",
+          "n_days": 125,
+          "aer": -0.0799746928746422,
+          "ir": -0.8947283037368557,
+          "max_drawdown": -0.12159992857818203,
+          "daily_turnover": 0.08882140192068241
+        },
+        "net": {
+          "name": "S44|ni",
+          "n_days": 125,
+          "aer": -0.13760690196439884,
+          "ir": -1.6237026912901957,
+          "max_drawdown": -0.13758364212498675,
+          "daily_turnover": 0.08882140192068241
+        },
+        "rule": "扣费前已无正超额"
+      },
+      "excess_ew": {
+        "n_common": 105,
+        "gross": {
+          "name": "S44|ge",
+          "n_days": 105,
+          "aer": -0.06808757364059415,
+          "ir": -0.7315709389971768,
+          "max_drawdown": -0.12446649913952401,
+          "daily_turnover": 0.08882140192068241
+        },
+        "net": {
+          "name": "S44|ne",
+          "n_days": 105,
+          "aer": -0.13653220883414607,
+          "ir": -1.5709099163908722,
+          "max_drawdown": -0.14039890178035863,
+          "daily_turnover": 0.08882140192068241
+        },
+        "rule": "扣费前已无正超额"
+      },
+      "sum_cost": 0.032074489926017954,
+      "nav_drag_end": 0.03567153771854903,
+      "n_trade_days": 126,
+      "window": "W3",
+      "engine_config": {
+        "top_k": 50,
+        "drop_n": 5,
+        "min_hold": 5,
+        "cost_bps": 15.0,
+        "fix_double_sided_cost": true,
+        "fix_delay_1": true,
+        "fix_limit_block": true,
+        "fix_new_leg_drift": true,
+        "fix_annualization_252": true
+      },
+      "engine_modules": {
+        "run": "paper_replication.engine_v2.run_portfolio_v2",
+        "limits": "paper_replication.engine_v2.build_limit_masks"
+      }
+    },
+    {
+      "arm": "M44",
+      "self": {
+        "gross": {
+          "name": "M44|gross",
+          "n_days": 126,
+          "aer": 0.2986477964554135,
+          "ir": 2.436896513627932,
+          "max_drawdown": -0.04890703269647245,
+          "daily_turnover": 0.08899955695541983
+        },
+        "net": {
+          "name": "M44|net",
+          "n_days": 126,
+          "aer": 0.21787067510437286,
+          "ir": 1.8522810484462389,
+          "max_drawdown": -0.05181198104915019,
+          "daily_turnover": 0.08899955695541983
+        }
+      },
+      "excess_idx": {
+        "n_common": 125,
+        "gross": {
+          "name": "M44|gi",
+          "n_days": 125,
+          "aer": -0.0666548869067134,
+          "ir": -0.7149291028923332,
+          "max_drawdown": -0.09170309027396906,
+          "daily_turnover": 0.08899955695541983
+        },
+        "net": {
+          "name": "M44|ni",
+          "n_days": 125,
+          "aer": -0.1252280415936613,
+          "ir": -1.431188369466027,
+          "max_drawdown": -0.10744378860812531,
+          "daily_turnover": 0.08899955695541983
+        },
+        "rule": "扣费前已无正超额"
+      },
+      "excess_ew": {
+        "n_common": 105,
+        "gross": {
+          "name": "M44|ge",
+          "n_days": 105,
+          "aer": -0.010629849614927411,
+          "ir": -0.08084031914728512,
+          "max_drawdown": -0.09363621095979491,
+          "daily_turnover": 0.08899955695541983
+        },
+        "net": {
+          "name": "M44|ne",
+          "n_days": 105,
+          "aer": -0.08340886389207836,
+          "ir": -0.9643133103209028,
+          "max_drawdown": -0.11022794712113004,
+          "daily_turnover": 0.08899955695541983
+        },
+        "rule": "扣费前已无正超额"
+      },
+      "sum_cost": 0.03214183252914869,
+      "nav_drag_end": 0.03601050966350816,
+      "n_trade_days": 126,
+      "window": "W3",
+      "engine_config": {
+        "top_k": 50,
+        "drop_n": 5,
+        "min_hold": 5,
+        "cost_bps": 15.0,
+        "fix_double_sided_cost": true,
+        "fix_delay_1": true,
+        "fix_limit_block": true,
+        "fix_new_leg_drift": true,
+        "fix_annualization_252": true
+      },
+      "engine_modules": {
+        "run": "paper_replication.engine_v2.run_portfolio_v2",
+        "limits": "paper_replication.engine_v2.build_limit_masks"
+      }
+    },
+    {
+      "arm": "G1_mean",
+      "self": {
+        "gross": {
+          "name": "G1_mean|gross",
+          "n_days": 126,
+          "aer": 0.7236211387827804,
+          "ir": 2.7276630034076885,
+          "max_drawdown": -0.10615505372473188,
+          "daily_turnover": 0.08727501965564903
+        },
+        "net": {
+          "name": "G1_mean|net",
+          "n_days": 126,
+          "aer": 0.6186146978247209,
+          "ir": 2.424404690635347,
+          "max_drawdown": -0.11093576278014983,
+          "daily_turnover": 0.08727501965564903
+        }
+      },
+      "excess_idx": {
+        "n_common": 125,
+        "gross": {
+          "name": "G1_mean|gi",
+          "n_days": 125,
+          "aer": 0.2606563049883839,
+          "ir": 2.4406794760208603,
+          "max_drawdown": -0.05389313045363153,
+          "daily_turnover": 0.08727501965564903
+        },
+        "net": {
+          "name": "G1_mean|ni",
+          "n_days": 125,
+          "aer": 0.1831682277787714,
+          "ir": 1.78486417161842,
+          "max_drawdown": -0.05949183741558939,
+          "daily_turnover": 0.08727501965564903
+        },
+        "rule": "该窗口扣费后仍正"
+      },
+      "excess_ew": {
+        "n_common": 105,
+        "gross": {
+          "name": "G1_mean|ge",
+          "n_days": 105,
+          "aer": 0.27302820093380653,
+          "ir": 2.1581191510574134,
+          "max_drawdown": -0.05584001256877136,
+          "daily_turnover": 0.08727501965564903
+        },
+        "net": {
+          "name": "G1_mean|ne",
+          "n_days": 105,
+          "aer": 0.18125000946248693,
+          "ir": 1.5056837931165945,
+          "max_drawdown": -0.06142790673336218,
+          "daily_turnover": 0.08727501965564903
+        },
+        "rule": "该窗口扣费后仍正"
+      },
+      "sum_cost": 0.03148995742983533,
+      "nav_drag_end": 0.040619633565469604,
+      "n_trade_days": 126,
+      "window": "W3",
+      "engine_config": {
+        "top_k": 50,
+        "drop_n": 5,
+        "min_hold": 5,
+        "cost_bps": 15.0,
+        "fix_double_sided_cost": true,
+        "fix_delay_1": true,
+        "fix_limit_block": true,
+        "fix_new_leg_drift": true,
+        "fix_annualization_252": true
+      },
+      "engine_modules": {
+        "run": "paper_replication.engine_v2.run_portfolio_v2",
+        "limits": "paper_replication.engine_v2.build_limit_masks"
+      }
+    },
+    {
+      "arm": "S42",
+      "self": {
+        "gross": {
+          "name": "S42|gross",
+          "n_days": 134,
+          "aer": -0.09161998078218991,
+          "ir": -0.5147395425426285,
+          "max_drawdown": -0.09572825006247299,
+          "daily_turnover": 0.08851568199835907
+        },
+        "net": {
+          "name": "S42|net",
+          "n_days": 134,
+          "aer": -0.14805673885625015,
+          "ir": -0.9113396712884618,
+          "max_drawdown": -0.10645647478064846,
+          "daily_turnover": 0.08851568199835907
+        }
+      },
+      "excess_idx": {
+        "n_common": 133,
+        "gross": {
+          "name": "S42|gi",
+          "n_days": 133,
+          "aer": -0.08156817356849799,
+          "ir": -0.5401191565744372,
+          "max_drawdown": -0.12156366242566785,
+          "daily_turnover": 0.08851568199835907
+        },
+        "net": {
+          "name": "S42|ni",
+          "n_days": 133,
+          "aer": -0.1390954735899267,
+          "ir": -0.9990207776992794,
+          "max_drawdown": -0.14510164605873066,
+          "daily_turnover": 0.08851568199835907
+        },
+        "rule": "扣费前已无正超额"
+      },
+      "excess_ew": {
+        "n_common": 113,
+        "gross": {
+          "name": "S42|ge",
+          "n_days": 113,
+          "aer": -0.05331238226874779,
+          "ir": -0.5861082939486708,
+          "max_drawdown": -0.04545787175661631,
+          "daily_turnover": 0.08851568199835907
+        },
+        "net": {
+          "name": "S42|ne",
+          "n_days": 113,
+          "aer": -0.122091700130877,
+          "ir": -1.444012835431753,
+          "max_drawdown": -0.055359442906612766,
+          "daily_turnover": 0.08851568199835907
+        },
+        "rule": "扣费前已无正超额"
+      },
+      "sum_cost": 0.03408330416334034,
+      "nav_drag_end": 0.031862243000141066,
+      "n_trade_days": 134,
+      "window": "W4",
+      "engine_config": {
+        "top_k": 50,
+        "drop_n": 5,
+        "min_hold": 5,
+        "cost_bps": 15.0,
+        "fix_double_sided_cost": true,
+        "fix_delay_1": true,
+        "fix_limit_block": true,
+        "fix_new_leg_drift": true,
+        "fix_annualization_252": true
+      },
+      "engine_modules": {
+        "run": "paper_replication.engine_v2.run_portfolio_v2",
+        "limits": "paper_replication.engine_v2.build_limit_masks"
+      }
+    },
+    {
+      "arm": "M42",
+      "self": {
+        "gross": {
+          "name": "M42|gross",
+          "n_days": 134,
+          "aer": 0.07460985956442578,
+          "ir": 0.484422372763017,
+          "max_drawdown": -0.09231295961662045,
+          "daily_turnover": 0.08851754792774483
+        },
+        "net": {
+          "name": "M42|net",
+          "n_days": 134,
+          "aer": 0.007866097356471924,
+          "ir": 0.13352456834917162,
+          "max_drawdown": -0.10079060613392898,
+          "daily_turnover": 0.08851754792774483
+        }
+      },
+      "excess_idx": {
+        "n_common": 133,
+        "gross": {
+          "name": "M42|gi",
+          "n_days": 133,
+          "aer": 0.0887285455366209,
+          "ir": 0.6131606502055645,
+          "max_drawdown": -0.10296806659894941,
+          "daily_turnover": 0.08851754792774483
+        },
+        "net": {
+          "name": "M42|ni",
+          "n_days": 133,
+          "aer": 0.020546203958611065,
+          "ir": 0.20633783442464454,
+          "max_drawdown": -0.12262553540884413,
+          "daily_turnover": 0.08851754792774483
+        },
+        "rule": "该窗口扣费后仍正"
+      },
+      "excess_ew": {
+        "n_common": 113,
+        "gross": {
+          "name": "M42|ge",
+          "n_days": 113,
+          "aer": 0.06184391312857951,
+          "ir": 0.8359270844132808,
+          "max_drawdown": -0.03919509131960397,
+          "daily_turnover": 0.08851754792774483
+        },
+        "net": {
+          "name": "M42|ne",
+          "n_days": 113,
+          "aer": -0.015267674706512135,
+          "ir": -0.16492803326337385,
+          "max_drawdown": -0.041533435830232834,
+          "daily_turnover": 0.08851754792774483
+        },
+        "rule": "费用使该项由正转非正"
+      },
+      "sum_cost": 0.03408405426695342,
+      "nav_drag_end": 0.0348295787152757,
+      "n_trade_days": 134,
+      "window": "W4",
+      "engine_config": {
+        "top_k": 50,
+        "drop_n": 5,
+        "min_hold": 5,
+        "cost_bps": 15.0,
+        "fix_double_sided_cost": true,
+        "fix_delay_1": true,
+        "fix_limit_block": true,
+        "fix_new_leg_drift": true,
+        "fix_annualization_252": true
+      },
+      "engine_modules": {
+        "run": "paper_replication.engine_v2.run_portfolio_v2",
+        "limits": "paper_replication.engine_v2.build_limit_masks"
+      }
+    },
+    {
+      "arm": "S43",
+      "self": {
+        "gross": {
+          "name": "S43|gross",
+          "n_days": 134,
+          "aer": 0.016349647599552597,
+          "ir": 0.17918897120708432,
+          "max_drawdown": -0.0936173083184697,
+          "daily_turnover": 0.0895235493517091
+        },
+        "net": {
+          "name": "S43|net",
+          "n_days": 134,
+          "aer": -0.04752302181522139,
+          "ir": -0.18170113217607423,
+          "max_drawdown": -0.10625848468958932,
+          "daily_turnover": 0.0895235493517091
+        }
+      },
+      "excess_idx": {
+        "n_common": 133,
+        "gross": {
+          "name": "S43|gi",
+          "n_days": 133,
+          "aer": 0.02577933761740203,
+          "ir": 0.23175907624495465,
+          "max_drawdown": -0.1463531406405918,
+          "daily_turnover": 0.0895235493517091
+        },
+        "net": {
+          "name": "S43|ni",
+          "n_days": 133,
+          "aer": -0.039220927388387894,
+          "ir": -0.13910289359089711,
+          "max_drawdown": -0.16094028504665714,
+          "daily_turnover": 0.0895235493517091
+        },
+        "rule": "费用使该项由正转非正"
+      },
+      "excess_ew": {
+        "n_common": 113,
+        "gross": {
+          "name": "S43|ge",
+          "n_days": 113,
+          "aer": -0.07559827318121937,
+          "ir": -0.7377697051252557,
+          "max_drawdown": -0.05162941764945761,
+          "daily_turnover": 0.0895235493517091
+        },
+        "net": {
+          "name": "S43|ne",
+          "n_days": 113,
+          "aer": -0.14352674626547868,
+          "ir": -1.4944349268750408,
+          "max_drawdown": -0.06724770609289477,
+          "daily_turnover": 0.0895235493517091
+        },
+        "rule": "扣费前已无正超额"
+      },
+      "sum_cost": 0.034488466839387055,
+      "nav_drag_end": 0.03421892749802524,
+      "n_trade_days": 134,
+      "window": "W4",
+      "engine_config": {
+        "top_k": 50,
+        "drop_n": 5,
+        "min_hold": 5,
+        "cost_bps": 15.0,
+        "fix_double_sided_cost": true,
+        "fix_delay_1": true,
+        "fix_limit_block": true,
+        "fix_new_leg_drift": true,
+        "fix_annualization_252": true
+      },
+      "engine_modules": {
+        "run": "paper_replication.engine_v2.run_portfolio_v2",
+        "limits": "paper_replication.engine_v2.build_limit_masks"
+      }
+    },
+    {
+      "arm": "M43",
+      "self": {
+        "gross": {
+          "name": "M43|gross",
+          "n_days": 134,
+          "aer": -0.05615083752866201,
+          "ir": -0.25542063467344395,
+          "max_drawdown": -0.10665801544688103,
+          "daily_turnover": 0.08858988813917926
+        },
+        "net": {
+          "name": "M43|net",
+          "n_days": 134,
+          "aer": -0.11483751043767643,
+          "ir": -0.6324010755430614,
+          "max_drawdown": -0.11822348386631298,
+          "daily_turnover": 0.08858988813917926
+        }
+      },
+      "excess_idx": {
+        "n_common": 133,
+        "gross": {
+          "name": "M43|gi",
+          "n_days": 133,
+          "aer": -0.04330170369986308,
+          "ir": -0.26465844232971897,
+          "max_drawdown": -0.10523282791211486,
+          "daily_turnover": 0.08858988813917926
+        },
+        "net": {
+          "name": "M43|ni",
+          "n_days": 133,
+          "aer": -0.10327699580238203,
+          "ir": -0.7443754124208335,
+          "max_drawdown": -0.12928166293845134,
+          "daily_turnover": 0.08858988813917926
+        },
+        "rule": "扣费前已无正超额"
+      },
+      "excess_ew": {
+        "n_common": 113,
+        "gross": {
+          "name": "M43|ge",
+          "n_days": 113,
+          "aer": -0.02533969495658761,
+          "ir": -0.32065393565710315,
+          "max_drawdown": -0.048341092673670816,
+          "daily_turnover": 0.08858988813917926
+        },
+        "net": {
+          "name": "M43|ne",
+          "n_days": 113,
+          "aer": -0.09622509306897842,
+          "ir": -1.3547726149134944,
+          "max_drawdown": -0.0600620673749056,
+          "daily_turnover": 0.08858988813917926
+        },
+        "rule": "扣费前已无正超额"
+      },
+      "sum_cost": 0.034113135031950056,
+      "nav_drag_end": 0.0325438992632191,
+      "n_trade_days": 134,
+      "window": "W4",
+      "engine_config": {
+        "top_k": 50,
+        "drop_n": 5,
+        "min_hold": 5,
+        "cost_bps": 15.0,
+        "fix_double_sided_cost": true,
+        "fix_delay_1": true,
+        "fix_limit_block": true,
+        "fix_new_leg_drift": true,
+        "fix_annualization_252": true
+      },
+      "engine_modules": {
+        "run": "paper_replication.engine_v2.run_portfolio_v2",
+        "limits": "paper_replication.engine_v2.build_limit_masks"
+      }
+    },
+    {
+      "arm": "S44",
+      "self": {
+        "gross": {
+          "name": "S44|gross",
+          "n_days": 134,
+          "aer": 0.015000586093262935,
+          "ir": 0.17190505686576066,
+          "max_drawdown": -0.07745857028815673,
+          "daily_turnover": 0.08913586928389527
+        },
+        "net": {
+          "name": "S44|net",
+          "n_days": 134,
+          "aer": -0.04849260693420132,
+          "ir": -0.2079587262932545,
+          "max_drawdown": -0.0858022698240899,
+          "daily_turnover": 0.08913586928389527
+        }
+      },
+      "excess_idx": {
+        "n_common": 133,
+        "gross": {
+          "name": "S44|gi",
+          "n_days": 133,
+          "aer": 0.02701373744282587,
+          "ir": 0.2520747091237681,
+          "max_drawdown": -0.09630516851376858,
+          "daily_turnover": 0.08913586928389527
+        },
+        "net": {
+          "name": "S44|ni",
+          "n_days": 133,
+          "aer": -0.03775922719032032,
+          "ir": -0.18121224211312206,
+          "max_drawdown": -0.12019636238672449,
+          "daily_turnover": 0.08913586928389527
+        },
+        "rule": "费用使该项由正转非正"
+      },
+      "excess_ew": {
+        "n_common": 113,
+        "gross": {
+          "name": "S44|ge",
+          "n_days": 113,
+          "aer": 0.014140411898174943,
+          "ir": 0.2184157405744902,
+          "max_drawdown": -0.02510910044157122,
+          "daily_turnover": 0.08913586928389527
+        },
+        "net": {
+          "name": "S44|ne",
+          "n_days": 113,
+          "aer": -0.06004488729670421,
+          "ir": -0.7470716145135994,
+          "max_drawdown": -0.03117714052219056,
+          "daily_turnover": 0.08913586928389527
+        },
+        "rule": "费用使该项由正转非正"
+      },
+      "sum_cost": 0.0343326194521259,
+      "nav_drag_end": 0.0340343632730703,
+      "n_trade_days": 134,
+      "window": "W4",
+      "engine_config": {
+        "top_k": 50,
+        "drop_n": 5,
+        "min_hold": 5,
+        "cost_bps": 15.0,
+        "fix_double_sided_cost": true,
+        "fix_delay_1": true,
+        "fix_limit_block": true,
+        "fix_new_leg_drift": true,
+        "fix_annualization_252": true
+      },
+      "engine_modules": {
+        "run": "paper_replication.engine_v2.run_portfolio_v2",
+        "limits": "paper_replication.engine_v2.build_limit_masks"
+      }
+    },
+    {
+      "arm": "M44",
+      "self": {
+        "gross": {
+          "name": "M44|gross",
+          "n_days": 134,
+          "aer": 0.002593353533673959,
+          "ir": 0.099561867453617,
+          "max_drawdown": -0.0900470346160912,
+          "daily_turnover": 0.08933313458046623
+        },
+        "net": {
+          "name": "M44|net",
+          "n_days": 134,
+          "aer": -0.06026003171778893,
+          "ir": -0.28097629800873136,
+          "max_drawdown": -0.09666724837607832,
+          "daily_turnover": 0.08933313458046623
+        }
+      },
+      "excess_idx": {
+        "n_common": 133,
+        "gross": {
+          "name": "M44|gi",
+          "n_days": 133,
+          "aer": 0.014624653902463924,
+          "ir": 0.17141080090781965,
+          "max_drawdown": -0.10285854321283627,
+          "daily_turnover": 0.08933313458046623
+        },
+        "net": {
+          "name": "M44|ni",
+          "n_days": 133,
+          "aer": -0.04950921469654612,
+          "ir": -0.2674060377832581,
+          "max_drawdown": -0.1271636902171409,
+          "daily_turnover": 0.08933313458046623
+        },
+        "rule": "费用使该项由正转非正"
+      },
+      "excess_ew": {
+        "n_common": 113,
+        "gross": {
+          "name": "M44|ge",
+          "n_days": 113,
+          "aer": 0.013322544428097549,
+          "ir": 0.19967348325723075,
+          "max_drawdown": -0.03624850792997725,
+          "daily_turnover": 0.08933313458046623
+        },
+        "net": {
+          "name": "M44|ne",
+          "n_days": 113,
+          "aer": -0.060943308575412525,
+          "ir": -0.7046745590810944,
+          "max_drawdown": -0.0435396931563069,
+          "daily_turnover": 0.08933313458046623
+        },
+        "rule": "费用使该项由正转非正"
+      },
+      "sum_cost": 0.03441192010134743,
+      "nav_drag_end": 0.033887131409573334,
+      "n_trade_days": 134,
+      "window": "W4",
+      "engine_config": {
+        "top_k": 50,
+        "drop_n": 5,
+        "min_hold": 5,
+        "cost_bps": 15.0,
+        "fix_double_sided_cost": true,
+        "fix_delay_1": true,
+        "fix_limit_block": true,
+        "fix_new_leg_drift": true,
+        "fix_annualization_252": true
+      },
+      "engine_modules": {
+        "run": "paper_replication.engine_v2.run_portfolio_v2",
+        "limits": "paper_replication.engine_v2.build_limit_masks"
+      }
+    },
+    {
+      "arm": "G1_mean",
+      "self": {
+        "gross": {
+          "name": "G1_mean|gross",
+          "n_days": 134,
+          "aer": 0.05133060480008389,
+          "ir": 0.3169335676618348,
+          "max_drawdown": -0.17848205699626896,
+          "daily_turnover": 0.08753103890271281
+        },
+        "net": {
+          "name": "G1_mean|net",
+          "n_days": 134,
+          "aer": -0.013127220930393091,
+          "ir": 0.09626822405831473,
+          "max_drawdown": -0.1784820569962693,
+          "daily_turnover": 0.08753103890271281
+        }
+      },
+      "excess_idx": {
+        "n_common": 133,
+        "gross": {
+          "name": "G1_mean|gi",
+          "n_days": 133,
+          "aer": 0.09240919788067181,
+          "ir": 0.653845609049169,
+          "max_drawdown": -0.10897236801813304,
+          "daily_turnover": 0.08753103890271281
+        },
+        "net": {
+          "name": "G1_mean|ni",
+          "n_days": 133,
+          "aer": 0.024879316107503824,
+          "ir": 0.2365292565962163,
+          "max_drawdown": -0.10897236801813315,
+          "daily_turnover": 0.08753103890271281
+        },
+        "rule": "该窗口扣费后仍正"
+      },
+      "excess_ew": {
+        "n_common": 113,
+        "gross": {
+          "name": "G1_mean|ge",
+          "n_days": 113,
+          "aer": 0.6036884069764239,
+          "ir": 2.7968155480087984,
+          "max_drawdown": -0.04910950068943931,
+          "daily_turnover": 0.08753103890271281
+        },
+        "net": {
+          "name": "G1_mean|ne",
+          "n_days": 113,
+          "aer": 0.4886321486637397,
+          "ir": 2.3656446897923837,
+          "max_drawdown": -0.05080576692261629,
+          "daily_turnover": 0.08753103890271281
+        },
+        "rule": "该窗口扣费后仍正"
+      },
+      "sum_cost": 0.033687477638890545,
+      "nav_drag_end": 0.033976748141969715,
+      "n_trade_days": 134,
+      "window": "W4",
+      "engine_config": {
+        "top_k": 50,
+        "drop_n": 5,
+        "min_hold": 5,
+        "cost_bps": 15.0,
+        "fix_double_sided_cost": true,
+        "fix_delay_1": true,
+        "fix_limit_block": true,
+        "fix_new_leg_drift": true,
+        "fix_annualization_252": true
+      },
+      "engine_modules": {
+        "run": "paper_replication.engine_v2.run_portfolio_v2",
+        "limits": "paper_replication.engine_v2.build_limit_masks"
+      }
+    }
+  ]
+}

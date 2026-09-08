@@ -581,62 +581,63 @@ def timing_benchmark(
 
 
 def engine_attachment(frames: dict[str, pd.DataFrame],
-                      windows: dict[str, list]) -> dict:
-    """引擎 v2 描述性附表（冻结口径轮次并集宇宙 + 双基准；不改引擎）。
+                      windows: dict[str, list] | None = None, *,
+                      fetcher=None,
+                      window_bounds: dict[str, tuple[str, str]] | None = None,
+                      with_g1_mean: bool = True) -> dict:
+    """引擎附表——**纠偏版（20260908）**：直连 ``paper_replication.engine_v2``
+    真实接口（经 :func:`mh1_multihorizon.replay_corrected.replay_window` 委托），
+    六新头 + G1_mean 同网格参照 × 两窗，主期限 10 日分数进引擎。
 
-    与 ``h1_readout.run_h1_backtest`` 同构：``BaselineConfig.load(window="oos")``
-    仅替换窗口边界；六新头 × 两窗，主期限 10 日分数进引擎。不据此改 IC 判据。
+    历史勘误：2026-09-07 版本经 ``baseline_suite.pipeline.run_group`` 实际
+    走**旧引擎**（``paper_replication.engine``），其 JSON 中的 ``delay=1``
+    等配置元数据与实际调用无关；该产物已标注为旧引擎口径（见
+    ``docs/MH1纠偏与收益成本诊断结果_20260908.md``）。本函数不再引用
+    ``baseline_suite.pipeline``，配置元数据由 ``dataclasses.asdict`` 于实际
+    调用点生成。不据此改 IC 判据。
+
+    :param frames: ``{window: 长格式信号}``。
+    :param windows: 兼容旧签名的评估日容器（引擎不再消费，仅保留占位）。
+    :param fetcher: 测试注入行情源（生产 None → qlib 冻结宇宙 + 指数基准）。
+    :param window_bounds: 旧签名兼容（重放窗口由 replay_corrected 冻结值决定）。
     """
-    from dataclasses import replace
+    from mh1_multihorizon.replay_corrected import replay_window as _replay
 
-    from baseline_suite.common import VARIANTS, BaselineConfig
-    from baseline_suite.pipeline import build_dual_benchmarks, run_group
-    from baseline_suite.signal import build_px_tradeable
-    from kronos_qlib import QlibProvider
-
-    r4 = REPO_ROOT_REF / "finetune_suite" / "data"
-    # H1 冻结口径轮次并集宇宙（W4↔backtest 文件族，W3↔2025h2 文件族）
-    universe = {
-        "W4": [r4 / "g1" / f"daily_signals_backtest_G1_{v}.parquet" for v in VARIANTS]
-        + [r4 / f"daily_signals_backtest_F1_{v}.parquet" for v in VARIANTS]
-        + [r4 / f"daily_signals_backtest_F0_{v}.parquet" for v in VARIANTS]
-        + [r4 / "daily_signals_backtest_M.parquet"],
-        "W3": [r4 / "g0" / f"daily_signals_2025h2_G0_{v}.parquet" for v in VARIANTS]
-        + [r4 / "g0" / f"daily_signals_2025h2_F0_{v}.parquet" for v in VARIANTS]
-        + [r4 / "g0" / "daily_signals_2025h2_M.parquet"],
-    }
-    h10 = f"h{HORIZONS[MAIN_HORIZON_IDX]}"
+    frames_wide = {w: frames[w] for w in frames}
     results: dict = {run: {} for run in _RUNS}
     engine_meta: dict = {}
-    for wname, (start, end) in WINDOW_BOUNDS.items():
-        cfg = replace(BaselineConfig.load(window="oos"),
-                      window=f"mh1_{wname}",
-                      backtest_start=start, backtest_end=end)
-        universe_cols = sorted(set().union(*[
-            set(pd.read_parquet(p).columns) for p in universe[wname]]))
-        provider = QlibProvider(cfg.pool, start, end)
-        rebalances = pd.DatetimeIndex(
-            sorted(d.date for d in windows[wname]))
-        px, trd = build_px_tradeable(provider, cfg, rebalances, universe_cols)
-        bench_idx, bench_ew, beta_gap = build_dual_benchmarks(
-            provider, cfg, px, trd)
-        engine_meta[wname] = {
-            "n_universe": len(universe_cols), "n_rebalances": len(rebalances),
-            "beta_gap": beta_gap,
-            "config": {"top_k": cfg.top_k if hasattr(cfg, "top_k") else 50,
-                       "drop_n": 5, "min_hold": 5, "cost_bps": 15.0,
-                       "delay": 1, "benchmarks": ["000300.SH 指数", "同池等权"]},
-        }
-        df = frames[wname]
-        for run in _RUNS:
-            arm, seed = run[0], int(run[1:])
-            sub = df[(df["arm"] == arm) & (df["seed"] == seed)]
-            sig = sub.pivot(index="date", columns="instrument", values=h10)
-            sig.index = pd.DatetimeIndex(sig.index)
-            pi, pe, _dr, _ei, _ee = run_group(
-                sig, px, trd, bench_idx, bench_ew, cfg=cfg, name=f"{run}@{wname}")
-            results[run][wname] = {"perf_idx": pi.to_dict(),
-                                   "perf_ew": pe.to_dict()}
+    for wname in frames_wide:
+        meta_w, per_run = _replay(wname, frames_wide, fetcher=fetcher,
+                                  with_g1_mean=with_g1_mean)
+        engine_meta[wname] = meta_w
+        for name, payload in per_run.items():
+            if name == "G1_mean":
+                engine_meta[wname]["g1_mean_same_grid"] = True
+                continue
+            ev = payload["eval"]
+            results[name][wname] = {
+                "perf_idx": ev["excess_idx"]["net"],
+                "perf_ew": ev["excess_ew"]["net"],
+                "perf_idx_gross": ev["excess_idx"]["gross"],
+                "perf_ew_gross": ev["excess_ew"]["gross"],
+                "self_gross": ev["self"]["gross"], "self_net": ev["self"]["net"],
+                "rule_idx": ev["excess_idx"]["rule"],
+                "rule_ew": ev["excess_ew"]["rule"],
+                "sum_cost": ev["sum_cost"],
+                "nav_drag_end": ev["nav_drag_end"],
+            }
+        # G1_mean 参照行并入 results（键不与六臂冲突）
+        if "G1_mean" in per_run:
+            ev = per_run["G1_mean"]["eval"]
+            results.setdefault("G1_mean", {})[wname] = {
+                "perf_idx": ev["excess_idx"]["net"],
+                "perf_ew": ev["excess_ew"]["net"],
+                "perf_idx_gross": ev["excess_idx"]["gross"],
+                "perf_ew_gross": ev["excess_ew"]["gross"],
+                "rule_idx": ev["excess_idx"]["rule"],
+                "rule_ew": ev["excess_ew"]["rule"],
+                "note": "G1_mean 限定同调仓网格（同节奏交易）",
+            }
     return {"meta": engine_meta, "results": results}
 
 
