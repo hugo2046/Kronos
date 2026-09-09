@@ -113,21 +113,24 @@ def write_protocol(record: dict) -> str:
     PROTOCOL_PATH.write_text(
         json.dumps(record, ensure_ascii=False, indent=2, default=str),
         encoding="utf-8")
-    return hashlib.sha256(PROTOCOL_PATH.read_bytes()).hexdigest()
+    sha = hashlib.sha256(PROTOCOL_PATH.read_bytes()).hexdigest()
+    (RUN_DIR / "protocol.json.sha256").write_text(sha + "\n", encoding="utf-8")
+    return sha
 
 
 def load_protocol() -> tuple[dict, str]:
+    """加载并校验协议（20260909 修复：失效关闭）——缺协议或 SHA 侧文件一律
+    拒绝，不再自动补写；只有 write_protocol（显式新建 run）允许写入。"""
     if not PROTOCOL_PATH.is_file():
         raise RuntimeError("protocol.json 缺失：先运行 --stage preflight")
+    frozen = RUN_DIR / "protocol.json.sha256"
+    if not frozen.is_file():
+        raise RuntimeError("protocol.json.sha256 缺失：身份不可验证，拒绝加载")
     record = json.loads(PROTOCOL_PATH.read_text(encoding="utf-8"))
     sha = hashlib.sha256(PROTOCOL_PATH.read_bytes()).hexdigest()
-    frozen = (RUN_DIR / "protocol.json.sha256")
-    if frozen.is_file():
-        expect = frozen.read_text(encoding="utf-8").strip()
-        if sha != expect:
-            raise RuntimeError("协议哈希漂移：不允许训练后改协议")
-    else:
-        frozen.write_text(sha + "\n", encoding="utf-8")
+    expect = frozen.read_text(encoding="utf-8").strip()
+    if sha != expect:
+        raise RuntimeError("协议哈希漂移：不允许训练后改协议")
     return record, sha
 
 

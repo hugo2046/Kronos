@@ -233,47 +233,86 @@ def cmd_evaluate() -> None:
     daily_diff_e15: dict[str, list[float]] = {}
     daily_pos: dict[str, list[int]] = {}
     t_all = time.time()
+    from g10_head_pilot.runtime_state import (
+        cache_reusable, capture_rng, load_versioned_checkpoint,
+        restore_rng, signal_meta_for, write_signal_meta,
+    )
+
+    tok_sha = C.sha256_file(C.G1_TOKENIZER / "model.safetensors")
+    rng_chain_path = sig_dir / "rng_chain.pt"
     for arm in C.ARMS:
-        ck = torch.load(RUN_DIR / arm / "final.pt", map_location="cpu",
-                        weights_only=True)
+        ck = load_versioned_checkpoint(RUN_DIR / arm / "final.pt")
         predictor = Kronos.from_pretrained(C.OFFICIAL_PREDICTOR).to("cuda:0")
         predictor.load_state_dict(ck["predictor"])
         predictor.eval()
         pred_wrap = KronosPredictor(model=predictor, tokenizer=tokenizer,
                                     device="cuda:0")
         for state, epoch in (("e15", 15), ("bestCE", states[(arm, "bestCE")])):
+            # 实际载入权重的身份（内容哈希）——cache 元数据由此构造，不手写
+            ck_file = (RUN_DIR / arm / "final.pt" if state == "e15"
+                       or epoch == 15 else RUN_DIR / arm / "best.pt")
             if state == "bestCE" and epoch != 15:
-                sd = torch.load(RUN_DIR / arm / "best.pt", map_location="cpu",
-                                weights_only=True)
-                predictor.load_state_dict(sd)
+                predictor.load_state_dict(
+                    load_versioned_checkpoint(RUN_DIR / arm / "best.pt")
+                    ["predictor"])
                 predictor.eval()
+            ck_sha = C.sha256_file(ck_file)
+
+            def _identity(w):
+                return {"runtime_schema": "g10h-runtime-v2",
+                        "checkpoint_sha256": ck_sha,
+                        "checkpoint_epoch": int(epoch),
+                        "tokenizer_sha256": tok_sha,
+                        "protocol_sha256": proto_sha,
+                        "inference": C.INFERENCE, "window": w}
+
             alias = ""
             if state == "bestCE" and epoch == 15:
                 alias = "（别名 e15，同权重不重复推理）"
             tag = f"{arm}_{state}"
             if alias:
-                # bestCE==e15：同权重只推理一次，落别名副本（不算两次独立结果）
+                # bestCE==e15：同权重只推理一次，落别名副本（含元数据）
                 for wname in WINDOW_BOUNDS:
                     src = sig_dir / f"{wname}_{arm}_e15.parquet"
-                    (sig_dir / f"{wname}_{tag}.parquet").write_bytes(
-                        src.read_bytes())
+                    dst = sig_dir / f"{wname}_{tag}.parquet"
+                    dst.write_bytes(src.read_bytes())
+                    mfile = Path(str(src) + ".meta.json")
+                    if mfile.is_file():
+                        Path(str(dst) + ".meta.json").write_text(
+                            mfile.read_text(encoding="utf-8"), encoding="utf-8")
                 logger.info(f"[{tag}] 别名 e15，信号复制 {alias}")
-            elif all((sig_dir / f"{w}_{tag}.parquet").is_file()
-                     for w in WINDOW_BOUNDS):
-                logger.info(f"[{tag}] 信号已缓存（同协议同 checkpoint，跳过推理）")
+            elif all(cache_reusable(sig_dir / f"{w}_{tag}.parquet",
+                                    _identity(w)) for w in WINDOW_BOUNDS):
+                logger.info(f"[{tag}] cache 身份全匹配（checkpoint/协议/推理"
+                            "参数/输出 SHA），跳过推理")
             else:
-                set_seed_100()          # 推理随机流重置（各 checkpoint 同规则）
+                set_seed_100()      # 首次运行语义：每 checkpoint 一次 seed100
                 provider = QlibProvider("csi300", *WINDOW_BOUNDS["W3"])
+                chain = (torch.load(rng_chain_path, weights_only=True)
+                         if rng_chain_path.is_file() else {})
+                chain_key = tag
+                if chain_key in chain:
+                    restore_rng(chain[chain_key])   # 恢复上次结束流再续推
                 for wname in WINDOW_BOUNDS:
-                    if (sig_dir / f"{wname}_{tag}.parquet").is_file():
-                        continue        # 窗级缓存（中断续跑）
+                    spath = sig_dir / f"{wname}_{tag}.parquet"
+                    if cache_reusable(spath, _identity(wname)):
+                        # W3 命中 cache：必须恢复该窗结束 RNG 链才许推 W4
+                        if f"{chain_key}_{wname}_end" in chain:
+                            restore_rng(chain[f"{chain_key}_{wname}_end"])
+                        continue
                     wait_out_guard([predictor, tokenizer], f"[{tag}] {wname}")
                     t0 = time.time()
                     wide = ev.score_full_window(pred_wrap, provider, wname)
-                    wide.to_parquet(sig_dir / f"{wname}_{tag}.parquet")
+                    wide.to_parquet(spath)
+                    write_signal_meta(
+                        spath, signal_meta_for(ck_sha, epoch, tok_sha,
+                                               proto_sha, C.INFERENCE,
+                                               wname, spath))
                     _budget_add(time.time() - t0)
+                    chain[f"{chain_key}_{wname}_end"] = capture_rng()
+                    torch.save(chain, rng_chain_path)
                     logger.info(f"[{tag}] {wname} 信号落盘 "
-                                f"({wide.shape[1]} 日)")
+                                f"({wide.shape[1]} 日，含身份元数据)")
             # IC + 交易（CPU）；臂信号 parquet 为"股票×日期"，引擎前转置
             provider = QlibProvider("csi300", WINDOW_BOUNDS["W3"][0], C.FORWARD_CUTOFF)
             for wname in WINDOW_BOUNDS:

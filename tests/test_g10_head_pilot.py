@@ -96,19 +96,14 @@ def test_tokenizer_untouched_by_param_mask() -> None:
 
 def test_selection_reads_only_val_ce() -> None:
     """bestCE 选点 = 验证 CE 最低 epoch（严格小于，并列最早），不读收益。"""
+    from g10_head_pilot.runtime_state import select_best
+
     hist = [{"epoch": e, "val_ce": v}
             for e, v in ((1, 5.0), (2, 4.5), (3, 4.5), (4, 4.9), (5, 4.0))]
-    best_ce, best_epoch = float("inf"), None
-    for row in hist:
-        if row["val_ce"] < best_ce:
-            best_ce, best_epoch = row["val_ce"], row["epoch"]
-    assert best_epoch == 5
-    hist2 = [dict(h, val_ce=4.5) for h in hist[:3]]
-    best2 = None
-    for row in hist2:
-        if best2 is None or row["val_ce"] < best2:
-            best2 = row["val_ce"]
-    assert best2 == 4.5                           # 并列最早由 < 保证
+    best_epoch, best_ce = select_best(hist)       # 生产选点函数（非复制逻辑）
+    assert (best_epoch, best_ce) == (5, 4.0)
+    e2, ce2 = select_best([{"epoch": e, "val_ce": 4.5} for e in (1, 2, 3)])
+    assert (e2, ce2) == (1, 4.5)                  # 并列最早由 < 保证
 
 
 def test_judge_criteria_formulas() -> None:

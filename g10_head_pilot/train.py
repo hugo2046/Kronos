@@ -30,6 +30,9 @@ from g10_head_pilot.config import (
     N_VAL_BATCHES_PER_EPOCH, N_TRAIN_ITER, N_VAL_ITER, NUM_WORKERS,
     PCT_START, DIV_FACTOR, RUN_DIR, SEED, sha256_file, state_hash,
 )
+from g10_head_pilot.runtime_state import (
+    RUNTIME_SCHEMA, capture_rng, restore_rng, save_versioned_checkpoint,
+)
 
 
 def apply_param_mask(predictor, arm: str) -> list[str]:
@@ -170,18 +173,23 @@ def train_arm(
     start_epoch = 0
     best_ce, best_epoch = float("inf"), None
     if ckpt_path.is_file() and not smoke:
-        ck = torch.load(ckpt_path, map_location="cpu", weights_only=True)
-        if ck.get("done"):
+        from g10_head_pilot.runtime_state import load_versioned_checkpoint
+
+        ck = load_versioned_checkpoint(ckpt_path)   # 旧 schema 拒绝（只读审计）
+        meta = ck["meta"]
+        if meta.get("done"):
             logger.info(f"[{arm}] 已完成，跳过")
-            return {"best_epoch": ck["best_epoch"], "best_ce": ck["best_ce"],
+            return {"best_epoch": meta["best_epoch"], "best_ce": meta["best_ce"],
                     "skipped": True}
         predictor.load_state_dict(ck["predictor"])
         opt.load_state_dict(ck["optimizer"])
         scheduler.load_state_dict(ck["scheduler"])
-        start_epoch = ck["epoch"] + 1
+        restore_rng(ck["rng"])
+        train_sampler.set_epoch(meta["next_epoch"])
+        start_epoch = meta["next_epoch"]
         history = ck["history"]
-        best_ce, best_epoch = ck["best_ce"], ck["best_epoch"]
-        logger.info(f"[{arm}] 续跑 epoch {start_epoch}")
+        best_ce, best_epoch = meta["best_ce"], meta["best_epoch"]
+        logger.info(f"[{arm}] 续跑 epoch {start_epoch}（完整随机状态已恢复）")
     logger.info(f"[{arm}] 可训练 {n_trainable:,} 参数（{len(trainable)} 张量）| "
                 f"起点哈希 {init_hash[:12]}… | tokenizer {tok_sha[:12]}… | "
                 f"训练 {len(train_loader)} 批/epoch × {epochs}")
@@ -194,9 +202,6 @@ def train_arm(
         predictor.train()
         train_sampler.set_epoch(epoch)
         train_ds.set_epoch_seed(epoch * 10000)
-        train_rng = (random.getstate(), torch.get_rng_state(),
-                     np.random.get_state())
-        torch.manual_seed(SEED)          # 验证前重置全局 RNG（计划 §3 约定）
         digest = _BatchDigest()
         n_steps, loss_sum = 0, 0.0
         for bx, bstamp in train_loader:
@@ -219,10 +224,17 @@ def train_arm(
             if smoke and n_steps >= smoke_steps:
                 break
 
+        # 验证边界 RNG 隔离（20260909 修复）：训练完成后捕获 → seed100 →
+        # 固定验证采样 → finally 恢复训练随机流（validation_rng 上下文）
+        from g10_head_pilot.runtime_state import (
+            RUNTIME_SCHEMA, capture_rng, save_versioned_checkpoint,
+            validation_rng,
+        )
+
         predictor.eval()
         val_ds.set_epoch_seed(0)
         val_loss_sum, val_batches = 0.0, 0
-        with torch.no_grad():
+        with validation_rng(), torch.no_grad():
             for bx, bstamp in val_loader:
                 bx = bx.to(device, non_blocking=True)
                 bstamp = bstamp.to(device, non_blocking=True)
@@ -252,20 +264,29 @@ def train_arm(
                     f"{digest.hexdigest()[:8]} {marker}")
         if improved:
             best_ce, best_epoch = val_ce, epoch + 1
-            if not smoke:
-                torch.save(predictor.state_dict(), arm_dir / "best.pt")
         if not smoke:
-            torch.save({
+            # epoch 边界 checkpoint：完整随机状态 + 版本化元数据（原子写）
+            epoch_rng = capture_rng()
+            ckpt_meta = {
+                "runtime_schema": RUNTIME_SCHEMA, "run_id": RUN_DIR.name,
+                "arm": arm, "seed": SEED, "epoch": epoch,
+                "next_epoch": epoch + 1, "val_ce": float(val_ce),
+                "best_ce": float(best_ce), "best_epoch": int(best_epoch),
+                "init_hash": init_hash,
+                "sampler_epoch": epoch + 1,
+                "train_ds_epoch_seed": epoch * 10000,
+                "num_workers": NUM_WORKERS, "done": False,
+            }
+            save_versioned_checkpoint(ckpt_path, {
                 "predictor": predictor.state_dict(),
                 "optimizer": opt.state_dict(),
                 "scheduler": scheduler.state_dict(),
-                "epoch": epoch, "history": history,
-                "best_ce": best_ce, "best_epoch": best_epoch,
-                "init_hash": init_hash, "arm": arm, "done": False,
-            }, ckpt_path)
-        random.setstate(train_rng[0])
-        torch.set_rng_state(train_rng[1])
-        np.random.set_state(train_rng[2])
+                "history": history, "rng": epoch_rng, "meta": ckpt_meta,
+            })
+            if improved:
+                save_versioned_checkpoint(arm_dir / "best.pt", {
+                    "predictor": predictor.state_dict(),
+                    "meta": {**ckpt_meta, "kind": "best"}})
 
     import hashlib
 
@@ -277,12 +298,16 @@ def train_arm(
            "lr_sha": lr_sha, "compute_seconds": compute_s}
     if not smoke:
         assert best_epoch is not None, "无有限验证 CE（实验无效）"
-        torch.save({**out, "done": True, "predictor": predictor.state_dict()},
-                   arm_dir / "final.pt")
-        # resume 标记完成：幂等跳过后续 --stage train
-        ck = torch.load(ckpt_path, map_location="cpu", weights_only=True)
-        ck["done"] = True
-        torch.save(ck, ckpt_path)
+        save_versioned_checkpoint(arm_dir / "final.pt", {
+            "predictor": predictor.state_dict(),
+            "meta": {"runtime_schema": RUNTIME_SCHEMA, "run_id": RUN_DIR.name,
+                     "arm": arm, "seed": SEED, "epoch": EPOCHS,
+                     "kind": "final", "best_epoch": int(best_epoch),
+                     "best_ce": float(best_ce)}})
+        # resume 标记完成：幂等跳过后续 --stage train（原子替换）
+        ck = load_versioned_checkpoint(ckpt_path)
+        ck["meta"]["done"] = True
+        save_versioned_checkpoint(ckpt_path, ck)
         (arm_dir / "history.json").write_text(
             json.dumps(out, ensure_ascii=False, indent=2, default=float),
             encoding="utf-8")
