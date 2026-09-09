@@ -1,0 +1,116 @@
+{
+  "verdict": {
+    "100|W3": {
+      "D_original_pp": -0.3,
+      "D_paired_pp": 0.24,
+      "win_original": false,
+      "win_paired": true
+    },
+    "100|W4": {
+      "D_original_pp": -6.37,
+      "D_paired_pp": -2.84,
+      "win_original": false,
+      "win_paired": false
+    }
+  },
+  "passed": false,
+  "gate_reproduce": {
+    "W3|return": 7.997075224253081e-16,
+    "W3|cost": 5.421010862427522e-20,
+    "W3|bench": 0.0,
+    "W4|return": 1.0091753821495075e-15,
+    "W4|cost": 4.0657581468206416e-20,
+    "W4|bench": 0.0
+  },
+  "train": {
+    "best_epoch": 10,
+    "best_ce": 3.2305412817001344,
+    "n_trainable": 638976
+  },
+  "results": {
+    "G1_original_mean|W3": {
+      "tag": "G1_original_mean",
+      "window": "W3",
+      "curve_end": 0.14401773020198375,
+      "compound_cum": 0.1503809500083899,
+      "max_drawdown_compound": -0.05159658506601661,
+      "cost_sum": 0.007422317636572937,
+      "turnover_daily_mean": 0.048363933985002945,
+      "n_days": 126,
+      "meta": {
+        "delay_execution_supported": false,
+        "qlib_file": "/home/user/workspace/quant-qlib/qlib/__init__.py"
+      }
+    },
+    "G1_original_mean|W4": {
+      "tag": "G1_original_mean",
+      "window": "W4",
+      "curve_end": 0.0008054436955878194,
+      "compound_cum": -0.006691301508509717,
+      "max_drawdown_compound": -0.10864505668546254,
+      "cost_sum": 0.0044106897821741126,
+      "turnover_daily_mean": 0.02759061374336182,
+      "n_days": 134,
+      "meta": {
+        "delay_execution_supported": false,
+        "qlib_file": "/home/user/workspace/quant-qlib/qlib/__init__.py"
+      }
+    },
+    "G1_paired_100|W3": {
+      "tag": "G1_paired_100",
+      "window": "W3",
+      "curve_end": 0.13867934660732129,
+      "compound_cum": 0.14408947671272565,
+      "max_drawdown_compound": -0.05851590838301446,
+      "cost_sum": 0.00696931867560336,
+      "turnover_daily_mean": 0.04566799277129001,
+      "n_days": 126,
+      "meta": {
+        "delay_execution_supported": false,
+        "qlib_file": "/home/user/workspace/quant-qlib/qlib/__init__.py"
+      }
+    },
+    "G1_paired_100|W4": {
+      "tag": "G1_paired_100",
+      "window": "W4",
+      "curve_end": -0.03444192503595052,
+      "compound_cum": -0.040238535085629024,
+      "max_drawdown_compound": -0.11156789673734924,
+      "cost_sum": 0.004918933600315871,
+      "turnover_daily_mean": 0.030686024140798344,
+      "n_days": 134,
+      "meta": {
+        "delay_execution_supported": false,
+        "qlib_file": "/home/user/workspace/quant-qlib/qlib/__init__.py"
+      }
+    },
+    "LoRA_100|W3": {
+      "tag": "LoRA_100",
+      "window": "W3",
+      "curve_end": 0.1410321085171692,
+      "compound_cum": 0.14685119491531173,
+      "max_drawdown_compound": -0.05816505981013642,
+      "cost_sum": 0.0070159027158953995,
+      "turnover_daily_mean": 0.04593874661522709,
+      "n_days": 126,
+      "meta": {
+        "delay_execution_supported": false,
+        "qlib_file": "/home/user/workspace/quant-qlib/qlib/__init__.py"
+      }
+    },
+    "LoRA_100|W4": {
+      "tag": "LoRA_100",
+      "window": "W4",
+      "curve_end": -0.06286749325348828,
+      "compound_cum": -0.06601848615533168,
+      "max_drawdown_compound": -0.11478310230940325,
+      "cost_sum": 0.006271102923842984,
+      "turnover_daily_mean": 0.03870745672632776,
+      "n_days": 134,
+      "meta": {
+        "delay_execution_supported": false,
+        "qlib_file": "/home/user/workspace/quant-qlib/qlib/__init__.py"
+      }
+    }
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "frozen_at": "2026-09-09T11:21:19",
+  "baseline": {
+    "signals_sha256": {
+      "W3": "9352b40302eb34c714bfebd808481b625a21d2f7f4f668ccca15cda0cfe21d66",
+      "W4": "453e2aeae7fe4bee8ce8fa62a9908da0843d5ad8b52777cd3b299a84cc4a3e36"
+    },
+    "model_sha256": {
+      "tokenizer": "5ca43492146cd93da2f9dd5528009aa6bd882f2a448ff4c6bd3c1b0ab08609ee",
+      "predictor": "4f2382138138e85ea1c543d43ade2de2373e4168a995e34fd43cbca2895c2fe2"
+    }
+  },
+  "lora": {
+    "rank": 8,
+    "alpha": 8,
+    "dropout": 0.0,
+    "targets": "transformer.<i>.self_attn.{q,k,v,out}_proj"
+  },
+  "train": {
+    "batch": 50,
+    "epochs": 15,
+    "steps_per_epoch": 2000,
+    "lr": 4e-05,
+    "betas": [
+      0.9,
+      0.95
+    ],
+    "wd": 0.1,
+    "pct_start": 0.03,
+    "div_factor": 10,
+    "clip": 3.0,
+    "fp32": true,
+    "seeds": [
+      100,
+      101,
+      102
+    ],
+    "corpus": "/home/user/workspace/Kronos/finetune_suite/data/ashares",
+    "val": "2025H1 400 批固定采样"
+  },
+  "inference": {
+    "lookback": 90,
+    "pred_len": 10,
+    "sample_count": 20,
+    "T": 1.0,
+    "top_p": 0.9,
+    "top_k": 0,
+    "clip": 5,
+    "max_context": 512
+  },
+  "windows": {
+    "W3": [
+      "2025-07-01",
+      "2025-12-31"
+    ],
+    "W4": [
+      "2026-01-01",
+      "2026-07-24"
+    ]
+  },
+  "qlib": "0b982e8 口径（TopkDropout50/5/hold5、open、0.001/0.0015/5、0.095、1e8、000300.SH、codes=csi300）",
+  "budget_gpu_hours": 12.0,
+  "smoke": {
+    "seconds": 13.610020637512207,
+    "est_train_hours_per_seed": 3.7805612881978354,
+    "est_inference_hours_per_window": 2.1666666666666665
+  }
+}

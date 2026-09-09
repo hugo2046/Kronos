@@ -1,0 +1,2 @@
+2026-09-09 11:21:32.283 | INFO     | lora_mean_pilot.train:train_lora:157 - [LoRA100] epoch 01 train=2.8856 val_CE=3.2605 (2 批, 1s 累计)
+2026-09-09 11:21:32.893 | INFO     | __main__:cmd_preflight:194 - [preflight] 协议冻结；smoke 14s；训练估 3.8h/seed；推理估 2.2h/窗

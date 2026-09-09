@@ -1,0 +1,83 @@
+[2770998:MainThread](2026-09-09 21:11:55,147) INFO - qlib.Initialization - [config.py:441] - default_conf: client.
+[2770998:MainThread](2026-09-09 21:11:55,171) INFO - qlib.ddb_features - [ddb_features.py:116] - 已注册 qlib 兼容函数到 DolphinDB 会话
+[2770998:MainThread](2026-09-09 21:11:55,171) INFO - qlib.Initialization - [__init__.py:94] - qlib successfully initialized based on client settings.
+[2770998:MainThread](2026-09-09 21:11:55,171) INFO - qlib.Initialization - [__init__.py:111] - data_path={'__DEFAULT_FREQ': 'DolphinDB(dolphindb://admin:***@100.**.**.25:***)'}
+2026-09-09 21:11:55.171 | INFO     | kronos_qlib.provider:init_qlib_once:108 - Qlib 初始化成功 - URI: dolphindb://admin:***@100.**.**.25:***
+[2770998:MainThread](2026-09-09 21:11:55,271) WARNING - qlib.BaseExecutor - [executor.py:121] - `common_infra` is not set for <qlib.backtest.executor.SimulatorExecutor object at 0x7faaa412a7b0>
+[2770998:MainThread](2026-09-09 21:11:55,935) INFO - qlib.backtest caller - [__init__.py:93] - Create new exchange
+backtest loop:   0%|          | 0/126 [00:00<?, ?it/s]backtest loop:  25%|██▌       | 32/126 [00:00<00:00, 317.20it/s]backtest loop:  51%|█████     | 64/126 [00:00<00:00, 317.31it/s]backtest loop:  77%|███████▋  | 97/126 [00:00<00:00, 322.10it/s]backtest loop: 100%|██████████| 126/126 [00:00<00:00, 315.50it/s]
+[2770998:MainThread](2026-09-09 21:11:57,552) WARNING - qlib.BaseExecutor - [executor.py:121] - `common_infra` is not set for <qlib.backtest.executor.SimulatorExecutor object at 0x7faab4f01f90>
+[2770998:MainThread](2026-09-09 21:11:58,338) INFO - qlib.backtest caller - [__init__.py:93] - Create new exchange
+backtest loop:   0%|          | 0/134 [00:00<?, ?it/s]backtest loop:  25%|██▌       | 34/134 [00:00<00:00, 336.27it/s]backtest loop:  51%|█████▏    | 69/134 [00:00<00:00, 340.63it/s]backtest loop:  78%|███████▊  | 105/134 [00:00<00:00, 341.08it/s]backtest loop: 100%|██████████| 134/134 [00:00<00:00, 343.08it/s]
+2026-09-09 21:12:00.521 | INFO     | lora_mean_pilot.evaluate:reproduce_gate:70 - [gate] 0b982e8 G1 report 复现 max|Δ| 1.0e-15 OK
+[2770998:MainThread](2026-09-09 21:12:00,540) WARNING - qlib.BaseExecutor - [executor.py:121] - `common_infra` is not set for <qlib.backtest.executor.SimulatorExecutor object at 0x7faaa41825d0>
+[2770998:MainThread](2026-09-09 21:12:01,124) INFO - qlib.backtest caller - [__init__.py:93] - Create new exchange
+backtest loop:   0%|          | 0/126 [00:00<?, ?it/s]backtest loop:  26%|██▌       | 33/126 [00:00<00:00, 325.67it/s]backtest loop:  52%|█████▏    | 66/126 [00:00<00:00, 315.08it/s]backtest loop:  80%|████████  | 101/126 [00:00<00:00, 327.98it/s]backtest loop: 100%|██████████| 126/126 [00:00<00:00, 321.80it/s]
+[2770998:MainThread](2026-09-09 21:12:02,704) WARNING - qlib.BaseExecutor - [executor.py:121] - `common_infra` is not set for <qlib.backtest.executor.SimulatorExecutor object at 0x7faaa4133100>
+[2770998:MainThread](2026-09-09 21:12:03,488) INFO - qlib.backtest caller - [__init__.py:93] - Create new exchange
+backtest loop:   0%|          | 0/134 [00:00<?, ?it/s]backtest loop:  25%|██▌       | 34/134 [00:00<00:00, 327.93it/s]backtest loop:  51%|█████▏    | 69/134 [00:00<00:00, 338.76it/s]backtest loop:  78%|███████▊  | 105/134 [00:00<00:00, 339.34it/s]backtest loop: 100%|██████████| 134/134 [00:00<00:00, 342.33it/s]
+[2770998:MainThread](2026-09-09 21:12:05,737) INFO - qlib.workflow - [exp.py:258] - Experiment 560390365463935469 starts running ...
+[2770998:MainThread](2026-09-09 21:12:05,839) INFO - qlib.workflow - [recorder.py:345] - Recorder 0e86cd68954842f3820fc9cd59852b6f starts running under Experiment 560390365463935469 ...
+[2770998:MainThread](2026-09-09 21:12:07,668) WARNING - qlib.BaseExecutor - [executor.py:121] - `common_infra` is not set for <qlib.backtest.executor.SimulatorExecutor object at 0x7fa8f5ca7360>
+[2770998:MainThread](2026-09-09 21:12:08,253) INFO - qlib.backtest caller - [__init__.py:93] - Create new exchange
+Loading weights from local directory
+Loading weights from local directory
+Loading weights from local directory
+Loading weights from local directory
+backtest loop:   0%|          | 0/126 [00:00<?, ?it/s]backtest loop:  25%|██▌       | 32/126 [00:00<00:00, 316.53it/s]backtest loop:  52%|█████▏    | 66/126 [00:00<00:00, 319.84it/s]backtest loop:  79%|███████▊  | 99/126 [00:00<00:00, 321.72it/s]backtest loop: 100%|██████████| 126/126 [00:00<00:00, 318.34it/s]
+2026-09-09 21:12:09.830 | INFO     | __main__:_run_seed:244 - [G1_paired_100|W3] curve_end +13.8679%
+[2770998:MainThread](2026-09-09 21:12:09,837) WARNING - qlib.BaseExecutor - [executor.py:121] - `common_infra` is not set for <qlib.backtest.executor.SimulatorExecutor object at 0x7fa8f5bff650>
+[2770998:MainThread](2026-09-09 21:12:10,621) INFO - qlib.backtest caller - [__init__.py:93] - Create new exchange
+backtest loop:   0%|          | 0/134 [00:00<?, ?it/s]backtest loop:  25%|██▌       | 34/134 [00:00<00:00, 324.92it/s]backtest loop:  51%|█████     | 68/134 [00:00<00:00, 323.58it/s]backtest loop:  75%|███████▌  | 101/134 [00:00<00:00, 326.34it/s]backtest loop: 100%|██████████| 134/134 [00:00<00:00, 332.56it/s]
+2026-09-09 21:12:12.831 | INFO     | __main__:_run_seed:244 - [G1_paired_100|W4] curve_end -3.4442%
+[2770998:MainThread](2026-09-09 21:12:12,838) WARNING - qlib.BaseExecutor - [executor.py:121] - `common_infra` is not set for <qlib.backtest.executor.SimulatorExecutor object at 0x7fa8f5a046b0>
+[2770998:MainThread](2026-09-09 21:12:13,426) INFO - qlib.backtest caller - [__init__.py:93] - Create new exchange
+backtest loop:   0%|          | 0/126 [00:00<?, ?it/s]backtest loop:  24%|██▍       | 30/126 [00:00<00:00, 296.45it/s]backtest loop:  51%|█████     | 64/126 [00:00<00:00, 316.01it/s]backtest loop:  78%|███████▊  | 98/126 [00:00<00:00, 319.71it/s]backtest loop: 100%|██████████| 126/126 [00:00<00:00, 319.53it/s]
+2026-09-09 21:12:15.006 | INFO     | __main__:_run_seed:244 - [LoRA_100|W3] curve_end +14.1032%
+[2770998:MainThread](2026-09-09 21:12:15,013) WARNING - qlib.BaseExecutor - [executor.py:121] - `common_infra` is not set for <qlib.backtest.executor.SimulatorExecutor object at 0x7fa8f5a05040>
+[2770998:MainThread](2026-09-09 21:12:15,789) INFO - qlib.backtest caller - [__init__.py:93] - Create new exchange
+backtest loop:   0%|          | 0/134 [00:00<?, ?it/s]backtest loop:  25%|██▌       | 34/134 [00:00<00:00, 321.49it/s]backtest loop:  51%|█████     | 68/134 [00:00<00:00, 325.02it/s]backtest loop:  75%|███████▌  | 101/134 [00:00<00:00, 320.90it/s]backtest loop: 100%|██████████| 134/134 [00:00<00:00, 324.25it/s]
+2026-09-09 21:12:17.995 | INFO     | __main__:_run_seed:244 - [LoRA_100|W4] curve_end -6.2867%
+Exception in thread Thread-1 (run):
+Traceback (most recent call last):
+  File "/home/user/miniconda3/envs/quant/lib/python3.13/threading.py", line 1044, in _bootstrap_inner
+    self.run()
+    ~~~~~~~~^^
+  File "/home/user/miniconda3/envs/quant/lib/python3.13/threading.py", line 995, in run
+    self._target(*self._args, **self._kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/workspace/quant-qlib/qlib/utils/paral.py", line 110, in run
+    data()
+    ~~~~^^
+  File "/home/user/workspace/quant-qlib/qlib/workflow/recorder.py", line 453, in log_metrics
+    self.client.log_metric(self.id, name, data, step=step)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/miniconda3/envs/quant/lib/python3.13/site-packages/mlflow/tracking/client.py", line 2357, in log_metric
+    return self._tracking_client.log_metric(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        run_id,
+        ^^^^^^^
+    ...<7 lines>...
+        model_id=model_id,
+        ^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/user/miniconda3/envs/quant/lib/python3.13/site-packages/mlflow/telemetry/track.py", line 30, in wrapper
+    result = func(*args, **kwargs)
+  File "/home/user/miniconda3/envs/quant/lib/python3.13/site-packages/mlflow/tracking/_tracking_service/client.py", line 387, in log_metric
+    self.store.log_metric(run_id, metric)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "/home/user/miniconda3/envs/quant/lib/python3.13/site-packages/mlflow/store/tracking/file_store.py", line 1079, in log_metric
+    _validate_metric(metric.key, metric.value, metric.timestamp, metric.step)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/miniconda3/envs/quant/lib/python3.13/site-packages/mlflow/utils/validation.py", line 366, in _validate_metric
+    _validate_metric_name(key, append_to_json_path(path, "name"))
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/miniconda3/envs/quant/lib/python3.13/site-packages/mlflow/utils/validation.py", line 341, in _validate_metric_name
+    raise MlflowException(
+    ...<2 lines>...
+    )
+mlflow.exceptions.MlflowException: Invalid value "100|W3|D_original_pp" for parameter 'name' supplied: Names may only contain alphanumerics, underscores (_), dashes (-), periods (.), spaces ( ), colon(:) and slashes (/).
+[2770998:MainThread](2026-09-09 21:12:17,997) INFO - qlib.timer - [log.py:127] - Time cost: 0.002s | waiting `async_log` Done
+2026-09-09 21:12:18.457 | INFO     | __main__:_plot_seed:365 - [fig] seed100 两窗主图落盘
+2026-09-09 21:12:18.458 | INFO     | __main__:cmd_pilot:285 - pilot 门禁（两窗 D_original>0 且 D_paired>0）：未通过→封存本配置
