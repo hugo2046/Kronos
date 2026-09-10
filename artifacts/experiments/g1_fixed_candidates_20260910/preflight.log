@@ -1,0 +1,3 @@
+2026-09-10 14:14:03.888 | INFO     | __main__:cmd_preflight:344 - [preflight|W3] 池 37223 格；max−mean min 0.000579 违反 0；C1 缺格 0
+2026-09-10 14:14:03.955 | INFO     | __main__:cmd_preflight:344 - [preflight|W4] 池 39563 格；max−mean min 0.000551 违反 0；C1 缺格 0
+2026-09-10 14:14:03.955 | INFO     | __main__:cmd_preflight:350 - [preflight] manifest 冻结：8 输入已复制入 artifacts/experiments/g1_fixed_candidates_20260910/inputs_original 并记录双向 SHA

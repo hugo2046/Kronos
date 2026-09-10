@@ -1,0 +1,177 @@
+{
+ "created_at": "2026-09-10",
+ "files": {
+  "R_identity.json": {
+   "sha256": "e15e743da2d15593274e260fb4c6cf093ce2c1743982029a913792e9579fb9a5",
+   "size_bytes": 151
+  },
+  "backtest.log": {
+   "sha256": "f1b0b012700a1fe5842307131241ac354fb8c8745ae66f6d6707f7f8f74f8f0d",
+   "size_bytes": 5424
+  },
+  "c1_signal_W3.parquet": {
+   "sha256": "349abb18687eb932fd0f154bb4895d122bd159da167e41af8d24da12cdae5ae1",
+   "size_bytes": 437836
+  },
+  "c1_signal_W4.parquet": {
+   "sha256": "b4fd1f233fe6f6caa55132a7202a9e537da0769b6d1a9a2667554f9d2d2aa0ed",
+   "size_bytes": 461640
+  },
+  "calendar_W3.parquet": {
+   "sha256": "8c318a6af15d9df89a03b64ddd74b880954de5ebe2db57856b4abd63417b83e7",
+   "size_bytes": 2564
+  },
+  "calendar_W4.parquet": {
+   "sha256": "3238ab9004aa439ae3cadcf034f280adf76d0ea89f0f3ceb7f7b1a085c8ba41c",
+   "size_bytes": 2648
+  },
+  "comparison_summary.json": {
+   "sha256": "4bc75d24a5dfb95ac77625600a810ad44f8a2a7a9fb4b2516dcde6333df05c3c",
+   "size_bytes": 18680
+  },
+  "daily_W3_C1_mean_ensemble.parquet": {
+   "sha256": "011f19d35162e4af037c60ed4cfd74fc4498c63bb53cd8631401faf9a4611b60",
+   "size_bytes": 9409
+  },
+  "daily_W3_G1_max.parquet": {
+   "sha256": "44ba4a2002f7248a7b9d0b0f2abf7449f922adf9f405e6961a64de56b2eafb54",
+   "size_bytes": 9409
+  },
+  "daily_W3_G1_mean.parquet": {
+   "sha256": "1488a543cc517d7df8c8b76f702627163a5094c49941a1e5225d97765fdbb829",
+   "size_bytes": 9409
+  },
+  "daily_W3_G2S101_mean.parquet": {
+   "sha256": "eb95e4daace4180056fd0afb014437f1208bba93a943f0cefc160f59c0859fa5",
+   "size_bytes": 9409
+  },
+  "daily_W3_G2S102_mean.parquet": {
+   "sha256": "03315b0c5066b7900dfa4549b36b0ac71246dd2c242fc74a66a1871e155057d4",
+   "size_bytes": 9409
+  },
+  "daily_W4_C1_mean_ensemble.parquet": {
+   "sha256": "cc5c07201141609edb23028930f0b295654e8fedb6e7d9bf0701ed756912b26d",
+   "size_bytes": 9849
+  },
+  "daily_W4_G1_max.parquet": {
+   "sha256": "929f320653f09937b55eb90b72911554dde51f68fe9b40f4fc5183b6844d157d",
+   "size_bytes": 9849
+  },
+  "daily_W4_G1_mean.parquet": {
+   "sha256": "8b66c84d988e28e1c53db5b343a8062ebdcec3254d77ee1486ed68c11984b098",
+   "size_bytes": 9849
+  },
+  "daily_W4_G2S101_mean.parquet": {
+   "sha256": "95cfcc419a331523ffb05efdb93b7ed5174fd5958f77ec82a1e6a0b4402e70a9",
+   "size_bytes": 9849
+  },
+  "daily_W4_G2S102_mean.parquet": {
+   "sha256": "ef866d9e5a2215f0b55a0ecb2241b59ab1032c20b58c101571cec58db1141f7c",
+   "size_bytes": 9848
+  },
+  "fig_W3_appendix.png": {
+   "sha256": "1908e8fae60c6457fb456f8caa70125f64d475542dd40e599304646bb0d4f039",
+   "size_bytes": 192803
+  },
+  "fig_W3_main.png": {
+   "sha256": "4e887aa495351f84fbe39939caa2052a33500f2f273965eae624ab0b7a13bf27",
+   "size_bytes": 286507
+  },
+  "fig_W4_appendix.png": {
+   "sha256": "5039d1315d93e50d5b2e9be837872a7dd7922e6131c8a26d52c44cb4762a097f",
+   "size_bytes": 205435
+  },
+  "fig_W4_main.png": {
+   "sha256": "7e0b93f1c4ecb03b2b2541df51bf37fc66eb12ed7547a76f00fc0ca3d81e5ed9",
+   "size_bytes": 315572
+  },
+  "g1_pool_mask_W3.parquet": {
+   "sha256": "92f13e8ebf2d131ac8d6452732d85899536c03c92a805c0e5a79605851feff89",
+   "size_bytes": 165059
+  },
+  "g1_pool_mask_W4.parquet": {
+   "sha256": "698adc1ecc0cc28b1770477519d6e9a182cc950b04b8616112ae9d152d7020d6",
+   "size_bytes": 168852
+  },
+  "inputs_original/G1_max_W3.parquet": {
+   "sha256": "b1a2719f4b08023c33ed495f9434d8f4541240e448b09a62318d5732515a92e5",
+   "size_bytes": 427741
+  },
+  "inputs_original/G1_max_W4.parquet": {
+   "sha256": "e833a45e93d11845108b5306c298f587a66df777a44be36c08e8c3065b075263",
+   "size_bytes": 452224
+  },
+  "inputs_original/G1_mean_W3.parquet": {
+   "sha256": "9352b40302eb34c714bfebd808481b625a21d2f7f4f668ccca15cda0cfe21d66",
+   "size_bytes": 428518
+  },
+  "inputs_original/G1_mean_W4.parquet": {
+   "sha256": "453e2aeae7fe4bee8ce8fa62a9908da0843d5ad8b52777cd3b299a84cc4a3e36",
+   "size_bytes": 452009
+  },
+  "inputs_original/G2S101_mean_W3.parquet": {
+   "sha256": "c24f3890756599dc2fb861eac4d13ebd005c7744fb8409a3282b3ea874f6fe3f",
+   "size_bytes": 427799
+  },
+  "inputs_original/G2S101_mean_W4.parquet": {
+   "sha256": "945d5fdfc94696349c6c10f16a5fd660a936945c0df88b0a550dc438036f2178",
+   "size_bytes": 451387
+  },
+  "inputs_original/G2S102_mean_W3.parquet": {
+   "sha256": "d31a80d6b7988d149ff6891b0b6a77abfe5fe996984e697a9087f22c53d7d22d",
+   "size_bytes": 427852
+  },
+  "inputs_original/G2S102_mean_W4.parquet": {
+   "sha256": "9f767ea322437a5a27d6f13ae2264848a64449ad7fbdd6289811dbaf79b6a19e",
+   "size_bytes": 451370
+  },
+  "manifest.json": {
+   "sha256": "f3f707bc476f1fa33944a9cc1a2f2d33e8c2207690530031d865c1326e565aad",
+   "size_bytes": 12418
+  },
+  "preflight.log": {
+   "sha256": "3a2cd057d3d4ca656379e5d3bbc5214e04c3deec133f23c4e88868daf4cafdeb",
+   "size_bytes": 492
+  },
+  "report_W3_C1_mean_ensemble.parquet": {
+   "sha256": "29152543651a1f50cc841baef7091e49ca7e65b7a844e6c7a687318b234ac6c5",
+   "size_bytes": 8470
+  },
+  "report_W3_G1_max.parquet": {
+   "sha256": "034b18ef9a5e1919313d981d32b4bce8382e31d9908c9c88b47b72026e7d098b",
+   "size_bytes": 8454
+  },
+  "report_W3_G1_mean.parquet": {
+   "sha256": "b1b7f41449bc92f7442b4aa5b69c834595f28d78366920bb633b8683458246fb",
+   "size_bytes": 8502
+  },
+  "report_W3_G2S101_mean.parquet": {
+   "sha256": "2f16c5314fd57d4135c8116edc612a7d736f3c0f4296fd541450e6f33c50b54a",
+   "size_bytes": 8454
+  },
+  "report_W3_G2S102_mean.parquet": {
+   "sha256": "d40b4df55ac162ef05fbb2cf7a0bb4cad28286eb1f766a2a2290037f88880bc4",
+   "size_bytes": 8390
+  },
+  "report_W4_C1_mean_ensemble.parquet": {
+   "sha256": "298714b8e68443e272bb7737919605708fc95a67ea5813e1db56e05d3eb814c1",
+   "size_bytes": 8749
+  },
+  "report_W4_G1_max.parquet": {
+   "sha256": "61fb7be3d09f67297994e6118590c2b2737d3c0b6f85065f41e58ca30f9bbfad",
+   "size_bytes": 8621
+  },
+  "report_W4_G1_mean.parquet": {
+   "sha256": "fbc2ad7b956dbd3c0fb24c0912f1253251bff5345f3eff04c59a9e75c6e08035",
+   "size_bytes": 8573
+  },
+  "report_W4_G2S101_mean.parquet": {
+   "sha256": "82f6075454e4b70147209ba09c56140b652d899b01cc0ac1d0d11409fb8da6f3",
+   "size_bytes": 8797
+  },
+  "report_W4_G2S102_mean.parquet": {
+   "sha256": "05bb1f7447baf26d591d2a736cd14f8f1b4436b1f3cef21b62782cb8bbea714c",
+   "size_bytes": 8733
+  }
+ }
+}

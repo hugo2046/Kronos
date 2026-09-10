@@ -1,0 +1,39 @@
+2026-09-10 14:14:27.098 | INFO     | kronos_qlib.provider:init_qlib_once:108 - Qlib 初始化成功 - URI: dolphindb://admin:***@100.**.**.25:***
+2026-09-10 14:14:29.503 | INFO     | __main__:cmd_backtest:414 - [W3|G1_mean] curve_end +14.4018% | costΣ 0.0074 | 成交日 109/126
+2026-09-10 14:14:31.552 | INFO     | __main__:cmd_backtest:414 - [W3|G1_max] curve_end +17.6105% | costΣ 0.0062 | 成交日 106/126
+2026-09-10 14:14:33.613 | INFO     | __main__:cmd_backtest:414 - [W3|C1_mean_ensemble] curve_end +11.3977% | costΣ 0.0073 | 成交日 107/126
+2026-09-10 14:14:35.658 | INFO     | __main__:cmd_backtest:414 - [W3|G2S101_mean] curve_end +13.3333% | costΣ 0.0069 | 成交日 106/126
+2026-09-10 14:14:37.710 | INFO     | __main__:cmd_backtest:414 - [W3|G2S102_mean] curve_end +16.3458% | costΣ 0.0067 | 成交日 102/126
+2026-09-10 14:14:40.351 | INFO     | __main__:cmd_backtest:414 - [W4|G1_mean] curve_end +0.0805% | costΣ 0.0044 | 成交日 98/134
+2026-09-10 14:14:42.930 | INFO     | __main__:cmd_backtest:414 - [W4|G1_max] curve_end -2.8716% | costΣ 0.0045 | 成交日 101/134
+2026-09-10 14:14:45.511 | INFO     | __main__:cmd_backtest:414 - [W4|C1_mean_ensemble] curve_end +1.6709% | costΣ 0.0055 | 成交日 109/134
+2026-09-10 14:14:48.088 | INFO     | __main__:cmd_backtest:414 - [W4|G2S101_mean] curve_end +0.7637% | costΣ 0.0056 | 成交日 112/134
+2026-09-10 14:14:50.650 | INFO     | __main__:cmd_backtest:414 - [W4|G2S102_mean] curve_end +1.7718% | costΣ 0.0055 | 成交日 108/134
+2026-09-10 14:14:51.389 | INFO     | __main__:cmd_backtest:476 - ==== 主结论（cumsum 口径，相对 G1 mean 窗口末百分点差） ====
+2026-09-10 14:14:51.389 | INFO     | __main__:cmd_backtest:477 - {"W3": {"D_max_pp": 3.21, "D_C1_pp": -3.0}, "W4": {"D_max_pp": -2.95, "D_C1_pp": 1.59}}
+2026-09-10 14:16:00.944 | INFO     | kronos_qlib.provider:init_qlib_once:108 - Qlib 初始化成功 - URI: dolphindb://admin:***@100.**.**.25:***
+2026-09-10 14:16:03.347 | INFO     | __main__:cmd_backtest:414 - [W3|G1_mean] curve_end +14.4018% | costΣ 0.0074 | 成交日 109/126
+2026-09-10 14:16:05.387 | INFO     | __main__:cmd_backtest:414 - [W3|G1_max] curve_end +17.6105% | costΣ 0.0062 | 成交日 106/126
+2026-09-10 14:16:07.443 | INFO     | __main__:cmd_backtest:414 - [W3|C1_mean_ensemble] curve_end +11.3977% | costΣ 0.0073 | 成交日 107/126
+2026-09-10 14:16:09.498 | INFO     | __main__:cmd_backtest:414 - [W3|G2S101_mean] curve_end +13.3333% | costΣ 0.0069 | 成交日 106/126
+2026-09-10 14:16:11.545 | INFO     | __main__:cmd_backtest:414 - [W3|G2S102_mean] curve_end +16.3458% | costΣ 0.0067 | 成交日 102/126
+2026-09-10 14:16:14.195 | INFO     | __main__:cmd_backtest:414 - [W4|G1_mean] curve_end +0.0805% | costΣ 0.0044 | 成交日 98/134
+2026-09-10 14:16:16.772 | INFO     | __main__:cmd_backtest:414 - [W4|G1_max] curve_end -2.8716% | costΣ 0.0045 | 成交日 101/134
+2026-09-10 14:16:19.348 | INFO     | __main__:cmd_backtest:414 - [W4|C1_mean_ensemble] curve_end +1.6709% | costΣ 0.0055 | 成交日 109/134
+2026-09-10 14:16:21.935 | INFO     | __main__:cmd_backtest:414 - [W4|G2S101_mean] curve_end +0.7637% | costΣ 0.0056 | 成交日 112/134
+2026-09-10 14:16:24.494 | INFO     | __main__:cmd_backtest:414 - [W4|G2S102_mean] curve_end +1.7718% | costΣ 0.0055 | 成交日 108/134
+2026-09-10 14:16:25.216 | INFO     | __main__:cmd_backtest:476 - ==== 主结论（cumsum 口径，相对 G1 mean 窗口末百分点差） ====
+2026-09-10 14:16:25.216 | INFO     | __main__:cmd_backtest:477 - {"W3": {"D_max_pp": 3.21, "D_C1_pp": -3.0}, "W4": {"D_max_pp": -2.95, "D_C1_pp": 1.59}}
+2026-09-10 14:18:50.446 | INFO     | kronos_qlib.provider:init_qlib_once:108 - Qlib 初始化成功 - URI: dolphindb://admin:***@100.**.**.25:***
+2026-09-10 14:18:52.856 | INFO     | __main__:cmd_backtest:416 - [W3|G1_mean] curve_end +14.4018% | costΣ 0.0074 | 成交日 109/126
+2026-09-10 14:18:54.884 | INFO     | __main__:cmd_backtest:416 - [W3|G1_max] curve_end +17.6105% | costΣ 0.0062 | 成交日 106/126
+2026-09-10 14:18:56.942 | INFO     | __main__:cmd_backtest:416 - [W3|C1_mean_ensemble] curve_end +11.3977% | costΣ 0.0073 | 成交日 107/126
+2026-09-10 14:18:59.000 | INFO     | __main__:cmd_backtest:416 - [W3|G2S101_mean] curve_end +13.3333% | costΣ 0.0069 | 成交日 106/126
+2026-09-10 14:19:01.056 | INFO     | __main__:cmd_backtest:416 - [W3|G2S102_mean] curve_end +16.3458% | costΣ 0.0067 | 成交日 102/126
+2026-09-10 14:19:03.695 | INFO     | __main__:cmd_backtest:416 - [W4|G1_mean] curve_end +0.0805% | costΣ 0.0044 | 成交日 98/134
+2026-09-10 14:19:06.256 | INFO     | __main__:cmd_backtest:416 - [W4|G1_max] curve_end -2.8716% | costΣ 0.0045 | 成交日 101/134
+2026-09-10 14:19:08.824 | INFO     | __main__:cmd_backtest:416 - [W4|C1_mean_ensemble] curve_end +1.6709% | costΣ 0.0055 | 成交日 109/134
+2026-09-10 14:19:11.409 | INFO     | __main__:cmd_backtest:416 - [W4|G2S101_mean] curve_end +0.7637% | costΣ 0.0056 | 成交日 112/134
+2026-09-10 14:19:13.982 | INFO     | __main__:cmd_backtest:416 - [W4|G2S102_mean] curve_end +1.7718% | costΣ 0.0055 | 成交日 108/134
+2026-09-10 14:19:14.703 | INFO     | __main__:cmd_backtest:479 - ==== 主结论（cumsum 口径，相对 G1 mean 窗口末百分点差） ====
+2026-09-10 14:19:14.703 | INFO     | __main__:cmd_backtest:480 - {"W3": {"D_max_pp": 3.21, "D_C1_pp": -3.0}, "W4": {"D_max_pp": -2.95, "D_C1_pp": 1.59}}

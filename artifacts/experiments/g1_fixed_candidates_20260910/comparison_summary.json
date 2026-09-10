@@ -1,0 +1,462 @@
+{
+  "created_at": "2026-09-10T14:19:13",
+  "experiment": "kronos-g1-fixed-candidates-20260910",
+  "recorder_id": "a3b2656c17b04deaa67d03bbc801b04d",
+  "verdict": {
+    "W3": {
+      "curve_end_G1_mean": 0.1440177302019837,
+      "curve_end_G1_max": 0.17610472543958913,
+      "curve_end_C1": 0.11397661024677867,
+      "D_max_pp": 3.21,
+      "D_C1_pp": -3.0,
+      "days_max_above": 106,
+      "days_c1_above": 9,
+      "n_days": 126,
+      "appendix_curve_ends": {
+        "G2S101_mean": 0.1333332381573212,
+        "G2S102_mean": 0.16345845418946997
+      }
+    },
+    "W4": {
+      "curve_end_G1_mean": 0.0008054436955877813,
+      "curve_end_G1_max": -0.028716291603551398,
+      "curve_end_C1": 0.016708684402514724,
+      "D_max_pp": -2.95,
+      "D_C1_pp": 1.59,
+      "days_max_above": 45,
+      "days_c1_above": 123,
+      "n_days": 134,
+      "appendix_curve_ends": {
+        "G2S101_mean": 0.007637125108392076,
+        "G2S102_mean": 0.01771849124024802
+      }
+    }
+  },
+  "baseline_reproduction": {
+    "W3": {
+      "tol": 1e-10,
+      "passed": true,
+      "n_days": 126
+    },
+    "W4": {
+      "tol": 1e-10,
+      "passed": true,
+      "n_days": 134
+    }
+  },
+  "backtest_meta": {
+    "W3|G1_mean": {
+      "delay_execution_supported": false,
+      "qlib_file": "/home/user/workspace/quant-qlib/qlib/__init__.py"
+    },
+    "W3|G1_max": {
+      "delay_execution_supported": false,
+      "qlib_file": "/home/user/workspace/quant-qlib/qlib/__init__.py"
+    },
+    "W3|C1_mean_ensemble": {
+      "delay_execution_supported": false,
+      "qlib_file": "/home/user/workspace/quant-qlib/qlib/__init__.py"
+    },
+    "W3|G2S101_mean": {
+      "delay_execution_supported": false,
+      "qlib_file": "/home/user/workspace/quant-qlib/qlib/__init__.py"
+    },
+    "W3|G2S102_mean": {
+      "delay_execution_supported": false,
+      "qlib_file": "/home/user/workspace/quant-qlib/qlib/__init__.py"
+    },
+    "W4|G1_mean": {
+      "delay_execution_supported": false,
+      "qlib_file": "/home/user/workspace/quant-qlib/qlib/__init__.py"
+    },
+    "W4|G1_max": {
+      "delay_execution_supported": false,
+      "qlib_file": "/home/user/workspace/quant-qlib/qlib/__init__.py"
+    },
+    "W4|C1_mean_ensemble": {
+      "delay_execution_supported": false,
+      "qlib_file": "/home/user/workspace/quant-qlib/qlib/__init__.py"
+    },
+    "W4|G2S101_mean": {
+      "delay_execution_supported": false,
+      "qlib_file": "/home/user/workspace/quant-qlib/qlib/__init__.py"
+    },
+    "W4|G2S102_mean": {
+      "delay_execution_supported": false,
+      "qlib_file": "/home/user/workspace/quant-qlib/qlib/__init__.py"
+    }
+  },
+  "metrics_table": {
+    "W3|G1_mean": {
+      "curve_end": 0.1440177302019837,
+      "compound_cum": 0.15038095000838902,
+      "max_drawdown_compound": -0.05159658506601672,
+      "cost_sum": 0.007422317636572936,
+      "turnover_daily_mean": 0.04836393398500296,
+      "days_with_trade": 109
+    },
+    "W3|G1_max": {
+      "curve_end": 0.17610472543958913,
+      "compound_cum": 0.18535906741312558,
+      "max_drawdown_compound": -0.07502732041213389,
+      "cost_sum": 0.006241847101487043,
+      "turnover_daily_mean": 0.040915638368856706,
+      "days_with_trade": 106
+    },
+    "W3|C1_mean_ensemble": {
+      "curve_end": 0.11397661024677867,
+      "compound_cum": 0.11672498052768088,
+      "max_drawdown_compound": -0.05185991684590818,
+      "cost_sum": 0.007310010755291901,
+      "turnover_daily_mean": 0.047725998206398224,
+      "days_with_trade": 107
+    },
+    "W3|G2S101_mean": {
+      "curve_end": 0.1333332381573212,
+      "compound_cum": 0.1375290269408136,
+      "max_drawdown_compound": -0.06582457686703813,
+      "cost_sum": 0.006875909495928062,
+      "turnover_daily_mean": 0.044870394291009814,
+      "days_with_trade": 106
+    },
+    "W3|G2S102_mean": {
+      "curve_end": 0.16345845418946997,
+      "compound_cum": 0.17185385650174534,
+      "max_drawdown_compound": -0.06153808468457267,
+      "cost_sum": 0.006687419892499235,
+      "turnover_daily_mean": 0.043721259974115925,
+      "days_with_trade": 102
+    },
+    "W4|G1_mean": {
+      "curve_end": 0.0008054436955877813,
+      "compound_cum": -0.006691301508510716,
+      "max_drawdown_compound": -0.10864505668546198,
+      "cost_sum": 0.0044106897821741126,
+      "turnover_daily_mean": 0.027590613743361813,
+      "days_with_trade": 98
+    },
+    "W4|G1_max": {
+      "curve_end": -0.028716291603551398,
+      "compound_cum": -0.04144261184127718,
+      "max_drawdown_compound": -0.15837050621901505,
+      "cost_sum": 0.00446284667123041,
+      "turnover_daily_mean": 0.027798796170894167,
+      "days_with_trade": 101
+    },
+    "W4|C1_mean_ensemble": {
+      "curve_end": 0.016708684402514724,
+      "compound_cum": 0.009959206104094287,
+      "max_drawdown_compound": -0.11031808174420077,
+      "cost_sum": 0.00550035539861082,
+      "turnover_daily_mean": 0.03408343055971969,
+      "days_with_trade": 109
+    },
+    "W4|G2S101_mean": {
+      "curve_end": 0.007637125108392076,
+      "compound_cum": 0.001839271204854942,
+      "max_drawdown_compound": -0.09730265751331313,
+      "cost_sum": 0.005573776762160941,
+      "turnover_daily_mean": 0.034506136605458336,
+      "days_with_trade": 112
+    },
+    "W4|G2S102_mean": {
+      "curve_end": 0.01771849124024802,
+      "compound_cum": 0.010350484463936382,
+      "max_drawdown_compound": -0.10599399591075243,
+      "cost_sum": 0.005510874841773279,
+      "turnover_daily_mean": 0.03412953350339013,
+      "days_with_trade": 108
+    }
+  },
+  "manifest": {
+    "created_at": "2026-09-10T14:14:03",
+    "window_bounds": {
+      "W3": [
+        "2025-07-01",
+        "2025-12-31"
+      ],
+      "W4": [
+        "2026-01-01",
+        "2026-07-24"
+      ]
+    },
+    "expected_days": {
+      "W3": 126,
+      "W4": 134
+    },
+    "arms_main": [
+      "G1_mean",
+      "G1_max",
+      "C1_mean_ensemble"
+    ],
+    "arms_appendix": [
+      "G2S101_mean",
+      "G2S102_mean"
+    ],
+    "c1_seed_arms": [
+      "G1_mean",
+      "G2S101_mean",
+      "G2S102_mean"
+    ],
+    "backtest_kwargs": {
+      "account": 100000000,
+      "benchmark": "000300.SH",
+      "deal_price": "open",
+      "open_cost": 0.001,
+      "close_cost": 0.0015,
+      "min_cost": 5,
+      "limit_threshold": 0.095,
+      "topk": 50,
+      "n_drop": 5,
+      "hold_thresh": 5
+    },
+    "benchmark_provenance": {
+      "chosen": "000300.SH",
+      "old_manifest_record": "SH000300",
+      "probe": "3 日微回测：000300.SH bench=[0,0.000234,0.006183] 与旧 report 逐值一致；SH000300 抛 ValueError calendar not exists"
+    },
+    "formula_main": "net_daily=return-cost; curve=net_daily.cumsum(); D_max=curve_max[-1]-curve_mean[-1]; D_C1=curve_C1[-1]-curve_mean[-1]",
+    "signal_generation_link": "legacy_unverified：信号为历史缓存，生成链脚本在库（g5_head/gen_g1_2025h2.py、finetune_suite/run_g1_backtest.py、run_g2_supp.py、baseline_suite/signal.py:compute_variants_from_preds），但推理日志/推理 seed 未归档，无法重建链式证据；训练 seed：G1=tokenizer+predictor s100 链、G2S101/S102=共享 G1 tokenizer 的 predictor s101/s102（run_g2_supp.py 头注）",
+    "inputs": {
+      "G1_mean|W3": {
+        "original_path": "/home/user/workspace/Kronos/g5_head/data/daily_signals_2025h2_G1_mean.parquet",
+        "source_sha256": "9352b40302eb34c714bfebd808481b625a21d2f7f4f668ccca15cda0cfe21d66",
+        "export_path": "artifacts/experiments/g1_fixed_candidates_20260910/inputs_original/G1_mean_W3.parquet",
+        "export_sha256": "9352b40302eb34c714bfebd808481b625a21d2f7f4f668ccca15cda0cfe21d66",
+        "size_bytes": 428518,
+        "shape": [
+          126,
+          312
+        ],
+        "dtype": "float64",
+        "dates": [
+          "2025-07-01",
+          "2025-12-31"
+        ],
+        "n_days": 126,
+        "n_codes": 312,
+        "n_cells_notna": 37223,
+        "all_finite": true,
+        "dup_keys": false,
+        "evidence": "legacy_unverified：信号为历史缓存，生成链脚本在库（g5_head/gen_g1_2025h2.py、finetune_suite/run_g1_backtest.py、run_g2_supp.py、baseline_suite/signal.py:compute_variants_from_preds），但推理日志/推理 seed 未归档，无法重建链式证据；训练 seed：G1=tokenizer+predictor s100 链、G2S101/S102=共享 G1 tokenizer 的 predictor s101/s102（run_g2_supp.py 头注）"
+      },
+      "G1_mean|W4": {
+        "original_path": "/home/user/workspace/Kronos/finetune_suite/data/g1/daily_signals_backtest_G1_mean.parquet",
+        "source_sha256": "453e2aeae7fe4bee8ce8fa62a9908da0843d5ad8b52777cd3b299a84cc4a3e36",
+        "export_path": "artifacts/experiments/g1_fixed_candidates_20260910/inputs_original/G1_mean_W4.parquet",
+        "export_sha256": "453e2aeae7fe4bee8ce8fa62a9908da0843d5ad8b52777cd3b299a84cc4a3e36",
+        "size_bytes": 452009,
+        "shape": [
+          134,
+          319
+        ],
+        "dtype": "float64",
+        "dates": [
+          "2026-01-05",
+          "2026-07-24"
+        ],
+        "n_days": 134,
+        "n_codes": 319,
+        "n_cells_notna": 39563,
+        "all_finite": true,
+        "dup_keys": false,
+        "evidence": "legacy_unverified：信号为历史缓存，生成链脚本在库（g5_head/gen_g1_2025h2.py、finetune_suite/run_g1_backtest.py、run_g2_supp.py、baseline_suite/signal.py:compute_variants_from_preds），但推理日志/推理 seed 未归档，无法重建链式证据；训练 seed：G1=tokenizer+predictor s100 链、G2S101/S102=共享 G1 tokenizer 的 predictor s101/s102（run_g2_supp.py 头注）"
+      },
+      "G1_max|W3": {
+        "original_path": "/home/user/workspace/Kronos/g5_head/data/daily_signals_2025h2_G1_max.parquet",
+        "source_sha256": "b1a2719f4b08023c33ed495f9434d8f4541240e448b09a62318d5732515a92e5",
+        "export_path": "artifacts/experiments/g1_fixed_candidates_20260910/inputs_original/G1_max_W3.parquet",
+        "export_sha256": "b1a2719f4b08023c33ed495f9434d8f4541240e448b09a62318d5732515a92e5",
+        "size_bytes": 427741,
+        "shape": [
+          126,
+          312
+        ],
+        "dtype": "float64",
+        "dates": [
+          "2025-07-01",
+          "2025-12-31"
+        ],
+        "n_days": 126,
+        "n_codes": 312,
+        "n_cells_notna": 37223,
+        "all_finite": true,
+        "dup_keys": false,
+        "evidence": "legacy_unverified：信号为历史缓存，生成链脚本在库（g5_head/gen_g1_2025h2.py、finetune_suite/run_g1_backtest.py、run_g2_supp.py、baseline_suite/signal.py:compute_variants_from_preds），但推理日志/推理 seed 未归档，无法重建链式证据；训练 seed：G1=tokenizer+predictor s100 链、G2S101/S102=共享 G1 tokenizer 的 predictor s101/s102（run_g2_supp.py 头注）"
+      },
+      "G1_max|W4": {
+        "original_path": "/home/user/workspace/Kronos/finetune_suite/data/g1/daily_signals_backtest_G1_max.parquet",
+        "source_sha256": "e833a45e93d11845108b5306c298f587a66df777a44be36c08e8c3065b075263",
+        "export_path": "artifacts/experiments/g1_fixed_candidates_20260910/inputs_original/G1_max_W4.parquet",
+        "export_sha256": "e833a45e93d11845108b5306c298f587a66df777a44be36c08e8c3065b075263",
+        "size_bytes": 452224,
+        "shape": [
+          134,
+          319
+        ],
+        "dtype": "float64",
+        "dates": [
+          "2026-01-05",
+          "2026-07-24"
+        ],
+        "n_days": 134,
+        "n_codes": 319,
+        "n_cells_notna": 39563,
+        "all_finite": true,
+        "dup_keys": false,
+        "evidence": "legacy_unverified：信号为历史缓存，生成链脚本在库（g5_head/gen_g1_2025h2.py、finetune_suite/run_g1_backtest.py、run_g2_supp.py、baseline_suite/signal.py:compute_variants_from_preds），但推理日志/推理 seed 未归档，无法重建链式证据；训练 seed：G1=tokenizer+predictor s100 链、G2S101/S102=共享 G1 tokenizer 的 predictor s101/s102（run_g2_supp.py 头注）"
+      },
+      "G2S101_mean|W3": {
+        "original_path": "/home/user/workspace/Kronos/finetune_suite/data/g2/s101/daily_signals_2025h2_G2S101_mean.parquet",
+        "source_sha256": "c24f3890756599dc2fb861eac4d13ebd005c7744fb8409a3282b3ea874f6fe3f",
+        "export_path": "artifacts/experiments/g1_fixed_candidates_20260910/inputs_original/G2S101_mean_W3.parquet",
+        "export_sha256": "c24f3890756599dc2fb861eac4d13ebd005c7744fb8409a3282b3ea874f6fe3f",
+        "size_bytes": 427799,
+        "shape": [
+          126,
+          312
+        ],
+        "dtype": "float64",
+        "dates": [
+          "2025-07-01",
+          "2025-12-31"
+        ],
+        "n_days": 126,
+        "n_codes": 312,
+        "n_cells_notna": 37223,
+        "all_finite": true,
+        "dup_keys": false,
+        "evidence": "legacy_unverified：信号为历史缓存，生成链脚本在库（g5_head/gen_g1_2025h2.py、finetune_suite/run_g1_backtest.py、run_g2_supp.py、baseline_suite/signal.py:compute_variants_from_preds），但推理日志/推理 seed 未归档，无法重建链式证据；训练 seed：G1=tokenizer+predictor s100 链、G2S101/S102=共享 G1 tokenizer 的 predictor s101/s102（run_g2_supp.py 头注）"
+      },
+      "G2S101_mean|W4": {
+        "original_path": "/home/user/workspace/Kronos/finetune_suite/data/g2/s101/daily_signals_backtest_G2S101_mean.parquet",
+        "source_sha256": "945d5fdfc94696349c6c10f16a5fd660a936945c0df88b0a550dc438036f2178",
+        "export_path": "artifacts/experiments/g1_fixed_candidates_20260910/inputs_original/G2S101_mean_W4.parquet",
+        "export_sha256": "945d5fdfc94696349c6c10f16a5fd660a936945c0df88b0a550dc438036f2178",
+        "size_bytes": 451387,
+        "shape": [
+          134,
+          319
+        ],
+        "dtype": "float64",
+        "dates": [
+          "2026-01-05",
+          "2026-07-24"
+        ],
+        "n_days": 134,
+        "n_codes": 319,
+        "n_cells_notna": 39563,
+        "all_finite": true,
+        "dup_keys": false,
+        "evidence": "legacy_unverified：信号为历史缓存，生成链脚本在库（g5_head/gen_g1_2025h2.py、finetune_suite/run_g1_backtest.py、run_g2_supp.py、baseline_suite/signal.py:compute_variants_from_preds），但推理日志/推理 seed 未归档，无法重建链式证据；训练 seed：G1=tokenizer+predictor s100 链、G2S101/S102=共享 G1 tokenizer 的 predictor s101/s102（run_g2_supp.py 头注）"
+      },
+      "G2S102_mean|W3": {
+        "original_path": "/home/user/workspace/Kronos/finetune_suite/data/g2/s102/daily_signals_2025h2_G2S102_mean.parquet",
+        "source_sha256": "d31a80d6b7988d149ff6891b0b6a77abfe5fe996984e697a9087f22c53d7d22d",
+        "export_path": "artifacts/experiments/g1_fixed_candidates_20260910/inputs_original/G2S102_mean_W3.parquet",
+        "export_sha256": "d31a80d6b7988d149ff6891b0b6a77abfe5fe996984e697a9087f22c53d7d22d",
+        "size_bytes": 427852,
+        "shape": [
+          126,
+          312
+        ],
+        "dtype": "float64",
+        "dates": [
+          "2025-07-01",
+          "2025-12-31"
+        ],
+        "n_days": 126,
+        "n_codes": 312,
+        "n_cells_notna": 37223,
+        "all_finite": true,
+        "dup_keys": false,
+        "evidence": "legacy_unverified：信号为历史缓存，生成链脚本在库（g5_head/gen_g1_2025h2.py、finetune_suite/run_g1_backtest.py、run_g2_supp.py、baseline_suite/signal.py:compute_variants_from_preds），但推理日志/推理 seed 未归档，无法重建链式证据；训练 seed：G1=tokenizer+predictor s100 链、G2S101/S102=共享 G1 tokenizer 的 predictor s101/s102（run_g2_supp.py 头注）"
+      },
+      "G2S102_mean|W4": {
+        "original_path": "/home/user/workspace/Kronos/finetune_suite/data/g2/s102/daily_signals_backtest_G2S102_mean.parquet",
+        "source_sha256": "9f767ea322437a5a27d6f13ae2264848a64449ad7fbdd6289811dbaf79b6a19e",
+        "export_path": "artifacts/experiments/g1_fixed_candidates_20260910/inputs_original/G2S102_mean_W4.parquet",
+        "export_sha256": "9f767ea322437a5a27d6f13ae2264848a64449ad7fbdd6289811dbaf79b6a19e",
+        "size_bytes": 451370,
+        "shape": [
+          134,
+          319
+        ],
+        "dtype": "float64",
+        "dates": [
+          "2026-01-05",
+          "2026-07-24"
+        ],
+        "n_days": 134,
+        "n_codes": 319,
+        "n_cells_notna": 39563,
+        "all_finite": true,
+        "dup_keys": false,
+        "evidence": "legacy_unverified：信号为历史缓存，生成链脚本在库（g5_head/gen_g1_2025h2.py、finetune_suite/run_g1_backtest.py、run_g2_supp.py、baseline_suite/signal.py:compute_variants_from_preds），但推理日志/推理 seed 未归档，无法重建链式证据；训练 seed：G1=tokenizer+predictor s100 链、G2S101/S102=共享 G1 tokenizer 的 predictor s101/s102（run_g2_supp.py 头注）"
+      }
+    },
+    "per_window": {
+      "W3": {
+        "n_days": 126,
+        "n_pool_cells": 37223,
+        "max_ge_mean_gate": {
+          "min_diff": 0.0005786418914794922,
+          "max_diff": 0.10062718391418457,
+          "violations": 0,
+          "tolerance": 1e-06
+        },
+        "c1_missing_on_pool": 0,
+        "per_arm_vs_pool": {
+          "G1_mean": {
+            "extra_vs_pool": 0,
+            "missing_on_pool": 0
+          },
+          "G1_max": {
+            "extra_vs_pool": 0,
+            "missing_on_pool": 0
+          },
+          "G2S101_mean": {
+            "extra_vs_pool": 0,
+            "missing_on_pool": 0
+          },
+          "G2S102_mean": {
+            "extra_vs_pool": 0,
+            "missing_on_pool": 0
+          }
+        },
+        "pool_set_sha256": "c9e70fbe6770dcfbe598ed214a9a865f73e921463ab209588db24afc1cb0ad4c"
+      },
+      "W4": {
+        "n_days": 134,
+        "n_pool_cells": 39563,
+        "max_ge_mean_gate": {
+          "min_diff": 0.0005514621734619141,
+          "max_diff": 0.11480402946472168,
+          "violations": 0,
+          "tolerance": 1e-06
+        },
+        "c1_missing_on_pool": 0,
+        "per_arm_vs_pool": {
+          "G1_mean": {
+            "extra_vs_pool": 0,
+            "missing_on_pool": 0
+          },
+          "G1_max": {
+            "extra_vs_pool": 0,
+            "missing_on_pool": 0
+          },
+          "G2S101_mean": {
+            "extra_vs_pool": 0,
+            "missing_on_pool": 0
+          },
+          "G2S102_mean": {
+            "extra_vs_pool": 0,
+            "missing_on_pool": 0
+          }
+        },
+        "pool_set_sha256": "cb2421cfb2ee85b05d8b31c0a6631daea96f65a8e2f92f6a76ac6ba5979d0a54"
+      }
+    }
+  },
+  "disclaimer": "历史候选核验（W3/W4 已参与候选选择），不构成独立验证，不排除过拟合；不宣称已排除过拟合。"
+}
