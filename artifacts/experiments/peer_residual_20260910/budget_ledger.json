@@ -1,0 +1,64 @@
+{
+  "entries": [
+    {
+      "ts": "2026-09-10T16:44:20",
+      "stage": "smoke",
+      "wall_s": 5.9,
+      "cuda_s": 0.0,
+      "device": "cuda:0",
+      "note": "verify+3日补h+3次更新 est_total=1304.0s"
+    },
+    {
+      "ts": "2026-09-10T16:49:13",
+      "stage": "cache:train",
+      "wall_s": 274.7,
+      "cuda_s": 274.2,
+      "device": "cuda:0",
+      "note": "rebuilt=534 reused=0"
+    },
+    {
+      "ts": "2026-09-10T16:49:27",
+      "stage": "cache:val",
+      "wall_s": 13.8,
+      "cuda_s": 13.8,
+      "device": "cuda:0",
+      "note": "rebuilt=22 reused=0"
+    },
+    {
+      "ts": "2026-09-10T16:50:06",
+      "stage": "cache:W3",
+      "wall_s": 38.7,
+      "cuda_s": 38.6,
+      "device": "cuda:0",
+      "note": "rebuilt=126 reused=0"
+    },
+    {
+      "ts": "2026-09-10T16:51:24",
+      "stage": "cache:W4",
+      "wall_s": 77.8,
+      "cuda_s": 77.7,
+      "device": "cuda:0",
+      "note": "rebuilt=134 reused=0"
+    },
+    {
+      "ts": "2026-09-10T16:53:51",
+      "stage": "pilot:train_heads",
+      "wall_s": 61.1,
+      "cuda_s": 0.0,
+      "device": "cuda:0",
+      "note": "seeds=[100] arms=['OFF', 'ON']（小头训练）"
+    },
+    {
+      "ts": "2026-09-10T16:54:12",
+      "stage": "pilot:backtest",
+      "wall_s": 16.3,
+      "cuda_s": 0.0,
+      "device": "cpu",
+      "note": "Qlib 回测 CPU，不计 GPU 预算"
+    }
+  ],
+  "gpu_budget_s": 43200,
+  "gpu_used_wall_s": 472.0,
+  "cuda_measured_s": 404.3,
+  "remaining_gpu_budget_s": 42728.0
+}

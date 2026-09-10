@@ -78,3 +78,4 @@ tmp/
 finetune_suite/registry/cron.log
 .mimosa
 sae_residual/data/
+peer_residual/data/

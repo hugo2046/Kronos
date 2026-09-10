@@ -1,0 +1,81 @@
+{
+  "created_at": "2026-09-10T16:54:11",
+  "seeds": [
+    100
+  ],
+  "per_seed": {
+    "100": {
+      "arms": {
+        "G1_mean": {
+          "W3": {
+            "curve_end": 0.14401773020198394,
+            "compound_cum": 0.1503809500083908,
+            "max_drawdown_compound": -0.05159658506601683,
+            "cost_sum": 0.007422317636572938,
+            "turnover_daily_mean": 0.04836393398500296,
+            "n_days": 126
+          },
+          "W4": {
+            "curve_end": 0.0008054436955879686,
+            "compound_cum": -0.006691301508510494,
+            "max_drawdown_compound": -0.10864505668546254,
+            "cost_sum": 0.0044106897821741126,
+            "turnover_daily_mean": 0.027590613743361813,
+            "n_days": 134
+          }
+        },
+        "PEER_OFF_s100": {
+          "W3": {
+            "curve_end": 0.10275688185766843,
+            "compound_cum": 0.10454508266305185,
+            "max_drawdown_compound": -0.051191086103857475,
+            "cost_sum": 0.007709579780783828,
+            "turnover_daily_mean": 0.05040183916893906,
+            "n_days": 126
+          },
+          "W4": {
+            "curve_end": -0.0024224284908562974,
+            "compound_cum": -0.008180317858040964,
+            "max_drawdown_compound": -0.0861402916922831,
+            "cost_sum": 0.006228895753238423,
+            "turnover_daily_mean": 0.03846357943058042,
+            "n_days": 134
+          }
+        },
+        "PEER_ON_s100": {
+          "W3": {
+            "curve_end": 0.11070486823899904,
+            "compound_cum": 0.1143820385818417,
+            "max_drawdown_compound": -0.04052469864350727,
+            "cost_sum": 0.00760117707347367,
+            "turnover_daily_mean": 0.049628572511400425,
+            "n_days": 126
+          },
+          "W4": {
+            "curve_end": -0.023652015454844084,
+            "compound_cum": -0.029552135800099855,
+            "max_drawdown_compound": -0.08794160899418246,
+            "cost_sum": 0.005741858116403308,
+            "turnover_daily_mean": 0.0356380588605721,
+            "n_days": 134
+          }
+        }
+      },
+      "D_OFF": {
+        "W3": -0.04126084834431551,
+        "W4": -0.003227872186444266
+      },
+      "D_ON": {
+        "W3": -0.0333128619629849,
+        "W4": -0.024457459150432053
+      },
+      "D_peer": {
+        "W3": 0.00794798638133061,
+        "W4": -0.021229586963987787
+      },
+      "off_beats_g1_both": false,
+      "on_beats_g1_both": false
+    }
+  },
+  "device_note": "cpu"
+}

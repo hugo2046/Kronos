@@ -1,0 +1,68 @@
+{
+  "verify": {
+    "train": {
+      "date": "2014-01-02",
+      "codes": [
+        "000100.SZ",
+        "000157.SZ",
+        "000425.SZ"
+      ],
+      "max_abs_diff": 1.3336539268493652e-06,
+      "tol": 1e-05
+    },
+    "val": {
+      "date": "2025-01-02",
+      "codes": [
+        "000100.SZ",
+        "000651.SZ",
+        "000786.SZ"
+      ],
+      "max_abs_diff": 1.9073486328125e-06,
+      "tol": 1e-05
+    },
+    "W3": {
+      "date": "2025-07-01",
+      "codes": [
+        "000001.SZ",
+        "000002.SZ",
+        "000063.SZ"
+      ],
+      "max_abs_diff": 2.86102294921875e-06,
+      "tol": 1e-05
+    },
+    "W4": {
+      "date": "2026-01-05",
+      "codes": [
+        "000001.SZ",
+        "000002.SZ",
+        "000063.SZ"
+      ],
+      "max_abs_diff": 1.9073486328125e-06,
+      "tol": 1e-05
+    }
+  },
+  "smoke_train_days": 2,
+  "smoke_val_days": 1,
+  "n_days_loaded": 2,
+  "n_per_day": [
+    242,
+    246
+  ],
+  "n_extra_per_day": [
+    178,
+    182
+  ],
+  "batch_shape": [
+    2,
+    246,
+    832
+  ],
+  "device": "cuda:0",
+  "per_update_s": 0.0349,
+  "peak_vram_gb": 0.507,
+  "per_train_day_s": 0.55,
+  "est_cache_full_gpu_s": 363.0,
+  "est_pilot_train_s": 935.0,
+  "smoke_val_mse_after3upd": 0.6028094291687012,
+  "est_total_gpu_s": 1304.0
+}

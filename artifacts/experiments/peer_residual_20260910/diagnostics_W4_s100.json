@@ -1,0 +1,20 @@
+{
+  "OFF": {
+    "sigma_e": 0.04908841653707577,
+    "correction_std_daily_mean": 0.012338191194077827,
+    "correction_std_daily_median": 0.012419723704057983,
+    "correction_abs_mean": 0.011995301572071345,
+    "spearman_vs_g1_mean": 0.7069391418478558,
+    "top50_overlap_mean": 0.5774626865671642,
+    "n_diag_days": 134
+  },
+  "ON": {
+    "sigma_e": 0.04908841653707577,
+    "correction_std_daily_mean": 0.017073739487967764,
+    "correction_std_daily_median": 0.016422272336601918,
+    "correction_abs_mean": 0.017238222524703656,
+    "spearman_vs_g1_mean": 0.48840632922637744,
+    "top50_overlap_mean": 0.4198507462686567,
+    "n_diag_days": 134
+  }
+}
