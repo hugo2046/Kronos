@@ -1,0 +1,108 @@
+{
+  "created_at": "2026-09-10T09:08:58",
+  "protocol": "sae-residual-protocol-v1",
+  "git_head": "386c64ca98591a38ecdc8af58dfd2af4f205a014",
+  "baseline": {
+    "W3": {
+      "path": "/home/user/workspace/Kronos/g5_head/data/daily_signals_2025h2_G1_mean.parquet",
+      "sha256": "9352b40302eb34c714bfebd808481b625a21d2f7f4f668ccca15cda0cfe21d66",
+      "n_days": 126,
+      "n_cells": 37223,
+      "date_min": "2025-07-01",
+      "date_max": "2025-12-31"
+    },
+    "W4": {
+      "path": "/home/user/workspace/Kronos/finetune_suite/data/g1/daily_signals_backtest_G1_mean.parquet",
+      "sha256": "453e2aeae7fe4bee8ce8fa62a9908da0843d5ad8b52777cd3b299a84cc4a3e36",
+      "n_days": 134,
+      "n_cells": 39563,
+      "date_min": "2026-01-05",
+      "date_max": "2026-07-24"
+    }
+  },
+  "g1_weights": {
+    "tokenizer": {
+      "path": "/home/user/workspace/Kronos/finetune_suite/outputs/models/finetune_tokenizer_g1/checkpoints/best_model",
+      "sha256": "5ca43492146cd93da2f9dd5528009aa6bd882f2a448ff4c6bd3c1b0ab08609ee"
+    },
+    "predictor": {
+      "path": "/home/user/workspace/Kronos/finetune_suite/outputs/models/finetune_predictor_g1/checkpoints/best_model",
+      "sha256": "4f2382138138e85ea1c543d43ade2de2373e4168a995e34fd43cbca2895c2fe2"
+    }
+  },
+  "sample_rule": {
+    "pool": "csi300",
+    "lookback": 90,
+    "predict_len": 10,
+    "stride": 5,
+    "per_day": 64,
+    "data_rng": "default_rng([17, yyyymmdd])",
+    "train": [
+      "2014-01-02",
+      "2024-12-31"
+    ],
+    "val": [
+      "2025-01-01",
+      "2025-06-30"
+    ],
+    "test_windows": {
+      "W3": [
+        "2025-07-01",
+        "2025-12-31"
+      ],
+      "W4": [
+        "2026-01-01",
+        "2026-07-24"
+      ]
+    }
+  },
+  "teacher_protocol": {
+    "T": 1.0,
+    "top_p": 0.9,
+    "top_k": 0,
+    "sample_count": 20,
+    "clip": 5,
+    "max_context": 512,
+    "seed": 42,
+    "chunk_size": 32,
+    "sort_codes": true,
+    "note": "与原 G1 测试信号生成协议一致（每日 seed42、代码升序、chunk32）；teacher 仅供 head 训练"
+  },
+  "head": {
+    "enc_dim": 64,
+    "z_dim": 16,
+    "loss": {
+      "recon_weight": 0.1,
+      "rho": 0.05,
+      "beta_ae": 0.0,
+      "beta_sae": 0.001
+    },
+    "train": {
+      "lr": 0.0003,
+      "betas": [
+        0.9,
+        0.999
+      ],
+      "weight_decay": 0.01,
+      "batch_size": 256,
+      "grad_clip": 3.0,
+      "epochs": 100,
+      "dtype": "float32"
+    }
+  },
+  "budget_gpu_s": 43200,
+  "data": {
+    "qlib_version": "0.9.6.99",
+    "qlib_file": "/home/user/workspace/quant-qlib/qlib/__init__.py",
+    "data_end": "2026-08-07",
+    "forward_cutoff": "2026-07-24",
+    "calendar_first_last": [
+      "2000-12-01",
+      "2040-12-31"
+    ],
+    "n_train_days": 534,
+    "n_val_days": 22,
+    "expected_train_samples": 34176,
+    "expected_val_samples": 1408
+  }
+}

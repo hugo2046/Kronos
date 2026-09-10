@@ -1,0 +1,81 @@
+{
+  "created_at": "2026-09-10T13:13:42",
+  "seeds": [
+    100
+  ],
+  "per_seed": {
+    "100": {
+      "arms": {
+        "G1_mean": {
+          "W3": {
+            "curve_end": 0.1440177302019833,
+            "compound_cum": 0.15038095000838925,
+            "max_drawdown_compound": -0.05159658506601661,
+            "cost_sum": 0.007422317636572938,
+            "turnover_daily_mean": 0.04836393398500295,
+            "n_days": 126
+          },
+          "W4": {
+            "curve_end": 0.0008054436955879582,
+            "compound_cum": -0.0066913015085116045,
+            "max_drawdown_compound": -0.10864505668546243,
+            "cost_sum": 0.0044106897821741126,
+            "turnover_daily_mean": 0.027590613743361816,
+            "n_days": 134
+          }
+        },
+        "AE_residual_s100": {
+          "W3": {
+            "curve_end": 0.13874875253967905,
+            "compound_cum": 0.14492231356064633,
+            "max_drawdown_compound": -0.046576437106300994,
+            "cost_sum": 0.007626931092141762,
+            "turnover_daily_mean": 0.04985493721891876,
+            "n_days": 126
+          },
+          "W4": {
+            "curve_end": -0.06949320525330607,
+            "compound_cum": -0.07085381698126902,
+            "max_drawdown_compound": -0.09636664318959243,
+            "cost_sum": 0.006213352089241557,
+            "turnover_daily_mean": 0.03837699749509601,
+            "n_days": 134
+          }
+        },
+        "SAE_residual_s100": {
+          "W3": {
+            "curve_end": 0.11600849448026257,
+            "compound_cum": 0.11943824151424942,
+            "max_drawdown_compound": -0.04606871832468684,
+            "cost_sum": 0.007290046228046961,
+            "turnover_daily_mean": 0.04770356787241874,
+            "n_days": 126
+          },
+          "W4": {
+            "curve_end": -0.06050973827501717,
+            "compound_cum": -0.0627387360122107,
+            "max_drawdown_compound": -0.09588323099644103,
+            "cost_sum": 0.006150305971677446,
+            "turnover_daily_mean": 0.037990904392725657,
+            "n_days": 134
+          }
+        }
+      },
+      "D_SG": {
+        "W3": -0.028009235721720732,
+        "W4": -0.06131518197060513
+      },
+      "D_AG": {
+        "W3": -0.005268977662304247,
+        "W4": -0.07029864894889404
+      },
+      "D_SA": {
+        "W3": -0.022740258059416485,
+        "W4": 0.008983466978288904
+      },
+      "ae_beats_g1_both": false,
+      "sae_beats_g1_both": false
+    }
+  },
+  "device_note": "cpu"
+}

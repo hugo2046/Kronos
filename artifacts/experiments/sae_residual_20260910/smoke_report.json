@@ -1,0 +1,15 @@
+{
+  "smoke_wall_s": 19.7,
+  "train_days_done": 2,
+  "w3_days_done": 1,
+  "per_train_day_s": 7.12,
+  "per_w3_day_s": 0.64,
+  "peak_vram_gb": 3.82,
+  "n_train_days": 534,
+  "n_val_days": 22,
+  "n_w3_days": 126,
+  "n_w4_days": 134,
+  "cuda_s_train": 14.2,
+  "cuda_s_w3": 0.6,
+  "estimated_full_gpu_wall_s": 4125.1
+}

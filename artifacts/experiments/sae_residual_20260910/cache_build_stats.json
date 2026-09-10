@@ -1,0 +1,38 @@
+{
+  "train": {
+    "split": "train",
+    "n_days": 534,
+    "skipped": [],
+    "rebuilt": 534,
+    "reused": 0,
+    "wall_s": 3805.951614958234,
+    "cuda_s": 3805.8752968749973
+  },
+  "val": {
+    "split": "val",
+    "n_days": 22,
+    "skipped": [],
+    "rebuilt": 22,
+    "reused": 0,
+    "wall_s": 158.6815269012004,
+    "cuda_s": 158.67794140625
+  },
+  "W3": {
+    "split": "W3",
+    "n_days": 126,
+    "rebuilt": 126,
+    "reused": 0,
+    "wall_s": 84.42899468634278,
+    "cuda_s": 84.4061241455078,
+    "coverage_fail": []
+  },
+  "W4": {
+    "split": "W4",
+    "n_days": 134,
+    "rebuilt": 134,
+    "reused": 0,
+    "wall_s": 126.51910395361483,
+    "cuda_s": 126.49655023193363,
+    "coverage_fail": []
+  }
+}

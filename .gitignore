@@ -76,3 +76,5 @@ temp/
 tmp/
 .python-version
 finetune_suite/registry/cron.log
+.mimosa
+sae_residual/data/
