@@ -35,6 +35,10 @@ import shutil
 import sys
 from datetime import datetime
 from pathlib import Path
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from qlib.workflow.recorder import Recorder
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
@@ -351,6 +355,19 @@ def cmd_preflight() -> None:
                 f"复制入 {inputs_dir.relative_to(REPO_ROOT)} 并记录双向 SHA")
 
 
+def save_figure_artifacts(recorder: Recorder, output_dir: Path) -> None:
+    """按文件上传四张对照图，避免把Path对象pickle为图片产物。
+
+    :param recorder: 当前Qlib实验记录。
+    :param output_dir: 已生成对照图的目录。
+    :returns: 无返回值。
+    """
+    for window in WINDOW_BOUNDS:
+        for kind in ("main", "appendix"):
+            path = output_dir / f"fig_{window}_{kind}.png"
+            recorder.save_objects(local_path=str(path), artifact_path="figures")
+
+
 def cmd_backtest() -> None:
     from kronos_qlib import QlibProvider
     from qlib.workflow import R
@@ -468,10 +485,7 @@ def cmd_backtest() -> None:
         _plot(results)
         R.log_artifact(str(OUT_DIR / "comparison_summary.json"))
         R.log_artifact(str(OUT_DIR / "manifest.json"))
-        R.save_objects(figure_main_W3=OUT_DIR / "fig_W3_main.png",
-                       figure_main_W4=OUT_DIR / "fig_W4_main.png",
-                       figure_appendix_W3=OUT_DIR / "fig_W3_appendix.png",
-                       figure_appendix_W4=OUT_DIR / "fig_W4_appendix.png")
+        save_figure_artifacts(rec, OUT_DIR)
         (OUT_DIR / "R_identity.json").write_text(
             json.dumps({"experiment": EXPERIMENT, "experiment_id": exp_id,
                         "recorder_id": rid},

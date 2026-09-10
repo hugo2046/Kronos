@@ -136,3 +136,37 @@ def test_source_has_no_train_predict_forward():
     # 主比较臂固定三候选：不新增 seed/权重搜索
     assert fc.ARMS_MAIN == ("G1_mean", "G1_max", "C1_mean_ensemble")
     assert set(fc.C1_SEED_ARMS) == {"G1_mean", "G2S101_mean", "G2S102_mean"}
+
+
+def test_figure_artifacts_are_actual_png_files(tmp_path):
+    """实际Qlib recorder回读PNG字节，防止把Path对象序列化成图片产物。"""
+    import base64
+
+    import mlflow
+    from qlib.workflow.recorder import MLflowRecorder
+
+    upload = getattr(fc, "save_figure_artifacts", None)
+    assert callable(upload), "缺少实际文件图片归档入口"
+    png = base64.b64decode(
+        "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+a2ioAAAAASUVORK5CYII="
+    )
+    figures = tmp_path / "figures_source"
+    figures.mkdir()
+    names = [f"fig_{window}_{kind}.png"
+             for window in ("W3", "W4") for kind in ("main", "appendix")]
+    for name in names:
+        (figures / name).write_bytes(png)
+    uri = f"sqlite:///{tmp_path / 'tracking.db'}"
+    client = mlflow.tracking.MlflowClient(tracking_uri=uri)
+    experiment_id = client.create_experiment(
+        "figure-upload-test", artifact_location=(tmp_path / "artifacts").as_uri())
+    run = client.create_run(experiment_id)
+    recorder = MLflowRecorder(experiment_id, uri, mlflow_run=run)
+
+    upload(recorder, figures)
+
+    stored = client.list_artifacts(run.info.run_id, "figures")
+    assert {Path(item.path).name for item in stored} == set(names)
+    for item in stored:
+        downloaded = Path(client.download_artifacts(run.info.run_id, item.path))
+        assert downloaded.read_bytes() == png
