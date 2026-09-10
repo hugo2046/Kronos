@@ -41,7 +41,10 @@ def build_peer_split(provider, backbone, identity: dict, split: str,
     :returns: 统计字典（逐日 PeerSet/额外数、耗时、chunk 状态）。
     """
     from kronos_qlib import build_inference_windows
+    from peer_residual.history_provider import PeerHistoryProvider
 
+    # §5 读取边界纠偏：实际 fetch 上界钳制到当前决策日（未来日历仍可用）
+    hist = PeerHistoryProvider(provider)
     out_dir = C.PEER_CACHE_DIR / (subdir or split)
     out_dir.mkdir(parents=True, exist_ok=True)
     dates = PD.split_dates(split)
@@ -83,8 +86,9 @@ def build_peer_split(provider, backbone, identity: dict, split: str,
         ev1 = torch.cuda.Event(enable_timing=True) if torch.cuda.is_available() else None
         if ev0 is not None:
             ev0.record()
+        hist.set_decision_bound(dstr)          # t > FORWARD_CUTOFF 拒绝
         df_list, x_ts_list, _, codes, wstats = build_inference_windows(
-            provider, dstr, lookback=C.LOOKBACK, predict_len=C.PREDICT_LEN,
+            hist, dstr, lookback=C.LOOKBACK, predict_len=C.PREDICT_LEN,
             pool=C.POOL)
         sae_codes = {str(c) for c in sae["instruments"]}
         peer_set = set(codes)
@@ -148,7 +152,9 @@ def verify_sample_against_g1(provider, backbone, identity: dict,
     超差抛错停止（不混合来源、不调宽容差）。
     """
     from kronos_qlib import build_inference_windows
+    from peer_residual.history_provider import PeerHistoryProvider
 
+    hist = PeerHistoryProvider(provider)
     results = {}
     for split in ("train", "val", "W3", "W4"):
         dstr = PD.split_dates(split)[0]
@@ -158,8 +164,9 @@ def verify_sample_against_g1(provider, backbone, identity: dict,
                               "predictor_sha": identity["predictor_sha"]})
         sae_codes = [str(c) for c in sae["instruments"]]
         picks = sorted(sae_codes)[:VERIFY_TOP_K]
+        hist.set_decision_bound(dstr)
         df_list, x_ts_list, _, codes, _ = build_inference_windows(
-            provider, dstr, lookback=C.LOOKBACK, predict_len=C.PREDICT_LEN,
+            hist, dstr, lookback=C.LOOKBACK, predict_len=C.PREDICT_LEN,
             pool=C.POOL)
         idx = {c: j for j, c in enumerate(codes)}
         absent = [c for c in picks if c not in idx]

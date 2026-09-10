@@ -19,6 +19,7 @@ from __future__ import annotations
 import hashlib
 import json
 from dataclasses import dataclass
+from pathlib import Path
 
 import numpy as np
 import torch
@@ -74,14 +75,17 @@ def normalize_hidden(h: np.ndarray, stats: dict) -> np.ndarray:
     return ((arr - stats["mu"]) / stats["sigma"]).astype(np.float32)
 
 
-def sae_chunk_path(split: str, date: str) -> "object":
-    """SAE 缓存 chunk 路径（date 为 ``YYYY-MM-DD``）。"""
-    return C.SAE_CACHE_DIR / split / f"{split}_{date.replace('-', '')}.npz"
+def sae_chunk_path(split: str, date: str, sae_dir: Path | None = None):
+    """SAE 缓存 chunk 路径（date 为 ``YYYY-MM-DD``；可显式传缓存目录）。"""
+    base = (sae_dir or C.SAE_CACHE_DIR)
+    return base / split / f"{split}_{date.replace('-', '')}.npz"
 
 
-def peer_chunk_path(split: str, date: str, subdir: str | None = None):
-    """PEER1 peer chunk 路径（subdir 用于 smoke 隔离）。"""
-    d = C.PEER_CACHE_DIR / (subdir or split)
+def peer_chunk_path(split: str, date: str, subdir: str | None = None,
+                    peer_dir: Path | None = None):
+    """PEER1 peer chunk 路径（subdir 用于 smoke 隔离；可显式传缓存目录）。"""
+    base = (peer_dir or C.PEER_CACHE_DIR)
+    d = base / (subdir or split)
     return d / f"peer_{split}_{date.replace('-', '')}.npz"
 
 
@@ -97,14 +101,15 @@ def _load_npz(path) -> dict:
 
 
 def load_day(split: str, date: str, stats: dict, subdir: str | None = None,
-             weight_shas: dict | None = None) -> DayData:
+             weight_shas: dict | None = None, sae_dir: Path | None = None,
+             peer_dir: Path | None = None) -> DayData:
     """装配单日：SAE chunk ∪ peer chunk → 完整 PeerSet DayData。
 
     身份门禁：peer chunk 的协议/段名/G1 权重 SHA 必须匹配，且其记录的
     源 SAE chunk SHA 与实存文件一致；LossSet/基线格必须 ⊆ PeerSet。
     """
-    sp = sae_chunk_path(split, date)
-    pp = peer_chunk_path(split, date, subdir)
+    sp = sae_chunk_path(split, date, sae_dir)
+    pp = peer_chunk_path(split, date, subdir, peer_dir)
     assert sp.is_file(), f"SAE chunk 缺失：{sp}"
     assert pp.is_file(), f"peer chunk 缺失：{pp}"
     ident = identity_of(pp)
@@ -164,9 +169,9 @@ def assemble_day(sae: dict, peer: dict, stats: dict, date: str,
                    r=r, s_g1=s_g1, n_extra=len(extra_codes))
 
 
-def split_dates(split: str) -> list[str]:
+def split_dates(split: str, sae_dir: Path | None = None) -> list[str]:
     """SAE chunk 的全部决策日（升序，作为本轮唯一日期权威）。"""
-    d = C.SAE_CACHE_DIR / split
+    d = (sae_dir or C.SAE_CACHE_DIR) / split
     out = []
     for p in sorted(d.glob(f"{split}_*.npz")):
         if p.name.endswith(".tmp.npz"):
@@ -177,10 +182,12 @@ def split_dates(split: str) -> list[str]:
 
 
 def load_split_days(split: str, stats: dict, weight_shas: dict | None = None,
-                    subdir: str | None = None) -> list[DayData]:
+                    subdir: str | None = None, sae_dir: Path | None = None,
+                    peer_dir: Path | None = None) -> list[DayData]:
     """整段装配全部决策日。"""
-    days = [load_day(split, dstr, stats, subdir, weight_shas)
-            for dstr in split_dates(split)]
+    days = [load_day(split, dstr, stats, subdir, weight_shas, sae_dir,
+                     peer_dir)
+            for dstr in split_dates(split, sae_dir)]
     assert days, f"{split} 无决策日"
     return days
 

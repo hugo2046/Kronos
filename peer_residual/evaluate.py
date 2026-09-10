@@ -139,26 +139,38 @@ def signal_diagnostics(g1_wide: pd.DataFrame, arm_wide: pd.DataFrame,
             "n_diag_days": len(rhos)}
 
 
-def run_comparison(art_dir: Path, heads_dir: Path, stats: dict,
-                   seeds: list[int], weight_shas: dict | None = None,
-                   device_note: str = "cpu") -> dict:
-    """三臂两窗主评价：G1/OFF/ON 同格回测 → 曲线/判据/图表/诊断。"""
+def frozen_wide(art_dir: Path, name: str, wname: str) -> pd.DataFrame:
+    """只读冻结信号（计划 §6.2）：``PEER_OFF_s100`` → ``signal_W3_OFF_s100``；
+    ``G1_mean`` → 基线原文件。回测阶段不得调用 ``infer_test_signal``。"""
+    if name == "G1_mean":
+        return load_wide(wname)
+    arm = name.split("_")[1]                 # PEER_OFF_s100 → OFF
+    seed = name.split("_s")[1]
+    return pd.read_parquet(art_dir / f"signal_{wname}_{arm}_s{seed}.parquet")
+
+
+def run_comparison(art_dir: Path, stats: dict, seeds: list[int],
+                   wide_provider=None, device_note: str = "cpu") -> dict:
+    """三臂两窗主评价：G1/OFF/ON 同格回测 → 曲线/判据/图表/诊断。
+
+    :param wide_provider: ``(name, wname) -> 宽表``；缺省只读冻结信号文件
+        （§6.2 顺序：生成全部信号 → 冻结 manifest → 只读回测）。
+    """
     from qlib_mean_comparison import run as mc
 
+    provider = wide_provider or (lambda name, w: frozen_wide(art_dir, name, w))
     per_seed: dict[int, dict] = {}
     for seed in seeds:
         arms: dict[str, dict[str, dict]] = {}
         for w, (start, end) in C.TEST_WINDOWS.items():
             g1_wide = load_wide(w)
-            sigs = {"G1_mean": g1_wide}
+            wides = {"G1_mean": g1_wide}
             for arm in C.ARMS:
-                wide, best = infer_test_signal(arm, seed, w, stats, heads_dir,
-                                               weight_shas)
+                wide = provider(f"PEER_{arm}_s{seed}", w)
                 wide = wide.reindex(index=g1_wide.index, columns=g1_wide.columns)
                 assert wide.notna().equals(g1_wide.notna()), \
                     f"{arm} s{seed} {w} 信号格与 G1 不一致（缩池/扩池均禁止）"
-                sigs[f"PEER_{arm}_s{seed}"] = wide
-            wides = sigs
+                wides[f"PEER_{arm}_s{seed}"] = wide
             mask, _ = mc.common_set(wides)
             for name, wide in wides.items():
                 sig = mc.prepare_signal_series(wide, mask)
@@ -294,5 +306,5 @@ def judge_confirm_gate(per_seed: dict) -> dict:
 
 
 __all__ = ["infer_arm_signals", "infer_test_signal", "backtest_arm",
-           "load_wide", "reproduce_g1_gate", "run_comparison", "plot_main",
-           "judge_confirm_gate", "signal_diagnostics"]
+           "load_wide", "frozen_wide", "reproduce_g1_gate", "run_comparison",
+           "plot_main", "judge_confirm_gate", "signal_diagnostics"]

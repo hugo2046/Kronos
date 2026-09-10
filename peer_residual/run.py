@@ -272,13 +272,35 @@ def _train_missing(seeds: list[int], stage_name: str) -> dict:
     device = "cuda:0" if torch.cuda.is_available() else "cpu"
     heads = {}
     t0 = time.perf_counter()
+    # 复用门禁（§6.1）：旧"best.json 存在就跳过"不能绕过身份——必须有冻结
+    # 清单 SHA 且头文件字节一致，否则不跳过（安全默认=重训）
+    from peer_residual import identity as I
+
+    frozen_heads: dict[str, str] = {}
+    fsm = C.ART_DIR / "frozen_signals_manifest.json"
+    if fsm.is_file():
+        fm = json.loads(fsm.read_text(encoding="utf-8"))
+        frozen_heads = {e["head_file"]: e["head_sha256"]
+                        for e in fm.get("signals", []) if e.get("head_file")}
     for seed in seeds:
         for arm in C.ARMS:
             if (C.HEADS_DIR / f"best_{arm}_s{seed}.json").is_file():
-                logger.info(f"[{stage_name}] {arm} s{seed} 已存在，跳过重训")
-                heads[(arm, seed)] = json.loads(
+                prior = json.loads(
                     (C.HEADS_DIR / f"best_{arm}_s{seed}.json"
                      ).read_text(encoding="utf-8"))
+                try:
+                    I.verify_reusable_head(C.HEADS_DIR, arm, seed,
+                                           prior["best_epoch"], frozen_heads)
+                    logger.info(f"[{stage_name}] {arm} s{seed} 已按冻结清单"
+                                f"SHA 校验，跳过重训")
+                except RuntimeError as exc:
+                    logger.warning(f"[{stage_name}] {arm} s{seed} 复用门禁拒绝"
+                                   f"（{exc}）→ 重训")
+                    heads[(arm, seed)] = T.train_arm(
+                        train_days, val_days, arm, seed, C.HEADS_DIR,
+                        device=device, epochs=C.TRAIN["epochs"])
+                    continue
+                heads[(arm, seed)] = prior
                 continue
             heads[(arm, seed)] = T.train_arm(
                 train_days, val_days, arm, seed, C.HEADS_DIR, device=device,
@@ -309,8 +331,112 @@ def _train_missing(seeds: list[int], stage_name: str) -> dict:
             "n_train_days": len(train_days), "n_val_days": len(val_days)}
 
 
+# ---------------- 信号先冻结、再回测（计划 §6.2） ----------------
+
+def _write_frozen_signal(art_dir: Path, arm: str, seed: int, w: str,
+                         wide, best: dict) -> dict:
+    """默认写入器：对齐基线格断言后落盘并返回清单条目。"""
+    ref = E.load_wide(w)
+    wide = wide.reindex(index=ref.index, columns=ref.columns)
+    assert wide.notna().equals(ref.notna()), \
+        f"{arm} s{seed} {w} 信号格与 G1 不一致（缩池/扩池均禁止）"
+    p = art_dir / f"signal_{w}_{arm}_s{seed}.parquet"
+    wide.to_parquet(p)
+    from sae_residual.cache_io import sha256_file
+
+    return {"arm": arm, "seed": seed, "window": w, "file": p.name,
+            "sha256": sha256_file(p),
+            "n_cells": int(ref.notna().sum().sum()),
+            "n_days": int(ref.shape[0]),
+            "best_epoch": best.get("best_epoch"),
+            "head_file": f"head_{arm}_s{seed}_e{best.get('best_epoch', 0):03d}.pt",
+            "head_sha256": sha256_file(
+                C.HEADS_DIR / f"head_{arm}_s{seed}"
+                f"_e{best.get('best_epoch', 0):03d}.pt")
+            if (C.HEADS_DIR / f"head_{arm}_s{seed}"
+                f"_e{best.get('best_epoch', 0):03d}.pt").is_file() else ""}
+
+
+def freeze_signals_stage(art_dir: Path, stats: dict, seeds: list[int],
+                         weight_shas: dict, heads_dir: Path,
+                         infer_signal_fn=None,
+                         write_signal_fn=None) -> dict:
+    """生成全部既定臂窗信号 → 校验完整网格 → 写冻结 manifest（§6.2）。
+
+    :param infer_signal_fn: 可注入推理函数（编排顺序测试用）；缺省生产
+        :func:`E.infer_test_signal`。
+    :param write_signal_fn: 可注入写入函数；缺省 :func:`_write_frozen_signal`。
+    """
+    from peer_residual.identity import protocol_digest
+
+    infer = infer_signal_fn or E.infer_test_signal
+    write = write_signal_fn or _write_frozen_signal
+    entries = []
+    for seed in seeds:
+        for arm in C.ARMS:
+            for w in C.TEST_WINDOWS:
+                wide, best = infer(arm, seed, w, stats, heads_dir, weight_shas)
+                entries.append(write(art_dir, arm, seed, w, wide, best))
+    # 完整网格校验：全部臂窗齐全，格数与冻结 manifest 记录一致
+    need = {(arm, seed, w) for seed in seeds for arm in C.ARMS
+            for w in C.TEST_WINDOWS}
+    got = {(e["arm"], e["seed"], e["window"]) for e in entries}
+    assert got == need, f"信号网格不完整：缺 {sorted(need - got)[:4]}"
+    for w in C.TEST_WINDOWS:
+        cells = {e["n_cells"] for e in entries if e["window"] == w}
+        assert len(cells) == 1, f"{w} 各臂格数不一致：{cells}"
+    manifest = {"created_at": datetime.now().isoformat(timespec="seconds"),
+                "protocol": C.PROTOCOL_VERSION, "run_id": C.RUN_ID,
+                "protocol_digest": protocol_digest(),
+                "weight_shas": weight_shas,
+                "sigma_e": stats["sigma_e"], "d_in": stats["d_in"],
+                "seeds": seeds, "signals": entries}
+    (art_dir / "frozen_signals_manifest.json").write_text(
+        json.dumps(manifest, ensure_ascii=False, indent=2), encoding="utf-8")
+    logger.info(f"[freeze] 全部 {len(entries)} 份信号冻结 → "
+                f"frozen_signals_manifest.json")
+    return manifest
+
+
+def backtest_frozen_stage(art_dir: Path, seeds: list[int],
+                          runner_fn=None) -> dict:
+    """只读冻结信号回测（§6.2）：先校验全部预期臂窗齐全且 SHA 未变，
+    任何缺失/篡改 → 回测调用次数为 0（不自动重生）。"""
+    from sae_residual.cache_io import sha256_file
+
+    manifest = json.loads(
+        (art_dir / "frozen_signals_manifest.json").read_text(encoding="utf-8"))
+    need = {(arm, seed, w) for seed in seeds for arm in C.ARMS
+            for w in C.TEST_WINDOWS}
+    by_key = {(e["arm"], e["seed"], e["window"]): e for e in manifest["signals"]}
+    missing = sorted(need - set(by_key))
+    if missing:
+        raise RuntimeError(f"冻结 manifest 缺臂窗 {missing[:4]}——回测 0 次")
+    for key in need:
+        e = by_key[key]
+        p = art_dir / e["file"]
+        if not p.is_file():
+            raise RuntimeError(f"冻结信号缺失：{p.name}——回测 0 次")
+        got = sha256_file(p)
+        if got != e["sha256"]:
+            raise RuntimeError(f"冻结信号被篡改：{p.name} {got[:16]}… != "
+                               f"{e['sha256'][:16]}…——拒绝，不自动重生")
+    stats = {"sigma_e": manifest["sigma_e"], "d_in": manifest["d_in"]}
+
+    def read_wide(name: str, wname: str):
+        return E.frozen_wide(art_dir, name, wname)
+
+    if runner_fn is not None:
+        return runner_fn(art_dir, seeds, read_wide, E.backtest_arm)
+    t0 = time.perf_counter()
+    summary = E.run_comparison(art_dir, stats, seeds, wide_provider=read_wide)
+    budget_log("backtest_frozen", time.perf_counter() - t0, 0.0, "cpu",
+               note="只读冻结信号回测（§6.2 顺序）")
+    return summary
+
+
 def _run_eval(seeds: list[int], stage_name: str) -> dict:
-    """训练缺失 seeds 两臂 + 同口径评价 + R 记录（pilot/confirm 共用）。"""
+    """训练缺失 seeds 两臂 + 信号先冻结 + 只读冻结回测 + R 记录（§6.2）。"""
     import os
 
     from kronos_qlib import QlibProvider
@@ -319,21 +445,11 @@ def _run_eval(seeds: list[int], stage_name: str) -> dict:
     os.environ.setdefault("MLFLOW_ALLOW_FILE_STORE", "true")
     ctx = _train_missing(seeds, stage_name)
     stats, heads = ctx["stats"], ctx["heads"]
+    # 顺序门禁：全部信号先冻结（infer/write/freeze/verify），再只读回测
+    freeze_signals_stage(C.ART_DIR, stats, seeds, ctx["weight_shas"],
+                         C.HEADS_DIR)
     gate = E.reproduce_g1_gate(C.ART_DIR)
-    t1 = time.perf_counter()
-    summary = E.run_comparison(C.ART_DIR, C.HEADS_DIR, stats, seeds,
-                               weight_shas=ctx["weight_shas"])
-    budget_log(f"{stage_name}:backtest", time.perf_counter() - t1, 0.0, "cpu",
-               note="Qlib 回测 CPU，不计 GPU 预算")
-    # 残差信号落盘（复算凭据，小 parquet 入库；行列对齐基线顺序）
-    for seed in seeds:
-        for arm in C.ARMS:
-            for w in C.TEST_WINDOWS:
-                wide, _ = E.infer_test_signal(arm, seed, w, stats, C.HEADS_DIR,
-                                              ctx["weight_shas"])
-                ref = E.load_wide(w)
-                wide = wide.reindex(index=ref.index, columns=ref.columns)
-                wide.to_parquet(C.ART_DIR / f"signal_{w}_{arm}_s{seed}.parquet")
+    summary = backtest_frozen_stage(C.ART_DIR, seeds)
     verdict = E.judge_confirm_gate(summary["per_seed"])
     out = {"sigma_e": stats["sigma_e"], "d_in": stats["d_in"],
            "n_train_days": ctx["n_train_days"], "n_val_days": ctx["n_val_days"],

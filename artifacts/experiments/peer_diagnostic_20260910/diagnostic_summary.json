@@ -1,0 +1,172 @@
+{
+  "per_split_arm": {
+    "train:OFF": {
+      "mse_norm": 0.8879897031612164,
+      "mse_return": 0.0021397644906376227,
+      "bias_return": 0.0003036796861596985
+    },
+    "train:G1": {
+      "mse_norm": 1.008674223541939,
+      "mse_return": 0.0024305746772433786,
+      "bias_return": 0.00457187489421584
+    },
+    "train:ON": {
+      "mse_norm": 0.8148302075344972,
+      "mse_return": 0.001963474055807444,
+      "bias_return": -0.0010086586155814167
+    },
+    "val:OFF": {
+      "mse_norm": 0.6580492650920694,
+      "mse_return": 0.0015856833086256585,
+      "bias_return": 0.0008561598934227221
+    },
+    "val:G1": {
+      "mse_norm": 0.7010099548050709,
+      "mse_return": 0.0016892045071417324,
+      "bias_return": 0.004697185035520728
+    },
+    "val:ON": {
+      "mse_norm": 0.6613516306335275,
+      "mse_return": 0.0015936409285119723,
+      "bias_return": 0.003562485807348419
+    }
+  },
+  "delta_vs_g1": {
+    "train:OFF": {
+      "mse_norm": -0.12068452038072264,
+      "mse_return": -0.0002908101866057559,
+      "relative_improvement": 0.11964667834669296
+    },
+    "train:ON": {
+      "mse_norm": -0.19384401600744183,
+      "mse_return": -0.00046710062143593464,
+      "relative_improvement": 0.19217702949398519
+    },
+    "val:OFF": {
+      "mse_norm": -0.04296068971300149,
+      "mse_return": -0.00010352119851607389,
+      "relative_improvement": 0.061283993784293056
+    },
+    "val:ON": {
+      "mse_norm": -0.03965832417154336,
+      "mse_return": -9.55635786297601e-05,
+      "relative_improvement": 0.05657312553082228
+    }
+  },
+  "rankic": {
+    "train:OFF": {
+      "valid_days": 534,
+      "invalid_days": 0,
+      "mean_spearman_arm": 0.1231673834904172,
+      "mean_spearman_g1": 0.07691673183246216,
+      "paired_diff_mean": 0.04625065165795502
+    },
+    "train:ON": {
+      "valid_days": 534,
+      "invalid_days": 0,
+      "mean_spearman_arm": 0.15162854467629747,
+      "mean_spearman_g1": 0.07691673183246216,
+      "paired_diff_mean": 0.0747118128438353
+    },
+    "val:OFF": {
+      "valid_days": 22,
+      "invalid_days": 0,
+      "mean_spearman_arm": 0.03917957042957043,
+      "mean_spearman_g1": 0.04608308358308358,
+      "paired_diff_mean": -0.006903513153513157
+    },
+    "val:ON": {
+      "valid_days": 22,
+      "invalid_days": 0,
+      "mean_spearman_arm": 0.03865717615717615,
+      "mean_spearman_g1": 0.04608308358308358,
+      "paired_diff_mean": -0.0074259074259074385
+    }
+  },
+  "consistency": {
+    "OFF": {
+      "this_run": 0.6580492650920694,
+      "old": 0.6580492705106735,
+      "abs_diff": 5.41860412095474e-09
+    },
+    "ON": {
+      "this_run": 0.6613516306335275,
+      "old": 0.6613516435027122,
+      "abs_diff": 1.2869184717878568e-08
+    }
+  },
+  "timing": {
+    "torch_threads": 4,
+    "cuda_visible": "",
+    "cuda_initialized": false,
+    "stages": {
+      "input_verify_s": 0.39,
+      "forward_s": 1.98,
+      "total_s": 2.42
+    }
+  },
+  "head_notes": {
+    "OFF": {
+      "legacy_identity_incomplete": true,
+      "legacy_fields": [
+        "arm",
+        "d_in",
+        "epoch",
+        "head",
+        "protocol",
+        "seed",
+        "val_l_pred"
+      ],
+      "missing_fields": [
+        "run_id",
+        "protocol_digest",
+        "tokenizer_sha",
+        "predictor_sha",
+        "sae_manifest_sha",
+        "peer_manifest_sha",
+        "norm_stats_sha"
+      ],
+      "file_sha256": "3110dcacff15582b921be7b5f3f20fbcd330c9539ce646913d249131251b41e6"
+    },
+    "ON": {
+      "legacy_identity_incomplete": true,
+      "legacy_fields": [
+        "arm",
+        "d_in",
+        "epoch",
+        "head",
+        "protocol",
+        "seed",
+        "val_l_pred"
+      ],
+      "missing_fields": [
+        "run_id",
+        "protocol_digest",
+        "tokenizer_sha",
+        "predictor_sha",
+        "sae_manifest_sha",
+        "peer_manifest_sha",
+        "norm_stats_sha"
+      ],
+      "file_sha256": "22c209f65dc2684d377fb1c208b2330db893a0e2f5d44bb9a5b1fb8aa6b53eaa"
+    }
+  },
+  "inputs": {
+    "source_commit": "c9c56a077a686a646a44781c770c9d67141d981d",
+    "sae_cache": "/home/user/workspace/Kronos/sae_residual/data/cache",
+    "peer_cache": "/home/user/workspace/Kronos/peer_residual/data/peer1_v1",
+    "input_list": "/home/user/workspace/Kronos-peer-diagnostic/docs/PEER诊断输入身份_20260910.json",
+    "n_verified_files": 39,
+    "cache_check": {
+      "sae:train": 534,
+      "peer:train": 534,
+      "sae:val": 22,
+      "peer:val": 22,
+      "sae:W3": 126,
+      "peer:W3": 126,
+      "sae:W4": 134,
+      "peer:W4": 134
+    }
+  },
+  "created_at": "2026-09-10T21:47:17"
+}
