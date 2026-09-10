@@ -1,0 +1,377 @@
+{
+  "scope": "已推送origin分支；不读取forward、未训练、未推理真实模型",
+  "branch_count": 36,
+  "unique_runtime_python_versions": 266,
+  "document_versions": 110,
+  "branches": [
+    {
+      "branch": "origin/codex/dhead-distill",
+      "commit": "03a2c62672f96d8f1f3c318b4315935aa06058dc"
+    },
+    {
+      "branch": "origin/codex/experiment-data-export",
+      "commit": "23479c5ca6481cc1a03bd74fc5127092890a8f41"
+    },
+    {
+      "branch": "origin/codex/g1-grid-audit",
+      "commit": "f3e98078f2d9ae7f6ade12f9919afc0c8fd4ad75"
+    },
+    {
+      "branch": "origin/codex/g1-max-c1-check",
+      "commit": "ee77884c6e2e2f500f41fd8f4238d454d3a60a5b"
+    },
+    {
+      "branch": "origin/codex/g10-closeout",
+      "commit": "c903a2dcf3e58cebae2930fad412834e87d8dc74"
+    },
+    {
+      "branch": "origin/codex/g10-head-pilot",
+      "commit": "f57df82bec8bafbb1258b30fd4589f374da33828"
+    },
+    {
+      "branch": "origin/codex/lora-mean-pilot",
+      "commit": "be2ff61854748bbaf3967c099edc821c0e909c6c"
+    },
+    {
+      "branch": "origin/codex/mean-comparison",
+      "commit": "0b982e88a3bba1fe62956afe602457b2cc9e68d0"
+    },
+    {
+      "branch": "origin/codex/mh1-correction-plan",
+      "commit": "22c6677d6644f74dbd0096e1540dd02c38f93aef"
+    },
+    {
+      "branch": "origin/codex/s102-validation-protocol",
+      "commit": "5fdf42f457d858373f2dd6b599b49d5beb35db65"
+    },
+    {
+      "branch": "origin/codex/sae-residual-plan",
+      "commit": "f6c072678749e40607b2998702dee3132c15b05a"
+    },
+    {
+      "branch": "origin/codex/timesfm-multihorizon",
+      "commit": "6903304fab8152d8b61c47a051b3ad6be6690c3f"
+    },
+    {
+      "branch": "origin/feature/baseline-and-oos",
+      "commit": "d9ad1356e08a38f20ecf0e41269cc48c423cb411"
+    },
+    {
+      "branch": "origin/feature/c4-temporal",
+      "commit": "92dcd7f9bc34c2be2c6bf7e4930b08ea71810d66"
+    },
+    {
+      "branch": "origin/feature/cross-section-zeroshot",
+      "commit": "7fa708e83e8d94fbbd3fab752030c099b1830b15"
+    },
+    {
+      "branch": "origin/feature/direction-classifier",
+      "commit": "9a0a6865893c7d997b3449b5461d342d1b083328"
+    },
+    {
+      "branch": "origin/feature/finetune-ashares",
+      "commit": "331636eb0459a188fb2446e862e705748db564e4"
+    },
+    {
+      "branch": "origin/feature/finetune-base",
+      "commit": "a4a3ad83ccd3c03e06b221535e836fae159f2022"
+    },
+    {
+      "branch": "origin/feature/g4-features",
+      "commit": "96632adc923fb5708470085f38876f16a1beaacd"
+    },
+    {
+      "branch": "origin/feature/g5-head",
+      "commit": "ae39909a8b9b5ab86e7af84cf081d3ae71b7bbe5"
+    },
+    {
+      "branch": "origin/feature/g7-shortwindow",
+      "commit": "ed16d60647003b6e5bdd534e4e3686bfda8e6776"
+    },
+    {
+      "branch": "origin/feature/g8-e1",
+      "commit": "9a76950f53a34dda69475a039b8fbadda0ded7e2"
+    },
+    {
+      "branch": "origin/feature/g9-ckpt",
+      "commit": "837e09141d48685736711ee766161ef5f71eaeb3"
+    },
+    {
+      "branch": "origin/feature/h1-readout",
+      "commit": "fd2a2663dee90a858868146f60100011d773ecfe"
+    },
+    {
+      "branch": "origin/feature/improve-suite",
+      "commit": "ba4a9dee0cdb51d78b7bd6e223edbaf9ea91f59e"
+    },
+    {
+      "branch": "origin/feature/kda-repr-head",
+      "commit": "861d577c8ff3a82b401e460af6fc1821fd0f437e"
+    },
+    {
+      "branch": "origin/feature/l1-r1",
+      "commit": "b972b585961b4e0cb8bf26afe7a889eb09380ea1"
+    },
+    {
+      "branch": "origin/feature/liquidity-stratified",
+      "commit": "1860cf68edb1a3e5befc02bf111d35ba6b69fa72"
+    },
+    {
+      "branch": "origin/feature/mamba-head",
+      "commit": "6c51a4b0f1a44a3cda552e27bec1095c1beef900"
+    },
+    {
+      "branch": "origin/feature/n50-amplify",
+      "commit": "21d7e147c235457bcf4b6f23e7b650055b3fc9b0"
+    },
+    {
+      "branch": "origin/feature/paper-replication",
+      "commit": "78cadb22e16b313e37cddae1c335c10a5c0dec97"
+    },
+    {
+      "branch": "origin/feature/qlib-data-layer",
+      "commit": "7326820f067e7f89527f7d8b6aad7e9f186c9a6a"
+    },
+    {
+      "branch": "origin/feature/webui-qlib",
+      "commit": "3714c4e097c1abc0742abbb964c93abef929d5dd"
+    },
+    {
+      "branch": "origin/integration",
+      "commit": "4def4836a1f06eba202f63f34a5bbc1e6427b8e7"
+    },
+    {
+      "branch": "origin/kronos-ddb",
+      "commit": "b54abd268ead8f7b72195ba5357ac9163534dcc1"
+    },
+    {
+      "branch": "origin/master",
+      "commit": "a56e8f95031f08274a14ca6f0e417fe57b1e338d"
+    }
+  ],
+  "interaction_search_matches": [
+    {
+      "blob": "053abef280a27a781b9748eee7442f91575a1987",
+      "paths": [
+        "dhead_distill/head.py"
+      ],
+      "refs": [
+        "origin/codex/dhead-distill"
+      ],
+      "hits": [
+        {
+          "line": 8,
+          "text": "3. 单层 ``MultiheadAttention(128,4,batch_first=True,dropout=0)``，K/V 来自"
+        },
+        {
+          "line": 60,
+          "text": "self.attn = nn.MultiheadAttention("
+        }
+      ]
+    },
+    {
+      "blob": "aa18c1ee7adbbed719b673ce955349d39e50ebcd",
+      "paths": [
+        "improve_suite/run_stage4.py"
+      ],
+      "refs": [
+        "origin/codex/dhead-distill",
+        "origin/codex/experiment-data-export",
+        "origin/codex/g1-grid-audit",
+        "origin/codex/g1-max-c1-check",
+        "origin/codex/g10-closeout",
+        "origin/codex/g10-head-pilot",
+        "origin/codex/lora-mean-pilot",
+        "origin/codex/mean-comparison",
+        "origin/codex/mh1-correction-plan",
+        "origin/codex/s102-validation-protocol",
+        "origin/codex/sae-residual-plan",
+        "origin/codex/timesfm-multihorizon",
+        "origin/feature/c4-temporal",
+        "origin/feature/finetune-ashares",
+        "origin/feature/finetune-base",
+        "origin/feature/g4-features",
+        "origin/feature/g5-head",
+        "origin/feature/g7-shortwindow",
+        "origin/feature/g8-e1",
+        "origin/feature/g9-ckpt",
+        "origin/feature/h1-readout",
+        "origin/feature/improve-suite",
+        "origin/feature/l1-r1",
+        "origin/feature/mamba-head",
+        "origin/feature/n50-amplify"
+      ],
+      "hits": [
+        {
+          "line": 7,
+          "text": "- R-3 +AGC 特征图卷积（SAMBA 式）：同样提升门槛。"
+        },
+        {
+          "line": 224,
+          "text": "# R-3（+AGC）：本计划记录为\"未实现\"——AGC 跨截面图卷积需另立工程，闸门逻辑就位"
+        },
+        {
+          "line": 225,
+          "text": "gates[\"R-3\"] = {\"note\": \"AGC 图卷积未实现（SAMBA 式跨截面），如 R-2 过闸则另立计划\"}"
+        }
+      ]
+    },
+    {
+      "blob": "ce4494ee0b3ec8751b09d5488c93bde995e008e0",
+      "paths": [
+        "model/kronos.py"
+      ],
+      "refs": [
+        "origin/codex/dhead-distill",
+        "origin/codex/experiment-data-export",
+        "origin/codex/g1-grid-audit",
+        "origin/codex/g1-max-c1-check",
+        "origin/codex/g10-closeout",
+        "origin/codex/g10-head-pilot",
+        "origin/codex/lora-mean-pilot",
+        "origin/codex/mean-comparison",
+        "origin/codex/mh1-correction-plan",
+        "origin/codex/s102-validation-protocol",
+        "origin/codex/sae-residual-plan",
+        "origin/codex/timesfm-multihorizon",
+        "origin/feature/baseline-and-oos",
+        "origin/feature/c4-temporal",
+        "origin/feature/cross-section-zeroshot",
+        "origin/feature/direction-classifier",
+        "origin/feature/finetune-ashares",
+        "origin/feature/finetune-base",
+        "origin/feature/g4-features",
+        "origin/feature/g5-head",
+        "origin/feature/g7-shortwindow",
+        "origin/feature/g8-e1",
+        "origin/feature/g9-ckpt",
+        "origin/feature/h1-readout",
+        "origin/feature/improve-suite",
+        "origin/feature/kda-repr-head",
+        "origin/feature/l1-r1",
+        "origin/feature/liquidity-stratified",
+        "origin/feature/mamba-head",
+        "origin/feature/n50-amplify",
+        "origin/feature/paper-replication",
+        "origin/feature/qlib-data-layer",
+        "origin/feature/webui-qlib",
+        "origin/integration",
+        "origin/master"
+      ],
+      "hits": [
+        {
+          "line": 189,
+          "text": "n_heads (int): Number of attention heads in the MultiheadAttention layers."
+        }
+      ]
+    },
+    {
+      "blob": "f2a05158b48a56e9235426f6583e384360d761f9",
+      "paths": [
+        "model/module.py"
+      ],
+      "refs": [
+        "origin/codex/dhead-distill",
+        "origin/codex/experiment-data-export",
+        "origin/codex/g1-grid-audit",
+        "origin/codex/g1-max-c1-check",
+        "origin/codex/g10-closeout",
+        "origin/codex/g10-head-pilot",
+        "origin/codex/lora-mean-pilot",
+        "origin/codex/mean-comparison",
+        "origin/codex/mh1-correction-plan",
+        "origin/codex/s102-validation-protocol",
+        "origin/codex/sae-residual-plan",
+        "origin/codex/timesfm-multihorizon",
+        "origin/feature/baseline-and-oos",
+        "origin/feature/c4-temporal",
+        "origin/feature/cross-section-zeroshot",
+        "origin/feature/direction-classifier",
+        "origin/feature/finetune-ashares",
+        "origin/feature/finetune-base",
+        "origin/feature/g4-features",
+        "origin/feature/g5-head",
+        "origin/feature/g7-shortwindow",
+        "origin/feature/g8-e1",
+        "origin/feature/g9-ckpt",
+        "origin/feature/h1-readout",
+        "origin/feature/improve-suite",
+        "origin/feature/kda-repr-head",
+        "origin/feature/l1-r1",
+        "origin/feature/liquidity-stratified",
+        "origin/feature/mamba-head",
+        "origin/feature/n50-amplify",
+        "origin/feature/paper-replication",
+        "origin/feature/qlib-data-layer",
+        "origin/feature/webui-qlib",
+        "origin/integration",
+        "origin/master"
+      ],
+      "hits": [
+        {
+          "line": 315,
+          "text": "class MultiHeadAttentionWithRoPE(nn.Module):"
+        },
+        {
+          "line": 469,
+          "text": "self.self_attn = MultiHeadAttentionWithRoPE(d_model, n_heads, attn_dropout_p, resid_dropout_p)"
+        }
+      ]
+    },
+    {
+      "blob": "19a22e6b462793bdd27b8d1996c3aa6fdf1d20b1",
+      "paths": [
+        "g10_head_pilot/closeout.py"
+      ],
+      "refs": [
+        "origin/codex/experiment-data-export",
+        "origin/codex/g1-max-c1-check",
+        "origin/codex/g10-closeout",
+        "origin/codex/lora-mean-pilot",
+        "origin/codex/mean-comparison",
+        "origin/codex/s102-validation-protocol",
+        "origin/codex/sae-residual-plan"
+      ],
+      "hits": [
+        {
+          "line": 117,
+          "text": "\"n_assets_hashed\": len(assets),"
+        }
+      ]
+    },
+    {
+      "blob": "fcee1992d0dda6da66d76e849b394c4a1fe5b924",
+      "paths": [
+        "model/kronos.py"
+      ],
+      "refs": [
+        "origin/kronos-ddb"
+      ],
+      "hits": [
+        {
+          "line": 189,
+          "text": "n_heads (int): Number of attention heads in the MultiheadAttention layers."
+        }
+      ]
+    },
+    {
+      "blob": "9a7f1e9921580b5eb5e007a02013c48f62a7ddd8",
+      "paths": [
+        "model/module.py"
+      ],
+      "refs": [
+        "origin/kronos-ddb"
+      ],
+      "hits": [
+        {
+          "line": 339,
+          "text": "class MultiHeadAttentionWithRoPE(nn.Module):"
+        },
+        {
+          "line": 478,
+          "text": "self.self_attn = MultiHeadAttentionWithRoPE(d_model, n_heads, attn_dropout_p, resid_dropout_p)"
+        }
+      ]
+    }
+  ]
+}
