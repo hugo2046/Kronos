@@ -1,0 +1,217 @@
+{
+  "archive_date": "2026-09-10",
+  "purpose": "主分支研究总结的只读证据快照；不含训练执行代码或模型权重",
+  "provenance_notice": "哈希证明所归档文件完整，不追认原实验中未验证的权重到信号生成关系",
+  "files": [
+    {
+      "path": "h1/h1_ic_results.json",
+      "bytes": 28594,
+      "sha256": "49b9dbe1f17f3b1a10ec9655c90aa8e3747574b04fb624a37232410f3641ba05",
+      "source_commit": "39d51ac7db6fa7c6372ade5a57978b5a14a88178",
+      "source_path": "h1_readout/data/h1_ic_results.json"
+    },
+    {
+      "path": "mh1/judge_summary.json",
+      "bytes": 4479,
+      "sha256": "381ee72371ee7a8131561c7691027265e42ee2d281fe416df414fa92e3728627",
+      "source_commit": "39d51ac7db6fa7c6372ade5a57978b5a14a88178",
+      "source_path": "mh1_multihorizon/data/judge_summary.json"
+    },
+    {
+      "path": "g1_grid/grid_audit_summary.json",
+      "bytes": 7911,
+      "sha256": "bb9f3d19cc8cb6762280dcff250eab8dfbdf0206cb871d909665ffe99ec4e186",
+      "source_commit": "f3e98078f2d9ae7f6ade12f9919afc0c8fd4ad75",
+      "source_path": "mh1_multihorizon/data/grid_audit_20260908/grid_audit_summary.json"
+    },
+    {
+      "path": "g10/evaluation_summary.json",
+      "bytes": 6906,
+      "sha256": "a18bc4565c515247beac785a0b3bf743239ce1648a7f600251189d517ce076b9",
+      "source_commit": "f57df82bec8bafbb1258b30fd4589f374da33828",
+      "source_path": "g10_head_pilot/data/g10h_20260908_1114/evaluation_summary.json"
+    },
+    {
+      "path": "g10/audit_summary.json",
+      "bytes": 11924,
+      "sha256": "c776f57ad5ddfcd0201ba9dd8086471dfbdfba77c481f1d058498cd91a45c020",
+      "source_commit": "c903a2dcf3e58cebae2930fad412834e87d8dc74",
+      "source_path": "g10_head_pilot/data/closeout_20260909/audit_summary.json"
+    },
+    {
+      "path": "qlib_mean/manifest.json",
+      "bytes": 2710,
+      "sha256": "f5624d51e0289857d87fea3bde9bc2358e77081ed6948d547e7d5c345cde1d15",
+      "source_commit": "0b982e88a3bba1fe62956afe602457b2cc9e68d0",
+      "source_path": "artifacts/experiments/mean_comparison_20260909/manifest.json"
+    },
+    {
+      "path": "qlib_mean/comparison_summary.json",
+      "bytes": 6096,
+      "sha256": "bd5779f267af9061d60a061028f5e6fc5a6521b324004aded7a58d6b674cbeed",
+      "source_commit": "0b982e88a3bba1fe62956afe602457b2cc9e68d0",
+      "source_path": "artifacts/experiments/mean_comparison_20260909/comparison_summary.json"
+    },
+    {
+      "path": "qlib_mean/fig_W3_main.png",
+      "bytes": 209938,
+      "sha256": "641590fd1e3c8f071b4e412e5a29a9b1b06dd917b97e52b2e967dafa3a65d5c4",
+      "source_commit": "0b982e88a3bba1fe62956afe602457b2cc9e68d0",
+      "source_path": "artifacts/experiments/mean_comparison_20260909/fig_W3_main.png"
+    },
+    {
+      "path": "qlib_mean/fig_W4_main.png",
+      "bytes": 224116,
+      "sha256": "220c7fcdea060c89bb348390029a827907f294e8d6a963709c86a72fa6aa3a49",
+      "source_commit": "0b982e88a3bba1fe62956afe602457b2cc9e68d0",
+      "source_path": "artifacts/experiments/mean_comparison_20260909/fig_W4_main.png"
+    },
+    {
+      "path": "qlib_mean/report_W3_G1_mean.parquet",
+      "bytes": 8502,
+      "sha256": "66de4373b180bbc39e92fcc4e951314fbb5d801918d348f01f431dff139f4d6c",
+      "source_commit": "0b982e88a3bba1fe62956afe602457b2cc9e68d0",
+      "source_path": "artifacts/experiments/mean_comparison_20260909/report_W3_G1_mean.parquet"
+    },
+    {
+      "path": "qlib_mean/report_W3_A1_mean.parquet",
+      "bytes": 8326,
+      "sha256": "20b51351cd25573d252e2dd71dd5bdf80d12737d09756a1e7ceaa9865efe2656",
+      "source_commit": "0b982e88a3bba1fe62956afe602457b2cc9e68d0",
+      "source_path": "artifacts/experiments/mean_comparison_20260909/report_W3_A1_mean.parquet"
+    },
+    {
+      "path": "qlib_mean/report_W3_A0_bestCE_mean.parquet",
+      "bytes": 8518,
+      "sha256": "d3b7d47703a22dbcb986b9426aeff91b8b39a2512d6eef0d507615d8dfd20eea",
+      "source_commit": "0b982e88a3bba1fe62956afe602457b2cc9e68d0",
+      "source_path": "artifacts/experiments/mean_comparison_20260909/report_W3_A0_bestCE_mean.parquet"
+    },
+    {
+      "path": "qlib_mean/report_W4_G1_mean.parquet",
+      "bytes": 8573,
+      "sha256": "31c66c1bc353d80f9d1a9f39138b75948fc719f6cc1c4999f3c67d954826a641",
+      "source_commit": "0b982e88a3bba1fe62956afe602457b2cc9e68d0",
+      "source_path": "artifacts/experiments/mean_comparison_20260909/report_W4_G1_mean.parquet"
+    },
+    {
+      "path": "qlib_mean/report_W4_A1_mean.parquet",
+      "bytes": 8501,
+      "sha256": "c873556f61e18b795f1126605ba4071219e9f56a21e0a39522084fb90cdcfb97",
+      "source_commit": "0b982e88a3bba1fe62956afe602457b2cc9e68d0",
+      "source_path": "artifacts/experiments/mean_comparison_20260909/report_W4_A1_mean.parquet"
+    },
+    {
+      "path": "qlib_mean/report_W4_A0_bestCE_mean.parquet",
+      "bytes": 8717,
+      "sha256": "a711a87a09a6207e5007cb2c9969d1d2bd1c179f2702bb3a6aac564df4eb5508",
+      "source_commit": "0b982e88a3bba1fe62956afe602457b2cc9e68d0",
+      "source_path": "artifacts/experiments/mean_comparison_20260909/report_W4_A0_bestCE_mean.parquet"
+    },
+    {
+      "path": "lora_mean/protocol.json",
+      "bytes": 1602,
+      "sha256": "b09c28c8c6254db5f174b34b2327f4659e6a142f5c73b339b5d25a1483003bf8",
+      "source_commit": "be2ff61854748bbaf3967c099edc821c0e909c6c",
+      "source_path": "artifacts/experiments/lora_mean_20260909/protocol.json"
+    },
+    {
+      "path": "lora_mean/pilot_results.json",
+      "bytes": 3489,
+      "sha256": "4809821ad5dbf61fc5ae4b87ec7401f52f10a519f7a850471d0431d843aa6730",
+      "source_commit": "be2ff61854748bbaf3967c099edc821c0e909c6c",
+      "source_path": "artifacts/experiments/lora_mean_20260909/pilot_results.json"
+    },
+    {
+      "path": "lora_mean/lora_100/history.json",
+      "bytes": 7455,
+      "sha256": "dfcd770a34471b850e49adfe6b048f26f36cfc4895d9441c48a2698576df6874",
+      "source_commit": "be2ff61854748bbaf3967c099edc821c0e909c6c",
+      "source_path": "artifacts/experiments/lora_mean_20260909/lora_100/history.json"
+    },
+    {
+      "path": "lora_mean/fig_W3_seed100.png",
+      "bytes": 253812,
+      "sha256": "023eaa3627363942d1efff9e4ef803767248126fa4fb946964239fd03468d366",
+      "source_commit": "be2ff61854748bbaf3967c099edc821c0e909c6c",
+      "source_path": "artifacts/experiments/lora_mean_20260909/fig_W3_seed100.png"
+    },
+    {
+      "path": "lora_mean/fig_W4_seed100.png",
+      "bytes": 237839,
+      "sha256": "1ef4dc1bda7d21709408594189eefaa31e00422e43c5a59b50efbe76965b2649",
+      "source_commit": "be2ff61854748bbaf3967c099edc821c0e909c6c",
+      "source_path": "artifacts/experiments/lora_mean_20260909/fig_W4_seed100.png"
+    },
+    {
+      "path": "lora_mean/report_W3_G1_original_mean.parquet",
+      "bytes": 8502,
+      "sha256": "f22b24612552d3df37785831fde458324704b422533ad75a476a1bab78731a63",
+      "source_commit": "be2ff61854748bbaf3967c099edc821c0e909c6c",
+      "source_path": "artifacts/experiments/lora_mean_20260909/report_W3_G1_original_mean.parquet"
+    },
+    {
+      "path": "lora_mean/report_W3_G1_paired_100.parquet",
+      "bytes": 8598,
+      "sha256": "e05a2622b0c7bee89742322161aee60a7f78af4719f0287b27180719ebcb1edb",
+      "source_commit": "be2ff61854748bbaf3967c099edc821c0e909c6c",
+      "source_path": "artifacts/experiments/lora_mean_20260909/report_W3_G1_paired_100.parquet"
+    },
+    {
+      "path": "lora_mean/report_W3_LoRA_100.parquet",
+      "bytes": 8518,
+      "sha256": "cb3664d5dd31eaa1bbf6e859ae2bcd12999c5cb2277b0159a9d100cc90d99f4e",
+      "source_commit": "be2ff61854748bbaf3967c099edc821c0e909c6c",
+      "source_path": "artifacts/experiments/lora_mean_20260909/report_W3_LoRA_100.parquet"
+    },
+    {
+      "path": "lora_mean/signals/W3_G1_paired_100.parquet",
+      "bytes": 327383,
+      "sha256": "0d834347a96e320b4c4252f1455da18409923452b609dc54849d3e1e00e7fd0f",
+      "source_commit": "be2ff61854748bbaf3967c099edc821c0e909c6c",
+      "source_path": "artifacts/experiments/lora_mean_20260909/signals/W3_G1_paired_100.parquet"
+    },
+    {
+      "path": "lora_mean/signals/W3_LoRA_100.parquet",
+      "bytes": 326729,
+      "sha256": "a9abe044db456291d5bd5b5febf31b9ea5266d498e6dcb36c5146cf3867b2374",
+      "source_commit": "be2ff61854748bbaf3967c099edc821c0e909c6c",
+      "source_path": "artifacts/experiments/lora_mean_20260909/signals/W3_LoRA_100.parquet"
+    },
+    {
+      "path": "lora_mean/report_W4_G1_original_mean.parquet",
+      "bytes": 8573,
+      "sha256": "d6d2c1874a781d07d41d619aa6c5889bef568efb7102d92b49b41e7973cf0764",
+      "source_commit": "be2ff61854748bbaf3967c099edc821c0e909c6c",
+      "source_path": "artifacts/experiments/lora_mean_20260909/report_W4_G1_original_mean.parquet"
+    },
+    {
+      "path": "lora_mean/report_W4_G1_paired_100.parquet",
+      "bytes": 8621,
+      "sha256": "5a7dd37e913f58fb357b137092602ffefdbd78d9c30cb1373a3e9eecb09327f9",
+      "source_commit": "be2ff61854748bbaf3967c099edc821c0e909c6c",
+      "source_path": "artifacts/experiments/lora_mean_20260909/report_W4_G1_paired_100.parquet"
+    },
+    {
+      "path": "lora_mean/report_W4_LoRA_100.parquet",
+      "bytes": 8861,
+      "sha256": "3bb48dfae1306071c7d9af29de36c06a75e4cc65ed9a773cb7fe230863a1866c",
+      "source_commit": "be2ff61854748bbaf3967c099edc821c0e909c6c",
+      "source_path": "artifacts/experiments/lora_mean_20260909/report_W4_LoRA_100.parquet"
+    },
+    {
+      "path": "lora_mean/signals/W4_G1_paired_100.parquet",
+      "bytes": 349440,
+      "sha256": "5d19daf0d749b5c00e2c2b031bc8fa80bfaf08e55ef33243902c8f96c264b5c5",
+      "source_commit": "be2ff61854748bbaf3967c099edc821c0e909c6c",
+      "source_path": "artifacts/experiments/lora_mean_20260909/signals/W4_G1_paired_100.parquet"
+    },
+    {
+      "path": "lora_mean/signals/W4_LoRA_100.parquet",
+      "bytes": 348253,
+      "sha256": "33202e269e2a95b8fc7b110ce5d5178ffe1c4df56879bc4dafea75a61e67e555",
+      "source_commit": "be2ff61854748bbaf3967c099edc821c0e909c6c",
+      "source_path": "artifacts/experiments/lora_mean_20260909/signals/W4_LoRA_100.parquet"
+    }
+  ]
+}

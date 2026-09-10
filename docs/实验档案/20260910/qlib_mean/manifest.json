@@ -1,0 +1,80 @@
+{
+  "created_at": "2026-09-09T10:19:25",
+  "window_bounds": {
+    "W3": [
+      "2025-07-01",
+      "2025-12-31"
+    ],
+    "W4": [
+      "2026-01-01",
+      "2026-07-24"
+    ]
+  },
+  "arms": [
+    "G1_mean",
+    "A1_mean",
+    "A0_bestCE_mean"
+  ],
+  "backtest_kwargs": {
+    "account": 100000000,
+    "benchmark": "SH000300",
+    "deal_price": "open",
+    "open_cost": 0.001,
+    "close_cost": 0.0015,
+    "min_cost": 5,
+    "limit_threshold": 0.095,
+    "topk": 50,
+    "n_drop": 5,
+    "hold_thresh": 5
+  },
+  "signal_paths": {
+    "G1_mean": {
+      "W3": "/home/user/workspace/Kronos/g5_head/data/daily_signals_2025h2_G1_mean.parquet",
+      "W4": "/home/user/workspace/Kronos/finetune_suite/data/g1/daily_signals_backtest_G1_mean.parquet"
+    },
+    "A1_mean": {
+      "W3": "/home/user/workspace/Kronos-g10-pilot/g10_head_pilot/data/g10h_20260908_1114/signals/W3_A1_e15.parquet",
+      "W4": "/home/user/workspace/Kronos-g10-pilot/g10_head_pilot/data/g10h_20260908_1114/signals/W4_A1_e15.parquet"
+    },
+    "A0_bestCE_mean": {
+      "W3": "/home/user/workspace/Kronos-g10-pilot/g10_head_pilot/data/g10h_20260908_1114/signals/W3_A0_bestCE.parquet",
+      "W4": "/home/user/workspace/Kronos-g10-pilot/g10_head_pilot/data/g10h_20260908_1114/signals/W4_A0_bestCE.parquet"
+    }
+  },
+  "signal_sha256": {
+    "G1_mean|W3": "9352b40302eb34c714bfebd808481b625a21d2f7f4f668ccca15cda0cfe21d66",
+    "G1_mean|W4": "453e2aeae7fe4bee8ce8fa62a9908da0843d5ad8b52777cd3b299a84cc4a3e36",
+    "A1_mean|W3": "1202b0ca2419e4b733a85e4c90fd383e810c392a69b90f8af521b296d3c505ba",
+    "A1_mean|W4": "ed458ad994914fcdfab4fd9b47d466292eab1a4333a97e1b5e56881e3e676c76",
+    "A0_bestCE_mean|W3": "edee6e7f1beeed961b7f925fe160aca81a37c4a041a02fe27eedc82bfe32c127",
+    "A0_bestCE_mean|W4": "53d3f8bcf7a50003f53337b8dc994ae0891d2cf2e90ba747a628fbfe51af4fe6"
+  },
+  "per_window": {
+    "W3": {
+      "n_days": 126,
+      "n_common_cells": 37223,
+      "per_arm_coverage": {
+        "G1_mean": 37223,
+        "A1_mean": 37223,
+        "A0_bestCE_mean": 37223
+      },
+      "n_days_low_common": 0,
+      "low_common_dates": []
+    },
+    "W4": {
+      "n_days": 134,
+      "n_common_cells": 39563,
+      "per_arm_coverage": {
+        "G1_mean": 39563,
+        "A1_mean": 39563,
+        "A0_bestCE_mean": 39563
+      },
+      "n_days_low_common": 0,
+      "low_common_dates": []
+    }
+  },
+  "signal_generation_link": "legacy_unverified",
+  "formula_main": "net_daily=return-cost; curve=net_daily.cumsum(); delta_end=curve_A1[-1]-curve_G1[-1]",
+  "common_set_sha256_W3": "c9e70fbe6770dcfbe598ed214a9a865f73e921463ab209588db24afc1cb0ad4c",
+  "common_set_sha256_W4": "cb2421cfb2ee85b05d8b31c0a6631daea96f65a8e2f92f6a76ac6ba5979d0a54"
+}

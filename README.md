@@ -49,6 +49,11 @@
 
 </div>
 
+## 本仓库研究记录
+
+- [Kronos 预测层优化研究总结（2026-09-10）](docs/Kronos预测层优化研究总结_20260910.md)：实验经过、同口径 G1 mean 对照、执行勘误和后续边界。
+- [关键实验数据与复算说明](docs/实验档案/20260910/README.md)：主分支可直接查看的报告、图表、逐日数据及来源哈希。
+
 ## 📰 News
 *   🚩 **[2025.11.10]** Kronos has been accpeted by AAAI 2026.
 *   🚩 **[2025.08.17]** We have released the scripts for fine-tuning! Check them out to adapt Kronos to your own tasks.
