@@ -1,0 +1,40 @@
+{
+  "created_at": "2026-09-10T15:43:22",
+  "status": "repaired",
+  "repair_experiment": "kronos-g1-fixed-candidates-figure-repair",
+  "repair_experiment_id": "338207737104626742",
+  "repair_recorder_id": "03d2f4b1b3d0435685368848412eb47f",
+  "parent_recorder": "a3b2656c17b04deaa67d03bbc801b04d",
+  "parent_experiment_id": "986718269328784667",
+  "source_commit": "ee77884",
+  "fix_commit": "3dd3d6f",
+  "source_png_sha256": {
+    "fig_W3_main.png": "4e887aa495351f84fbe39939caa2052a33500f2f273965eae624ab0b7a13bf27",
+    "fig_W3_appendix.png": "1908e8fae60c6457fb456f8caa70125f64d475542dd40e599304646bb0d4f039",
+    "fig_W4_main.png": "7e0b93f1c4ecb03b2b2541df51bf37fc66eb12ed7547a76f00fc0ca3d81e5ed9",
+    "fig_W4_appendix.png": "5039d1315d93e50d5b2e9be837872a7dd7922e6131c8a26d52c44cb4762a097f"
+  },
+  "readback_verification": {
+    "fig_W3_appendix.png": {
+      "mlflow_path": "figures/fig_W3_appendix.png",
+      "downloaded_sha256": "1908e8fae60c6457fb456f8caa70125f64d475542dd40e599304646bb0d4f039",
+      "byte_equal": true
+    },
+    "fig_W3_main.png": {
+      "mlflow_path": "figures/fig_W3_main.png",
+      "downloaded_sha256": "4e887aa495351f84fbe39939caa2052a33500f2f273965eae624ab0b7a13bf27",
+      "byte_equal": true
+    },
+    "fig_W4_appendix.png": {
+      "mlflow_path": "figures/fig_W4_appendix.png",
+      "downloaded_sha256": "5039d1315d93e50d5b2e9be837872a7dd7922e6131c8a26d52c44cb4762a097f",
+      "byte_equal": true
+    },
+    "fig_W4_main.png": {
+      "mlflow_path": "figures/fig_W4_main.png",
+      "downloaded_sha256": "7e0b93f1c4ecb03b2b2541df51bf37fc66eb12ed7547a76f00fc0ca3d81e5ed9",
+      "byte_equal": true
+    }
+  },
+  "note": "旧 recorder 的 save_objects(fig=Path) 产物为 pickle 的 Path 对象非 PNG 字节；本 recorder 按文件重新上传 Git 内 PNG，未覆写历史记录、零回测零训练零推理。"
+}
