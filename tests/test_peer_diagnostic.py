@@ -397,7 +397,7 @@ def _fake_events():
     return []
 
 
-def test_freeze_then_backtest_order_and_no_infer_in_backtest(tmp_path):
+def test_freeze_then_backtest_order_and_no_infer_in_backtest(tmp_path, peer_runtime):
     """编排顺序：全部 infer/write/freeze/verify 严格先于第一笔 backtest；
     回测只读文件，不再调用 infer。"""
     from peer_residual import run as RUN
@@ -407,8 +407,8 @@ def test_freeze_then_backtest_order_and_no_infer_in_backtest(tmp_path):
     def fake_infer(arm, seed, w, stats, heads_dir, weight_shas):
         events.append(f"infer:{arm}:{seed}:{w}")
         wide = pd.DataFrame({c: [0.1, 0.2] for c in ("a", "b")},
-                            index=pd.bdate_range("2026-01-05", periods=2))
-        return wide, {"best_epoch": 1}
+                            index=pd.bdate_range("2025-01-02", periods=2))
+        return wide, T.load_best(heads_dir, arm, seed, D)[1]
 
     def fake_write(art_dir, arm, seed, w, wide, best):
         events.append(f"write:{arm}:{seed}:{w}")
@@ -419,7 +419,7 @@ def test_freeze_then_backtest_order_and_no_infer_in_backtest(tmp_path):
                 "sha256": sha256_file(p), "n_cells": 4, "n_days": 2}
 
     manifest = RUN.freeze_signals_stage(
-        tmp_path, {"d_in": D, "sigma_e": 0.1}, [100], {"t": "s"},
+        tmp_path, {"d_in": D, "sigma_e": 0.1}, [100], PD.g1_weight_shas(),
         tmp_path, infer_signal_fn=fake_infer, write_signal_fn=fake_write)
     assert (tmp_path / "frozen_signals_manifest.json").is_file()
 
@@ -440,24 +440,24 @@ def test_freeze_then_backtest_order_and_no_infer_in_backtest(tmp_path):
     assert events.count("backtest") == 1
 
 
-def test_missing_frozen_signal_zero_backtests(tmp_path):
+def test_missing_frozen_signal_zero_backtests(tmp_path, peer_runtime):
     """缺一份冻结信号 → 回测调用次数为 0（校验先于任何回测）。"""
     from peer_residual import run as RUN
 
     def fake_infer(arm, seed, w, stats, heads_dir, weight_shas):
-        wide = pd.DataFrame({c: [0.1] for c in ("a",)},
-                            index=pd.bdate_range("2026-01-05", periods=1))
-        return wide, {"best_epoch": 1}
+        wide = pd.DataFrame({c: [0.1, 0.2] for c in ("a", "b")},
+                            index=pd.bdate_range("2025-01-02", periods=2))
+        return wide, T.load_best(heads_dir, arm, seed, D)[1]
 
     def fake_write(art_dir, arm, seed, w, wide, best):
         p = art_dir / f"signal_{w}_{arm}_s{seed}.parquet"
         wide.to_parquet(p)
         from sae_residual.cache_io import sha256_file
         return {"arm": arm, "seed": seed, "window": w, "file": p.name,
-                "sha256": sha256_file(p), "n_cells": 1, "n_days": 1}
+                "sha256": sha256_file(p), "n_cells": 4, "n_days": 2}
 
     RUN.freeze_signals_stage(tmp_path, {"d_in": D, "sigma_e": 0.1}, [100],
-                             {"t": "s"}, tmp_path, infer_signal_fn=fake_infer,
+                             PD.g1_weight_shas(), tmp_path, infer_signal_fn=fake_infer,
                              write_signal_fn=fake_write)
     # 删掉一份 → 回测拒绝且 runner 0 次
     victim = tmp_path / "signal_W4_ON_s100.parquet"
@@ -473,7 +473,7 @@ def test_missing_frozen_signal_zero_backtests(tmp_path):
     assert calls == []
 
 
-def test_tampered_frozen_signal_rejected_no_regen(tmp_path):
+def test_tampered_frozen_signal_rejected_no_regen(tmp_path, peer_runtime):
     """冻结文件被篡改 → 拒绝，不自动重生（infer 未被再次调用）。"""
     from peer_residual import run as RUN
 
@@ -481,24 +481,24 @@ def test_tampered_frozen_signal_rejected_no_regen(tmp_path):
 
     def fake_infer(arm, seed, w, stats, heads_dir, weight_shas):
         infer_calls.append((arm, seed, w))
-        wide = pd.DataFrame({c: [0.1] for c in ("a",)},
-                            index=pd.bdate_range("2026-01-05", periods=1))
-        return wide, {"best_epoch": 1}
+        wide = pd.DataFrame({c: [0.1, 0.2] for c in ("a", "b")},
+                            index=pd.bdate_range("2025-01-02", periods=2))
+        return wide, T.load_best(heads_dir, arm, seed, D)[1]
 
     def fake_write(art_dir, arm, seed, w, wide, best):
         p = art_dir / f"signal_{w}_{arm}_s{seed}.parquet"
         wide.to_parquet(p)
         from sae_residual.cache_io import sha256_file
         return {"arm": arm, "seed": seed, "window": w, "file": p.name,
-                "sha256": sha256_file(p), "n_cells": 1, "n_days": 1}
+                "sha256": sha256_file(p), "n_cells": 4, "n_days": 2}
 
     RUN.freeze_signals_stage(tmp_path, {"d_in": D, "sigma_e": 0.1}, [100],
-                             {"t": "s"}, tmp_path, infer_signal_fn=fake_infer,
+                             PD.g1_weight_shas(), tmp_path, infer_signal_fn=fake_infer,
                              write_signal_fn=fake_write)
     n_infer_before = len(infer_calls)
     victim = tmp_path / "signal_W3_OFF_s100.parquet"
     pd.DataFrame({c: [9.9] for c in ("a",)},
-                 index=pd.bdate_range("2026-01-05", periods=1)).to_parquet(victim)
+                 index=pd.bdate_range("2025-01-02", periods=2)).to_parquet(victim)
     with pytest.raises(RuntimeError):
         RUN.backtest_frozen_stage(tmp_path, [100], runner_fn=lambda *a, **k: {})
     assert len(infer_calls) == n_infer_before                 # 未自动重生

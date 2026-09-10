@@ -163,7 +163,7 @@ def run_comparison(art_dir: Path, stats: dict, seeds: list[int],
     for seed in seeds:
         arms: dict[str, dict[str, dict]] = {}
         for w, (start, end) in C.TEST_WINDOWS.items():
-            g1_wide = load_wide(w)
+            g1_wide = provider("G1_mean", w)
             wides = {"G1_mean": g1_wide}
             for arm in C.ARMS:
                 wide = provider(f"PEER_{arm}_s{seed}", w)

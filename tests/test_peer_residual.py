@@ -247,37 +247,37 @@ def test_off_on_pairing_init_hash_and_shuffle():
                            torch.randperm(len(days), generator=g2))
 
 
-def test_production_two_epochs_best_load_and_rejects(tmp_path):
+def test_production_two_epochs_best_load_and_rejects(tmp_path, peer_runtime):
     """生产保存/加载：真实两 epoch、预定 best=e1（训练目标与验证目标反向）、
     e1/e2 权重不同、best 实际载入 e1；缺 best/错 epoch/错身份拒绝。"""
     tr = [synth_day(f"2025-01-{i:02d}", [f"c{j}" for j in range(6)], i,
                     r_val=1.0) for i in range(2, 6)]
-    va = [synth_day(f"2025-02-{i:02d}", [f"v{j}" for j in range(6)], 100 + i,
+    va = [synth_day(f"2025-02-{i:02d}", [f"v{j}" for j in range(6)], 101 + i,
                     r_val=-1.0) for i in range(2, 5)]
-    res_off = T.train_arm(tr, va, "OFF", 100, tmp_path, device="cpu", epochs=2)
-    res_on = T.train_arm(tr, va, "ON", 100, tmp_path, device="cpu", epochs=2)
+    res_off = T.train_arm(tr, va, "OFF", 101, tmp_path, device="cpu", epochs=2)
+    res_on = T.train_arm(tr, va, "ON", 101, tmp_path, device="cpu", epochs=2)
     assert res_off["best_epoch"] == res_on["best_epoch"] == 1  # 反向目标 → e1 最优
-    sd = [torch.load(T.head_file(tmp_path, "ON", 100, e), weights_only=True)["state_dict"]
+    sd = [torch.load(T.head_file(tmp_path, "ON", 101, e), weights_only=True)["state_dict"]
           for e in (1, 2)]
     assert not torch.equal(sd[0]["proj.weight"], sd[1]["proj.weight"])
-    m_best, meta = T.load_best(tmp_path, "ON", 100, D)
+    m_best, meta = T.load_best(tmp_path, "ON", 101, D)
     assert meta["best_epoch"] == 1
     assert torch.equal(m_best.state_dict()["proj.weight"], sd[0]["proj.weight"])
     assert res_off["day_keys_digest"] == res_on["day_keys_digest"]
     assert res_off["first_epoch_perm"] == res_on["first_epoch_perm"]
     # 拒绝：缺 epoch / 错 seed（伪造改名）/ 错 arm / 错协议
     with pytest.raises(FileNotFoundError):
-        T.load_head(tmp_path, "ON", 100, 99, D)
+        T.load_head(tmp_path, "ON", 101, 99, D)
     fake = T.head_file(tmp_path, "ON", 202, 1)
-    fake.write_bytes(T.head_file(tmp_path, "ON", 100, 1).read_bytes())
+    fake.write_bytes(T.head_file(tmp_path, "ON", 101, 1).read_bytes())
     with pytest.raises(RuntimeError):
         T.load_head(tmp_path, "ON", 202, 1, D)
-    fake2 = T.head_file(tmp_path, "OFF", 100, 1)
-    fake2.write_bytes(T.head_file(tmp_path, "ON", 100, 1).read_bytes())
+    fake2 = T.head_file(tmp_path, "OFF", 101, 1)
+    fake2.write_bytes(T.head_file(tmp_path, "ON", 101, 1).read_bytes())
     with pytest.raises(RuntimeError):
-        T.load_head(tmp_path, "OFF", 100, 1, D)
-    ck = torch.load(T.head_file(tmp_path, "ON", 100, 1), weights_only=True)
-    ck["meta"]["protocol"] = "wrong"
+        T.load_head(tmp_path, "OFF", 101, 1, D)
+    ck = torch.load(T.head_file(tmp_path, "ON", 101, 1), weights_only=True)
+    ck["identity"]["protocol_digest"] = "wrong"
     torch.save(ck, fake)
     with pytest.raises(RuntimeError):
         T.load_head(tmp_path, "ON", 202, 1, D)

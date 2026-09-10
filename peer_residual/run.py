@@ -272,39 +272,20 @@ def _train_missing(seeds: list[int], stage_name: str) -> dict:
     device = "cuda:0" if torch.cuda.is_available() else "cpu"
     heads = {}
     t0 = time.perf_counter()
-    # 复用门禁（§6.1）：旧"best.json 存在就跳过"不能绕过身份——必须有冻结
-    # 清单 SHA 且头文件字节一致，否则不跳过（安全默认=重训）
-    from peer_residual import identity as I
-
-    frozen_heads: dict[str, str] = {}
-    fsm = C.ART_DIR / "frozen_signals_manifest.json"
-    if fsm.is_file():
-        fm = json.loads(fsm.read_text(encoding="utf-8"))
-        frozen_heads = {e["head_file"]: e["head_sha256"]
-                        for e in fm.get("signals", []) if e.get("head_file")}
+    # 所有既有头先完成生产加载校验；任何失败都禁止自动重训。
     for seed in seeds:
         for arm in C.ARMS:
             if (C.HEADS_DIR / f"best_{arm}_s{seed}.json").is_file():
-                prior = json.loads(
-                    (C.HEADS_DIR / f"best_{arm}_s{seed}.json"
-                     ).read_text(encoding="utf-8"))
-                try:
-                    I.verify_reusable_head(C.HEADS_DIR, arm, seed,
-                                           prior["best_epoch"], frozen_heads)
-                    logger.info(f"[{stage_name}] {arm} s{seed} 已按冻结清单"
-                                f"SHA 校验，跳过重训")
-                except RuntimeError as exc:
-                    logger.warning(f"[{stage_name}] {arm} s{seed} 复用门禁拒绝"
-                                   f"（{exc}）→ 重训")
-                    heads[(arm, seed)] = T.train_arm(
-                        train_days, val_days, arm, seed, C.HEADS_DIR,
-                        device=device, epochs=C.TRAIN["epochs"])
-                    continue
+                _, prior = T.load_best(C.HEADS_DIR, arm, seed, int(stats["d_in"]))
                 heads[(arm, seed)] = prior
-                continue
-            heads[(arm, seed)] = T.train_arm(
-                train_days, val_days, arm, seed, C.HEADS_DIR, device=device,
-                epochs=C.TRAIN["epochs"])
+            elif list(C.HEADS_DIR.glob(f"head_{arm}_s{seed}_e*.pt")):
+                raise RuntimeError(f"{arm} s{seed} 存在未完成产物，停止而非覆盖")
+    for seed in seeds:
+        for arm in C.ARMS:
+            if (arm, seed) not in heads:
+                heads[(arm, seed)] = T.train_arm(
+                    train_days, val_days, arm, seed, C.HEADS_DIR,
+                    device=device, epochs=C.TRAIN["epochs"])
     budget_log(f"{stage_name}:train_heads", time.perf_counter() - t0, 0.0,
                device,
                note=f"seeds={seeds} arms={list(C.ARMS)}（小头训练）")
@@ -334,104 +315,180 @@ def _train_missing(seeds: list[int], stage_name: str) -> dict:
 # ---------------- 信号先冻结、再回测（计划 §6.2） ----------------
 
 def _write_frozen_signal(art_dir: Path, arm: str, seed: int, w: str,
-                         wide, best: dict) -> dict:
-    """默认写入器：对齐基线格断言后落盘并返回清单条目。"""
-    ref = E.load_wide(w)
-    wide = wide.reindex(index=ref.index, columns=ref.columns)
-    assert wide.notna().equals(ref.notna()), \
-        f"{arm} s{seed} {w} 信号格与 G1 不一致（缩池/扩池均禁止）"
-    p = art_dir / f"signal_{w}_{arm}_s{seed}.parquet"
-    wide.to_parquet(p)
+                         wide: pd.DataFrame, best: dict) -> dict:
+    """保存尚未存在的信号，禁止覆盖历史产物。
+
+    :returns: 含文件 SHA 与完整网格规模的清单条目。
+    """
     from sae_residual.cache_io import sha256_file
 
+    ref = E.load_wide(w)
+    wide = wide.reindex(index=ref.index, columns=ref.columns)
+    if not wide.notna().equals(ref.notna()) or not np.isfinite(
+            wide.to_numpy()[wide.notna().to_numpy()]).all():
+        raise RuntimeError(f"{arm} s{seed} {w} 信号网格或有限值不合格")
+    p = art_dir / f"signal_{w}_{arm}_s{seed}.parquet"
+    if p.exists():
+        raise RuntimeError(f"信号已存在，拒绝覆盖：{p.name}")
+    wide.to_parquet(p)
     return {"arm": arm, "seed": seed, "window": w, "file": p.name,
-            "sha256": sha256_file(p),
-            "n_cells": int(ref.notna().sum().sum()),
-            "n_days": int(ref.shape[0]),
-            "best_epoch": best.get("best_epoch"),
-            "head_file": f"head_{arm}_s{seed}_e{best.get('best_epoch', 0):03d}.pt",
-            "head_sha256": sha256_file(
-                C.HEADS_DIR / f"head_{arm}_s{seed}"
-                f"_e{best.get('best_epoch', 0):03d}.pt")
-            if (C.HEADS_DIR / f"head_{arm}_s{seed}"
-                f"_e{best.get('best_epoch', 0):03d}.pt").is_file() else ""}
+            "sha256": sha256_file(p), "n_cells": int(ref.notna().sum().sum()),
+            "n_days": len(ref), "best_epoch": best["best_epoch"]}
 
 
 def freeze_signals_stage(art_dir: Path, stats: dict, seeds: list[int],
                          weight_shas: dict, heads_dir: Path,
-                         infer_signal_fn=None,
-                         write_signal_fn=None) -> dict:
-    """生成全部既定臂窗信号 → 校验完整网格 → 写冻结 manifest（§6.2）。
+                         infer_signal_fn=None, write_signal_fn=None) -> dict:
+    """生产身份先校验，再生成全部信号并冻结清单。
 
-    :param infer_signal_fn: 可注入推理函数（编排顺序测试用）；缺省生产
-        :func:`E.infer_test_signal`。
-    :param write_signal_fn: 可注入写入函数；缺省 :func:`_write_frozen_signal`。
+    :param infer_signal_fn: 测试可注入 CPU 信号生成器，身份检查仍执行。
+    :param write_signal_fn: 测试可注入写入器，头身份与清单检查仍执行。
+    :returns: 绑定协议、输入、头、基线和信号文件的冻结清单。
     """
-    from peer_residual.identity import protocol_digest
+    from peer_residual import identity as I
+    from sae_residual.cache_io import sha256_file
 
+    target = art_dir / "frozen_signals_manifest.json"
+    if target.exists():
+        raise RuntimeError("已有冻结清单，禁止重生信号或覆盖")
+    identity = I.current_identity()
+    actual_weights = {k: identity[k] for k in ("tokenizer_sha", "predictor_sha")}
+    if weight_shas != actual_weights:
+        raise RuntimeError("传入底座身份与当前文件不一致")
+    # 先验证所有头，任一无效时不进入任何推理。
+    bests = {}
+    for seed in seeds:
+        for arm in C.ARMS:
+            _, bests[(arm, seed)] = T.load_best(heads_dir, arm, seed, int(stats["d_in"]))
+    baseline = {}
+    for w in C.TEST_WINDOWS:
+        source_sha = sha256_file(C.BASELINE_SIGNALS[w])
+        if source_sha != C.BASELINE_SHA256[w]:
+            raise RuntimeError(f"{w} G1 基线不匹配冻结 SHA")
+        p = art_dir / f"signal_{w}_G1_mean.parquet"
+        if p.exists():
+            raise RuntimeError(f"基线快照已存在：{p.name}")
+        E.load_wide(w).to_parquet(p)
+        baseline[w] = {"file": p.name, "sha256": sha256_file(p),
+                       "source_sha256": source_sha}
     infer = infer_signal_fn or E.infer_test_signal
     write = write_signal_fn or _write_frozen_signal
     entries = []
     for seed in seeds:
         for arm in C.ARMS:
+            best = bests[(arm, seed)]
+            epoch = best["best_epoch"]
+            source = T.head_file(heads_dir, arm, seed, epoch)
+            head_sha = best["epoch_sha256"][str(epoch)]
+            dest = art_dir / source.name
+            if dest.exists():
+                if sha256_file(dest) != head_sha:
+                    raise RuntimeError(f"头归档冲突：{dest.name}")
+            else:
+                shutil.copyfile(source, dest)
             for w in C.TEST_WINDOWS:
-                wide, best = infer(arm, seed, w, stats, heads_dir, weight_shas)
-                entries.append(write(art_dir, arm, seed, w, wide, best))
-    # 完整网格校验：全部臂窗齐全，格数与冻结 manifest 记录一致
-    need = {(arm, seed, w) for seed in seeds for arm in C.ARMS
-            for w in C.TEST_WINDOWS}
-    got = {(e["arm"], e["seed"], e["window"]) for e in entries}
-    assert got == need, f"信号网格不完整：缺 {sorted(need - got)[:4]}"
-    for w in C.TEST_WINDOWS:
-        cells = {e["n_cells"] for e in entries if e["window"] == w}
-        assert len(cells) == 1, f"{w} 各臂格数不一致：{cells}"
-    manifest = {"created_at": datetime.now().isoformat(timespec="seconds"),
-                "protocol": C.PROTOCOL_VERSION, "run_id": C.RUN_ID,
-                "protocol_digest": protocol_digest(),
-                "weight_shas": weight_shas,
+                wide, inferred_best = infer(arm, seed, w, stats, heads_dir, weight_shas)
+                if inferred_best != best:
+                    raise RuntimeError("推理选点与预检身份发生变化")
+                entry = write(art_dir, arm, seed, w, wide, best)
+                entry.update(best_epoch=epoch, head_file=dest.name,
+                             head_sha256=head_sha)
+                entries.append(entry)
+    manifest = {"protocol": C.PROTOCOL_VERSION, "run_id": C.RUN_ID,
+                "protocol_digest": identity["protocol_digest"],
+                "identity": identity, "weight_shas": actual_weights,
                 "sigma_e": stats["sigma_e"], "d_in": stats["d_in"],
-                "seeds": seeds, "signals": entries}
-    (art_dir / "frozen_signals_manifest.json").write_text(
-        json.dumps(manifest, ensure_ascii=False, indent=2), encoding="utf-8")
-    logger.info(f"[freeze] 全部 {len(entries)} 份信号冻结 → "
-                f"frozen_signals_manifest.json")
+                "seeds": seeds, "signals": entries, "baseline": baseline}
+    # 最后重新验证实际文件与全部网格，校验完成才写完成清单。
+    _validate_frozen(art_dir, manifest, seeds)
+    with target.open("x", encoding="utf-8") as f:
+        json.dump(manifest, f, ensure_ascii=False, indent=2)
+    logger.info(f"全部 {len(entries)} 份信号与 G1 基线已冻结")
     return manifest
 
 
-def backtest_frozen_stage(art_dir: Path, seeds: list[int],
-                          runner_fn=None) -> dict:
-    """只读冻结信号回测（§6.2）：先校验全部预期臂窗齐全且 SHA 未变，
-    任何缺失/篡改 → 回测调用次数为 0（不自动重生）。"""
+def _validate_frozen(art_dir: Path, manifest: dict,
+                     seeds: list[int]) -> dict[tuple[str, str], pd.DataFrame]:
+    """核验当前身份和全部文件，返回即将交给回测的已校验内存快照。
+
+    :returns: (臂名称, 窗口) 到宽表的映射。
+    :raises RuntimeError: 协议、源文件、头或信号身份不匹配。
+    """
+    from peer_residual import identity as I
     from sae_residual.cache_io import sha256_file
 
-    manifest = json.loads(
-        (art_dir / "frozen_signals_manifest.json").read_text(encoding="utf-8"))
-    need = {(arm, seed, w) for seed in seeds for arm in C.ARMS
-            for w in C.TEST_WINDOWS}
-    by_key = {(e["arm"], e["seed"], e["window"]): e for e in manifest["signals"]}
-    missing = sorted(need - set(by_key))
-    if missing:
-        raise RuntimeError(f"冻结 manifest 缺臂窗 {missing[:4]}——回测 0 次")
-    for key in need:
-        e = by_key[key]
-        p = art_dir / e["file"]
-        if not p.is_file():
-            raise RuntimeError(f"冻结信号缺失：{p.name}——回测 0 次")
-        got = sha256_file(p)
-        if got != e["sha256"]:
-            raise RuntimeError(f"冻结信号被篡改：{p.name} {got[:16]}… != "
-                               f"{e['sha256'][:16]}…——拒绝，不自动重生")
+    identity = I.current_identity()
+    weights = {k: identity[k] for k in ("tokenizer_sha", "predictor_sha")}
+    for key, value in {"protocol": C.PROTOCOL_VERSION, "run_id": C.RUN_ID,
+                       "protocol_digest": identity["protocol_digest"],
+                       "identity": identity, "weight_shas": weights,
+                       "seeds": seeds}.items():
+        if manifest.get(key) != value:
+            raise RuntimeError(f"冻结清单 {key} 与当前期望身份不一致")
+    need = {(a, s, w) for s in seeds for a in C.ARMS for w in C.TEST_WINDOWS}
+    entries = manifest.get("signals", [])
+    got = {(e["arm"], e["seed"], e["window"]) for e in entries}
+    if got != need or len(entries) != len(need):
+        raise RuntimeError("冻结信号臂窗缺失、多余或重复")
+
+    def verified_file(entry: dict, name: str) -> Path:
+        if not isinstance(entry, dict) or entry.get("file") != name:
+            raise RuntimeError(f"冻结文件名不符合臂窗身份：{name}")
+        p = art_dir / name
+        if not p.is_file() or sha256_file(p) != entry.get("sha256"):
+            raise RuntimeError(f"冻结文件缺失或 SHA 不一致：{name}")
+        return p
+
+    tables = {}
+    baselines = manifest.get("baseline")
+    if not isinstance(baselines, dict) or set(baselines) != set(C.TEST_WINDOWS):
+        raise RuntimeError("缺少完整 G1 基线身份")
+    for w in C.TEST_WINDOWS:
+        b = baselines[w]
+        if (b.get("source_sha256") != C.BASELINE_SHA256[w]
+                or sha256_file(C.BASELINE_SIGNALS[w]) != C.BASELINE_SHA256[w]):
+            raise RuntimeError(f"{w} G1 基线源文件身份不一致")
+        tables[("G1_mean", w)] = pd.read_parquet(
+            verified_file(b, f"signal_{w}_G1_mean.parquet"))
+    for e in entries:
+        a, s, w = e["arm"], e["seed"], e["window"]
+        epoch = e["best_epoch"]
+        head_name = f"head_{a}_s{s}_e{epoch:03d}.pt"
+        head = verified_file({"file": e.get("head_file"),
+                              "sha256": e.get("head_sha256")}, head_name)
+        I.load_head_checkpoint(head, {**identity, "arm": a, "seed": s,
+                                      "epoch": epoch}, int(manifest["d_in"]),
+                               expected_file_sha=e["head_sha256"])
+        wide = pd.read_parquet(verified_file(e, f"signal_{w}_{a}_s{s}.parquet"))
+        ref = tables[("G1_mean", w)]
+        if (not wide.index.equals(ref.index) or not wide.columns.equals(ref.columns)
+                or not wide.notna().equals(ref.notna())
+                or not np.isfinite(wide.to_numpy()[wide.notna().to_numpy()]).all()
+                or e["n_days"] != len(wide)
+                or e["n_cells"] != int(wide.notna().sum().sum())):
+            raise RuntimeError(f"{a} s{s} {w} 完整网格校验失败")
+        tables[(f"PEER_{a}_s{s}", w)] = wide
+    return tables
+
+
+def backtest_frozen_stage(art_dir: Path, seeds: list[int], runner_fn=None) -> dict:
+    """全部身份校验成功才允许回测；不重新推理或自动重训。
+
+    :returns: 回测器的汇总结果。
+    """
+    manifest = json.loads((art_dir / "frozen_signals_manifest.json").read_text(encoding="utf-8"))
+    tables = _validate_frozen(art_dir, manifest, seeds)
     stats = {"sigma_e": manifest["sigma_e"], "d_in": manifest["d_in"]}
 
-    def read_wide(name: str, wname: str):
-        return E.frozen_wide(art_dir, name, wname)
+    def read_wide(name: str, wname: str) -> pd.DataFrame:
+        return tables[(name, wname)].copy()
 
     if runner_fn is not None:
         return runner_fn(art_dir, seeds, read_wide, E.backtest_arm)
     t0 = time.perf_counter()
     summary = E.run_comparison(art_dir, stats, seeds, wide_provider=read_wide)
     budget_log("backtest_frozen", time.perf_counter() - t0, 0.0, "cpu",
-               note="只读冻结信号回测（§6.2 顺序）")
+               note="完整身份校验后，只读已验证内存快照")
     return summary
 
 

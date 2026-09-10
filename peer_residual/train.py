@@ -19,6 +19,8 @@ from loguru import logger
 from peer_residual import config as C
 from peer_residual import data as PD
 from peer_residual.model import build_head
+from peer_residual import identity as I
+from sae_residual.cache_io import sha256_file
 
 
 def masked_day_mse(r_hat: torch.Tensor, r: torch.Tensor,
@@ -81,7 +83,13 @@ def train_arm(train_days: list, val_days: list, arm: str, seed: int,
 
     :returns: ``{"best_epoch","best_val_mse","epoch_files","metrics",...}``。
     """
+    identity = I.current_identity()
+    # 既有或未完成的同臂同种子产物均不自动覆盖。
+    if (out_dir / f"best_{arm}_s{seed}.json").exists() or list(
+            out_dir.glob(f"head_{arm}_s{seed}_e*.pt")):
+        raise RuntimeError(f"{arm} s{seed} 已有产物，拒绝重训覆盖")
     out_dir.mkdir(parents=True, exist_ok=True)
+    epoch_sha256: dict[str, str] = {}
     d_in = train_days[0].x.shape[1]
     model = build_head(seed, d_in).to(device)
     # 零残差门禁：初始 r_hat 必须逐值为 0（s_final 逐值等于 G1 的前提）
@@ -118,15 +126,14 @@ def train_arm(train_days: list, val_days: list, arm: str, seed: int,
                        "grad_norm": sums["grad_norm"] / nb,
                        "val_l_pred": v_loss})
         f = head_file(out_dir, arm, seed, epoch)
-        torch.save({"state_dict": model.state_dict(),
-                    "meta": {"arm": arm, "seed": seed, "epoch": epoch,
-                             "val_l_pred": v_loss, "d_in": int(d_in),
-                             "head": dict(C.HEAD),
-                             "protocol": C.PROTOCOL_VERSION}}, f)
+        I.save_head_checkpoint(model, f, {**identity, "arm": arm,
+                                           "seed": seed, "epoch": epoch})
+        epoch_sha256[str(epoch)] = sha256_file(f)
         files.append(f.name)
     # 唯一选点：验证等权 MSE 最低，严格更低才更新（并列取最早）
     best = min(metrics, key=lambda m: (m["val_l_pred"], m["epoch"]))
     result = {"arm": arm, "seed": seed,
+              "identity": identity, "epoch_sha256": epoch_sha256,
               "best_epoch": best["epoch"], "best_val_l_pred": best["val_l_pred"],
               "final_val_l_pred": metrics[-1]["val_l_pred"],
               "epoch_files": files,
@@ -164,17 +171,19 @@ def load_head(out_dir: Path, arm: str, seed: int, epoch: int, d_in: int):
     f = head_file(out_dir, arm, seed, epoch)
     if not f.is_file():
         raise FileNotFoundError(f"头文件缺失：{f}")
-    ckpt = torch.load(f, map_location="cpu", weights_only=True)
-    meta = ckpt["meta"]
-    expect = {"arm": arm, "seed": seed, "epoch": epoch,
-              "protocol": C.PROTOCOL_VERSION, "d_in": int(d_in)}
-    for k, v in expect.items():
-        if meta.get(k) != v:
-            raise RuntimeError(f"头文件 meta 不匹配 {k}={meta.get(k)!r}!={v!r}")
-    model = build_head(seed, d_in)
-    model.load_state_dict(ckpt["state_dict"])
-    model.eval()
-    return model
+    marker = out_dir / f"best_{arm}_s{seed}.json"
+    if not marker.is_file():
+        raise RuntimeError("缺少完整 best 身份清单，旧权重只允许历史诊断")
+    best = json.loads(marker.read_text(encoding="utf-8"))
+    identity = I.current_identity()
+    if best.get("identity") != identity:
+        raise RuntimeError("best 身份与当前协议/底座/缓存不一致")
+    expected_sha = best.get("epoch_sha256", {}).get(str(epoch))
+    if not expected_sha:
+        raise RuntimeError("best 清单缺少该 epoch 权重 SHA")
+    return I.load_head_checkpoint(f, {**identity, "arm": arm, "seed": seed,
+                                     "epoch": epoch}, d_in,
+                                  expected_file_sha=expected_sha)
 
 
 def load_best(out_dir: Path, arm: str, seed: int, d_in: int):

@@ -184,7 +184,15 @@ def split_dates(split: str, sae_dir: Path | None = None) -> list[str]:
 def load_split_days(split: str, stats: dict, weight_shas: dict | None = None,
                     subdir: str | None = None, sae_dir: Path | None = None,
                     peer_dir: Path | None = None) -> list[DayData]:
-    """整段装配全部决策日。"""
+    """先核验冻结清单的完整键集和字节，再装配全部决策日。"""
+    from peer_residual.identity import verify_cache_dir
+
+    for base, manifest in (
+        (sae_dir or C.SAE_CACHE_DIR, C.SAE_CACHE_MANIFEST),
+        (peer_dir or C.PEER_CACHE_DIR, C.ART_DIR / "peer_cache_manifest.json"),
+    ):
+        verify_cache_dir(base / split,
+                         json.loads(manifest.read_text(encoding="utf-8")), split)
     days = [load_day(split, dstr, stats, subdir, weight_shas, sae_dir,
                      peer_dir)
             for dstr in split_dates(split, sae_dir)]

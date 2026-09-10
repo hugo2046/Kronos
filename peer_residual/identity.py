@@ -36,6 +36,20 @@ def protocol_digest() -> str:
     return hashlib.sha256(blob.encode("utf-8")).hexdigest()
 
 
+def current_identity() -> dict:
+    """从当前协议和真实文件取得生产身份。
+
+    :returns: 不含 arm/seed/epoch 的公共身份；仅计算 SHA，不加载底座。
+    """
+    from peer_residual import data as PD
+
+    return {"run_id": C.RUN_ID, "protocol_digest": protocol_digest(),
+            **PD.g1_weight_shas(),
+            "sae_manifest_sha": sha256_file(C.SAE_CACHE_MANIFEST),
+            "peer_manifest_sha": sha256_file(C.ART_DIR / "peer_cache_manifest.json"),
+            "norm_stats_sha": sha256_file(C.SAE_NORM_STATS)}
+
+
 def save_head_checkpoint(model, path: Path, identity: dict) -> Path:
     """按新 schema 保存头（身份字段齐全才允许写）。"""
     missing = [k for k in HEAD_IDENTITY_FIELDS if k not in identity]
@@ -55,6 +69,9 @@ def load_head_checkpoint(path: Path, expect: dict, d_in: int,
     :param expected_file_sha: 权重文件 SHA（字节级门禁，可选但生产必传）。
     :raises RuntimeError: 缺字段 / 字段不匹配 / 文件字节被改。
     """
+    missing_expect = set(HEAD_IDENTITY_FIELDS) - set(expect)
+    if missing_expect:
+        raise RuntimeError(f"期望身份缺字段：{sorted(missing_expect)}")
     if expected_file_sha is not None:
         got_sha = sha256_file(path)
         if got_sha != expected_file_sha:
@@ -160,7 +177,7 @@ def verify_reusable_head(heads_dir: Path, arm: str, seed: int, epoch: int,
     return got
 
 
-__all__ = ["HEAD_IDENTITY_FIELDS", "protocol_digest",
+__all__ = ["HEAD_IDENTITY_FIELDS", "protocol_digest", "current_identity",
            "save_head_checkpoint", "load_head_checkpoint",
            "load_legacy_head", "assert_training_eligible",
            "verify_cache_dir", "verify_reusable_head"]
