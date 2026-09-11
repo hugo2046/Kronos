@@ -1,0 +1,44 @@
+{
+  "created_at": "2026-09-11T10:29:23",
+  "purpose": "20e2746 §4 Debian 补交验收：原 e4 权重补交 + 只读 CPU 分数重放",
+  "ff_pull": {
+    "head_contains": "20e2746c7da94d3735403fa7faad40fc5eb62df9",
+    "parent": "e4de6464ffa75b522e45294c3bed30698b22fd99",
+    "mode": "git pull --ff-only origin codex/path-information-plan"
+  },
+  "weight_backfill": {
+    "files": {
+      "heads/head_MEAN_s100_e004.pt": {
+        "sha256": "69121c105cf7a40e5fc5fc89f5b0e8254bfbd49dfc4fb0744a876a9f4dfbc8ab",
+        "frozen_sha_match": true,
+        "source": "原 worktree 磁盘文件（e4de646 训练原始字节，未被 .gitignore 外删除）"
+      },
+      "heads/head_PATH_s100_e004.pt": {
+        "sha256": "d9b3292ab5ed3830b4e7c8543c00a72f2cbdda6df941880f704d9a9fae7a98c1",
+        "frozen_sha_match": true,
+        "source": "同上"
+      }
+    },
+    "loss_incident": "e4de646 因根 .gitignore *.pt 规则静默跳过 .pt（仅 4 个 JSON 标记入库）；本轮 git add -f 补交原始字节，未重训、未重存 checkpoint",
+    "other_100_pt_checkpoints": "其余 100 个逐 epoch .pt 仍不入库（非 best 权重，报告与 history 已完整记录选点）"
+  },
+  "tests": {
+    "seven_file_suite": "114 passed（HF_HUB_OFFLINE=1，2.21s）",
+    "kronos_regression_hf_cache": "4 passed（HF 缓存权重实际执行，非跳过）",
+    "total": "118 passed / 0 failed"
+  },
+  "score_replay": {
+    "report": "score_replay_report_20260911.json",
+    "worst_max_abs_delta": 0.0,
+    "tolerance": 1e-10,
+    "six_arm_segments_all_bitexact": true,
+    "mode": "独立内联脚本复刻 e4de646 算术路径（float64 路径→float32 头前向→float64 final_scores），不经生产 _score_segment/cmd_evaluate"
+  },
+  "constraints": [
+    "未重训",
+    "未重生成路径",
+    "未覆写 best/history/norm/cache/score/verdict",
+    "未读 forward/数据库/GPU",
+    "artifacts 目录仅新增两份原 .pt 与两份新命名验收/重放文件"
+  ]
+}

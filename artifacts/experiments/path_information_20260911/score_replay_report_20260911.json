@@ -1,0 +1,48 @@
+{
+  "created_at": "2026-09-11T10:29:02",
+  "mode": "read-only historical replay（20e2746 §4.4）",
+  "weight_sha_check": {
+    "head_MEAN_s100_e004.pt": {
+      "sha256": "69121c105cf7a40e5fc5fc89f5b0e8254bfbd49dfc4fb0744a876a9f4dfbc8ab",
+      "match": true
+    },
+    "head_PATH_s100_e004.pt": {
+      "sha256": "d9b3292ab5ed3830b4e7c8543c00a72f2cbdda6df941880f704d9a9fae7a98c1",
+      "match": true
+    }
+  },
+  "segments": {
+    "MEAN:train": {
+      "n_cells": 3584,
+      "max_abs_delta": 0.0,
+      "pass_1e-10": true
+    },
+    "MEAN:val": {
+      "n_cells": 3200,
+      "max_abs_delta": 0.0,
+      "pass_1e-10": true
+    },
+    "MEAN:dev_eval": {
+      "n_cells": 7936,
+      "max_abs_delta": 0.0,
+      "pass_1e-10": true
+    },
+    "PATH:train": {
+      "n_cells": 3584,
+      "max_abs_delta": 0.0,
+      "pass_1e-10": true
+    },
+    "PATH:val": {
+      "n_cells": 3200,
+      "max_abs_delta": 0.0,
+      "pass_1e-10": true
+    },
+    "PATH:dev_eval": {
+      "n_cells": 7936,
+      "max_abs_delta": 0.0,
+      "pass_1e-10": true
+    }
+  },
+  "all_pass_1e-10": true,
+  "worst_max_abs_delta": 0.0
+}
