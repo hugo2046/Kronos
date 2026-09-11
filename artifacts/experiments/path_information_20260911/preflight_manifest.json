@@ -1,0 +1,121 @@
+{
+  "created_at": "2026-09-11T09:30:27",
+  "protocol": "path-information-protocol-v1",
+  "git_head": "d3c1bb3dbd25c1909ef824c21556e64b32795a55",
+  "run_id": "path1_v1",
+  "baseline": {
+    "W3": {
+      "path": "/home/user/workspace/Kronos/g5_head/data/daily_signals_2025h2_G1_mean.parquet",
+      "sha256": "9352b40302eb34c714bfebd808481b625a21d2f7f4f668ccca15cda0cfe21d66",
+      "n_days": 126,
+      "n_cells": 37223,
+      "date_min": "2025-07-01",
+      "date_max": "2025-12-31"
+    },
+    "W4": {
+      "path": "/home/user/workspace/Kronos/finetune_suite/data/g1/daily_signals_backtest_G1_mean.parquet",
+      "sha256": "453e2aeae7fe4bee8ce8fa62a9908da0843d5ad8b52777cd3b299a84cc4a3e36",
+      "n_days": 134,
+      "n_cells": 39563,
+      "date_min": "2026-01-05",
+      "date_max": "2026-07-24"
+    }
+  },
+  "g1_weights": {
+    "tokenizer_sha": "5ca43492146cd93da2f9dd5528009aa6bd882f2a448ff4c6bd3c1b0ab08609ee",
+    "predictor_sha": "4f2382138138e85ea1c543d43ade2de2373e4168a995e34fd43cbca2895c2fe2"
+  },
+  "segments": {
+    "train": {
+      "decision_days": [
+        "2025-07-01",
+        "2025-09-16"
+      ],
+      "n_days": 56,
+      "label_end": "2025-09-30",
+      "baseline_window": "W3",
+      "expected_cells": 3584
+    },
+    "val": {
+      "decision_days": [
+        "2025-10-09",
+        "2025-12-17"
+      ],
+      "n_days": 50,
+      "label_end": "2025-12-31",
+      "baseline_window": "W3",
+      "expected_cells": 3200
+    },
+    "dev_eval": {
+      "decision_days": [
+        "2026-01-05",
+        "2026-07-10"
+      ],
+      "n_days": 124,
+      "label_end": "2026-07-24",
+      "baseline_window": "W4",
+      "expected_cells": 7936
+    }
+  },
+  "sample_rule": {
+    "pool": "csi300",
+    "lookback": 90,
+    "predict_len": 10,
+    "per_day": 64,
+    "select": "SHA256('PATH1|17|YYYY-MM-DD|code') 升序前 64，最终推理按 code 排序",
+    "eligibility": "PIT csi300 ∩ fetch≤t 90日窗口 ∩ 基线G1有限信号；不以未来收益/停牌/标签完整性挑选"
+  },
+  "inference": {
+    "T": 1.0,
+    "top_p": 0.9,
+    "top_k": 0,
+    "sample_count": 20,
+    "clip": 5,
+    "max_context": 512,
+    "seed": 42,
+    "chunk_size": 32,
+    "dtype": "float32",
+    "note": "与原 G1 同参的新采样链；新链均值与基线差仅记录不替换"
+  },
+  "head": {
+    "params": 753,
+    "path_dim": 10,
+    "hidden": 16,
+    "mix_in": 17,
+    "train": {
+      "lr": 0.001,
+      "betas": [
+        0.9,
+        0.999
+      ],
+      "weight_decay": 0.01,
+      "batch_days": 4,
+      "grad_clip": 3.0,
+      "epochs": 50,
+      "note": "e0 为合法候选；val 日等权 MSE 最低选点"
+    }
+  },
+  "budget": {
+    "gpu_s": 7200,
+    "cpu_s": 3600
+  },
+  "dedup": {
+    "return_samples_scan": "全远端分支 git grep 仅本计划文档命中；SAE/PEER 缓存 schema 仅 h/s_g1/y_mean 无样本轴",
+    "prior_art": "旧 mean/max 为固定聚合；N50 改采样数；截面zero-shot 平均后用 mean；无采样集合学习头先例",
+    "reference_doc": "docs/Kronos结构实验去重与方向复核_20260910.md"
+  },
+  "g1_time_evidence": {
+    "evidence_level": "配置/目录级（非历史真实时点部署证明）",
+    "train_time_range": [
+      "2011-01-01",
+      "2024-12-31"
+    ],
+    "val_time_range": [
+      "2025-01-01",
+      "2025-06-30"
+    ],
+    "dataset_end_time": "2025-06-30",
+    "source": "finetune_suite/config.py（G1 套件声明）",
+    "upstream_pretrain_boundary": "上游 Kronos 预训练语料边界未知，如实披露；本轮 train 段 2025-07 起晚于 G1 选模末 2025-06-30"
+  }
+}

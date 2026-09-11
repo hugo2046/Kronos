@@ -1,0 +1,38 @@
+{
+  "paths:train": {
+    "split": "train",
+    "n_days": 56,
+    "rebuilt": 0,
+    "reused": 56,
+    "wall_s": 0.0,
+    "excluded": []
+  },
+  "paths:val": {
+    "split": "val",
+    "n_days": 50,
+    "rebuilt": 0,
+    "reused": 50,
+    "wall_s": 0.0,
+    "excluded": []
+  },
+  "paths:dev_eval": {
+    "split": "dev_eval",
+    "n_days": 124,
+    "rebuilt": 0,
+    "reused": 124,
+    "wall_s": 0.1,
+    "excluded": []
+  },
+  "labels:train": {
+    "split": "train",
+    "n_cells": 3584,
+    "n_valid": 3584,
+    "coverage": 1.0
+  },
+  "labels:val": {
+    "split": "val",
+    "n_cells": 3200,
+    "n_valid": 3200,
+    "coverage": 1.0
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "created_at": "2026-09-11T09:59:56",
+  "files": {
+    "MEAN:train": {
+      "file": "scores_MEAN_train.npz",
+      "sha256": "5d07a1d6818d67b0f879a3f5ffe3ce6ead04a44a95fc660ee79a382522d2c2bb"
+    },
+    "MEAN:val": {
+      "file": "scores_MEAN_val.npz",
+      "sha256": "ff6e236d3c26b5757d5c0dbafa977a3988b4a8edf3621064aaa8c0c05ed83ce8"
+    },
+    "MEAN:dev_eval": {
+      "file": "scores_MEAN_dev_eval.npz",
+      "sha256": "5f6591475c68740c2c8d3b12781aa3a7d5f2477e98e8fe82e8a37fa3db6581c9"
+    },
+    "PATH:train": {
+      "file": "scores_PATH_train.npz",
+      "sha256": "25d71b6283ee971ac37de2229796777d70ee7b9bc42ae644c02ce4773ec2136e"
+    },
+    "PATH:val": {
+      "file": "scores_PATH_val.npz",
+      "sha256": "ad7630b3606a9e98860104fccabd7bfe93a67246b92e914cc861a17c8bd9b127"
+    },
+    "PATH:dev_eval": {
+      "file": "scores_PATH_dev_eval.npz",
+      "sha256": "8df4b48f29cdde79b9d99989205764c63efcb91cb029e48a024556dc8b1f5f0f"
+    }
+  }
+}

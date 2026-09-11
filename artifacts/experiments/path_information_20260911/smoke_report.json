@@ -1,0 +1,15 @@
+{
+  "smoke_wall_s": 15.2,
+  "days_done": 2,
+  "per_day_slower_s": 7.1,
+  "per_day_mean_s": 6.95,
+  "peak_vram_gb": 3.82,
+  "segment_days": {
+    "train": 56,
+    "val": 50,
+    "dev_eval": 124
+  },
+  "total_days": 230,
+  "estimated_full_gpu_wall_s_x1_5": 2397.8,
+  "gpu_budget_s": 7200
+}

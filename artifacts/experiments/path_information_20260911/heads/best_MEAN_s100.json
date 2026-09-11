@@ -1,0 +1,19 @@
+{
+  "arm": "MEAN",
+  "seed": 100,
+  "epochs_run": 50,
+  "best_epoch": 4,
+  "best_val_mse": 0.8282433378696442,
+  "final_val_mse": 0.857042361497879,
+  "g1_zero_val_mse": 0.8517865949763419,
+  "g1_zero_train_mse": 1.0697099815205906,
+  "best_head_file": "head_MEAN_s100_e004.pt",
+  "best_head_sha256": "69121c105cf7a40e5fc5fc89f5b0e8254bfbd49dfc4fb0744a876a9f4dfbc8ab",
+  "context": {
+    "stats_sha256": "6586530a80ea7436e6d1a7c4d59bb5a618f2b0ebbf638bb01179742093f28388",
+    "cache_manifest_sha256": "108f31d2e3e627845de047fd05eb4e3ae5e2f6ca31168e110271cc28aecb20af",
+    "protocol": "path-information-protocol-v1"
+  },
+  "wall_s": 1.8,
+  "device": "cpu"
+}

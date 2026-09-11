@@ -1,0 +1,28 @@
+PATH1 回归测试输出（2026-09-11，Debian quant conda，CPU）
+
+命令（计划 §8 Mac/CPU 参考的 Debian 等价执行）：
+
+    CUDA_VISIBLE_DEVICES='' PYTHONDONTWRITEBYTECODE=1 python - <<'PY'
+    import pytest
+    raise SystemExit(pytest.main([
+        'tests/test_path_information.py', 'tests/test_peer_residual.py',
+        'tests/test_peer_diagnostic.py', 'tests/test_peer_production_gates.py',
+        'tests/test_qlib_mean_comparison.py', 'tests/test_sae_residual.py',
+        'tests/test_kronos_regression.py', '-q', '-p', 'no:cacheprovider',
+    ]))
+    PY
+
+结果：
+
+    106 passed, 10 warnings in 11.83s   （执行两次，09:28 与 10:02 各一次，均 106 passed）
+
+分文件：
+    tests/test_path_information.py        27 passed（本轮新增契约）
+    tests/test_kronos_regression.py        4 passed（HF 缓存权重 NeoQuasar/Kronos-small
+                                            + Kronos-Tokenizer-base，样本出口未破坏默认推理）
+    tests/test_peer_residual.py / test_peer_diagnostic.py /
+    test_peer_production_gates.py / test_qlib_mean_comparison.py /
+    tests/test_sae_residual.py            75 passed（既有回归，未受影响）
+
+说明：原模型回归依赖本地 HF 缓存权重（~/.cache/huggingface/hub，
+models--NeoQuasar--Kronos-small 等），缓存命中实际执行并通过，非跳过。

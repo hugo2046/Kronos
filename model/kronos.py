@@ -386,7 +386,15 @@ def sample_from_logits(logits, temperature=1.0, top_k=None, top_p=None, sample_l
     return x
 
 
-def auto_regressive_inference(tokenizer, model, x, x_stamp, y_stamp, max_context, pred_len, clip=5, T=1.0, top_k=0, top_p=0.99, sample_count=5, verbose=False):
+def auto_regressive_inference(tokenizer, model, x, x_stamp, y_stamp, max_context, pred_len, clip=5, T=1.0, top_k=0, top_p=0.99, sample_count=5, verbose=False, return_samples=False):
+    """自回归采样推理（Kronos 采样链出口）。
+
+    :param return_samples: 可选样本维出口（PATH1，20260911 计划 §4）。
+        ``True`` 时返回 ``[B, sample_count, seq, feat]`` 归一化空间全部采样
+        路径（不做 axis=1 平均）；默认 ``False`` 保持原实现——先 reshape 成
+        ``[B, N, seq, feat]`` 再 ``np.mean(axis=1)``，数值与 RNG 消费与
+        旧版本逐位一致。样本轴不是时间轴：未来切片用最后两个轴。
+    """
     with torch.no_grad():
         x = torch.clip(x, -clip, clip)
 
@@ -464,6 +472,9 @@ def auto_regressive_inference(tokenizer, model, x, x_stamp, y_stamp, max_context
         z = tokenizer.decode(input_tokens, half=True)
         z = z.reshape(-1, sample_count, z.size(1), z.size(2))
         preds = z.cpu().numpy()
+        if return_samples:
+            return preds                      # [B, N, seq, feat] 归一化空间
+
         preds = np.mean(preds, axis=1)
 
         return preds
@@ -505,15 +516,19 @@ class KronosPredictor:
         self.tokenizer = self.tokenizer.to(self.device)
         self.model = self.model.to(self.device)
 
-    def generate(self, x, x_stamp, y_stamp, pred_len, T, top_k, top_p, sample_count, verbose):
+    def generate(self, x, x_stamp, y_stamp, pred_len, T, top_k, top_p, sample_count, verbose, return_samples=False):
 
         x_tensor = torch.from_numpy(np.array(x).astype(np.float32)).to(self.device)
         x_stamp_tensor = torch.from_numpy(np.array(x_stamp).astype(np.float32)).to(self.device)
         y_stamp_tensor = torch.from_numpy(np.array(y_stamp).astype(np.float32)).to(self.device)
 
         preds = auto_regressive_inference(self.tokenizer, self.model, x_tensor, x_stamp_tensor, y_stamp_tensor, self.max_context, pred_len,
-                                          self.clip, T, top_k, top_p, sample_count, verbose)
-        preds = preds[:, -pred_len:, :]
+                                          self.clip, T, top_k, top_p, sample_count, verbose, return_samples=return_samples)
+        if return_samples:
+            # 样本维出口：未来切片作用于最后两个轴（seq→H），保留 N 轴
+            preds = preds[:, :, -pred_len:, :]
+        else:
+            preds = preds[:, -pred_len:, :]
         return preds
 
     def predict(self, df, x_timestamp, y_timestamp, pred_len, T=1.0, top_k=0, top_p=0.9, sample_count=1, verbose=True):
@@ -559,24 +574,27 @@ class KronosPredictor:
         return pred_df
 
 
-    def predict_batch(self, df_list, x_timestamp_list, y_timestamp_list, pred_len, T=1.0, top_k=0, top_p=0.9, sample_count=1, verbose=True):
+    def predict_batch(self, df_list, x_timestamp_list, y_timestamp_list, pred_len, T=1.0, top_k=0, top_p=0.9, sample_count=1, verbose=True, return_samples=False):
         """
         Perform parallel (batch) prediction on multiple time series. All series must have the same historical length and prediction length (pred_len).
 
         Args:
             df_list (List[pd.DataFrame]): List of input DataFrames, each containing price columns and optional volume/amount columns.
             x_timestamp_list (List[pd.DatetimeIndex or Series]): List of timestamps corresponding to historical data, length should match the number of rows in each DataFrame.
-            y_timestamp_list (List[pd.DatetimeIndex or Series]): List of future prediction timestamps, length should equal pred_len.
+            y_timestamp_list (List[pd.DatetimeIndex or Series]): List of timestamps corresponding to future prediction timestamps, length should equal pred_len.
             pred_len (int): Number of prediction steps.
             T (float): Sampling temperature.
             top_k (int): Top-k filtering threshold.
             top_p (float): Top-p (nucleus sampling) threshold.
             sample_count (int): Number of parallel samples per series, automatically averaged internally.
             verbose (bool): Whether to display autoregressive progress.
+            return_samples (bool): Optional sample-dimension exit (PATH1, 20260911 plan §4). When ``True``,
+                returns ``[B, sample_count, pred_len, 6]`` real-price-scale ndarray (per-stock de-normalization still
+                uses this stock's own history window statistics), no longer averaging internally and no longer wrapping into DataFrames;
+                when ``False`` (default), keeps the original return value List[pd.DataFrame] and the original numerical values.
 
         Returns:
-            List[pd.DataFrame]: List of prediction results in the same order as input, each DataFrame contains
-                                `open, high, low, close, volume, amount` columns, indexed by corresponding `y_timestamp`.
+            List[pd.DataFrame] or np.ndarray: see ``return_samples``.
         """
         # Basic validation
         if not isinstance(df_list, (list, tuple)) or not isinstance(x_timestamp_list, (list, tuple)) or not isinstance(y_timestamp_list, (list, tuple)):
@@ -649,7 +667,16 @@ class KronosPredictor:
         x_stamp_batch = np.stack(x_stamp_list, axis=0).astype(np.float32) # (B, seq_len, time_feat)
         y_stamp_batch = np.stack(y_stamp_list, axis=0).astype(np.float32) # (B, pred_len, time_feat)
 
-        preds = self.generate(x_batch, x_stamp_batch, y_stamp_batch, pred_len, T, top_k, top_p, sample_count, verbose)
+        preds = self.generate(x_batch, x_stamp_batch, y_stamp_batch, pred_len, T, top_k, top_p, sample_count, verbose, return_samples=return_samples)
+
+        if return_samples:
+            # preds: [B, N, H, feat] normalized space → real price dimension,
+            # per-stock de-normalization uses each stock's own history window mean/std (consistent with the default branch formula).
+            out = np.empty(preds.shape, dtype=np.float32)
+            for i in range(num_series):
+                out[i] = preds[i] * (stds[i] + 1e-5) + means[i]
+            return out
+
         # preds: (B, pred_len, feat)
 
         pred_dfs = []

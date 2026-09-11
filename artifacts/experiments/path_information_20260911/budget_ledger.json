@@ -1,0 +1,87 @@
+{
+  "entries": [
+    {
+      "ts": "2026-09-11T09:30:51",
+      "stage": "smoke",
+      "wall_s": 15.2,
+      "device": "cuda:0",
+      "note": "train×2 est_full_x1.5=2397.8s"
+    },
+    {
+      "ts": "2026-09-11T09:37:36",
+      "stage": "cache:paths:train",
+      "wall_s": 393.3,
+      "device": "cuda:0",
+      "note": "rebuilt=56 reused=0"
+    },
+    {
+      "ts": "2026-09-11T09:43:29",
+      "stage": "cache:paths:val",
+      "wall_s": 353.5,
+      "device": "cuda:0",
+      "note": "rebuilt=50 reused=0"
+    },
+    {
+      "ts": "2026-09-11T09:58:48",
+      "stage": "cache:paths:dev_eval",
+      "wall_s": 918.5,
+      "device": "cuda:0",
+      "note": "rebuilt=124 reused=0"
+    },
+    {
+      "ts": "2026-09-11T09:59:11",
+      "stage": "cache:paths:train",
+      "wall_s": 0.7,
+      "device": "cuda:0",
+      "note": "rebuilt=0 reused=56"
+    },
+    {
+      "ts": "2026-09-11T09:59:12",
+      "stage": "cache:paths:val",
+      "wall_s": 0.5,
+      "device": "cuda:0",
+      "note": "rebuilt=0 reused=50"
+    },
+    {
+      "ts": "2026-09-11T09:59:13",
+      "stage": "cache:paths:dev_eval",
+      "wall_s": 0.5,
+      "device": "cuda:0",
+      "note": "rebuilt=0 reused=124"
+    },
+    {
+      "ts": "2026-09-11T09:59:13",
+      "stage": "cache:labels:train",
+      "wall_s": 0.9,
+      "device": "cpu",
+      "note": "valid=3584"
+    },
+    {
+      "ts": "2026-09-11T09:59:14",
+      "stage": "cache:labels:val",
+      "wall_s": 0.8,
+      "device": "cpu",
+      "note": "valid=3200"
+    },
+    {
+      "ts": "2026-09-11T09:59:37",
+      "stage": "train",
+      "wall_s": 5.0,
+      "device": "cpu",
+      "note": "arms=['MEAN', 'PATH'] seed=100 best={'MEAN': 4, 'PATH': 4}"
+    },
+    {
+      "ts": "2026-09-11T10:00:00",
+      "stage": "evaluate",
+      "wall_s": 3.7,
+      "device": "cpu",
+      "note": "criterion_pass=False"
+    }
+  ],
+  "gpu_budget_s": 7200,
+  "cpu_budget_s": 3600,
+  "gpu_used_wall_s": 1682.2,
+  "cpu_used_wall_s": 10.4,
+  "remaining_gpu_budget_s": 5517.8,
+  "remaining_cpu_budget_s": 3589.6
+}
