@@ -1,0 +1,10 @@
+{
+  "torch_threads": 4,
+  "cuda_visible": "",
+  "cuda_initialized": false,
+  "stages": {
+    "input_verify_s": 0.39,
+    "forward_s": 1.98,
+    "total_s": 2.42
+  }
+}

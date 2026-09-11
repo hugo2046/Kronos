@@ -1,0 +1,117 @@
+{
+  "created_at": "2026-09-10T16:44:02",
+  "protocol": "peer-residual-protocol-v1",
+  "run_id": "peer1_v1",
+  "git_head": "77f05a28b712bcc009637cd22278fb9f2d0a4db3",
+  "baseline": {
+    "W3": {
+      "path": "/home/user/workspace/Kronos/g5_head/data/daily_signals_2025h2_G1_mean.parquet",
+      "sha256": "9352b40302eb34c714bfebd808481b625a21d2f7f4f668ccca15cda0cfe21d66",
+      "n_days": 126,
+      "n_cells": 37223,
+      "date_min": "2025-07-01",
+      "date_max": "2025-12-31"
+    },
+    "W4": {
+      "path": "/home/user/workspace/Kronos/finetune_suite/data/g1/daily_signals_backtest_G1_mean.parquet",
+      "sha256": "453e2aeae7fe4bee8ce8fa62a9908da0843d5ad8b52777cd3b299a84cc4a3e36",
+      "n_days": 134,
+      "n_cells": 39563,
+      "date_min": "2026-01-05",
+      "date_max": "2026-07-24"
+    }
+  },
+  "g1_weights": {
+    "tokenizer": {
+      "path": "/home/user/workspace/Kronos/finetune_suite/outputs/models/finetune_tokenizer_g1/checkpoints/best_model",
+      "sha256": "5ca43492146cd93da2f9dd5528009aa6bd882f2a448ff4c6bd3c1b0ab08609ee"
+    },
+    "predictor": {
+      "path": "/home/user/workspace/Kronos/finetune_suite/outputs/models/finetune_predictor_g1/checkpoints/best_model",
+      "sha256": "4f2382138138e85ea1c543d43ade2de2373e4168a995e34fd43cbca2895c2fe2"
+    }
+  },
+  "sae_assets": {
+    "norm_stats": {
+      "path": "/home/user/workspace/Kronos/artifacts/experiments/sae_residual_20260910/norm_stats.json",
+      "sha256": "cbe51327226fb986c793771cf3f2593e03d9ba0e6e437563d031645700739a13"
+    },
+    "cache_manifest": {
+      "path": "/home/user/workspace/Kronos/artifacts/experiments/sae_residual_20260910/cache_manifest.json",
+      "sha256": "a79e63a1e6e5da8671c11f20e0ee653b1fcbd9a355a375b4366502b3732b9e82"
+    }
+  },
+  "peerset_rule": {
+    "pool": "csi300",
+    "lookback": 90,
+    "definition": "PeerSet(t) = t日csi300 PIT成员 ∩ 截至t具有合格90日历史输入（build_inference_windows 口径：窗口完整且无停牌）；不使用未来收益/停牌/退池/标签完整性",
+    "note": "原SAE 64股/日仅为 LossSet，不是 PeerSet；额外 peer 仅作 attention context，不新增交易候选"
+  },
+  "lossset_rule": {
+    "source": "SAE f6c0726 冻结监督缓存原值（train 534日×64、val 22日×64）；s_G1/y_mean 不按新 seed 重推",
+    "target": "r = (y_mean - s_G1)/σe，不减残差均值；s_final = s_G1 + σe·r_hat"
+  },
+  "head": {
+    "d_model": 64,
+    "n_heads": 4,
+    "ffn_dim": 128,
+    "param_table": {
+      "proj:832x64": 53312,
+      "ln1": 128,
+      "attn.in_proj:64x64x3": 12480,
+      "attn.out_proj:64x64": 4160,
+      "ln2": 128,
+      "ffn_in:64x128": 8320,
+      "ffn_out:128x64": 8256,
+      "ln3": 128,
+      "out:64x1": 65,
+      "total": 86977
+    },
+    "train": {
+      "lr": 0.0003,
+      "betas": [
+        0.9,
+        0.999
+      ],
+      "weight_decay": 0.01,
+      "batch_days": 4,
+      "grad_clip": 3.0,
+      "epochs": 100
+    }
+  },
+  "test_windows": {
+    "W3": [
+      "2025-07-01",
+      "2025-12-31"
+    ],
+    "W4": [
+      "2026-01-01",
+      "2026-07-24"
+    ]
+  },
+  "budget_gpu_s": 43200,
+  "sigma_e": 0.04908841653707577,
+  "d_in": 832,
+  "sae_cache": {
+    "train": {
+      "n_days": 534,
+      "first": "2014-01-02",
+      "last": "2024-12-17"
+    },
+    "val": {
+      "n_days": 22,
+      "first": "2025-01-02",
+      "last": "2025-06-13"
+    },
+    "W3": {
+      "n_days": 126,
+      "first": "2025-07-01",
+      "last": "2025-12-31"
+    },
+    "W4": {
+      "n_days": 134,
+      "first": "2026-01-05",
+      "last": "2026-07-24"
+    }
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "created_at": "2026-09-10T21:49:45",
+  "historical_protocol_conformance": false,
+  "scope": "对 c9c56a0 PEER1 执行的三处协议纠偏；原负结果与收益文件全部保留不变",
+  "evidence": {
+    "read_boundary": {
+      "finding": "旧 cmd_cache 使用普通 QlibProvider；build_inference_windows 的 fetch_end 是 t 之后第 10 个交易日（纯工作日日历下 t=2026-07-24 会请求到 2026-08-07），随后才 sub.loc[:t] 切片。",
+      "code_requested_beyond_t": true,
+      "actual_returned_range": "unknown——无旧数据库请求日志，未为确认越界读取真实 forward；不能据合成 spy 断言历史执行返回了未来行情",
+      "inputs_effect": "最后 h 输入只到 t（loc[:t] 切片），未来价格未参与窗口归一化或标签（标签为独立 SAE 缓存原值）",
+      "fix": "peer_residual/history_provider.py PeerHistoryProvider：fetch 委托边界钳制到当前决策日；t>2026-07-24 下层调用前拒绝；返回观测日期再验证。",
+      "fix_verified_by": "合成 spy 测试（tests/test_peer_diagnostic.py）——仅验证新代码，非历史执行已验证",
+      "historical_execution_revalidated": false
+    },
+    "signal_freeze_order": {
+      "finding": "c9c56a0 的 _run_eval 在三臂回测完成后才重新生成并落盘 signal parquet（回测用内存信号、落盘为事后复算凭据），未建立'先冻结全部信号再只读回测'的顺序。",
+      "actual_backtest_inputs": "内存中 infer 得到的同一批信号（与落盘文件同源同值，一致性由本轮诊断间接印证：OFF/ON 验证 MSE 复差 ≤1.3e-8）",
+      "fix": "run.py 拆分 freeze_signals_stage（生成全部臂窗信号→校验完整网格→写frozen_signals_manifest 含信号/头 SHA）与 backtest_frozen_stage（先SHA 校验全部冻结文件、缺一或篡改→回测 0 次、只读文件回测）。",
+      "historical_execution_revalidated": false
+    },
+    "identity_fields": {
+      "finding": "旧 checkpoint meta 仅含 arm/seed/epoch/protocol/d_in，缺 run_id/协议内容 SHA/base tokenizer-predictor SHA/peer-SAE 清单 SHA/norm_stats SHA；训练跳过逻辑只看 best.json 是否存在。",
+      "fix": "peer_residual/identity.py：新 schema save/load_head_checkpoint 逐字段校验+文件 SHA；verify_cache_dir 按冻结清单校验完整键集与逐 chunk SHA（元数据相符但字节变也拒绝）；verify_reusable_head 关闭'存在即跳过'后门；load_legacy_head 只读路径仅接收交接清单精确 SHA 并记录 legacy_identity_incomplete，禁止用于新训练续跑。",
+      "old_weights_upgraded": false,
+      "legacy_note": [
+        "run_id",
+        "protocol_digest",
+        "tokenizer_sha",
+        "predictor_sha",
+        "sae_manifest_sha",
+        "peer_manifest_sha",
+        "norm_stats_sha"
+      ]
+    }
+  },
+  "unverifiable_historical_facts": [
+    "旧执行实际从数据库返回的价格范围（无请求日志；本轮未读 forward 验证）",
+    "旧缓存提取时 _fetch_via 与本轮冻结清单之间是否存在环境差异（缓存逐 chunk SHA 本轮已与清单对拍一致）"
+  ],
+  "conclusion_unchanged": "seed100 本配置未超过 G1（两窗 D 均为负），101/102 未启动"
+}

@@ -1,0 +1,160 @@
+{
+  "archive_date": "2026-09-11",
+  "purpose": "主分支只读结论证据，不追认历史生成链；不含实验代码或大缓存。",
+  "files": [
+    {
+      "path": "peer/comparison_summary.json",
+      "source_commit": "e8a19e3c211841e84dc7a8e1a66e4d1ab0611637",
+      "source_path": "artifacts/experiments/peer_residual_20260910/comparison_summary.json",
+      "sha256": "a685cc34054828b15e457ba6c505b7e7d55e46d45b3eb0d543cc733a5106a5c3",
+      "bytes": 2507
+    },
+    {
+      "path": "peer/pilot_verdict.json",
+      "source_commit": "e8a19e3c211841e84dc7a8e1a66e4d1ab0611637",
+      "source_path": "artifacts/experiments/peer_residual_20260910/pilot_verdict.json",
+      "sha256": "94c00d4a18478d4a7be2c611f031ceada447db90164c3a65ddadb256405b76cf",
+      "bytes": 1289
+    },
+    {
+      "path": "peer/preflight_manifest.json",
+      "source_commit": "e8a19e3c211841e84dc7a8e1a66e4d1ab0611637",
+      "source_path": "artifacts/experiments/peer_residual_20260910/preflight_manifest.json",
+      "sha256": "ce74d5a49727d87bc3e8d0e3ca5dd975e367286a7090180e0a448371509a8c34",
+      "bytes": 3568
+    },
+    {
+      "path": "peer/fig_W3_main.png",
+      "source_commit": "e8a19e3c211841e84dc7a8e1a66e4d1ab0611637",
+      "source_path": "artifacts/experiments/peer_residual_20260910/fig_W3_main.png",
+      "sha256": "13a21417470dc6d4df5c229b50d96d79c7c22b376874dd7b5fb3491f16939628",
+      "bytes": 294987
+    },
+    {
+      "path": "peer/fig_W4_main.png",
+      "source_commit": "e8a19e3c211841e84dc7a8e1a66e4d1ab0611637",
+      "source_path": "artifacts/experiments/peer_residual_20260910/fig_W4_main.png",
+      "sha256": "850a5551f15939fd7a1ffbc325d5ca9573b1de7c33b1e0edfb04e2ff91d1f3f1",
+      "bytes": 316468
+    },
+    {
+      "path": "peer/report_W3_G1_mean.parquet",
+      "source_commit": "e8a19e3c211841e84dc7a8e1a66e4d1ab0611637",
+      "source_path": "artifacts/experiments/peer_residual_20260910/report_W3_G1_mean.parquet",
+      "sha256": "2b1e8e40e92be785571ed48a3d851cc8273d205979100139caf9559a3a1f2b85",
+      "bytes": 8502
+    },
+    {
+      "path": "peer/report_W3_PEER_OFF_s100.parquet",
+      "source_commit": "e8a19e3c211841e84dc7a8e1a66e4d1ab0611637",
+      "source_path": "artifacts/experiments/peer_residual_20260910/report_W3_PEER_OFF_s100.parquet",
+      "sha256": "938761857d4baa0f1057ffed3cb3d7bc3c760f76ce3b3b6ffdbd7d96cf6e0ea2",
+      "bytes": 8534
+    },
+    {
+      "path": "peer/report_W3_PEER_ON_s100.parquet",
+      "source_commit": "e8a19e3c211841e84dc7a8e1a66e4d1ab0611637",
+      "source_path": "artifacts/experiments/peer_residual_20260910/report_W3_PEER_ON_s100.parquet",
+      "sha256": "0f90a6bbe72721c3754cab154aed21e6a48a5c7a920234a4839f9ee0380419c3",
+      "bytes": 8486
+    },
+    {
+      "path": "peer/report_W4_G1_mean.parquet",
+      "source_commit": "e8a19e3c211841e84dc7a8e1a66e4d1ab0611637",
+      "source_path": "artifacts/experiments/peer_residual_20260910/report_W4_G1_mean.parquet",
+      "sha256": "ac5985b8eda6f93a855b7369ea27cde5fd85e6a4d92af1194301b3e948951001",
+      "bytes": 8573
+    },
+    {
+      "path": "peer/report_W4_PEER_OFF_s100.parquet",
+      "source_commit": "e8a19e3c211841e84dc7a8e1a66e4d1ab0611637",
+      "source_path": "artifacts/experiments/peer_residual_20260910/report_W4_PEER_OFF_s100.parquet",
+      "sha256": "209e73586c86ff8caf291997b9fec5b6a5109a20d0cc506c0834580109c6b6c6",
+      "bytes": 8813
+    },
+    {
+      "path": "peer/report_W4_PEER_ON_s100.parquet",
+      "source_commit": "e8a19e3c211841e84dc7a8e1a66e4d1ab0611637",
+      "source_path": "artifacts/experiments/peer_residual_20260910/report_W4_PEER_ON_s100.parquet",
+      "sha256": "5665eaf95ca5c38cc48005bb8a15a390315f994c3864c396cf750c4344ec79a0",
+      "bytes": 8797
+    },
+    {
+      "path": "diagnostic/diagnostic_summary.json",
+      "source_commit": "e8a19e3c211841e84dc7a8e1a66e4d1ab0611637",
+      "source_path": "artifacts/experiments/peer_diagnostic_20260910/diagnostic_summary.json",
+      "sha256": "0ffec010c6d0b69906b3e5804e5788941642565dd89d38263609fc1ec5f569b8",
+      "bytes": 4599
+    },
+    {
+      "path": "diagnostic/correction_summary.json",
+      "source_commit": "e8a19e3c211841e84dc7a8e1a66e4d1ab0611637",
+      "source_path": "artifacts/experiments/peer_diagnostic_20260910/correction_summary.json",
+      "sha256": "2c9a51b828a81c1c1af1ef06e5847171866b4c661872bdcd6315ec3aec246b50",
+      "bytes": 3274
+    },
+    {
+      "path": "diagnostic/cumsum_recheck.json",
+      "source_commit": "e8a19e3c211841e84dc7a8e1a66e4d1ab0611637",
+      "source_path": "artifacts/experiments/peer_diagnostic_20260910/cumsum_recheck.json",
+      "sha256": "8b240b447b22640654588509296953951c7faa211fbc88142fe7b1b27327d6ac",
+      "bytes": 692
+    },
+    {
+      "path": "diagnostic/input_manifest.json",
+      "source_commit": "e8a19e3c211841e84dc7a8e1a66e4d1ab0611637",
+      "source_path": "artifacts/experiments/peer_diagnostic_20260910/input_manifest.json",
+      "sha256": "bdf999c382c8afa5adc6e0bc699b02cec53599e70390e8ebe50642650a99add9",
+      "bytes": 7432
+    },
+    {
+      "path": "diagnostic/sample_diagnostics.parquet",
+      "source_commit": "e8a19e3c211841e84dc7a8e1a66e4d1ab0611637",
+      "source_path": "artifacts/experiments/peer_diagnostic_20260910/sample_diagnostics.parquet",
+      "sha256": "9ab094c81c6f7317d94b7d87e4e0ad8bc77e25013e67d9030440fac287683bfb",
+      "bytes": 2046107
+    },
+    {
+      "path": "diagnostic/daily_diagnostics.parquet",
+      "source_commit": "e8a19e3c211841e84dc7a8e1a66e4d1ab0611637",
+      "source_path": "artifacts/experiments/peer_diagnostic_20260910/daily_diagnostics.parquet",
+      "sha256": "4651972ac1d1718f5d2709f5ee55e5156330480b22eb9aa61d19d30379eb1c56",
+      "bytes": 77997
+    },
+    {
+      "path": "diagnostic/fig_daily_mse_diff.png",
+      "source_commit": "e8a19e3c211841e84dc7a8e1a66e4d1ab0611637",
+      "source_path": "artifacts/experiments/peer_diagnostic_20260910/fig_daily_mse_diff.png",
+      "sha256": "fc916b53ceff26b0ac58ee03684814e14ebf3c5a21d1423b4c3c30d808b66f4d",
+      "bytes": 183199
+    },
+    {
+      "path": "diagnostic/timing.json",
+      "source_commit": "e8a19e3c211841e84dc7a8e1a66e4d1ab0611637",
+      "source_path": "artifacts/experiments/peer_diagnostic_20260910/timing.json",
+      "sha256": "7fd2ee884921f595983c437243fe64e45caaf4b01ad53802d2c3a9f97451f4a3",
+      "bytes": 165
+    },
+    {
+      "path": "diagnostic/tests.txt",
+      "source_commit": "e8a19e3c211841e84dc7a8e1a66e4d1ab0611637",
+      "source_path": "artifacts/experiments/peer_diagnostic_20260910/tests.txt",
+      "sha256": "4d81855236ea700256349e72675c4f2714a11959dbfbfdbd70fb9dd0f337facc",
+      "bytes": 1441
+    },
+    {
+      "path": "sae/comparison_summary.json",
+      "source_commit": "f6c072678749e40607b2998702dee3132c15b05a",
+      "source_path": "artifacts/experiments/sae_residual_20260910/comparison_summary.json",
+      "sha256": "8e0e7f944b2323700fff15d52b7bf12ed0ec8ae312ac6daf6bf55020e29af724",
+      "bytes": 2513
+    },
+    {
+      "path": "engineering/PEER生产身份接线修复_20260910.md",
+      "source_commit": "e8a19e3c211841e84dc7a8e1a66e4d1ab0611637",
+      "source_path": "docs/PEER生产身份接线修复_20260910.md",
+      "sha256": "2f7b59f62a42af32f8286cd91aa1f3087a205ce17f48ca8504830d4cb0282810",
+      "bytes": 3217
+    }
+  ]
+}

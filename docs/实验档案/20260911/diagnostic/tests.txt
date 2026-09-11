@@ -1,0 +1,24 @@
+PEER 诊断与执行纠偏：测试记录（2026-09-10T21:49:45）
+
+== 基线（计划 §8：实现前，旧 45 项）==
+45 passed in 1.41s   # tests/test_peer_residual.py + test_qlib_mean_comparison.py + test_sae_residual.py
+
+== 新增测试失败先行（实现前，tests/test_peer_diagnostic.py 全部 19 项失败）==
+FAILED tests/test_peer_diagnostic.py::test_adapter_future_calendar_still_usable
+FAILED tests/test_peer_diagnostic.py::test_future_perturbation_does_not_change_windows
+FAILED tests/test_peer_diagnostic.py::test_run_cache_uses_history_provider - ...
+FAILED tests/test_peer_diagnostic.py::test_freeze_then_backtest_order_and_no_infer_in_backtest
+FAILED tests/test_peer_diagnostic.py::test_missing_frozen_signal_zero_backtests
+FAILED tests/test_peer_diagnostic.py::test_tampered_frozen_signal_rejected_no_regen
+FAILED tests/test_peer_diagnostic.py::test_diagnose_cli_refuses_overwrite - I...
+19 failed in 1.27s
+
+（根因：peer_residual.diagnose / history_provider / identity 模块与
+ freeze/backtest 编排尚未实现——ModuleNotFoundError/AttributeError；
+ 失败即门禁需求本身，随后实现使其转绿。）
+
+== 中间迭代（3 项为测试自身与冻结 API 的契约修正后转绿）==
+5 failed, 14 passed → 修 day_errors 测试截取口径/合成面板补 $preclose/manifest 断言
+
+== 最终（实现后全套）==
+64 passed in 1.85s   # 45 旧 + 19 新（CUDA_VISIBLE_DEVICES='' 纯 CPU）

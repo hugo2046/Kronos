@@ -1,0 +1,63 @@
+{
+  "sigma_e": 0.04908841653707577,
+  "d_in": 832,
+  "n_train_days": 534,
+  "n_val_days": 22,
+  "heads": {
+    "OFF_s100": {
+      "best_epoch": 18,
+      "best_val_l_pred": 0.6580492705106735
+    },
+    "ON_s100": {
+      "best_epoch": 16,
+      "best_val_l_pred": 0.6613516435027122
+    }
+  },
+  "reproduction_gate": {
+    "W3": {
+      "max_abs_diff": {
+        "return": 7.095019016745141e-16,
+        "cost": 5.421010862427522e-20,
+        "bench": 0.0
+      },
+      "tol": 1e-10,
+      "n_days": 126
+    },
+    "W4": {
+      "max_abs_diff": {
+        "return": 6.106226635438361e-16,
+        "cost": 2.710505431213761e-20,
+        "bench": 0.0
+      },
+      "tol": 1e-10,
+      "n_days": 134
+    }
+  },
+  "verdict": {
+    "n_seeds": 1,
+    "off": {
+      "both_windows_count": 0,
+      "median_delta": {
+        "W3": -0.04126084834431551,
+        "W4": -0.003227872186444266
+      },
+      "repeats": false
+    },
+    "on": {
+      "both_windows_count": 0,
+      "median_delta": {
+        "W3": -0.0333128619629849,
+        "W4": -0.024457459150432053
+      },
+      "repeats": false
+    },
+    "peer_extra": {
+      "both_windows_count": 0,
+      "median_delta": {
+        "W3": 0.00794798638133061,
+        "W4": -0.021229586963987787
+      },
+      "repeats": false
+    }
+  }
+}
