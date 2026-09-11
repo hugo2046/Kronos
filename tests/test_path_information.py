@@ -471,7 +471,7 @@ def test_train_arm_lr0_selects_and_loads_e0(tmp_path):
     stats = PT.fit_stats(days)
     hist = PT.train_arm("PATH", days, val, stats, tmp_path, epochs=3, lr=0.0)
     assert hist["best_epoch"] == 0
-    head, meta = PT.load_best(tmp_path, "PATH", 100)
+    head, meta = PT.load_best(tmp_path, "PATH", 100, expect_context={})
     assert meta["best_epoch"] == 0
     r = head(torch.zeros(2, 20, 10), torch.ones(2))
     assert bool((r == 0).all())
@@ -577,37 +577,28 @@ def test_daily_paired_ic_and_criterion_hand():
     assert PE.criterion(v, dv3) is False           # dev PATH−MEAN ≤ 0
 
 
-def test_spy_lock_label_loader_never_called_before_scores_frozen(tmp_path):
-    """缺一/改一冻结分数文件 → 标签加载 0 次且抛错。"""
+from test_path_closeout import path_runtime, ready_scores  # 合成生产身份fixture
+
+
+def test_spy_lock_label_loader_never_called_before_scores_frozen(path_runtime):
+    """完整六臂段身份通过；缺一/改一分数时标签加载不再发生。"""
+    root, _ = path_runtime
+    ready_scores(path_runtime)
     calls = []
-
-    def fake_label_loader(*a, **k):
+    def loader():
         calls.append(1)
-        return {"y": np.zeros(3)}
-
-    manifest = {"files": {}}
-    for i, arm in enumerate(("MEAN", "PATH")):
-        p = tmp_path / f"scores_{arm}.npz"
-        arr = {"s_final": np.arange(3.0) + i}
-        np.savez(p, **arr)
-        manifest["files"][arm] = {
-            "file": p.name,
-            "sha256": hashlib.sha256(p.read_bytes()).hexdigest()}
-    (tmp_path / "scores_manifest.json").write_text(
-        json.dumps(manifest), encoding="utf-8")
-    # 完整 → loader 被调用
-    PE.unseal(tmp_path, label_loader=fake_label_loader)
-    assert len(calls) == 1
-    # 缺一 → 抛错且 0 次
-    (tmp_path / "scores_MEAN.npz").unlink()
+    PE.unseal(root, label_loader=loader)
+    assert calls == [1]
+    victim = root / "scores_MEAN_dev_eval.npz"
+    original = victim.read_bytes()
+    victim.unlink()
     with pytest.raises(RuntimeError):
-        PE.unseal(tmp_path, label_loader=fake_label_loader)
-    assert len(calls) == 1
-    # 改一（SHA 变）→ 抛错且 0 次
-    np.savez(tmp_path / "scores_MEAN.npz", s_final=np.arange(3.0) + 7.0)
+        PE.unseal(root, label_loader=loader)
+    assert calls == [1]
+    victim.write_bytes(original + b"changed")
     with pytest.raises(RuntimeError):
-        PE.unseal(tmp_path, label_loader=fake_label_loader)
-    assert len(calls) == 1
+        PE.unseal(root, label_loader=loader)
+    assert calls == [1]
 
 
 # ---------------- 缓存身份 / 标签分离 ----------------

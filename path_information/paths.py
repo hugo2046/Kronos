@@ -51,6 +51,8 @@ def write_path_chunk(out_dir: Path, name: str, payload: dict,
     """原子写压缩 npz chunk（身份内嵌 JSON 字符串；禁 pickle）。"""
     out_dir.mkdir(parents=True, exist_ok=True)
     path = out_dir / name
+    if path.exists():
+        raise RuntimeError(f"已有冻结产物，拒绝覆盖：{path}")
     tmp = out_dir / (name + ".tmp.npz")
     np.savez_compressed(tmp, identity_json=np.array(
         json.dumps(identity, ensure_ascii=False)), **payload)
@@ -299,7 +301,7 @@ def build_segment_paths(provider, model_loader, split: str, cal, out_dir: Path,
                 stats["reused"] += 1
                 continue
             except CacheMismatchError as exc:
-                logger.warning(f"chunk 身份不匹配，重建：{path}（{exc}）")
+                raise RuntimeError(f"chunk 身份不匹配，停止而非重建：{path}") from exc
         if gpu_busy():
             predictor = yield_for_registry(model_loader, ds)
         t0 = time.perf_counter()

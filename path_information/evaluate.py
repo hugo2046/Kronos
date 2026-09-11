@@ -102,20 +102,63 @@ def arm_mse(dates: np.ndarray, y: np.ndarray, mask: np.ndarray,
 
 
 def verify_scores_frozen(art_dir: Path) -> dict:
-    """校验冻结分数：manifest 内每个文件存在且 SHA 一致；缺一/改一抛错。"""
+    """完整六臂段、来源身份、权重和分数全部核验后才允许加载标签。
+
+    :param art_dir: 冻结产物目录。
+    :returns: 已验证清单。
+    :raises RuntimeError: 任一必需臂段缺失、错身份、改字节或错样本键。
+    """
+    from path_information import paths as PP
+    from path_information import train as PT
+
     mf = art_dir / "scores_manifest.json"
     if not mf.is_file():
         raise RuntimeError(f"分数 manifest 缺失：{mf}")
     manifest = json.loads(mf.read_text(encoding="utf-8"))
-    import hashlib
-
-    for arm, rec in manifest["files"].items():
-        p = art_dir / rec["file"]
-        if not p.is_file():
-            raise RuntimeError(f"冻结分数文件缺失：{arm} → {p}")
-        sha = hashlib.sha256(p.read_bytes()).hexdigest()
-        if sha != rec["sha256"]:
-            raise RuntimeError(f"冻结分数文件被改动：{arm} → {p}")
+    need = {f"{a}:{s}" for a in C.ARMS for s in C.SEGMENTS}
+    files = manifest.get("files")
+    if not isinstance(files, dict) or set(files) != need:
+        raise RuntimeError("冻结清单必须包含完整且唯一的两臂三段")
+    arrays = {}
+    for key in sorted(need):
+        arm, split = key.split(":")
+        rec = files[key]
+        name = f"scores_{arm}_{split}.npz"
+        if rec.get("file") != name:
+            raise RuntimeError(f"{key} 文件名与臂段身份不一致")
+        p = art_dir / name
+        if not p.is_file() or PP.sha256_file(p) != rec.get("sha256"):
+            raise RuntimeError(f"冻结分数缺失或字节 SHA 不一致：{key}")
+        arr = PP.read_path_chunk(p, {"protocol": C.PROTOCOL_VERSION,
+                                     "arm": arm, "split": split,
+                                     "seed": C.SEED, "kind": "scores"})
+        if not np.isfinite(arr["s_final"]).all():
+            raise RuntimeError(f"冻结分数非有限：{key}")
+        arrays[key] = arr
+    context = PT.current_context(art_dir)
+    if manifest.get("context") != context:
+        raise RuntimeError("冻结清单上下文与当前期望不一致，旧记录不自动升级")
+    heads = manifest.get("heads")
+    if not isinstance(heads, dict) or set(heads) != set(C.ARMS):
+        raise RuntimeError("冻结清单缺少完整头身份")
+    for arm in C.ARMS:
+        _, best = PT.load_best(C.HEADS_DIR, arm, C.SEED, expect_context=context)
+        if heads[arm] != {"file": best["best_head_file"],
+                          "sha256": best["best_head_sha256"], "epoch": best["best_epoch"]}:
+            raise RuntimeError(f"{arm} 冻结头与当前 best 身份不一致")
+    for split in C.SEGMENTS:
+        dates, codes = [], []
+        for p in sorted((art_dir / "cache" / split).glob(f"{split}_*.npz")):
+            arr = PP.read_path_chunk(p, {"protocol": C.PROTOCOL_VERSION, "split": split})
+            dates.extend(arr["dates"].tolist())
+            codes.extend(arr["instruments"].tolist())
+        if not dates or len(set(zip(dates, codes))) != len(dates):
+            raise RuntimeError(f"{split} 路径样本为空或重复")
+        for arm in C.ARMS:
+            arr = arrays[f"{arm}:{split}"]
+            if (arr["dates"].tolist() != dates or arr["instruments"].tolist() != codes
+                    or arr["s_final"].shape != (len(dates),)):
+                raise RuntimeError(f"{arm}:{split} 分数与冻结路径键不一致")
     return manifest
 
 

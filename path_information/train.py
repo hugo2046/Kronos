@@ -98,6 +98,50 @@ def _sha256_file(p: Path) -> str:
     return h.hexdigest()
 
 
+def current_context(art_dir: Path) -> dict:
+    """计算生产期望身份，并核对全部路径缓存字节，不读取 dev_eval 标签。
+
+    :param art_dir: 本次实验产物目录。
+    :returns: 绑定协议、底座、preflight、缓存清单和标准化的身份。
+    :raises RuntimeError: 底座、路径键集合或缓存 SHA 不一致。
+    """
+    from path_information import paths as PP
+
+    pre_path = art_dir / "preflight_manifest.json"
+    pre = json.loads(pre_path.read_text(encoding="utf-8"))
+    weights = PP.g1_weight_shas()
+    if pre.get("g1_weights") != weights:
+        raise RuntimeError("当前底座与 preflight 冻结身份不一致")
+    cache_path = art_dir / "cache_manifest.json"
+    cache = json.loads(cache_path.read_text(encoding="utf-8"))
+    entries = cache["chunks"]
+    expected = {e["file"] for e in entries}
+    actual = {p.relative_to(art_dir / "cache").as_posix()
+              for split in C.SEGMENTS for p in (art_dir / "cache" / split).glob("*.npz")}
+    if actual != expected or len(expected) != len(entries):
+        raise RuntimeError("路径缓存键集合缺失、多余或重复")
+    for e in entries:
+        if _sha256_file(art_dir / "cache" / e["file"]) != e["sha256"]:
+            raise RuntimeError(f"路径缓存字节 SHA 不符：{e['file']}")
+    for e in cache.get("labels", []):
+        if e.get("split") not in ("train", "val"):
+            raise RuntimeError("训练缓存清单不得提前包含 dev_eval 标签")
+        if _sha256_file(art_dir / "cache" / e["file"]) != e["sha256"]:
+            raise RuntimeError(f"训练/验证标签缓存字节 SHA 不符：{e['file']}")
+    protocol = {"version": C.PROTOCOL_VERSION, "run_id": C.RUN_ID,
+                "segments": C.SEGMENTS, "inference": C.INFERENCE,
+                "head": C.HEAD, "train": C.TRAIN, "seed": C.SEED,
+                "lookback": C.LOOKBACK, "horizon": C.PREDICT_LEN,
+                "pool": C.POOL, "per_day": C.PER_DAY,
+                "select_key": C.SELECT_KEY, "cutoff": C.FORWARD_CUTOFF}
+    return {"protocol": C.PROTOCOL_VERSION, "run_id": C.RUN_ID,
+            "protocol_sha256": hashlib.sha256(json.dumps(
+                protocol, sort_keys=True).encode()).hexdigest(),
+            "preflight_sha256": _sha256_file(pre_path),
+            "stats_sha256": _sha256_file(art_dir / "norm_stats.json"),
+            "cache_manifest_sha256": _sha256_file(cache_path), **weights}
+
+
 def train_arm(arm: str, train_days: list[dict], val_days: list[dict],
               stats: dict, out_dir: Path, seed: int = C.SEED,
               epochs: int = C.TRAIN["epochs"], lr: float | None = None,
@@ -110,6 +154,8 @@ def train_arm(arm: str, train_days: list[dict], val_days: list[dict],
     :returns: ``{"epochs": [...], "best_epoch", "best_val_mse", ...}``。
     """
     lr_use = C.TRAIN["lr"] if lr is None else lr
+    if list(out_dir.glob(f"head_{arm}_s{seed}_e*.pt")) or (out_dir / f"best_{arm}_s{seed}.json").exists():
+        raise RuntimeError("已有同臂同种子产物，禁止自动重训覆盖")
     out_dir.mkdir(parents=True, exist_ok=True)
     torch.manual_seed(seed)                  # 两臂同初始化
     head = PM.PathHead()
@@ -131,6 +177,7 @@ def train_arm(arm: str, train_days: list[dict], val_days: list[dict],
     def save(epoch: int) -> str:
         f = head_file(out_dir, arm, seed, epoch)
         torch.save({"state_dict": head.state_dict(),
+                    "context": dict(context or {}),
                     "meta": {"arm": arm, "seed": seed, "epoch": epoch,
                              "protocol": C.PROTOCOL_VERSION}}, f)
         return f.name
@@ -193,7 +240,8 @@ def train_arm(arm: str, train_days: list[dict], val_days: list[dict],
     return {**result, "epochs": metrics}
 
 
-def load_head(out_dir: Path, arm: str, seed: int, epoch: int) -> PM.PathHead:
+def load_head(out_dir: Path, arm: str, seed: int, epoch: int,
+              expect_context: dict | None = None) -> PM.PathHead:
     """载入指定 epoch 头并校验 meta（错 arm/seed/epoch/protocol 拒绝）。"""
     f = head_file(out_dir, arm, seed, epoch)
     if not f.is_file():
@@ -205,6 +253,8 @@ def load_head(out_dir: Path, arm: str, seed: int, epoch: int) -> PM.PathHead:
     for k, v in expect.items():
         if meta.get(k) != v:
             raise RuntimeError(f"头文件 meta 不匹配 {k}={meta.get(k)!r}!={v!r}")
+    if expect_context is not None and ckpt.get("context", {}) != expect_context:
+        raise RuntimeError("checkpoint 内嵌上下文与期望不一致")
     head = PM.PathHead()
     head.load_state_dict(ckpt["state_dict"])
     head.eval()
@@ -216,16 +266,18 @@ def load_best(out_dir: Path, arm: str, seed: int,
     """按 best 标记载入最佳 epoch（含 e0），校验文件 SHA 与生产上下文。"""
     p = out_dir / f"best_{arm}_s{seed}.json"
     best = json.loads(p.read_text(encoding="utf-8"))
-    f = out_dir / best["best_head_file"]
+    f = head_file(out_dir, arm, seed, int(best["best_epoch"]))
+    if best["best_head_file"] != f.name:
+        raise RuntimeError("best 文件名与实际加载 epoch 不一致")
     if _sha256_file(f) != best["best_head_sha256"]:
         raise RuntimeError(f"{arm} best 头文件 SHA 不一致：{f}")
-    for k, v in (expect_context or {}).items():
-        if best.get("context", {}).get(k) != v:
-            raise RuntimeError(
-                f"{arm} best 头上下文不匹配 {k}="
-                f"{best.get('context', {}).get(k)!r}!={v!r}")
-    return load_head(out_dir, arm, seed, int(best["best_epoch"])), best
+    expected = current_context(C.ART_DIR) if expect_context is None else expect_context
+    if best.get("context", {}) != expected:
+        raise RuntimeError("best 上下文与当前协议/底座/缓存/统计不一致")
+    return load_head(out_dir, arm, seed, int(best["best_epoch"]),
+                     expect_context=expected), best
 
 
-__all__ = ["fit_stats", "day_equal_weight_loss", "g1_zero_residual_mse",
+
+__all__ = ["fit_stats", "current_context", "day_equal_weight_loss", "g1_zero_residual_mse",
            "train_arm", "load_head", "load_best", "head_file"]

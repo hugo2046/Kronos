@@ -225,6 +225,8 @@ def _load_baseline(wname: str) -> pd.DataFrame:
 
 
 def cmd_cache() -> None:
+    if (C.ART_DIR / "cache_manifest.json").exists():
+        raise RuntimeError("已有完整缓存清单，禁止覆盖或重新提取")
     from kronos_qlib import QlibProvider
 
     t0 = time.perf_counter()
@@ -342,6 +344,8 @@ def load_segment_days(split: str, need_labels: bool = True) -> list[dict]:
 
 
 def cmd_train() -> None:
+    if (C.ART_DIR / "norm_stats.json").exists() or list(C.HEADS_DIR.glob("*.pt")):
+        raise RuntimeError("已有训练产物，禁止重训覆盖")
     t0 = time.perf_counter()
     train_days = load_segment_days("train")
     val_days = load_segment_days("val")
@@ -350,9 +354,7 @@ def cmd_train() -> None:
     (C.ART_DIR / "norm_stats.json").write_text(
         json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
     stats_sha = PP.sha256_file(C.ART_DIR / "norm_stats.json")
-    cache_sha = PP.sha256_file(C.ART_DIR / "cache_manifest.json")
-    context = {"stats_sha256": stats_sha, "cache_manifest_sha256": cache_sha,
-               "protocol": C.PROTOCOL_VERSION}
+    context = T.current_context(C.ART_DIR)
     histories = {}
     for arm in C.ARMS:
         histories[arm] = T.train_arm(arm, train_days, val_days, stats,
@@ -378,7 +380,11 @@ def _score_segment(arm: str, split: str, stats: dict) -> dict:
 
     from path_information import model as PM
 
-    head, _ = T.load_best(C.HEADS_DIR, arm, C.SEED)
+    context = T.current_context(C.ART_DIR)
+    frozen_stats = json.loads((C.ART_DIR / "norm_stats.json").read_text(encoding="utf-8"))
+    if stats != frozen_stats:
+        raise RuntimeError("打分统计与冻结文件不一致")
+    head, _ = T.load_best(C.HEADS_DIR, arm, C.SEED, expect_context=context)
     parts_s, parts_d, parts_c = [], [], []
     with torch.no_grad():
         for p in sorted((C.CACHE_DIR / split).glob(f"{split}_*.npz")):
@@ -400,6 +406,15 @@ def _score_segment(arm: str, split: str, stats: dict) -> dict:
 
 
 def cmd_evaluate() -> None:
+    if ((C.ART_DIR / "scores_manifest.json").exists()
+            or list(C.ART_DIR.glob("scores_*.npz"))):
+        raise RuntimeError("已有分数或冻结清单，禁止重生覆盖")
+    context = T.current_context(C.ART_DIR)
+    heads = {}
+    for arm in C.ARMS:
+        _, best = T.load_best(C.HEADS_DIR, arm, C.SEED, expect_context=context)
+        heads[arm] = {"file": best["best_head_file"],
+                      "sha256": best["best_head_sha256"], "epoch": best["best_epoch"]}
     t0 = time.perf_counter()
     stats = json.loads((C.ART_DIR / "norm_stats.json").read_text(encoding="utf-8"))
     # ① 先冻结两头全部段分数与来源 SHA（此刻不加载任何标签）
@@ -419,7 +434,7 @@ def cmd_evaluate() -> None:
                 "sha256": PP.sha256_file(C.ART_DIR / name)}
     (C.ART_DIR / "scores_manifest.json").write_text(
         json.dumps({"created_at": datetime.now().isoformat(timespec="seconds"),
-                    "files": files}, ensure_ascii=False, indent=2),
+                    "files": files, "context": context, "heads": heads}, ensure_ascii=False, indent=2),
         encoding="utf-8")
     # ② spy 锁定开封：分数校验通过后才加载 dev_eval 标签
     dev_lab = E.unseal(C.ART_DIR)
