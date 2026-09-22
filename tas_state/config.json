@@ -1,0 +1,88 @@
+{
+  "b1_n_cap": 80,
+  "b1_n_min_multiple": 2,
+  "baseline_signal_paths": {
+    "F0_W3": "finetune_suite/data/g0/daily_signals_2025h2_F0_mean.parquet",
+    "F0_W4": "finetune_suite/data/daily_signals_backtest_F0_mean.parquet",
+    "G1_s100_W3": "g5_head/data/daily_signals_2025h2_G1_mean.parquet",
+    "G1_s100_W4": "finetune_suite/data/g1/daily_signals_backtest_G1_mean.parquet",
+    "G1_s101_W3": "finetune_suite/data/g2/s101/daily_signals_2025h2_G2S101_mean.parquet",
+    "G1_s101_W4": "finetune_suite/data/g2/s101/daily_signals_backtest_G2S101_mean.parquet",
+    "G1_s102_W3": "finetune_suite/data/g2/s102/daily_signals_2025h2_G2S102_mean.parquet",
+    "G1_s102_W4": "finetune_suite/data/g2/s102/daily_signals_backtest_G2S102_mean.parquet",
+    "M_W3": "finetune_suite/data/g0/daily_signals_2025h2_M.parquet",
+    "M_W4": "finetune_suite/data/daily_signals_backtest_M.parquet"
+  },
+  "budget_p0_p1_hours": 2.0,
+  "budget_p2_hours": 24.0,
+  "budget_p3_hours": 48.0,
+  "ckpt_steps": [
+    1000,
+    2000,
+    4000
+  ],
+  "clip": 5.0,
+  "corpus_start": "2014-01-02",
+  "cost_bps": 15,
+  "data_end": "2026-08-07",
+  "device": "cuda:0",
+  "drop_n": 5,
+  "effective_batch": 64,
+  "eval_window_1": [
+    "2025-07-01",
+    "2025-12-31"
+  ],
+  "eval_window_2": [
+    "2026-01-01",
+    "2026-07-24"
+  ],
+  "forward_seal_start": "2026-07-25",
+  "grad_clip": 1.0,
+  "hac_lag_main": 9,
+  "hac_lag_sensitivity": 20,
+  "ic_min_stocks": 30,
+  "lookback": 90,
+  "lr": 0.0003,
+  "max_context": 512,
+  "microbatch": 16,
+  "min_hold": 5,
+  "model_name": "NeoQuasar/Kronos-base",
+  "n_states": 4,
+  "paired_ic_threshold": 0.005,
+  "predict_len": 10,
+  "sample_count": 20,
+  "sample_top_k": 0,
+  "seed": 42,
+  "segments": [
+    [
+      0,
+      23
+    ],
+    [
+      23,
+      46
+    ],
+    [
+      46,
+      68
+    ],
+    [
+      68,
+      90
+    ]
+  ],
+  "signal_field": "close",
+  "state_hidden": 64,
+  "static_sample_count": 4096,
+  "temperature": 1.0,
+  "tokenizer_name": "NeoQuasar/Kronos-Tokenizer-base",
+  "top_k": 50,
+  "top_p": 0.9,
+  "total_steps": 4000,
+  "train_corpus_path": "finetune_suite/data/ashares/train_data.pkl",
+  "train_target_end": "2024-12-31",
+  "val_corpus_path": "finetune_suite/data/ashares/val_data.pkl",
+  "val_start": "2025-01-01",
+  "val_target_end": "2025-06-30",
+  "weight_decay": 0.01
+}

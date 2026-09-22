@@ -1,0 +1,45 @@
+{
+  "hard_fail": [],
+  "warn": [],
+  "load_seconds": 2.9,
+  "d_model": 832,
+  "state_encoder_params_numel": 168128,
+  "parity_logits": {
+    "n_samples": 32,
+    "abs_err": 0.0,
+    "rel_err": 0.0,
+    "pass": true
+  },
+  "parity_sampling": {
+    "n_samples": 8,
+    "sample_count": 20,
+    "step0_token_parity": true,
+    "token_agreement_rate": 1.0,
+    "pass": true,
+    "note": "原调用临时 eval()（官方生产路径无 eval()，dropout 生效）；step>0 分歧源于原版 512-buffer 非连续切片的 GEMM 分块噪声"
+  },
+  "train_bench": {
+    "microbatch": 16,
+    "steps": 20,
+    "sec_per_step_median": 0.13517881277948618,
+    "loss_final": 6.6040191650390625,
+    "loss_finite": true,
+    "peak_mem_gb": 1.5
+  },
+  "inference_bench": {
+    "n_samples": 200,
+    "sample_count": 20,
+    "sec_b0": 20.07,
+    "sec_t_pre": 21.33,
+    "ratio_r": 1.063,
+    "b1_n": 40,
+    "budget_matched": true,
+    "peak_mem_gb": 3.85
+  },
+  "budget_estimate": {
+    "sec_per_step": 0.135,
+    "full_protocol_gpu_hours_with_margin": 1.13,
+    "p2_budget_hours": 24.0,
+    "within_p2": true
+  }
+}
