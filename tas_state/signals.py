@@ -100,17 +100,19 @@ def generate_arm_signals(
     checkpoint_sha256: str = "",
     sample_count: int | None = None,
     chunk: int = 32,
+    dates: pd.DatetimeIndex | None = None,
 ) -> pd.DataFrame:
     """单臂单窗逐日信号（断点续跑 + 覆盖率门禁）。
 
     :param predictor: ``TASPredictor``（T 族）或 ``KronosPredictor``（B1）。
-    :param arm: 臂名（T-PRE / T-POST / T-SHUFFLE / C0 / B1）。
+    :param arm: 臂名（T-PRE / T-POST / T-SHUFFLE / C0 / B1 / VAL-*）。
+    :param dates: 显式信号日（验证选点用）；None 时按 window 取评估窗交易日。
     """
     out_dir.mkdir(parents=True, exist_ok=True)
     parquet = out_dir / f"daily_signals_{window}_{arm}.parquet"
     mf_path = out_dir / f"manifest_{window}_{arm}.json"
 
-    dates = window_dates(provider, cfg, window)
+    dates = dates if dates is not None else window_dates(provider, cfg, window)
     rows: list[dict] = []
     done: set[pd.Timestamp] = set()
     if parquet.exists() and mf_path.exists():
@@ -148,15 +150,17 @@ def generate_arm_signals(
             )
         torch.manual_seed(cfg.seed)  # 逐日重置采样 RNG（baseline_suite 同构）
         day_rows: dict[str, float] = {}
+        is_tas = hasattr(predictor, "_maybe_shuffle")  # TASPredictor 才收 codes
         for s in range(0, len(df_list), chunk):
             sub = slice(s, min(s + chunk, len(df_list)))
-            preds = predictor.predict_batch(
-                df_list[sub], x_ts[sub], y_ts[sub],
+            kw = dict(
                 pred_len=cfg.predict_len, T=cfg.temperature,
                 top_k=cfg.sample_top_k, top_p=cfg.top_p,
                 sample_count=N, verbose=False,
-                codes=codes[sub] if hasattr(predictor, "_maybe_shuffle") else None,
             )
+            if is_tas:
+                kw["codes"] = codes[sub]
+            preds = predictor.predict_batch(df_list[sub], x_ts[sub], y_ts[sub], **kw)
             for j, p in enumerate(preds):
                 code = codes[s + j]
                 last_close = df_list[s + j]["close"].iloc[-1]
@@ -199,25 +203,135 @@ def _dump_partial(parquet, mf_path, rows, index, arm, window, seed, cfg,
                        encoding="utf-8")
 
 
+def load_selected_checkpoint(
+    family: str, seed: int, cfg: TASConfig, *, device: str | None = None
+):
+    """读训练目录的选点结果，加载对应 encoder 权重（未验证先跑 validate）。"""
+    import torch as _torch
+
+    from tas_state.model import ConditionalKronos, StateEncoder
+    from tas_state.train import OUT_DIR
+
+    out_dir = OUT_DIR / f"{family}_s{seed}"
+    vj = out_dir / "validation.json"
+    if not vj.exists():
+        raise FileNotFoundError(f"无选点结果：{vj}（先运行 tas_state.validate）")
+    meta = json.loads(vj.read_text(encoding="utf-8"))
+    if meta["config_sha256"] != cfg.sha256():
+        raise ValueError("validation.json 的 config 哈希不匹配（拒绝跨配置推理）")
+    step = meta["selected_step"]
+    cpt = out_dir / "checkpoints" / f"step{step:05d}.pt"
+
+    from model.kronos import Kronos, KronosTokenizer
+
+    dev = _torch.device(device or cfg.device)
+    tokenizer = KronosTokenizer.from_pretrained(cfg.tokenizer_name)
+    kronos = Kronos.from_pretrained(cfg.model_name)
+    encoder = StateEncoder(
+        kronos.d_model, hidden=cfg.state_hidden, n_states=cfg.n_states
+    )
+    blob = _torch.load(cpt, map_location=dev, weights_only=True)
+    encoder.load_state_dict(blob["encoder_state"])
+    ck = ConditionalKronos(kronos, tokenizer, encoder, cfg).to(dev)
+    return ck, cpt, blob
+
+
+def run_p2_arms(
+    cfg: TASConfig,
+    *,
+    seed: int = 42,
+    windows: list[str],
+    arms: list[str],
+    b1_n: int = 40,
+    out_root: Path = SIG_DIR,
+) -> None:
+    """P2 信号生成编排：T 族臂（选点 ckpt）+ C0 + B1；B0/B2/B3 只读。
+
+    臂名：``T-PRE`` / ``T-POST`` / ``T-SHUFFLE`` / ``C0`` / ``B1``。
+    """
+    from kronos_qlib import QlibProvider
+    from tas_state.predictor import TASPredictor
+
+    tok_sha = _sha_file(PKG_DIR / "config.json")
+    provider = QlibProvider("csi300", cfg.eval_window_1[0], cfg.eval_window_2[1])
+
+    ck_dyn, cpt_dyn, blob = load_selected_checkpoint("dynamic", seed, cfg)
+    ckpt_sha = _sha_file(cpt_dyn)
+    z_mean = None
+    if "C0" in arms:
+        ck_stat, cpt_stat, _ = load_selected_checkpoint("static", seed, cfg)
+        z_mean = np.load(PKG_DIR / "data" / "static_z_mean.npz")["z_mean"]
+
+    for window in windows:
+        for arm in arms:
+            out_dir = out_root / f"s{seed}" / arm
+            if arm in ("T-PRE", "T-POST", "T-SHUFFLE"):
+                predictor = TASPredictor(
+                    ck_dyn, cfg,
+                    layout="pre" if arm != "T-POST" else "post",
+                    shuffle_states=(arm == "T-SHUFFLE"),
+                )
+                generate_arm_signals(
+                    predictor, provider, cfg, arm=arm, window=window,
+                    seed=seed, out_dir=out_dir, tokenizer_sha256=tok_sha,
+                    checkpoint_sha256=ckpt_sha,
+                )
+            elif arm == "C0":
+                orig_encode = ck_stat.encode_state
+
+                def _encode_static(x_t, xs_t, _zm=z_mean):
+                    zt = torch.tensor(_zm, dtype=torch.float32, device=x_t.device)
+                    zt = zt.unsqueeze(0).expand(x_t.shape[0], -1, -1)
+                    return ck_stat.encoder(zt), ck_stat.first_pass(x_t, xs_t)[1]
+
+                ck_stat.encode_state = _encode_static  # type: ignore[method-assign]
+                try:
+                    predictor = TASPredictor(ck_stat, cfg, layout="pre")
+                    generate_arm_signals(
+                        predictor, provider, cfg, arm="C0", window=window,
+                        seed=seed, out_dir=out_dir, tokenizer_sha256=tok_sha,
+                        checkpoint_sha256=_sha_file(cpt_stat),
+                    )
+                finally:
+                    ck_stat.encode_state = orig_encode  # type: ignore[method-assign]
+            elif arm == "B1":
+                from model.kronos import Kronos, KronosTokenizer, KronosPredictor
+
+                tok = KronosTokenizer.from_pretrained(cfg.tokenizer_name)
+                km = Kronos.from_pretrained(cfg.model_name)
+                # 官方原路径口径：不 eval()（KronosPredictor 构造即如此），
+                # 大 N 采样参照；披露见 P0 报告 §4.1
+                predictor = KronosPredictor(
+                    km, tok, device=cfg.device, max_context=cfg.max_context
+                )
+                generate_arm_signals(
+                    predictor, provider, cfg, arm="B1", window=window,
+                    seed=seed, out_dir=out_dir, tokenizer_sha256=tok_sha,
+                    sample_count=b1_n,
+                )
+            else:
+                raise ValueError(f"未知臂 {arm!r}（B0/B2/B3 只读既有 parquet）")
+
+
 def main() -> int:
-    """P2 信号入口（需要 DDB + GPU + 已训练 checkpoint）。"""
+    """P2 信号入口（需要 DDB + GPU + 已训练并验证选点的 checkpoint）。"""
     ap = argparse.ArgumentParser()
     ap.add_argument("--config", default=str(PKG_DIR / "config.json"))
     ap.add_argument("--stage", choices=["pilot", "historical"], default="pilot")
     ap.add_argument("--all-arms", action="store_true")
-    ap.add_argument("--arms", nargs="*", default=None)
+    ap.add_argument("--arms", nargs="*", default=None,
+                    help="默认 T-PRE T-POST T-SHUFFLE C0 B1")
     ap.add_argument("--window", choices=["W1", "W2", "both"], default="both")
+    ap.add_argument("--seed", type=int, default=42)
+    ap.add_argument("--b1-n", type=int, default=40)
     args = ap.parse_args()
 
     cfg = TASConfig.load(args.config)
-    logger.info(
-        "信号生成入口：模型/checkpoint 就绪后运行；本命令只产出信号与覆盖率，"
-        "不输出历史 IC/AER（开封在 evaluate --unseal）"
-    )
-    raise NotImplementedError(
-        "P2 执行入口：seed42 训练完成后按臂枚举运行 generate_arm_signals；"
-        "B0/B2/B3 直接复用只读 parquet（config.baseline_signal_paths）"
-    )
+    arms = args.arms or (["T-PRE", "T-POST", "T-SHUFFLE", "C0", "B1"]
+                         if args.all_arms else ["T-PRE"])
+    windows = ["W1", "W2"] if args.window == "both" else [args.window]
+    run_p2_arms(cfg, seed=args.seed, windows=windows, arms=arms, b1_n=args.b1_n)
+    return 0
 
 
 if __name__ == "__main__":

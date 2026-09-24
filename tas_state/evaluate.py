@@ -199,8 +199,101 @@ def stage_a_decision(
     return v
 
 
+def fetch_window_forward_returns(
+    cfg: TASConfig, window: str
+) -> tuple[pd.DatetimeIndex, pd.DataFrame]:
+    """评估窗前向收益宽表（k=10；尾部结算走白名单价格缓冲）。
+
+    W2 末 2026-07-24 + 10 交易日 = 2026-08-07 = data_end（结算缓冲在
+    既有协议公开价格范围内；seal 边界由 register.assert_forward_seal 白名单放行）。
+    """
+    from kronos_qlib import QlibProvider
+    from tas_state.register import assert_forward_seal
+
+    bounds = {"W1": cfg.eval_window_1, "W2": cfg.eval_window_2}[window]
+    provider = QlibProvider("csi300", bounds[0], cfg.data_end)
+    cal = provider.trading_days(bounds[0], cfg.data_end)
+    dates = cal[(cal >= pd.Timestamp(bounds[0])) & (cal <= pd.Timestamp(bounds[1]))]
+
+    # 结算日（可晚于 forward 封存边界 2026-07-25：白名单价格缓冲）
+    last_settle = cal[cal.get_loc(dates[-1]) + cfg.predict_len]
+    assert_forward_seal(
+        last_settle, what="评估窗尾部结算价格", settlement_buffer=True
+    )
+
+    orig = (provider._start_date, provider._end_date, provider.instruments_)
+    try:
+        provider._start_date = f"{dates[0]:%Y-%m-%d}"
+        provider._end_date = f"{last_settle:%Y-%m-%d}"
+        provider.instruments_ = "csi300"
+        px = provider.fetch(["$close"])["close"].unstack("instrument")
+    finally:
+        provider._start_date, provider._end_date, provider.instruments_ = orig
+
+    cal_pos = {d: i for i, d in enumerate(cal)}
+    fwd = pd.DataFrame(index=dates, columns=px.columns, dtype=float)
+    for t in dates:
+        t2 = cal[cal_pos[t] + cfg.predict_len]
+        fwd.loc[t] = px.loc[t2] / px.loc[t] - 1.0
+    return dates, fwd
+
+
+def unseal_pilot(cfg: TASConfig, seed: int = 42) -> dict:
+    """阶段 A 一次开封（计划 §6.2）：T-PRE vs B0 两窗判读。
+
+    B0 直接只读既有 F0 parquet（canonical，不重跑）；本函数是历史成绩
+    的唯一读取点，此前任何代码不得输出窗口 IC。
+    """
+    from tas_state.config import PKG_DIR
+
+    sig_root = PKG_DIR / "data" / "signals" / f"s{seed}" / "T-PRE"
+    # 本计划窗口 → 既有 parquet 命名（W1=2025H2=W3 旧名、W2=2026H1~07-24=W4）
+    b0_paths = {"W1": cfg.baseline_signal_paths["F0_W3"],
+                "W2": cfg.baseline_signal_paths["F0_W4"]}
+
+    report: dict = {"seed": seed, "config_sha256": cfg.sha256(), "windows": {}}
+    ics = {}
+    for window in ("W1", "W2"):
+        dates, fwd = fetch_window_forward_returns(cfg, window)
+        t_pre = pd.read_parquet(sig_root / f"daily_signals_{window}_T-PRE.parquet")
+        b0 = pd.read_parquet(REPO_ROOT / b0_paths[window])
+        # 显式按 (date, code) 对齐：只用两臂同日同股票集合（缺失方报错）
+        common_dates = t_pre.index.intersection(b0.index).intersection(dates)
+        if len(common_dates) != len(dates):
+            raise ValueError(
+                f"{window}: T-PRE/B0/评估日不对齐（{len(common_dates)} vs {len(dates)}）"
+            )
+        cols = sorted(set(t_pre.columns) & set(b0.columns))
+        ic_t = daily_rank_ic(t_pre[cols], fwd[cols], dates)
+        ic_b = daily_rank_ic(b0[cols], fwd[cols], dates)
+        ics[window] = (ic_t, ic_b)
+        report["windows"][window] = {
+            "n_days": len(dates),
+            "t_pre_ic_mean": float(ic_t.mean()),
+            "b0_ic_mean": float(ic_b.mean()),
+            "delta_paired_mean": float(paired_difference(ic_t, ic_b).mean()),
+            "t_pre_daily_ic": {f"{d:%Y-%m-%d}": float(v) for d, v in ic_t.items()},
+        }
+
+    verdict = stage_a_decision(
+        ics["W1"][0], ics["W2"][0], ics["W1"][1], ics["W2"][1]
+    )
+    report["stage_a"] = {
+        "pass": verdict.pass_all,
+        "t_pre_ic_w1": verdict.t_pre_ic_w1, "t_pre_ic_w2": verdict.t_pre_ic_w2,
+        "delta_vs_b0_w1": verdict.delta_vs_b0_w1,
+        "delta_vs_b0_w2": verdict.delta_vs_b0_w2,
+        "reasons": verdict.reasons,
+    }
+    out = PKG_DIR / "data" / "pilot_unseal.json"
+    out.write_text(json.dumps(report, ensure_ascii=False, indent=2),
+                   encoding="utf-8")
+    logger.info(f"阶段 A 开封：{'通过（启动 43/44）' if verdict.pass_all else '停止'} → {out}")
+    return report
+
+
 def main() -> int:
-    """P2/P3 开封入口（实现于 signals 落盘后；未落盘时报错不空跑）。"""
+    """P2/P3 开封入口。"""
     import argparse
 
     from tas_state.config import PKG_DIR, TASConfig
@@ -209,20 +302,18 @@ def main() -> int:
     ap.add_argument("--config", default=str(PKG_DIR / "config.json"))
     ap.add_argument("--stage", choices=["pilot", "historical"], required=True)
     ap.add_argument("--unseal", action="store_true")
+    ap.add_argument("--seed", type=int, default=42)
     args = ap.parse_args()
     if not args.unseal:
         logger.warning("未指定 --unseal：只做覆盖检查，不输出历史成绩")
         return 0
 
     cfg = TASConfig.load(args.config)
-    sig_dir = PKG_DIR / "data" / ("pilot" if args.stage == "pilot" else "historical")
-    if not sig_dir.exists():
-        raise FileNotFoundError(f"信号目录不存在：{sig_dir}（先跑 tas_state.signals）")
-    # 逐窗读信号 → daily_rank_ic → stage_a_decision（pilot）/ 阶段 B（historical）
-    raise NotImplementedError(
-        "evaluate 主入口在 P2 信号全部落盘后按冻结协议执行；"
-        "统计核已由 tests/test_tas_protocol.py 锁定"
-    )
+    if args.stage == "pilot":
+        rep = unseal_pilot(cfg, seed=args.seed)
+        print(json.dumps(rep["stage_a"], ensure_ascii=False, indent=2))
+        return 0 if rep["stage_a"]["pass"] else 2
+    raise NotImplementedError("historical 阶段在 P3 三种子齐全后实现")
 
 
 if __name__ == "__main__":
