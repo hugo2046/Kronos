@@ -1,0 +1,122 @@
+{
+  "config_sha256": "cd405028bdea93393c69ae3236ea861b9ba786b6f160ebd2bfd65e58e3c3b611",
+  "note": "披露式组合对照（阶段A已停止，不构成可交易胜出宣称）",
+  "windows": {
+    "W1": {
+      "B0": {
+        "aer_vs_index": -0.11269342006476057,
+        "ir_vs_index": -1.103656796358681,
+        "mdd_vs_index": -0.08679833788087121,
+        "aer_vs_equal_weight": -0.10975799260363983,
+        "ir_vs_equal_weight": -1.3459393881309876,
+        "daily_turnover": 0.10432671193076751
+      },
+      "M": {
+        "aer_vs_index": 0.03313429990688754,
+        "ir_vs_index": 0.2875874852023902,
+        "mdd_vs_index": -0.1370501624259033,
+        "aer_vs_equal_weight": 0.02737394066223864,
+        "ir_vs_equal_weight": 0.24640105661605738,
+        "daily_turnover": 0.0992722721696122
+      },
+      "T-PRE": {
+        "aer_vs_index": -0.1937132906871254,
+        "ir_vs_index": -1.8357650820033766,
+        "mdd_vs_index": -0.12113819212964494,
+        "aer_vs_equal_weight": -0.19085872850219598,
+        "ir_vs_equal_weight": -2.2123735467799923,
+        "daily_turnover": 0.10454237418957894
+      },
+      "T-POST": {
+        "aer_vs_index": -0.18243900389663292,
+        "ir_vs_index": -1.6891343879226228,
+        "mdd_vs_index": -0.12845828442313234,
+        "aer_vs_equal_weight": -0.17958473374052442,
+        "ir_vs_equal_weight": -2.010738771213389,
+        "daily_turnover": 0.10488880539321865
+      },
+      "C0": {
+        "aer_vs_index": -0.2538745665454064,
+        "ir_vs_index": -2.5532012112790383,
+        "mdd_vs_index": -0.14478416137407313,
+        "aer_vs_equal_weight": -0.2511956165148509,
+        "ir_vs_equal_weight": -3.1210401796224083,
+        "daily_turnover": 0.10424875014243784
+      },
+      "T-SHUFFLE": {
+        "aer_vs_index": -0.22787677171789578,
+        "ir_vs_index": -2.244745271808327,
+        "mdd_vs_index": -0.133092325307274,
+        "aer_vs_equal_weight": -0.22514156532222962,
+        "ir_vs_equal_weight": -2.724931400090364,
+        "daily_turnover": 0.10436277456190118
+      },
+      "B1": {
+        "aer_vs_index": -0.11617124038650284,
+        "ir_vs_index": -1.169383508543791,
+        "mdd_vs_index": -0.08384914946476718,
+        "aer_vs_equal_weight": -0.11337993236435528,
+        "ir_vs_equal_weight": -1.4114822592513196,
+        "daily_turnover": 0.10420192541030489
+      }
+    },
+    "W2": {
+      "B0": {
+        "aer_vs_index": -0.26186000635394735,
+        "ir_vs_index": -1.8158405612574646,
+        "mdd_vs_index": -0.20967036450463494,
+        "aer_vs_equal_weight": -0.20800872250568303,
+        "ir_vs_equal_weight": -2.1171482012459895,
+        "daily_turnover": 0.1045648878470815
+      },
+      "M": {
+        "aer_vs_index": 0.1976635696051514,
+        "ir_vs_index": 1.101841955915485,
+        "mdd_vs_index": -0.06964329905024003,
+        "aer_vs_equal_weight": 0.28732700979226,
+        "ir_vs_equal_weight": 1.3716299457114336,
+        "daily_turnover": 0.0972354961824409
+      },
+      "T-PRE": {
+        "aer_vs_index": -0.2631678489790331,
+        "ir_vs_index": -1.8527968071044483,
+        "mdd_vs_index": -0.21375086487420625,
+        "aer_vs_equal_weight": -0.2092971538356413,
+        "ir_vs_equal_weight": -2.2315213504989937,
+        "daily_turnover": 0.10453478143991346
+      },
+      "T-POST": {
+        "aer_vs_index": -0.2518661844957736,
+        "ir_vs_index": -1.6503472743985355,
+        "mdd_vs_index": -0.22152805531776132,
+        "aer_vs_equal_weight": -0.19684307030465376,
+        "ir_vs_equal_weight": -1.8833390107322574,
+        "daily_turnover": 0.10465740488077838
+      },
+      "C0": {
+        "aer_vs_index": -0.2790593738205057,
+        "ir_vs_index": -1.9861884447902354,
+        "mdd_vs_index": -0.2151761518021792,
+        "aer_vs_equal_weight": -0.2266468259680383,
+        "ir_vs_equal_weight": -2.345079769205072,
+        "daily_turnover": 0.10432281847908698
+      },
+      "T-SHUFFLE": {
+        "aer_vs_index": -0.2770025271164567,
+        "ir_vs_index": -1.8779861482800295,
+        "mdd_vs_index": -0.22716716525235137,
+        "aer_vs_equal_weight": -0.22381298643790726,
+        "ir_vs_equal_weight": -2.2471137447547314,
+        "daily_turnover": 0.10449899954113165
+      },
+      "B1": {
+        "aer_vs_index": -0.2582793405455174,
+        "ir_vs_index": -1.8226355396554559,
+        "mdd_vs_index": -0.21245697860946045,
+        "aer_vs_equal_weight": -0.20454971527877053,
+        "ir_vs_equal_weight": -2.0723695708583887,
+        "daily_turnover": 0.10484615272432413
+      }
+    }
+  }
+}
