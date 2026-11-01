@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "limit_seconds": 21600.0,
+  "used_seconds": 16877.621199265588,
+  "initial_used_seconds": 0.0,
+  "stages": [
+    {
+      "name": "train_control",
+      "pid": 3375398,
+      "started_at": "2026-11-01T12:12:53.826454+00:00",
+      "ended_at": "2026-11-01T12:15:24.888230+00:00",
+      "elapsed_seconds": 151.05833518411964,
+      "recovered_after_exit": false
+    },
+    {
+      "name": "train_candidate",
+      "pid": 3375398,
+      "started_at": "2026-11-01T12:15:29.917185+00:00",
+      "ended_at": "2026-11-01T12:18:01.645612+00:00",
+      "elapsed_seconds": 151.7270595608279,
+      "recovered_after_exit": false
+    },
+    {
+      "name": "infer",
+      "pid": 3383271,
+      "started_at": "2026-11-01T12:18:36.647951+00:00",
+      "ended_at": "2026-11-01T16:54:51.484693+00:00",
+      "elapsed_seconds": 16574.83580452064,
+      "recovered_after_exit": false
+    }
+  ],
+  "active": null
+}

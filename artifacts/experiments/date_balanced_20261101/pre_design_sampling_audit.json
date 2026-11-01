@@ -1,0 +1,119 @@
+{
+  "windows": 9736925,
+  "dates": 2577,
+  "daily_median": 3590.0,
+  "daily_p10": 2592.6000000000004,
+  "daily_p90": 5210.4,
+  "yearly": [
+    {
+      "index": 2014,
+      "sum": 391139,
+      "count": 156,
+      "mean": 2507.301282051282,
+      "min": 2462,
+      "max": 2531,
+      "window_probability": 0.04017069043871654,
+      "date_equal_probability": 0.06053550640279395
+    },
+    {
+      "index": 2015,
+      "sum": 644105,
+      "count": 244,
+      "mean": 2639.7745901639346,
+      "min": 2531,
+      "max": 2777,
+      "window_probability": 0.06615076114892536,
+      "date_equal_probability": 0.0946837407838572
+    },
+    {
+      "index": 2016,
+      "sum": 687378,
+      "count": 244,
+      "mean": 2817.122950819672,
+      "min": 2776,
+      "max": 2896,
+      "window_probability": 0.07059497736708457,
+      "date_equal_probability": 0.0946837407838572
+    },
+    {
+      "index": 2017,
+      "sum": 757466,
+      "count": 244,
+      "mean": 3104.3688524590166,
+      "min": 2897,
+      "max": 3329,
+      "window_probability": 0.07779314311243025,
+      "date_equal_probability": 0.0946837407838572
+    },
+    {
+      "index": 2018,
+      "sum": 841988,
+      "count": 243,
+      "mean": 3464.971193415638,
+      "min": 3332,
+      "max": 3530,
+      "window_probability": 0.08647370704816973,
+      "date_equal_probability": 0.09429569266589057
+    },
+    {
+      "index": 2019,
+      "sum": 873488,
+      "count": 244,
+      "mean": 3579.8688524590166,
+      "min": 3530,
+      "max": 3659,
+      "window_probability": 0.08970881464117265,
+      "date_equal_probability": 0.0946837407838572
+    },
+    {
+      "index": 2020,
+      "sum": 916989,
+      "count": 243,
+      "mean": 3773.617283950617,
+      "min": 3659,
+      "max": 3961,
+      "window_probability": 0.09417644687619552,
+      "date_equal_probability": 0.09429569266589057
+    },
+    {
+      "index": 2021,
+      "sum": 1028225,
+      "count": 243,
+      "mean": 4231.378600823045,
+      "min": 3963,
+      "max": 4504,
+      "window_probability": 0.10560058745445816,
+      "date_equal_probability": 0.09429569266589057
+    },
+    {
+      "index": 2022,
+      "sum": 1136229,
+      "count": 242,
+      "mean": 4695.161157024793,
+      "min": 4506,
+      "max": 4878,
+      "window_probability": 0.11669279572349586,
+      "date_equal_probability": 0.09390764454792394
+    },
+    {
+      "index": 2023,
+      "sum": 1227363,
+      "count": 242,
+      "mean": 5071.747933884298,
+      "min": 4880,
+      "max": 5257,
+      "window_probability": 0.1260524241482809,
+      "date_equal_probability": 0.09390764454792394
+    },
+    {
+      "index": 2024,
+      "sum": 1232555,
+      "count": 232,
+      "mean": 5312.737068965517,
+      "min": 5256,
+      "max": 5334,
+      "window_probability": 0.12658565204107047,
+      "date_equal_probability": 0.09002716336825767
+    }
+  ]
+}

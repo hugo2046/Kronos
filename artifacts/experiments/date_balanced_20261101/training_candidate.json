@@ -1,0 +1,14 @@
+{
+  "family": "dynamic",
+  "seed": 100,
+  "step": 3000,
+  "best_step": 3000,
+  "best_val_ce": 2.4395344108343124,
+  "base_hash": "b16a609e4f8a9828a93720ebaa00f95437e64c557b4366b8675d110a65b05636",
+  "trainable_parameters": 107712,
+  "elapsed_seconds": 150.64363401802257,
+  "checkpoint": "/home/user/workspace/Kronos-date-balanced/artifacts/experiments/date_balanced_20261101/arms/candidate/latest.pt",
+  "best_adapter": "/home/user/workspace/Kronos-date-balanced/artifacts/experiments/date_balanced_20261101/arms/candidate/best_adapter.pt",
+  "adapter_sha256": "2c45c8a38559653c9be72facbd8ca911e621f9448f5919573dbfc9a621aaa13d",
+  "config_sha": "f17b42a0df0d58cc0ceff977a5e3762ac7dced5b7adbe572b01bae75b8fb30e6"
+}

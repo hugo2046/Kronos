@@ -1,0 +1,264 @@
+{
+  "baseline": {
+    "cumulative_net_return": {
+      "W3": 0.144,
+      "W4": 0.0008
+    },
+    "exact_net_sum": {
+      "W3": 0.14401773020198338,
+      "W4": 0.0008054436955881178
+    },
+    "legacy_status": "legacy_unverified",
+    "model_paths": {
+      "predictor": "/home/user/workspace/Kronos/finetune_suite/outputs/models/finetune_predictor_g1/checkpoints/best_model",
+      "tokenizer": "/home/user/workspace/Kronos/finetune_suite/outputs/models/finetune_tokenizer_g1/checkpoints/best_model"
+    },
+    "model_sha256": {
+      "predictor": "4f2382138138e85ea1c543d43ade2de2373e4168a995e34fd43cbca2895c2fe2",
+      "tokenizer": "5ca43492146cd93da2f9dd5528009aa6bd882f2a448ff4c6bd3c1b0ab08609ee"
+    },
+    "name": "G1_original_mean",
+    "prior_report_gate_max_abs": 8.76902717106276e-16,
+    "signal_paths": {
+      "W3": "/home/user/workspace/Kronos/g5_head/data/daily_signals_2025h2_G1_mean.parquet",
+      "W4": "/home/user/workspace/Kronos/finetune_suite/data/g1/daily_signals_backtest_G1_mean.parquet"
+    },
+    "signal_sha256": {
+      "W3": "9352b40302eb34c714bfebd808481b625a21d2f7f4f668ccca15cda0cfe21d66",
+      "W4": "453e2aeae7fe4bee8ce8fa62a9908da0843d5ad8b52777cd3b299a84cc4a3e36"
+    }
+  },
+  "budget": {
+    "gpu_total_seconds": 21600,
+    "persistent": true,
+    "wall_total_seconds": 28800
+  },
+  "code_base": "9e969d90062f8aae39903dc1fd1ae614922f6179",
+  "control_training": {
+    "batch_size": 64,
+    "betas": [
+      0.9,
+      0.95
+    ],
+    "checkpoint_every": 500,
+    "grad_clip": 1.0,
+    "learning_rate": 0.0003,
+    "lookback": 90,
+    "loss": "mean CE on shifted target positions 89..98; teacher_forcing=False",
+    "n_layers": 2,
+    "pred_len": 10,
+    "rank": 32,
+    "seeds": [
+      100,
+      101,
+      102
+    ],
+    "steps": 3000,
+    "trainable_parameters": 107712,
+    "validation": "all target dates 2025-01-01..2025-06-30; fixed 2048 windows",
+    "validation_every": 500,
+    "validation_windows": 2048,
+    "weight_decay": 0.01
+  },
+  "corpus": {
+    "root": "/home/user/workspace/Kronos/finetune_suite/data/ashares",
+    "sha256": {
+      "train_data.pkl": "df33857e891fc28e40298314cf74def4dcb8ae58dafab822810f34ee96ad4480",
+      "val_data.pkl": "1c7e5436d5c2121b0ca79c69a2e432af33039621f422cb514a9157f890d4473b"
+    },
+    "train_path": "/home/user/workspace/Kronos/finetune_suite/data/ashares/train_data.pkl",
+    "train_target_end": "2024-12-31",
+    "val_path": "/home/user/workspace/Kronos/finetune_suite/data/ashares/val_data.pkl",
+    "validation_history_prefix": "last 90 train rows per symbol, ending <= 2024-12-31",
+    "validation_target_range": [
+      "2025-01-01",
+      "2025-06-30"
+    ]
+  },
+  "execution_seed": 100,
+  "expected_coverage": {
+    "W3": {
+      "dates": 126,
+      "finite": 37223
+    },
+    "W4": {
+      "dates": 134,
+      "finite": 39563
+    }
+  },
+  "experiment": "date_balanced_20261101",
+  "forward_cutoff": "2026-07-24",
+  "frozen_at": "2026-11-01T12:10:21.542428+00:00",
+  "inference": {
+    "T": 1.0,
+    "chunk_size": 32,
+    "clip": 5.0,
+    "lookback": 90,
+    "max_context": 512,
+    "pred_len": 10,
+    "sample_count": 20,
+    "seed_per_day": 100,
+    "streams": [
+      42,
+      100
+    ],
+    "top_k": 0,
+    "top_p": 0.9,
+    "weights": [
+      0.5,
+      0.5
+    ]
+  },
+  "mc40_manifest": {
+    "additional_search": "无其他权重、种子、交易参数或指标筛选",
+    "baseline_weights": [
+      0.5,
+      0.5
+    ],
+    "bootstrap": {
+      "block": 20,
+      "resamples": 5000,
+      "seed": 100
+    },
+    "candidate_weights": [
+      0.5,
+      0.5
+    ],
+    "checkpoint": "R1 dynamic trainseed100 step3000，旧权重不变",
+    "gate": "候选MC40在两窗扣费cumsum均严格超过原G1(seed42,N20)及同预算G1_MC40",
+    "method": "两条已有独立随机流seed42和seed100各20条路径，信号等权均值对应40条路径价格期望估计；候选与同预算G1完全一致",
+    "motivation": "同一模型在42和100采样下窗口胜负翻转，检查期望估计方差",
+    "paths": {
+      "W3": {
+        "g1100": "/home/user/workspace/Kronos-state-adapter/artifacts/experiments/state_adapter_20261030/signals/G1_paired_100/W3.parquet",
+        "g142": "/home/user/workspace/Kronos/g5_head/data/daily_signals_2025h2_G1_mean.parquet",
+        "state100": "/home/user/workspace/Kronos-state-adapter/artifacts/experiments/state_adapter_20261030/signals/State_dynamic_100/W3.parquet",
+        "state42": "/home/user/workspace/Kronos-canonical-state/artifacts/experiments/canonical_state_20261101/signals/State_dynamic_train100_infer42/W3.parquet"
+      },
+      "W4": {
+        "g1100": "/home/user/workspace/Kronos-state-adapter/artifacts/experiments/state_adapter_20261030/signals/G1_paired_100/W4.parquet",
+        "g142": "/home/user/workspace/Kronos/finetune_suite/data/g1/daily_signals_backtest_G1_mean.parquet",
+        "state100": "/home/user/workspace/Kronos-state-adapter/artifacts/experiments/state_adapter_20261030/signals/State_dynamic_100/W4.parquet",
+        "state42": "/home/user/workspace/Kronos-canonical-state/artifacts/experiments/canonical_state_20261101/signals/State_dynamic_train100_infer42/W4.parquet"
+      }
+    },
+    "sha256": {
+      "W3": {
+        "g1100": "0d834347a96e320b4c4252f1455da18409923452b609dc54849d3e1e00e7fd0f",
+        "g142": "9352b40302eb34c714bfebd808481b625a21d2f7f4f668ccca15cda0cfe21d66",
+        "state100": "deae9cc007f0325f4c564d9f2c1512562ca30b5b72a7f497f80955ecbd5dc721",
+        "state42": "1de3ecaec684394d917fbaa0c5bc1a019ccd8f33250a5d55488c89da99a76fb7"
+      },
+      "W4": {
+        "g1100": "5d19daf0d749b5c00e2c2b031bc8fa80bfaf08e55ef33243902c8f96c264b5c5",
+        "g142": "453e2aeae7fe4bee8ce8fa62a9908da0843d5ad8b52777cd3b299a84cc4a3e36",
+        "state100": "d22db3d505e46ff68d4e098bcf33253ffc1e25cef0d3bb0f489f8d64a6b29861",
+        "state42": "b0204e4e7f4c1a6e5ad02f9a4bb17dee61a82c564aa9aa9e02fd53c45a52b056"
+      }
+    },
+    "timing": "在查看此前各单流历史结果后提出，属于后续开发检查，不能称盲测"
+  },
+  "qlib": {
+    "account": 100000000,
+    "benchmark": "000300.SH",
+    "close_cost": 0.0015,
+    "deal_price": "open",
+    "engine": "qlib_mean_comparison.run_qlib_backtest",
+    "limit_threshold": 0.095,
+    "min_cost": 5,
+    "open_cost": 0.001,
+    "portfolio": "TopkDropoutStrategy topk=50 n_drop=5 hold_thresh=5",
+    "primary_metric": "sum(return-cost), Qlib daily report cumsum",
+    "universe": "csi300 point-in-time"
+  },
+  "reference_adapter": {
+    "base_hash": "b16a609e4f8a9828a93720ebaa00f95437e64c557b4366b8675d110a65b05636",
+    "path": "/home/user/workspace/Kronos-state-adapter/artifacts/experiments/state_adapter_20261030/arms/dynamic/seed_100/best_adapter.pt",
+    "sha256": "d208a8b9f5359aa81bd6cfff473bf9aae193f0b37542e92b7ae39d00c649c402"
+  },
+  "reference_files": {
+    "/home/user/workspace/Kronos-state-mc40/artifacts/experiments/state_mc40_20261101/report_W3_G1_MC40.parquet": "04387655d343a95e1840e2e4c309aa2d3c3b5682d51d227d9b4306cd4d6cbc7d",
+    "/home/user/workspace/Kronos-state-mc40/artifacts/experiments/state_mc40_20261101/report_W3_G1_original.parquet": "2590f2db897b689e4139a686d6e3cadd358c1464329a0118b643c35f864306a6",
+    "/home/user/workspace/Kronos-state-mc40/artifacts/experiments/state_mc40_20261101/report_W3_State_MC40.parquet": "fb3482d6cd5f7c425200f3795e5b3e19de2ada51c23ccfccbb5690a530037d2e",
+    "/home/user/workspace/Kronos-state-mc40/artifacts/experiments/state_mc40_20261101/report_W4_G1_MC40.parquet": "d4cd501bbd2c14b817199e5e55d14172f55c63130b08b7a4f8b80cbde8bdb16c",
+    "/home/user/workspace/Kronos-state-mc40/artifacts/experiments/state_mc40_20261101/report_W4_G1_original.parquet": "e582b38e3deebac85ba33b12017ccbbee87dfa1345bd21a943acf517a64fb2e9",
+    "/home/user/workspace/Kronos-state-mc40/artifacts/experiments/state_mc40_20261101/report_W4_State_MC40.parquet": "8a88c385dba8ed67eff83e460f17958f3e36ccc5639f23c33276e8d090e21129",
+    "/home/user/workspace/Kronos-state-mc40/artifacts/experiments/state_mc40_20261101/signal_W3_G1_MC40.parquet": "574336f84b01d9620c0262d26273be6c52e84328a55f9cb68c538c3063c5f0e4",
+    "/home/user/workspace/Kronos-state-mc40/artifacts/experiments/state_mc40_20261101/signal_W3_G1_original.parquet": "c8093beb123ae77b6af5d21f77d0d110da1c5163717feccfa66a5680b833d125",
+    "/home/user/workspace/Kronos-state-mc40/artifacts/experiments/state_mc40_20261101/signal_W3_State_MC40.parquet": "1602d4351293b2beedc72a3167807e200e9d39732f1e1207d88e0816b37e4ce0",
+    "/home/user/workspace/Kronos-state-mc40/artifacts/experiments/state_mc40_20261101/signal_W4_G1_MC40.parquet": "525f26e079bd6bd140a98436decfec5405b1b5e5fde63195f7b59c0d4e85f770",
+    "/home/user/workspace/Kronos-state-mc40/artifacts/experiments/state_mc40_20261101/signal_W4_G1_original.parquet": "15952c861c5eb7fcd22b5ba8983f55ff2155144228945850de600f7ececca574",
+    "/home/user/workspace/Kronos-state-mc40/artifacts/experiments/state_mc40_20261101/signal_W4_State_MC40.parquet": "138d7dbc6ada2b66e78bb91ccf8244269ad68c98c33e803a1f23974b73687c1a"
+  },
+  "reference_net_sum": {
+    "W3": 0.1544968620476002,
+    "W4": 0.0073207941140408
+  },
+  "selection": {
+    "candidate_count": 1,
+    "checkpoint": "minimum validation CE each 500 steps; ties earlier",
+    "no_window_selection": true,
+    "primary_gate": "net_sum > original G1 in BOTH W3 and W4",
+    "reference": "adopted State MC40; never automatic adoption"
+  },
+  "state": {
+    "adapter": "H + up(silu(down(H))*gate(z)); rank=32; last 2 blocks",
+    "clip": [
+      -5.0,
+      5.0
+    ],
+    "epsilon": 1e-06,
+    "features": [
+      "log(std20/0.02)",
+      "log(std20/std60)",
+      "log(std5/std20)"
+    ],
+    "gate": "1+tanh(Linear(silu(Linear(z)))) with hidden=16",
+    "returns": "simple close-to-close returns",
+    "source": "raw close from preceding 90 observations only",
+    "std_ddof": 0,
+    "up_init": "zero"
+  },
+  "training": {
+    "batch_size": 64,
+    "betas": [
+      0.9,
+      0.95
+    ],
+    "checkpoint_every": 500,
+    "grad_clip": 1.0,
+    "learning_rate": 0.0003,
+    "lookback": 90,
+    "loss": "mean CE on shifted target positions 89..98; teacher_forcing=False",
+    "n_layers": 2,
+    "pred_len": 10,
+    "rank": 32,
+    "sampling": "uniform decision date, then uniform legal stock window within date",
+    "seeds": [
+      100,
+      101,
+      102
+    ],
+    "steps": 3000,
+    "trainable_parameters": 107712,
+    "validation": "all target dates 2025-01-01..2025-06-30; fixed 2048 windows",
+    "validation_every": 500,
+    "validation_windows": 2048,
+    "weight_decay": 0.01
+  },
+  "validation_cache": {
+    "known_excluded_prefix_stocks": 56,
+    "path": "/home/user/workspace/Kronos-state-adapter/artifacts/experiments/state_adapter_20261030/arms/dynamic/seed_100/validation_batches.pt",
+    "sha256": "99eb3d1b18d06015759c6eb8ed3fba7ebedbb8ec722e4e730e66eab975360eb2"
+  },
+  "windows": {
+    "W3": [
+      "2025-07-01",
+      "2025-12-31"
+    ],
+    "W4": [
+      "2026-01-01",
+      "2026-07-24"
+    ]
+  }
+}

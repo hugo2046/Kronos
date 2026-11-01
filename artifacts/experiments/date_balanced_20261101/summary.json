@@ -1,0 +1,71 @@
+{
+  "passed_primary": true,
+  "beats_mc40_both": true,
+  "protocol_sha": "d6ccd26861b9c048bca62e9c169db17f801e1c31c92cf02933b38464c78434ca",
+  "code_commit": "55aaa6ccad20ae10b5074a453c613e0c0b4b8118",
+  "candidate_sha": "2c45c8a38559653c9be72facbd8ca911e621f9448f5919573dbfc9a621aaa13d",
+  "comparisons": {
+    "W3|G1_original": {
+      "delta_pp": 2.732272557064138,
+      "bootstrap": {
+        "observed_sum": 0.02732272557064138,
+        "observed_mean_daily": 0.00021684702833842364,
+        "lower_95": -0.037756975993513714,
+        "upper_95": 0.08878497047244956,
+        "block_length": 20,
+        "resamples": 5000
+      }
+    },
+    "W3|State_MC40": {
+      "delta_pp": 1.6843593725024717,
+      "bootstrap": {
+        "observed_sum": 0.016843593725024718,
+        "observed_mean_daily": 0.00013367931527797394,
+        "lower_95": -0.046086626694110795,
+        "upper_95": 0.07775773554102067,
+        "block_length": 20,
+        "resamples": 5000
+      }
+    },
+    "W4|G1_original": {
+      "delta_pp": 1.8538147879472562,
+      "bootstrap": {
+        "observed_sum": 0.018538147879472562,
+        "observed_mean_daily": 0.000138344387160243,
+        "lower_95": -0.0626500059342911,
+        "upper_95": 0.08551932318799016,
+        "block_length": 20,
+        "resamples": 5000
+      }
+    },
+    "W4|State_MC40": {
+      "delta_pp": 1.202279746101975,
+      "bootstrap": {
+        "observed_sum": 0.01202279746101975,
+        "observed_mean_daily": 8.972236911208769e-05,
+        "lower_95": -0.06096457870513993,
+        "upper_95": 0.08153860270382526,
+        "block_length": 20,
+        "resamples": 5000
+      }
+    }
+  },
+  "chart_endpoints": {
+    "W3|G1_original": 0.1440177302019835,
+    "W3|State_MC40": 0.15449686204760024,
+    "W3|Date_balanced_MC40": 0.17134045577262488,
+    "W4|G1_original": 0.0008054436955879304,
+    "W4|State_MC40": 0.007320794114040751,
+    "W4|Date_balanced_MC40": 0.019343591575060534
+  },
+  "control": {
+    "step_equal": true,
+    "ce_equal": true,
+    "new_step": 3000,
+    "old_step": 3000,
+    "new_ce": 2.448015436530113,
+    "old_ce": 2.448015436530113,
+    "tensors_equal": true,
+    "max_abs": 0.0
+  }
+}

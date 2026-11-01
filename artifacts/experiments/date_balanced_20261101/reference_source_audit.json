@@ -1,0 +1,12 @@
+{
+  "W3": {
+    "manifest_source_hashes_verified": true,
+    "pooled_state_signal_exact": true,
+    "finite_cells": 37223
+  },
+  "W4": {
+    "manifest_source_hashes_verified": true,
+    "pooled_state_signal_exact": true,
+    "finite_cells": 39563
+  }
+}

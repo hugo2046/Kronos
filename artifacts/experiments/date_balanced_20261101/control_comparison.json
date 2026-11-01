@@ -1,0 +1,10 @@
+{
+  "step_equal": true,
+  "ce_equal": true,
+  "new_step": 3000,
+  "old_step": 3000,
+  "new_ce": 2.448015436530113,
+  "old_ce": 2.448015436530113,
+  "tensors_equal": true,
+  "max_abs": 0.0
+}

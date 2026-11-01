@@ -1,0 +1,96 @@
+{
+  "passed": true,
+  "independent_metrics": {
+    "W3|G1_original": {
+      "net_sum": 0.1440177302019835,
+      "compound": 0.15038095000839125,
+      "sharpe": 2.312355022506285,
+      "mdd": -0.051596585066016054,
+      "cost": 0.007422317636572938,
+      "turnover": 0.04836393398500296,
+      "days": 126
+    },
+    "W3|State_MC40": {
+      "net_sum": 0.15449686204760021,
+      "compound": 0.16324990336674494,
+      "sharpe": 2.7263787765619716,
+      "mdd": -0.053090362027249816,
+      "cost": 0.007601185438716004,
+      "turnover": 0.049722344235297096,
+      "days": 126
+    },
+    "W3|Date_balanced_MC40": {
+      "net_sum": 0.17134045577262497,
+      "compound": 0.1798323037471239,
+      "sharpe": 2.228781464134468,
+      "mdd": -0.0783573503628342,
+      "cost": 0.006547085178157788,
+      "turnover": 0.04297187465873605,
+      "days": 126
+    },
+    "W4|G1_original": {
+      "net_sum": 0.0008054436955879027,
+      "compound": -0.006691301508510272,
+      "sharpe": 0.008979913374316039,
+      "mdd": -0.10864505668546232,
+      "cost": 0.0044106897821741126,
+      "turnover": 0.027590613743361813,
+      "days": 134
+    },
+    "W4|State_MC40": {
+      "net_sum": 0.007320794114040775,
+      "compound": 0.001964380480973915,
+      "sharpe": 0.09669383055741435,
+      "mdd": -0.09525914391894219,
+      "cost": 0.005756185346926486,
+      "turnover": 0.03561501870780102,
+      "days": 134
+    },
+    "W4|Date_balanced_MC40": {
+      "net_sum": 0.01934359157506051,
+      "compound": 0.012534542973908103,
+      "sharpe": 0.22538045001226426,
+      "mdd": -0.0956086509779891,
+      "cost": 0.004560683769652439,
+      "turnover": 0.02848645865565417,
+      "days": 134
+    }
+  },
+  "all_four_streams_exact_coverage": true,
+  "pooling_exact": true,
+  "charts_endpoints_match": true,
+  "control_tensors_exact": true,
+  "validation_caches_exact": true,
+  "training_latest_steps": [
+    3000,
+    3000
+  ],
+  "protocol_canonical_sha": "d6ccd26861b9c048bca62e9c169db17f801e1c31c92cf02933b38464c78434ca",
+  "gpu_seconds": 16877.621199265588,
+  "tests": "49 passed",
+  "file_sha256": {
+    "artifacts/experiments/date_balanced_20261101/report_W4_Date_balanced_MC40.parquet": "2cb372c0463022ab5c16b316e2f1d90c47cc69a52adaa332bc6fa5dba8d9a50b",
+    "artifacts/experiments/date_balanced_20261101/report_W4_State_MC40.parquet": "8a88c385dba8ed67eff83e460f17958f3e36ccc5639f23c33276e8d090e21129",
+    "artifacts/experiments/date_balanced_20261101/report_W3_Date_balanced_MC40.parquet": "18bcaf8bc6ae0a331d046acfb1f8c797af57f07b5ed907553a07d9cfba80c01d",
+    "artifacts/experiments/date_balanced_20261101/report_W3_State_MC40.parquet": "fb3482d6cd5f7c425200f3795e5b3e19de2ada51c23ccfccbb5690a530037d2e",
+    "artifacts/experiments/date_balanced_20261101/report_W3_G1_original.parquet": "2590f2db897b689e4139a686d6e3cadd358c1464329a0118b643c35f864306a6",
+    "artifacts/experiments/date_balanced_20261101/report_W4_G1_original.parquet": "e582b38e3deebac85ba33b12017ccbbee87dfa1345bd21a943acf517a64fb2e9",
+    "artifacts/experiments/date_balanced_20261101/daily_W3_Date_balanced_MC40.parquet": "d34a81656a7c9c6d9e61823db534dee5d7000c5c0925b6e9fc8bcc49d18f833f",
+    "artifacts/experiments/date_balanced_20261101/daily_W3_G1_original.parquet": "65432bfcd9db7d0de6edf752ce0948a1fcb314993002dd6867549fc0e369e8b3",
+    "artifacts/experiments/date_balanced_20261101/daily_W4_Date_balanced_MC40.parquet": "5c8fced710eb3e276b729d8d5dc495742f63b8a9b36f90b247a1537c1cdad39b",
+    "artifacts/experiments/date_balanced_20261101/daily_W3_State_MC40.parquet": "3e1784cea1ea49d8777949378cdc8b396fa80b6cd8ad23e05a7c3e4d83afb188",
+    "artifacts/experiments/date_balanced_20261101/daily_W4_G1_original.parquet": "20b307ce627c30909f02a358ac5addc41b1d4e9dd051aede617dd51399b7149d",
+    "artifacts/experiments/date_balanced_20261101/daily_W4_State_MC40.parquet": "9d8f62f182c98bf02f61c1376e55d978f85c1eadada8e20b342fb2496b8d13f3",
+    "artifacts/experiments/date_balanced_20261101/signal_W3_Date_balanced_MC40.parquet": "a3e93929708a00fa0864dba9839c05fe401b5306dcec0c101d417223f66c89b8",
+    "artifacts/experiments/date_balanced_20261101/signal_W4_Date_balanced_MC40.parquet": "6b159d4edd04948d82e0f97d1e62845f5fa4cc30d13e4599390e11ab843ee7ee",
+    "artifacts/experiments/date_balanced_20261101/signals/Date_balanced_train100_infer100/W4.parquet": "4df83db7c6efaac00d8a878f386cb90796084ac36312a255b3d2b3a0311c5792",
+    "artifacts/experiments/date_balanced_20261101/signals/Date_balanced_train100_infer100/W3.parquet": "1c6ef3c724a328849b6dede20f095a8069a47c10f589c80e4329662c461bcfa5",
+    "artifacts/experiments/date_balanced_20261101/signals/Date_balanced_train100_infer42/W4.parquet": "6c33b21d0b84448f4871c1af6618fda297e15bb6f5f2bd0d0702cc156e593c50",
+    "artifacts/experiments/date_balanced_20261101/signals/Date_balanced_train100_infer42/W3.parquet": "64b5cc7dcbca8bda35f8fa4658aacf3993eb28e1686c57c4ce3f5aeac8a8c4ef",
+    "artifacts/experiments/date_balanced_20261101/protocol.json": "d713de4aa142705be8c59bfcf69d18c235e54fe9b749cbf6ddcc5bd73c98decf"
+  },
+  "execution_wall_seconds_to_gpu_completion": 16929.49638557434,
+  "worker_pid": 3383271,
+  "worker_exited_verified": true,
+  "final_review": "Self-review plus resolved independent upstream review; no subagents spawned"
+}

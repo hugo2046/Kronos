@@ -1,0 +1,9 @@
+{
+  "training_code_commit": "ff38096",
+  "inference_code_commit": "ed127c7",
+  "protocol_commit": "32f5748",
+  "review_response_commit": "29b33b2",
+  "control_training_resumed": false,
+  "candidate_training_resumed": false,
+  "inference_pid": 3383271
+}
