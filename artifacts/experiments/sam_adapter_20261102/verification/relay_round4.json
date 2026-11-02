@@ -1,0 +1,14 @@
+{
+  "round": 4,
+  "updated_at": "2026-11-02T22:06:22.793571+08:00",
+  "status": "continue",
+  "supervisor_pid": 587289,
+  "inference_pid": 603798,
+  "finalizer_pid": 606992,
+  "live_pids_verified_outside_sandbox": true,
+  "completed_dates_total": 26,
+  "total_dates_all_streams": 520,
+  "gpu_seconds_snapshot": 1290.9219649303705,
+  "deadline": 1793654871.564471,
+  "restarted": false
+}

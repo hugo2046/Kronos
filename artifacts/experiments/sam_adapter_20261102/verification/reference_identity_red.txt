@@ -1,0 +1,39 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+_________ test_reference_diagnostic_passes_frozen_checkpoint_identity __________
+
+tmp_path = PosixPath('/tmp/pytest-of-user/pytest-470/test_reference_diagnostic_pass0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f09e1662650>
+
+    def test_reference_diagnostic_passes_frozen_checkpoint_identity(tmp_path,monkeypatch):
+        import torch
+        from contextlib import nullcontext
+        r=runner();monkeypatch.setattr(r,'OUT',tmp_path)
+        checkpoint=tmp_path/'old.pt';torch.save(dict(protocol_sha='old-protocol',config_sha='old-config'),checkpoint)
+        class Budget:
+            def stage(self,name):return nullcontext()
+        def load_model(*args,**kwargs):
+            assert kwargs['protocol_sha']=='old-protocol'
+            assert kwargs['cfg_sha']=='old-config'
+            raise RuntimeError('identity_verified')
+        monkeypatch.setattr(r.legacy,'_load_g1',load_model)
+        with pytest.raises(RuntimeError,match='identity_verified'):
+>           r.diagnose({'reference_adapter':{'path':str(checkpoint)}},'new-protocol',Budget(),'reference')
+
+tests/test_sam_run.py:61: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+state_adapter/sam_run.py:102: in diagnose
+    model,tokenizer,_=legacy._load_g1(torch.device('cuda:0'),'dynamic',checkpoint,
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (device(type='cuda', index=0), 'dynamic', PosixPath('/tmp/pytest-of-user/pytest-470/test_reference_diagnostic_pass0/old.pt'))
+kwargs = {'protocol_sha': None, 'cfg_sha': None, 'seed': 100}
+
+    def load_model(*args,**kwargs):
+>       assert kwargs['protocol_sha']=='old-protocol'
+E       AssertionError: assert None == 'old-protocol'
+
+tests/test_sam_run.py:56: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_sam_run.py::test_reference_diagnostic_passes_frozen_checkpoint_identity
+1 failed, 4 deselected in 0.79s

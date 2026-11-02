@@ -1,0 +1,24 @@
+{
+  "step_equal": true,
+  "ce_equal": true,
+  "tensors_equal": true,
+  "new_step": 3000,
+  "old_step": 3000,
+  "new_ce": 2.448015436530113,
+  "old_ce": 2.448015436530113,
+  "tensor_max_abs": {
+    "transformer.10.state_adapter.down.weight": 0.0,
+    "transformer.10.state_adapter.up.weight": 0.0,
+    "transformer.10.state_adapter.gate.0.weight": 0.0,
+    "transformer.10.state_adapter.gate.0.bias": 0.0,
+    "transformer.10.state_adapter.gate.2.weight": 0.0,
+    "transformer.10.state_adapter.gate.2.bias": 0.0,
+    "transformer.11.state_adapter.down.weight": 0.0,
+    "transformer.11.state_adapter.up.weight": 0.0,
+    "transformer.11.state_adapter.gate.0.weight": 0.0,
+    "transformer.11.state_adapter.gate.0.bias": 0.0,
+    "transformer.11.state_adapter.gate.2.weight": 0.0,
+    "transformer.11.state_adapter.gate.2.bias": 0.0
+  },
+  "max_abs": 0.0
+}

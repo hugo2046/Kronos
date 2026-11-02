@@ -1,0 +1,686 @@
+FFFFFFFFF                                                                [100%]
+=================================== FAILURES ===================================
+____________ test_rho_zero_general_two_pass_matches_adamw_multistep ____________
+
+args = (Kronos(
+  (token_drop): Dropout(p=0.0, inplace=False)
+  (embedding): HierarchicalEmbedding(
+    (emb_s1): Embedding(4...se
+    eps: 1e-08
+    foreach: None
+    fused: None
+    lr: 0.0003
+    maximize: False
+    weight_decay: 0.01
+), 'cpu')
+kwargs = {'rho': 0}
+
+    def sam(*args, **kwargs):
+        try:
+>           module = importlib.import_module('state_adapter.sam_train')
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_sam_train.py:17: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../../miniconda3/envs/quant/lib/python3.13/importlib/__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<frozen importlib._bootstrap>:1395: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:1360: in _find_and_load
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'state_adapter.sam_train'
+import_ = <function _gcd_import at 0x7ff35f1d04a0>
+
+>   ???
+E   ModuleNotFoundError: No module named 'state_adapter.sam_train'
+
+<frozen importlib._bootstrap>:1324: ModuleNotFoundError
+
+During handling of the above exception, another exception occurred:
+
+    def test_rho_zero_general_two_pass_matches_adamw_multistep():
+        m,t,b,o=setup(); n=copy.deepcopy(m)
+        q=torch.optim.AdamW([p for p in n.parameters() if p.requires_grad],lr=3e-4,betas=(.9,.95),weight_decay=.01)
+        calls=[]; m.register_forward_pre_hook(lambda *a: calls.append(1))
+        for _ in range(3):
+            rng=_capture_rng(); expected=train_batch(n,t,b,q,'cpu'); after=_capture_rng(); _restore_rng(rng)
+>           got=sam(m,t,b,o,'cpu',rho=0)
+                ^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_sam_train.py:51: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (Kronos(
+  (token_drop): Dropout(p=0.0, inplace=False)
+  (embedding): HierarchicalEmbedding(
+    (emb_s1): Embedding(4...se
+    eps: 1e-08
+    foreach: None
+    fused: None
+    lr: 0.0003
+    maximize: False
+    weight_decay: 0.01
+), 'cpu')
+kwargs = {'rho': 0}
+
+    def sam(*args, **kwargs):
+        try:
+            module = importlib.import_module('state_adapter.sam_train')
+        except ModuleNotFoundError:
+>           pytest.fail('缺少SAM双前向更新实现')
+E           Failed: 缺少SAM双前向更新实现
+
+tests/test_sam_train.py:19: Failed
+_ test_perturb_only_adapter_unclipped_norm_restore_before_second_gradient_step _
+
+args = (Kronos(
+  (token_drop): Dropout(p=0.0, inplace=False)
+  (embedding): HierarchicalEmbedding(
+    (emb_s1): Embedding(4...se
+    eps: 1e-08
+    foreach: None
+    fused: None
+    lr: 0.0003
+    maximize: False
+    weight_decay: 0.01
+), 'cpu')
+kwargs = {'rho': 0.05}
+
+    def sam(*args, **kwargs):
+        try:
+>           module = importlib.import_module('state_adapter.sam_train')
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_sam_train.py:17: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../../miniconda3/envs/quant/lib/python3.13/importlib/__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<frozen importlib._bootstrap>:1395: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:1360: in _find_and_load
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'state_adapter.sam_train'
+import_ = <function _gcd_import at 0x7ff35f1d04a0>
+
+>   ???
+E   ModuleNotFoundError: No module named 'state_adapter.sam_train'
+
+<frozen importlib._bootstrap>:1324: ModuleNotFoundError
+
+During handling of the above exception, another exception occurred:
+
+    def test_perturb_only_adapter_unclipped_norm_restore_before_second_gradient_step():
+        m,t,b,o=setup(); before=adapter_state(m); base=base_state_hash(m); seen=[]; grads=[]
+        def pre(*args):
+            seen.append((adapter_state(m),base_state_hash(m),_capture_rng()))
+            # 覆盖Python/NumPy全局流，不只覆盖torch采样。
+            random.random(); np.random.random()
+        m.register_forward_pre_hook(pre)
+        original=o.step
+        def step(*args,**kwargs):
+            equal(adapter_state(m),before)
+            grads.extend(p.grad.clone() for p in m.parameters() if p.requires_grad)
+            return original(*args,**kwargs)
+        o.step=step
+        tokens=[]; encode=t.encode
+        def enc(*args,**kwargs):
+            assert not torch.is_grad_enabled(); tokens.append(1);return encode(*args,**kwargs)
+        t.encode=enc
+>       result=sam(m,t,b,o,'cpu',rho=.05)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_sam_train.py:74: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (Kronos(
+  (token_drop): Dropout(p=0.0, inplace=False)
+  (embedding): HierarchicalEmbedding(
+    (emb_s1): Embedding(4...se
+    eps: 1e-08
+    foreach: None
+    fused: None
+    lr: 0.0003
+    maximize: False
+    weight_decay: 0.01
+), 'cpu')
+kwargs = {'rho': 0.05}
+
+    def sam(*args, **kwargs):
+        try:
+            module = importlib.import_module('state_adapter.sam_train')
+        except ModuleNotFoundError:
+>           pytest.fail('缺少SAM双前向更新实现')
+E           Failed: 缺少SAM双前向更新实现
+
+tests/test_sam_train.py:19: Failed
+________ test_second_forward_failure_restores_exactly_and_does_not_step ________
+
+args = (Kronos(
+  (token_drop): Dropout(p=0.0, inplace=False)
+  (embedding): HierarchicalEmbedding(
+    (emb_s1): Embedding(4...se
+    eps: 1e-08
+    foreach: None
+    fused: None
+    lr: 0.0003
+    maximize: False
+    weight_decay: 0.01
+), 'cpu')
+kwargs = {'rho': 0.05}
+
+    def sam(*args, **kwargs):
+        try:
+>           module = importlib.import_module('state_adapter.sam_train')
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_sam_train.py:17: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../../miniconda3/envs/quant/lib/python3.13/importlib/__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<frozen importlib._bootstrap>:1395: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:1360: in _find_and_load
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'state_adapter.sam_train'
+import_ = <function _gcd_import at 0x7ff35f1d04a0>
+
+>   ???
+E   ModuleNotFoundError: No module named 'state_adapter.sam_train'
+
+<frozen importlib._bootstrap>:1324: ModuleNotFoundError
+
+During handling of the above exception, another exception occurred:
+
+    def test_second_forward_failure_restores_exactly_and_does_not_step():
+        m,t,b,o=setup();before=adapter_state(m);rng=_capture_rng();calls=[]
+        def fail(*args):
+            calls.append(1)
+            if len(calls)==2: raise RuntimeError('second forward failed')
+        m.register_forward_pre_hook(fail)
+>       with pytest.raises(RuntimeError,match='second forward'):sam(m,t,b,o,'cpu',rho=.05)
+                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_sam_train.py:101: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (Kronos(
+  (token_drop): Dropout(p=0.0, inplace=False)
+  (embedding): HierarchicalEmbedding(
+    (emb_s1): Embedding(4...se
+    eps: 1e-08
+    foreach: None
+    fused: None
+    lr: 0.0003
+    maximize: False
+    weight_decay: 0.01
+), 'cpu')
+kwargs = {'rho': 0.05}
+
+    def sam(*args, **kwargs):
+        try:
+            module = importlib.import_module('state_adapter.sam_train')
+        except ModuleNotFoundError:
+>           pytest.fail('缺少SAM双前向更新实现')
+E           Failed: 缺少SAM双前向更新实现
+
+tests/test_sam_train.py:19: Failed
+_______________ test_invalid_gradients_abort_without_update[nan] _______________
+
+args = (Kronos(
+  (token_drop): Dropout(p=0.0, inplace=False)
+  (embedding): HierarchicalEmbedding(
+    (emb_s1): Embedding(4...se
+    eps: 1e-08
+    foreach: None
+    fused: None
+    lr: 0.0003
+    maximize: False
+    weight_decay: 0.01
+), 'cpu')
+kwargs = {'rho': 0.05}
+
+    def sam(*args, **kwargs):
+        try:
+>           module = importlib.import_module('state_adapter.sam_train')
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_sam_train.py:17: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../../miniconda3/envs/quant/lib/python3.13/importlib/__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<frozen importlib._bootstrap>:1395: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:1360: in _find_and_load
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'state_adapter.sam_train'
+import_ = <function _gcd_import at 0x7ff35f1d04a0>
+
+>   ???
+E   ModuleNotFoundError: No module named 'state_adapter.sam_train'
+
+<frozen importlib._bootstrap>:1324: ModuleNotFoundError
+
+During handling of the above exception, another exception occurred:
+
+mode = 'nan'
+
+    @pytest.mark.parametrize('mode',['nan','zero'])
+    def test_invalid_gradients_abort_without_update(mode):
+        m,t,b,o=setup(); before=adapter_state(m)
+        for p in m.parameters():
+            if p.requires_grad: p.register_hook(lambda g: torch.full_like(g,float('nan')) if mode=='nan' else torch.zeros_like(g))
+>       with pytest.raises(ValueError):sam(m,t,b,o,'cpu',rho=.05)
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_sam_train.py:111: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (Kronos(
+  (token_drop): Dropout(p=0.0, inplace=False)
+  (embedding): HierarchicalEmbedding(
+    (emb_s1): Embedding(4...se
+    eps: 1e-08
+    foreach: None
+    fused: None
+    lr: 0.0003
+    maximize: False
+    weight_decay: 0.01
+), 'cpu')
+kwargs = {'rho': 0.05}
+
+    def sam(*args, **kwargs):
+        try:
+            module = importlib.import_module('state_adapter.sam_train')
+        except ModuleNotFoundError:
+>           pytest.fail('缺少SAM双前向更新实现')
+E           Failed: 缺少SAM双前向更新实现
+
+tests/test_sam_train.py:19: Failed
+______________ test_invalid_gradients_abort_without_update[zero] _______________
+
+args = (Kronos(
+  (token_drop): Dropout(p=0.0, inplace=False)
+  (embedding): HierarchicalEmbedding(
+    (emb_s1): Embedding(4...se
+    eps: 1e-08
+    foreach: None
+    fused: None
+    lr: 0.0003
+    maximize: False
+    weight_decay: 0.01
+), 'cpu')
+kwargs = {'rho': 0.05}
+
+    def sam(*args, **kwargs):
+        try:
+>           module = importlib.import_module('state_adapter.sam_train')
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_sam_train.py:17: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../../miniconda3/envs/quant/lib/python3.13/importlib/__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<frozen importlib._bootstrap>:1395: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:1360: in _find_and_load
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'state_adapter.sam_train'
+import_ = <function _gcd_import at 0x7ff35f1d04a0>
+
+>   ???
+E   ModuleNotFoundError: No module named 'state_adapter.sam_train'
+
+<frozen importlib._bootstrap>:1324: ModuleNotFoundError
+
+During handling of the above exception, another exception occurred:
+
+mode = 'zero'
+
+    @pytest.mark.parametrize('mode',['nan','zero'])
+    def test_invalid_gradients_abort_without_update(mode):
+        m,t,b,o=setup(); before=adapter_state(m)
+        for p in m.parameters():
+            if p.requires_grad: p.register_hook(lambda g: torch.full_like(g,float('nan')) if mode=='nan' else torch.zeros_like(g))
+>       with pytest.raises(ValueError):sam(m,t,b,o,'cpu',rho=.05)
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_sam_train.py:111: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (Kronos(
+  (token_drop): Dropout(p=0.0, inplace=False)
+  (embedding): HierarchicalEmbedding(
+    (emb_s1): Embedding(4...se
+    eps: 1e-08
+    foreach: None
+    fused: None
+    lr: 0.0003
+    maximize: False
+    weight_decay: 0.01
+), 'cpu')
+kwargs = {'rho': 0.05}
+
+    def sam(*args, **kwargs):
+        try:
+            module = importlib.import_module('state_adapter.sam_train')
+        except ModuleNotFoundError:
+>           pytest.fail('缺少SAM双前向更新实现')
+E           Failed: 缺少SAM双前向更新实现
+
+tests/test_sam_train.py:19: Failed
+_______________________ test_invalid_rho_rejected[-0.1] ________________________
+
+args = (Kronos(
+  (token_drop): Dropout(p=0.0, inplace=False)
+  (embedding): HierarchicalEmbedding(
+    (emb_s1): Embedding(4...se
+    eps: 1e-08
+    foreach: None
+    fused: None
+    lr: 0.0003
+    maximize: False
+    weight_decay: 0.01
+), 'cpu')
+kwargs = {'rho': -0.1}
+
+    def sam(*args, **kwargs):
+        try:
+>           module = importlib.import_module('state_adapter.sam_train')
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_sam_train.py:17: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../../miniconda3/envs/quant/lib/python3.13/importlib/__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<frozen importlib._bootstrap>:1395: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:1360: in _find_and_load
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'state_adapter.sam_train'
+import_ = <function _gcd_import at 0x7ff35f1d04a0>
+
+>   ???
+E   ModuleNotFoundError: No module named 'state_adapter.sam_train'
+
+<frozen importlib._bootstrap>:1324: ModuleNotFoundError
+
+During handling of the above exception, another exception occurred:
+
+rho = -0.1
+
+    @pytest.mark.parametrize('rho',[-.1,float('nan'),float('inf')])
+    def test_invalid_rho_rejected(rho):
+        m,t,b,o=setup()
+>       with pytest.raises(ValueError):sam(m,t,b,o,'cpu',rho=rho)
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_sam_train.py:119: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (Kronos(
+  (token_drop): Dropout(p=0.0, inplace=False)
+  (embedding): HierarchicalEmbedding(
+    (emb_s1): Embedding(4...se
+    eps: 1e-08
+    foreach: None
+    fused: None
+    lr: 0.0003
+    maximize: False
+    weight_decay: 0.01
+), 'cpu')
+kwargs = {'rho': -0.1}
+
+    def sam(*args, **kwargs):
+        try:
+            module = importlib.import_module('state_adapter.sam_train')
+        except ModuleNotFoundError:
+>           pytest.fail('缺少SAM双前向更新实现')
+E           Failed: 缺少SAM双前向更新实现
+
+tests/test_sam_train.py:19: Failed
+________________________ test_invalid_rho_rejected[nan] ________________________
+
+args = (Kronos(
+  (token_drop): Dropout(p=0.0, inplace=False)
+  (embedding): HierarchicalEmbedding(
+    (emb_s1): Embedding(4...se
+    eps: 1e-08
+    foreach: None
+    fused: None
+    lr: 0.0003
+    maximize: False
+    weight_decay: 0.01
+), 'cpu')
+kwargs = {'rho': nan}
+
+    def sam(*args, **kwargs):
+        try:
+>           module = importlib.import_module('state_adapter.sam_train')
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_sam_train.py:17: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../../miniconda3/envs/quant/lib/python3.13/importlib/__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<frozen importlib._bootstrap>:1395: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:1360: in _find_and_load
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'state_adapter.sam_train'
+import_ = <function _gcd_import at 0x7ff35f1d04a0>
+
+>   ???
+E   ModuleNotFoundError: No module named 'state_adapter.sam_train'
+
+<frozen importlib._bootstrap>:1324: ModuleNotFoundError
+
+During handling of the above exception, another exception occurred:
+
+rho = nan
+
+    @pytest.mark.parametrize('rho',[-.1,float('nan'),float('inf')])
+    def test_invalid_rho_rejected(rho):
+        m,t,b,o=setup()
+>       with pytest.raises(ValueError):sam(m,t,b,o,'cpu',rho=rho)
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_sam_train.py:119: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (Kronos(
+  (token_drop): Dropout(p=0.0, inplace=False)
+  (embedding): HierarchicalEmbedding(
+    (emb_s1): Embedding(4...se
+    eps: 1e-08
+    foreach: None
+    fused: None
+    lr: 0.0003
+    maximize: False
+    weight_decay: 0.01
+), 'cpu')
+kwargs = {'rho': nan}
+
+    def sam(*args, **kwargs):
+        try:
+            module = importlib.import_module('state_adapter.sam_train')
+        except ModuleNotFoundError:
+>           pytest.fail('缺少SAM双前向更新实现')
+E           Failed: 缺少SAM双前向更新实现
+
+tests/test_sam_train.py:19: Failed
+________________________ test_invalid_rho_rejected[inf] ________________________
+
+args = (Kronos(
+  (token_drop): Dropout(p=0.0, inplace=False)
+  (embedding): HierarchicalEmbedding(
+    (emb_s1): Embedding(4...se
+    eps: 1e-08
+    foreach: None
+    fused: None
+    lr: 0.0003
+    maximize: False
+    weight_decay: 0.01
+), 'cpu')
+kwargs = {'rho': inf}
+
+    def sam(*args, **kwargs):
+        try:
+>           module = importlib.import_module('state_adapter.sam_train')
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_sam_train.py:17: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../../miniconda3/envs/quant/lib/python3.13/importlib/__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<frozen importlib._bootstrap>:1395: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:1360: in _find_and_load
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'state_adapter.sam_train'
+import_ = <function _gcd_import at 0x7ff35f1d04a0>
+
+>   ???
+E   ModuleNotFoundError: No module named 'state_adapter.sam_train'
+
+<frozen importlib._bootstrap>:1324: ModuleNotFoundError
+
+During handling of the above exception, another exception occurred:
+
+rho = inf
+
+    @pytest.mark.parametrize('rho',[-.1,float('nan'),float('inf')])
+    def test_invalid_rho_rejected(rho):
+        m,t,b,o=setup()
+>       with pytest.raises(ValueError):sam(m,t,b,o,'cpu',rho=rho)
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_sam_train.py:119: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (Kronos(
+  (token_drop): Dropout(p=0.0, inplace=False)
+  (embedding): HierarchicalEmbedding(
+    (emb_s1): Embedding(4...se
+    eps: 1e-08
+    foreach: None
+    fused: None
+    lr: 0.0003
+    maximize: False
+    weight_decay: 0.01
+), 'cpu')
+kwargs = {'rho': inf}
+
+    def sam(*args, **kwargs):
+        try:
+            module = importlib.import_module('state_adapter.sam_train')
+        except ModuleNotFoundError:
+>           pytest.fail('缺少SAM双前向更新实现')
+E           Failed: 缺少SAM双前向更新实现
+
+tests/test_sam_train.py:19: Failed
+______ test_resume_matches_continuous_sam_and_rejects_algorithm_identity _______
+
+args = (Kronos(
+  (token_drop): Dropout(p=0.0, inplace=False)
+  (embedding): HierarchicalEmbedding(
+    (emb_s1): Embedding(4...se
+    eps: 1e-08
+    foreach: None
+    fused: None
+    lr: 0.0003
+    maximize: False
+    weight_decay: 0.01
+), 'cpu')
+kwargs = {'rho': 0.05}
+
+    def sam(*args, **kwargs):
+        try:
+>           module = importlib.import_module('state_adapter.sam_train')
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_sam_train.py:17: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../../miniconda3/envs/quant/lib/python3.13/importlib/__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<frozen importlib._bootstrap>:1395: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:1360: in _find_and_load
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'state_adapter.sam_train'
+import_ = <function _gcd_import at 0x7ff35f1d04a0>
+
+>   ???
+E   ModuleNotFoundError: No module named 'state_adapter.sam_train'
+
+<frozen importlib._bootstrap>:1324: ModuleNotFoundError
+
+During handling of the above exception, another exception occurred:
+
+tmp_path = PosixPath('/tmp/pytest-of-user/pytest-463/test_resume_matches_continuous0')
+
+    def test_resume_matches_continuous_sam_and_rejects_algorithm_identity(tmp_path):
+        m,t,b,o=setup();rng=np.random.default_rng(100)
+>       sam(m,t,b,o,'cpu',rho=.05)
+
+tests/test_sam_train.py:124: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (Kronos(
+  (token_drop): Dropout(p=0.0, inplace=False)
+  (embedding): HierarchicalEmbedding(
+    (emb_s1): Embedding(4...se
+    eps: 1e-08
+    foreach: None
+    fused: None
+    lr: 0.0003
+    maximize: False
+    weight_decay: 0.01
+), 'cpu')
+kwargs = {'rho': 0.05}
+
+    def sam(*args, **kwargs):
+        try:
+            module = importlib.import_module('state_adapter.sam_train')
+        except ModuleNotFoundError:
+>           pytest.fail('缺少SAM双前向更新实现')
+E           Failed: 缺少SAM双前向更新实现
+
+tests/test_sam_train.py:19: Failed
+=========================== short test summary info ============================
+FAILED tests/test_sam_train.py::test_rho_zero_general_two_pass_matches_adamw_multistep
+FAILED tests/test_sam_train.py::test_perturb_only_adapter_unclipped_norm_restore_before_second_gradient_step
+FAILED tests/test_sam_train.py::test_second_forward_failure_restores_exactly_and_does_not_step
+FAILED tests/test_sam_train.py::test_invalid_gradients_abort_without_update[nan]
+FAILED tests/test_sam_train.py::test_invalid_gradients_abort_without_update[zero]
+FAILED tests/test_sam_train.py::test_invalid_rho_rejected[-0.1] - Failed: 缺...
+FAILED tests/test_sam_train.py::test_invalid_rho_rejected[nan] - Failed: 缺少...
+FAILED tests/test_sam_train.py::test_invalid_rho_rejected[inf] - Failed: 缺少...
+FAILED tests/test_sam_train.py::test_resume_matches_continuous_sam_and_rejects_algorithm_identity
+9 failed in 1.40s

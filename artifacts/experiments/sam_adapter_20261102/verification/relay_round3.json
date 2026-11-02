@@ -1,0 +1,14 @@
+{
+  "at": "2026-11-02T22:04:39.566283+08:00",
+  "supervisor_pid": 587289,
+  "inference_pid": 603798,
+  "finalizer_pid": 606992,
+  "external_ps_verified": true,
+  "gpu_utilization_percent": 100,
+  "completed_dates": 23,
+  "total_dates": 520,
+  "gpu_seconds_at_last_heartbeat": 1195.8897931696847,
+  "deadline": 1793654871.564471,
+  "remaining_wall_seconds": 26591.998060703278,
+  "duplicate_started": false
+}

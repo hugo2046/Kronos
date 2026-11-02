@@ -1,0 +1,31 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+_______ test_train_arm_dispatches_optional_step_without_changing_default _______
+
+tmp_path = PosixPath('/tmp/pytest-of-user/pytest-465/test_train_arm_dispatches_opti0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7ff28fdfa9e0>
+
+    def test_train_arm_dispatches_optional_step_without_changing_default(tmp_path,monkeypatch):
+        from model.kronos import Kronos,KronosTokenizer
+        from state_adapter.train import train_arm
+        _,tokenizer,batch,_=setup()
+        class Corpus:
+            def __len__(self): return 1
+            def sample(self,n,rng):
+                return dict(batch,target_start=np.array(['2025-01-02'],dtype='datetime64[D]'),target_end=np.array(['2025-01-15'],dtype='datetime64[D]'))
+        def model(*args,**kwargs):
+            return Kronos(s1_bits=2,s2_bits=2,n_layers=2,d_model=832,n_heads=8,ff_dim=16,ffn_dropout_p=0.,attn_dropout_p=0.,resid_dropout_p=0.,token_dropout_p=0.,learn_te=False)
+        monkeypatch.setattr(Kronos,'from_pretrained',model)
+        monkeypatch.setattr(KronosTokenizer,'from_pretrained',lambda *a,**k: tokenizer)
+        calls=[]
+        def step(*args):
+            calls.append(1)
+            return sam(*args,rho=.05)
+>       result=train_arm('dynamic',model_path='unused',tokenizer_path='unused',train_corpus=Corpus(),validation_corpus=Corpus(),output_dir=tmp_path,protocol_sha='sam',config_sha='sam-rho.05',steps=1,batch_size=1,validation_windows=1,validation_every=1,device='cpu',batch_step_fn=step)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       TypeError: train_arm() got an unexpected keyword argument 'batch_step_fn'
+
+tests/test_sam_train.py:152: TypeError
+=========================== short test summary info ============================
+FAILED tests/test_sam_train.py::test_train_arm_dispatches_optional_step_without_changing_default
+1 failed, 9 deselected in 1.24s

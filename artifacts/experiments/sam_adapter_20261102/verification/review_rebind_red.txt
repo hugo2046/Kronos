@@ -1,0 +1,19 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+_________ test_infer_resume_does_not_rebind_tampered_completed_signal __________
+
+tmp_path = PosixPath('/tmp/pytest-of-user/pytest-476/test_infer_resume_does_not_reb0')
+
+    def test_infer_resume_does_not_rebind_tampered_completed_signal(tmp_path):
+        r=runner();path=tmp_path/'signal.parquet';path.write_bytes(b'complete-signal')
+        identity={'algorithm':'SAM','rho':.05}
+        path.with_suffix('.meta.json').write_text(json.dumps(dict(identity,complete=True,signal_sha256=r.legacy._sha256_file(path))))
+        path.write_bytes(b'changed')
+>       with pytest.raises(RuntimeError):r.signal_identity(path,identity)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE RuntimeError
+
+tests/test_sam_run.py:125: Failed
+=========================== short test summary info ============================
+FAILED tests/test_sam_run.py::test_infer_resume_does_not_rebind_tampered_completed_signal
+1 failed, 17 deselected in 0.79s

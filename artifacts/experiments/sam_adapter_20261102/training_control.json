@@ -1,0 +1,21 @@
+{
+  "family": "dynamic",
+  "seed": 100,
+  "step": 3000,
+  "best_step": 3000,
+  "best_val_ce": 2.448015436530113,
+  "base_hash": "b16a609e4f8a9828a93720ebaa00f95437e64c557b4366b8675d110a65b05636",
+  "trainable_parameters": 107712,
+  "elapsed_seconds": 149.5859937472269,
+  "checkpoint": "/home/user/workspace/Kronos-sam-adapter/artifacts/experiments/sam_adapter_20261102/arms/control/latest.pt",
+  "best_adapter": "/home/user/workspace/Kronos-sam-adapter/artifacts/experiments/sam_adapter_20261102/arms/control/best_adapter.pt",
+  "peak_memory_bytes": 1153869824,
+  "optimizer_updates": 3000,
+  "training_forward_count": 3000,
+  "training_backward_count": 3000,
+  "algorithm": "AdamW",
+  "rho": 0.0,
+  "adapter_sha256": "4ceac3a74d60c5f3297a7167c55983346dcecd4e49238a6c970776a202fd1823",
+  "config_sha": "67f7480a2dfa392513cd01439b4c314237223b46adff1e13e0bad25a371ab56d",
+  "protocol_sha": "fee5cb7971e53577da3c792fb03a6207d54b50c7ad5cbcf26ca32e523c1a6cf3"
+}

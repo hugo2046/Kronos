@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "limit_seconds": 21600.0,
+  "used_seconds": 17006.14736308856,
+  "initial_used_seconds": 0.0,
+  "stages": [
+    {
+      "name": "diagnostic_reference",
+      "pid": 595758,
+      "started_at": "2026-11-02T13:40:45.155391+00:00",
+      "ended_at": "2026-11-02T13:41:06.230106+00:00",
+      "elapsed_seconds": 21.073994922917336,
+      "recovered_after_exit": false
+    },
+    {
+      "name": "smoke",
+      "pid": 595758,
+      "started_at": "2026-11-02T13:41:11.064376+00:00",
+      "ended_at": "2026-11-02T13:41:12.930921+00:00",
+      "elapsed_seconds": 1.8629431771114469,
+      "recovered_after_exit": false
+    },
+    {
+      "name": "train_control",
+      "pid": 595758,
+      "started_at": "2026-11-02T13:41:24.877338+00:00",
+      "ended_at": "2026-11-02T13:43:55.583258+00:00",
+      "elapsed_seconds": 150.70524225896224,
+      "recovered_after_exit": false
+    },
+    {
+      "name": "train_sam",
+      "pid": 595758,
+      "started_at": "2026-11-02T13:43:55.595021+00:00",
+      "ended_at": "2026-11-02T13:48:27.851770+00:00",
+      "elapsed_seconds": 272.2560722040944,
+      "recovered_after_exit": false
+    },
+    {
+      "name": "diagnostic_sam",
+      "pid": 595758,
+      "started_at": "2026-11-02T13:48:27.868396+00:00",
+      "ended_at": "2026-11-02T13:48:49.129812+00:00",
+      "elapsed_seconds": 21.26049008825794,
+      "recovered_after_exit": false
+    },
+    {
+      "name": "infer",
+      "pid": 603798,
+      "started_at": "2026-11-02T13:52:23.563656+00:00",
+      "ended_at": "2026-11-02T18:28:02.555796+00:00",
+      "elapsed_seconds": 16538.988620437216,
+      "recovered_after_exit": false
+    }
+  ],
+  "active": null
+}

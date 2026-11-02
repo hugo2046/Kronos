@@ -1,0 +1,21 @@
+{
+  "loss": 3.1437768936157227,
+  "s1_ce": 3.4506187438964844,
+  "s2_ce": 2.83693528175354,
+  "grad_norm": 0.4150415360927582,
+  "first_loss": 3.1437768936157227,
+  "second_loss": 3.163114070892334,
+  "first_grad_norm": 0.38391101360321045,
+  "rho": 0.05,
+  "unperturbed_validation_ce": 2.8794946670532227,
+  "restored_before_step": true,
+  "common_rng": true,
+  "validation_rng_equal": true,
+  "validation_parameters_equal": true,
+  "base_hash_before": "b16a609e4f8a9828a93720ebaa00f95437e64c557b4366b8675d110a65b05636",
+  "base_hash_after": "b16a609e4f8a9828a93720ebaa00f95437e64c557b4366b8675d110a65b05636",
+  "positions_89_98": true,
+  "protocol_sha": "fee5cb7971e53577da3c792fb03a6207d54b50c7ad5cbcf26ca32e523c1a6cf3",
+  "device": "NVIDIA GeForce RTX 5090",
+  "batch": 2
+}

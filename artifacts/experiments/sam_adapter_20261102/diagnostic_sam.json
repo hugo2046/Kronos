@@ -1,0 +1,144 @@
+{
+  "seed": 20261102,
+  "independent_directions": 4,
+  "paired_directions_per_rho": 8,
+  "zero_ce": 2.4830846562981606,
+  "repeat_zero_ce": 2.4830846562981606,
+  "zero_repeat_equal": true,
+  "directions": [
+    {
+      "rho": 0.01,
+      "direction": 0,
+      "sign": 1,
+      "ce": 2.4830789119005203,
+      "delta_ce": -5.7443976402282715e-06,
+      "actual_norm": 0.010000000707805157
+    },
+    {
+      "rho": 0.01,
+      "direction": 0,
+      "sign": -1,
+      "ce": 2.4830856174230576,
+      "delta_ce": 9.611248970031738e-07,
+      "actual_norm": 0.010000000707805157
+    },
+    {
+      "rho": 0.01,
+      "direction": 1,
+      "sign": 1,
+      "ce": 2.4830820709466934,
+      "delta_ce": -2.5853514671325684e-06,
+      "actual_norm": 0.009999998845160007
+    },
+    {
+      "rho": 0.01,
+      "direction": 1,
+      "sign": -1,
+      "ce": 2.4830843210220337,
+      "delta_ce": -3.3527612686157227e-07,
+      "actual_norm": 0.009999999776482582
+    },
+    {
+      "rho": 0.01,
+      "direction": 2,
+      "sign": 1,
+      "ce": 2.4830643087625504,
+      "delta_ce": -2.0347535610198975e-05,
+      "actual_norm": 0.009999999776482582
+    },
+    {
+      "rho": 0.01,
+      "direction": 2,
+      "sign": -1,
+      "ce": 2.4831017330288887,
+      "delta_ce": 1.7076730728149414e-05,
+      "actual_norm": 0.009999999776482582
+    },
+    {
+      "rho": 0.01,
+      "direction": 3,
+      "sign": 1,
+      "ce": 2.483090564608574,
+      "delta_ce": 5.908310413360596e-06,
+      "actual_norm": 0.009999999776482582
+    },
+    {
+      "rho": 0.01,
+      "direction": 3,
+      "sign": -1,
+      "ce": 2.483075864613056,
+      "delta_ce": -8.791685104370117e-06,
+      "actual_norm": 0.009999998845160007
+    },
+    {
+      "rho": 0.05,
+      "direction": 0,
+      "sign": 1,
+      "ce": 2.483072020113468,
+      "delta_ce": -1.2636184692382812e-05,
+      "actual_norm": 0.05000000447034836
+    },
+    {
+      "rho": 0.05,
+      "direction": 0,
+      "sign": -1,
+      "ce": 2.483103461563587,
+      "delta_ce": 1.8805265426635742e-05,
+      "actual_norm": 0.05000000447034836
+    },
+    {
+      "rho": 0.05,
+      "direction": 1,
+      "sign": 1,
+      "ce": 2.4830820485949516,
+      "delta_ce": -2.60770320892334e-06,
+      "actual_norm": 0.05000000074505806
+    },
+    {
+      "rho": 0.05,
+      "direction": 1,
+      "sign": -1,
+      "ce": 2.4830863401293755,
+      "delta_ce": 1.6838312149047852e-06,
+      "actual_norm": 0.05000000074505806
+    },
+    {
+      "rho": 0.05,
+      "direction": 2,
+      "sign": 1,
+      "ce": 2.482987880706787,
+      "delta_ce": -9.67755913734436e-05,
+      "actual_norm": 0.05000000074505806
+    },
+    {
+      "rho": 0.05,
+      "direction": 2,
+      "sign": -1,
+      "ce": 2.4831806868314743,
+      "delta_ce": 9.603053331375122e-05,
+      "actual_norm": 0.05000000074505806
+    },
+    {
+      "rho": 0.05,
+      "direction": 3,
+      "sign": 1,
+      "ce": 2.4831111282110214,
+      "delta_ce": 2.647191286087036e-05,
+      "actual_norm": 0.05000000074505806
+    },
+    {
+      "rho": 0.05,
+      "direction": 3,
+      "sign": -1,
+      "ce": 2.4830517321825027,
+      "delta_ce": -3.2924115657806396e-05,
+      "actual_norm": 0.05000000074505806
+    }
+  ],
+  "parameters_equal": true,
+  "base_hash_before": "b16a609e4f8a9828a93720ebaa00f95437e64c557b4366b8675d110a65b05636",
+  "base_hash_after": "b16a609e4f8a9828a93720ebaa00f95437e64c557b4366b8675d110a65b05636",
+  "rng_equal": true,
+  "adapter_sha256": "9ed6b8d808276dc1b4d0de20646ed61f41c91638cac07700e36f23085a60ef28",
+  "protocol_sha": "fee5cb7971e53577da3c792fb03a6207d54b50c7ad5cbcf26ca32e523c1a6cf3"
+}

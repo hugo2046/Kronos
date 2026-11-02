@@ -1,0 +1,15 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+____ test_hard_budget_includes_live_stage_and_does_not_reset_wall_deadline _____
+
+    def test_hard_budget_includes_live_stage_and_does_not_reset_wall_deadline():
+        r=runner()
+        state=dict(used_seconds=21590,active={'started_at':'1970-01-01T00:01:40+00:00'})
+>       assert r.budget_exhausted(state,now=110,deadline=1000)
+               ^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'state_adapter.sam_run' has no attribute 'budget_exhausted'
+
+tests/test_sam_run.py:43: AttributeError
+=========================== short test summary info ============================
+FAILED tests/test_sam_run.py::test_hard_budget_includes_live_stage_and_does_not_reset_wall_deadline
+1 failed, 3 deselected in 0.80s

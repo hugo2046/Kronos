@@ -1,0 +1,16 @@
+{
+  "round": 6,
+  "updated_at": "2026-11-02T22:11:05.623344+08:00",
+  "status": "continue",
+  "completed_dates_total": 35,
+  "total_dates_all_streams": 520,
+  "gpu_seconds_snapshot": 1576.3708883756772,
+  "deadline": 1793654871.564471,
+  "restarted": false,
+  "live_pids_verified_outside_sandbox": true,
+  "live_pids": [
+    587289,
+    603798,
+    606992
+  ]
+}

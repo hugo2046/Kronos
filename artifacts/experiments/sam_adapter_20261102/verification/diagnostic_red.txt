@@ -1,0 +1,129 @@
+FF                                                                       [100%]
+=================================== FAILURES ===================================
+_____________ test_diagnostic_preserves_state_and_pairs_directions _____________
+
+args = (Kronos(
+  (token_drop): Dropout(p=0.0, inplace=False)
+  (embedding): HierarchicalEmbedding(
+    (emb_s1): Embedding(4... bias=True)
+  )
+), <function test_diagnostic_preserves_state_and_pairs_directions.<locals>.evaluate at 0x7efd61749d00>)
+kwargs = {}
+
+    def diagnostic(*args,**kwargs):
+>       try: module=importlib.import_module('state_adapter.sam_diagnostics')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_sam_diagnostics.py:11: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../../miniconda3/envs/quant/lib/python3.13/importlib/__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<frozen importlib._bootstrap>:1395: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:1360: in _find_and_load
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'state_adapter.sam_diagnostics'
+import_ = <function _gcd_import at 0x7efe2b3d04a0>
+
+>   ???
+E   ModuleNotFoundError: No module named 'state_adapter.sam_diagnostics'
+
+<frozen importlib._bootstrap>:1324: ModuleNotFoundError
+
+During handling of the above exception, another exception occurred:
+
+    def test_diagnostic_preserves_state_and_pairs_directions():
+        m,t,b,o=setup(); before=adapter_state(m); rng=_capture_rng(); seen=[]
+        def evaluate():
+            seen.append(adapter_state(m));torch.rand(3)
+            return sum(float(p.square().sum()) for p in m.parameters() if p.requires_grad)
+>       result=diagnostic(m,evaluate)
+               ^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_sam_diagnostics.py:21: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (Kronos(
+  (token_drop): Dropout(p=0.0, inplace=False)
+  (embedding): HierarchicalEmbedding(
+    (emb_s1): Embedding(4... bias=True)
+  )
+), <function test_diagnostic_preserves_state_and_pairs_directions.<locals>.evaluate at 0x7efd61749d00>)
+kwargs = {}
+
+    def diagnostic(*args,**kwargs):
+        try: module=importlib.import_module('state_adapter.sam_diagnostics')
+>       except ModuleNotFoundError:pytest.fail('缺少可恢复扰动诊断')
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: 缺少可恢复扰动诊断
+
+tests/test_sam_diagnostics.py:12: Failed
+_______________ test_diagnostic_failure_restores_parameters_rng ________________
+
+args = (Kronos(
+  (token_drop): Dropout(p=0.0, inplace=False)
+  (embedding): HierarchicalEmbedding(
+    (emb_s1): Embedding(4...es=4, bias=True)
+  )
+), <function test_diagnostic_failure_restores_parameters_rng.<locals>.evaluate at 0x7efe280b9620>)
+kwargs = {}
+
+    def diagnostic(*args,**kwargs):
+>       try: module=importlib.import_module('state_adapter.sam_diagnostics')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_sam_diagnostics.py:11: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../../miniconda3/envs/quant/lib/python3.13/importlib/__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<frozen importlib._bootstrap>:1395: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:1360: in _find_and_load
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'state_adapter.sam_diagnostics'
+import_ = <function _gcd_import at 0x7efe2b3d04a0>
+
+>   ???
+E   ModuleNotFoundError: No module named 'state_adapter.sam_diagnostics'
+
+<frozen importlib._bootstrap>:1324: ModuleNotFoundError
+
+During handling of the above exception, another exception occurred:
+
+    def test_diagnostic_failure_restores_parameters_rng():
+        m,t,b,o=setup();before=adapter_state(m);rng=_capture_rng();calls=[]
+        def evaluate():
+            calls.append(1);torch.rand(3)
+            if len(calls)==3:raise RuntimeError('failed')
+            return 2.
+>       with pytest.raises(RuntimeError,match='failed'):diagnostic(m,evaluate)
+                                                        ^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_sam_diagnostics.py:36: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (Kronos(
+  (token_drop): Dropout(p=0.0, inplace=False)
+  (embedding): HierarchicalEmbedding(
+    (emb_s1): Embedding(4...es=4, bias=True)
+  )
+), <function test_diagnostic_failure_restores_parameters_rng.<locals>.evaluate at 0x7efe280b9620>)
+kwargs = {}
+
+    def diagnostic(*args,**kwargs):
+        try: module=importlib.import_module('state_adapter.sam_diagnostics')
+>       except ModuleNotFoundError:pytest.fail('缺少可恢复扰动诊断')
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: 缺少可恢复扰动诊断
+
+tests/test_sam_diagnostics.py:12: Failed
+=========================== short test summary info ============================
+FAILED tests/test_sam_diagnostics.py::test_diagnostic_preserves_state_and_pairs_directions
+FAILED tests/test_sam_diagnostics.py::test_diagnostic_failure_restores_parameters_rng
+2 failed in 1.28s

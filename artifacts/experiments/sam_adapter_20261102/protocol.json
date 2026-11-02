@@ -1,0 +1,252 @@
+{
+  "baseline": {
+    "model_paths": {
+      "predictor": "/home/user/workspace/Kronos/finetune_suite/outputs/models/finetune_predictor_g1/checkpoints/best_model",
+      "tokenizer": "/home/user/workspace/Kronos/finetune_suite/outputs/models/finetune_tokenizer_g1/checkpoints/best_model"
+    },
+    "model_sha256": {
+      "predictor": "4f2382138138e85ea1c543d43ade2de2373e4168a995e34fd43cbca2895c2fe2",
+      "tokenizer": "5ca43492146cd93da2f9dd5528009aa6bd882f2a448ff4c6bd3c1b0ab08609ee"
+    },
+    "name": "G1_original_mean",
+    "signal_paths": {
+      "W3": "/home/user/workspace/Kronos/g5_head/data/daily_signals_2025h2_G1_mean.parquet",
+      "W4": "/home/user/workspace/Kronos/finetune_suite/data/g1/daily_signals_backtest_G1_mean.parquet"
+    },
+    "signal_sha256": {
+      "W3": "9352b40302eb34c714bfebd808481b625a21d2f7f4f668ccca15cda0cfe21d66",
+      "W4": "453e2aeae7fe4bee8ce8fa62a9908da0843d5ad8b52777cd3b299a84cc4a3e36"
+    },
+    "exact_net_sum": {
+      "W3": 0.28730165661562196,
+      "W4": 0.029071596012616045
+    }
+  },
+  "corpus": {
+    "root": "/home/user/workspace/Kronos/finetune_suite/data/ashares",
+    "sha256": {
+      "train_data.pkl": "df33857e891fc28e40298314cf74def4dcb8ae58dafab822810f34ee96ad4480",
+      "val_data.pkl": "1c7e5436d5c2121b0ca79c69a2e432af33039621f422cb514a9157f890d4473b"
+    },
+    "train_path": "/home/user/workspace/Kronos/finetune_suite/data/ashares/train_data.pkl",
+    "train_target_end": "2024-12-31",
+    "val_path": "/home/user/workspace/Kronos/finetune_suite/data/ashares/val_data.pkl",
+    "validation_history_prefix": "last 90 train rows per symbol, ending <= 2024-12-31",
+    "validation_target_range": [
+      "2025-01-01",
+      "2025-06-30"
+    ]
+  },
+  "experiment": "sam_adapter_20261102",
+  "forward_cutoff": "2026-07-24",
+  "frozen_at": "2026-11-02T21:30:15.955250+08:00",
+  "inference": {
+    "T": 1.0,
+    "chunk_size": 32,
+    "clip": 5.0,
+    "lookback": 90,
+    "max_context": 512,
+    "pred_len": 10,
+    "sample_count": 20,
+    "seed_per_day": 100,
+    "top_k": 0,
+    "top_p": 0.9,
+    "infer_seeds": [
+      42,
+      100
+    ],
+    "stream_weights": [
+      0.5,
+      0.5
+    ],
+    "train_seed": 100
+  },
+  "qlib": {
+    "account": 100000000,
+    "benchmark": "000300.SH",
+    "close_cost": 0.0015,
+    "deal_price": "open",
+    "engine": "qlib_mean_comparison.run_qlib_backtest",
+    "limit_threshold": [
+      "$pctchange / 100 >= 0.095",
+      "$pctchange / 100 <= -0.095"
+    ],
+    "min_cost": 5,
+    "open_cost": 0.001,
+    "portfolio": "TopkDropoutStrategy topk=50 n_drop=5 hold_thresh=5",
+    "primary_metric": "sum(return-cost), Qlib daily report cumsum",
+    "universe": "csi300 point-in-time"
+  },
+  "selection": {
+    "checkpoint": "minimum unperturbed validation CE every500; ties earlier",
+    "first_round_candidate": "SAM_MC40",
+    "no_search": true,
+    "diagnostics_not_selection": true
+  },
+  "state": {
+    "adapter": "H + up(silu(down(H))*gate(z)); rank=32; last 2 blocks",
+    "clip": [
+      -5.0,
+      5.0
+    ],
+    "epsilon": 1e-06,
+    "features": [
+      "log(std20/0.02)",
+      "log(std20/std60)",
+      "log(std5/std20)"
+    ],
+    "gate": "1+tanh(Linear(silu(Linear(z)))) with hidden=16",
+    "returns": "simple close-to-close returns",
+    "source": "raw close from preceding 90 observations only",
+    "std_ddof": 0,
+    "up_init": "zero"
+  },
+  "training": {
+    "batch_size": 64,
+    "betas": [
+      0.9,
+      0.95
+    ],
+    "checkpoint_every": 500,
+    "grad_clip": 1.0,
+    "learning_rate": 0.0003,
+    "lookback": 90,
+    "loss": "mean CE on shifted target positions 89..98; teacher_forcing=False",
+    "n_layers": 2,
+    "pred_len": 10,
+    "rank": 32,
+    "seeds": [
+      100
+    ],
+    "steps": 3000,
+    "trainable_parameters": 107712,
+    "validation": "all target dates 2025-01-01..2025-06-30; fixed 2048 windows",
+    "validation_every": 500,
+    "validation_windows": 2048,
+    "weight_decay": 0.01,
+    "algorithm": "SAM",
+    "rho": 0.05,
+    "epsilon": 1e-12,
+    "adaptive": false,
+    "sampling": "original WindowCorpus uniform windows",
+    "rng": "common global CPU/CUDA/Python/NumPy; externally advance once",
+    "perturbation": "global L2 unclipped adapter gradients; copy restore finally; second gradient clip1; AdamW once"
+  },
+  "windows": {
+    "W3": [
+      "2025-07-01",
+      "2025-12-31"
+    ],
+    "W4": [
+      "2026-01-01",
+      "2026-07-24"
+    ]
+  },
+  "control_training": {
+    "batch_size": 64,
+    "betas": [
+      0.9,
+      0.95
+    ],
+    "checkpoint_every": 500,
+    "grad_clip": 1.0,
+    "learning_rate": 0.0003,
+    "lookback": 90,
+    "loss": "mean CE on shifted target positions 89..98; teacher_forcing=False",
+    "n_layers": 2,
+    "pred_len": 10,
+    "rank": 32,
+    "seeds": [
+      100
+    ],
+    "steps": 3000,
+    "trainable_parameters": 107712,
+    "validation": "all target dates 2025-01-01..2025-06-30; fixed 2048 windows",
+    "validation_every": 500,
+    "validation_windows": 2048,
+    "weight_decay": 0.01,
+    "algorithm": "AdamW",
+    "rho": 0.0,
+    "epsilon": 1e-12,
+    "adaptive": false,
+    "sampling": "original WindowCorpus uniform windows",
+    "rng": "common global CPU/CUDA/Python/NumPy; externally advance once",
+    "perturbation": "global L2 unclipped adapter gradients; copy restore finally; second gradient clip1; AdamW once"
+  },
+  "execution_id": "pctchange_div100_limit095_nextopen_v1",
+  "expected_coverage": {
+    "W3": {
+      "dates": 126,
+      "finite": 37223
+    },
+    "W4": {
+      "dates": 134,
+      "finite": 39563
+    }
+  },
+  "diagnostic": {
+    "rhos": [
+      0,
+      0.01,
+      0.05
+    ],
+    "directions": 8,
+    "paired_signs": true,
+    "seed": 20261102,
+    "eval_seed": 103100,
+    "data": "fixed 2025H1 cache only"
+  },
+  "budget": {
+    "gpu_seconds": 21600,
+    "wall_seconds": 28800,
+    "supervisor_pid": 587289,
+    "started_at": "2026-11-02T21:27:51.564471+08:00",
+    "guard": "16:25..16:45 Asia/Shanghai",
+    "deadline": 1793654871.564471
+  },
+  "reference_adapter": {
+    "path": "/home/user/workspace/Kronos-state-adapter/artifacts/experiments/state_adapter_20261030/arms/dynamic/seed_100/best_adapter.pt",
+    "sha256": "d208a8b9f5359aa81bd6cfff473bf9aae193f0b37542e92b7ae39d00c649c402",
+    "base_hash": "b16a609e4f8a9828a93720ebaa00f95437e64c557b4366b8675d110a65b05636",
+    "best_step": 3000,
+    "val_ce": 2.448015436530113
+  },
+  "validation_cache": {
+    "path": "/home/user/workspace/Kronos-state-adapter/artifacts/experiments/state_adapter_20261030/arms/dynamic/seed_100/validation_batches.pt",
+    "sha256": "99eb3d1b18d06015759c6eb8ed3fba7ebedbb8ec722e4e730e66eab975360eb2"
+  },
+  "reference_files": {
+    "/home/user/workspace/Kronos-limit-audit/artifacts/experiments/limit_unit_audit_20261102/accounts/new/W3/G1_original/report.parquet": "eb54538131ee75d14584d676f6cb89212b979244a9244524dede1ad98e7b507c",
+    "/home/user/workspace/Kronos-limit-audit/artifacts/experiments/limit_unit_audit_20261102/accounts/new/W3/B/report.parquet": "6e2be3c9079d6af1623726329cb2f18defff2c4444965e7dc7246b1eeccab735",
+    "/home/user/workspace/Kronos/g5_head/data/daily_signals_2025h2_G1_mean.parquet": "9352b40302eb34c714bfebd808481b625a21d2f7f4f668ccca15cda0cfe21d66",
+    "/home/user/workspace/Kronos-state-mc40/artifacts/experiments/state_mc40_20261101/signal_W3_State_MC40.parquet": "1602d4351293b2beedc72a3167807e200e9d39732f1e1207d88e0816b37e4ce0",
+    "/home/user/workspace/Kronos-limit-audit/artifacts/experiments/limit_unit_audit_20261102/accounts/new/W4/G1_original/report.parquet": "39b8c45a287bb65a4a03c896c3e9dbd2473453dabbca385a2109f8e9fe0bf9fd",
+    "/home/user/workspace/Kronos-limit-audit/artifacts/experiments/limit_unit_audit_20261102/accounts/new/W4/B/report.parquet": "347de555b608be66ac6161fe3c8a975bbf427d00408004e4ba60d0c2ffb5c593",
+    "/home/user/workspace/Kronos/finetune_suite/data/g1/daily_signals_backtest_G1_mean.parquet": "453e2aeae7fe4bee8ce8fa62a9908da0843d5ad8b52777cd3b299a84cc4a3e36",
+    "/home/user/workspace/Kronos-state-mc40/artifacts/experiments/state_mc40_20261101/signal_W4_State_MC40.parquet": "138d7dbc6ada2b66e78bb91ccf8244269ad68c98c33e803a1f23974b73687c1a"
+  },
+  "reference_reports": {
+    "W3": {
+      "G1_original": "/home/user/workspace/Kronos-limit-audit/artifacts/experiments/limit_unit_audit_20261102/accounts/new/W3/G1_original/report.parquet",
+      "MC40": "/home/user/workspace/Kronos-limit-audit/artifacts/experiments/limit_unit_audit_20261102/accounts/new/W3/B/report.parquet"
+    },
+    "W4": {
+      "G1_original": "/home/user/workspace/Kronos-limit-audit/artifacts/experiments/limit_unit_audit_20261102/accounts/new/W4/G1_original/report.parquet",
+      "MC40": "/home/user/workspace/Kronos-limit-audit/artifacts/experiments/limit_unit_audit_20261102/accounts/new/W4/B/report.parquet"
+    }
+  },
+  "reference_signals": {
+    "W3": {
+      "G1_original": "/home/user/workspace/Kronos/g5_head/data/daily_signals_2025h2_G1_mean.parquet",
+      "MC40": "/home/user/workspace/Kronos-state-mc40/artifacts/experiments/state_mc40_20261101/signal_W3_State_MC40.parquet"
+    },
+    "W4": {
+      "G1_original": "/home/user/workspace/Kronos/finetune_suite/data/g1/daily_signals_backtest_G1_mean.parquet",
+      "MC40": "/home/user/workspace/Kronos-state-mc40/artifacts/experiments/state_mc40_20261101/signal_W4_State_MC40.parquet"
+    }
+  },
+  "reference_net_sum": {
+    "W3": 0.314992237064521,
+    "W4": 0.04076916184667749
+  }
+}

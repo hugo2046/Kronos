@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "reviewed_commit": "4575b98edca00f333e9111dc33b4c42bed48b436",
+  "source_sha256": {
+    "/home/user/workspace/Kronos-sam-adapter/state_adapter/sam_train.py": "17b7957971b2dc818ddb5d8130a04df9134a44d90c6d6ac679adff5ae8028cac",
+    "/home/user/workspace/Kronos-sam-adapter/state_adapter/sam_diagnostics.py": "572e6ee7fa6de2c333334cb2a807c44a7edca168cef8e572ac23df70942cc816",
+    "/home/user/workspace/Kronos-sam-adapter/state_adapter/sam_run.py": "245ceb96f81e9a6fd36ed989358cb36636ef7ac26ab6b563325dd6d17a86a288",
+    "/home/user/workspace/Kronos-sam-adapter/state_adapter/train.py": "df88ce847ae41f8be174197375de75b32f84d0ec1917db0c3df2f350bc143284",
+    "/home/user/workspace/Kronos-sam-adapter/state_adapter/sam_report.py": "6a81111dc3374d1714b7de71c58c8776b797876946456d2553edfd40b498e7fc"
+  },
+  "critical": 0,
+  "important": 0,
+  "minor": 1,
+  "reviewer": "independent sam_review agent",
+  "deferred_minor": "训练前后向计数为有效轨迹名义次数；恢复重算以GPU累计耗时账衡量。",
+  "scope": "代码审查不能替代最终经济产物验收；finalizer由协调器只读检查，最终本机仍独立复算。"
+}

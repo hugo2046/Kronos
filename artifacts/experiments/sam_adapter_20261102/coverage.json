@@ -1,0 +1,34 @@
+{
+  "42_W3": {
+    "expected_dates": 126,
+    "baseline_stocks": 312,
+    "required_finite_cells": 37223,
+    "candidate_finite_cells_on_baseline_universe": 37223,
+    "extra_finite_cells": 0,
+    "missing_required_cells": 0
+  },
+  "42_W4": {
+    "expected_dates": 134,
+    "baseline_stocks": 319,
+    "required_finite_cells": 39563,
+    "candidate_finite_cells_on_baseline_universe": 39563,
+    "extra_finite_cells": 0,
+    "missing_required_cells": 0
+  },
+  "100_W3": {
+    "expected_dates": 126,
+    "baseline_stocks": 312,
+    "required_finite_cells": 37223,
+    "candidate_finite_cells_on_baseline_universe": 37223,
+    "extra_finite_cells": 0,
+    "missing_required_cells": 0
+  },
+  "100_W4": {
+    "expected_dates": 134,
+    "baseline_stocks": 319,
+    "required_finite_cells": 39563,
+    "candidate_finite_cells_on_baseline_universe": 39563,
+    "extra_finite_cells": 0,
+    "missing_required_cells": 0
+  }
+}

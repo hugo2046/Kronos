@@ -1,0 +1,342 @@
+FFFFFFFFFFFF                                                             [100%]
+=================================== FAILURES ===================================
+__ test_standalone_backtest_rejects_mismatched_stream_before_replay[rho-0.01] __
+
+frozen_streams = (<module 'state_adapter.sam_run' from '/home/user/workspace/Kronos-sam-adapter/state_adapter/sam_run.py'>, {'training'... PosixPath('/tmp/pytest-of-user/pytest-474/test_standalone_backtest_rejec0/signals/SAM_train100_infer100/W4.parquet')])
+key = 'rho', value = 0.01
+
+    @pytest.mark.parametrize('key,value',[('rho',.01),('adapter_sha256','wrong'),('seed',7),('algorithm','AdamW'),('execution_id','old'),('protocol_sha','wrong'),('config_sha','wrong'),('window','W2')])
+    def test_standalone_backtest_rejects_mismatched_stream_before_replay(frozen_streams,key,value):
+        r,p,sha,paths=frozen_streams;meta=paths[0].with_suffix('.meta.json');data=json.loads(meta.read_text());data[key]=value;meta.write_text(json.dumps(data))
+>       with pytest.raises(RuntimeError):r.backtest(p,sha)
+                                         ^^^^^^^^^^^^^^^^^
+
+tests/test_sam_run.py:94: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+state_adapter/sam_run.py:229: in backtest
+    candidate=pool_signals(*[_wide(str(OUT/'signals'/f'SAM_train100_infer{s}'/f'{window}.parquet')) for s in [42,100]])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (              A    B
+2025-07-01  1.0  2.0
+2025-07-02  3.0  4.0,               A    B
+2025-07-01  1.0  2.0
+2025-07-02  3.0  4.0)
+
+>   def refuse_pool(*args):raise AssertionError('未经身份验证已开始合并信号')
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   AssertionError: 未经身份验证已开始合并信号
+
+tests/test_sam_run.py:86: AssertionError
+_ test_standalone_backtest_rejects_mismatched_stream_before_replay[adapter_sha256-wrong] _
+
+frozen_streams = (<module 'state_adapter.sam_run' from '/home/user/workspace/Kronos-sam-adapter/state_adapter/sam_run.py'>, {'training'... PosixPath('/tmp/pytest-of-user/pytest-474/test_standalone_backtest_rejec1/signals/SAM_train100_infer100/W4.parquet')])
+key = 'adapter_sha256', value = 'wrong'
+
+    @pytest.mark.parametrize('key,value',[('rho',.01),('adapter_sha256','wrong'),('seed',7),('algorithm','AdamW'),('execution_id','old'),('protocol_sha','wrong'),('config_sha','wrong'),('window','W2')])
+    def test_standalone_backtest_rejects_mismatched_stream_before_replay(frozen_streams,key,value):
+        r,p,sha,paths=frozen_streams;meta=paths[0].with_suffix('.meta.json');data=json.loads(meta.read_text());data[key]=value;meta.write_text(json.dumps(data))
+>       with pytest.raises(RuntimeError):r.backtest(p,sha)
+                                         ^^^^^^^^^^^^^^^^^
+
+tests/test_sam_run.py:94: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+state_adapter/sam_run.py:229: in backtest
+    candidate=pool_signals(*[_wide(str(OUT/'signals'/f'SAM_train100_infer{s}'/f'{window}.parquet')) for s in [42,100]])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (              A    B
+2025-07-01  1.0  2.0
+2025-07-02  3.0  4.0,               A    B
+2025-07-01  1.0  2.0
+2025-07-02  3.0  4.0)
+
+>   def refuse_pool(*args):raise AssertionError('未经身份验证已开始合并信号')
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   AssertionError: 未经身份验证已开始合并信号
+
+tests/test_sam_run.py:86: AssertionError
+___ test_standalone_backtest_rejects_mismatched_stream_before_replay[seed-7] ___
+
+frozen_streams = (<module 'state_adapter.sam_run' from '/home/user/workspace/Kronos-sam-adapter/state_adapter/sam_run.py'>, {'training'... PosixPath('/tmp/pytest-of-user/pytest-474/test_standalone_backtest_rejec2/signals/SAM_train100_infer100/W4.parquet')])
+key = 'seed', value = 7
+
+    @pytest.mark.parametrize('key,value',[('rho',.01),('adapter_sha256','wrong'),('seed',7),('algorithm','AdamW'),('execution_id','old'),('protocol_sha','wrong'),('config_sha','wrong'),('window','W2')])
+    def test_standalone_backtest_rejects_mismatched_stream_before_replay(frozen_streams,key,value):
+        r,p,sha,paths=frozen_streams;meta=paths[0].with_suffix('.meta.json');data=json.loads(meta.read_text());data[key]=value;meta.write_text(json.dumps(data))
+>       with pytest.raises(RuntimeError):r.backtest(p,sha)
+                                         ^^^^^^^^^^^^^^^^^
+
+tests/test_sam_run.py:94: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+state_adapter/sam_run.py:229: in backtest
+    candidate=pool_signals(*[_wide(str(OUT/'signals'/f'SAM_train100_infer{s}'/f'{window}.parquet')) for s in [42,100]])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (              A    B
+2025-07-01  1.0  2.0
+2025-07-02  3.0  4.0,               A    B
+2025-07-01  1.0  2.0
+2025-07-02  3.0  4.0)
+
+>   def refuse_pool(*args):raise AssertionError('未经身份验证已开始合并信号')
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   AssertionError: 未经身份验证已开始合并信号
+
+tests/test_sam_run.py:86: AssertionError
+_ test_standalone_backtest_rejects_mismatched_stream_before_replay[algorithm-AdamW] _
+
+frozen_streams = (<module 'state_adapter.sam_run' from '/home/user/workspace/Kronos-sam-adapter/state_adapter/sam_run.py'>, {'training'... PosixPath('/tmp/pytest-of-user/pytest-474/test_standalone_backtest_rejec3/signals/SAM_train100_infer100/W4.parquet')])
+key = 'algorithm', value = 'AdamW'
+
+    @pytest.mark.parametrize('key,value',[('rho',.01),('adapter_sha256','wrong'),('seed',7),('algorithm','AdamW'),('execution_id','old'),('protocol_sha','wrong'),('config_sha','wrong'),('window','W2')])
+    def test_standalone_backtest_rejects_mismatched_stream_before_replay(frozen_streams,key,value):
+        r,p,sha,paths=frozen_streams;meta=paths[0].with_suffix('.meta.json');data=json.loads(meta.read_text());data[key]=value;meta.write_text(json.dumps(data))
+>       with pytest.raises(RuntimeError):r.backtest(p,sha)
+                                         ^^^^^^^^^^^^^^^^^
+
+tests/test_sam_run.py:94: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+state_adapter/sam_run.py:229: in backtest
+    candidate=pool_signals(*[_wide(str(OUT/'signals'/f'SAM_train100_infer{s}'/f'{window}.parquet')) for s in [42,100]])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (              A    B
+2025-07-01  1.0  2.0
+2025-07-02  3.0  4.0,               A    B
+2025-07-01  1.0  2.0
+2025-07-02  3.0  4.0)
+
+>   def refuse_pool(*args):raise AssertionError('未经身份验证已开始合并信号')
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   AssertionError: 未经身份验证已开始合并信号
+
+tests/test_sam_run.py:86: AssertionError
+_ test_standalone_backtest_rejects_mismatched_stream_before_replay[execution_id-old] _
+
+frozen_streams = (<module 'state_adapter.sam_run' from '/home/user/workspace/Kronos-sam-adapter/state_adapter/sam_run.py'>, {'training'... PosixPath('/tmp/pytest-of-user/pytest-474/test_standalone_backtest_rejec4/signals/SAM_train100_infer100/W4.parquet')])
+key = 'execution_id', value = 'old'
+
+    @pytest.mark.parametrize('key,value',[('rho',.01),('adapter_sha256','wrong'),('seed',7),('algorithm','AdamW'),('execution_id','old'),('protocol_sha','wrong'),('config_sha','wrong'),('window','W2')])
+    def test_standalone_backtest_rejects_mismatched_stream_before_replay(frozen_streams,key,value):
+        r,p,sha,paths=frozen_streams;meta=paths[0].with_suffix('.meta.json');data=json.loads(meta.read_text());data[key]=value;meta.write_text(json.dumps(data))
+>       with pytest.raises(RuntimeError):r.backtest(p,sha)
+                                         ^^^^^^^^^^^^^^^^^
+
+tests/test_sam_run.py:94: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+state_adapter/sam_run.py:229: in backtest
+    candidate=pool_signals(*[_wide(str(OUT/'signals'/f'SAM_train100_infer{s}'/f'{window}.parquet')) for s in [42,100]])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (              A    B
+2025-07-01  1.0  2.0
+2025-07-02  3.0  4.0,               A    B
+2025-07-01  1.0  2.0
+2025-07-02  3.0  4.0)
+
+>   def refuse_pool(*args):raise AssertionError('未经身份验证已开始合并信号')
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   AssertionError: 未经身份验证已开始合并信号
+
+tests/test_sam_run.py:86: AssertionError
+_ test_standalone_backtest_rejects_mismatched_stream_before_replay[protocol_sha-wrong] _
+
+frozen_streams = (<module 'state_adapter.sam_run' from '/home/user/workspace/Kronos-sam-adapter/state_adapter/sam_run.py'>, {'training'... PosixPath('/tmp/pytest-of-user/pytest-474/test_standalone_backtest_rejec5/signals/SAM_train100_infer100/W4.parquet')])
+key = 'protocol_sha', value = 'wrong'
+
+    @pytest.mark.parametrize('key,value',[('rho',.01),('adapter_sha256','wrong'),('seed',7),('algorithm','AdamW'),('execution_id','old'),('protocol_sha','wrong'),('config_sha','wrong'),('window','W2')])
+    def test_standalone_backtest_rejects_mismatched_stream_before_replay(frozen_streams,key,value):
+        r,p,sha,paths=frozen_streams;meta=paths[0].with_suffix('.meta.json');data=json.loads(meta.read_text());data[key]=value;meta.write_text(json.dumps(data))
+>       with pytest.raises(RuntimeError):r.backtest(p,sha)
+                                         ^^^^^^^^^^^^^^^^^
+
+tests/test_sam_run.py:94: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+state_adapter/sam_run.py:229: in backtest
+    candidate=pool_signals(*[_wide(str(OUT/'signals'/f'SAM_train100_infer{s}'/f'{window}.parquet')) for s in [42,100]])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (              A    B
+2025-07-01  1.0  2.0
+2025-07-02  3.0  4.0,               A    B
+2025-07-01  1.0  2.0
+2025-07-02  3.0  4.0)
+
+>   def refuse_pool(*args):raise AssertionError('未经身份验证已开始合并信号')
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   AssertionError: 未经身份验证已开始合并信号
+
+tests/test_sam_run.py:86: AssertionError
+_ test_standalone_backtest_rejects_mismatched_stream_before_replay[config_sha-wrong] _
+
+frozen_streams = (<module 'state_adapter.sam_run' from '/home/user/workspace/Kronos-sam-adapter/state_adapter/sam_run.py'>, {'training'... PosixPath('/tmp/pytest-of-user/pytest-474/test_standalone_backtest_rejec6/signals/SAM_train100_infer100/W4.parquet')])
+key = 'config_sha', value = 'wrong'
+
+    @pytest.mark.parametrize('key,value',[('rho',.01),('adapter_sha256','wrong'),('seed',7),('algorithm','AdamW'),('execution_id','old'),('protocol_sha','wrong'),('config_sha','wrong'),('window','W2')])
+    def test_standalone_backtest_rejects_mismatched_stream_before_replay(frozen_streams,key,value):
+        r,p,sha,paths=frozen_streams;meta=paths[0].with_suffix('.meta.json');data=json.loads(meta.read_text());data[key]=value;meta.write_text(json.dumps(data))
+>       with pytest.raises(RuntimeError):r.backtest(p,sha)
+                                         ^^^^^^^^^^^^^^^^^
+
+tests/test_sam_run.py:94: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+state_adapter/sam_run.py:229: in backtest
+    candidate=pool_signals(*[_wide(str(OUT/'signals'/f'SAM_train100_infer{s}'/f'{window}.parquet')) for s in [42,100]])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (              A    B
+2025-07-01  1.0  2.0
+2025-07-02  3.0  4.0,               A    B
+2025-07-01  1.0  2.0
+2025-07-02  3.0  4.0)
+
+>   def refuse_pool(*args):raise AssertionError('未经身份验证已开始合并信号')
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   AssertionError: 未经身份验证已开始合并信号
+
+tests/test_sam_run.py:86: AssertionError
+_ test_standalone_backtest_rejects_mismatched_stream_before_replay[window-W2] __
+
+frozen_streams = (<module 'state_adapter.sam_run' from '/home/user/workspace/Kronos-sam-adapter/state_adapter/sam_run.py'>, {'training'... PosixPath('/tmp/pytest-of-user/pytest-474/test_standalone_backtest_rejec7/signals/SAM_train100_infer100/W4.parquet')])
+key = 'window', value = 'W2'
+
+    @pytest.mark.parametrize('key,value',[('rho',.01),('adapter_sha256','wrong'),('seed',7),('algorithm','AdamW'),('execution_id','old'),('protocol_sha','wrong'),('config_sha','wrong'),('window','W2')])
+    def test_standalone_backtest_rejects_mismatched_stream_before_replay(frozen_streams,key,value):
+        r,p,sha,paths=frozen_streams;meta=paths[0].with_suffix('.meta.json');data=json.loads(meta.read_text());data[key]=value;meta.write_text(json.dumps(data))
+>       with pytest.raises(RuntimeError):r.backtest(p,sha)
+                                         ^^^^^^^^^^^^^^^^^
+
+tests/test_sam_run.py:94: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+state_adapter/sam_run.py:229: in backtest
+    candidate=pool_signals(*[_wide(str(OUT/'signals'/f'SAM_train100_infer{s}'/f'{window}.parquet')) for s in [42,100]])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (              A    B
+2025-07-01  1.0  2.0
+2025-07-02  3.0  4.0,               A    B
+2025-07-01  1.0  2.0
+2025-07-02  3.0  4.0)
+
+>   def refuse_pool(*args):raise AssertionError('未经身份验证已开始合并信号')
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   AssertionError: 未经身份验证已开始合并信号
+
+tests/test_sam_run.py:86: AssertionError
+________________ test_standalone_backtest_rejects_orphan_signal ________________
+
+frozen_streams = (<module 'state_adapter.sam_run' from '/home/user/workspace/Kronos-sam-adapter/state_adapter/sam_run.py'>, {'training'... PosixPath('/tmp/pytest-of-user/pytest-474/test_standalone_backtest_rejec8/signals/SAM_train100_infer100/W4.parquet')])
+
+    def test_standalone_backtest_rejects_orphan_signal(frozen_streams):
+        r,p,sha,paths=frozen_streams;paths[0].with_suffix('.meta.json').unlink()
+>       with pytest.raises(RuntimeError):r.backtest(p,sha)
+                                         ^^^^^^^^^^^^^^^^^
+
+tests/test_sam_run.py:99: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+state_adapter/sam_run.py:229: in backtest
+    candidate=pool_signals(*[_wide(str(OUT/'signals'/f'SAM_train100_infer{s}'/f'{window}.parquet')) for s in [42,100]])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (              A    B
+2025-07-01  1.0  2.0
+2025-07-02  3.0  4.0,               A    B
+2025-07-01  1.0  2.0
+2025-07-02  3.0  4.0)
+
+>   def refuse_pool(*args):raise AssertionError('未经身份验证已开始合并信号')
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   AssertionError: 未经身份验证已开始合并信号
+
+tests/test_sam_run.py:86: AssertionError
+__________ test_standalone_backtest_rejects_same_mask_changed_signal ___________
+
+frozen_streams = (<module 'state_adapter.sam_run' from '/home/user/workspace/Kronos-sam-adapter/state_adapter/sam_run.py'>, {'training'... PosixPath('/tmp/pytest-of-user/pytest-474/test_standalone_backtest_rejec9/signals/SAM_train100_infer100/W4.parquet')])
+
+    def test_standalone_backtest_rejects_same_mask_changed_signal(frozen_streams):
+        import pandas as pd
+        r,p,sha,paths=frozen_streams;frame=pd.read_parquet(paths[0]);(frame+1).to_parquet(paths[0])
+>       with pytest.raises(RuntimeError):r.backtest(p,sha)
+                                         ^^^^^^^^^^^^^^^^^
+
+tests/test_sam_run.py:105: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+state_adapter/sam_run.py:229: in backtest
+    candidate=pool_signals(*[_wide(str(OUT/'signals'/f'SAM_train100_infer{s}'/f'{window}.parquet')) for s in [42,100]])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (              A    B
+2025-07-01  2.0  3.0
+2025-07-02  4.0  5.0,               A    B
+2025-07-01  1.0  2.0
+2025-07-02  3.0  4.0)
+
+>   def refuse_pool(*args):raise AssertionError('未经身份验证已开始合并信号')
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   AssertionError: 未经身份验证已开始合并信号
+
+tests/test_sam_run.py:86: AssertionError
+___________ test_standalone_backtest_rejects_changed_training_weight ___________
+
+frozen_streams = (<module 'state_adapter.sam_run' from '/home/user/workspace/Kronos-sam-adapter/state_adapter/sam_run.py'>, {'training'...PosixPath('/tmp/pytest-of-user/pytest-474/test_standalone_backtest_rejec10/signals/SAM_train100_infer100/W4.parquet')])
+
+    def test_standalone_backtest_rejects_changed_training_weight(frozen_streams):
+        r,p,sha,paths=frozen_streams;(r.OUT/'arms/sam/best_adapter.pt').write_bytes(b'wrong')
+>       with pytest.raises(RuntimeError):r.backtest(p,sha)
+                                         ^^^^^^^^^^^^^^^^^
+
+tests/test_sam_run.py:110: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+state_adapter/sam_run.py:229: in backtest
+    candidate=pool_signals(*[_wide(str(OUT/'signals'/f'SAM_train100_infer{s}'/f'{window}.parquet')) for s in [42,100]])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (              A    B
+2025-07-01  1.0  2.0
+2025-07-02  3.0  4.0,               A    B
+2025-07-01  1.0  2.0
+2025-07-02  3.0  4.0)
+
+>   def refuse_pool(*args):raise AssertionError('未经身份验证已开始合并信号')
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   AssertionError: 未经身份验证已开始合并信号
+
+tests/test_sam_run.py:86: AssertionError
+____ test_candidate_gate_accepts_complete_matching_streams_without_mutation ____
+
+frozen_streams = (<module 'state_adapter.sam_run' from '/home/user/workspace/Kronos-sam-adapter/state_adapter/sam_run.py'>, {'training'... PosixPath('/tmp/pytest-of-user/pytest-474/test_candidate_gate_accepts_co0/signals/SAM_train100_infer100/W4.parquet')])
+
+    def test_candidate_gate_accepts_complete_matching_streams_without_mutation(frozen_streams):
+        r,p,sha,paths=frozen_streams;before={path:path.read_bytes() for path in paths}
+>       assert hasattr(r,'verify_candidate_inputs'),'缺少只读候选身份门禁'
+E       AssertionError: 缺少只读候选身份门禁
+E       assert False
+E        +  where False = hasattr(<module 'state_adapter.sam_run' from '/home/user/workspace/Kronos-sam-adapter/state_adapter/sam_run.py'>, 'verify_candidate_inputs')
+
+tests/test_sam_run.py:115: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_sam_run.py::test_standalone_backtest_rejects_mismatched_stream_before_replay[rho-0.01]
+FAILED tests/test_sam_run.py::test_standalone_backtest_rejects_mismatched_stream_before_replay[adapter_sha256-wrong]
+FAILED tests/test_sam_run.py::test_standalone_backtest_rejects_mismatched_stream_before_replay[seed-7]
+FAILED tests/test_sam_run.py::test_standalone_backtest_rejects_mismatched_stream_before_replay[algorithm-AdamW]
+FAILED tests/test_sam_run.py::test_standalone_backtest_rejects_mismatched_stream_before_replay[execution_id-old]
+FAILED tests/test_sam_run.py::test_standalone_backtest_rejects_mismatched_stream_before_replay[protocol_sha-wrong]
+FAILED tests/test_sam_run.py::test_standalone_backtest_rejects_mismatched_stream_before_replay[config_sha-wrong]
+FAILED tests/test_sam_run.py::test_standalone_backtest_rejects_mismatched_stream_before_replay[window-W2]
+FAILED tests/test_sam_run.py::test_standalone_backtest_rejects_orphan_signal
+FAILED tests/test_sam_run.py::test_standalone_backtest_rejects_same_mask_changed_signal
+FAILED tests/test_sam_run.py::test_standalone_backtest_rejects_changed_training_weight
+FAILED tests/test_sam_run.py::test_candidate_gate_accepts_complete_matching_streams_without_mutation
+12 failed, 5 deselected in 1.42s
