@@ -1,0 +1,96 @@
+{
+  "at": "2026-11-02T10:41:03.689869+08:00",
+  "weights": {
+    "A": {
+      "family": "static",
+      "seed": 100,
+      "step": 3000,
+      "val_ce": 2.4431222081184387
+    },
+    "B": {
+      "family": "dynamic",
+      "seed": 100,
+      "step": 3000,
+      "val_ce": 2.448015436530113
+    },
+    "C": {
+      "family": "static",
+      "seed": 100,
+      "step": 3000,
+      "val_ce": 2.4342959076166153
+    },
+    "D": {
+      "family": "dynamic",
+      "seed": 100,
+      "step": 3000,
+      "val_ce": 2.4395344108343124
+    }
+  },
+  "requests": {
+    "w4_guard_requests_B.jsonl": {
+      "count": 3,
+      "max_effective_end": "2026-07-24 00:00:00",
+      "pids": [
+        2
+      ]
+    },
+    "market_requests_infer.jsonl": {
+      "count": 135,
+      "max_effective_end": "2026-07-24 00:00:00",
+      "pids": [
+        51274
+      ]
+    },
+    "w4_guard_requests_G1_original.jsonl": {
+      "count": 3,
+      "max_effective_end": "2026-07-24 00:00:00",
+      "pids": [
+        2
+      ]
+    },
+    "market_requests_A_W3_early.jsonl": {
+      "count": 3,
+      "max_effective_end": "2025-12-31 00:00:00",
+      "pids": [
+        2
+      ]
+    },
+    "w4_guard_requests_D.jsonl": {
+      "count": 3,
+      "max_effective_end": "2026-07-24 00:00:00",
+      "pids": [
+        2
+      ]
+    },
+    "risk/exposure_market_requests.jsonl": {
+      "count": 1,
+      "max_effective_end": "2025-12-31 00:00:00",
+      "pids": [
+        2
+      ]
+    },
+    "risk/D/market_requests.jsonl": {
+      "count": 3,
+      "max_effective_end": "2025-12-31 00:00:00",
+      "pids": [
+        5
+      ]
+    },
+    "risk/G1_original/market_requests.jsonl": {
+      "count": 3,
+      "max_effective_end": "2025-12-31 00:00:00",
+      "pids": [
+        5
+      ]
+    },
+    "risk/B/market_requests.jsonl": {
+      "count": 3,
+      "max_effective_end": "2025-12-31 00:00:00",
+      "pids": [
+        5
+      ]
+    }
+  },
+  "protocol_sha": "fcf92d2447fab4d59fc00f3e1495bbc1c01b4dffd4a5064e9fbb572a10d719fc",
+  "stage": "A W3完整回测完成；其余推理继续，非最终交付"
+}

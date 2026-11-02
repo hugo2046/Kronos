@@ -1,0 +1,145 @@
+{
+  "at": "2026-11-02T10:52:39.599144+08:00",
+  "protocol_sha": "fcf92d2447fab4d59fc00f3e1495bbc1c01b4dffd4a5064e9fbb572a10d719fc",
+  "identities": {
+    "A": {
+      "family": "static",
+      "seed": 100,
+      "protocol_sha": "1c113930fcf3ba2dd75c8e6c8e24bfeaad19f221a76387aba8ec663ffdddd990",
+      "config_sha": "f0be49f5e4e8cf32bd8c5a7359a7486d2a03dfdb1eb6133b06da6263e9fbe75e"
+    },
+    "B": {
+      "family": "dynamic",
+      "seed": 100,
+      "protocol_sha": "1c113930fcf3ba2dd75c8e6c8e24bfeaad19f221a76387aba8ec663ffdddd990",
+      "config_sha": "f0be49f5e4e8cf32bd8c5a7359a7486d2a03dfdb1eb6133b06da6263e9fbe75e"
+    },
+    "C": {
+      "family": "static",
+      "seed": 100,
+      "protocol_sha": "fcf92d2447fab4d59fc00f3e1495bbc1c01b4dffd4a5064e9fbb572a10d719fc",
+      "config_sha": "dde645f113c465fc40521603fc0ccfad0fc19fcbb303fc49c5f3dc395f00050d"
+    },
+    "D": {
+      "family": "dynamic",
+      "seed": 100,
+      "protocol_sha": "d6ccd26861b9c048bca62e9c169db17f801e1c31c92cf02933b38464c78434ca",
+      "config_sha": "f17b42a0df0d58cc0ceff977a5e3762ac7dced5b7adbe572b01bae75b8fb30e6"
+    }
+  },
+  "coordinator_W3_recalculation": {
+    "G1_original": {
+      "values": {
+        "net_sum": 0.14401773020198352,
+        "daily_mean": 0.001142997858745901,
+        "daily_std": 0.007846774532164891,
+        "annual_vol": 0.124563684036621,
+        "sharpe": 2.312355022506289,
+        "mdd": -0.05159658506601594
+      },
+      "max_abs_error": 3.9968028886505635e-15
+    },
+    "B": {
+      "values": {
+        "net_sum": 0.15449686204760052,
+        "daily_mean": 0.0012261655718063533,
+        "daily_std": 0.00713942434648759,
+        "annual_vol": 0.113334847949796,
+        "sharpe": 2.7263787765619645,
+        "mdd": -0.053090362027249816
+      },
+      "max_abs_error": 7.105427357601002e-15
+    },
+    "D": {
+      "values": {
+        "net_sum": 0.17134045577262513,
+        "daily_mean": 0.0013598448870843264,
+        "daily_std": 0.009685502461530058,
+        "annual_vol": 0.1537525850154748,
+        "sharpe": 2.2287814641344745,
+        "mdd": -0.07835735036283398
+      },
+      "max_abs_error": 6.661338147750939e-15
+    }
+  },
+  "request_snapshot": {
+    "w4_guard_requests_B.jsonl": {
+      "records": 3,
+      "max_effective_end": "2026-07-24 00:00:00",
+      "pids": [
+        2
+      ]
+    },
+    "market_requests_infer.jsonl": {
+      "records": 157,
+      "max_effective_end": "2026-07-24 00:00:00",
+      "pids": [
+        51274
+      ]
+    },
+    "w4_guard_requests_G1_original.jsonl": {
+      "records": 3,
+      "max_effective_end": "2026-07-24 00:00:00",
+      "pids": [
+        2
+      ]
+    },
+    "market_requests_A_W3_early.jsonl": {
+      "records": 3,
+      "max_effective_end": "2025-12-31 00:00:00",
+      "pids": [
+        2
+      ]
+    },
+    "w4_guard_requests_D.jsonl": {
+      "records": 3,
+      "max_effective_end": "2026-07-24 00:00:00",
+      "pids": [
+        2
+      ]
+    },
+    "risk/exposure_market_requests.jsonl": {
+      "records": 1,
+      "max_effective_end": "2025-12-31 00:00:00",
+      "pids": [
+        2
+      ]
+    },
+    "risk/D/market_requests.jsonl": {
+      "records": 3,
+      "max_effective_end": "2025-12-31 00:00:00",
+      "pids": [
+        5
+      ]
+    },
+    "risk/G1_original/market_requests.jsonl": {
+      "records": 3,
+      "max_effective_end": "2025-12-31 00:00:00",
+      "pids": [
+        5
+      ]
+    },
+    "risk/B/market_requests.jsonl": {
+      "records": 3,
+      "max_effective_end": "2025-12-31 00:00:00",
+      "pids": [
+        5
+      ]
+    }
+  },
+  "signal_prefix_snapshot": {
+    "signals/A_infer42/W3.parquet": {
+      "dates": 126,
+      "finite": 37223,
+      "expected_dates": 126
+    },
+    "signals/A_infer42/W4.parquet": {
+      "dates": 25,
+      "finite": 7386,
+      "expected_dates": 134
+    }
+  },
+  "tests": "45 passed in 3.15s",
+  "status": "continue",
+  "note": "首次快照将部分窗口股票列错误要求为全窗股票列，断言拒绝后调查确认仅未来新增股票列尚未出现；改按当前日期完整finite mask核验通过。最终完整信号门禁不变。此快照不替代最终审计，无新增行情读取或GPU启动。"
+}

@@ -1,0 +1,61 @@
+{
+  "at": "2026-11-02T09:43:48.196697+08:00",
+  "logs": {
+    "market_requests_infer.jsonl": {
+      "count": 27,
+      "max_effective_end": "2026-07-24 00:00:00",
+      "pids": [
+        51274
+      ]
+    },
+    "risk/B/market_requests.jsonl": {
+      "count": 3,
+      "max_effective_end": "2025-12-31 00:00:00",
+      "pids": [
+        5
+      ]
+    },
+    "risk/D/market_requests.jsonl": {
+      "count": 3,
+      "max_effective_end": "2025-12-31 00:00:00",
+      "pids": [
+        5
+      ]
+    },
+    "risk/G1_original/market_requests.jsonl": {
+      "count": 3,
+      "max_effective_end": "2025-12-31 00:00:00",
+      "pids": [
+        5
+      ]
+    },
+    "risk/exposure_market_requests.jsonl": {
+      "count": 1,
+      "max_effective_end": "2025-12-31 00:00:00",
+      "pids": [
+        2
+      ]
+    },
+    "w4_guard_requests_B.jsonl": {
+      "count": 3,
+      "max_effective_end": "2026-07-24 00:00:00",
+      "pids": [
+        2
+      ]
+    },
+    "w4_guard_requests_D.jsonl": {
+      "count": 3,
+      "max_effective_end": "2026-07-24 00:00:00",
+      "pids": [
+        2
+      ]
+    },
+    "w4_guard_requests_G1_original.jsonl": {
+      "count": 3,
+      "max_effective_end": "2026-07-24 00:00:00",
+      "pids": [
+        2
+      ]
+    }
+  }
+}

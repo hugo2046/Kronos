@@ -1,0 +1,14 @@
+{
+  "family": "static",
+  "seed": 100,
+  "step": 3000,
+  "best_step": 3000,
+  "best_val_ce": 2.4431222081184387,
+  "base_hash": "b16a609e4f8a9828a93720ebaa00f95437e64c557b4366b8675d110a65b05636",
+  "trainable_parameters": 107712,
+  "elapsed_seconds": 149.25705615291372,
+  "checkpoint": "/home/user/workspace/Kronos-state-factorial/artifacts/experiments/state_factorial_20261102/arms/A_control/latest.pt",
+  "best_adapter": "/home/user/workspace/Kronos-state-factorial/artifacts/experiments/state_factorial_20261102/arms/A_control/best_adapter.pt",
+  "adapter_sha256": "1a092dfb0228a7e4482e860f3446f3627382661c269176dcb8b5c5293293d146",
+  "config_sha": "f0be49f5e4e8cf32bd8c5a7359a7486d2a03dfdb1eb6133b06da6263e9fbe75e"
+}

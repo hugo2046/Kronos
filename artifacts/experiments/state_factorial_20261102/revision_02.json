@@ -1,0 +1,8 @@
+{
+  "at": "2026-11-02T09:51:57.270188+08:00",
+  "commit": "0cb71b0",
+  "watcher_pid": 63832,
+  "watcher_source_sha256": "74469ddc5d41ec79e2d2c55444e47a0594fd79f3069500a3617b6eb38d89cb95",
+  "gpu_pid_unchanged": 51274,
+  "description": "仅CPU等待进程重新载入落盘信号审计；原冻结协议、训练、推理、累计GPU预算和deadline不变"
+}

@@ -1,0 +1,22 @@
+{
+  "W3|B": {
+    "dates": 126,
+    "finite": 37223,
+    "pool_max_abs": 0.0
+  },
+  "W3|D": {
+    "dates": 126,
+    "finite": 37223,
+    "pool_max_abs": 0.0
+  },
+  "W4|B": {
+    "dates": 134,
+    "finite": 39563,
+    "pool_max_abs": 0.0
+  },
+  "W4|D": {
+    "dates": 134,
+    "finite": 39563,
+    "pool_max_abs": 0.0
+  }
+}

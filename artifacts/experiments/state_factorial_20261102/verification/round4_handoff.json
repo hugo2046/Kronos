@@ -1,0 +1,16 @@
+{
+  "at": "2026-11-02T10:49:35.915293+08:00",
+  "request_log_records": {
+    "w4_guard_requests_B.jsonl": 3,
+    "market_requests_infer.jsonl": 151,
+    "w4_guard_requests_G1_original.jsonl": 3,
+    "market_requests_A_W3_early.jsonl": 3,
+    "w4_guard_requests_D.jsonl": 3,
+    "risk/exposure_market_requests.jsonl": 1,
+    "risk/D/market_requests.jsonl": 3,
+    "risk/G1_original/market_requests.jsonl": 3,
+    "risk/B/market_requests.jsonl": 3
+  },
+  "tests": "21 passed",
+  "status": "continue"
+}

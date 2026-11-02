@@ -1,0 +1,63 @@
+{
+  "at": "2026-11-02T03:04:47.333251+00:00",
+  "arms": {
+    "G1_original": {
+      "covariance_max_abs": 2.709133242390272e-21,
+      "variance_sum_error": 0.0,
+      "peak": "2025-10-29",
+      "trough": "2025-11-21",
+      "mdd": -0.05159658506601594
+    },
+    "B": {
+      "covariance_max_abs": 2.541098841762901e-21,
+      "variance_sum_error": 1.3552527156068805e-20,
+      "peak": "2025-11-06",
+      "trough": "2025-11-24",
+      "mdd": -0.053090362027249816
+    },
+    "D": {
+      "covariance_max_abs": 3.3881317890172014e-21,
+      "variance_sum_error": 1.3552527156068805e-20,
+      "peak": "2025-10-29",
+      "trough": "2025-11-24",
+      "mdd": -0.07835735036283398
+    }
+  },
+  "comparisons": {
+    "B": {
+      "full_W3": {
+        "stock_max_abs": 9.990923019453923e-17,
+        "account_error": 2.949029909160572e-16,
+        "net_difference_pp": 1.6843593725024655
+      },
+      "D_drawdown": {
+        "stock_max_abs": 9.82287168271867e-17,
+        "account_error": 2.0816681711721685e-16,
+        "net_difference_pp": -2.720010710278007
+      }
+    },
+    "G1_original": {
+      "full_W3": {
+        "stock_max_abs": 9.75781955236954e-17,
+        "account_error": 2.0816681711721685e-16,
+        "net_difference_pp": 2.7322725570641633
+      },
+      "D_drawdown": {
+        "stock_max_abs": 9.974659986866641e-17,
+        "account_error": 9.71445146547012e-17,
+        "net_difference_pp": -2.8794542100633653
+      }
+    }
+  },
+  "exposures": {
+    "rows": 24192,
+    "max_abs": 7.549516567451064e-15,
+    "max_price_date": "2025-12-31 00:00:00",
+    "timing": "独立数组切片：全部取估值日前一交易日及以前"
+  },
+  "holding_weighted_evidence": {
+    "max_abs": 4.440892098500626e-16,
+    "checked_values": 4500
+  },
+  "status": "passed"
+}

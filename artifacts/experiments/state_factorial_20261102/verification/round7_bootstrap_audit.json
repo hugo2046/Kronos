@@ -1,0 +1,22 @@
+{
+  "at": "2026-11-02T03:02:09.657734+00:00",
+  "synthetic_checks": {
+    "126": {
+      "max_abs_pp": 4.263256414560601e-14,
+      "resamples": 5000
+    },
+    "134": {
+      "max_abs_pp": 9.769962616701378e-15,
+      "resamples": 5000
+    }
+  },
+  "W3_D_minus_B": {
+    "sampling_dynamic": {
+      "observed_sum_pp": 1.6843593725024655,
+      "lower_95_pp": -4.608662669411052,
+      "upper_95_pp": 7.775773554102155
+    }
+  },
+  "note": "仅动态sampling已有完整真实日报；合成四格不替代尚缺C推理的真实机制结果。",
+  "status": "passed"
+}

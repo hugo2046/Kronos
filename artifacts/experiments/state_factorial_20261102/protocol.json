@@ -1,0 +1,271 @@
+{
+  "baseline": {
+    "cumulative_net_return": {
+      "W3": 0.144,
+      "W4": 0.0008
+    },
+    "exact_net_sum": {
+      "W3": 0.14401773020198338,
+      "W4": 0.0008054436955881178
+    },
+    "legacy_status": "legacy_unverified",
+    "model_paths": {
+      "predictor": "/home/user/workspace/Kronos/finetune_suite/outputs/models/finetune_predictor_g1/checkpoints/best_model",
+      "tokenizer": "/home/user/workspace/Kronos/finetune_suite/outputs/models/finetune_tokenizer_g1/checkpoints/best_model"
+    },
+    "model_sha256": {
+      "predictor": "4f2382138138e85ea1c543d43ade2de2373e4168a995e34fd43cbca2895c2fe2",
+      "tokenizer": "5ca43492146cd93da2f9dd5528009aa6bd882f2a448ff4c6bd3c1b0ab08609ee"
+    },
+    "name": "G1_original_mean",
+    "prior_report_gate_max_abs": 8.76902717106276e-16,
+    "signal_paths": {
+      "W3": "/home/user/workspace/Kronos/g5_head/data/daily_signals_2025h2_G1_mean.parquet",
+      "W4": "/home/user/workspace/Kronos/finetune_suite/data/g1/daily_signals_backtest_G1_mean.parquet"
+    },
+    "signal_sha256": {
+      "W3": "9352b40302eb34c714bfebd808481b625a21d2f7f4f668ccca15cda0cfe21d66",
+      "W4": "453e2aeae7fe4bee8ce8fa62a9908da0843d5ad8b52777cd3b299a84cc4a3e36"
+    }
+  },
+  "corpus": {
+    "root": "/home/user/workspace/Kronos/finetune_suite/data/ashares",
+    "sha256": {
+      "train_data.pkl": "df33857e891fc28e40298314cf74def4dcb8ae58dafab822810f34ee96ad4480",
+      "val_data.pkl": "1c7e5436d5c2121b0ca79c69a2e432af33039621f422cb514a9157f890d4473b"
+    },
+    "train_path": "/home/user/workspace/Kronos/finetune_suite/data/ashares/train_data.pkl",
+    "train_target_end": "2024-12-31",
+    "val_path": "/home/user/workspace/Kronos/finetune_suite/data/ashares/val_data.pkl",
+    "validation_history_prefix": "last 90 train rows per symbol, ending <= 2024-12-31",
+    "validation_target_range": [
+      "2025-01-01",
+      "2025-06-30"
+    ]
+  },
+  "training": {
+    "batch_size": 64,
+    "betas": [
+      0.9,
+      0.95
+    ],
+    "checkpoint_every": 500,
+    "grad_clip": 1.0,
+    "learning_rate": 0.0003,
+    "lookback": 90,
+    "loss": "mean CE on shifted target positions 89..98; teacher_forcing=False",
+    "n_layers": 2,
+    "pred_len": 10,
+    "rank": 32,
+    "sampling": "uniform decision date, then uniform legal stock window within date",
+    "seeds": [
+      100
+    ],
+    "steps": 3000,
+    "trainable_parameters": 107712,
+    "validation": "all target dates 2025-01-01..2025-06-30; fixed 2048 windows",
+    "validation_every": 500,
+    "validation_windows": 2048,
+    "weight_decay": 0.01
+  },
+  "state": {
+    "adapter": "H + up(silu(down(H))*gate(z)); rank=32; last 2 blocks",
+    "clip": [
+      -5.0,
+      5.0
+    ],
+    "epsilon": 1e-06,
+    "features": [
+      "log(std20/0.02)",
+      "log(std20/std60)",
+      "log(std5/std20)"
+    ],
+    "gate": "1+tanh(Linear(silu(Linear(z)))) with hidden=16",
+    "returns": "simple close-to-close returns",
+    "source": "raw close from preceding 90 observations only",
+    "std_ddof": 0,
+    "up_init": "zero"
+  },
+  "inference": {
+    "T": 1.0,
+    "chunk_size": 32,
+    "clip": 5.0,
+    "lookback": 90,
+    "max_context": 512,
+    "pred_len": 10,
+    "sample_count": 20,
+    "seed_per_day": 100,
+    "streams": [
+      42,
+      100
+    ],
+    "top_k": 0,
+    "top_p": 0.9,
+    "weights": [
+      0.5,
+      0.5
+    ]
+  },
+  "qlib": {
+    "account": 100000000,
+    "benchmark": "000300.SH",
+    "close_cost": 0.0015,
+    "deal_price": "open",
+    "engine": "qlib_mean_comparison.run_qlib_backtest",
+    "limit_threshold": 0.095,
+    "min_cost": 5,
+    "open_cost": 0.001,
+    "portfolio": "TopkDropoutStrategy topk=50 n_drop=5 hold_thresh=5",
+    "primary_metric": "sum(return-cost), Qlib daily report cumsum",
+    "universe": "csi300 point-in-time"
+  },
+  "windows": {
+    "W3": [
+      "2025-07-01",
+      "2025-12-31"
+    ],
+    "W4": [
+      "2026-01-01",
+      "2026-07-24"
+    ]
+  },
+  "expected_coverage": {
+    "W3": {
+      "dates": 126,
+      "finite": 37223
+    },
+    "W4": {
+      "dates": 134,
+      "finite": 39563
+    }
+  },
+  "validation_cache": {
+    "known_excluded_prefix_stocks": 56,
+    "path": "/home/user/workspace/Kronos-state-adapter/artifacts/experiments/state_adapter_20261030/arms/dynamic/seed_100/validation_batches.pt",
+    "sha256": "99eb3d1b18d06015759c6eb8ed3fba7ebedbb8ec722e4e730e66eab975360eb2"
+  },
+  "experiment": "state_factorial_20261102",
+  "forward_cutoff": "2026-07-24",
+  "code_base": "3aa1786efe989364a8e5351c6725ffd357b0ccb6",
+  "budget": {
+    "gpu_total_seconds": 36000,
+    "wall_total_seconds": 50400,
+    "cumulative": true
+  },
+  "comparison": {
+    "block": 20,
+    "resamples": 5000,
+    "seed": 100,
+    "method": "paired daily net return; circular blocks; common indices for interaction"
+  },
+  "attribution": "W3 原G1/B/D真实持仓成交对账、日收益成本、回撤、历史20/60日价量暴露；历史行业市值不可得则缺项",
+  "reuse_check": "A100每窗首中末三日逐值重推，atol=1e-10,rtol=0；失败调查后全双流推理",
+  "selection": "最低2025H1 CE，每500步，同分较早；不使用W3/W4选点，不自动采纳",
+  "static_caveat": "仅state输入置零，保留gate；107712名义参数，部分参数无数据梯度，有效自由度不宣称相同",
+  "arms": {
+    "A": {
+      "family": "static",
+      "seed": 100,
+      "protocol_sha": "1c113930fcf3ba2dd75c8e6c8e24bfeaad19f221a76387aba8ec663ffdddd990",
+      "config_sha": "f0be49f5e4e8cf32bd8c5a7359a7486d2a03dfdb1eb6133b06da6263e9fbe75e",
+      "base_hash": "b16a609e4f8a9828a93720ebaa00f95437e64c557b4366b8675d110a65b05636",
+      "step": 3000,
+      "val_ce": 2.4431222081184387,
+      "path": "/home/user/workspace/Kronos-state-adapter/artifacts/experiments/state_adapter_20261030/arms/static/seed_100/best_adapter.pt",
+      "sha256": "873db507a7ae6109274fca0072a46be06dab583b968e5d83e705eea9ccafad17",
+      "sampling": "window"
+    },
+    "B": {
+      "family": "dynamic",
+      "seed": 100,
+      "protocol_sha": "1c113930fcf3ba2dd75c8e6c8e24bfeaad19f221a76387aba8ec663ffdddd990",
+      "config_sha": "f0be49f5e4e8cf32bd8c5a7359a7486d2a03dfdb1eb6133b06da6263e9fbe75e",
+      "base_hash": "b16a609e4f8a9828a93720ebaa00f95437e64c557b4366b8675d110a65b05636",
+      "step": 3000,
+      "val_ce": 2.448015436530113,
+      "path": "/home/user/workspace/Kronos-state-adapter/artifacts/experiments/state_adapter_20261030/arms/dynamic/seed_100/best_adapter.pt",
+      "sha256": "d208a8b9f5359aa81bd6cfff473bf9aae193f0b37542e92b7ae39d00c649c402",
+      "sampling": "window"
+    },
+    "D": {
+      "family": "dynamic",
+      "seed": 100,
+      "protocol_sha": "d6ccd26861b9c048bca62e9c169db17f801e1c31c92cf02933b38464c78434ca",
+      "config_sha": "f17b42a0df0d58cc0ceff977a5e3762ac7dced5b7adbe572b01bae75b8fb30e6",
+      "base_hash": "b16a609e4f8a9828a93720ebaa00f95437e64c557b4366b8675d110a65b05636",
+      "step": 3000,
+      "val_ce": 2.4395344108343124,
+      "path": "/home/user/workspace/Kronos-date-balanced/artifacts/experiments/date_balanced_20261101/arms/candidate/best_adapter.pt",
+      "sha256": "2c45c8a38559653c9be72facbd8ca911e621f9448f5919573dbfc9a621aaa13d",
+      "sampling": "date"
+    },
+    "C": {
+      "family": "static",
+      "seed": 100,
+      "sampling": "date",
+      "path": "/home/user/workspace/Kronos-state-factorial/artifacts/experiments/state_factorial_20261102/arms/C/best_adapter.pt",
+      "new_training": true
+    }
+  },
+  "reference_files": {
+    "/home/user/workspace/Kronos-state-mc40/artifacts/experiments/state_mc40_20261101/report_W3_G1_MC40.parquet": "04387655d343a95e1840e2e4c309aa2d3c3b5682d51d227d9b4306cd4d6cbc7d",
+    "/home/user/workspace/Kronos-state-mc40/artifacts/experiments/state_mc40_20261101/report_W3_G1_original.parquet": "2590f2db897b689e4139a686d6e3cadd358c1464329a0118b643c35f864306a6",
+    "/home/user/workspace/Kronos-state-mc40/artifacts/experiments/state_mc40_20261101/report_W3_State_MC40.parquet": "fb3482d6cd5f7c425200f3795e5b3e19de2ada51c23ccfccbb5690a530037d2e",
+    "/home/user/workspace/Kronos-state-mc40/artifacts/experiments/state_mc40_20261101/report_W4_G1_MC40.parquet": "d4cd501bbd2c14b817199e5e55d14172f55c63130b08b7a4f8b80cbde8bdb16c",
+    "/home/user/workspace/Kronos-state-mc40/artifacts/experiments/state_mc40_20261101/report_W4_G1_original.parquet": "e582b38e3deebac85ba33b12017ccbbee87dfa1345bd21a943acf517a64fb2e9",
+    "/home/user/workspace/Kronos-state-mc40/artifacts/experiments/state_mc40_20261101/report_W4_State_MC40.parquet": "8a88c385dba8ed67eff83e460f17958f3e36ccc5639f23c33276e8d090e21129",
+    "/home/user/workspace/Kronos-state-mc40/artifacts/experiments/state_mc40_20261101/signal_W3_G1_MC40.parquet": "574336f84b01d9620c0262d26273be6c52e84328a55f9cb68c538c3063c5f0e4",
+    "/home/user/workspace/Kronos-state-mc40/artifacts/experiments/state_mc40_20261101/signal_W3_G1_original.parquet": "c8093beb123ae77b6af5d21f77d0d110da1c5163717feccfa66a5680b833d125",
+    "/home/user/workspace/Kronos-state-mc40/artifacts/experiments/state_mc40_20261101/signal_W3_State_MC40.parquet": "1602d4351293b2beedc72a3167807e200e9d39732f1e1207d88e0816b37e4ce0",
+    "/home/user/workspace/Kronos-state-mc40/artifacts/experiments/state_mc40_20261101/signal_W4_G1_MC40.parquet": "525f26e079bd6bd140a98436decfec5405b1b5e5fde63195f7b59c0d4e85f770",
+    "/home/user/workspace/Kronos-state-mc40/artifacts/experiments/state_mc40_20261101/signal_W4_G1_original.parquet": "15952c861c5eb7fcd22b5ba8983f55ff2155144228945850de600f7ececca574",
+    "/home/user/workspace/Kronos-state-mc40/artifacts/experiments/state_mc40_20261101/signal_W4_State_MC40.parquet": "138d7dbc6ada2b66e78bb91ccf8244269ad68c98c33e803a1f23974b73687c1a",
+    "/home/user/workspace/Kronos-state-adapter/artifacts/experiments/state_adapter_20261030/arms/static/seed_100/best_adapter.pt": "873db507a7ae6109274fca0072a46be06dab583b968e5d83e705eea9ccafad17",
+    "/home/user/workspace/Kronos-state-adapter/artifacts/experiments/state_adapter_20261030/arms/dynamic/seed_100/best_adapter.pt": "d208a8b9f5359aa81bd6cfff473bf9aae193f0b37542e92b7ae39d00c649c402",
+    "/home/user/workspace/Kronos-date-balanced/artifacts/experiments/date_balanced_20261101/arms/candidate/best_adapter.pt": "2c45c8a38559653c9be72facbd8ca911e621f9448f5919573dbfc9a621aaa13d",
+    "/home/user/workspace/Kronos-date-balanced/artifacts/experiments/date_balanced_20261101/protocol.json": "d713de4aa142705be8c59bfcf69d18c235e54fe9b749cbf6ddcc5bd73c98decf",
+    "/home/user/workspace/Kronos-date-balanced/artifacts/experiments/date_balanced_20261101/protocol.json.sha256": "28f6bb0d8084f5abe46a34919b506fb7541fcec3ae8fd77b623e77e3e31edc34",
+    "/home/user/workspace/Kronos-state-mc40/artifacts/experiments/state_mc40_20261101/manifest.json": "f89afad1c5782fc10f3d03afc11f8342f3538c04ad518de61f447d9845e766bc",
+    "/home/user/workspace/Kronos-state-adapter/artifacts/experiments/state_adapter_20261030/protocol.json": "4c4405f0dfb2e050cef5d8df414e12c4ebc1b3cf46074aba0cfed092c5a583b9",
+    "/home/user/workspace/Kronos-state-adapter/artifacts/experiments/state_adapter_20261030/arms/static/seed_100/validation_batches.pt": "37be1fd2c827b0cc4b582d4deb119cedc6dfb094789713cf2b9ec06c5e1bf7e6",
+    "/home/user/workspace/Kronos-state-adapter/artifacts/experiments/state_adapter_20261030/arms/dynamic/seed_100/validation_batches.pt": "99eb3d1b18d06015759c6eb8ed3fba7ebedbb8ec722e4e730e66eab975360eb2",
+    "/home/user/workspace/Kronos-state-adapter/artifacts/experiments/state_adapter_20261030/signals/State_static_100/W3.parquet": "ba29cea22bf3c2c2f3cf57d06c9bbb3f97a28323d187e4894bbb89fc8f902da3",
+    "/home/user/workspace/Kronos-state-adapter/artifacts/experiments/state_adapter_20261030/signals/State_static_100/W3.meta.json": "9176449910bd1d0cb064201e5676a3527e52a5bb66bd524c59aa673dcc1e2c2e",
+    "/home/user/workspace/Kronos-date-balanced/artifacts/experiments/date_balanced_20261101/signal_W3_Date_balanced_MC40.parquet": "a3e93929708a00fa0864dba9839c05fe401b5306dcec0c101d417223f66c89b8",
+    "/home/user/workspace/Kronos-date-balanced/artifacts/experiments/date_balanced_20261101/report_W3_Date_balanced_MC40.parquet": "18bcaf8bc6ae0a331d046acfb1f8c797af57f07b5ed907553a07d9cfba80c01d",
+    "/home/user/workspace/Kronos-date-balanced/artifacts/experiments/date_balanced_20261101/daily_W3_Date_balanced_MC40.parquet": "d34a81656a7c9c6d9e61823db534dee5d7000c5c0925b6e9fc8bcc49d18f833f",
+    "/home/user/workspace/Kronos-date-balanced/artifacts/experiments/date_balanced_20261101/signals/Date_balanced_train100_infer42/W3.parquet": "64b5cc7dcbca8bda35f8fa4658aacf3993eb28e1686c57c4ce3f5aeac8a8c4ef",
+    "/home/user/workspace/Kronos-date-balanced/artifacts/experiments/date_balanced_20261101/signals/Date_balanced_train100_infer42/W3.meta.json": "f13a95330e7c94dac4aadf9a24b522afae165fb4ddc6f2acb5408928682312f9",
+    "/home/user/workspace/Kronos-date-balanced/artifacts/experiments/date_balanced_20261101/signals/Date_balanced_train100_infer100/W3.parquet": "1c6ef3c724a328849b6dede20f095a8069a47c10f589c80e4329662c461bcfa5",
+    "/home/user/workspace/Kronos-date-balanced/artifacts/experiments/date_balanced_20261101/signals/Date_balanced_train100_infer100/W3.meta.json": "df57fe3dcd205a20356c47a403572d4567aa186c745692599b295a0e17696163",
+    "/home/user/workspace/Kronos-state-adapter/artifacts/experiments/state_adapter_20261030/signals/G1_paired_100/W3.parquet": "0d834347a96e320b4c4252f1455da18409923452b609dc54849d3e1e00e7fd0f",
+    "/home/user/workspace/Kronos/g5_head/data/daily_signals_2025h2_G1_mean.parquet": "9352b40302eb34c714bfebd808481b625a21d2f7f4f668ccca15cda0cfe21d66",
+    "/home/user/workspace/Kronos-state-adapter/artifacts/experiments/state_adapter_20261030/signals/State_dynamic_100/W3.parquet": "deae9cc007f0325f4c564d9f2c1512562ca30b5b72a7f497f80955ecbd5dc721",
+    "/home/user/workspace/Kronos-canonical-state/artifacts/experiments/canonical_state_20261101/signals/State_dynamic_train100_infer42/W3.parquet": "1de3ecaec684394d917fbaa0c5bc1a019ccd8f33250a5d55488c89da99a76fb7",
+    "/home/user/workspace/Kronos-state-adapter/artifacts/experiments/state_adapter_20261030/signals/State_static_100/W4.parquet": "95ea54591ebc004d0dba0c4c075b52ec3b0785126d27166bc283f6917216bef3",
+    "/home/user/workspace/Kronos-state-adapter/artifacts/experiments/state_adapter_20261030/signals/State_static_100/W4.meta.json": "29be7af7e65ba00f77da52e81b311bd4f48e467194d4fe0c79c3d53d37a25ace",
+    "/home/user/workspace/Kronos-date-balanced/artifacts/experiments/date_balanced_20261101/signal_W4_Date_balanced_MC40.parquet": "6b159d4edd04948d82e0f97d1e62845f5fa4cc30d13e4599390e11ab843ee7ee",
+    "/home/user/workspace/Kronos-date-balanced/artifacts/experiments/date_balanced_20261101/report_W4_Date_balanced_MC40.parquet": "2cb372c0463022ab5c16b316e2f1d90c47cc69a52adaa332bc6fa5dba8d9a50b",
+    "/home/user/workspace/Kronos-date-balanced/artifacts/experiments/date_balanced_20261101/daily_W4_Date_balanced_MC40.parquet": "5c8fced710eb3e276b729d8d5dc495742f63b8a9b36f90b247a1537c1cdad39b",
+    "/home/user/workspace/Kronos-date-balanced/artifacts/experiments/date_balanced_20261101/signals/Date_balanced_train100_infer42/W4.parquet": "6c33b21d0b84448f4871c1af6618fda297e15bb6f5f2bd0d0702cc156e593c50",
+    "/home/user/workspace/Kronos-date-balanced/artifacts/experiments/date_balanced_20261101/signals/Date_balanced_train100_infer42/W4.meta.json": "af64f05d5c0aad833a325670337773102c26c6adae5320c2b850a36c2b72b94c",
+    "/home/user/workspace/Kronos-date-balanced/artifacts/experiments/date_balanced_20261101/signals/Date_balanced_train100_infer100/W4.parquet": "4df83db7c6efaac00d8a878f386cb90796084ac36312a255b3d2b3a0311c5792",
+    "/home/user/workspace/Kronos-date-balanced/artifacts/experiments/date_balanced_20261101/signals/Date_balanced_train100_infer100/W4.meta.json": "27ab8be70c039fedc36507ad5dcf32acd54208257bf8dc3c7a629bcf40f286ef",
+    "/home/user/workspace/Kronos-state-adapter/artifacts/experiments/state_adapter_20261030/signals/G1_paired_100/W4.parquet": "5d19daf0d749b5c00e2c2b031bc8fa80bfaf08e55ef33243902c8f96c264b5c5",
+    "/home/user/workspace/Kronos/finetune_suite/data/g1/daily_signals_backtest_G1_mean.parquet": "453e2aeae7fe4bee8ce8fa62a9908da0843d5ad8b52777cd3b299a84cc4a3e36",
+    "/home/user/workspace/Kronos-state-adapter/artifacts/experiments/state_adapter_20261030/signals/State_dynamic_100/W4.parquet": "d22db3d505e46ff68d4e098bcf33253ffc1e25cef0d3bb0f489f8d64a6b29861",
+    "/home/user/workspace/Kronos-canonical-state/artifacts/experiments/canonical_state_20261101/signals/State_dynamic_train100_infer42/W4.parquet": "b0204e4e7f4c1a6e5ad02f9a4bb17dee61a82c564aa9aa9e02fd53c45a52b056"
+  },
+  "reuse_dates": {
+    "W3": [
+      "2025-07-01",
+      "2025-09-26",
+      "2025-12-31"
+    ],
+    "W4": [
+      "2026-01-05",
+      "2026-04-17",
+      "2026-07-24"
+    ]
+  }
+}

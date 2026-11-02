@@ -1,0 +1,8 @@
+{
+  "dates": 63,
+  "finite": 18600,
+  "last": "2025-09-25",
+  "prefix_matches_G1": true,
+  "not_yet_present_columns": 13,
+  "missing_columns_all_nan_in_reference_prefix": true
+}

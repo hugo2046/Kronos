@@ -1,0 +1,97 @@
+{
+  "protocol_sha": "fcf92d2447fab4d59fc00f3e1495bbc1c01b4dffd4a5064e9fbb572a10d719fc",
+  "files": {
+    "risk/B/balances.parquet": {
+      "sha256": "5fa716d5851328006c99c7d7b5d6f6776d6a428ca8e22cd2f636774e1a315802",
+      "bytes": 9441
+    },
+    "risk/B/positions.parquet": {
+      "sha256": "7c44d93b439ee2966d69001f0e36d13eb7b14acae654ea752d172889863fde24",
+      "bytes": 208914
+    },
+    "risk/B/report.parquet": {
+      "sha256": "84cd8868a904cb0fc013ba5556b24c58f58f1f50ff046e62fe456cb2c5e35583",
+      "bytes": 8582
+    },
+    "risk/B/stock_daily_contributions.parquet": {
+      "sha256": "cea7b1801e6aa614f5a4884dbd84737d61eb188487768aea113577e5aef8b9b6",
+      "bytes": 179850
+    },
+    "risk/B/trades.parquet": {
+      "sha256": "3d48ab9a63485b198ef9aeca9dabd9e07e7fa0796b79091f4d3ad1243a9fe432",
+      "bytes": 19425
+    },
+    "risk/D/balances.parquet": {
+      "sha256": "aa17a40660ac37f13c95bdd22998caf3706c568be6ed8acb9c4db32bb2aa76f1",
+      "bytes": 9273
+    },
+    "risk/D/positions.parquet": {
+      "sha256": "d97534727c1d1653cfa008f732205de920ceab9f2f99f3e4c7aae3bf84b4d384",
+      "bytes": 207321
+    },
+    "risk/D/report.parquet": {
+      "sha256": "130e1b0ce0bf4914a12babeeabad64af7956a1d726eadaa918acfecc35c4573d",
+      "bytes": 8406
+    },
+    "risk/D/stock_daily_contributions.parquet": {
+      "sha256": "272980183d3f95d389fceec6ba7071e1900a50ad1f36ec697845483df68dd866",
+      "bytes": 178442
+    },
+    "risk/D/trades.parquet": {
+      "sha256": "66cf045e3a021ab85d15060f654d36b64b49f0119dfd9219f7a51ab6e2dc6826",
+      "bytes": 18027
+    },
+    "risk/G1_original/balances.parquet": {
+      "sha256": "93e6c061993d9978b3e4967f9bcc63f6d609a4828985118b500ef64d81db6019",
+      "bytes": 9361
+    },
+    "risk/G1_original/positions.parquet": {
+      "sha256": "3dae40f9efe47dcc06eb00528e8042868b19d8809e13f364305ffb39711b0769",
+      "bytes": 201902
+    },
+    "risk/G1_original/report.parquet": {
+      "sha256": "2902681b028a4320be599560f29fbdd7c264607cda5498260d79eb045aae5ac6",
+      "bytes": 8502
+    },
+    "risk/G1_original/stock_daily_contributions.parquet": {
+      "sha256": "96f26f11b8de8dcbae5906d4f6744856dbb3dfb98afc7d622ae9ceef34d9aa73",
+      "bytes": 174302
+    },
+    "risk/G1_original/trades.parquet": {
+      "sha256": "44e16ed5f698a379236a3dfb5848cec8a12611029f073a9950628ac18260e2ff",
+      "bytes": 19256
+    },
+    "risk/exposure_close_history.parquet": {
+      "sha256": "62e7ffda43e2e0529ae4fcb42e32ebf7312fdf051a1a9d3fbdbd49f50f7dd688",
+      "bytes": 275071
+    },
+    "risk/stock_historical_exposures.parquet": {
+      "sha256": "bb2953876e182af037541631fe282704ae20a10f12c29094df3713fcfa65efae",
+      "bytes": 1074315
+    },
+    "reuse_checks/W3/2025-07-01.parquet": {
+      "sha256": "81c95807869ba4169c4adb2c7fe32707678157616a3b9d6f423e2115b88e0430",
+      "bytes": 5932
+    },
+    "reuse_checks/W3/2025-09-26.parquet": {
+      "sha256": "6b5cf82735fbd793cfac1fa31e7b1319e07e5b50f2c4ae340c405b0b5d060f89",
+      "bytes": 5932
+    },
+    "reuse_checks/W3/2025-12-31.parquet": {
+      "sha256": "ef2477c681e5d7878d76e6273cd1067a65ebd31e6694782a5f2151f2a94e0736",
+      "bytes": 5939
+    },
+    "reuse_checks/W4/2026-01-05.parquet": {
+      "sha256": "8304537169831ae302f330de87c168545a1c76fedff793ec5c7ca6ec188dbf4b",
+      "bytes": 5923
+    },
+    "reuse_checks/W4/2026-04-17.parquet": {
+      "sha256": "00f672879a4e2136a9f7366c72091c181c98da1db24e7a0f4f4f4b997f08952b",
+      "bytes": 5894
+    },
+    "reuse_checks/W4/2026-07-24.parquet": {
+      "sha256": "9080cadb9f9aacd3cfe0f36f3a04cbc14c562a5ef45b4402401352cfa3842e39",
+      "bytes": 5999
+    }
+  }
+}

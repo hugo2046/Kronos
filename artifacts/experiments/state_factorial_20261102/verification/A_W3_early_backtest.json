@@ -1,0 +1,19 @@
+{
+  "dates": 126,
+  "finite": 37223,
+  "pool_max_abs": 0.0,
+  "metrics": {
+    "net_sum": 0.09764140322562656,
+    "compound": 0.09993448597379628,
+    "sharpe": 2.005461106501478,
+    "mdd": -0.04491904568501737,
+    "cost": 0.007021030640238746,
+    "turnover": 0.045997103581748314,
+    "days": 126
+  },
+  "signal_sha256": "5ef05a3aed33faaecb2724bfc11c57040a7f81db8f585ece3b57e4c2b400f1d6",
+  "report_sha256": "5d2e6f1339f7db4190ca24d2ef7388a64dee9761254466df33906323d354f534",
+  "infer42_sha256": "2f20d67540c02e303449b76d7cbe34202c35d9bc6b603bb412e9966c6dea1373",
+  "protocol_sha": "fcf92d2447fab4d59fc00f3e1495bbc1c01b4dffd4a5064e9fbb572a10d719fc",
+  "stage": "仅A臂W3完成，非完整四格；最终统一回测仍将核验全部臂"
+}

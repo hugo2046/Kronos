@@ -1,0 +1,41 @@
+{
+  "G1_original": {
+    "replay_max_abs": 7.997075224253081e-16,
+    "delay_execution_supported": false,
+    "qlib_file": "/home/user/workspace/quant-qlib/qlib/__init__.py",
+    "reconciliation": {
+      "gross_max_abs": 6.435824095873954e-16,
+      "cost_max_abs": 9.215718466126788e-19,
+      "gross_residual_sum": 2.235760404936671e-16,
+      "cost_residual_sum": -7.355634113956344e-18,
+      "exact": true,
+      "observation": "Account.update_bar_end原样执行及透传返回；只读实际trade_info和估值后position"
+    }
+  },
+  "B": {
+    "replay_max_abs": 8.170547571850761e-16,
+    "delay_execution_supported": false,
+    "qlib_file": "/home/user/workspace/quant-qlib/qlib/__init__.py",
+    "reconciliation": {
+      "gross_max_abs": 6.036837696399289e-16,
+      "cost_max_abs": 1.0570971181733668e-18,
+      "gross_residual_sum": 7.502679033599691e-16,
+      "cost_residual_sum": 2.546181039446427e-18,
+      "exact": true,
+      "observation": "Account.update_bar_end原样执行及透传返回；只读实际trade_info和估值后position"
+    }
+  },
+  "D": {
+    "replay_max_abs": 8.89913143176102e-16,
+    "delay_execution_supported": false,
+    "qlib_file": "/home/user/workspace/quant-qlib/qlib/__init__.py",
+    "reconciliation": {
+      "gross_max_abs": 5.663872149064275e-16,
+      "cost_max_abs": 7.928228386300251e-19,
+      "gross_residual_sum": 4.3428395645264684e-16,
+      "cost_residual_sum": 8.588914085158605e-19,
+      "exact": true,
+      "observation": "Account.update_bar_end原样执行及透传返回；只读实际trade_info和估值后position"
+    }
+  }
+}

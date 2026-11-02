@@ -1,0 +1,12 @@
+{
+  "revision": 1,
+  "reason": "落实协调器独立审查：记录Qlib行情入口读取前封存守卫，实际worker必须加载新版本",
+  "protocol_unchanged": true,
+  "prior_pid": 46163,
+  "prior_exit": "SIGINT，GPU阶段上下文已结算，active=null，累计364.0150638567284秒",
+  "weights_retained": true,
+  "deadline_retained": true,
+  "training_repeated": false,
+  "next": "新worker先重查权重和控制门禁，复用已原子落盘检查日，再完成A100六日校验与缺失推理；W3账户和暴露在守卫下重放核验",
+  "guard": "D.features读前将end截断到2026-07-24，拒绝无末日和未来起日；真实effective_end写JSONL，返回值不修改"
+}

@@ -1,0 +1,26 @@
+{
+  "family": "static",
+  "training_protocol": "1c113930fcf3ba2dd75c8e6c8e24bfeaad19f221a76387aba8ec663ffdddd990",
+  "config_sha": "f0be49f5e4e8cf32bd8c5a7359a7486d2a03dfdb1eb6133b06da6263e9fbe75e",
+  "adapter_sha256": "873db507a7ae6109274fca0072a46be06dab583b968e5d83e705eea9ccafad17",
+  "seed": 100,
+  "window": "W3",
+  "mask_sha": "cc0c8d196cf21cbb5f7d7eefd6e948b9bf4c9a33739ad93c59eab83e26d9b977",
+  "protocol_sha": "fcf92d2447fab4d59fc00f3e1495bbc1c01b4dffd4a5064e9fbb572a10d719fc",
+  "tag": "A100_check_2025-12-31",
+  "completed": [
+    "2025-12-31"
+  ],
+  "forward_cutoff": "2026-07-24",
+  "last_date": "2025-12-31",
+  "last_pool_stats": {
+    "n_pool": 300,
+    "n_kept": 295,
+    "skipped_short": 0,
+    "skipped_halt": 5
+  },
+  "max_market_date": "2026-01-16",
+  "max_market_request_end": "2026-01-16",
+  "complete": true,
+  "n_dates": 1
+}

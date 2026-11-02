@@ -1,0 +1,24 @@
+{
+  "at": "2026-11-02T03:02:34.566299+00:00",
+  "signals": {
+    "W3": {
+      "dates": 126,
+      "finite": 37223,
+      "last_date": "2025-12-31 00:00:00"
+    },
+    "W4": {
+      "dates": 44,
+      "finite": 12978,
+      "last_date": "2026-03-13 00:00:00"
+    }
+  },
+  "market_requests": {
+    "count": 176,
+    "pids": [
+      51274
+    ],
+    "max_end": "2026-07-24"
+  },
+  "tests": "17 passed in 2.20s",
+  "status": "continue"
+}
