@@ -1,0 +1,114 @@
+{
+  "W3": {
+    "G1_original": {
+      "delta_pp": -0.06607899010716567,
+      "retained_advantage": -0.02418462606752836,
+      "d_original_advantage_pp": 2.732272557064136,
+      "sharpe_delta": -0.1443829290283687,
+      "mdd_delta_pp": -1.249116061693234,
+      "bootstrap": {
+        "block": 20,
+        "resamples": 5000,
+        "seed": 100,
+        "ci95_pp": [
+          -4.8483565662179835,
+          4.799012727682938
+        ],
+        "positive_fraction": 0.5066,
+        "method": "配对非循环移动块，末块截断"
+      }
+    },
+    "B": {
+      "delta_pp": -1.1139921746688013,
+      "retained_advantage": -0.661374403143975,
+      "d_original_advantage_pp": 1.6843593725025001,
+      "sharpe_delta": -0.5584066830840566,
+      "mdd_delta_pp": -1.0997383655699244,
+      "bootstrap": {
+        "block": 20,
+        "resamples": 5000,
+        "seed": 100,
+        "ci95_pp": [
+          -5.696168524732684,
+          3.6244346351783143
+        ],
+        "positive_fraction": 0.3192,
+        "method": "配对非循环移动块，末块截断"
+      }
+    },
+    "D": {
+      "delta_pp": -2.7983515471713014,
+      "retained_advantage": null,
+      "d_original_advantage_pp": 0.0,
+      "sharpe_delta": -0.060809370656560446,
+      "mdd_delta_pp": 1.426960467988525,
+      "bootstrap": {
+        "block": 20,
+        "resamples": 5000,
+        "seed": 100,
+        "ci95_pp": [
+          -5.8090799332753305,
+          -0.06347513452741661
+        ],
+        "positive_fraction": 0.0218,
+        "method": "配对非循环移动块，末块截断"
+      }
+    }
+  },
+  "W4": {
+    "G1_original": {
+      "delta_pp": 1.8158104388615532,
+      "retained_advantage": 0.9794993818515314,
+      "d_original_advantage_pp": 1.853814787947244,
+      "sharpe_delta": 0.24618460561915415,
+      "mdd_delta_pp": 2.8861213855139844,
+      "bootstrap": {
+        "block": 20,
+        "resamples": 5000,
+        "seed": 100,
+        "ci95_pp": [
+          -11.726853204248728,
+          9.31013477480995
+        ],
+        "positive_fraction": 0.4334,
+        "method": "配对非循环移动块，末块截断"
+      }
+    },
+    "B": {
+      "delta_pp": 1.1642753970162658,
+      "retained_advantage": 0.9683897618595765,
+      "d_original_advantage_pp": 1.2022797461019565,
+      "sharpe_delta": 0.1584706884360559,
+      "mdd_delta_pp": 1.5475301088620053,
+      "bootstrap": {
+        "block": 20,
+        "resamples": 5000,
+        "seed": 100,
+        "ci95_pp": [
+          -6.508508268974688,
+          6.067422634207276
+        ],
+        "positive_fraction": 0.5278,
+        "method": "配对非循环移动块，末块截断"
+      }
+    },
+    "D": {
+      "delta_pp": -0.038004349085690725,
+      "retained_advantage": null,
+      "d_original_advantage_pp": 0.0,
+      "sharpe_delta": 0.029784068981207612,
+      "mdd_delta_pp": 1.582480814766607,
+      "bootstrap": {
+        "block": 20,
+        "resamples": 5000,
+        "seed": 100,
+        "ci95_pp": [
+          -5.645553436818499,
+          3.571910535408588
+        ],
+        "positive_fraction": 0.2114,
+        "method": "配对非循环移动块，末块截断"
+      }
+    }
+  }
+}

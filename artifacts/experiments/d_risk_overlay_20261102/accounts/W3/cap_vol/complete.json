@@ -1,0 +1,26 @@
+{
+  "delay_execution_supported": false,
+  "qlib_file": "/home/user/workspace/quant-qlib/qlib/__init__.py",
+  "reconciliation": {
+    "gross_max_abs": 6.29704621779581e-16,
+    "cost_max_abs": 1.0028870095490916e-18,
+    "gross_residual_sum": 3.114506265736172e-16,
+    "cost_residual_sum": 2.4145203557075865e-18,
+    "exact": true,
+    "observation": "Account.update_bar_end原样执行及透传返回；只读实际trade_info和估值后position"
+  },
+  "code_sha256": {
+    "state_adapter/risk_overlay.py": "3381a6ce9121e384f04e985ae766c821396c81c4dcbd69f1ff9f64915a64689b",
+    "state_adapter/risk_overlay_run.py": "b43d56be5106fd7b68705ba00fab087540349f007bfb346031cda2acf7dd1f67",
+    "state_adapter/risk_attribution.py": "3be8e0965c68e8b9aa8d7f46814a9562dc4fa1b1024249bb4dcf45d607ba3878",
+    "qlib_mean_comparison/run.py": "a619ac9e89cac53a05378425c0cf2693678814c8764059ec5cfbc71ed57c7340"
+  },
+  "report_sha256": "30837e7f4c9df8d6535bd115a8633b77fcb5d72a20dc55deafe2318f1fbde96a",
+  "wall_seconds": 2.2348086833953857,
+  "cpu_seconds": 0.9996850290000001,
+  "gpu_seconds": 0,
+  "signal_sha256": "a3e93929708a00fa0864dba9839c05fe401b5306dcec0c101d417223f66c89b8",
+  "protocol_sha256": "784178758cc1b2c9bbc28760f307e4b948279d4bbe2d46500f3c14594c3eafc7",
+  "code_commit": "03d8ff5f623174792e691140bb9df717e2426a0e",
+  "source_arm": "D"
+}

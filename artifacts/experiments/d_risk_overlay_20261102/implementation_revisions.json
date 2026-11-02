@@ -1,0 +1,21 @@
+[
+  {
+    "revision": 1,
+    "status": "superseded_implementation_error",
+    "reason": "退出信号池不等于缺风险；修复合法历史持仓折扣及最后估值日期mask。首版全部六风险臂已看过，保留初版，不能择优。",
+    "archive": "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded",
+    "time": 1793612286.0031145
+  },
+  {
+    "revision": 2,
+    "status": "completed",
+    "rule": "冻结公式参数不变；重做全部门禁及固定风险臂",
+    "same_economic_results_as_revision01": true
+  },
+  {
+    "revision": 3,
+    "status": "completed",
+    "reason": "在03d8ff5提交下最终完整重放，新增代码SHA缓存校验与原交易所拒绝细分审计；无交易参数变化",
+    "same_economic_results": true
+  }
+]

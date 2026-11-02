@@ -1,0 +1,8 @@
+{
+  "tests_passed": 51,
+  "tests_failed": 0,
+  "command": "CUDA_VISIBLE_DEVICES='' MPLCONFIGDIR=/tmp/kronos-risk-mpl /home/user/miniconda3/envs/quant/bin/python -m pytest tests/test_risk_overlay.py tests/test_risk_overlay_delivery.py tests/test_state_factorial.py tests/test_qlib_mean_comparison.py tests/test_date_balanced.py -q",
+  "output": "...................................................                      [100%]\n51 passed in 3.27s\n",
+  "scope": "相关规则、原回测接口、原归因守卫及真实交付产物；未执行可能涉及无关行情/训练的全库测试",
+  "review": "协调器独立审查五项已处理；最终按用户禁止子代理要求由执行者自审，未派子代理"
+}

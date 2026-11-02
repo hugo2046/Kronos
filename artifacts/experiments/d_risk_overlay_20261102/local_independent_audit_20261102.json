@@ -1,0 +1,236 @@
+{
+  "metrics": {
+    "W3_G1_original": {
+      "net_sum": 0.1440177302019838,
+      "compound": 0.15038095000839258,
+      "sharpe": 2.312355022506283,
+      "mdd": -0.05159658506601672,
+      "annual_vol": 0.12456368403662156,
+      "cost": 0.007422317636572936,
+      "turnover": 0.04836393398500296
+    },
+    "W3_B": {
+      "net_sum": 0.15449686204760016,
+      "compound": 0.1632499033667445,
+      "sharpe": 2.726378776561971,
+      "mdd": -0.053090362027249816,
+      "annual_vol": 0.11333484794979545,
+      "cost": 0.0076011854387160035,
+      "turnover": 0.0497223442352971
+    },
+    "W3_D": {
+      "net_sum": 0.17134045577262516,
+      "compound": 0.1798323037471221,
+      "sharpe": 2.228781464134475,
+      "mdd": -0.07835735036283431,
+      "annual_vol": 0.1537525850154748,
+      "cost": 0.006547085178157788,
+      "turnover": 0.04297187465873605
+    },
+    "W3_neutral": {
+      "net_sum": 0.17134045577262516,
+      "compound": 0.1798323037471221,
+      "sharpe": 2.228781464134475,
+      "mdd": -0.07835735036283431,
+      "annual_vol": 0.1537525850154748,
+      "cost": 0.006547085178157788,
+      "turnover": 0.04297187465873605
+    },
+    "W3_cap_only": {
+      "net_sum": 0.16810002383249723,
+      "compound": 0.1761303611115157,
+      "sharpe": 2.2043069926000927,
+      "mdd": -0.07819814446777873,
+      "annual_vol": 0.1525196121926871,
+      "cost": 0.006591644373511255,
+      "turnover": 0.04323711010489407
+    },
+    "W3_vol_only": {
+      "net_sum": 0.14905304959798724,
+      "compound": 0.15548556659950186,
+      "sharpe": 2.225340611802876,
+      "mdd": -0.06445739181239973,
+      "annual_vol": 0.13395976221117073,
+      "cost": 0.006596790183623793,
+      "turnover": 0.043291746131755
+    },
+    "W3_cap_vol": {
+      "net_sum": 0.14335694030091214,
+      "compound": 0.14905958142116837,
+      "sharpe": 2.167972093477914,
+      "mdd": -0.06408774568294906,
+      "annual_vol": 0.1322498022296361,
+      "cost": 0.006683004115639236,
+      "turnover": 0.04380720288321103
+    },
+    "W4_G1_original": {
+      "net_sum": 0.0008054436955878923,
+      "compound": -0.006691301508510938,
+      "sharpe": 0.008979913374315947,
+      "mdd": -0.10864505668546254,
+      "annual_vol": 0.16867813156699143,
+      "cost": 0.0044106897821741126,
+      "turnover": 0.027590613743361816
+    },
+    "W4_B": {
+      "net_sum": 0.007320794114040768,
+      "compound": 0.001964380480972361,
+      "sharpe": 0.09669383055741418,
+      "mdd": -0.09525914391894275,
+      "annual_vol": 0.1423820266337837,
+      "cost": 0.005756185346926486,
+      "turnover": 0.035615018707801024
+    },
+    "W4_D": {
+      "net_sum": 0.019343591575060333,
+      "compound": 0.012534542973907659,
+      "sharpe": 0.22538045001226242,
+      "mdd": -0.09560865097798876,
+      "annual_vol": 0.1614048626312302,
+      "cost": 0.004560683769652438,
+      "turnover": 0.02848645865565417
+    },
+    "W4_neutral": {
+      "net_sum": 0.019343591575060333,
+      "compound": 0.012534542973907659,
+      "sharpe": 0.22538045001226242,
+      "mdd": -0.09560865097798876,
+      "annual_vol": 0.1614048626312302,
+      "cost": 0.004560683769652438,
+      "turnover": 0.02848645865565417
+    },
+    "W4_cap_only": {
+      "net_sum": 0.022915596418020694,
+      "compound": 0.01648064543117167,
+      "sharpe": 0.27338922999691523,
+      "mdd": -0.09008574311201856,
+      "annual_vol": 0.1576324064391657,
+      "cost": 0.004624320437088301,
+      "turnover": 0.02885506262439317
+    },
+    "W4_vol_only": {
+      "net_sum": 0.011293768119064972,
+      "compound": 0.005677718253755293,
+      "sharpe": 0.1455053437847487,
+      "mdd": -0.08460697404109685,
+      "annual_vol": 0.14596733054280528,
+      "cost": 0.0045293275269098765,
+      "turnover": 0.028269080037736788
+    },
+    "W4_cap_vol": {
+      "net_sum": 0.018963548084203426,
+      "compound": 0.013895698334910112,
+      "sharpe": 0.2551645189934701,
+      "mdd": -0.0797838428303227,
+      "annual_vol": 0.13976391412185088,
+      "cost": 0.004667732932490352,
+      "turnover": 0.02907526807815511
+    }
+  },
+  "accounts": {
+    "W3_G1_original": {
+      "gross_max_error": 6.761084747619606e-16,
+      "cost_max_error": 9.215718466126788e-19
+    },
+    "W3_B": {
+      "gross_max_error": 7.554720737878995e-16,
+      "cost_max_error": 1.0570971181733668e-18
+    },
+    "W3_D": {
+      "gross_max_error": 6.990935608186533e-16,
+      "cost_max_error": 7.928228386300251e-19
+    },
+    "W3_neutral": {
+      "gross_max_error": 6.990935608186533e-16,
+      "cost_max_error": 7.928228386300251e-19
+    },
+    "W3_cap_only": {
+      "gross_max_error": 6.990935608186533e-16,
+      "cost_max_error": 9.75781955236954e-19
+    },
+    "W3_vol_only": {
+      "gross_max_error": 4.891920202254596e-16,
+      "cost_max_error": 9.893344823930228e-19
+    },
+    "W3_cap_vol": {
+      "gross_max_error": 6.29704621779581e-16,
+      "cost_max_error": 1.0028870095490916e-18
+    },
+    "W4_G1_original": {
+      "gross_max_error": 5.863365348801608e-16,
+      "cost_max_error": 5.149960319306146e-19
+    },
+    "W4_B": {
+      "gross_max_error": 7.381248390281314e-16,
+      "cost_max_error": 5.963111948670274e-19
+    },
+    "W4_D": {
+      "gross_max_error": 9.462916561453483e-16,
+      "cost_max_error": 5.014435047745458e-19
+    },
+    "W4_neutral": {
+      "gross_max_error": 9.462916561453483e-16,
+      "cost_max_error": 5.014435047745458e-19
+    },
+    "W4_cap_only": {
+      "gross_max_error": 7.28583859910259e-16,
+      "cost_max_error": 5.827586677109586e-19
+    },
+    "W4_vol_only": {
+      "gross_max_error": 6.054184931159057e-16,
+      "cost_max_error": 6.640738306473715e-19
+    },
+    "W4_cap_vol": {
+      "gross_max_error": 6.852157730108388e-16,
+      "cost_max_error": 6.2341624917916505e-19
+    }
+  },
+  "risk_panels": {
+    "W3": {
+      "rows": 41832,
+      "valid_sigma_outside_signal_pool": 4334,
+      "factor_and_history_date_passed": true
+    },
+    "W4": {
+      "rows": 44488,
+      "valid_sigma_outside_signal_pool": 4752,
+      "factor_and_history_date_passed": true
+    }
+  },
+  "orders": {
+    "W3_cap_only": {
+      "audited_rows": 359,
+      "buy_discount_cap_passed": true,
+      "decision_before_execution": true
+    },
+    "W3_vol_only": {
+      "audited_rows": 179,
+      "buy_discount_cap_passed": true,
+      "decision_before_execution": true
+    },
+    "W3_cap_vol": {
+      "audited_rows": 502,
+      "buy_discount_cap_passed": true,
+      "decision_before_execution": true
+    },
+    "W4_cap_only": {
+      "audited_rows": 342,
+      "buy_discount_cap_passed": true,
+      "decision_before_execution": true
+    },
+    "W4_vol_only": {
+      "audited_rows": 132,
+      "buy_discount_cap_passed": true,
+      "decision_before_execution": true
+    },
+    "W4_cap_vol": {
+      "audited_rows": 485,
+      "buy_discount_cap_passed": true,
+      "decision_before_execution": true
+    }
+  },
+  "passed": true,
+  "market_requests": 85,
+  "max_effective_end": "2026-07-24 00:00:00",
+  "gpu_seconds": 0
+}

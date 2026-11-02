@@ -1,0 +1,10 @@
+{
+  "close_sha256": "9dc0262a14c28236e5a91d446ae0105c100ac502571a75c375034e2f6341a7bc",
+  "signal_sha256": "a3e93929708a00fa0864dba9839c05fe401b5306dcec0c101d417223f66c89b8",
+  "panel_sha256": "833c64b46d74fa808af9124f5e8eccbe71a63609d4ffddae17a55a3245c4a208",
+  "valid_cells": 37223,
+  "missing_risk_cells": 0,
+  "missing_valuation_cells": 0,
+  "historical_date_max": "2026-07-24 00:00:00",
+  "timing": "面板索引为决策日t，执行u取原日历shift=1，不额外shift"
+}

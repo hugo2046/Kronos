@@ -1,0 +1,2179 @@
+{
+  "code_commit": "03d8ff5f623174792e691140bb9df717e2426a0e",
+  "files": {
+    "artifacts/experiments/d_risk_overlay_20261102/acceptance.json": {
+      "sha256": "dd9224a853f56b10db00c345c65308b2ca4de31226a7dfb3baea2cf8a12b2548",
+      "bytes": 276
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W3/B/actual_cap_exceedances.csv": {
+      "sha256": "2d096e72942aac64daaaa25b1970297c025670785a7153f2d68e20a47db13407",
+      "bytes": 104
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W3/B/balances.parquet": {
+      "sha256": "a00ef88df0596d50b85e067d0f2b6ecb37f77a3daa7db811ffe5e8484ccde20f",
+      "bytes": 9441
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W3/B/complete.json": {
+      "sha256": "bf39cfc151dc86845da9cca0a42ef0567bf4492d8aa078a72ad8e5ec89a1a707",
+      "bytes": 1345
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W3/B/market_requests.jsonl": {
+      "sha256": "befc0d6e0073d54cf31cb6b60efb039c044536b9949579e1ef6c4b3071526312",
+      "bytes": 1084
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W3/B/original_orders.parquet": {
+      "sha256": "fd27545fe526c3bbd4a3ecf75d9feeef0e6f2fba2fd4bc82e330d8f9ba8ab48d",
+      "bytes": 7235
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W3/B/positions.parquet": {
+      "sha256": "2b34e2a6f1ab98d596dcc7b510b5cb42173b6d2c8ab824bbdef4cbb1f9c2a4e6",
+      "bytes": 208914
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W3/B/reconciliation_audit.json": {
+      "sha256": "ac4fd3889ca50ea7a22f31507cb40c82a7f7e5d0082aa11b824b49a59610a549",
+      "bytes": 312
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W3/B/reconciliation_residuals.csv": {
+      "sha256": "9920a6527544486115d82095a41596386c8d2c7d25e8c092d449247ad6ebaad8",
+      "bytes": 6890
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W3/B/report.parquet": {
+      "sha256": "b2a6efe71c13d1db6baafb35de8964baeef7308c56d7ae67200a5c9641fb673b",
+      "bytes": 8582
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W3/B/risk_daily.parquet": {
+      "sha256": "82614b6a32fe53600710c9f8bcb4b3bc47528700047884abf515689271bc1545",
+      "bytes": 32467
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W3/B/risk_summary.json": {
+      "sha256": "92f63c09e89934daa409ede41c548978f0acfaa1673d3e4d4a9d6f1c4b5332d2",
+      "bytes": 2862
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W3/B/stock_daily_contributions.parquet": {
+      "sha256": "0b979166e86f790dd93cd2e711e37835fd5a85a81183399260aa830cd6bd34c1",
+      "bytes": 179850
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W3/B/trades.parquet": {
+      "sha256": "7c9129cc1a86811635533d845127c4fd287466ad8026fc1092e27f65aa711eb4",
+      "bytes": 19411
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W3/B/variance_contributions.csv": {
+      "sha256": "0c31ae2070e507284ffc32e4aebcd4327ceb1f656e0f2420d25b69bebd21bc7a",
+      "bytes": 4256
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W3/D/actual_cap_exceedances.csv": {
+      "sha256": "2d096e72942aac64daaaa25b1970297c025670785a7153f2d68e20a47db13407",
+      "bytes": 104
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W3/D/balances.parquet": {
+      "sha256": "7aefed5cc38362cbc034ced01f79801e6d8a78615ccdc1b502f87cd3b51cfac5",
+      "bytes": 9273
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W3/D/complete.json": {
+      "sha256": "3e8fa6171cf25dfd35f7ba0a48505687a2a49bff9302f635b251d0f5ba7f1602",
+      "bytes": 1344
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W3/D/market_requests.jsonl": {
+      "sha256": "befc0d6e0073d54cf31cb6b60efb039c044536b9949579e1ef6c4b3071526312",
+      "bytes": 1084
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W3/D/original_orders.parquet": {
+      "sha256": "aa6d8fc0538a5575a9cde2af7b56cbfa23fc74e4d85a96137d10fc48727b99b2",
+      "bytes": 6809
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W3/D/positions.parquet": {
+      "sha256": "5b3f345d0e29809c085b216d3b35159120dbff7088a3f08350af105ac9444e6f",
+      "bytes": 207321
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W3/D/reconciliation_audit.json": {
+      "sha256": "dbc84952e3b488482f3227198dd339e88171525b78cfd516028a9baa39756da0",
+      "bytes": 311
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W3/D/reconciliation_residuals.csv": {
+      "sha256": "f97c9dceb9f210acd996e9a8ea7ba7d077bdd5062b13184ae1434d9ccb493f0a",
+      "bytes": 6734
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W3/D/report.parquet": {
+      "sha256": "2e3799b21f449255700c3ab833e719215ae357db038eb9f1f3d22e979d0b450d",
+      "bytes": 8406
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W3/D/risk_daily.parquet": {
+      "sha256": "6b7c91f5215df0039b2f7061ade7c064c9144716c8f7c83700d17d616d2f2f3d",
+      "bytes": 32467
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W3/D/risk_summary.json": {
+      "sha256": "51327238872f3dc8c8e30d99da2dbc302eb6ebe06977a7c2773bb3f06c068bb8",
+      "bytes": 3021
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W3/D/stock_daily_contributions.parquet": {
+      "sha256": "f0f58992de44253887b9938e12ba4cee5963355b4752282868d7da3f872190ee",
+      "bytes": 178442
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W3/D/trades.parquet": {
+      "sha256": "a72642071afb9db87d7632fc57747e475232fdcf865ed6460cc44978f684536b",
+      "bytes": 18017
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W3/D/variance_contributions.csv": {
+      "sha256": "750c1303bcada79804024b635681c1eb4854361abdc2a5bed54470f2a5c5bc3d",
+      "bytes": 4162
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W3/G1_original/actual_cap_exceedances.csv": {
+      "sha256": "2d096e72942aac64daaaa25b1970297c025670785a7153f2d68e20a47db13407",
+      "bytes": 104
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W3/G1_original/balances.parquet": {
+      "sha256": "183b9cec7fa74137a61807919b0ca20496de0c025cf8909d2498ac4f98babee8",
+      "bytes": 9361
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W3/G1_original/complete.json": {
+      "sha256": "800abdfe64ce93f2fa761fa5cc29d240811dbc1ee320dbb4ffe14cab24b6fe18",
+      "bytes": 1345
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W3/G1_original/market_requests.jsonl": {
+      "sha256": "befc0d6e0073d54cf31cb6b60efb039c044536b9949579e1ef6c4b3071526312",
+      "bytes": 1084
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W3/G1_original/original_orders.parquet": {
+      "sha256": "8535a79bf460f40d9d44f33ad6290d1ccd90e7a9cbc3257dc29465eb8bcfe656",
+      "bytes": 7108
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W3/G1_original/positions.parquet": {
+      "sha256": "82abf478bfccd34b629c202b01144ff31821d95e8133e1464f11a2dd8b7396f6",
+      "bytes": 201902
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W3/G1_original/reconciliation_audit.json": {
+      "sha256": "0a10a14b32e32befb4f487b9b03b0ac350c49884190fa9c28fa644d4bd391b41",
+      "bytes": 310
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W3/G1_original/reconciliation_residuals.csv": {
+      "sha256": "02f168f8ebbb203193518bb81cfac44fce9b3b45d0b902ea2cadaecb98a6a938",
+      "bytes": 6835
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W3/G1_original/report.parquet": {
+      "sha256": "78a8af4728dc5f3984d1e8bcc3adbc658ab7068f72d4bdc0c63848d0edc8f4f8",
+      "bytes": 8502
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W3/G1_original/risk_daily.parquet": {
+      "sha256": "e69fc8a8ed5081e99a99a226f6d3e136cb93b62e4f27735821735d0195229a6c",
+      "bytes": 32518
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W3/G1_original/risk_summary.json": {
+      "sha256": "5343aca54be12c1849f6d21ba427984e305c3ecbd9548ec654dd3bd076b761d2",
+      "bytes": 3006
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W3/G1_original/stock_daily_contributions.parquet": {
+      "sha256": "54f1e90c18a21b683a8a1ec052518e2e230e41a6bec4742ec7b8223eddd6d05a",
+      "bytes": 174302
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W3/G1_original/trades.parquet": {
+      "sha256": "b98a8cab9490b8f3432bd6338a01845e53fcf9a99d39bec03458d82bc65b9edb",
+      "bytes": 19198
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W3/G1_original/variance_contributions.csv": {
+      "sha256": "25b2330e58ac1d64e6f7412f7a05c94cec5f99dddb687642e0f50da902ded983",
+      "bytes": 4435
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W3/cap_only/actual_cap_exceedances.csv": {
+      "sha256": "e698fc8650401c4f78fc36644351623765236a022e0169b319c3e5f07e9fb69c",
+      "bytes": 30224
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W3/cap_only/balances.parquet": {
+      "sha256": "f72282e71f837f03634aac83528c5fce39838ad50e76cc09d30a79fd6b78a2bf",
+      "bytes": 9305
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W3/cap_only/complete.json": {
+      "sha256": "ca1bfbcacc959f0591802fc7d375cd762dd106eb3606443ce8b9094761193687",
+      "bytes": 1342
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W3/cap_only/final_orders.parquet": {
+      "sha256": "d337310d6cd927488fb5d408552115f118150f3f35ad773a1ec4140888dd7612",
+      "bytes": 6855
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W3/cap_only/market_requests.jsonl": {
+      "sha256": "befc0d6e0073d54cf31cb6b60efb039c044536b9949579e1ef6c4b3071526312",
+      "bytes": 1084
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W3/cap_only/order_audit.parquet": {
+      "sha256": "83231af5132a890151e97bcb54afdbd1fadb77ff131a546f5d2a4a97a3922638",
+      "bytes": 26389
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W3/cap_only/order_execution_audit.parquet": {
+      "sha256": "85647841a63b163818a26af2d61140f32ff571d4719510a1d5b996f892e204ae",
+      "bytes": 35120
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W3/cap_only/original_orders.parquet": {
+      "sha256": "cd9a40a08fe1c1e4a5dba04c445fa73de46dd5390bb3b29820eb0eb1fdccfd29",
+      "bytes": 6817
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W3/cap_only/positions.parquet": {
+      "sha256": "4c185c8f81648f7244b15a31f88651e67c1fcecfb1580eaf8949782214afa918",
+      "bytes": 207373
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W3/cap_only/reconciliation_audit.json": {
+      "sha256": "4bd14977cbc150d62d035645587327f46901311fb3b1d46d2c0b6f9bca53be99",
+      "bytes": 309
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W3/cap_only/reconciliation_residuals.csv": {
+      "sha256": "d1749b75f4911210b52a2022db6fc2bfa25659342e898274bf51e0308b6fea49",
+      "bytes": 6768
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W3/cap_only/report.parquet": {
+      "sha256": "9cece6f8e7f4a34d3906075eed3ffe32124903e2a8d1e5080bbf9624190c9e4a",
+      "bytes": 8438
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W3/cap_only/risk_daily.parquet": {
+      "sha256": "680fdb7214a87e99c6dae76c9a647b4c9c4bc1e972d3cc0594cd4d331bc4016e",
+      "bytes": 32503
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W3/cap_only/risk_summary.json": {
+      "sha256": "d2c6f7583549fc03694da8eced9d7e1df05e619989d21e5f9861de2ee79e5dd0",
+      "bytes": 3149
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W3/cap_only/stock_daily_contributions.parquet": {
+      "sha256": "6d89b8423161e9e4e8cee729c1282f434b92743f43006d9f404d66937560f037",
+      "bytes": 178504
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W3/cap_only/trades.parquet": {
+      "sha256": "b984c800d017e9b5092ab1c61ddc40bad179f0c7963bed665c0c9ba2a7a17e15",
+      "bytes": 18129
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W3/cap_only/variance_contributions.csv": {
+      "sha256": "51ef7f63d81b1522f5d11c72d33df60f0b1155f29ae49f33d40874dbdc9b7627",
+      "bytes": 4161
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W3/cap_vol/actual_cap_exceedances.csv": {
+      "sha256": "274e63926ae051265f0c61a65b2554fd6987fa51bd1ad969b6ca1eb40e45090a",
+      "bytes": 59833
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W3/cap_vol/balances.parquet": {
+      "sha256": "84c8a471caac6aabae10125c5680474189d476116a0326914ebc934e7fd98738",
+      "bytes": 9337
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W3/cap_vol/complete.json": {
+      "sha256": "a14d453c0982c9313f4d3bff12857bd70ec9b9524c1b64bcdefc8de080b7cb8f",
+      "bytes": 1344
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W3/cap_vol/final_orders.parquet": {
+      "sha256": "99d143cca7329ad04ed422472657ad4cdc3d74af840ea8ac153ce8eb3675f83b",
+      "bytes": 6973
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W3/cap_vol/market_requests.jsonl": {
+      "sha256": "befc0d6e0073d54cf31cb6b60efb039c044536b9949579e1ef6c4b3071526312",
+      "bytes": 1084
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W3/cap_vol/order_audit.parquet": {
+      "sha256": "76cf5ac5c5024bc3c59130afb52e5409893264ed4f71a525aabd35f3ccba8317",
+      "bytes": 38026
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W3/cap_vol/order_execution_audit.parquet": {
+      "sha256": "8fc843a3c36fdc637426f3aa4176683716297d4f392bb84e25a56eaf8fc27e46",
+      "bytes": 47436
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W3/cap_vol/original_orders.parquet": {
+      "sha256": "86b08576fc713f1ddc7c53e57227f5e4cfb7a571c43c76163fb106a26fff0642",
+      "bytes": 7377
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W3/cap_vol/positions.parquet": {
+      "sha256": "1144f5bf654fce3c67a59199fd0ae1319e6d051b26c601cf420ae1dba30a2bf9",
+      "bytes": 207588
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W3/cap_vol/reconciliation_audit.json": {
+      "sha256": "ddb4261d9d5b77df074378df95b6e69976ed415b6c6924b604158ab79352656c",
+      "bytes": 311
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W3/cap_vol/reconciliation_residuals.csv": {
+      "sha256": "ece0633eb898d819348b21ef8f470f994c0fedb418161bd8fb38791770789dc3",
+      "bytes": 6741
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W3/cap_vol/report.parquet": {
+      "sha256": "30837e7f4c9df8d6535bd115a8633b77fcb5d72a20dc55deafe2318f1fbde96a",
+      "bytes": 8470
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W3/cap_vol/risk_daily.parquet": {
+      "sha256": "c3f9bee3084daf53a3a96c685b0612dbcc626d52df0f93cdd2a7541b361035cd",
+      "bytes": 32498
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W3/cap_vol/risk_summary.json": {
+      "sha256": "e37b1e4f4db28f4f227c4e257bb9aafa8f04a379a1ac31c4bd4cbdb22bd4bc1a",
+      "bytes": 3146
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W3/cap_vol/stock_daily_contributions.parquet": {
+      "sha256": "375225e376e7f9f81c1484556f0559407fc79a6b7bf93b77a20993930ac4ad44",
+      "bytes": 178840
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W3/cap_vol/trades.parquet": {
+      "sha256": "971d562528a8e6cbb4516e6e733561afca21eed96b2c2fb71496960ee20649a2",
+      "bytes": 18510
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W3/cap_vol/variance_contributions.csv": {
+      "sha256": "bf8497f01ac4ac5db78bbe067e3cd8e17431e908faec46e0113061278b6191fa",
+      "bytes": 4159
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W3/neutral/balances.parquet": {
+      "sha256": "7aefed5cc38362cbc034ced01f79801e6d8a78615ccdc1b502f87cd3b51cfac5",
+      "bytes": 9273
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W3/neutral/complete.json": {
+      "sha256": "dbcb9a3d33045e1be0309f76fa63f9980526d9b803c0cfe553b4f4df281ccea4",
+      "bytes": 1343
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W3/neutral/final_orders.parquet": {
+      "sha256": "aa6d8fc0538a5575a9cde2af7b56cbfa23fc74e4d85a96137d10fc48727b99b2",
+      "bytes": 6809
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W3/neutral/market_requests.jsonl": {
+      "sha256": "befc0d6e0073d54cf31cb6b60efb039c044536b9949579e1ef6c4b3071526312",
+      "bytes": 1084
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W3/neutral/order_audit.parquet": {
+      "sha256": "2e836d6adff325aede8989ffcbc87094563445f1d0a4ba61dd92764ecca42844",
+      "bytes": 636
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W3/neutral/original_orders.parquet": {
+      "sha256": "aa6d8fc0538a5575a9cde2af7b56cbfa23fc74e4d85a96137d10fc48727b99b2",
+      "bytes": 6809
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W3/neutral/positions.parquet": {
+      "sha256": "5b3f345d0e29809c085b216d3b35159120dbff7088a3f08350af105ac9444e6f",
+      "bytes": 207321
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W3/neutral/reconciliation_audit.json": {
+      "sha256": "dbc84952e3b488482f3227198dd339e88171525b78cfd516028a9baa39756da0",
+      "bytes": 311
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W3/neutral/reconciliation_residuals.csv": {
+      "sha256": "f97c9dceb9f210acd996e9a8ea7ba7d077bdd5062b13184ae1434d9ccb493f0a",
+      "bytes": 6734
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W3/neutral/report.parquet": {
+      "sha256": "2e3799b21f449255700c3ab833e719215ae357db038eb9f1f3d22e979d0b450d",
+      "bytes": 8406
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W3/neutral/stock_daily_contributions.parquet": {
+      "sha256": "f0f58992de44253887b9938e12ba4cee5963355b4752282868d7da3f872190ee",
+      "bytes": 178442
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W3/neutral/trades.parquet": {
+      "sha256": "a72642071afb9db87d7632fc57747e475232fdcf865ed6460cc44978f684536b",
+      "bytes": 18017
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W3/vol_only/actual_cap_exceedances.csv": {
+      "sha256": "2d096e72942aac64daaaa25b1970297c025670785a7153f2d68e20a47db13407",
+      "bytes": 104
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W3/vol_only/balances.parquet": {
+      "sha256": "cfd00089f89aeb863cae5828d5b0362f095eafb274e6e8203954f2049256b543",
+      "bytes": 9273
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W3/vol_only/complete.json": {
+      "sha256": "232827aafcb529c92ae60d28f278576fa15b1a1c8bf1f304c9135c02749be9ce",
+      "bytes": 1345
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W3/vol_only/final_orders.parquet": {
+      "sha256": "9c4840c302147a7ceff3f028edb84377344ee4fcc28f69922f3d1a2d9359bfd1",
+      "bytes": 6833
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W3/vol_only/market_requests.jsonl": {
+      "sha256": "befc0d6e0073d54cf31cb6b60efb039c044536b9949579e1ef6c4b3071526312",
+      "bytes": 1084
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W3/vol_only/order_audit.parquet": {
+      "sha256": "2ed457d4c9cf64f03ee1af095b845dbfae3ff497f3823e423a393e432b157bb5",
+      "bytes": 20072
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W3/vol_only/order_execution_audit.parquet": {
+      "sha256": "a9ec3016a528e3316616a0211184fa811b2a8850a9173e3db2c816d6378ee6ab",
+      "bytes": 28125
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W3/vol_only/original_orders.parquet": {
+      "sha256": "c215028c6e1c8ea82c6a1fc6a9df76fd8384dffb2dbf446d58df37fca9cfc49d",
+      "bytes": 7377
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W3/vol_only/positions.parquet": {
+      "sha256": "d0f06f49578091fa59a56f5db166492595a94a7c5847e0e31be73e88e028112c",
+      "bytes": 207321
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W3/vol_only/reconciliation_audit.json": {
+      "sha256": "73e93ee2c200a385a110cc45628c8caa60a8ea6a3c2469a457b83668b91c5191",
+      "bytes": 312
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W3/vol_only/reconciliation_residuals.csv": {
+      "sha256": "868e7c0238ee2fdac779ab35cdf98db13dab663aa469681311caf40a15884818",
+      "bytes": 6650
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W3/vol_only/report.parquet": {
+      "sha256": "e75c1db8030113f9393d5fd1e4265ce943b94b8e0fe24b1144abb822d0a27ce5",
+      "bytes": 8406
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W3/vol_only/risk_daily.parquet": {
+      "sha256": "8a1904c0d152f5fb95fac55be20b82a519b9b6cda10d0f38b79a2f6d629c7697",
+      "bytes": 32503
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W3/vol_only/risk_summary.json": {
+      "sha256": "67345872249b328868f10eb2a5e4ead5f3a6bfacea06566974261a329ecd61ef",
+      "bytes": 3021
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W3/vol_only/stock_daily_contributions.parquet": {
+      "sha256": "9aa8c04daaad8b0ba3edacb9f46ee9e4fc8c39bdf16e19b32eb7d5a269fb5362",
+      "bytes": 178466
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W3/vol_only/trades.parquet": {
+      "sha256": "36a1c461269400a62dd67c931c7a749d26ec624dec3722754d2aee53849fad36",
+      "bytes": 18048
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W3/vol_only/variance_contributions.csv": {
+      "sha256": "f8956b8682fc32448203cb037aa2f8cdca4d3ccb85ea47a89d5e2c10dea0e5da",
+      "bytes": 4164
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W4/B/actual_cap_exceedances.csv": {
+      "sha256": "2d096e72942aac64daaaa25b1970297c025670785a7153f2d68e20a47db13407",
+      "bytes": 104
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W4/B/balances.parquet": {
+      "sha256": "02d2573742fae397ff2c34654940bed6eabe5bc69222f3e7c418b2fa0035a740",
+      "bytes": 9631
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W4/B/complete.json": {
+      "sha256": "5ee9ac254c11c6b3dff420f0aa6f3f3818fb37af546d41c551017f9bd0af8a7a",
+      "bytes": 1344
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W4/B/market_requests.jsonl": {
+      "sha256": "05b0428ca14c10fe287712a93b61002df28415d7045649edd6059e537d97007b",
+      "bytes": 1084
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W4/B/original_orders.parquet": {
+      "sha256": "7ee793970f7c00882c227f27a02ec887eb72893c91eaa3995a12059be5d118cb",
+      "bytes": 6670
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W4/B/positions.parquet": {
+      "sha256": "8ccb99f09ed246ed932448c3ae2adb1c690b315ae50a6bb622e08f5f62fc5c97",
+      "bytes": 223220
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W4/B/reconciliation_audit.json": {
+      "sha256": "5916f82f05dbe328ac08d4f6291c1e95c9411efb8f420e57f64c2bc47d9a8454",
+      "bytes": 312
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W4/B/reconciliation_residuals.csv": {
+      "sha256": "1e74be9de6c51959926245395ce300958e143f8ef2d8cc666b58c640d2f5f089",
+      "bytes": 7036
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W4/B/report.parquet": {
+      "sha256": "4f89407b22dc67cfd34e6a6d14a80e8cf1070828f5b3b3540387fcd6ff69f985",
+      "bytes": 8732
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W4/B/risk_daily.parquet": {
+      "sha256": "50f81601a95be3d5a6c8c44f257fcb23c848ed0bae93b4e7420c69aec2fd52a6",
+      "bytes": 34064
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W4/B/risk_summary.json": {
+      "sha256": "ecb0b0dc5a6340dc41231bb1e80b23f172547450d381cae945635a5fde6b4ce4",
+      "bytes": 3533
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W4/B/stock_daily_contributions.parquet": {
+      "sha256": "cb9504b4239212a3b1386fcc653bdee5ff4d90931489fca41cccc2a4b58eb48b",
+      "bytes": 190406
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W4/B/trades.parquet": {
+      "sha256": "091a4352fbd5ce2e2cb3aa2bf69b751d17ac36b6494820d2be6ffd1d1ebaab18",
+      "bytes": 16915
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W4/B/variance_contributions.csv": {
+      "sha256": "20aa5bb98b2fd25cc085e3fee8259023106b2bad5e98a8108dbb45b3176d0237",
+      "bytes": 4343
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W4/D/actual_cap_exceedances.csv": {
+      "sha256": "2d096e72942aac64daaaa25b1970297c025670785a7153f2d68e20a47db13407",
+      "bytes": 104
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W4/D/balances.parquet": {
+      "sha256": "b60cd3190468908c2b7cce69fcf56b4d253996303b2c9de8d797e679e3e3a6b7",
+      "bytes": 9487
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W4/D/complete.json": {
+      "sha256": "d89e50473301b0606871bdda085cbf338a3c58c289824dd35e118e3af6ae4cfd",
+      "bytes": 1335
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W4/D/market_requests.jsonl": {
+      "sha256": "05b0428ca14c10fe287712a93b61002df28415d7045649edd6059e537d97007b",
+      "bytes": 1084
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W4/D/original_orders.parquet": {
+      "sha256": "ed5ee64684d47fd5edb9b293075507cd76c1d473ad3efb4d88667b700eb75e51",
+      "bytes": 6081
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W4/D/positions.parquet": {
+      "sha256": "1018bdc0b2629479021ee3650e548c7ef67ecd140c65687034dd827d05d780d8",
+      "bytes": 219676
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W4/D/reconciliation_audit.json": {
+      "sha256": "a14ff11ac99eb8d07a8f2589f93d4109673e7e4af1de959ee05e2ef391bf98f7",
+      "bytes": 311
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W4/D/reconciliation_residuals.csv": {
+      "sha256": "2c637465b190d0c51dcba1bb591de5a140d791b1b3eb20330b5d71315aa51649",
+      "bytes": 6905
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W4/D/report.parquet": {
+      "sha256": "1bb4516032937d5c0336bc2296680a6fc5c98d99148f17793b8415bb2664bf22",
+      "bytes": 8589
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W4/D/risk_daily.parquet": {
+      "sha256": "ecd5c5697868ae077ec4d89bd1fa8102e7f79c9b01fea96bf54130d017f7cbde",
+      "bytes": 34064
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W4/D/risk_summary.json": {
+      "sha256": "46a38f200e40c1cf32aa5a3381ed3c5dfd7b24a9979db9864816cdfa3b86b3d5",
+      "bytes": 2989
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W4/D/stock_daily_contributions.parquet": {
+      "sha256": "3e40c9c8e065aa6ab1905e6cfac18b921b7fa2ff001348ed63c26a0ad5883bf2",
+      "bytes": 186669
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W4/D/trades.parquet": {
+      "sha256": "c437b3ba6733436ea7cc75d5cfb6ee35ab17b7a12a029a42c41bcc05c9896e10",
+      "bytes": 14611
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W4/D/variance_contributions.csv": {
+      "sha256": "97ff7ce3de51f19957dfe7a1d497d7757861a8cb96e876c5b1dd6d20919792ec",
+      "bytes": 3676
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W4/G1_original/actual_cap_exceedances.csv": {
+      "sha256": "2d096e72942aac64daaaa25b1970297c025670785a7153f2d68e20a47db13407",
+      "bytes": 104
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W4/G1_original/balances.parquet": {
+      "sha256": "2d07f3f924ce45de375348bda8a0706861e8fbeca91aa267af03b05b56084258",
+      "bytes": 9471
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W4/G1_original/complete.json": {
+      "sha256": "768bee9ac2a2c8ab2cec5c3fd82923546b2350c9b9d309e9961edbda3b82badc",
+      "bytes": 1352
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W4/G1_original/market_requests.jsonl": {
+      "sha256": "05b0428ca14c10fe287712a93b61002df28415d7045649edd6059e537d97007b",
+      "bytes": 1084
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W4/G1_original/original_orders.parquet": {
+      "sha256": "0b93bd10668f6d9398eca2317e1b4dfe9dd6183ff8a65f39fb5d42417df45d3f",
+      "bytes": 6007
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W4/G1_original/positions.parquet": {
+      "sha256": "7370033b66c56950226a312da48a370971994e798e2264fade32dbf98bf798fc",
+      "bytes": 218914
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W4/G1_original/reconciliation_audit.json": {
+      "sha256": "e198eef23f8bf9dbbd66f9451f36c74fe1e9d9828aa04f21f2d684e2c6787fce",
+      "bytes": 310
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W4/G1_original/reconciliation_residuals.csv": {
+      "sha256": "2979b23a58476c0a714ab9341e4dcc29534eae6799e778f9dcbe9a4cbf8b0869",
+      "bytes": 6943
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W4/G1_original/report.parquet": {
+      "sha256": "7df145476d1ecbf6702617e6dea905aac273097c0053559202d6721875a11136",
+      "bytes": 8573
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W4/G1_original/risk_daily.parquet": {
+      "sha256": "181b3964e3e0df4f17b3b66188e8abe72bcb0bddba10ee86d0dbc11513a8fb92",
+      "bytes": 34115
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W4/G1_original/risk_summary.json": {
+      "sha256": "bfb6979dc6ed00c4d0e146225ced615f9cc49d619bdcb66eaac4ede6b81c93b5",
+      "bytes": 2945
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W4/G1_original/stock_daily_contributions.parquet": {
+      "sha256": "3f50369287df16c921dd3a2ebc312308f7122c59beab77d6fb6f3a834b503c75",
+      "bytes": 185526
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W4/G1_original/trades.parquet": {
+      "sha256": "8b2873d687813e8ff553e385e678eba078a895f70ae6fbcab55e45f3376ca243",
+      "bytes": 14344
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W4/G1_original/variance_contributions.csv": {
+      "sha256": "974b200c73090d26c3b20b4e0b2d15dfc02db8d6319db0cb3804ec8e0e0ef300",
+      "bytes": 3582
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W4/cap_only/actual_cap_exceedances.csv": {
+      "sha256": "825890e16b5b8bfeb1465b5036c7c34c328bc3cd5451bac639e5c40f5b16720e",
+      "bytes": 35273
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W4/cap_only/balances.parquet": {
+      "sha256": "ca5d7b08aa99a3af5f116e59748fa2288dfc68521b2b58fbef1ab8d368ae16b8",
+      "bytes": 9519
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W4/cap_only/complete.json": {
+      "sha256": "7dca46e8b6a8c1ea07b1c705ebcfaf02471296edee2332962aa03648c1148416",
+      "bytes": 1344
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W4/cap_only/final_orders.parquet": {
+      "sha256": "9ece7d316dce58ec53082612179782b471a6642d8501d93cf7b72c3a075cbe08",
+      "bytes": 6199
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W4/cap_only/market_requests.jsonl": {
+      "sha256": "05b0428ca14c10fe287712a93b61002df28415d7045649edd6059e537d97007b",
+      "bytes": 1084
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W4/cap_only/order_audit.parquet": {
+      "sha256": "7d9dde68cf5828dc0467a73dafa5e01b77aceca3f3c56b169ad6c98b41ca810d",
+      "bytes": 24983
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W4/cap_only/order_execution_audit.parquet": {
+      "sha256": "d4a084c1034eddd25d1060d32b3954737274b8d66d08b28897059b8c69692382",
+      "bytes": 32762
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W4/cap_only/original_orders.parquet": {
+      "sha256": "3304d8f71d5e7be2a6f66e11c470a56a3ea05f609767f6710c3f6912ba6da7b4",
+      "bytes": 6097
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W4/cap_only/positions.parquet": {
+      "sha256": "56e77ff1449ac185f8ec50f543d9f63ae6797a4703e607598cc28e1f5ea600d2",
+      "bytes": 219871
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W4/cap_only/reconciliation_audit.json": {
+      "sha256": "db542544008a61b1e6d3aa64662235c5891040eff74cf98919b347877972ae38",
+      "bytes": 311
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W4/cap_only/reconciliation_residuals.csv": {
+      "sha256": "cd78784e2c6d6ee4b1fd5dbaadc59951942d64a212289a6605b77cccbc09975b",
+      "bytes": 6950
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W4/cap_only/report.parquet": {
+      "sha256": "05c1d5260e505f484252e8112e87f6faba46c3a8bbad3ac6839b0919930660b7",
+      "bytes": 8621
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W4/cap_only/risk_daily.parquet": {
+      "sha256": "4ecd0496fa0b26b7ff228148889746f5efaefb1c19d573b5fa394755c74e589d",
+      "bytes": 34100
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W4/cap_only/risk_summary.json": {
+      "sha256": "d9769d49dad839d78c80debf182e227dbe8c00255fd94d44b7f7b75b3903f5ad",
+      "bytes": 3088
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W4/cap_only/stock_daily_contributions.parquet": {
+      "sha256": "4b6798a657a963d0660a40762f870a82b5e5817949477d55ab43cd60d97effff",
+      "bytes": 186919
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W4/cap_only/trades.parquet": {
+      "sha256": "9f40bf3be286d6e97f98421fb5a82191527078b615a1051bacc568c26438076d",
+      "bytes": 14947
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W4/cap_only/variance_contributions.csv": {
+      "sha256": "126a9111193f5e989624b5530aa9a9339297c8749334b23a9dbcc9db2413c3dc",
+      "bytes": 3671
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W4/cap_vol/actual_cap_exceedances.csv": {
+      "sha256": "ab962bc79d078a5dbcf3736b0f3cb0aeaa33e838fd6e3d994455642deadb9960",
+      "bytes": 64963
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W4/cap_vol/balances.parquet": {
+      "sha256": "4528d69ac29125ef526a2248226566f64ac7cccb94c67e4460b12e9c99d0810e",
+      "bytes": 9519
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W4/cap_vol/complete.json": {
+      "sha256": "331f7f237cb49381ff4197da9fad95e4cb6424b8dcb840c9580bec3bcdae7b08",
+      "bytes": 1345
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W4/cap_vol/final_orders.parquet": {
+      "sha256": "aec0c04a79349d6c23c7e757f3423c9164742a74b9980f8821dc52b471ed7a74",
+      "bytes": 6318
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W4/cap_vol/market_requests.jsonl": {
+      "sha256": "05b0428ca14c10fe287712a93b61002df28415d7045649edd6059e537d97007b",
+      "bytes": 1084
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W4/cap_vol/order_audit.parquet": {
+      "sha256": "82e8557ab69c8b499ba4639f6f7de7a2c4fcfee94b94436ff83e24103236ffad",
+      "bytes": 36633
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W4/cap_vol/order_execution_audit.parquet": {
+      "sha256": "b81f350e42453dceeae944195d273ad8551827c33554189fa056c351247ce5f1",
+      "bytes": 44972
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W4/cap_vol/original_orders.parquet": {
+      "sha256": "9a8c7ad3af4e796241f8b9ae299ecd9495b95583748c1b97a5c8a4b490778b03",
+      "bytes": 6449
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W4/cap_vol/positions.parquet": {
+      "sha256": "1f8cb1ab7534d222e25e67e2df4fc52fef6ee105a53d02845f4c3fe67f2d3688",
+      "bytes": 220021
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W4/cap_vol/reconciliation_audit.json": {
+      "sha256": "56f6820756d93bd6c42531ddbc1486a73f16766dae2880c78efac88764d75901",
+      "bytes": 312
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W4/cap_vol/reconciliation_residuals.csv": {
+      "sha256": "372a6dfb309791135a8523be941dd26ceacdd21d171902cd5818e950b34bf53f",
+      "bytes": 6930
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W4/cap_vol/report.parquet": {
+      "sha256": "55b87d75994396c8c617595355184c29f71cce7f161002c78aefd2220eeebb7a",
+      "bytes": 8621
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W4/cap_vol/risk_daily.parquet": {
+      "sha256": "431e489dea691e01bcabe61145f2b2425f901cd6a2969c1926af682d77bea22e",
+      "bytes": 34095
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W4/cap_vol/risk_summary.json": {
+      "sha256": "fb2155844c47208c5d6caa1cba60d421ae7b89e00f27b3dc0ded29282a4d7969",
+      "bytes": 3632
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W4/cap_vol/stock_daily_contributions.parquet": {
+      "sha256": "29ab9aa2701a2bac6db40d5395127922f29aa3e5e317bd0060d39bd483ba8486",
+      "bytes": 187151
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W4/cap_vol/trades.parquet": {
+      "sha256": "ccc9bba551197bf2a13094d9d72bdbf493b7cdfec4cebad93aa03b3fb69fc064",
+      "bytes": 15222
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W4/cap_vol/variance_contributions.csv": {
+      "sha256": "cb8ed902e9c05ac073e9916635013adc422ef658ed0a3e048b60412e5ffb9636",
+      "bytes": 3668
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W4/neutral/balances.parquet": {
+      "sha256": "b60cd3190468908c2b7cce69fcf56b4d253996303b2c9de8d797e679e3e3a6b7",
+      "bytes": 9487
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W4/neutral/complete.json": {
+      "sha256": "6765594dda24e0efddd4078414847c7bbb559715f35c15f7ec7c2731ab27ac21",
+      "bytes": 1344
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W4/neutral/final_orders.parquet": {
+      "sha256": "ed5ee64684d47fd5edb9b293075507cd76c1d473ad3efb4d88667b700eb75e51",
+      "bytes": 6081
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W4/neutral/market_requests.jsonl": {
+      "sha256": "05b0428ca14c10fe287712a93b61002df28415d7045649edd6059e537d97007b",
+      "bytes": 1084
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W4/neutral/order_audit.parquet": {
+      "sha256": "2e836d6adff325aede8989ffcbc87094563445f1d0a4ba61dd92764ecca42844",
+      "bytes": 636
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W4/neutral/original_orders.parquet": {
+      "sha256": "ed5ee64684d47fd5edb9b293075507cd76c1d473ad3efb4d88667b700eb75e51",
+      "bytes": 6081
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W4/neutral/positions.parquet": {
+      "sha256": "1018bdc0b2629479021ee3650e548c7ef67ecd140c65687034dd827d05d780d8",
+      "bytes": 219676
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W4/neutral/reconciliation_audit.json": {
+      "sha256": "a14ff11ac99eb8d07a8f2589f93d4109673e7e4af1de959ee05e2ef391bf98f7",
+      "bytes": 311
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W4/neutral/reconciliation_residuals.csv": {
+      "sha256": "2c637465b190d0c51dcba1bb591de5a140d791b1b3eb20330b5d71315aa51649",
+      "bytes": 6905
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W4/neutral/report.parquet": {
+      "sha256": "1bb4516032937d5c0336bc2296680a6fc5c98d99148f17793b8415bb2664bf22",
+      "bytes": 8589
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W4/neutral/stock_daily_contributions.parquet": {
+      "sha256": "3e40c9c8e065aa6ab1905e6cfac18b921b7fa2ff001348ed63c26a0ad5883bf2",
+      "bytes": 186669
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W4/neutral/trades.parquet": {
+      "sha256": "c437b3ba6733436ea7cc75d5cfb6ee35ab17b7a12a029a42c41bcc05c9896e10",
+      "bytes": 14611
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W4/vol_only/actual_cap_exceedances.csv": {
+      "sha256": "2d096e72942aac64daaaa25b1970297c025670785a7153f2d68e20a47db13407",
+      "bytes": 104
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W4/vol_only/balances.parquet": {
+      "sha256": "59a7c4177768b0831cdfc7be233fb123b078c76bfee88d39df160eee968fb36a",
+      "bytes": 9487
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W4/vol_only/complete.json": {
+      "sha256": "d049dd76f56e1d313a300e2d7b743287eeff216215028372be4cfeffc239034b",
+      "bytes": 1343
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W4/vol_only/final_orders.parquet": {
+      "sha256": "9f8fddb59ed5d0e96da650caac8a791abb50270ad7edf23a22bb0e795a8e4d1f",
+      "bytes": 6089
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W4/vol_only/market_requests.jsonl": {
+      "sha256": "05b0428ca14c10fe287712a93b61002df28415d7045649edd6059e537d97007b",
+      "bytes": 1084
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W4/vol_only/order_audit.parquet": {
+      "sha256": "e01cbb44b03916feb240425fc0668ca838af9626944a02d158301756d538b5dc",
+      "bytes": 17427
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W4/vol_only/order_execution_audit.parquet": {
+      "sha256": "fcd3a5c2149bfce43420504a07067e4f48f2bb24b0dfb81c3647679f198bb347",
+      "bytes": 24207
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W4/vol_only/original_orders.parquet": {
+      "sha256": "a43eac765054f371afc4f6068e07e34164cac7e5bd4326e3655c990568783127",
+      "bytes": 6433
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W4/vol_only/positions.parquet": {
+      "sha256": "f3fa672403dc4e4780c79335412168faab793f82802ea9b59d9fe8e1690488ab",
+      "bytes": 219676
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W4/vol_only/reconciliation_audit.json": {
+      "sha256": "292e307e7ed1d2f667191a03c411cbfc5bc865afd68a341e4764e171f23d99e7",
+      "bytes": 311
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W4/vol_only/reconciliation_residuals.csv": {
+      "sha256": "024dd9de7bdc5fe701c1ebc63b253d2448f3aa9b6b4d4d5f3a0c236bf8feb539",
+      "bytes": 6909
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W4/vol_only/report.parquet": {
+      "sha256": "5cd13f3b19e711c9de6b47e13f6e7925ba9d22bc69fa30e8fbbb6f4e66f67fbb",
+      "bytes": 8589
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W4/vol_only/risk_daily.parquet": {
+      "sha256": "019ef4c42c5c617fb3ebb9b4ddc379043e9886292681546c93b18c80f56f692f",
+      "bytes": 34100
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W4/vol_only/risk_summary.json": {
+      "sha256": "01ded163fc75ab7e86a4d86d81f34edcbd4d2b0115bd36811f9e43fc413223b6",
+      "bytes": 3531
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W4/vol_only/stock_daily_contributions.parquet": {
+      "sha256": "f75506d80901dbaa06c23b568c00d939adf44b4dca15b06c123a2f90ec8dbb3e",
+      "bytes": 186637
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W4/vol_only/trades.parquet": {
+      "sha256": "311fb3b1478aea92bb5d00e9dbca73c95215fde4883bf98972a9abe6d7e0f591",
+      "bytes": 14627
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/accounts/W4/vol_only/variance_contributions.csv": {
+      "sha256": "5a022433d895e257dc1c0d90e8ae64279fd4a5e7355c1103dea8e26a2a93561c",
+      "bytes": 3668
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/bot_status.json": {
+      "sha256": "09f72a4ae8c2479829df359a1469069155cf93f085c58393eab3e57c4bd9516e",
+      "bytes": 260
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/cash_volatility.png": {
+      "sha256": "fc63340bd50db9eff22fef5218e444ee11e91ab7bc57e5cdb51c2fc995d5e1d3",
+      "bytes": 627773
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/close_history.parquet": {
+      "sha256": "9dc0262a14c28236e5a91d446ae0105c100ac502571a75c375034e2f6341a7bc",
+      "bytes": 727919
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/comparisons.json": {
+      "sha256": "d6b84bba373182614af3faed2e41e90678f38b282f9b68b15a9ade8b820e4898",
+      "bytes": 3169
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/cumulative_controls.png": {
+      "sha256": "293fcc8514810be9b3d3c148d18c56f0f14fc3fc2631d3ca8f21a262a17cb9d3",
+      "bytes": 289374
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/cumulative_main.png": {
+      "sha256": "138bf7986ae0b6c54aad9da5f7a8480494fe87e01188b955866d8ac2501044fa",
+      "bytes": 277270
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/daily_W3_B.parquet": {
+      "sha256": "12da9b7c838056590926a7476bf487539ee716057632987a214db4f0f591b8c0",
+      "bytes": 7647
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/daily_W3_D.parquet": {
+      "sha256": "f78b79361d0373bba4e731add39c3c5897261a928082bccbe65be963b24c8276",
+      "bytes": 7647
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/daily_W3_G1_original.parquet": {
+      "sha256": "89f2b65531af314b01a08db6b531f167077e9f0d3341237488f90ea6488e76fe",
+      "bytes": 7647
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/daily_W3_cap_only.parquet": {
+      "sha256": "8cb78936e6cf02152f679aeb131be89a3171b7357c3a12fdb15fc38301678d29",
+      "bytes": 7647
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/daily_W3_cap_vol.parquet": {
+      "sha256": "0ea36dd4343840b4c5a68cec7b41b1a1ebc18f5806fb9b924b1a4f173b2b0d04",
+      "bytes": 7647
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/daily_W3_neutral.parquet": {
+      "sha256": "f78b79361d0373bba4e731add39c3c5897261a928082bccbe65be963b24c8276",
+      "bytes": 7647
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/daily_W3_vol_only.parquet": {
+      "sha256": "57315bb3194608b613040bdda5b874e45727078a5d46c90ed81123456a6c984c",
+      "bytes": 7647
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/daily_W4_B.parquet": {
+      "sha256": "e2e5373cdbb32b52dddaea717d94eccd67f0bdaebed1453ef977e1aee8996fd4",
+      "bytes": 7998
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/daily_W4_D.parquet": {
+      "sha256": "2a4da74a1bcb18645dc45037e21742ee384168c7b2d156922118e37fcca69adc",
+      "bytes": 7998
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/daily_W4_G1_original.parquet": {
+      "sha256": "415824514d8c7c5dc422a50fca9dc724289251f8b95f1c0c70d64c63060a840b",
+      "bytes": 7998
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/daily_W4_cap_only.parquet": {
+      "sha256": "89ac3822ba02607b4fb2d1ff900363bc82b646c8fbe579e0cb5f0acbdb0528eb",
+      "bytes": 7998
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/daily_W4_cap_vol.parquet": {
+      "sha256": "43ad8dc63f3f44a4818f9ac483ecd6f402c8544dba512e27e23dae862327d218",
+      "bytes": 7998
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/daily_W4_neutral.parquet": {
+      "sha256": "2a4da74a1bcb18645dc45037e21742ee384168c7b2d156922118e37fcca69adc",
+      "bytes": 7998
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/daily_W4_vol_only.parquet": {
+      "sha256": "06692d4f24472056b7f1fae156b4210fb241bd10496226519afee11dbf3acd7d",
+      "bytes": 7998
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/difference_vs_G1.png": {
+      "sha256": "32c5a94fce8ebd42392970606002e09bf590505b6adc758350275bc4d425af39",
+      "bytes": 241894
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/drawdown.png": {
+      "sha256": "0770b66bce4172a70bb0fb578ccc169f92bb7d82b5f2e8d4314831449b163c48",
+      "bytes": 289679
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/drawdown_attribution.json": {
+      "sha256": "d3d80ea4e9a7bc775931afc9273128dba7ec3fb62834eb16dbb14d0ae952ae45",
+      "bytes": 4515
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/execution_clock.json": {
+      "sha256": "f09235ca414136ff524e3f5a008f5515bccda4efad8ed000a7247d452fe986d3",
+      "bytes": 172
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/implementation_revisions.json": {
+      "sha256": "d757e991e621ca244649be7b7b0080041b3145ef6e279ce2c6c1b404baa54308",
+      "bytes": 787
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/metrics.csv": {
+      "sha256": "17b4497d31d360f5b06c319b83bfbb9f9c679621c8068d66ee69b814c356a3bd",
+      "bytes": 1887
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/metrics.json": {
+      "sha256": "0d49998d1cfb724e492a5fc7a5fb35f62cb31bc6a6a7f118c9d1a57cf87d53a8",
+      "bytes": 3474
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/protocol.json": {
+      "sha256": "784178758cc1b2c9bbc28760f307e4b948279d4bbe2d46500f3c14594c3eafc7",
+      "bytes": 14411
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/protocol.json.sha256": {
+      "sha256": "b2efcf7aa1ef75bfb4ec8c906d56359e1583b1610be4d144c067b036918acb3e",
+      "bytes": 65
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/replay_gate_passed.json": {
+      "sha256": "e5df20d1bdd03e304debe49dca1de073ae0d0c54285b622b90c92d1850c5d7d7",
+      "bytes": 11631
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/replay_gate_progress.json": {
+      "sha256": "e5df20d1bdd03e304debe49dca1de073ae0d0c54285b622b90c92d1850c5d7d7",
+      "bytes": 11631
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/report_W3_B.parquet": {
+      "sha256": "b2a6efe71c13d1db6baafb35de8964baeef7308c56d7ae67200a5c9641fb673b",
+      "bytes": 8582
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/report_W3_D.parquet": {
+      "sha256": "2e3799b21f449255700c3ab833e719215ae357db038eb9f1f3d22e979d0b450d",
+      "bytes": 8406
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/report_W3_G1_original.parquet": {
+      "sha256": "78a8af4728dc5f3984d1e8bcc3adbc658ab7068f72d4bdc0c63848d0edc8f4f8",
+      "bytes": 8502
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/report_W3_cap_only.parquet": {
+      "sha256": "9cece6f8e7f4a34d3906075eed3ffe32124903e2a8d1e5080bbf9624190c9e4a",
+      "bytes": 8438
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/report_W3_cap_vol.parquet": {
+      "sha256": "30837e7f4c9df8d6535bd115a8633b77fcb5d72a20dc55deafe2318f1fbde96a",
+      "bytes": 8470
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/report_W3_neutral.parquet": {
+      "sha256": "2e3799b21f449255700c3ab833e719215ae357db038eb9f1f3d22e979d0b450d",
+      "bytes": 8406
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/report_W3_vol_only.parquet": {
+      "sha256": "e75c1db8030113f9393d5fd1e4265ce943b94b8e0fe24b1144abb822d0a27ce5",
+      "bytes": 8406
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/report_W4_B.parquet": {
+      "sha256": "4f89407b22dc67cfd34e6a6d14a80e8cf1070828f5b3b3540387fcd6ff69f985",
+      "bytes": 8732
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/report_W4_D.parquet": {
+      "sha256": "1bb4516032937d5c0336bc2296680a6fc5c98d99148f17793b8415bb2664bf22",
+      "bytes": 8589
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/report_W4_G1_original.parquet": {
+      "sha256": "7df145476d1ecbf6702617e6dea905aac273097c0053559202d6721875a11136",
+      "bytes": 8573
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/report_W4_cap_only.parquet": {
+      "sha256": "05c1d5260e505f484252e8112e87f6faba46c3a8bbad3ac6839b0919930660b7",
+      "bytes": 8621
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/report_W4_cap_vol.parquet": {
+      "sha256": "55b87d75994396c8c617595355184c29f71cce7f161002c78aefd2220eeebb7a",
+      "bytes": 8621
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/report_W4_neutral.parquet": {
+      "sha256": "1bb4516032937d5c0336bc2296680a6fc5c98d99148f17793b8415bb2664bf22",
+      "bytes": 8589
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/report_W4_vol_only.parquet": {
+      "sha256": "5cd13f3b19e711c9de6b47e13f6e7925ba9d22bc69fa30e8fbbb6f4e66f67fbb",
+      "bytes": 8589
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/acceptance.json": {
+      "sha256": "dd9224a853f56b10db00c345c65308b2ca4de31226a7dfb3baea2cf8a12b2548",
+      "bytes": 276
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W3/B/actual_cap_exceedances.csv": {
+      "sha256": "2d096e72942aac64daaaa25b1970297c025670785a7153f2d68e20a47db13407",
+      "bytes": 104
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W3/B/balances.parquet": {
+      "sha256": "dfcc7a6fa317c072fab076a028a8b5a5af19a28095c39babecbd7f69382b9935",
+      "bytes": 9441
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W3/B/complete.json": {
+      "sha256": "542984a81f4a8c211bf282b07593f4ac7399af56159a3e3cb05cfc8be680c595",
+      "bytes": 806
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W3/B/market_requests.jsonl": {
+      "sha256": "324f2092a39ef38d03ac7b40d6e08c57b53bd101fbe893abac13060c1d2770b6",
+      "bytes": 542
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W3/B/original_orders.parquet": {
+      "sha256": "c530fd2b865de800a80766c0933f797d767121fe1d9158b5490cbb915507e9e9",
+      "bytes": 7235
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W3/B/positions.parquet": {
+      "sha256": "6e2484cc0b11bd0ec1cda5436ee57d77c5d1bd362ba9b6032678fffa47bca2b1",
+      "bytes": 208914
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W3/B/reconciliation_audit.json": {
+      "sha256": "8ce5677d744eb7350e824d1760930d9b99d49e815b7c3712e846d05a43e2c33e",
+      "bytes": 309
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W3/B/reconciliation_residuals.csv": {
+      "sha256": "62535d343d727a15fb1d8f2ce0980e1db91f9d2a460cc2b7d95f15ababa503f7",
+      "bytes": 6942
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W3/B/report.parquet": {
+      "sha256": "2e2f25756e79d55f7387f5fa4e1c411a6467ed22c96d04eb4a2c46ab1997df2a",
+      "bytes": 8582
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W3/B/risk_daily.parquet": {
+      "sha256": "aeac5e5bc7228b86a2f409c8260a7cbe003815d7c065e5fec807a74a0464866d",
+      "bytes": 32467
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W3/B/risk_summary.json": {
+      "sha256": "f7f46f4c60625db78408d13930344897daae1c4307181a7a7e7cbbef56c914fe",
+      "bytes": 2790
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W3/B/stock_daily_contributions.parquet": {
+      "sha256": "c1b260e5952bf9ba2fd513866ef9721c334d0ac5f13fd7ee6be481ec25a0960a",
+      "bytes": 179850
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W3/B/trades.parquet": {
+      "sha256": "07c82e62f33c6d30dbd197d7997cb77d5be4e298048727621f003c45f6946a00",
+      "bytes": 19413
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W3/B/variance_contributions.csv": {
+      "sha256": "ea258bff46427fec803c0b5ffe8cb58af2525bc7b040611bb51b5c4443c9bc96",
+      "bytes": 4253
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W3/D/actual_cap_exceedances.csv": {
+      "sha256": "2d096e72942aac64daaaa25b1970297c025670785a7153f2d68e20a47db13407",
+      "bytes": 104
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W3/D/balances.parquet": {
+      "sha256": "d656b434d026a7c5c79747f4951dcf30bb567222215bd47214082d0973b2086f",
+      "bytes": 9273
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W3/D/complete.json": {
+      "sha256": "cdce9fba992ff6670f4af5cdab61b24803fbf27ab3d98cdf4155abaef80a6448",
+      "bytes": 809
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W3/D/market_requests.jsonl": {
+      "sha256": "324f2092a39ef38d03ac7b40d6e08c57b53bd101fbe893abac13060c1d2770b6",
+      "bytes": 542
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W3/D/original_orders.parquet": {
+      "sha256": "3849a45815baee98ab1c3f2e8b911aee3a17780b100a25db8615b0d31c07b9e7",
+      "bytes": 6809
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W3/D/positions.parquet": {
+      "sha256": "7704a927cfa9b0ac47dc60619e6551059f9ad3a87ba1dc2e786ccda12aa2f2d5",
+      "bytes": 207321
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W3/D/reconciliation_audit.json": {
+      "sha256": "85984c5fc353dd3eb63346527fce9b955bfbdce263415b4aa148063282bf682a",
+      "bytes": 312
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W3/D/reconciliation_residuals.csv": {
+      "sha256": "cdad93cef9137dfbe4f1aad3c7ba53c74b98936f03d9837c02a6e676a3e77c81",
+      "bytes": 6704
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W3/D/report.parquet": {
+      "sha256": "e58ccdfb71eb0dc4cd13408132270bf67130d89b4424863265d8a5a5ae6f1f25",
+      "bytes": 8406
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W3/D/risk_daily.parquet": {
+      "sha256": "882a77b16caafafa024d364afed8094cfa2b88a3cf345578aac860cda36f9677",
+      "bytes": 32467
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W3/D/risk_summary.json": {
+      "sha256": "cfe7fdabc9d57d93950ba11218d50d6415d3559241450c87bec83bcf3fd60ed9",
+      "bytes": 2954
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W3/D/stock_daily_contributions.parquet": {
+      "sha256": "c9dc63d0571b5ac7c764feb9cf15a09e5a653661a59980dd52f5f28a06205342",
+      "bytes": 178442
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W3/D/trades.parquet": {
+      "sha256": "b1e11179a7ad7c4ea79c6668a03c684ce6604b4ca72b85eb00168eeef0f0f906",
+      "bytes": 18015
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W3/D/variance_contributions.csv": {
+      "sha256": "a8fa0f6a76e2cf13ad83cb2deb126bb1d27a3928355f03014a64fab5b98c24e4",
+      "bytes": 4164
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W3/G1_original/actual_cap_exceedances.csv": {
+      "sha256": "2d096e72942aac64daaaa25b1970297c025670785a7153f2d68e20a47db13407",
+      "bytes": 104
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W3/G1_original/balances.parquet": {
+      "sha256": "8959e77c61bfd8501ab8be32fbb36c0cc9b23b9a15e8da13eae164fbe5888963",
+      "bytes": 9361
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W3/G1_original/complete.json": {
+      "sha256": "09bdf7d17ea8dec33349d44c1c141285233ee2851bb1f5bf7486fa467c88e760",
+      "bytes": 818
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W3/G1_original/market_requests.jsonl": {
+      "sha256": "324f2092a39ef38d03ac7b40d6e08c57b53bd101fbe893abac13060c1d2770b6",
+      "bytes": 542
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W3/G1_original/original_orders.parquet": {
+      "sha256": "a51033baf82cc144894f6f46f7078be041372c184b75003550a9364499ec3875",
+      "bytes": 7108
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W3/G1_original/positions.parquet": {
+      "sha256": "2a58de47212961c4acbd8dfea148eca3b75a183722f65a64d9bf25ae1b181353",
+      "bytes": 201902
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W3/G1_original/reconciliation_audit.json": {
+      "sha256": "287457f8cc4cb540197d7e93b5d82da2b7798aa403951462c7b9d60bf8421073",
+      "bytes": 311
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W3/G1_original/reconciliation_residuals.csv": {
+      "sha256": "affda203fa0a16de6fdcd68460632c401107242cd97b8ca7f6e6e87784c6eba6",
+      "bytes": 6838
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W3/G1_original/report.parquet": {
+      "sha256": "5f232fbf1a6d5015517b010d98aa8c752e67286d2e2f0ca7b6b540b253d32286",
+      "bytes": 8502
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W3/G1_original/risk_daily.parquet": {
+      "sha256": "fb67650074298d28f5ed631331c3ff344a9b834112cb05c2666674e4db934ce2",
+      "bytes": 32518
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W3/G1_original/risk_summary.json": {
+      "sha256": "758793b5cf459d17cdcda2f0d56141a2208b11b58a2142d7233e13b97ead757e",
+      "bytes": 2934
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W3/G1_original/stock_daily_contributions.parquet": {
+      "sha256": "667fd962dd108fd85c537cdba7dbe653d7490fb846125b86f2fca4b76de167ac",
+      "bytes": 174302
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W3/G1_original/trades.parquet": {
+      "sha256": "76caa758cf42ca9502920589b665a5a5e8e9dda65e7558ce9dc3e7fec74f5638",
+      "bytes": 19067
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W3/G1_original/variance_contributions.csv": {
+      "sha256": "239231061b32d88fac16b54933004edaa325f6047d1f0540537aa8e69afdf53d",
+      "bytes": 4418
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W3/cap_only/actual_cap_exceedances.csv": {
+      "sha256": "d18dfbb553c7291a64c9065ae6c337c3deb2d47192251078ec39399cb3ab7e80",
+      "bytes": 30218
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W3/cap_only/balances.parquet": {
+      "sha256": "b46c8d58c301f5c8fec0516abb15ea3a8d31167b110a2444e7d23875ef100b9a",
+      "bytes": 9305
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W3/cap_only/complete.json": {
+      "sha256": "f583e149bf5f31f913ab5031d3eba868f44840a862d22110c5abd2813e06ba9b",
+      "bytes": 800
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W3/cap_only/final_orders.parquet": {
+      "sha256": "0a4f0d52d2a62c02ec86ce6c6c822717bd28326f8a8933488f3c3415e09cfe89",
+      "bytes": 6855
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W3/cap_only/market_requests.jsonl": {
+      "sha256": "f55f00b946d866adc993c2fa08234985bbbecc53bd432fe14f3b93a2d45cf149",
+      "bytes": 1084
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W3/cap_only/order_audit.parquet": {
+      "sha256": "fc4175c47f7f29a2a0af4b58442ff4b438e3f2790d81a939d869ab0a8a22d896",
+      "bytes": 25253
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W3/cap_only/order_execution_audit.parquet": {
+      "sha256": "b98d8210ddfb0ce2a6bf1b99fc52114c42b88f6f09ff9e26347d1931b36a98f5",
+      "bytes": 33984
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W3/cap_only/original_orders.parquet": {
+      "sha256": "f1a56a831c1e72feef4eee9a282b8fb78d63aa831b6fb2badc8b1bfb10e525a1",
+      "bytes": 6817
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W3/cap_only/positions.parquet": {
+      "sha256": "fc5eafdd01d0afceaa1d8b656ffb0c1bd394e64944b6c2ed6e2d1ca6f13cc126",
+      "bytes": 207373
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W3/cap_only/reconciliation_audit.json": {
+      "sha256": "855becfeb98a5122ab4bb4a9fff9be23507b0ba978a0721b8d47775d66eb1633",
+      "bytes": 310
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W3/cap_only/reconciliation_residuals.csv": {
+      "sha256": "37d0088de16709b0bea15f8d60384183980ad3e0128365b8a002bff25dce1741",
+      "bytes": 6779
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W3/cap_only/report.parquet": {
+      "sha256": "b26daf11ba20d5371f211b9915c3d587b2192f3d4886ff43c1ba76433e17839c",
+      "bytes": 8438
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W3/cap_only/risk_daily.parquet": {
+      "sha256": "39aeb697dc6b255e8de5593144f5badeb112c3347cbbcc6232fb415747290ccf",
+      "bytes": 32503
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W3/cap_only/risk_summary.json": {
+      "sha256": "5397c05a4deffd7da39d92b069a1a8ef97fef21a3446e71a15a73b9d41531780",
+      "bytes": 3068
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W3/cap_only/stock_daily_contributions.parquet": {
+      "sha256": "5b26b59d9e46548a8574f5c156246ce3c24723a9f673ebec2842848f2584f1f9",
+      "bytes": 178504
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W3/cap_only/trades.parquet": {
+      "sha256": "19931ff9fd619691f5710927d5f774f1c4bdbee9c72ca2e752807c58702083b2",
+      "bytes": 18166
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W3/cap_only/variance_contributions.csv": {
+      "sha256": "448f8cc10ab06146c335c2928de2f74078ef6bf7dfef0c101201dd116af6428c",
+      "bytes": 4164
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W3/cap_vol/actual_cap_exceedances.csv": {
+      "sha256": "d49203f6c5a9473a334a67d725293c14d5af35dee48716e545bf4341895df801",
+      "bytes": 59836
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W3/cap_vol/balances.parquet": {
+      "sha256": "6b3bd7caf8e25865ab600ceb8f9c0bcaea45df87973a86cb48b96f0b058c9c2c",
+      "bytes": 9337
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W3/cap_vol/complete.json": {
+      "sha256": "2c12c73e264fbe1c41bbf6cf30c375c1b9ed7bbe951a892b7fd18f86c1a6df82",
+      "bytes": 807
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W3/cap_vol/final_orders.parquet": {
+      "sha256": "e89591a19ba22da9e4b8d100f939cf6dd6efdcb9aeda47fa689f10d9297b6d7a",
+      "bytes": 6973
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W3/cap_vol/market_requests.jsonl": {
+      "sha256": "d8ba489ffb9db257351077dc238ddf2a56fbc5221b748daa9467450a4465931e",
+      "bytes": 542
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W3/cap_vol/order_audit.parquet": {
+      "sha256": "b2d992fae79bf2ccbcc48cc5abb134be509df13864a9e4b8f053492cd8030c28",
+      "bytes": 36830
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W3/cap_vol/order_execution_audit.parquet": {
+      "sha256": "254792d31df859c6bfdd52378835198ab66d913ccbfc258b14985c9f804a2dff",
+      "bytes": 46240
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W3/cap_vol/original_orders.parquet": {
+      "sha256": "14830aa640e2d674e4fe7f4e69b19d012c7af8b508d8826b5640fcfe87961b2b",
+      "bytes": 7377
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W3/cap_vol/positions.parquet": {
+      "sha256": "e8da42794e526201059c5ed978c63196be262fca8670e085c962d5fdc443210a",
+      "bytes": 207588
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W3/cap_vol/reconciliation_audit.json": {
+      "sha256": "0df3968b77157765d224bcf72d368daf88f489f88f87a01d3da5f208e1038633",
+      "bytes": 311
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W3/cap_vol/reconciliation_residuals.csv": {
+      "sha256": "619267d4d9416b15b482662a47b0abe9d76ba78c8ef1be4c7042bba02ef7456c",
+      "bytes": 6760
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W3/cap_vol/report.parquet": {
+      "sha256": "db9cd9061c1cbc23f40da9f457caf70381d57cad734e8503fbb6821802bf4a1b",
+      "bytes": 8470
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W3/cap_vol/risk_daily.parquet": {
+      "sha256": "504aed16a35feb4481cd57cf88d89266737a85492861b17cefebe0052aa8c390",
+      "bytes": 32498
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W3/cap_vol/risk_summary.json": {
+      "sha256": "1beb0b3b99f60b306c5a23bd8682d9a4be4ed4642c169c4faccd3a6c421c97e6",
+      "bytes": 3079
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W3/cap_vol/stock_daily_contributions.parquet": {
+      "sha256": "dd05742f8ac78e4527def064f0ae2a969500e66c9c4de8dcd927c6b13af6d7db",
+      "bytes": 178840
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W3/cap_vol/trades.parquet": {
+      "sha256": "7053c7a66d960472da1dac6f812c9a48d64022f031ad45fa68c9022c4d0a5cb0",
+      "bytes": 18533
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W3/cap_vol/variance_contributions.csv": {
+      "sha256": "1720d9d4ee0b08d2112250fbad6a03c78e8631836ebed92b42755b68f64a5ba5",
+      "bytes": 4165
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W3/neutral/balances.parquet": {
+      "sha256": "d656b434d026a7c5c79747f4951dcf30bb567222215bd47214082d0973b2086f",
+      "bytes": 9273
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W3/neutral/complete.json": {
+      "sha256": "8e95829c3aecb55974736a692c997b22f5539f5a8fa85c835238acbf5cf8be50",
+      "bytes": 808
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W3/neutral/final_orders.parquet": {
+      "sha256": "3849a45815baee98ab1c3f2e8b911aee3a17780b100a25db8615b0d31c07b9e7",
+      "bytes": 6809
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W3/neutral/market_requests.jsonl": {
+      "sha256": "324f2092a39ef38d03ac7b40d6e08c57b53bd101fbe893abac13060c1d2770b6",
+      "bytes": 542
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W3/neutral/order_audit.parquet": {
+      "sha256": "2e836d6adff325aede8989ffcbc87094563445f1d0a4ba61dd92764ecca42844",
+      "bytes": 636
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W3/neutral/original_orders.parquet": {
+      "sha256": "3849a45815baee98ab1c3f2e8b911aee3a17780b100a25db8615b0d31c07b9e7",
+      "bytes": 6809
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W3/neutral/positions.parquet": {
+      "sha256": "7704a927cfa9b0ac47dc60619e6551059f9ad3a87ba1dc2e786ccda12aa2f2d5",
+      "bytes": 207321
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W3/neutral/reconciliation_audit.json": {
+      "sha256": "85984c5fc353dd3eb63346527fce9b955bfbdce263415b4aa148063282bf682a",
+      "bytes": 312
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W3/neutral/reconciliation_residuals.csv": {
+      "sha256": "cdad93cef9137dfbe4f1aad3c7ba53c74b98936f03d9837c02a6e676a3e77c81",
+      "bytes": 6704
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W3/neutral/report.parquet": {
+      "sha256": "e58ccdfb71eb0dc4cd13408132270bf67130d89b4424863265d8a5a5ae6f1f25",
+      "bytes": 8406
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W3/neutral/stock_daily_contributions.parquet": {
+      "sha256": "c9dc63d0571b5ac7c764feb9cf15a09e5a653661a59980dd52f5f28a06205342",
+      "bytes": 178442
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W3/neutral/trades.parquet": {
+      "sha256": "b1e11179a7ad7c4ea79c6668a03c684ce6604b4ca72b85eb00168eeef0f0f906",
+      "bytes": 18015
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W3/vol_only/actual_cap_exceedances.csv": {
+      "sha256": "2d096e72942aac64daaaa25b1970297c025670785a7153f2d68e20a47db13407",
+      "bytes": 104
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W3/vol_only/balances.parquet": {
+      "sha256": "4a2cd827b7770089177610d97a6a513cfa33e6be5568bd5323eb19a86139e0ef",
+      "bytes": 9273
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W3/vol_only/complete.json": {
+      "sha256": "114b59b682159cb9d2f5608ecc7bc2b4f637fac22d802b768974590d483fec34",
+      "bytes": 807
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W3/vol_only/final_orders.parquet": {
+      "sha256": "6bbf32768c194a2ba772ec98562c20c4d6bea69812227e7ce907121d78b9d76f",
+      "bytes": 6833
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W3/vol_only/market_requests.jsonl": {
+      "sha256": "d8ba489ffb9db257351077dc238ddf2a56fbc5221b748daa9467450a4465931e",
+      "bytes": 542
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W3/vol_only/order_audit.parquet": {
+      "sha256": "2ed457d4c9cf64f03ee1af095b845dbfae3ff497f3823e423a393e432b157bb5",
+      "bytes": 20072
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W3/vol_only/order_execution_audit.parquet": {
+      "sha256": "a9ec3016a528e3316616a0211184fa811b2a8850a9173e3db2c816d6378ee6ab",
+      "bytes": 28125
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W3/vol_only/original_orders.parquet": {
+      "sha256": "6fbb29a78fe665dce92459eac0fbbcbfd293d5f1be7feb730355a6e40c79c105",
+      "bytes": 7377
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W3/vol_only/positions.parquet": {
+      "sha256": "bee62e0245a1e7e5190a43c23c1c6cf36932bd07534fc403272161cfb40b41db",
+      "bytes": 207321
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W3/vol_only/reconciliation_audit.json": {
+      "sha256": "53427effad92f0159a40a9215c9e4c6121c61a971e4ebd34aa375eb5dde9c022",
+      "bytes": 311
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W3/vol_only/reconciliation_residuals.csv": {
+      "sha256": "f5ad68fc6fa5727f97cde7ee24367843e421c47f11033256870a15b39aaed77f",
+      "bytes": 6673
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W3/vol_only/report.parquet": {
+      "sha256": "88ae1a3ba14a818e4bd12acb7f6c81f81469c2791c7c2d1cac3b167bfd704147",
+      "bytes": 8406
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W3/vol_only/risk_daily.parquet": {
+      "sha256": "edb1bf502a86d77365adcb19432419329e71c28391769c4f749790c4e1466381",
+      "bytes": 32503
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W3/vol_only/risk_summary.json": {
+      "sha256": "1bfa50ab7fc4530977cbb24faa2ab0cfd959dbfd409b9eb598659589dce51147",
+      "bytes": 2956
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W3/vol_only/stock_daily_contributions.parquet": {
+      "sha256": "bd35ab9bce360476e9a4b05aab78200d842567bba540191ce10bd5f0f57ef9ff",
+      "bytes": 178466
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W3/vol_only/trades.parquet": {
+      "sha256": "46b9ffafd05dea05cf9d9f65f2083e5b1b283cc0b518d0477b7e1519e52e4324",
+      "bytes": 18071
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W3/vol_only/variance_contributions.csv": {
+      "sha256": "c2e939db96b8c7272851956b73a7f6f39c9ebb793df40fa87f77032e85b54cd3",
+      "bytes": 4172
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W4/B/actual_cap_exceedances.csv": {
+      "sha256": "2d096e72942aac64daaaa25b1970297c025670785a7153f2d68e20a47db13407",
+      "bytes": 104
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W4/B/balances.parquet": {
+      "sha256": "6c55290b1d23cf816b647cfa769da7291962a3e6795832883c5048215ab4b04c",
+      "bytes": 9631
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W4/B/complete.json": {
+      "sha256": "0a23f91aa6bafd0be6c0b6158ea98a7878717d4033043306c252f2fdd1ccd0a8",
+      "bytes": 807
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W4/B/market_requests.jsonl": {
+      "sha256": "928f78d0136564b2a8bcf7af20997a4f771a1c187065b5e5b85ad412e3a8a7e5",
+      "bytes": 542
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W4/B/original_orders.parquet": {
+      "sha256": "16ced0ce62f8fe81617e11ee57f7de6a9ef59caa9f68f1439d3bfe2236f05164",
+      "bytes": 6670
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W4/B/positions.parquet": {
+      "sha256": "f33d98343b07510185d39b73a53dd0f11ddc83385a8b38498a2b3d0fda334376",
+      "bytes": 223220
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W4/B/reconciliation_audit.json": {
+      "sha256": "da23c62800d6815b77a2cee48d3109f4f58d6f552d8d8d8b931f4e48f14ee5ed",
+      "bytes": 310
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W4/B/reconciliation_residuals.csv": {
+      "sha256": "341c56a0bdbf4b8a13cb23c27c9a8dfbc5308bac4198af1eaeb33df07b8e801c",
+      "bytes": 7068
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W4/B/report.parquet": {
+      "sha256": "26327c1cf075bc43ab9dd6c0de65dc9cbad0f63414de0a7d4e39772c9827c836",
+      "bytes": 8732
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W4/B/risk_daily.parquet": {
+      "sha256": "47cd9430553ccfb638211acb9b642c2e5970f6e4b0536b77470ca88af4ddb967",
+      "bytes": 34064
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W4/B/risk_summary.json": {
+      "sha256": "1bfcc235f24f6387adf432a272809ec60ee510adae95a6840397a3277a9620e3",
+      "bytes": 3455
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W4/B/stock_daily_contributions.parquet": {
+      "sha256": "c0b800c8602dc8d7dfd66548e69ed0fb8cffbfbf3e1b3cee584e0bff52e8f8f0",
+      "bytes": 190406
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W4/B/trades.parquet": {
+      "sha256": "8a3ab35bc5c9d0f00c84e7ea3b83c85088824117419b48abbd83c7d7314e8e28",
+      "bytes": 16811
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W4/B/variance_contributions.csv": {
+      "sha256": "0e8f70067c26593a745daa95ed615a56f5298c199d443faad2faa7c21c51b8b8",
+      "bytes": 4346
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W4/D/actual_cap_exceedances.csv": {
+      "sha256": "2d096e72942aac64daaaa25b1970297c025670785a7153f2d68e20a47db13407",
+      "bytes": 104
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W4/D/balances.parquet": {
+      "sha256": "e9cd99b712b61378280655295f65a73de699cb1d08d59657501d213cc0f1d04d",
+      "bytes": 9487
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W4/D/complete.json": {
+      "sha256": "a4795df697dd7d540610e2dd65c6e275f4b7e054412194e47c1cbaec9617ef4d",
+      "bytes": 805
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W4/D/market_requests.jsonl": {
+      "sha256": "928f78d0136564b2a8bcf7af20997a4f771a1c187065b5e5b85ad412e3a8a7e5",
+      "bytes": 542
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W4/D/original_orders.parquet": {
+      "sha256": "af60862d75713b332e55ae5286ad137704eb2029a51491b6b97be3a5cdfe7705",
+      "bytes": 6081
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W4/D/positions.parquet": {
+      "sha256": "ca33ffd2616a3ddfc1d7c9825e9a2e60f55683541ee0127800db134d7aba7222",
+      "bytes": 219676
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W4/D/reconciliation_audit.json": {
+      "sha256": "c4a9635196e7307ac5be534ca842bdffa6a88b6533d0d53eb543f1ed90bdb1db",
+      "bytes": 309
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W4/D/reconciliation_residuals.csv": {
+      "sha256": "93e67462a699f7fcef372503381fbebc72977bdb21444e5dd248bc2f8b6aac82",
+      "bytes": 6913
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W4/D/report.parquet": {
+      "sha256": "30a05220bce035d60076658397dce6af796a5faf357694f9bd70e89a5bf333b0",
+      "bytes": 8589
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W4/D/risk_daily.parquet": {
+      "sha256": "b3ad079ca67b4810a0ac761954da5f979ff674d1bc6bb5905bf1b0d7b7822875",
+      "bytes": 34064
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W4/D/risk_summary.json": {
+      "sha256": "8a055c7951b03a183de5c50b2e55d16bd26ecd796a25a30f312e09044d0538cf",
+      "bytes": 2918
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W4/D/stock_daily_contributions.parquet": {
+      "sha256": "d0765e5143f253aea974fb4f9dbcb4e9c1bdc56aef08bdc45ee6bb691494778e",
+      "bytes": 186669
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W4/D/trades.parquet": {
+      "sha256": "7e66de6a8ee044f9806445dd034f9d12e7324a81bf856faf99ca4fa8887db485",
+      "bytes": 14622
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W4/D/variance_contributions.csv": {
+      "sha256": "f619542faa9349994fd2a6c9cb9a890f9f0f77b1d8845c51568c53e27491ed1c",
+      "bytes": 3686
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W4/G1_original/actual_cap_exceedances.csv": {
+      "sha256": "2d096e72942aac64daaaa25b1970297c025670785a7153f2d68e20a47db13407",
+      "bytes": 104
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W4/G1_original/balances.parquet": {
+      "sha256": "3cefcf3c1ec1f0bba661041075712b8b7f8c69062f1ac653f1aac521cbef5018",
+      "bytes": 9471
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W4/G1_original/complete.json": {
+      "sha256": "23c1ab0db5632090d43690592e06dd110477a3122a268821d1c97b59f38d9c39",
+      "bytes": 819
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W4/G1_original/market_requests.jsonl": {
+      "sha256": "928f78d0136564b2a8bcf7af20997a4f771a1c187065b5e5b85ad412e3a8a7e5",
+      "bytes": 542
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W4/G1_original/original_orders.parquet": {
+      "sha256": "b7ac396fcfc0a799947aa9f11439f10c58f5cc408e36818736961859088beaf7",
+      "bytes": 6007
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W4/G1_original/positions.parquet": {
+      "sha256": "f31fdc363030a04ab46e490a31583a794f050ec320784e8967c7984f111df852",
+      "bytes": 218914
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W4/G1_original/reconciliation_audit.json": {
+      "sha256": "496666856dc54875a4b6b632e8f311a0705f89edd1d4ed55971b6f043af1c38c",
+      "bytes": 312
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W4/G1_original/reconciliation_residuals.csv": {
+      "sha256": "1fbbcee5506f89b825d1da2b2b19c22ce12611f9671339a02add71763a51cc59",
+      "bytes": 6940
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W4/G1_original/report.parquet": {
+      "sha256": "837b60c2a4c532fb5a1323bb549e15f91177e32bd0558f37a13ce09eed760a7d",
+      "bytes": 8573
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W4/G1_original/risk_daily.parquet": {
+      "sha256": "e7562bd73f6f353444f9d8d7652362c722d979e039c94ce793d3c14d122e159a",
+      "bytes": 34115
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W4/G1_original/risk_summary.json": {
+      "sha256": "f77225ddc957484c879e57c39a2c22aa0740f7143628ca463803428fe4b7109f",
+      "bytes": 2874
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W4/G1_original/stock_daily_contributions.parquet": {
+      "sha256": "445577536b5a94225d083ec2b18171582cd4333d4b8c0012fcf537a30e8f8168",
+      "bytes": 185526
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W4/G1_original/trades.parquet": {
+      "sha256": "2f294a28d10e219ee03de234bc21180f34b1e74ea54a226fd8af6ac7c4c96f19",
+      "bytes": 14354
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W4/G1_original/variance_contributions.csv": {
+      "sha256": "dd4410902fb271b8043a01fbfe256d7b4198d3d3260ce3eedbf6ba0c6e891bfa",
+      "bytes": 3576
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W4/cap_only/actual_cap_exceedances.csv": {
+      "sha256": "1257c3d9fcd4787f9e267c5df1416d386073440649659c79cc0ddda7fc39c279",
+      "bytes": 35262
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W4/cap_only/balances.parquet": {
+      "sha256": "9528fd4875585246948facbcc30dd454b1af1124619262ecc1cebfbcbaeda657",
+      "bytes": 9519
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W4/cap_only/complete.json": {
+      "sha256": "592c849a3d528437463cab58e93d82effcfe8515dd27e3d23d7a48f263bc5b9e",
+      "bytes": 809
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W4/cap_only/final_orders.parquet": {
+      "sha256": "346bc95a714b77b65cc3a37326933142a202f3010baa4027bb00eec1464fcf29",
+      "bytes": 6199
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W4/cap_only/market_requests.jsonl": {
+      "sha256": "420405cb87ca4d6c6d3d450b13130039d7e20ef33e05b2d9ca8eaa7a6e84e07b",
+      "bytes": 542
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W4/cap_only/order_audit.parquet": {
+      "sha256": "27f812ad618713f4a65fe9cb421fd28096103cf1c41587beac151d198cc9901f",
+      "bytes": 23837
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W4/cap_only/order_execution_audit.parquet": {
+      "sha256": "c3e3e1eff602b76245923c93d876ed785ec2c361c2f67d213b8f1e22cb10cf6e",
+      "bytes": 31616
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W4/cap_only/original_orders.parquet": {
+      "sha256": "a88d82a3aee4b9d51afd6be166be8a4b948300e9974df1d8331a5ad6d21738ec",
+      "bytes": 6097
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W4/cap_only/positions.parquet": {
+      "sha256": "49cfb96f50235dab53217eec21c933b83a5526ba7b7b025662b90d7f6615f5a6",
+      "bytes": 219871
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W4/cap_only/reconciliation_audit.json": {
+      "sha256": "9e0181f0a35d38bd0b59a6c61672f135a8edca449ad7c463ed1ea9b2b73930bc",
+      "bytes": 312
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W4/cap_only/reconciliation_residuals.csv": {
+      "sha256": "7d4f6e197329a5aee621b0b14749791292056171d9a39adb4fae53e2d9bf1669",
+      "bytes": 6968
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W4/cap_only/report.parquet": {
+      "sha256": "c1fda4324d3a6f5849d20cf8d354a14e12d0d3e6ea432fa0e186adf731d869db",
+      "bytes": 8621
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W4/cap_only/risk_daily.parquet": {
+      "sha256": "aa1e6a0f964e26c2784d85507b882b79e914251bf57efa7639b590bf12839fe5",
+      "bytes": 34100
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W4/cap_only/risk_summary.json": {
+      "sha256": "3b860f108025e4e6433f9fc391a33a384611de0b484af12e3af709e8eaca53e4",
+      "bytes": 3019
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W4/cap_only/stock_daily_contributions.parquet": {
+      "sha256": "0af7928ee7c29d81619c158ff2ee5add84ac959596346d3ac788cc5d80e97a5d",
+      "bytes": 186919
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W4/cap_only/trades.parquet": {
+      "sha256": "a373e2364bf64c10f36c33452ace6b793d428e5300700d14ba5abdcb17255ccd",
+      "bytes": 14956
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W4/cap_only/variance_contributions.csv": {
+      "sha256": "887db80098a29adca3beac6c79ef47d2c21522bfa0825242e67a0759191060fa",
+      "bytes": 3675
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W4/cap_vol/actual_cap_exceedances.csv": {
+      "sha256": "1f5aa767f314061a78ed34b6d74b24aef09d8967157098d6a25d2917af80c6b5",
+      "bytes": 72415
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W4/cap_vol/balances.parquet": {
+      "sha256": "92f9012a57378097da8ed52adb4191249125aed473afee2ed17575a8bebe24c3",
+      "bytes": 9519
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W4/cap_vol/complete.json": {
+      "sha256": "6fd9f56d7b95a34a9de0668c830606d05cadd1b321589ee7bf4eb5285d2a2ead",
+      "bytes": 809
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W4/cap_vol/final_orders.parquet": {
+      "sha256": "581c34facbcf928be92d8fab3ab28c5e9c65fbe85eaf2ca02954d20143813add",
+      "bytes": 6318
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W4/cap_vol/market_requests.jsonl": {
+      "sha256": "420405cb87ca4d6c6d3d450b13130039d7e20ef33e05b2d9ca8eaa7a6e84e07b",
+      "bytes": 542
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W4/cap_vol/order_audit.parquet": {
+      "sha256": "c40fadc3890f8edfb2f53fb921921819220dc18eb69ae8e498c8fdd4c79832c0",
+      "bytes": 36566
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W4/cap_vol/order_execution_audit.parquet": {
+      "sha256": "56df7ded37daf160fb144d56a1ec95b2ae4aae118f7052f412e3d34eb434a180",
+      "bytes": 44922
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W4/cap_vol/original_orders.parquet": {
+      "sha256": "8f98f9040905303193674f3d84865b5679497d6ae2a73ee7207b54d7dcc6365f",
+      "bytes": 6449
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W4/cap_vol/positions.parquet": {
+      "sha256": "adfa27d0f8d323cb625aced7d87b671b82442bc12ed1bffbc3e9e72fe39edbff",
+      "bytes": 220021
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W4/cap_vol/reconciliation_audit.json": {
+      "sha256": "e4c04a6af336036c580dabc8b45ee9d4b9fcdd024b2433f66662e2d21e730c10",
+      "bytes": 312
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W4/cap_vol/reconciliation_residuals.csv": {
+      "sha256": "def09cebc8d2eb5b0f0341722b5d0fe738c28c94127716d48938a6f7507ee185",
+      "bytes": 6937
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W4/cap_vol/report.parquet": {
+      "sha256": "88340d39f69102a63afcd442d406a9be6228c0d1cd606bfd1dd1b60ffccecafe",
+      "bytes": 8621
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W4/cap_vol/risk_daily.parquet": {
+      "sha256": "e8a4a6529fc3aac2640ae33186dd408b18f81f58bb8bf81e2b5e8917491a504f",
+      "bytes": 34095
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W4/cap_vol/risk_summary.json": {
+      "sha256": "7afd7874104d8915a60eda1b75bf1b075847713205bc7292a40b0313cee82b02",
+      "bytes": 3582
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W4/cap_vol/stock_daily_contributions.parquet": {
+      "sha256": "9f15baa1a790db30c24c9e28729a224ded16ecabc3f9dde68493ccb78830cfda",
+      "bytes": 187151
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W4/cap_vol/trades.parquet": {
+      "sha256": "c607d40923a8b04b5777abbc8553103a7d5e343cce408245b32ca0246dde1e48",
+      "bytes": 15218
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W4/cap_vol/variance_contributions.csv": {
+      "sha256": "5c100cad9a73248f971894865f06b5cb4095ce4a05a64892ecf5c1b79a7cff82",
+      "bytes": 3678
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W4/neutral/balances.parquet": {
+      "sha256": "e9cd99b712b61378280655295f65a73de699cb1d08d59657501d213cc0f1d04d",
+      "bytes": 9487
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W4/neutral/complete.json": {
+      "sha256": "7e46646761e38dd8f79cc673233f8dadf9ca128d006a844166e2c05c54d1846a",
+      "bytes": 806
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W4/neutral/final_orders.parquet": {
+      "sha256": "af60862d75713b332e55ae5286ad137704eb2029a51491b6b97be3a5cdfe7705",
+      "bytes": 6081
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W4/neutral/market_requests.jsonl": {
+      "sha256": "928f78d0136564b2a8bcf7af20997a4f771a1c187065b5e5b85ad412e3a8a7e5",
+      "bytes": 542
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W4/neutral/order_audit.parquet": {
+      "sha256": "2e836d6adff325aede8989ffcbc87094563445f1d0a4ba61dd92764ecca42844",
+      "bytes": 636
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W4/neutral/original_orders.parquet": {
+      "sha256": "af60862d75713b332e55ae5286ad137704eb2029a51491b6b97be3a5cdfe7705",
+      "bytes": 6081
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W4/neutral/positions.parquet": {
+      "sha256": "ca33ffd2616a3ddfc1d7c9825e9a2e60f55683541ee0127800db134d7aba7222",
+      "bytes": 219676
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W4/neutral/reconciliation_audit.json": {
+      "sha256": "c4a9635196e7307ac5be534ca842bdffa6a88b6533d0d53eb543f1ed90bdb1db",
+      "bytes": 309
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W4/neutral/reconciliation_residuals.csv": {
+      "sha256": "93e67462a699f7fcef372503381fbebc72977bdb21444e5dd248bc2f8b6aac82",
+      "bytes": 6913
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W4/neutral/report.parquet": {
+      "sha256": "30a05220bce035d60076658397dce6af796a5faf357694f9bd70e89a5bf333b0",
+      "bytes": 8589
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W4/neutral/stock_daily_contributions.parquet": {
+      "sha256": "d0765e5143f253aea974fb4f9dbcb4e9c1bdc56aef08bdc45ee6bb691494778e",
+      "bytes": 186669
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W4/neutral/trades.parquet": {
+      "sha256": "7e66de6a8ee044f9806445dd034f9d12e7324a81bf856faf99ca4fa8887db485",
+      "bytes": 14622
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W4/vol_only/actual_cap_exceedances.csv": {
+      "sha256": "2d096e72942aac64daaaa25b1970297c025670785a7153f2d68e20a47db13407",
+      "bytes": 104
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W4/vol_only/balances.parquet": {
+      "sha256": "bc91998109303849f9b130dce3f5c0c82c803958d465366a38c19c1db2133d23",
+      "bytes": 9487
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W4/vol_only/complete.json": {
+      "sha256": "50719993a524ad839fd5eeedc0cb304899b44faf92b7300d56485b9e6d0c39eb",
+      "bytes": 807
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W4/vol_only/final_orders.parquet": {
+      "sha256": "65c8ceafb9196160c39e80d191936da8791f49dda7b5b2c7297f42bec5c1c0d7",
+      "bytes": 6089
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W4/vol_only/market_requests.jsonl": {
+      "sha256": "420405cb87ca4d6c6d3d450b13130039d7e20ef33e05b2d9ca8eaa7a6e84e07b",
+      "bytes": 542
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W4/vol_only/order_audit.parquet": {
+      "sha256": "e01cbb44b03916feb240425fc0668ca838af9626944a02d158301756d538b5dc",
+      "bytes": 17427
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W4/vol_only/order_execution_audit.parquet": {
+      "sha256": "fcd3a5c2149bfce43420504a07067e4f48f2bb24b0dfb81c3647679f198bb347",
+      "bytes": 24207
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W4/vol_only/original_orders.parquet": {
+      "sha256": "ef7eebd72cced1d995f70cbaf04835e84f00462969eda9f6da2567af8c3c814e",
+      "bytes": 6433
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W4/vol_only/positions.parquet": {
+      "sha256": "1960300164b8be095d1f463f2dea70bf434d36b18be17df1740042218dd6718d",
+      "bytes": 219676
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W4/vol_only/reconciliation_audit.json": {
+      "sha256": "11cdfec1e4321a0392d97c2b2b1d0b03ab8e9f0f8d9e22b373cd6dbe2b819176",
+      "bytes": 310
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W4/vol_only/reconciliation_residuals.csv": {
+      "sha256": "b0f08713a7adc3e3af6e091d363755725b00d0a4ca6bf324bb2ef14812f1d628",
+      "bytes": 6907
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W4/vol_only/report.parquet": {
+      "sha256": "6074c85440b36bd9b69d6d30f5a1fba0dc3960ce3366e524ec303c8eac01d161",
+      "bytes": 8589
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W4/vol_only/risk_daily.parquet": {
+      "sha256": "a1e9b16f23eeb6f0e700d600db1b140545d160c33e527a602f48edd0fcff7957",
+      "bytes": 34100
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W4/vol_only/risk_summary.json": {
+      "sha256": "e00bc489c21a099736fc327591f04e0b832dbae6ac75dff8c3b3966287a02bb9",
+      "bytes": 3458
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W4/vol_only/stock_daily_contributions.parquet": {
+      "sha256": "5cd0845cec7add2d57f199820f3b4c57c7ce8b0cd41726db9addf4c85116d975",
+      "bytes": 186637
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W4/vol_only/trades.parquet": {
+      "sha256": "5b87e7d9edde128640ba3fe329d3628420b753f015e8c30ce611a9b96f30d4f1",
+      "bytes": 14620
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/accounts/W4/vol_only/variance_contributions.csv": {
+      "sha256": "f80ea741c16eb03a7e48ac6e4b9e0efaac63e8ef2bfbe1926fafc4003061eb3a",
+      "bytes": 3658
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/cash_volatility.png": {
+      "sha256": "fc63340bd50db9eff22fef5218e444ee11e91ab7bc57e5cdb51c2fc995d5e1d3",
+      "bytes": 627773
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/comparisons.json": {
+      "sha256": "58924da8f43e15a45b90f59869f17e75c7ee264115b3bb8e13b0f608d2843307",
+      "bytes": 3167
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/cumulative_controls.png": {
+      "sha256": "293fcc8514810be9b3d3c148d18c56f0f14fc3fc2631d3ca8f21a262a17cb9d3",
+      "bytes": 289374
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/cumulative_main.png": {
+      "sha256": "138bf7986ae0b6c54aad9da5f7a8480494fe87e01188b955866d8ac2501044fa",
+      "bytes": 277270
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/daily_W3_B.parquet": {
+      "sha256": "b60635114da5bdafbc4f9e3dcbe3390d4f26678cd88a9e2ac1cc7078b0c20b1f",
+      "bytes": 7647
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/daily_W3_D.parquet": {
+      "sha256": "938e5dc66383d97e215ccdab5aa8982833a0d226c4eca2564034ea616b6c3304",
+      "bytes": 7647
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/daily_W3_G1_original.parquet": {
+      "sha256": "019d1372cd0582ed0abb7961e9b06f0f44aea30f235ee00acb5326c1547db504",
+      "bytes": 7647
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/daily_W3_cap_only.parquet": {
+      "sha256": "035c43ad58b1e50fee440eb8f9c8b70c91e425eede77c3d365861fc6e47ecacb",
+      "bytes": 7647
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/daily_W3_cap_vol.parquet": {
+      "sha256": "c6cf1cdec41ca2041b2da5a6504cf87b5b9f29f0f83246837a20d12d0aa1ef74",
+      "bytes": 7647
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/daily_W3_neutral.parquet": {
+      "sha256": "938e5dc66383d97e215ccdab5aa8982833a0d226c4eca2564034ea616b6c3304",
+      "bytes": 7647
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/daily_W3_vol_only.parquet": {
+      "sha256": "c21e6607f2344caee3175fe32dbbd153c41c6a6019242aa041f4ad95f8a1f0c1",
+      "bytes": 7647
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/daily_W4_B.parquet": {
+      "sha256": "2ca434bb133fb994819af8199178b26f48de5e4d0a7d33eda4f5949d9ed45c32",
+      "bytes": 7998
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/daily_W4_D.parquet": {
+      "sha256": "1a979a4a692615fbf7d6f125909efb50a0c6100179f11d1065ed0ed3d5a28dba",
+      "bytes": 7998
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/daily_W4_G1_original.parquet": {
+      "sha256": "777ca32af8d91c728a9c758b2b58fae2afd4202a7a71abda5314b30a48c4eba9",
+      "bytes": 7998
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/daily_W4_cap_only.parquet": {
+      "sha256": "db62f9ce9afeac082d06e36d0ebca0f750ef848448b79036a69fc608935cf530",
+      "bytes": 7998
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/daily_W4_cap_vol.parquet": {
+      "sha256": "f83e3d058954d520d2cb366ade9f09a1760d4100191e17ca326f918e9f7ae547",
+      "bytes": 7998
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/daily_W4_neutral.parquet": {
+      "sha256": "1a979a4a692615fbf7d6f125909efb50a0c6100179f11d1065ed0ed3d5a28dba",
+      "bytes": 7998
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/daily_W4_vol_only.parquet": {
+      "sha256": "02fe324adaaf355451ed2f59cf841652e9e95d0668d7c5c6444265164c886c6d",
+      "bytes": 7998
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/difference_vs_G1.png": {
+      "sha256": "32c5a94fce8ebd42392970606002e09bf590505b6adc758350275bc4d425af39",
+      "bytes": 241894
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/drawdown.png": {
+      "sha256": "0770b66bce4172a70bb0fb578ccc169f92bb7d82b5f2e8d4314831449b163c48",
+      "bytes": 289679
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/drawdown_attribution.json": {
+      "sha256": "5e3cbaee58ac13566e85c10c195059f9dea4cb88ccda6ac04162b2a4226213d3",
+      "bytes": 4508
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/metrics.csv": {
+      "sha256": "c869af89f98ca36792c0e6b4cadd4d459172872f521bcff544f8efa4d2fe3aa5",
+      "bytes": 1891
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/metrics.json": {
+      "sha256": "a4078f06d9434929c12c33391e54cbb7648f312005dbc4d42b944e672bc8ee91",
+      "bytes": 3478
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/replay_gate_passed.json": {
+      "sha256": "7404412cafffef97dae64896a429b7ff81a7d53a78ef620cb0b30909359cd8d9",
+      "bytes": 7244
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/replay_gate_progress.json": {
+      "sha256": "7404412cafffef97dae64896a429b7ff81a7d53a78ef620cb0b30909359cd8d9",
+      "bytes": 7244
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/report_W3_B.parquet": {
+      "sha256": "2e2f25756e79d55f7387f5fa4e1c411a6467ed22c96d04eb4a2c46ab1997df2a",
+      "bytes": 8582
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/report_W3_D.parquet": {
+      "sha256": "e58ccdfb71eb0dc4cd13408132270bf67130d89b4424863265d8a5a5ae6f1f25",
+      "bytes": 8406
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/report_W3_G1_original.parquet": {
+      "sha256": "5f232fbf1a6d5015517b010d98aa8c752e67286d2e2f0ca7b6b540b253d32286",
+      "bytes": 8502
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/report_W3_cap_only.parquet": {
+      "sha256": "b26daf11ba20d5371f211b9915c3d587b2192f3d4886ff43c1ba76433e17839c",
+      "bytes": 8438
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/report_W3_cap_vol.parquet": {
+      "sha256": "db9cd9061c1cbc23f40da9f457caf70381d57cad734e8503fbb6821802bf4a1b",
+      "bytes": 8470
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/report_W3_neutral.parquet": {
+      "sha256": "e58ccdfb71eb0dc4cd13408132270bf67130d89b4424863265d8a5a5ae6f1f25",
+      "bytes": 8406
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/report_W3_vol_only.parquet": {
+      "sha256": "88ae1a3ba14a818e4bd12acb7f6c81f81469c2791c7c2d1cac3b167bfd704147",
+      "bytes": 8406
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/report_W4_B.parquet": {
+      "sha256": "26327c1cf075bc43ab9dd6c0de65dc9cbad0f63414de0a7d4e39772c9827c836",
+      "bytes": 8732
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/report_W4_D.parquet": {
+      "sha256": "30a05220bce035d60076658397dce6af796a5faf357694f9bd70e89a5bf333b0",
+      "bytes": 8589
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/report_W4_G1_original.parquet": {
+      "sha256": "837b60c2a4c532fb5a1323bb549e15f91177e32bd0558f37a13ce09eed760a7d",
+      "bytes": 8573
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/report_W4_cap_only.parquet": {
+      "sha256": "c1fda4324d3a6f5849d20cf8d354a14e12d0d3e6ea432fa0e186adf731d869db",
+      "bytes": 8621
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/report_W4_cap_vol.parquet": {
+      "sha256": "88340d39f69102a63afcd442d406a9be6228c0d1cd606bfd1dd1b60ffccecafe",
+      "bytes": 8621
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/report_W4_neutral.parquet": {
+      "sha256": "30a05220bce035d60076658397dce6af796a5faf357694f9bd70e89a5bf333b0",
+      "bytes": 8589
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/report_W4_vol_only.parquet": {
+      "sha256": "6074c85440b36bd9b69d6d30f5a1fba0dc3960ce3366e524ec303c8eac01d161",
+      "bytes": 8589
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/risk_daily_all.parquet": {
+      "sha256": "cb67948277c7843e0c8176ab7a5b96e24618f03468de9a17de344961ac4f3893",
+      "bytes": 237986
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/risk_features_W3.json": {
+      "sha256": "5fcdbe4081d48b279e2db9712df6426055fda5067889c71383302ca742f7aaed",
+      "bytes": 480
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/risk_features_W4.json": {
+      "sha256": "ed9ced034bad2fb8be9862126b12b403628d2777f2eed65d14f15ba83947ddc3",
+      "bytes": 480
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/risk_panel_W3.parquet": {
+      "sha256": "212d82444e2093648f7bd1505ce67c0380732ddaa39e9c8f563d9d58f8bfc959",
+      "bytes": 2101703
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/risk_panel_W4.parquet": {
+      "sha256": "48ac02bff0341a44aca6719cedf048fe448d2ebfcac03f470f08eeee58e53323",
+      "bytes": 2246410
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/risk_summary.json": {
+      "sha256": "8e14b0bda45bd0d5f3e5d4688eac1e22209671568aa6e8a699c85d19b6e3fb70",
+      "bytes": 41942
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/stock_daily_difference_W3_D_common_drawdown.parquet": {
+      "sha256": "a68eaf5c4e3a22b90bad65e0b23dc7308ba616a86aec6c0648f13bb9643e2ab2",
+      "bytes": 80831
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/stock_daily_difference_W3_candidate_drawdown.parquet": {
+      "sha256": "a68eaf5c4e3a22b90bad65e0b23dc7308ba616a86aec6c0648f13bb9643e2ab2",
+      "bytes": 80831
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/stock_daily_difference_W4_candidate_drawdown.parquet": {
+      "sha256": "c9a231c55d9e96eff218941ec39190b0fe88b5e65892caa941c0de1189cd7cba",
+      "bytes": 84151
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/stock_difference_W3_D_common_drawdown.csv": {
+      "sha256": "13ea10f274e91ccea0db1b6290630eaa024cff64d1c8dc2407d61b19d63b549b",
+      "bytes": 2880
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/stock_difference_W3_candidate_drawdown.csv": {
+      "sha256": "13ea10f274e91ccea0db1b6290630eaa024cff64d1c8dc2407d61b19d63b549b",
+      "bytes": 2880
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision01_superseded/stock_difference_W4_candidate_drawdown.csv": {
+      "sha256": "9b60caba7b8ef55f61acc5f83aecf672a58567586cd97a8205a330640d218384",
+      "bytes": 2825
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/revision02_timing.json": {
+      "sha256": "8d259bfd5e9eb3d6e1f7b136180b142c317bdd7cd25fd01ab2f4c7c94d104c2e",
+      "bytes": 12424
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/risk_daily_all.parquet": {
+      "sha256": "fb834a08de7d6c178750bf03a2f194461f48e390ef6b066c561b9ead686d5768",
+      "bytes": 226065
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/risk_features_W3.json": {
+      "sha256": "2535e60ef216446c3caaadecb4ee4b13acfb306f8419df1cea1f3ec73ec93eb2",
+      "bytes": 480
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/risk_features_W4.json": {
+      "sha256": "2f37b272e155daa6c72437e02d3e60a73e5154b759a2d2296e53b3dd8db67dd4",
+      "bytes": 480
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/risk_market_requests.jsonl": {
+      "sha256": "7346a8713693d793df7a7aa33e46a3cf8f8d295f0e38e57bd9ec3db11939c777",
+      "bytes": 156
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/risk_panel_W3.parquet": {
+      "sha256": "833c64b46d74fa808af9124f5e8eccbe71a63609d4ffddae17a55a3245c4a208",
+      "bytes": 2132377
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/risk_panel_W4.parquet": {
+      "sha256": "507271a0abc200f2fdf7f9deaec0bb0660f142095c4abc884caed33988ea996f",
+      "bytes": 2276256
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/risk_summary.json": {
+      "sha256": "d0d8b08ca2ad0e1809e26d290f9fab478bc2c7eb820e2ef4d9808c6fb4ff59ac",
+      "bytes": 42870
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/stock_daily_difference_W3_D_common_drawdown.parquet": {
+      "sha256": "316ef2c19ff839b06008ce9888da2cd1661e334f0408c2536791492148c8073a",
+      "bytes": 80831
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/stock_daily_difference_W3_candidate_drawdown.parquet": {
+      "sha256": "316ef2c19ff839b06008ce9888da2cd1661e334f0408c2536791492148c8073a",
+      "bytes": 80831
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/stock_daily_difference_W4_candidate_drawdown.parquet": {
+      "sha256": "2229aaf07a00b212acbc8bcec975439a0f5390bc66ffcc0d3bacdfdaf7284d15",
+      "bytes": 84152
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/stock_difference_W3_D_common_drawdown.csv": {
+      "sha256": "23a89afab4ef3549ff91f61da684c773d3b6d0bda9a22f7c2f337e4769e7fe83",
+      "bytes": 2878
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/stock_difference_W3_candidate_drawdown.csv": {
+      "sha256": "23a89afab4ef3549ff91f61da684c773d3b6d0bda9a22f7c2f337e4769e7fe83",
+      "bytes": 2878
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/stock_difference_W4_candidate_drawdown.csv": {
+      "sha256": "7102c27b2bebf3d7f5502b13920059cb5ba4db50ac52e39f3de61fe8df5916b1",
+      "bytes": 2822
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/timing_summary.json": {
+      "sha256": "5ede9658014be083a78308d601ac6c8fb3c09ea07d9afba11dacb28e31d76b44",
+      "bytes": 266
+    },
+    "artifacts/experiments/d_risk_overlay_20261102/verification.json": {
+      "sha256": "c9f0dda32a613fb218437067fbff18b1b8c6bbebf3e8afba5d678a86a9e6a6b3",
+      "bytes": 718
+    },
+    "docs/D组合风险约束实验报告_20261102.md": {
+      "sha256": "8252177340ab55dfb60754bdc7c1389d8b76cbfd3a09604c9bda1142c691aabf",
+      "bytes": 16710
+    },
+    "docs/D风险约束独立实现审查_20261102.md": {
+      "sha256": "697ec12fb7aa0d473f35829e70806eaad1a7bc5d9cc148975c0e4440b547d754",
+      "bytes": 1831
+    },
+    "qlib_mean_comparison/run.py": {
+      "sha256": "a619ac9e89cac53a05378425c0cf2693678814c8764059ec5cfbc71ed57c7340",
+      "bytes": 16835
+    },
+    "state_adapter/risk_attribution.py": {
+      "sha256": "3be8e0965c68e8b9aa8d7f46814a9562dc4fa1b1024249bb4dcf45d607ba3878",
+      "bytes": 23723
+    },
+    "state_adapter/risk_overlay.py": {
+      "sha256": "3381a6ce9121e384f04e985ae766c821396c81c4dcbd69f1ff9f64915a64689b",
+      "bytes": 11355
+    },
+    "state_adapter/risk_overlay_report.py": {
+      "sha256": "6b5c965d4e84b7d07b055590e809544d3b4bd9abf41a288d6914f05e381d143c",
+      "bytes": 32014
+    },
+    "state_adapter/risk_overlay_run.py": {
+      "sha256": "b43d56be5106fd7b68705ba00fab087540349f007bfb346031cda2acf7dd1f67",
+      "bytes": 10005
+    },
+    "tests/test_risk_overlay.py": {
+      "sha256": "206f478a3645cbc6e080ab826a1f26731a52866536c1c5591da5df97ec75414b",
+      "bytes": 7418
+    },
+    "tests/test_risk_overlay_delivery.py": {
+      "sha256": "813d5cd29af56a4b1c185a44718e797a0799b06d38680f7fb0769aa072eee515",
+      "bytes": 4947
+    }
+  },
+  "excluded": "运行器自身日志、监督器、锁文件及易变运行PID；无权重，无凭据",
+  "raw_data": "只含截至2026-07-24行情，全部源输入只读且身份在protocol.json"
+}

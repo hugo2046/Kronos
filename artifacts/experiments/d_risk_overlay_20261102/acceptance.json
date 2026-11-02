@@ -1,0 +1,18 @@
+{
+  "passed": false,
+  "checks": {
+    "W3": {
+      "above_g1": false,
+      "above_b": false,
+      "sharpe": false,
+      "mdd": true
+    },
+    "W4": {
+      "above_g1": true,
+      "above_b": true,
+      "sharpe": true,
+      "mdd": true
+    }
+  },
+  "w3_strict": true
+}
