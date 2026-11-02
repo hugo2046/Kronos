@@ -1,0 +1,3 @@
+{"pid": 2, "fields": ["$close/Ref($close,1)-1"], "start": "2025-07-01", "requested_end": "2025-12-31 00:00:00", "effective_end": "2025-12-31 00:00:00", "guard_version": 1}
+{"pid": 2, "fields": ["$change", "$volume", "$close", "$factor", "$open", "$pctchange / 100 <= -0.095", "$pctchange / 100 >= 0.095"], "start": "2025-07-01", "requested_end": "2025-12-31 00:00:00", "effective_end": "2025-12-31 00:00:00", "guard_version": 1}
+{"pid": 2, "fields": ["$close/Ref($close,1)-1"], "start": "2025-07-01", "requested_end": "2025-12-31 00:00:00", "effective_end": "2025-12-31 00:00:00", "guard_version": 1}

@@ -1,0 +1,203 @@
+{
+  "passed": true,
+  "files": [
+    {
+      "path": "field_requests.jsonl",
+      "requests": 2,
+      "sha256": "95602d1af9301b1e9e66316993bb4ab44e89f788b4d5930f1d59fb93cd77d648",
+      "max_effective_end": "2026-07-24 00:00:00"
+    },
+    {
+      "path": "accounts/new/W3/A/market_requests.jsonl",
+      "requests": 3,
+      "sha256": "6a067567cb478cc19be6d714a7bb0bfa7eca8e2b0fcc84ebfc496b9a1782b022",
+      "max_effective_end": "2025-12-31 00:00:00"
+    },
+    {
+      "path": "accounts/new/W3/B/market_requests.jsonl",
+      "requests": 3,
+      "sha256": "6a067567cb478cc19be6d714a7bb0bfa7eca8e2b0fcc84ebfc496b9a1782b022",
+      "max_effective_end": "2025-12-31 00:00:00"
+    },
+    {
+      "path": "accounts/new/W3/C/market_requests.jsonl",
+      "requests": 3,
+      "sha256": "6a067567cb478cc19be6d714a7bb0bfa7eca8e2b0fcc84ebfc496b9a1782b022",
+      "max_effective_end": "2025-12-31 00:00:00"
+    },
+    {
+      "path": "accounts/new/W3/D/market_requests.jsonl",
+      "requests": 3,
+      "sha256": "6a067567cb478cc19be6d714a7bb0bfa7eca8e2b0fcc84ebfc496b9a1782b022",
+      "max_effective_end": "2025-12-31 00:00:00"
+    },
+    {
+      "path": "accounts/new/W3/G1_original/market_requests.jsonl",
+      "requests": 3,
+      "sha256": "6a067567cb478cc19be6d714a7bb0bfa7eca8e2b0fcc84ebfc496b9a1782b022",
+      "max_effective_end": "2025-12-31 00:00:00"
+    },
+    {
+      "path": "accounts/new/W3/cap_only/market_requests.jsonl",
+      "requests": 3,
+      "sha256": "6a067567cb478cc19be6d714a7bb0bfa7eca8e2b0fcc84ebfc496b9a1782b022",
+      "max_effective_end": "2025-12-31 00:00:00"
+    },
+    {
+      "path": "accounts/new/W3/cap_vol/market_requests.jsonl",
+      "requests": 3,
+      "sha256": "6a067567cb478cc19be6d714a7bb0bfa7eca8e2b0fcc84ebfc496b9a1782b022",
+      "max_effective_end": "2025-12-31 00:00:00"
+    },
+    {
+      "path": "accounts/new/W3/neutral/market_requests.jsonl",
+      "requests": 3,
+      "sha256": "6a067567cb478cc19be6d714a7bb0bfa7eca8e2b0fcc84ebfc496b9a1782b022",
+      "max_effective_end": "2025-12-31 00:00:00"
+    },
+    {
+      "path": "accounts/new/W3/vol_only/market_requests.jsonl",
+      "requests": 3,
+      "sha256": "6a067567cb478cc19be6d714a7bb0bfa7eca8e2b0fcc84ebfc496b9a1782b022",
+      "max_effective_end": "2025-12-31 00:00:00"
+    },
+    {
+      "path": "accounts/new/W4/A/market_requests.jsonl",
+      "requests": 3,
+      "sha256": "0c0527f8f833c19827f26524d55c0db1d4b47e290eb871b8925267b363cac436",
+      "max_effective_end": "2026-07-24 00:00:00"
+    },
+    {
+      "path": "accounts/new/W4/B/market_requests.jsonl",
+      "requests": 3,
+      "sha256": "0c0527f8f833c19827f26524d55c0db1d4b47e290eb871b8925267b363cac436",
+      "max_effective_end": "2026-07-24 00:00:00"
+    },
+    {
+      "path": "accounts/new/W4/C/market_requests.jsonl",
+      "requests": 3,
+      "sha256": "0c0527f8f833c19827f26524d55c0db1d4b47e290eb871b8925267b363cac436",
+      "max_effective_end": "2026-07-24 00:00:00"
+    },
+    {
+      "path": "accounts/new/W4/D/market_requests.jsonl",
+      "requests": 3,
+      "sha256": "0c0527f8f833c19827f26524d55c0db1d4b47e290eb871b8925267b363cac436",
+      "max_effective_end": "2026-07-24 00:00:00"
+    },
+    {
+      "path": "accounts/new/W4/G1_original/market_requests.jsonl",
+      "requests": 3,
+      "sha256": "0c0527f8f833c19827f26524d55c0db1d4b47e290eb871b8925267b363cac436",
+      "max_effective_end": "2026-07-24 00:00:00"
+    },
+    {
+      "path": "accounts/new/W4/cap_only/market_requests.jsonl",
+      "requests": 3,
+      "sha256": "0c0527f8f833c19827f26524d55c0db1d4b47e290eb871b8925267b363cac436",
+      "max_effective_end": "2026-07-24 00:00:00"
+    },
+    {
+      "path": "accounts/new/W4/cap_vol/market_requests.jsonl",
+      "requests": 3,
+      "sha256": "0c0527f8f833c19827f26524d55c0db1d4b47e290eb871b8925267b363cac436",
+      "max_effective_end": "2026-07-24 00:00:00"
+    },
+    {
+      "path": "accounts/new/W4/neutral/market_requests.jsonl",
+      "requests": 3,
+      "sha256": "0c0527f8f833c19827f26524d55c0db1d4b47e290eb871b8925267b363cac436",
+      "max_effective_end": "2026-07-24 00:00:00"
+    },
+    {
+      "path": "accounts/new/W4/vol_only/market_requests.jsonl",
+      "requests": 3,
+      "sha256": "0c0527f8f833c19827f26524d55c0db1d4b47e290eb871b8925267b363cac436",
+      "max_effective_end": "2026-07-24 00:00:00"
+    },
+    {
+      "path": "accounts/old/W3/B/market_requests.jsonl",
+      "requests": 3,
+      "sha256": "788016e35119a4fc90843a261c3db9e5d534e559f668e35d2e142184ac5ccd4b",
+      "max_effective_end": "2025-12-31 00:00:00"
+    },
+    {
+      "path": "accounts/old/W3/D/market_requests.jsonl",
+      "requests": 3,
+      "sha256": "788016e35119a4fc90843a261c3db9e5d534e559f668e35d2e142184ac5ccd4b",
+      "max_effective_end": "2025-12-31 00:00:00"
+    },
+    {
+      "path": "accounts/old/W3/G1_original/market_requests.jsonl",
+      "requests": 3,
+      "sha256": "788016e35119a4fc90843a261c3db9e5d534e559f668e35d2e142184ac5ccd4b",
+      "max_effective_end": "2025-12-31 00:00:00"
+    },
+    {
+      "path": "accounts/old/W3/cap_only/market_requests.jsonl",
+      "requests": 3,
+      "sha256": "788016e35119a4fc90843a261c3db9e5d534e559f668e35d2e142184ac5ccd4b",
+      "max_effective_end": "2025-12-31 00:00:00"
+    },
+    {
+      "path": "accounts/old/W3/cap_vol/market_requests.jsonl",
+      "requests": 3,
+      "sha256": "788016e35119a4fc90843a261c3db9e5d534e559f668e35d2e142184ac5ccd4b",
+      "max_effective_end": "2025-12-31 00:00:00"
+    },
+    {
+      "path": "accounts/old/W3/neutral/market_requests.jsonl",
+      "requests": 3,
+      "sha256": "788016e35119a4fc90843a261c3db9e5d534e559f668e35d2e142184ac5ccd4b",
+      "max_effective_end": "2025-12-31 00:00:00"
+    },
+    {
+      "path": "accounts/old/W3/vol_only/market_requests.jsonl",
+      "requests": 3,
+      "sha256": "788016e35119a4fc90843a261c3db9e5d534e559f668e35d2e142184ac5ccd4b",
+      "max_effective_end": "2025-12-31 00:00:00"
+    },
+    {
+      "path": "accounts/old/W4/B/market_requests.jsonl",
+      "requests": 3,
+      "sha256": "b66e14eec9d5826b2c2a2e5f8ed1f7615838d5622ed32d55ff8e2d27118bc541",
+      "max_effective_end": "2026-07-24 00:00:00"
+    },
+    {
+      "path": "accounts/old/W4/D/market_requests.jsonl",
+      "requests": 3,
+      "sha256": "b66e14eec9d5826b2c2a2e5f8ed1f7615838d5622ed32d55ff8e2d27118bc541",
+      "max_effective_end": "2026-07-24 00:00:00"
+    },
+    {
+      "path": "accounts/old/W4/G1_original/market_requests.jsonl",
+      "requests": 3,
+      "sha256": "b66e14eec9d5826b2c2a2e5f8ed1f7615838d5622ed32d55ff8e2d27118bc541",
+      "max_effective_end": "2026-07-24 00:00:00"
+    },
+    {
+      "path": "accounts/old/W4/cap_only/market_requests.jsonl",
+      "requests": 3,
+      "sha256": "b66e14eec9d5826b2c2a2e5f8ed1f7615838d5622ed32d55ff8e2d27118bc541",
+      "max_effective_end": "2026-07-24 00:00:00"
+    },
+    {
+      "path": "accounts/old/W4/cap_vol/market_requests.jsonl",
+      "requests": 3,
+      "sha256": "b66e14eec9d5826b2c2a2e5f8ed1f7615838d5622ed32d55ff8e2d27118bc541",
+      "max_effective_end": "2026-07-24 00:00:00"
+    },
+    {
+      "path": "accounts/old/W4/neutral/market_requests.jsonl",
+      "requests": 3,
+      "sha256": "b66e14eec9d5826b2c2a2e5f8ed1f7615838d5622ed32d55ff8e2d27118bc541",
+      "max_effective_end": "2026-07-24 00:00:00"
+    },
+    {
+      "path": "accounts/old/W4/vol_only/market_requests.jsonl",
+      "requests": 3,
+      "sha256": "b66e14eec9d5826b2c2a2e5f8ed1f7615838d5622ed32d55ff8e2d27118bc541",
+      "max_effective_end": "2026-07-24 00:00:00"
+    }
+  ]
+}

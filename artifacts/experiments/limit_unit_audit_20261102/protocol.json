@@ -1,0 +1,106 @@
+{
+  "source_commit": "03cd705d8d0f14c0f08c3a88e111c67525cdd2a7",
+  "source_sha256": {
+    "/home/user/workspace/Kronos-state-factorial/artifacts/experiments/state_factorial_20261102/signal_W4_C.parquet": "0a934f7c22e6eeed71f1bdcc7d27ba7b5cc5d897336d389da8fd1ae87acf39a2",
+    "/home/user/workspace/Kronos-state-factorial/artifacts/experiments/state_factorial_20261102/signal_W3_C.parquet": "093f6143246435b549b04d6c319bdba8ecd120732eb61fecbd9b169e7f2cceec",
+    "/home/user/workspace/Kronos-state-factorial/artifacts/experiments/state_factorial_20261102/signal_W4_B.parquet": "138d7dbc6ada2b66e78bb91ccf8244269ad68c98c33e803a1f23974b73687c1a",
+    "/home/user/workspace/Kronos-state-factorial/artifacts/experiments/state_factorial_20261102/signal_W4_D.parquet": "6b159d4edd04948d82e0f97d1e62845f5fa4cc30d13e4599390e11ab843ee7ee",
+    "/home/user/workspace/Kronos-state-factorial/artifacts/experiments/state_factorial_20261102/signal_W3_G1_original.parquet": "c8093beb123ae77b6af5d21f77d0d110da1c5163717feccfa66a5680b833d125",
+    "/home/user/workspace/Kronos-state-factorial/artifacts/experiments/state_factorial_20261102/signal_W3_B.parquet": "1602d4351293b2beedc72a3167807e200e9d39732f1e1207d88e0816b37e4ce0",
+    "/home/user/workspace/Kronos-state-factorial/artifacts/experiments/state_factorial_20261102/signal_W3_D.parquet": "a3e93929708a00fa0864dba9839c05fe401b5306dcec0c101d417223f66c89b8",
+    "/home/user/workspace/Kronos-state-factorial/artifacts/experiments/state_factorial_20261102/signal_W4_G1_original.parquet": "15952c861c5eb7fcd22b5ba8983f55ff2155144228945850de600f7ececca574",
+    "/home/user/workspace/Kronos-state-factorial/artifacts/experiments/state_factorial_20261102/signal_W4_A.parquet": "6d57cf28575cf7e008cf9e461f2602a764a50b4741bcf0e15ebc0a9a49388636",
+    "/home/user/workspace/Kronos-state-factorial/artifacts/experiments/state_factorial_20261102/signal_W3_A.parquet": "5ef05a3aed33faaecb2724bfc11c57040a7f81db8f585ece3b57e4c2b400f1d6",
+    "/home/user/workspace/Kronos-state-factorial/artifacts/experiments/state_factorial_20261102/report_W3_D.parquet": "a75cd998e2e80fad09d04370bd7e9e799a2d70e86be16723afe1d279371fd364",
+    "/home/user/workspace/Kronos-state-factorial/artifacts/experiments/state_factorial_20261102/report_W4_C.parquet": "9ba9db50887e4619bc5441ea1b3c883512f81e3efa410bfc79fe6049e53ea5d2",
+    "/home/user/workspace/Kronos-state-factorial/artifacts/experiments/state_factorial_20261102/report_W4_B.parquet": "6932dbde9a76c89ef0f39673b8c7036295a71a6fd98aee2c2ba3d2d21cbcd1b0",
+    "/home/user/workspace/Kronos-state-factorial/artifacts/experiments/state_factorial_20261102/report_W4_D.parquet": "992c7b07997b1974d62c6b41e6f262124b8443ce6dae77a1c3f71031d6a8eb5d",
+    "/home/user/workspace/Kronos-state-factorial/artifacts/experiments/state_factorial_20261102/report_W3_A.parquet": "5bed9b280e9f1e592fde7468247b07e771ddfae64bab87b2b662e9b07b8e8122",
+    "/home/user/workspace/Kronos-state-factorial/artifacts/experiments/state_factorial_20261102/report_W4_A.parquet": "33a40eb6c6adbba64b3f6d6eff29f12df92dc61991ae299d00cf5e0795ab44c8",
+    "/home/user/workspace/Kronos-state-factorial/artifacts/experiments/state_factorial_20261102/report_W3_B.parquet": "0095a8f72351631f49f7b5bfe2158ecbd68bede33636d8993f55579a35ea64d9",
+    "/home/user/workspace/Kronos-state-factorial/artifacts/experiments/state_factorial_20261102/report_W3_G1_original.parquet": "738452d29afe8b062e9792de8ccd838fbb182672231600a52a8d94d0d0a1e4e8",
+    "/home/user/workspace/Kronos-state-factorial/artifacts/experiments/state_factorial_20261102/report_W3_C.parquet": "d0d9384b6c03fb6d2b42a02936f58a268af7682bf616dc92368e37858e6ce8d4",
+    "/home/user/workspace/Kronos-state-factorial/artifacts/experiments/state_factorial_20261102/report_W4_G1_original.parquet": "087fc395339c9c2c698894fc0a36624ecb19cf936232f33258f5dae70bfc3fb0",
+    "/home/user/workspace/Kronos-d-risk/artifacts/experiments/d_risk_overlay_20261102/report_W4_cap_vol.parquet": "55b87d75994396c8c617595355184c29f71cce7f161002c78aefd2220eeebb7a",
+    "/home/user/workspace/Kronos-d-risk/artifacts/experiments/d_risk_overlay_20261102/report_W4_vol_only.parquet": "5cd13f3b19e711c9de6b47e13f6e7925ba9d22bc69fa30e8fbbb6f4e66f67fbb",
+    "/home/user/workspace/Kronos-d-risk/artifacts/experiments/d_risk_overlay_20261102/report_W3_cap_only.parquet": "9cece6f8e7f4a34d3906075eed3ffe32124903e2a8d1e5080bbf9624190c9e4a",
+    "/home/user/workspace/Kronos-d-risk/artifacts/experiments/d_risk_overlay_20261102/report_W3_D.parquet": "2e3799b21f449255700c3ab833e719215ae357db038eb9f1f3d22e979d0b450d",
+    "/home/user/workspace/Kronos-d-risk/artifacts/experiments/d_risk_overlay_20261102/report_W4_B.parquet": "4f89407b22dc67cfd34e6a6d14a80e8cf1070828f5b3b3540387fcd6ff69f985",
+    "/home/user/workspace/Kronos-d-risk/artifacts/experiments/d_risk_overlay_20261102/report_W4_D.parquet": "1bb4516032937d5c0336bc2296680a6fc5c98d99148f17793b8415bb2664bf22",
+    "/home/user/workspace/Kronos-d-risk/artifacts/experiments/d_risk_overlay_20261102/report_W3_neutral.parquet": "2e3799b21f449255700c3ab833e719215ae357db038eb9f1f3d22e979d0b450d",
+    "/home/user/workspace/Kronos-d-risk/artifacts/experiments/d_risk_overlay_20261102/report_W4_neutral.parquet": "1bb4516032937d5c0336bc2296680a6fc5c98d99148f17793b8415bb2664bf22",
+    "/home/user/workspace/Kronos-d-risk/artifacts/experiments/d_risk_overlay_20261102/report_W4_cap_only.parquet": "05c1d5260e505f484252e8112e87f6faba46c3a8bbad3ac6839b0919930660b7",
+    "/home/user/workspace/Kronos-d-risk/artifacts/experiments/d_risk_overlay_20261102/report_W3_cap_vol.parquet": "30837e7f4c9df8d6535bd115a8633b77fcb5d72a20dc55deafe2318f1fbde96a",
+    "/home/user/workspace/Kronos-d-risk/artifacts/experiments/d_risk_overlay_20261102/report_W3_B.parquet": "b2a6efe71c13d1db6baafb35de8964baeef7308c56d7ae67200a5c9641fb673b",
+    "/home/user/workspace/Kronos-d-risk/artifacts/experiments/d_risk_overlay_20261102/report_W3_vol_only.parquet": "e75c1db8030113f9393d5fd1e4265ce943b94b8e0fe24b1144abb822d0a27ce5",
+    "/home/user/workspace/Kronos-d-risk/artifacts/experiments/d_risk_overlay_20261102/report_W3_G1_original.parquet": "78a8af4728dc5f3984d1e8bcc3adbc658ab7068f72d4bdc0c63848d0edc8f4f8",
+    "/home/user/workspace/Kronos-d-risk/artifacts/experiments/d_risk_overlay_20261102/report_W4_G1_original.parquet": "7df145476d1ecbf6702617e6dea905aac273097c0053559202d6721875a11136",
+    "/home/user/workspace/Kronos-d-risk/artifacts/experiments/d_risk_overlay_20261102/risk_panel_W4.parquet": "507271a0abc200f2fdf7f9deaec0bb0660f142095c4abc884caed33988ea996f",
+    "/home/user/workspace/Kronos-d-risk/artifacts/experiments/d_risk_overlay_20261102/risk_panel_W3.parquet": "833c64b46d74fa808af9124f5e8eccbe71a63609d4ffddae17a55a3245c4a208",
+    "/home/user/workspace/Kronos-limit-audit/state_adapter/risk_overlay.py": "3381a6ce9121e384f04e985ae766c821396c81c4dcbd69f1ff9f64915a64689b",
+    "/home/user/workspace/Kronos-limit-audit/state_adapter/risk_attribution.py": "3be8e0965c68e8b9aa8d7f46814a9562dc4fa1b1024249bb4dcf45d607ba3878",
+    "/home/user/workspace/Kronos-limit-audit/state_adapter/market_guard.py": "ab42f1bee118299764877bf641d1a51fa51ebbda21aebd924b9d7adbca8bd0fb",
+    "/home/user/workspace/Kronos-limit-audit/qlib_mean_comparison/run.py": "a619ac9e89cac53a05378425c0cf2693678814c8764059ec5cfbc71ed57c7340"
+  },
+  "windows": {
+    "W3": [
+      "2025-07-01",
+      "2025-12-31"
+    ],
+    "W4": [
+      "2026-01-01",
+      "2026-07-24"
+    ]
+  },
+  "arms": [
+    "G1_original",
+    "A",
+    "B",
+    "C",
+    "D",
+    "cap_only",
+    "vol_only",
+    "cap_vol"
+  ],
+  "execution": {
+    "old": "change_amount_0095",
+    "new": "pctchange_percent_div100_0095",
+    "threshold": 0.095,
+    "expressions": [
+      "$pctchange / 100 >= 0.095",
+      "$pctchange / 100 <= -0.095"
+    ],
+    "simplification": "统一9.5%及日频close判限制，非全部市场执行规则"
+  },
+  "fixed": {
+    "topk": 50,
+    "drop": 5,
+    "hold": 5,
+    "account": 100000000,
+    "buy_cost": 0.001,
+    "sell_cost": 0.0015,
+    "min_cost": 5,
+    "universe": "CSI300 PIT",
+    "timing": "原日历t信号次日open",
+    "cap": 0.03,
+    "vol_window": 60,
+    "discount": "sqrt，裁剪[.5,1]，原缺失/hold规则"
+  },
+  "evaluation": {
+    "bootstrap": 5000,
+    "block": 20,
+    "seed": 100,
+    "multiple_testing_corrected": false,
+    "main_candidate": "cap_vol",
+    "gate": "两窗胜新G1/B、Sharpe>=新D、MDD不恶化且W3严格改善"
+  },
+  "prohibited": [
+    "重训",
+    "GPU推理",
+    "搜索参数",
+    "读取2026-07-24后行情",
+    "自动采纳",
+    "push"
+  ],
+  "plan_sha256": "18681417948a6cb787f957d8b6019270ca44749627a7faba0f887d9451f0aa3d"
+}

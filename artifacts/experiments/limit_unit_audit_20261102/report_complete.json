@@ -1,0 +1,12 @@
+{
+  "report_sha256": "ec65c463f33c02edbf957555d9a61caea9edd3b0c6d520b071a84c9b7bf73c28",
+  "passed": false,
+  "request_audit_passed": true,
+  "plots": [
+    "docs/assets/limit_unit_audit_20261102/old_new.png",
+    "docs/assets/limit_unit_audit_20261102/limits_turnover_cash.png",
+    "docs/assets/limit_unit_audit_20261102/cumulative_all.png",
+    "docs/assets/limit_unit_audit_20261102/cumulative_main.png",
+    "docs/assets/limit_unit_audit_20261102/drawdown.png"
+  ]
+}

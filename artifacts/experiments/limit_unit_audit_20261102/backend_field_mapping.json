@@ -1,0 +1,10 @@
+[
+  {
+    "line": 387,
+    "text": "                \"S_DQ_HIGH as high, \"\n                \"S_DQ_LOW as low, \"\n                \"S_DQ_CLOSE as close, \"\n                \"S_DQ_PRECLOSE as preclose, \"\n                \"S_DQ_CHANGE as `change`, \"\n                \"S_DQ_PCTCHANGE as pctchange, \"\n                \"S_DQ_VOLUME as volume, \"\n                \"S_DQ_AMOUNT as amount, \"\n                \"0 as factor, \""
+  },
+  {
+    "line": 388,
+    "text": "                \"S_DQ_LOW as low, \"\n                \"S_DQ_CLOSE as close, \"\n                \"S_DQ_PRECLOSE as preclose, \"\n                \"S_DQ_CHANGE as `change`, \"\n                \"S_DQ_PCTCHANGE as pctchange, \"\n                \"S_DQ_VOLUME as volume, \"\n                \"S_DQ_AMOUNT as amount, \"\n                \"0 as factor, \"\n                \"0 as vwap\""
+  }
+]

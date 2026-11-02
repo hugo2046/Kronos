@@ -1,0 +1,2 @@
+{"pid": 2, "fields": ["$close", "$preclose", "$factor", "$change", "$pctchange", "$pctchange / 100 >= 0.095", "$pctchange / 100 <= -0.095"], "start": "2025-08-11", "requested_end": "2025-08-20 00:00:00", "effective_end": "2025-08-20 00:00:00", "guard_version": 1}
+{"pid": 2, "fields": ["$close", "$preclose", "$factor", "$change", "$pctchange", "$pctchange / 100 >= 0.095", "$pctchange / 100 <= -0.095"], "start": "2025-07-01", "requested_end": "2026-07-24 00:00:00", "effective_end": "2026-07-24 00:00:00", "guard_version": 1}

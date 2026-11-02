@@ -1,0 +1,15 @@
+..F..                                                                    [100%]
+=================================== FAILURES ===================================
+______________________ test_contribution_empty_first_day _______________________
+
+    def test_contribution_empty_first_day():
+>       from state_adapter.limit_unit_report import contribution_delta
+E       ImportError: cannot import name 'contribution_delta' from 'state_adapter.limit_unit_report' (/home/user/workspace/Kronos-limit-audit/state_adapter/limit_unit_report.py)
+
+tests/test_limit_unit_audit.py:32: ImportError
+------------------------------ Captured log call -------------------------------
+WARNING  matplotlib:__init__.py:577 /home/user/.config/matplotlib is not a writable directory
+WARNING  matplotlib:__init__.py:593 Matplotlib created a temporary cache directory at /tmp/matplotlib-yx9s7py9 because there was an issue with the default path ({configdir}); it is highly recommended to set the MPLCONFIGDIR environment variable to a writable directory, in particular to speed up the import of Matplotlib and to better support multiprocessing.
+=========================== short test summary info ============================
+FAILED tests/test_limit_unit_audit.py::test_contribution_empty_first_day - Im...
+1 failed, 4 passed in 1.84s

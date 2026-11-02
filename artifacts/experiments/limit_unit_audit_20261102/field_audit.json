@@ -1,0 +1,12 @@
+{
+  "rows": 86060,
+  "stocks": 331,
+  "missing": 328,
+  "amount_exceptions": 0,
+  "return_exceptions": 11790,
+  "false_blocked": 59010,
+  "new_blocked": 1462,
+  "expression_verified": true,
+  "tolerance_amount": 0.011,
+  "tolerance_return": 2e-06
+}

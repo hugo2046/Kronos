@@ -1,0 +1,598 @@
+[
+  {
+    "mode": "old",
+    "window": "W3",
+    "arm": "G1_original",
+    "delay_execution_supported": false,
+    "qlib_file": "/home/user/workspace/quant-qlib/qlib/__init__.py",
+    "reconciliation": {
+      "gross_max_abs": 9.718788274160062e-16,
+      "cost_max_abs": 9.215718466126788e-19,
+      "gross_residual_sum": 2.422514229147299e-16,
+      "cost_residual_sum": -7.460666199415877e-18,
+      "exact": true,
+      "observation": "Account.update_bar_end原样执行及透传返回；只读实际trade_info和估值后position"
+    },
+    "execution_id": "old",
+    "signal_sha256": "c8093beb123ae77b6af5d21f77d0d110da1c5163717feccfa66a5680b833d125",
+    "runner_sha256": "cb7ac2e76f34c440a096d4ddb3351e1a9c79d46d0a216b521c57b094f9e60fe3",
+    "protocol_sha256": "e1a74be0f19f897f9148cdd3e2b048977af4ec493c65b82ea72bc1b75b0f2590",
+    "report_sha256": "4d43edb39e66086459a89730db7da22d9088f76f03d0d15dae782a2244b1d53a"
+  },
+  {
+    "mode": "old",
+    "window": "W3",
+    "arm": "A",
+    "execution_id": "old",
+    "signal_sha256": "5ef05a3aed33faaecb2724bfc11c57040a7f81db8f585ece3b57e4c2b400f1d6",
+    "report_sha256": "5bed9b280e9f1e592fde7468247b07e771ddfae64bab87b2b662e9b07b8e8122",
+    "source": "冻结旧日报，非本轮账户重放"
+  },
+  {
+    "mode": "old",
+    "window": "W3",
+    "arm": "B",
+    "delay_execution_supported": false,
+    "qlib_file": "/home/user/workspace/quant-qlib/qlib/__init__.py",
+    "reconciliation": {
+      "gross_max_abs": 5.84601811404184e-16,
+      "cost_max_abs": 1.0570971181733668e-18,
+      "gross_residual_sum": 5.896704565605537e-16,
+      "cost_residual_sum": 2.5427929076574096e-18,
+      "exact": true,
+      "observation": "Account.update_bar_end原样执行及透传返回；只读实际trade_info和估值后position"
+    },
+    "execution_id": "old",
+    "signal_sha256": "1602d4351293b2beedc72a3167807e200e9d39732f1e1207d88e0816b37e4ce0",
+    "runner_sha256": "cb7ac2e76f34c440a096d4ddb3351e1a9c79d46d0a216b521c57b094f9e60fe3",
+    "protocol_sha256": "e1a74be0f19f897f9148cdd3e2b048977af4ec493c65b82ea72bc1b75b0f2590",
+    "report_sha256": "3bdfdceb2b538f125ff49d98675addbdc8cb4d90a4973d3520d184537a094687"
+  },
+  {
+    "mode": "old",
+    "window": "W3",
+    "arm": "C",
+    "execution_id": "old",
+    "signal_sha256": "093f6143246435b549b04d6c319bdba8ecd120732eb61fecbd9b169e7f2cceec",
+    "report_sha256": "d0d9384b6c03fb6d2b42a02936f58a268af7682bf616dc92368e37858e6ce8d4",
+    "source": "冻结旧日报，非本轮账户重放"
+  },
+  {
+    "mode": "old",
+    "window": "W3",
+    "arm": "D",
+    "delay_execution_supported": false,
+    "qlib_file": "/home/user/workspace/quant-qlib/qlib/__init__.py",
+    "reconciliation": {
+      "gross_max_abs": 5.325601071248798e-16,
+      "cost_max_abs": 7.860465750519907e-19,
+      "gross_residual_sum": 3.2258402763232774e-16,
+      "cost_residual_sum": 9.198777807181702e-19,
+      "exact": true,
+      "observation": "Account.update_bar_end原样执行及透传返回；只读实际trade_info和估值后position"
+    },
+    "execution_id": "old",
+    "signal_sha256": "a3e93929708a00fa0864dba9839c05fe401b5306dcec0c101d417223f66c89b8",
+    "runner_sha256": "cb7ac2e76f34c440a096d4ddb3351e1a9c79d46d0a216b521c57b094f9e60fe3",
+    "protocol_sha256": "e1a74be0f19f897f9148cdd3e2b048977af4ec493c65b82ea72bc1b75b0f2590",
+    "report_sha256": "9ccb8b68c24ced0f66c67c18d9b599ca2c0efafe5a5980698455c2f010521a27"
+  },
+  {
+    "mode": "old",
+    "window": "W3",
+    "arm": "cap_only",
+    "delay_execution_supported": false,
+    "qlib_file": "/home/user/workspace/quant-qlib/qlib/__init__.py",
+    "reconciliation": {
+      "gross_max_abs": 5.702903427273753e-16,
+      "cost_max_abs": 9.622294280808852e-19,
+      "gross_residual_sum": 3.73649949956395e-16,
+      "cost_residual_sum": 4.1301326508119685e-18,
+      "exact": true,
+      "observation": "Account.update_bar_end原样执行及透传返回；只读实际trade_info和估值后position"
+    },
+    "execution_id": "old",
+    "signal_sha256": "a3e93929708a00fa0864dba9839c05fe401b5306dcec0c101d417223f66c89b8",
+    "runner_sha256": "cb7ac2e76f34c440a096d4ddb3351e1a9c79d46d0a216b521c57b094f9e60fe3",
+    "protocol_sha256": "e1a74be0f19f897f9148cdd3e2b048977af4ec493c65b82ea72bc1b75b0f2590",
+    "report_sha256": "a61837e183fb1b9a405ed2eb5d57c177330af1192d86d2a99e422a702333cc6a"
+  },
+  {
+    "mode": "old",
+    "window": "W3",
+    "arm": "vol_only",
+    "delay_execution_supported": false,
+    "qlib_file": "/home/user/workspace/quant-qlib/qlib/__init__.py",
+    "reconciliation": {
+      "gross_max_abs": 6.34041430469523e-16,
+      "cost_max_abs": 9.75781955236954e-19,
+      "gross_residual_sum": -4.256848779721212e-17,
+      "cost_residual_sum": 1.3196773318222e-18,
+      "exact": true,
+      "observation": "Account.update_bar_end原样执行及透传返回；只读实际trade_info和估值后position"
+    },
+    "execution_id": "old",
+    "signal_sha256": "a3e93929708a00fa0864dba9839c05fe401b5306dcec0c101d417223f66c89b8",
+    "runner_sha256": "cb7ac2e76f34c440a096d4ddb3351e1a9c79d46d0a216b521c57b094f9e60fe3",
+    "protocol_sha256": "e1a74be0f19f897f9148cdd3e2b048977af4ec493c65b82ea72bc1b75b0f2590",
+    "report_sha256": "f089720b318953b5c87da12f437755587a7463fcacff8d40327c3e3e6064e19c"
+  },
+  {
+    "mode": "old",
+    "window": "W3",
+    "arm": "cap_vol",
+    "delay_execution_supported": false,
+    "qlib_file": "/home/user/workspace/quant-qlib/qlib/__init__.py",
+    "reconciliation": {
+      "gross_max_abs": 6.34041430469523e-16,
+      "cost_max_abs": 9.893344823930228e-19,
+      "gross_residual_sum": 3.070325027207388e-16,
+      "cost_residual_sum": 2.3924974990789747e-18,
+      "exact": true,
+      "observation": "Account.update_bar_end原样执行及透传返回；只读实际trade_info和估值后position"
+    },
+    "execution_id": "old",
+    "signal_sha256": "a3e93929708a00fa0864dba9839c05fe401b5306dcec0c101d417223f66c89b8",
+    "runner_sha256": "cb7ac2e76f34c440a096d4ddb3351e1a9c79d46d0a216b521c57b094f9e60fe3",
+    "protocol_sha256": "e1a74be0f19f897f9148cdd3e2b048977af4ec493c65b82ea72bc1b75b0f2590",
+    "report_sha256": "6971bd89c3e134bb0fed5901bd050738cc3571f6704394066754cdca836cd4c4"
+  },
+  {
+    "mode": "old",
+    "window": "W4",
+    "arm": "G1_original",
+    "delay_execution_supported": false,
+    "qlib_file": "/home/user/workspace/quant-qlib/qlib/__init__.py",
+    "reconciliation": {
+      "gross_max_abs": 6.975756777771736e-16,
+      "cost_max_abs": 5.149960319306146e-19,
+      "gross_residual_sum": 4.0831053815804097e-16,
+      "cost_residual_sum": 1.7923217163900995e-18,
+      "exact": true,
+      "observation": "Account.update_bar_end原样执行及透传返回；只读实际trade_info和估值后position"
+    },
+    "execution_id": "old",
+    "signal_sha256": "15952c861c5eb7fcd22b5ba8983f55ff2155144228945850de600f7ececca574",
+    "runner_sha256": "cb7ac2e76f34c440a096d4ddb3351e1a9c79d46d0a216b521c57b094f9e60fe3",
+    "protocol_sha256": "e1a74be0f19f897f9148cdd3e2b048977af4ec493c65b82ea72bc1b75b0f2590",
+    "report_sha256": "f4d4f9e41af8c541463fc28534f1cf74921eb6d04fd441dae447529ce3c46d60"
+  },
+  {
+    "mode": "old",
+    "window": "W4",
+    "arm": "A",
+    "execution_id": "old",
+    "signal_sha256": "6d57cf28575cf7e008cf9e461f2602a764a50b4741bcf0e15ebc0a9a49388636",
+    "report_sha256": "33a40eb6c6adbba64b3f6d6eff29f12df92dc61991ae299d00cf5e0795ab44c8",
+    "source": "冻结旧日报，非本轮账户重放"
+  },
+  {
+    "mode": "old",
+    "window": "W4",
+    "arm": "B",
+    "delay_execution_supported": false,
+    "qlib_file": "/home/user/workspace/quant-qlib/qlib/__init__.py",
+    "reconciliation": {
+      "gross_max_abs": 7.138387103644561e-16,
+      "cost_max_abs": 5.963111948670274e-19,
+      "gross_residual_sum": -6.061774346366455e-16,
+      "cost_residual_sum": -6.827085554869661e-19,
+      "exact": true,
+      "observation": "Account.update_bar_end原样执行及透传返回；只读实际trade_info和估值后position"
+    },
+    "execution_id": "old",
+    "signal_sha256": "138d7dbc6ada2b66e78bb91ccf8244269ad68c98c33e803a1f23974b73687c1a",
+    "runner_sha256": "cb7ac2e76f34c440a096d4ddb3351e1a9c79d46d0a216b521c57b094f9e60fe3",
+    "protocol_sha256": "e1a74be0f19f897f9148cdd3e2b048977af4ec493c65b82ea72bc1b75b0f2590",
+    "report_sha256": "11cc6d3eb8fcd1ac5cc9247beb97e7954629279aba8fe1a6862beffee7a09dab"
+  },
+  {
+    "mode": "old",
+    "window": "W4",
+    "arm": "C",
+    "execution_id": "old",
+    "signal_sha256": "0a934f7c22e6eeed71f1bdcc7d27ba7b5cc5d897336d389da8fd1ae87acf39a2",
+    "report_sha256": "9ba9db50887e4619bc5441ea1b3c883512f81e3efa410bfc79fe6049e53ea5d2",
+    "source": "冻结旧日报，非本轮账户重放"
+  },
+  {
+    "mode": "old",
+    "window": "W4",
+    "arm": "D",
+    "delay_execution_supported": false,
+    "qlib_file": "/home/user/workspace/quant-qlib/qlib/__init__.py",
+    "reconciliation": {
+      "gross_max_abs": 6.002143226879753e-16,
+      "cost_max_abs": 5.014435047745458e-19,
+      "gross_residual_sum": -3.0477600694925333e-16,
+      "cost_residual_sum": 8.622795403048777e-19,
+      "exact": true,
+      "observation": "Account.update_bar_end原样执行及透传返回；只读实际trade_info和估值后position"
+    },
+    "execution_id": "old",
+    "signal_sha256": "6b159d4edd04948d82e0f97d1e62845f5fa4cc30d13e4599390e11ab843ee7ee",
+    "runner_sha256": "cb7ac2e76f34c440a096d4ddb3351e1a9c79d46d0a216b521c57b094f9e60fe3",
+    "protocol_sha256": "e1a74be0f19f897f9148cdd3e2b048977af4ec493c65b82ea72bc1b75b0f2590",
+    "report_sha256": "72d8414789618fd386abdafe2dee9945c45e45b9651b6746a2ca397edfc42a71"
+  },
+  {
+    "mode": "old",
+    "window": "W4",
+    "arm": "cap_only",
+    "delay_execution_supported": false,
+    "qlib_file": "/home/user/workspace/quant-qlib/qlib/__init__.py",
+    "reconciliation": {
+      "gross_max_abs": 5.282232984349378e-16,
+      "cost_max_abs": 5.963111948670274e-19,
+      "gross_residual_sum": -6.587578518704035e-16,
+      "cost_residual_sum": 3.2758999235060066e-19,
+      "exact": true,
+      "observation": "Account.update_bar_end原样执行及透传返回；只读实际trade_info和估值后position"
+    },
+    "execution_id": "old",
+    "signal_sha256": "6b159d4edd04948d82e0f97d1e62845f5fa4cc30d13e4599390e11ab843ee7ee",
+    "runner_sha256": "cb7ac2e76f34c440a096d4ddb3351e1a9c79d46d0a216b521c57b094f9e60fe3",
+    "protocol_sha256": "e1a74be0f19f897f9148cdd3e2b048977af4ec493c65b82ea72bc1b75b0f2590",
+    "report_sha256": "33aa4d20f0ea1f9e8de6e9a4f432902fd3930151710faf54586f1b5c9373bd38"
+  },
+  {
+    "mode": "old",
+    "window": "W4",
+    "arm": "vol_only",
+    "delay_execution_supported": false,
+    "qlib_file": "/home/user/workspace/quant-qlib/qlib/__init__.py",
+    "reconciliation": {
+      "gross_max_abs": 4.891920202254596e-16,
+      "cost_max_abs": 6.640738306473715e-19,
+      "gross_residual_sum": 1.539126627796844e-16,
+      "cost_residual_sum": 2.8273959779348545e-18,
+      "exact": true,
+      "observation": "Account.update_bar_end原样执行及透传返回；只读实际trade_info和估值后position"
+    },
+    "execution_id": "old",
+    "signal_sha256": "6b159d4edd04948d82e0f97d1e62845f5fa4cc30d13e4599390e11ab843ee7ee",
+    "runner_sha256": "cb7ac2e76f34c440a096d4ddb3351e1a9c79d46d0a216b521c57b094f9e60fe3",
+    "protocol_sha256": "e1a74be0f19f897f9148cdd3e2b048977af4ec493c65b82ea72bc1b75b0f2590",
+    "report_sha256": "c2cfd9debadb4012679cd0e2cfb9ca64800e7f4d2bfd34373439861596c474eb"
+  },
+  {
+    "mode": "old",
+    "window": "W4",
+    "arm": "cap_vol",
+    "delay_execution_supported": false,
+    "qlib_file": "/home/user/workspace/quant-qlib/qlib/__init__.py",
+    "reconciliation": {
+      "gross_max_abs": 5.134781488891349e-16,
+      "cost_max_abs": 6.369687763352339e-19,
+      "gross_residual_sum": -3.765230857134816e-16,
+      "cost_residual_sum": 3.779566889767095e-18,
+      "exact": true,
+      "observation": "Account.update_bar_end原样执行及透传返回；只读实际trade_info和估值后position"
+    },
+    "execution_id": "old",
+    "signal_sha256": "6b159d4edd04948d82e0f97d1e62845f5fa4cc30d13e4599390e11ab843ee7ee",
+    "runner_sha256": "cb7ac2e76f34c440a096d4ddb3351e1a9c79d46d0a216b521c57b094f9e60fe3",
+    "protocol_sha256": "e1a74be0f19f897f9148cdd3e2b048977af4ec493c65b82ea72bc1b75b0f2590",
+    "report_sha256": "4ee65a49e490046cca132cfef7d53f728099b29d07ef15fd0feafc116703a2e2"
+  },
+  {
+    "mode": "new",
+    "window": "W3",
+    "arm": "G1_original",
+    "delay_execution_supported": false,
+    "qlib_file": "/home/user/workspace/quant-qlib/qlib/__init__.py",
+    "reconciliation": {
+      "gross_max_abs": 8.049116928532385e-16,
+      "cost_max_abs": 4.391018798566293e-18,
+      "gross_residual_sum": 1.2790197503539935e-17,
+      "cost_residual_sum": 9.507097799982267e-18,
+      "exact": true,
+      "observation": "Account.update_bar_end原样执行及透传返回；只读实际trade_info和估值后position"
+    },
+    "execution_id": "new",
+    "signal_sha256": "c8093beb123ae77b6af5d21f77d0d110da1c5163717feccfa66a5680b833d125",
+    "runner_sha256": "cb7ac2e76f34c440a096d4ddb3351e1a9c79d46d0a216b521c57b094f9e60fe3",
+    "protocol_sha256": "e1a74be0f19f897f9148cdd3e2b048977af4ec493c65b82ea72bc1b75b0f2590",
+    "report_sha256": "eb54538131ee75d14584d676f6cb89212b979244a9244524dede1ad98e7b507c"
+  },
+  {
+    "mode": "new",
+    "window": "W3",
+    "arm": "A",
+    "delay_execution_supported": false,
+    "qlib_file": "/home/user/workspace/quant-qlib/qlib/__init__.py",
+    "reconciliation": {
+      "gross_max_abs": 7.494005416219807e-16,
+      "cost_max_abs": 6.4374503991326826e-18,
+      "gross_residual_sum": 4.70164272098339e-16,
+      "cost_residual_sum": 5.309626029863582e-18,
+      "exact": true,
+      "observation": "Account.update_bar_end原样执行及透传返回；只读实际trade_info和估值后position"
+    },
+    "execution_id": "new",
+    "signal_sha256": "5ef05a3aed33faaecb2724bfc11c57040a7f81db8f585ece3b57e4c2b400f1d6",
+    "runner_sha256": "cb7ac2e76f34c440a096d4ddb3351e1a9c79d46d0a216b521c57b094f9e60fe3",
+    "protocol_sha256": "e1a74be0f19f897f9148cdd3e2b048977af4ec493c65b82ea72bc1b75b0f2590",
+    "report_sha256": "89fc7f7b130dd7d495cb82824c074468affc32e7a70707e69eca55cf34406845"
+  },
+  {
+    "mode": "new",
+    "window": "W3",
+    "arm": "B",
+    "delay_execution_supported": false,
+    "qlib_file": "/home/user/workspace/quant-qlib/qlib/__init__.py",
+    "reconciliation": {
+      "gross_max_abs": 8.413408858487514e-16,
+      "cost_max_abs": 6.071532165918825e-18,
+      "gross_residual_sum": 2.671474153004283e-16,
+      "cost_residual_sum": 1.9869487118454564e-17,
+      "exact": true,
+      "observation": "Account.update_bar_end原样执行及透传返回；只读实际trade_info和估值后position"
+    },
+    "execution_id": "new",
+    "signal_sha256": "1602d4351293b2beedc72a3167807e200e9d39732f1e1207d88e0816b37e4ce0",
+    "runner_sha256": "cb7ac2e76f34c440a096d4ddb3351e1a9c79d46d0a216b521c57b094f9e60fe3",
+    "protocol_sha256": "e1a74be0f19f897f9148cdd3e2b048977af4ec493c65b82ea72bc1b75b0f2590",
+    "report_sha256": "6e2be3c9079d6af1623726329cb2f18defff2c4444965e7dc7246b1eeccab735"
+  },
+  {
+    "mode": "new",
+    "window": "W3",
+    "arm": "C",
+    "delay_execution_supported": false,
+    "qlib_file": "/home/user/workspace/quant-qlib/qlib/__init__.py",
+    "reconciliation": {
+      "gross_max_abs": 8.656270145124267e-16,
+      "cost_max_abs": 6.396792817664476e-18,
+      "gross_residual_sum": -2.3910723661452193e-16,
+      "cost_residual_sum": -3.549915081942773e-18,
+      "exact": true,
+      "observation": "Account.update_bar_end原样执行及透传返回；只读实际trade_info和估值后position"
+    },
+    "execution_id": "new",
+    "signal_sha256": "093f6143246435b549b04d6c319bdba8ecd120732eb61fecbd9b169e7f2cceec",
+    "runner_sha256": "cb7ac2e76f34c440a096d4ddb3351e1a9c79d46d0a216b521c57b094f9e60fe3",
+    "protocol_sha256": "e1a74be0f19f897f9148cdd3e2b048977af4ec493c65b82ea72bc1b75b0f2590",
+    "report_sha256": "95b45d66b26a7bb4b0100cc08d47ab60fdbe5baed2c53340405d2f9ccbbbb902"
+  },
+  {
+    "mode": "new",
+    "window": "W3",
+    "arm": "D",
+    "delay_execution_supported": false,
+    "qlib_file": "/home/user/workspace/quant-qlib/qlib/__init__.py",
+    "reconciliation": {
+      "gross_max_abs": 6.175615574477433e-16,
+      "cost_max_abs": 6.532318089225164e-18,
+      "gross_residual_sum": -2.2200987657419388e-16,
+      "cost_residual_sum": -2.9070170749767588e-18,
+      "exact": true,
+      "observation": "Account.update_bar_end原样执行及透传返回；只读实际trade_info和估值后position"
+    },
+    "execution_id": "new",
+    "signal_sha256": "a3e93929708a00fa0864dba9839c05fe401b5306dcec0c101d417223f66c89b8",
+    "runner_sha256": "cb7ac2e76f34c440a096d4ddb3351e1a9c79d46d0a216b521c57b094f9e60fe3",
+    "protocol_sha256": "e1a74be0f19f897f9148cdd3e2b048977af4ec493c65b82ea72bc1b75b0f2590",
+    "report_sha256": "749f29918f41dadaba5c5387a49f225d4ab48e68aac3d3ef671443e63a91addd"
+  },
+  {
+    "mode": "new",
+    "window": "W3",
+    "arm": "cap_only",
+    "delay_execution_supported": false,
+    "qlib_file": "/home/user/workspace/quant-qlib/qlib/__init__.py",
+    "reconciliation": {
+      "gross_max_abs": 7.511352650979575e-16,
+      "cost_max_abs": 7.318364664277155e-18,
+      "gross_residual_sum": 4.068739702794977e-16,
+      "cost_residual_sum": 2.9849441061241544e-17,
+      "exact": true,
+      "observation": "Account.update_bar_end原样执行及透传返回；只读实际trade_info和估值后position"
+    },
+    "execution_id": "new",
+    "signal_sha256": "a3e93929708a00fa0864dba9839c05fe401b5306dcec0c101d417223f66c89b8",
+    "runner_sha256": "cb7ac2e76f34c440a096d4ddb3351e1a9c79d46d0a216b521c57b094f9e60fe3",
+    "protocol_sha256": "e1a74be0f19f897f9148cdd3e2b048977af4ec493c65b82ea72bc1b75b0f2590",
+    "report_sha256": "14b5c103084954c47093ac536e6fcc1758cdde9918536a522e2553b60aaf166f"
+  },
+  {
+    "mode": "new",
+    "window": "W3",
+    "arm": "vol_only",
+    "delay_execution_supported": false,
+    "qlib_file": "/home/user/workspace/quant-qlib/qlib/__init__.py",
+    "reconciliation": {
+      "gross_max_abs": 7.28583859910259e-16,
+      "cost_max_abs": 6.179952383167375e-18,
+      "gross_residual_sum": 3.238545770532092e-16,
+      "cost_residual_sum": -1.1729712253577551e-17,
+      "exact": true,
+      "observation": "Account.update_bar_end原样执行及透传返回；只读实际trade_info和估值后position"
+    },
+    "execution_id": "new",
+    "signal_sha256": "a3e93929708a00fa0864dba9839c05fe401b5306dcec0c101d417223f66c89b8",
+    "runner_sha256": "cb7ac2e76f34c440a096d4ddb3351e1a9c79d46d0a216b521c57b094f9e60fe3",
+    "protocol_sha256": "e1a74be0f19f897f9148cdd3e2b048977af4ec493c65b82ea72bc1b75b0f2590",
+    "report_sha256": "f1847f7c4ebde967bb3a1c164b41d645c8ea740b1afe2a5022523f07afff70ca"
+  },
+  {
+    "mode": "new",
+    "window": "W3",
+    "arm": "cap_vol",
+    "delay_execution_supported": false,
+    "qlib_file": "/home/user/workspace/quant-qlib/qlib/__init__.py",
+    "reconciliation": {
+      "gross_max_abs": 8.430756093247282e-16,
+      "cost_max_abs": 7.128629284092192e-18,
+      "gross_residual_sum": 1.1312463823760083e-16,
+      "cost_residual_sum": 1.0618405026779909e-17,
+      "exact": true,
+      "observation": "Account.update_bar_end原样执行及透传返回；只读实际trade_info和估值后position"
+    },
+    "execution_id": "new",
+    "signal_sha256": "a3e93929708a00fa0864dba9839c05fe401b5306dcec0c101d417223f66c89b8",
+    "runner_sha256": "cb7ac2e76f34c440a096d4ddb3351e1a9c79d46d0a216b521c57b094f9e60fe3",
+    "protocol_sha256": "e1a74be0f19f897f9148cdd3e2b048977af4ec493c65b82ea72bc1b75b0f2590",
+    "report_sha256": "1b272c26e5116f5b946ff529aae28ec0649c9a5d8df78b984f3135af79740d72"
+  },
+  {
+    "mode": "new",
+    "window": "W4",
+    "arm": "G1_original",
+    "delay_execution_supported": false,
+    "qlib_file": "/home/user/workspace/quant-qlib/qlib/__init__.py",
+    "reconciliation": {
+      "gross_max_abs": 7.520026268359459e-16,
+      "cost_max_abs": 7.752045533271357e-18,
+      "gross_residual_sum": -2.6527801358583805e-16,
+      "cost_residual_sum": -9.77560724426188e-18,
+      "exact": true,
+      "observation": "Account.update_bar_end原样执行及透传返回；只读实际trade_info和估值后position"
+    },
+    "execution_id": "new",
+    "signal_sha256": "15952c861c5eb7fcd22b5ba8983f55ff2155144228945850de600f7ececca574",
+    "runner_sha256": "cb7ac2e76f34c440a096d4ddb3351e1a9c79d46d0a216b521c57b094f9e60fe3",
+    "protocol_sha256": "e1a74be0f19f897f9148cdd3e2b048977af4ec493c65b82ea72bc1b75b0f2590",
+    "report_sha256": "39b8c45a287bb65a4a03c896c3e9dbd2473453dabbca385a2109f8e9fe0bf9fd"
+  },
+  {
+    "mode": "new",
+    "window": "W4",
+    "arm": "A",
+    "delay_execution_supported": false,
+    "qlib_file": "/home/user/workspace/quant-qlib/qlib/__init__.py",
+    "reconciliation": {
+      "gross_max_abs": 8.504481840976297e-16,
+      "cost_max_abs": 7.345469718589293e-18,
+      "gross_residual_sum": -3.010829432992246e-16,
+      "cost_residual_sum": -2.2256637722053996e-17,
+      "exact": true,
+      "observation": "Account.update_bar_end原样执行及透传返回；只读实际trade_info和估值后position"
+    },
+    "execution_id": "new",
+    "signal_sha256": "6d57cf28575cf7e008cf9e461f2602a764a50b4741bcf0e15ebc0a9a49388636",
+    "runner_sha256": "cb7ac2e76f34c440a096d4ddb3351e1a9c79d46d0a216b521c57b094f9e60fe3",
+    "protocol_sha256": "e1a74be0f19f897f9148cdd3e2b048977af4ec493c65b82ea72bc1b75b0f2590",
+    "report_sha256": "e122860e972067bb6879eba7ffac40d0bbeb055d7ec306bfc451a840d6ad6d29"
+  },
+  {
+    "mode": "new",
+    "window": "W4",
+    "arm": "B",
+    "delay_execution_supported": false,
+    "qlib_file": "/home/user/workspace/quant-qlib/qlib/__init__.py",
+    "reconciliation": {
+      "gross_max_abs": 6.730727086790012e-16,
+      "cost_max_abs": 6.396792817664476e-18,
+      "gross_residual_sum": 4.1360957627606387e-16,
+      "cost_residual_sum": 2.0938654456126304e-18,
+      "exact": true,
+      "observation": "Account.update_bar_end原样执行及透传返回；只读实际trade_info和估值后position"
+    },
+    "execution_id": "new",
+    "signal_sha256": "138d7dbc6ada2b66e78bb91ccf8244269ad68c98c33e803a1f23974b73687c1a",
+    "runner_sha256": "cb7ac2e76f34c440a096d4ddb3351e1a9c79d46d0a216b521c57b094f9e60fe3",
+    "protocol_sha256": "e1a74be0f19f897f9148cdd3e2b048977af4ec493c65b82ea72bc1b75b0f2590",
+    "report_sha256": "347de555b608be66ac6161fe3c8a975bbf427d00408004e4ba60d0c2ffb5c593"
+  },
+  {
+    "mode": "new",
+    "window": "W4",
+    "arm": "C",
+    "delay_execution_supported": false,
+    "qlib_file": "/home/user/workspace/quant-qlib/qlib/__init__.py",
+    "reconciliation": {
+      "gross_max_abs": 7.147060721024445e-16,
+      "cost_max_abs": 4.7704895589362195e-18,
+      "gross_residual_sum": 1.0028870095490916e-16,
+      "cost_residual_sum": 1.1519648082658485e-19,
+      "exact": true,
+      "observation": "Account.update_bar_end原样执行及透传返回；只读实际trade_info和估值后position"
+    },
+    "execution_id": "new",
+    "signal_sha256": "0a934f7c22e6eeed71f1bdcc7d27ba7b5cc5d897336d389da8fd1ae87acf39a2",
+    "runner_sha256": "cb7ac2e76f34c440a096d4ddb3351e1a9c79d46d0a216b521c57b094f9e60fe3",
+    "protocol_sha256": "e1a74be0f19f897f9148cdd3e2b048977af4ec493c65b82ea72bc1b75b0f2590",
+    "report_sha256": "343648fb58912abac25fe2c3fa29c90991124544e5468bbba680cbed4d6b6441"
+  },
+  {
+    "mode": "new",
+    "window": "W4",
+    "arm": "D",
+    "delay_execution_supported": false,
+    "qlib_file": "/home/user/workspace/quant-qlib/qlib/__init__.py",
+    "reconciliation": {
+      "gross_max_abs": 8.222589276130066e-16,
+      "cost_max_abs": 7.047314121155779e-18,
+      "gross_residual_sum": 9.0801931945661e-19,
+      "cost_residual_sum": 1.666960840196463e-18,
+      "exact": true,
+      "observation": "Account.update_bar_end原样执行及透传返回；只读实际trade_info和估值后position"
+    },
+    "execution_id": "new",
+    "signal_sha256": "6b159d4edd04948d82e0f97d1e62845f5fa4cc30d13e4599390e11ab843ee7ee",
+    "runner_sha256": "cb7ac2e76f34c440a096d4ddb3351e1a9c79d46d0a216b521c57b094f9e60fe3",
+    "protocol_sha256": "e1a74be0f19f897f9148cdd3e2b048977af4ec493c65b82ea72bc1b75b0f2590",
+    "report_sha256": "3542147e2f6821e43e27cc2398c8a1fd36d3015b560ebbdea7de7c56bac5c776"
+  },
+  {
+    "mode": "new",
+    "window": "W4",
+    "arm": "cap_only",
+    "delay_execution_supported": false,
+    "qlib_file": "/home/user/workspace/quant-qlib/qlib/__init__.py",
+    "reconciliation": {
+      "gross_max_abs": 7.060324547225605e-16,
+      "cost_max_abs": 8.51098705401121e-18,
+      "gross_residual_sum": 1.2078689827846323e-16,
+      "cost_residual_sum": -7.874018277675976e-18,
+      "exact": true,
+      "observation": "Account.update_bar_end原样执行及透传返回；只读实际trade_info和估值后position"
+    },
+    "execution_id": "new",
+    "signal_sha256": "6b159d4edd04948d82e0f97d1e62845f5fa4cc30d13e4599390e11ab843ee7ee",
+    "runner_sha256": "cb7ac2e76f34c440a096d4ddb3351e1a9c79d46d0a216b521c57b094f9e60fe3",
+    "protocol_sha256": "e1a74be0f19f897f9148cdd3e2b048977af4ec493c65b82ea72bc1b75b0f2590",
+    "report_sha256": "be2f94e669a966e21149d679efc9ec78efb23058291f73476101ccffc23de8cd"
+  },
+  {
+    "mode": "new",
+    "window": "W4",
+    "arm": "vol_only",
+    "delay_execution_supported": false,
+    "qlib_file": "/home/user/workspace/quant-qlib/qlib/__init__.py",
+    "reconciliation": {
+      "gross_max_abs": 6.990935608186533e-16,
+      "cost_max_abs": 6.071532165918825e-18,
+      "gross_residual_sum": -2.1785687403380605e-16,
+      "cost_residual_sum": -1.0103408994849294e-17,
+      "exact": true,
+      "observation": "Account.update_bar_end原样执行及透传返回；只读实际trade_info和估值后position"
+    },
+    "execution_id": "new",
+    "signal_sha256": "6b159d4edd04948d82e0f97d1e62845f5fa4cc30d13e4599390e11ab843ee7ee",
+    "runner_sha256": "cb7ac2e76f34c440a096d4ddb3351e1a9c79d46d0a216b521c57b094f9e60fe3",
+    "protocol_sha256": "e1a74be0f19f897f9148cdd3e2b048977af4ec493c65b82ea72bc1b75b0f2590",
+    "report_sha256": "20ff0c6924d35832417e9559d7cf98c6ebbcf477eb5b647556a6f5b2a8e23aa2"
+  },
+  {
+    "mode": "new",
+    "window": "W4",
+    "arm": "cap_vol",
+    "delay_execution_supported": false,
+    "qlib_file": "/home/user/workspace/quant-qlib/qlib/__init__.py",
+    "reconciliation": {
+      "gross_max_abs": 8.656270145124267e-16,
+      "cost_max_abs": 7.467442462993912e-18,
+      "gross_residual_sum": 2.6776405528602942e-17,
+      "cost_residual_sum": -1.6263032587282567e-19,
+      "exact": true,
+      "observation": "Account.update_bar_end原样执行及透传返回；只读实际trade_info和估值后position"
+    },
+    "execution_id": "new",
+    "signal_sha256": "6b159d4edd04948d82e0f97d1e62845f5fa4cc30d13e4599390e11ab843ee7ee",
+    "runner_sha256": "cb7ac2e76f34c440a096d4ddb3351e1a9c79d46d0a216b521c57b094f9e60fe3",
+    "protocol_sha256": "e1a74be0f19f897f9148cdd3e2b048977af4ec493c65b82ea72bc1b75b0f2590",
+    "report_sha256": "80fb1d53f56fdd894818b0a8807d3060383e865249e4740bfff6ccd6c38f4e75"
+  }
+]

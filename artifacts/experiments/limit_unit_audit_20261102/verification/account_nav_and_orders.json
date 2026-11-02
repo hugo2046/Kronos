@@ -1,0 +1,133 @@
+{
+  "accounts": {
+    "accounts/new/W3/A": {
+      "nav_max_abs": 1.1015494072452725e-16,
+      "days": 126
+    },
+    "accounts/new/W3/B": {
+      "nav_max_abs": 1.1275702593849246e-16,
+      "days": 126
+    },
+    "accounts/new/W3/C": {
+      "nav_max_abs": 1.1102230246251565e-16,
+      "days": 126
+    },
+    "accounts/new/W3/D": {
+      "nav_max_abs": 1.1102230246251565e-16,
+      "days": 126
+    },
+    "accounts/new/W3/G1_original": {
+      "nav_max_abs": 1.0846087483001865e-16,
+      "days": 126
+    },
+    "accounts/new/W3/cap_only": {
+      "nav_max_abs": 1.0755285551056204e-16,
+      "days": 126
+    },
+    "accounts/new/W3/cap_vol": {
+      "nav_max_abs": 1.1102230246251565e-16,
+      "days": 126
+    },
+    "accounts/new/W3/neutral": {
+      "nav_max_abs": 1.1102230246251565e-16,
+      "days": 126
+    },
+    "accounts/new/W3/vol_only": {
+      "nav_max_abs": 1.1102230246251565e-16,
+      "days": 126
+    },
+    "accounts/new/W4/A": {
+      "nav_max_abs": 1.1188966420050406e-16,
+      "days": 134
+    },
+    "accounts/new/W4/B": {
+      "nav_max_abs": 1.1102230246251565e-16,
+      "days": 134
+    },
+    "accounts/new/W4/C": {
+      "nav_max_abs": 1.1102230246251565e-16,
+      "days": 134
+    },
+    "accounts/new/W4/D": {
+      "nav_max_abs": 1.0581813203458523e-16,
+      "days": 134
+    },
+    "accounts/new/W4/G1_original": {
+      "nav_max_abs": 1.1102230246251565e-16,
+      "days": 134
+    },
+    "accounts/new/W4/cap_only": {
+      "nav_max_abs": 1.0842021724855044e-16,
+      "days": 134
+    },
+    "accounts/new/W4/cap_vol": {
+      "nav_max_abs": 1.0928757898653885e-16,
+      "days": 134
+    },
+    "accounts/new/W4/neutral": {
+      "nav_max_abs": 1.0581813203458523e-16,
+      "days": 134
+    },
+    "accounts/new/W4/vol_only": {
+      "nav_max_abs": 1.0755285551056204e-16,
+      "days": 134
+    },
+    "accounts/old/W3/B": {
+      "nav_max_abs": 1.0928757898653885e-16,
+      "days": 126
+    },
+    "accounts/old/W3/D": {
+      "nav_max_abs": 1.1102230246251565e-16,
+      "days": 126
+    },
+    "accounts/old/W3/G1_original": {
+      "nav_max_abs": 1.1015494072452725e-16,
+      "days": 126
+    },
+    "accounts/old/W3/cap_only": {
+      "nav_max_abs": 1.0842021724855044e-16,
+      "days": 126
+    },
+    "accounts/old/W3/cap_vol": {
+      "nav_max_abs": 1.0495077029659683e-16,
+      "days": 126
+    },
+    "accounts/old/W3/neutral": {
+      "nav_max_abs": 1.1102230246251565e-16,
+      "days": 126
+    },
+    "accounts/old/W3/vol_only": {
+      "nav_max_abs": 1.0495077029659683e-16,
+      "days": 126
+    },
+    "accounts/old/W4/B": {
+      "nav_max_abs": 1.1102230246251565e-16,
+      "days": 134
+    },
+    "accounts/old/W4/D": {
+      "nav_max_abs": 1.1102230246251565e-16,
+      "days": 134
+    },
+    "accounts/old/W4/G1_original": {
+      "nav_max_abs": 1.1080546202801855e-16,
+      "days": 134
+    },
+    "accounts/old/W4/cap_only": {
+      "nav_max_abs": 1.0775614341790307e-16,
+      "days": 134
+    },
+    "accounts/old/W4/cap_vol": {
+      "nav_max_abs": 1.0928757898653885e-16,
+      "days": 134
+    },
+    "accounts/old/W4/neutral": {
+      "nav_max_abs": 1.1102230246251565e-16,
+      "days": 134
+    },
+    "accounts/old/W4/vol_only": {
+      "nav_max_abs": 1.0928757898653885e-16,
+      "days": 134
+    }
+  },
+  "neutral_orders_both_modes": true
+}

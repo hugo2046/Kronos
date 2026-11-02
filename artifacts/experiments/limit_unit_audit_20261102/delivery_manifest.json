@@ -1,0 +1,1878 @@
+{
+  "artifacts/experiments/limit_unit_audit_20261102/fields_flags.parquet": {
+    "size": 2822186,
+    "sha256": "1deaa7a2ceaa27516d68643ea27810fac2bea59311cebaffa6f5201949857f69"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/stock_change_W3_D.csv": {
+    "size": 276523,
+    "sha256": "552a0406d1b6c81a1424288e8e096eaf60974b2e61b2d151bd20fc3531dd4f2a"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/new_trades_flags_W4_B.parquet": {
+    "size": 44479,
+    "sha256": "5114fe51c0c7ee7e2d379760a239a36c819094df6521af1920fdfabdd8007817"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/request_boundary_audit.json": {
+    "size": 7555,
+    "sha256": "7c8850eec76a92b518bbff2943c7551089b5c93fb6f268548ca5e56e9faa5469"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/stock_change_W4_G1_original.csv": {
+    "size": 346230,
+    "sha256": "f2b41a37efe91482bc2d94fc15a894a825f5fdecbca3302859d1e448f244320c"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/metrics.csv": {
+    "size": 5009,
+    "sha256": "16ba0cbc36b273cddefece7f45b96f08f8991c25f323e82080aab2c4c963afb7"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/field_requests.jsonl": {
+    "size": 528,
+    "sha256": "95602d1af9301b1e9e66316993bb4ab44e89f788b4d5930f1d59fb93cd77d648"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/stock_change_W3_G1_original.csv": {
+    "size": 294706,
+    "sha256": "8919e64513ced239bad780d601b90baec4ad04c9eebad82b4f5f7e475ba4e727"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/report_complete.json": {
+    "size": 472,
+    "sha256": "2c7081584455a81dfc6de85e2e66515ad41c260f5c9559ff488174c19a0546c3"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/interval_W3_new_D_drawdown_new_cap_vol.csv": {
+    "size": 4644,
+    "sha256": "5700a67a3d619071a3a3bc0e706ca4f8b35f7ef1a2b6ff0470e3397b507b64b7"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/not_tradable_W3_cap_only.csv": {
+    "size": 26887,
+    "sha256": "13d8e00deb2a9cf883f534dd533186491e60caed43cedb41f4bfc48be151c0d2"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/curve_identities.json": {
+    "size": 27194,
+    "sha256": "37e8b3a71d2491dcea95a654c77bd38cb04b12e98970fd73d3b93221d8635c43"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/interval_W4_new_D_drawdown_new_D.csv": {
+    "size": 5270,
+    "sha256": "2886a6e6b441dda3fc6d58632cf196cd186c7e3c6fb6b32f268a35d4d2641a08"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/source_evidence.json": {
+    "size": 8866,
+    "sha256": "ff3e01d1a2a0eb557f07ea9373e4ba619aa3ae24b9ee82f6623b483f89fcd820"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/not_tradable_W3_cap_vol.csv": {
+    "size": 56497,
+    "sha256": "ccfdce89f509bbd34b4ed2fdcd45009bdc0b84536701d97ae723da6f01f97888"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/new_trades_flags_W4_cap_vol.parquet": {
+    "size": 50917,
+    "sha256": "f885c9bb29f46a4f70aeafe3b4c59c83de17983220c66d57042ff7be59f3f77a"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/new_trades_flags_W3_cap_vol.parquet": {
+    "size": 48470,
+    "sha256": "b4434aff279b7040284be049060fd0c88317acf995755d53530b32487156d90f"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/not_tradable_summary.json": {
+    "size": 477,
+    "sha256": "25fef8c6f74c15acdec530781894ba7e8ad5668b6cd7d0a1fb5321f78eaa48cd"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/stock_change_W3_B.csv": {
+    "size": 284249,
+    "sha256": "7fe0b326c16118081d53036d291b85d2c8ed188cbf510c8d42b3ddaf1765cefb"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/execution_clock.json": {
+    "size": 63,
+    "sha256": "c3c4362f67672ea270df5dc8a6450173b48835f8ce3f1c60e9f4c59d80139831"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/new_trades_flags_W4_D.parquet": {
+    "size": 44089,
+    "sha256": "780c692fc5467d61d2d79444ffe1d9422b6d2f65aa18892208d45cfac120ba46"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/protocol.json": {
+    "size": 8673,
+    "sha256": "e1a74be0f19f897f9148cdd3e2b048977af4ec493c65b82ea72bc1b75b0f2590"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/interval_W4_new_D_drawdown_old_D.csv": {
+    "size": 2496,
+    "sha256": "c5ae3f7758fc1c6788d75e5e1ef98316ff54f4b600b982ed84942a6ca8708cdd"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/interval_W3_old_D_common_new_cap_vol.csv": {
+    "size": 4708,
+    "sha256": "3b31312990a869f3ca1570bcd669bb952a2e7ce348cf5f49190c33bed14cf00f"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/new_trades_flags_W3_D.parquet": {
+    "size": 41808,
+    "sha256": "de48896f8634d69982f5d8bfa81146ca2fd8e92c7be4a7debce75bbc695487a8"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/field_audit.json": {
+    "size": 249,
+    "sha256": "04e8bb9a7448b65d2e4ff94775d26a886f4cac7027c4828becec614d5ce7bc01"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/interval_W3_new_D_drawdown_new_D.csv": {
+    "size": 4647,
+    "sha256": "8aaf709e8fa887d46a33025ca0fba1871dc2f1e7d08e8c0e9b7e9f4b1afac928"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/new_neutral_gate.json": {
+    "size": 21,
+    "sha256": "0f9732071aabc96662979198c067859ad0bf8058fe95745ce8da23df1428a44c"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/old_gates.json": {
+    "size": 540,
+    "sha256": "be07859575a8c6c53d94301a786ad19e9ead658c70883e522e17bc1d118f0375"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/flag_summary.csv": {
+    "size": 771,
+    "sha256": "d34de0eaf5cde78d3005cb98a11dbc8292d9e4e64be1a5bcd2402a5f9e42bb9d"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/interval_W3_old_D_common_new_D.csv": {
+    "size": 4698,
+    "sha256": "2ea44e00bd482409982f69bec64b8c733eee8c9534ecfe17ffe040888e3c16b4"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/interval_W3_new_D_drawdown_old_D.csv": {
+    "size": 2820,
+    "sha256": "6085267b60379ed53e4cfb4c00f72d902c2fe6aac93fb14bb9c71cff6a79a819"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/interval_W3_old_D_common_old_cap_vol.csv": {
+    "size": 2850,
+    "sha256": "88f59b8bed8f5de098a832a2fb4b632903c07dc50b8c1d237892963e49e91020"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/fields_flags.csv": {
+    "size": 15162452,
+    "sha256": "cba4981b2a5744503136aad4b6f82ef7881c4b3f29d128cced6f5f1b35baead3"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/not_tradable_W4_cap_only.csv": {
+    "size": 30896,
+    "sha256": "15a638a6a49234e531f3e7329ef61aa9bbe1d1c28dd423eb111b2debcfd8fb96"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/protocol.json.sha256": {
+    "size": 65,
+    "sha256": "4a4ac1e170430268caa06ed7e4f0953f203fab95c31a4d9f4b74edec8bc32454"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/stock_change_W4_D.csv": {
+    "size": 328570,
+    "sha256": "a2efb007c5cb977d7b0616a475407fa26c31211827393d15171c678019ecc4ae"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/new_trades_flags_W4_G1_original.parquet": {
+    "size": 44825,
+    "sha256": "c2c2818f1d905d95e3ef45d83f7cd023d6410587e48ef9b85beab1a03506a52c"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/stock_change_W4_B.csv": {
+    "size": 336032,
+    "sha256": "080d26860a4caa6848841acc6d6b635a0dafadeb9a7b765287c2223d69f272c3"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/new_trades_flags_W3_B.parquet": {
+    "size": 40264,
+    "sha256": "3fa99f17b46828142ff8a8982d9e05f3570f43cfed621ad3ba7cf533847091b2"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/not_tradable_W4_cap_vol.csv": {
+    "size": 61746,
+    "sha256": "f93ebfee6055b1dd6a8a7f2bdd2a79881a2ed777ed9aa8bd44cf4ec83600aab5"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/acceptance.json": {
+    "size": 282,
+    "sha256": "9bfbefdb4f8b8f73798c8a7b2912cc14d9606b63e5b2d6fe117f71b27f026367"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/interval_W4_new_D_drawdown_new_cap_vol.csv": {
+    "size": 5269,
+    "sha256": "92320bdc492b8bedecda279c952855958f7c8c9d0c7927898c5f2ec0a3c847e6"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/new_trades_flags_W3_G1_original.parquet": {
+    "size": 41985,
+    "sha256": "a5588e96b1d0ea020adc61d89b2717b81d6d96319da72514270cb96d926b78e1"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/backend_field_mapping.json": {
+    "size": 860,
+    "sha256": "c6d153588f52aa9b152ff99beb5986aad84c104fdf9c44b83e384f3cafaa44f5"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/fixed_sample.csv": {
+    "size": 1217,
+    "sha256": "bf1e2869798a6b54cb2f704039dd3d046844180aed19521791d9cf1ad8cac193"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/flag_daily.csv": {
+    "size": 18097,
+    "sha256": "3bf5d0d23de871f28abea10dcb5ae8774158704bfa87e3b861b9ca602cc44e2a"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/field_exceptions.csv": {
+    "size": 2110304,
+    "sha256": "b97e7dfa71dfb2fe7063c0bfb6a3dbf15dc094c8da5be3bbe8e896c6386fa82f"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/interval_W4_new_D_drawdown_old_cap_vol.csv": {
+    "size": 2496,
+    "sha256": "3497d66466382693f82e2bd7eb30d1186a3d6214f34fca3ce805795483d705e1"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/execution_attribution.json": {
+    "size": 4791,
+    "sha256": "f4d740bc0f8ade8c1bd316a2ff549736c3940bf6a5c8f96bf5b51cb913ca7110"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/interval_W3_new_D_drawdown_old_cap_vol.csv": {
+    "size": 2816,
+    "sha256": "edf01e3e4909b6eac5317316784eb5b2816530040583a71e09a791a25499961e"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/bot_status.json": {
+    "size": 274,
+    "sha256": "b47e6c0b46c36d274350a5fc877be279456969d94d2ee09f9127dc2a323bb22c"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/risk_daily.csv": {
+    "size": 365489,
+    "sha256": "6866a08c06f957fa32339aac5f3470839c8acdf059e7afa65bc65e5346788421"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/drawdown_intervals.json": {
+    "size": 1351,
+    "sha256": "6404bda1cc30dac3574df0e66e720543a645a19fe701e4f6b224d60cccf4a9e0"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/stock_change_W3_cap_vol.csv": {
+    "size": 276729,
+    "sha256": "7e47faf2bef21326a9ff32c5985d716a0be6d3e5ffad20a86aebcf46b398fa78"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/stock_change_W4_cap_vol.csv": {
+    "size": 328706,
+    "sha256": "8a4f9f18ba45c8ceae7fcc5f643fd3aae4668b8f2b43f9d43a9a924c5f66bab2"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/codegraph_locations.json": {
+    "size": 171,
+    "sha256": "cdbb658a928d7d71607da7c95a7df35d6d89eff9b01bc3ef3ec47b95e086f2a5"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/risk_summary.json": {
+    "size": 30116,
+    "sha256": "1cf5252ecd0edf7176bc7267c08ed4002c584d652f08f3d254ae9f4c39e5c97b"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/interval_W3_old_D_common_old_D.csv": {
+    "size": 2857,
+    "sha256": "4526f00c7ec420a7138d4c94803c2a5d2819622a2eeac7e20d8a1cdcef849c18"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/factorial_bootstrap.json": {
+    "size": 2069,
+    "sha256": "aea8a47ec65bd30b13df213939e37c9267d05338130bafd03ef545e75be0ac7f"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/verification/attribution_red.txt": {
+    "size": 1309,
+    "sha256": "e5f3b14f089c8214f351a5a07633d54418b6118120b6b0ad329cddc9ebb58c6d"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/verification/tests.txt": {
+    "size": 99,
+    "sha256": "87cbb71ae6699cfa1f1095ddd32e092f9d4f76841577b692deef4b510d51ecf9"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/verification/red.txt": {
+    "size": 654,
+    "sha256": "bba160ba07fcada83b7ae8b14de89a387763dd14fb4e5031c7063bffc3aed27a"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/verification/green.txt": {
+    "size": 98,
+    "sha256": "21015a1d5d5608bc43dfaf2e501a31311e32cf115ed3f34702e13f9df9d319ef"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/verification/account_nav_and_orders.json": {
+    "size": 3307,
+    "sha256": "f76a3283306be833b66a563e84dda5bd7fbb96aac54d108b907b0d481994dfc1"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/source/external_exchange.py": {
+    "size": 44722,
+    "sha256": "7c33192af125850e6d96f736dcf619a2dbefec598dac404a597f085543d853ef"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/source/tests/test_limit_unit_audit.py": {
+    "size": 3967,
+    "sha256": "6c427cbcac965e442888d5bac61fe2543e252ebf33f83691cda650fee86608cd"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/source/state_adapter/risk_overlay.py": {
+    "size": 11355,
+    "sha256": "3381a6ce9121e384f04e985ae766c821396c81c4dcbd69f1ff9f64915a64689b"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/source/state_adapter/market_guard.py": {
+    "size": 2855,
+    "sha256": "ab42f1bee118299764877bf641d1a51fa51ebbda21aebd924b9d7adbca8bd0fb"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/source/state_adapter/limit_unit_audit.py": {
+    "size": 9460,
+    "sha256": "cb7ac2e76f34c440a096d4ddb3351e1a9c79d46d0a216b521c57b094f9e60fe3"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/source/state_adapter/limit_unit_report.py": {
+    "size": 22388,
+    "sha256": "812e220c71af7ae6fd020bd09890354d0c6db0dae94eafda8e925d7dacd03a11"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/source/state_adapter/risk_attribution.py": {
+    "size": 23723,
+    "sha256": "3be8e0965c68e8b9aa8d7f46814a9562dc4fa1b1024249bb4dcf45d607ba3878"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/source/qlib_mean_comparison/run.py": {
+    "size": 16835,
+    "sha256": "a619ac9e89cac53a05378425c0cf2693678814c8764059ec5cfbc71ed57c7340"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W3/D/market_requests.jsonl": {
+    "size": 601,
+    "sha256": "6a067567cb478cc19be6d714a7bb0bfa7eca8e2b0fcc84ebfc496b9a1782b022"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W3/D/reconciliation_residuals.csv": {
+    "size": 7028,
+    "sha256": "49466e7b55dedd66b8bba8ffaebdca383dc5ae2b6700b9ed6121c912c1513ea8"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W3/D/report.parquet": {
+    "size": 8710,
+    "sha256": "749f29918f41dadaba5c5387a49f225d4ab48e68aac3d3ef671443e63a91addd"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W3/D/actual_cap_exceedances.csv": {
+    "size": 104,
+    "sha256": "2d096e72942aac64daaaa25b1970297c025670785a7153f2d68e20a47db13407"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W3/D/complete.json": {
+    "size": 833,
+    "sha256": "91cbd1ca47e738c3d7f62dcf674bfbe2f16573c267cd9cfa81988903baa77a0c"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W3/D/balances.parquet": {
+    "size": 9569,
+    "sha256": "9a01b3376b60c69a591999e396e5c08b629e8b5659e6efcd3392fcee5149a1af"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W3/D/variance_contributions.csv": {
+    "size": 6557,
+    "sha256": "de4a5de0a98a320ba0bc23ea0758508cc94cf8b22e40250baf8ee6156b4a77e6"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W3/D/stock_daily_contributions.parquet": {
+    "size": 228265,
+    "sha256": "36a3ef559be9474f1b2ea8890119272e5120d64c0c97428c916f23acff4f92e8"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W3/D/trades.parquet": {
+    "size": 40108,
+    "sha256": "49db96ac85ca762d30e2b5be55a2ce462e7bfd34b26e19a250d8897629d3b44c"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W3/D/risk_daily.parquet": {
+    "size": 32467,
+    "sha256": "ba18e778be4c159436fa237725e784c4f4e4bea926f38c935cffcdf504af4b1c"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W3/D/original_orders.parquet": {
+    "size": 12057,
+    "sha256": "5a28a0dddb30390cd03e921832cf15a741a3128eaf883dec4bbe69c53be27a26"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W3/D/positions.parquet": {
+    "size": 258344,
+    "sha256": "ec78b4a461136d0dd18bb5267d4cfe0f3b29288457c393c9d3404312c8555b7a"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W3/D/risk_summary.json": {
+    "size": 3003,
+    "sha256": "8993078e66a0ce1f3fdadc260370c116e51769907d2838e148ef37367811dde6"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W3/D/reconciliation_audit.json": {
+    "size": 314,
+    "sha256": "6faf4b372cacec8df74a8cd70fc1cdd18f9e04afd987ee9e4fed46049fe06b29"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W3/G1_original/market_requests.jsonl": {
+    "size": 601,
+    "sha256": "6a067567cb478cc19be6d714a7bb0bfa7eca8e2b0fcc84ebfc496b9a1782b022"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W3/G1_original/reconciliation_residuals.csv": {
+    "size": 7096,
+    "sha256": "41a1e819f278e9ab560c611f0485b1c27475f98cb5c13401f83e6a6a2c0d7ade"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W3/G1_original/report.parquet": {
+    "size": 8710,
+    "sha256": "eb54538131ee75d14584d676f6cb89212b979244a9244524dede1ad98e7b507c"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W3/G1_original/complete.json": {
+    "size": 830,
+    "sha256": "f022e8e71961839d7c068b94ecb04fd8443f8279cc0d59953926378ecc2c58c5"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W3/G1_original/balances.parquet": {
+    "size": 9569,
+    "sha256": "64fbc9d73d748a92725f4bcd7444bda8545b4ee96fb1af1879edfdc4fab0bbad"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W3/G1_original/stock_daily_contributions.parquet": {
+    "size": 227319,
+    "sha256": "bc077ce35bde0b09b6d6cabf5991c16176dcafa04800fbe61bdd04d5f03a3d61"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W3/G1_original/trades.parquet": {
+    "size": 40285,
+    "sha256": "bf9be7d5bd3526fc7f63a58cfdb6d66dde1423e6386622e6279be3f808cd3457"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W3/G1_original/original_orders.parquet": {
+    "size": 12007,
+    "sha256": "d83486248279d9f95459b88b92d01de995f45433c4678f0289cb96907245b2bb"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W3/G1_original/positions.parquet": {
+    "size": 256261,
+    "sha256": "e8d73f4a9ea78d36be76c4ce7619c2096bc0c1108e0954a49dfd062c3cbf8de2"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W3/G1_original/reconciliation_audit.json": {
+    "size": 311,
+    "sha256": "7ed162600b40c1059c4aa626b3c4c7484ae3556055bb85b8e31ca7340aed644e"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W3/neutral/market_requests.jsonl": {
+    "size": 601,
+    "sha256": "6a067567cb478cc19be6d714a7bb0bfa7eca8e2b0fcc84ebfc496b9a1782b022"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W3/neutral/reconciliation_residuals.csv": {
+    "size": 7028,
+    "sha256": "49466e7b55dedd66b8bba8ffaebdca383dc5ae2b6700b9ed6121c912c1513ea8"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W3/neutral/order_audit.parquet": {
+    "size": 636,
+    "sha256": "2e836d6adff325aede8989ffcbc87094563445f1d0a4ba61dd92764ecca42844"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W3/neutral/report.parquet": {
+    "size": 8710,
+    "sha256": "749f29918f41dadaba5c5387a49f225d4ab48e68aac3d3ef671443e63a91addd"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W3/neutral/final_orders.parquet": {
+    "size": 12057,
+    "sha256": "5a28a0dddb30390cd03e921832cf15a741a3128eaf883dec4bbe69c53be27a26"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W3/neutral/complete.json": {
+    "size": 833,
+    "sha256": "91cbd1ca47e738c3d7f62dcf674bfbe2f16573c267cd9cfa81988903baa77a0c"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W3/neutral/balances.parquet": {
+    "size": 9569,
+    "sha256": "9a01b3376b60c69a591999e396e5c08b629e8b5659e6efcd3392fcee5149a1af"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W3/neutral/stock_daily_contributions.parquet": {
+    "size": 228265,
+    "sha256": "36a3ef559be9474f1b2ea8890119272e5120d64c0c97428c916f23acff4f92e8"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W3/neutral/trades.parquet": {
+    "size": 40108,
+    "sha256": "49db96ac85ca762d30e2b5be55a2ce462e7bfd34b26e19a250d8897629d3b44c"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W3/neutral/original_orders.parquet": {
+    "size": 12057,
+    "sha256": "5a28a0dddb30390cd03e921832cf15a741a3128eaf883dec4bbe69c53be27a26"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W3/neutral/positions.parquet": {
+    "size": 258344,
+    "sha256": "ec78b4a461136d0dd18bb5267d4cfe0f3b29288457c393c9d3404312c8555b7a"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W3/neutral/reconciliation_audit.json": {
+    "size": 314,
+    "sha256": "6faf4b372cacec8df74a8cd70fc1cdd18f9e04afd987ee9e4fed46049fe06b29"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W3/cap_vol/order_execution_audit.parquet": {
+    "size": 88946,
+    "sha256": "de2d2039d361794d317c09fc0b38c224465867b1689920aa6f57363ebebb605f"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W3/cap_vol/market_requests.jsonl": {
+    "size": 601,
+    "sha256": "6a067567cb478cc19be6d714a7bb0bfa7eca8e2b0fcc84ebfc496b9a1782b022"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W3/cap_vol/reconciliation_residuals.csv": {
+    "size": 7026,
+    "sha256": "204a45f4b9336fdfd0ce30be32d2510ddbc1484df2b6279ba882f9de08b48b8b"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W3/cap_vol/order_audit.parquet": {
+    "size": 63522,
+    "sha256": "49b03b8c19e6e7becc3e7eb74275280a64d5fdb36a5ded69a0eaf71150652a93"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W3/cap_vol/report.parquet": {
+    "size": 8710,
+    "sha256": "1b272c26e5116f5b946ff529aae28ec0649c9a5d8df78b984f3135af79740d72"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W3/cap_vol/actual_cap_exceedances.csv": {
+    "size": 70627,
+    "sha256": "4a9fc0a32ec4d56a850296d56e67d9f8dd09043f29e22fd13f023ea7592623b6"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W3/cap_vol/final_orders.parquet": {
+    "size": 13883,
+    "sha256": "adc07fff119a3e7b81a767c8b95884fbdfd73b720f0779cbf41ae798e5a37c7d"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W3/cap_vol/complete.json": {
+    "size": 831,
+    "sha256": "06378a4b99d6dab8fbb64335a58585a8bb8165200d15b64b16f8afdedc078ef3"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W3/cap_vol/balances.parquet": {
+    "size": 9569,
+    "sha256": "9242a747c33838ff71e0b32ac86f657fea0e61f28686b736ec381083ce2d76e6"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W3/cap_vol/variance_contributions.csv": {
+    "size": 6532,
+    "sha256": "c448b3eae28268cb2f139459e072a580eeda3b5026c6092206cae05baa0becaa"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W3/cap_vol/stock_daily_contributions.parquet": {
+    "size": 232628,
+    "sha256": "8ab640aacf7bec94ec4285a99d8d338d69bb30b83b8f5b1ff518168d7a0a6fd7"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W3/cap_vol/trades.parquet": {
+    "size": 46723,
+    "sha256": "18b77d819a01c8e36cf0f37e4adcba1b5586783e7adfbbcbb9c76d80ab03a1f5"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W3/cap_vol/risk_daily.parquet": {
+    "size": 32498,
+    "sha256": "280d9b1c775a5d8511e2e606deccfdedb2d02c8335485147c91c22d0b58e9460"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W3/cap_vol/original_orders.parquet": {
+    "size": 14513,
+    "sha256": "85141b481432ba86e4707123a62abc64a003291bb6a29e719e2adea4490c2b2f"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W3/cap_vol/positions.parquet": {
+    "size": 261046,
+    "sha256": "d33f8c5b863d7d1bcb9ac80543c3fc90cd9cb663f2fbafdcce4aa657bb706b38"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W3/cap_vol/risk_summary.json": {
+    "size": 3155,
+    "sha256": "2e1b10c8cca9fd2ec3adae0b652a1660ffef05ae2f492cf5b37eb118cfd811e9"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W3/cap_vol/reconciliation_audit.json": {
+    "size": 312,
+    "sha256": "cb37bbd25fcd12b4170daf109a96c22a1861d9cbb3e84a06c86ca6683b9c7fb2"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W3/cap_only/market_requests.jsonl": {
+    "size": 601,
+    "sha256": "6a067567cb478cc19be6d714a7bb0bfa7eca8e2b0fcc84ebfc496b9a1782b022"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W3/cap_only/reconciliation_residuals.csv": {
+    "size": 7078,
+    "sha256": "bde027d891bfdec7086c354e3c58f0a6f35d548757ee7179b749b32668ad404e"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W3/cap_only/order_audit.parquet": {
+    "size": 42999,
+    "sha256": "12345db97c76693b98f45448cad54a1c3971d7de2aaba857318de583295e5e50"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W3/cap_only/report.parquet": {
+    "size": 8710,
+    "sha256": "14b5c103084954c47093ac536e6fcc1758cdde9918536a522e2553b60aaf166f"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W3/cap_only/final_orders.parquet": {
+    "size": 12775,
+    "sha256": "b2da0f5b015a034bd42e676948cd918e62ca05dfb4b4d378d7c4cfb9013f4de4"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W3/cap_only/complete.json": {
+    "size": 830,
+    "sha256": "8a8e2103021bc87c8ced85392f429c351fff8ddb7bf3dc0d4b6f473eea8052af"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W3/cap_only/balances.parquet": {
+    "size": 9569,
+    "sha256": "14169397b1fab281ab4296fd8fddd051a28dc3ac2ce04f7c2c67b05c1a88f733"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W3/cap_only/stock_daily_contributions.parquet": {
+    "size": 229957,
+    "sha256": "1f61bcff62e2a67dca4b0fd1d9821098fd43f13e28405a2707f54fcbd90417ce"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W3/cap_only/trades.parquet": {
+    "size": 42545,
+    "sha256": "90d2b43c0eff7b0688f93d0f76155f717324ceccab7dda309bae7d13661ddbd7"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W3/cap_only/original_orders.parquet": {
+    "size": 12370,
+    "sha256": "b778d09a25df99dd231b67f7940e647d1e1abb301e69401e3f548505a5b3a394"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W3/cap_only/positions.parquet": {
+    "size": 259154,
+    "sha256": "095bff95e1ebb5d89a3742351bb739dd90255a237b046ed11cdc4ead44799e92"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W3/cap_only/reconciliation_audit.json": {
+    "size": 311,
+    "sha256": "0a9561f2aa2d5bed2f49c172cd3f7f59d4b08736c7f7d48e859ae923bb4d81de"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W3/vol_only/market_requests.jsonl": {
+    "size": 601,
+    "sha256": "6a067567cb478cc19be6d714a7bb0bfa7eca8e2b0fcc84ebfc496b9a1782b022"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W3/vol_only/reconciliation_residuals.csv": {
+    "size": 7038,
+    "sha256": "e293883940e5d8176c4cda1a8db6a97a50e23fb8e2f1bc58294818bbef856022"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W3/vol_only/order_audit.parquet": {
+    "size": 38006,
+    "sha256": "fbbc1fef8ff7a90c76eb3c312fbb6fc891f5a0ee4c194168fb000568f6af0951"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W3/vol_only/report.parquet": {
+    "size": 8710,
+    "sha256": "f1847f7c4ebde967bb3a1c164b41d645c8ea740b1afe2a5022523f07afff70ca"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W3/vol_only/final_orders.parquet": {
+    "size": 11993,
+    "sha256": "d9397ab5c8e9cc9f4be1695772c557a2b53bc72973a5863147a53c7ae0c3a965"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W3/vol_only/complete.json": {
+    "size": 830,
+    "sha256": "56e515f1b0b9abee1705ff8185d3ced10ffa08e9daad51eb52edcb5afc851253"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W3/vol_only/balances.parquet": {
+    "size": 9569,
+    "sha256": "c09f6d8e73a047bfa35beaa92249dc9e4d8b4adde272be91e976a515bc0a7077"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W3/vol_only/stock_daily_contributions.parquet": {
+    "size": 228243,
+    "sha256": "5dec99bd0c3323d4ff4be52710abf3c98a55560a0ac9af5831fd7c8b92bf8078"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W3/vol_only/trades.parquet": {
+    "size": 40147,
+    "sha256": "4bd33b5dc1cb1a1726b259dffa3c984898e8cc1102852a97457538a9e81ca70d"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W3/vol_only/original_orders.parquet": {
+    "size": 14425,
+    "sha256": "5466a8b29c63073ac918e233e48c0cd1f068e1b138f4be73e15087be788e5fc1"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W3/vol_only/positions.parquet": {
+    "size": 258539,
+    "sha256": "2ca81b9f6648fbb68293a34acbe5fd99423666bfd0de31b7951f73a884307561"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W3/vol_only/reconciliation_audit.json": {
+    "size": 311,
+    "sha256": "f84d3a9222442365e142c4a179a0ba178dbf93139cf6c68e04957e345bafb208"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W3/A/market_requests.jsonl": {
+    "size": 601,
+    "sha256": "6a067567cb478cc19be6d714a7bb0bfa7eca8e2b0fcc84ebfc496b9a1782b022"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W3/A/reconciliation_residuals.csv": {
+    "size": 7030,
+    "sha256": "8222ed41b2dd441eca53162746a1e5c79f03505437842442838aa3ddc60078a7"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W3/A/report.parquet": {
+    "size": 8710,
+    "sha256": "89fc7f7b130dd7d495cb82824c074468affc32e7a70707e69eca55cf34406845"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W3/A/complete.json": {
+    "size": 829,
+    "sha256": "568c270095caad20cd3aa33f0dc5b99a75763398afd9fca7474ff5e398ae0614"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W3/A/balances.parquet": {
+    "size": 9569,
+    "sha256": "33ebb5212874a6076db67b5c12707d06d66999bb1659ed32acb2f77c2608b19d"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W3/A/stock_daily_contributions.parquet": {
+    "size": 225396,
+    "sha256": "4c72fa0b059bceb962aeee0ffc2a111c28d00ab8cab0c046d28e00a80ec3341e"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W3/A/trades.parquet": {
+    "size": 38554,
+    "sha256": "2276d718201f0ecbd95444eb337f47ad54a45528f917c40e4ab6731e8049a757"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W3/A/original_orders.parquet": {
+    "size": 11458,
+    "sha256": "e4f73956cd9e3c283cf23041d8f1f1834778f3c1cbe631b7f2164886dc17267e"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W3/A/positions.parquet": {
+    "size": 256236,
+    "sha256": "ac6cf1bff1085f91e77bf87d920dc6bfa06553c4de1c7c5bcad3053fff11af39"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W3/A/reconciliation_audit.json": {
+    "size": 310,
+    "sha256": "748b9cff625d31cc2739460e9874ff7795f8c2cb8ede5107750ce43a1d84b5e1"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W3/B/market_requests.jsonl": {
+    "size": 601,
+    "sha256": "6a067567cb478cc19be6d714a7bb0bfa7eca8e2b0fcc84ebfc496b9a1782b022"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W3/B/reconciliation_residuals.csv": {
+    "size": 7040,
+    "sha256": "41131a72a1cd3cd32d54d091357864cacce1ca0afd286405e32f407fb6fa78fa"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W3/B/report.parquet": {
+    "size": 8710,
+    "sha256": "6e2be3c9079d6af1623726329cb2f18defff2c4444965e7dc7246b1eeccab735"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W3/B/complete.json": {
+    "size": 830,
+    "sha256": "fa7ef78d2d916b0c607d3d32d76b00848c6c2278a9f6a69c8cc14e8aeef73ee5"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W3/B/balances.parquet": {
+    "size": 9569,
+    "sha256": "ee212da8af8aa3e8be7a8873668c646830efc46701f217f69424a1fd6eca270a"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W3/B/stock_daily_contributions.parquet": {
+    "size": 225400,
+    "sha256": "94d20fa35d8dde86a106e4546a6d18196e4dbcdf53a987f87c5003caffd3f49b"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W3/B/trades.parquet": {
+    "size": 38576,
+    "sha256": "d1bafaf84b91d90783c78ff2905599d2f1b727c911872c01f52ad5e9970aea45"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W3/B/original_orders.parquet": {
+    "size": 11470,
+    "sha256": "3561bf0fc764842d5fe950dab97652157926b51b0af02bdbf486304d53338ec0"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W3/B/positions.parquet": {
+    "size": 256742,
+    "sha256": "5d783f783f24600b28df384fca4f78bc2d6c5af5eceee35d77fe9ee58b74541e"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W3/B/reconciliation_audit.json": {
+    "size": 311,
+    "sha256": "e750d84d7cb600e21e808c78cc432eec32430478f9d404d69477b822fa3dc01b"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W3/C/market_requests.jsonl": {
+    "size": 601,
+    "sha256": "6a067567cb478cc19be6d714a7bb0bfa7eca8e2b0fcc84ebfc496b9a1782b022"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W3/C/reconciliation_residuals.csv": {
+    "size": 7055,
+    "sha256": "ac484d51249a05fd28eadf88a8816252595bdfd88b999ec9e2262873423b8e7f"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W3/C/report.parquet": {
+    "size": 8710,
+    "sha256": "95b45d66b26a7bb4b0100cc08d47ab60fdbe5baed2c53340405d2f9ccbbbb902"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W3/C/complete.json": {
+    "size": 832,
+    "sha256": "be754a7bb3202050ea60ad1fb4642c3548f7b817edb3cac896c455fcd8a24f9a"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W3/C/balances.parquet": {
+    "size": 9569,
+    "sha256": "99f4c8a3602124ecfbeb9e983c9d0c86fef29ff2f07991c409f4236f8a021422"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W3/C/stock_daily_contributions.parquet": {
+    "size": 227972,
+    "sha256": "bea7a073d1f399a920f3028f043854ffa5ede46d7b86f0f52d02b7a134cae751"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W3/C/trades.parquet": {
+    "size": 39645,
+    "sha256": "b9c9155b80f78c8c947224774fd44769f70a8e4ea7ff37a7bbe3163bd07d9696"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W3/C/original_orders.parquet": {
+    "size": 11671,
+    "sha256": "44b801a39a5c2f957e22bc4a5cc345f8afb6380779fb4028fa73105da338bbe3"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W3/C/positions.parquet": {
+    "size": 258761,
+    "sha256": "c7937f3c92017c425feec1c6f5ef1720bd4b023f66d14a00fb40ec3f56152d62"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W3/C/reconciliation_audit.json": {
+    "size": 313,
+    "sha256": "5bfc2ba19cc24f9d2aac0bf73eaf50d5488e8c85a79e01d9d7f42669265f089e"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W4/D/market_requests.jsonl": {
+    "size": 601,
+    "sha256": "0c0527f8f833c19827f26524d55c0db1d4b47e290eb871b8925267b363cac436"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W4/D/reconciliation_residuals.csv": {
+    "size": 7531,
+    "sha256": "e894a6e9e76bc213a261baf03909592f8524d6a2c475ad15bf95ff485d1913a4"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W4/D/report.parquet": {
+    "size": 9119,
+    "sha256": "3542147e2f6821e43e27cc2398c8a1fd36d3015b560ebbdea7de7c56bac5c776"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W4/D/actual_cap_exceedances.csv": {
+    "size": 104,
+    "sha256": "2d096e72942aac64daaaa25b1970297c025670785a7153f2d68e20a47db13407"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W4/D/complete.json": {
+    "size": 827,
+    "sha256": "a72b2054efd04c1b98cc4b8095315067146d4ac75e65afa2d8727759f411bacd"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W4/D/balances.parquet": {
+    "size": 10009,
+    "sha256": "61e6b1abaa79a071b6433f9097a43722277fa4f115dae7dffec1dc1afee5efd6"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W4/D/variance_contributions.csv": {
+    "size": 7709,
+    "sha256": "064029b2ffe1abe15c5d6b73874568e3a8ad3e523a3c09e33316c7deee4d85e9"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W4/D/stock_daily_contributions.parquet": {
+    "size": 243351,
+    "sha256": "e2caeb24ad83afb94cae3edb14f551f0829310ab4970309afb4859913855be4c"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W4/D/trades.parquet": {
+    "size": 42376,
+    "sha256": "a0b12ec7301498d82408a693bae38220ff0f54ecb9ead2d3b2a76a9a59eb2a19"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W4/D/risk_daily.parquet": {
+    "size": 34064,
+    "sha256": "753ebbd0c5a4c7a5c8f6228a283f8dcef0b8052102b72426e727d978604711ff"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W4/D/original_orders.parquet": {
+    "size": 12430,
+    "sha256": "6a430031b95ded67269dc758b5ecdf65a6ad9418fc61e82bf8923f32644a6e14"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W4/D/positions.parquet": {
+    "size": 275997,
+    "sha256": "b8c813a7f34121cf049213e26524d92713bd33b281e678f8498ad7dd36700a82"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W4/D/risk_summary.json": {
+    "size": 3063,
+    "sha256": "576f9050309dbaeec992383a59cd3def93eb3fb5b54353f0330d8e461ea5bc26"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W4/D/reconciliation_audit.json": {
+    "size": 308,
+    "sha256": "4a8fcd1ea0bb9421b787a1366ee24ee705e1071b3cecb1688515d7e24ce3d1a0"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W4/G1_original/market_requests.jsonl": {
+    "size": 601,
+    "sha256": "0c0527f8f833c19827f26524d55c0db1d4b47e290eb871b8925267b363cac436"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W4/G1_original/reconciliation_residuals.csv": {
+    "size": 7503,
+    "sha256": "8b2845df8ff27d3c28760d1f959b9652e520bd9e4f1d27f4c5c20f8ffac09fd9"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W4/G1_original/report.parquet": {
+    "size": 9119,
+    "sha256": "39b8c45a287bb65a4a03c896c3e9dbd2473453dabbca385a2109f8e9fe0bf9fd"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W4/G1_original/complete.json": {
+    "size": 831,
+    "sha256": "0db92e083e7a837f49f23b01787c793154af0f34ae75d2a8ce91614882e1bf01"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W4/G1_original/balances.parquet": {
+    "size": 10009,
+    "sha256": "545a6559ed806e4486b5f6eb1837f138ff6eba041b3fa70a4c6f4605d10f7d66"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W4/G1_original/stock_daily_contributions.parquet": {
+    "size": 242434,
+    "sha256": "e23ad6b90555433b4ff1f294111cbbe00eda84541473d5f1e47435ca9a1df0d9"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W4/G1_original/trades.parquet": {
+    "size": 43119,
+    "sha256": "f0bb07c14b15d681c4d89d7d1e8ada82053cccedd7719c0f023bee384126f54a"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W4/G1_original/original_orders.parquet": {
+    "size": 12392,
+    "sha256": "bd1acf01d1bcf1fb26ccacc91e856693c2dba08947a785aa2444f744df05df92"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W4/G1_original/positions.parquet": {
+    "size": 276012,
+    "sha256": "d55829f7ebd19f8edf623f24d7cb5caf27dba40b95b3df29f8877a5332de73e0"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W4/G1_original/reconciliation_audit.json": {
+    "size": 312,
+    "sha256": "14ad5c03a532b7b47c584bce246035567b59a25c0dbbbc100ac5a1db9d71f1d9"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W4/neutral/market_requests.jsonl": {
+    "size": 601,
+    "sha256": "0c0527f8f833c19827f26524d55c0db1d4b47e290eb871b8925267b363cac436"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W4/neutral/reconciliation_residuals.csv": {
+    "size": 7531,
+    "sha256": "e894a6e9e76bc213a261baf03909592f8524d6a2c475ad15bf95ff485d1913a4"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W4/neutral/order_audit.parquet": {
+    "size": 636,
+    "sha256": "2e836d6adff325aede8989ffcbc87094563445f1d0a4ba61dd92764ecca42844"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W4/neutral/report.parquet": {
+    "size": 9119,
+    "sha256": "3542147e2f6821e43e27cc2398c8a1fd36d3015b560ebbdea7de7c56bac5c776"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W4/neutral/final_orders.parquet": {
+    "size": 12430,
+    "sha256": "6a430031b95ded67269dc758b5ecdf65a6ad9418fc61e82bf8923f32644a6e14"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W4/neutral/complete.json": {
+    "size": 827,
+    "sha256": "a72b2054efd04c1b98cc4b8095315067146d4ac75e65afa2d8727759f411bacd"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W4/neutral/balances.parquet": {
+    "size": 10009,
+    "sha256": "61e6b1abaa79a071b6433f9097a43722277fa4f115dae7dffec1dc1afee5efd6"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W4/neutral/stock_daily_contributions.parquet": {
+    "size": 243351,
+    "sha256": "e2caeb24ad83afb94cae3edb14f551f0829310ab4970309afb4859913855be4c"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W4/neutral/trades.parquet": {
+    "size": 42376,
+    "sha256": "a0b12ec7301498d82408a693bae38220ff0f54ecb9ead2d3b2a76a9a59eb2a19"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W4/neutral/original_orders.parquet": {
+    "size": 12430,
+    "sha256": "6a430031b95ded67269dc758b5ecdf65a6ad9418fc61e82bf8923f32644a6e14"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W4/neutral/positions.parquet": {
+    "size": 275997,
+    "sha256": "b8c813a7f34121cf049213e26524d92713bd33b281e678f8498ad7dd36700a82"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W4/neutral/reconciliation_audit.json": {
+    "size": 308,
+    "sha256": "4a8fcd1ea0bb9421b787a1366ee24ee705e1071b3cecb1688515d7e24ce3d1a0"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W4/cap_vol/order_execution_audit.parquet": {
+    "size": 92956,
+    "sha256": "e660c22371bc1a04b1f97bf04b446adcac3411e5baf0028c0afa77959f321d43"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W4/cap_vol/market_requests.jsonl": {
+    "size": 601,
+    "sha256": "0c0527f8f833c19827f26524d55c0db1d4b47e290eb871b8925267b363cac436"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W4/cap_vol/reconciliation_residuals.csv": {
+    "size": 7528,
+    "sha256": "969c1bf868db73f8d368f9a51739f52073430b51e7347ce35c8ff51de28cfb69"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W4/cap_vol/order_audit.parquet": {
+    "size": 66421,
+    "sha256": "bd869396bd343fbb47a5d6fd3847b4a50664f96ecf859930068ccbdfdd6af447"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W4/cap_vol/report.parquet": {
+    "size": 9119,
+    "sha256": "80fb1d53f56fdd894818b0a8807d3060383e865249e4740bfff6ccd6c38f4e75"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W4/cap_vol/actual_cap_exceedances.csv": {
+    "size": 79877,
+    "sha256": "e029bc42681178ad2646deb6252f6accbf1d03172c05e2cade256799faae6b90"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W4/cap_vol/final_orders.parquet": {
+    "size": 14453,
+    "sha256": "86749a1c9830cad196ad350e46218c87c35ddd27c698aa9e3e228593113ae0aa"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W4/cap_vol/complete.json": {
+    "size": 832,
+    "sha256": "78b55c66cda19a16daa0b95621e95596dc3196202641c3c7795bd70335d8591e"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W4/cap_vol/balances.parquet": {
+    "size": 10009,
+    "sha256": "497f2c0081a8f0be7ed1a5cf5f8331c5885b18b3281cf7a48a86959c9311db90"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W4/cap_vol/variance_contributions.csv": {
+    "size": 7708,
+    "sha256": "a008828079df1fb00fdbb91cc9a67955d8d6ba1c4388e53cbd17c06964bad25a"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W4/cap_vol/stock_daily_contributions.parquet": {
+    "size": 247750,
+    "sha256": "0951cf3de96e06e0a9d1f486aa957bd8c15b6bd39a4c355cd434b5d38dbc1fe4"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W4/cap_vol/trades.parquet": {
+    "size": 49155,
+    "sha256": "edef8040c09a6d55acb309782d54987775649c28dee24d85ec4ebc858d55c954"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W4/cap_vol/risk_daily.parquet": {
+    "size": 34095,
+    "sha256": "5267b4e79b0b7a372a9323ceac76a56e392ec32f6051d66d614a8b565825fc36"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W4/cap_vol/original_orders.parquet": {
+    "size": 15056,
+    "sha256": "60c602d2d0f7e45f236a0569af53703b0f8c8883d70468ad25dc0dec08bc9648"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W4/cap_vol/positions.parquet": {
+    "size": 277897,
+    "sha256": "9c1ba3e4ec72102a406eb222225638f26fd1cdb6a9529cf73eedd6f5702deca7"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W4/cap_vol/risk_summary.json": {
+    "size": 3213,
+    "sha256": "bb8f4b45976beb5a252ae2d3da9ff397d6fdb02c8dbc42f98e299ef0b2d1b853"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W4/cap_vol/reconciliation_audit.json": {
+    "size": 313,
+    "sha256": "1b3a745d21c0f9c7d255fb75ce78b913ae627cbcba17234c01ebcebd63f26b4a"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W4/cap_only/market_requests.jsonl": {
+    "size": 601,
+    "sha256": "0c0527f8f833c19827f26524d55c0db1d4b47e290eb871b8925267b363cac436"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W4/cap_only/reconciliation_residuals.csv": {
+    "size": 7533,
+    "sha256": "3e7ef4217c388ac474f3575a03b1459bfc324ca3f87f1b08b60bea2505774021"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W4/cap_only/order_audit.parquet": {
+    "size": 46405,
+    "sha256": "b2b343ccfe9352f753c204f654016830dc2f36c249f46ea7ce1d562474714886"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W4/cap_only/report.parquet": {
+    "size": 9119,
+    "sha256": "be2f94e669a966e21149d679efc9ec78efb23058291f73476101ccffc23de8cd"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W4/cap_only/final_orders.parquet": {
+    "size": 13610,
+    "sha256": "0a099286fd53b01ad1db25c79ee015106dc8a1ba49e428921f8584a2000f6a1d"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W4/cap_only/complete.json": {
+    "size": 830,
+    "sha256": "bd2badebef767f84a58ab260a5aa0b5c3fe5a7f3c170c65da64e80c34aea8c38"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W4/cap_only/balances.parquet": {
+    "size": 10009,
+    "sha256": "f919789a26f0bcaabad43b92ee0c61b0b5cfad710d027bc35efb34cb6734cbf3"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W4/cap_only/stock_daily_contributions.parquet": {
+    "size": 246160,
+    "sha256": "29d54754ad20f18756c6e6c256d95596123bd043673da50d41dedc14d8abbda8"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W4/cap_only/trades.parquet": {
+    "size": 46524,
+    "sha256": "e2ce26bf0b5ab639557106da8018c65c9d3bfca21a72cf417b291d5cdaab166d"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W4/cap_only/original_orders.parquet": {
+    "size": 12838,
+    "sha256": "73a99d8794309d3d6ae6c3eb5680653c4dd1f1e87fdd36fcf23583c9b71d8971"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W4/cap_only/positions.parquet": {
+    "size": 276475,
+    "sha256": "0e99ab7ca418cccb6e0382e2f2daf59f0ef4c55cd13590c19ea66b936a219c9d"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W4/cap_only/reconciliation_audit.json": {
+    "size": 311,
+    "sha256": "c00109932b89281fe89f71a99f6e96612a76d542000c58db0b6b2aa1c8f80d1f"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W4/vol_only/market_requests.jsonl": {
+    "size": 601,
+    "sha256": "0c0527f8f833c19827f26524d55c0db1d4b47e290eb871b8925267b363cac436"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W4/vol_only/reconciliation_residuals.csv": {
+    "size": 7548,
+    "sha256": "9c3a0ba05ab74534ef8feb0b4a0aa95f7716ef5e5b361f97cc348116e64a39c4"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W4/vol_only/order_audit.parquet": {
+    "size": 39525,
+    "sha256": "5291e554f516c80e81ef283be3014cd69b326f91d45ab815fbcf73a4cdcecfb9"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W4/vol_only/report.parquet": {
+    "size": 9119,
+    "sha256": "20ff0c6924d35832417e9559d7cf98c6ebbcf477eb5b647556a6f5b2a8e23aa2"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W4/vol_only/final_orders.parquet": {
+    "size": 12481,
+    "sha256": "902ce4b4f9ca460ba619f78447c24fb139c4f10080ceeaf4bec6aefc27f1412f"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W4/vol_only/complete.json": {
+    "size": 833,
+    "sha256": "0f37e7eaca49ec92d396e756460b0e78cff3b6cf8964692677dfd4c38daf4ec0"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W4/vol_only/balances.parquet": {
+    "size": 10009,
+    "sha256": "6b53bf79fbb5517120fe003e77fefc825cf49343295bb4736479cd8bd698fa7a"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W4/vol_only/stock_daily_contributions.parquet": {
+    "size": 243331,
+    "sha256": "46874e5bc6e9b28665b67f65460e7d0955ea420b58adfa5051f43e10ad4ca95e"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W4/vol_only/trades.parquet": {
+    "size": 42379,
+    "sha256": "792efcc816693fa5111603c3df4ba7b2c748160c8c76297a0119075dc71fd5f8"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W4/vol_only/original_orders.parquet": {
+    "size": 14990,
+    "sha256": "7746e1319f1accb01696ea65b9aaaea00a772bcc89d2fc99401a6df256f40c79"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W4/vol_only/positions.parquet": {
+    "size": 275997,
+    "sha256": "c8d21c98c49b77cd7e352edbf786b91c85566a1c1d5eb8d192eeaaea2e7d61a1"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W4/vol_only/reconciliation_audit.json": {
+    "size": 314,
+    "sha256": "f3280ffe13fe2f163c63d4d6e3be3a8e190a38d2ba32d956fa02eacad1cbab14"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W4/A/market_requests.jsonl": {
+    "size": 601,
+    "sha256": "0c0527f8f833c19827f26524d55c0db1d4b47e290eb871b8925267b363cac436"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W4/A/reconciliation_residuals.csv": {
+    "size": 7501,
+    "sha256": "8c7ffa19c5fd3b80c8bc006566539a182f27c34d03659701ca43b40a9fbc3272"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W4/A/report.parquet": {
+    "size": 9119,
+    "sha256": "e122860e972067bb6879eba7ffac40d0bbeb055d7ec306bfc451a840d6ad6d29"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W4/A/complete.json": {
+    "size": 832,
+    "sha256": "8429c193efb139ad517e5c060447500469e933be3538008feab3a357b45c6e41"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W4/A/balances.parquet": {
+    "size": 10009,
+    "sha256": "6cf46cf0a3cd7f6b611dff496674e2f76e644549aaf0773ff7606e61665c9386"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W4/A/stock_daily_contributions.parquet": {
+    "size": 241533,
+    "sha256": "55ad50f74cdab3533bc75bf7a4252047ddf27455dafc084e8c39c3cbc0d5b176"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W4/A/trades.parquet": {
+    "size": 41879,
+    "sha256": "102df1fd33ce51915a9a0e7b6f9aab60147a2fa44af780c9927d779adb2948f5"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W4/A/original_orders.parquet": {
+    "size": 12512,
+    "sha256": "80b85e046d6824ab655bac77366cee6e6eaa99e6dd63cf6bbe3205e6cf8f9713"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W4/A/positions.parquet": {
+    "size": 273861,
+    "sha256": "1edb6017c770f577fc2d45e4d7cc2ac8993ab01cda98f155576e517dfc750747"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W4/A/reconciliation_audit.json": {
+    "size": 313,
+    "sha256": "f14919d885d3914be6f7aadc20ea74ef4fe53742ba18b2fc3dbc603549ce7d7f"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W4/B/market_requests.jsonl": {
+    "size": 601,
+    "sha256": "0c0527f8f833c19827f26524d55c0db1d4b47e290eb871b8925267b363cac436"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W4/B/reconciliation_residuals.csv": {
+    "size": 7541,
+    "sha256": "7c92663bfe5ff7df9d1e152a7b2384611b1c1ca493e9a049346199eae9860edc"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W4/B/report.parquet": {
+    "size": 9119,
+    "sha256": "347de555b608be66ac6161fe3c8a975bbf427d00408004e4ba60d0c2ffb5c593"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W4/B/complete.json": {
+    "size": 831,
+    "sha256": "f10fb655d25e7c6ffd0f5fd012b0a5ec15bd35da778c0240fafcbb96c999dce5"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W4/B/balances.parquet": {
+    "size": 10009,
+    "sha256": "4f44838635bbbf161e655fd85640f26f0e353266974378050468f673f363d555"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W4/B/stock_daily_contributions.parquet": {
+    "size": 242567,
+    "sha256": "9b381aa03774600aeeb147b25e9b3970031882bf627db59a774198a482e512fc"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W4/B/trades.parquet": {
+    "size": 42760,
+    "sha256": "ce8ab959d1e90e62b47bdd5109ac1cf9f49deec0b41e53e40a7a38abc51ac465"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W4/B/original_orders.parquet": {
+    "size": 12664,
+    "sha256": "510440f594890a92b80ca665003e4581bc90c37456653c030e8c2c2ec241f013"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W4/B/positions.parquet": {
+    "size": 274189,
+    "sha256": "60105f171a407ed3fb332c9dfa3caa41e096d5fbad74e4f46ba7459818d83fa7"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W4/B/reconciliation_audit.json": {
+    "size": 312,
+    "sha256": "091ea8f97b66b2558ca10a7ad46a7ba06cad188097be5401330f6c7e0abcc99d"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W4/C/market_requests.jsonl": {
+    "size": 601,
+    "sha256": "0c0527f8f833c19827f26524d55c0db1d4b47e290eb871b8925267b363cac436"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W4/C/reconciliation_residuals.csv": {
+    "size": 7513,
+    "sha256": "f916f48465d436bda464735b879abf1b24bd8ce2a0822b745a91173a2277995f"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W4/C/report.parquet": {
+    "size": 9119,
+    "sha256": "343648fb58912abac25fe2c3fa29c90991124544e5468bbba680cbed4d6b6441"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W4/C/complete.json": {
+    "size": 832,
+    "sha256": "dde43a8cf27c49ff057255cdf28243f41dd0e4b20ffbb7be8685f8bc88fcb665"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W4/C/balances.parquet": {
+    "size": 10009,
+    "sha256": "81545d61aa00fd06216eccba31abaaa3c363829e867717ac49d10997a7810fe2"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W4/C/stock_daily_contributions.parquet": {
+    "size": 244058,
+    "sha256": "e737bc23ad7524a6db43d35e5089ca49c0a555d1bc0cef469dbe4c7f36b451f7"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W4/C/trades.parquet": {
+    "size": 43009,
+    "sha256": "808fb185beb46ed9ab9d9dfbd2b0375cd47296e8ffe18257a882652168d98f6b"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W4/C/original_orders.parquet": {
+    "size": 12538,
+    "sha256": "7a60fcc64792e395a5128b92fdedb5233eca468e022340d35904d88c1ce21178"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W4/C/positions.parquet": {
+    "size": 274684,
+    "sha256": "8f262c2c6d96e466537ebe0b9573c12eeb3d53fa41191fdb3cdadc332cb4bc4d"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/new/W4/C/reconciliation_audit.json": {
+    "size": 313,
+    "sha256": "5cc53784cb3953909e9ac7c59035683278a7aa13c97e2ba609ee2e0f751de3d1"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W3/D/market_requests.jsonl": {
+    "size": 542,
+    "sha256": "788016e35119a4fc90843a261c3db9e5d534e559f668e35d2e142184ac5ccd4b"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W3/D/reconciliation_residuals.csv": {
+    "size": 6708,
+    "sha256": "1f0656700774d5c7be4f0d5bbf1f2e6b6ae177d1e4e0ac7dac8efc6f14080d96"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W3/D/report.parquet": {
+    "size": 8406,
+    "sha256": "9ccb8b68c24ced0f66c67c18d9b599ca2c0efafe5a5980698455c2f010521a27"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W3/D/actual_cap_exceedances.csv": {
+    "size": 104,
+    "sha256": "2d096e72942aac64daaaa25b1970297c025670785a7153f2d68e20a47db13407"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W3/D/complete.json": {
+    "size": 830,
+    "sha256": "8654ba912c15fdcb1affd8e9fe232c6170dbf3565b91bccd63cd1c26e26297eb"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W3/D/balances.parquet": {
+    "size": 9273,
+    "sha256": "548eb97f843eb1e714170e63fc516b6f6da642aa8c89caffe44c2ed3139faecb"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W3/D/variance_contributions.csv": {
+    "size": 4172,
+    "sha256": "9aef3f6bd354a3c3083ca974c64008849bd871ba69dd2e6bd7b3932d4da2f778"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W3/D/stock_daily_contributions.parquet": {
+    "size": 178442,
+    "sha256": "473faa5f2afc0e04ffdf8a2713bfd9f65e451d72e68790ecbb7d265ab30e9018"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W3/D/trades.parquet": {
+    "size": 18320,
+    "sha256": "fbd78097dbabd96637e0171a21f431f47c5c39141256913eac5ccc60801e4866"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W3/D/risk_daily.parquet": {
+    "size": 32467,
+    "sha256": "4dd2dbc1154f54eb8b7900f9c1ec8702df5f103a018ef021678f4d79bc53e605"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W3/D/original_orders.parquet": {
+    "size": 6809,
+    "sha256": "96cf4628544ca1fb352f15d69936d7ba133f82ca4c8252488a4b5b77e380c5bb"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W3/D/positions.parquet": {
+    "size": 207321,
+    "sha256": "e72d5964e9a9f06a614da4f8f564ee817de0f24ec720ea5853c633ecbb1bee13"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W3/D/risk_summary.json": {
+    "size": 3021,
+    "sha256": "ad3b796332adbcae8c40a37d67803dd11701211d8bebdcd7975de1a5c8da6a8e"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W3/D/reconciliation_audit.json": {
+    "size": 311,
+    "sha256": "ea33c4e63718b809e5e48c07184b2e1a24cd5b5dd2c25a0d0ad58c77facccf61"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W3/G1_original/market_requests.jsonl": {
+    "size": 542,
+    "sha256": "788016e35119a4fc90843a261c3db9e5d534e559f668e35d2e142184ac5ccd4b"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W3/G1_original/reconciliation_residuals.csv": {
+    "size": 6846,
+    "sha256": "7b86718005a062fec512353b2f963ae773e77a495f20713aedeb3c15e07db15f"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W3/G1_original/report.parquet": {
+    "size": 8502,
+    "sha256": "4d43edb39e66086459a89730db7da22d9088f76f03d0d15dae782a2244b1d53a"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W3/G1_original/complete.json": {
+    "size": 830,
+    "sha256": "b2b7cf6ff2e8c482c6bb15f4b76cc00688d16b8edb29ae70ff4aa67d78d6f066"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W3/G1_original/balances.parquet": {
+    "size": 9361,
+    "sha256": "cd4eb6136537d27613a758dab4f707428f0d52855813339d33222e9d8c852c4a"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W3/G1_original/stock_daily_contributions.parquet": {
+    "size": 174302,
+    "sha256": "c4ea981e2fc0b97b247d15363710f90a99b508ff73cc86b03e485bfe2ca9ef83"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W3/G1_original/trades.parquet": {
+    "size": 19069,
+    "sha256": "8c690f84adfc05aef6de26e2a7d89256c3a93a8392c6e457903e26cc3406b60b"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W3/G1_original/original_orders.parquet": {
+    "size": 7108,
+    "sha256": "7ad80cd75da1679cc57c9c67ec5484ddc401ac22dee87515d7e8693fc7e3ec5f"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W3/G1_original/positions.parquet": {
+    "size": 201902,
+    "sha256": "ef969e101ab0448b0dd4b35c5236baa99486e5982fa7f92f377215a597d3c288"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W3/G1_original/reconciliation_audit.json": {
+    "size": 311,
+    "sha256": "a00e11a5fcd94b3cfd4d92836c28079ec3f6bfc19a6735052590dbe110966919"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W3/neutral/market_requests.jsonl": {
+    "size": 542,
+    "sha256": "788016e35119a4fc90843a261c3db9e5d534e559f668e35d2e142184ac5ccd4b"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W3/neutral/reconciliation_residuals.csv": {
+    "size": 6708,
+    "sha256": "1f0656700774d5c7be4f0d5bbf1f2e6b6ae177d1e4e0ac7dac8efc6f14080d96"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W3/neutral/order_audit.parquet": {
+    "size": 636,
+    "sha256": "2e836d6adff325aede8989ffcbc87094563445f1d0a4ba61dd92764ecca42844"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W3/neutral/report.parquet": {
+    "size": 8406,
+    "sha256": "9ccb8b68c24ced0f66c67c18d9b599ca2c0efafe5a5980698455c2f010521a27"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W3/neutral/final_orders.parquet": {
+    "size": 6809,
+    "sha256": "96cf4628544ca1fb352f15d69936d7ba133f82ca4c8252488a4b5b77e380c5bb"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W3/neutral/complete.json": {
+    "size": 830,
+    "sha256": "8654ba912c15fdcb1affd8e9fe232c6170dbf3565b91bccd63cd1c26e26297eb"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W3/neutral/balances.parquet": {
+    "size": 9273,
+    "sha256": "548eb97f843eb1e714170e63fc516b6f6da642aa8c89caffe44c2ed3139faecb"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W3/neutral/stock_daily_contributions.parquet": {
+    "size": 178442,
+    "sha256": "473faa5f2afc0e04ffdf8a2713bfd9f65e451d72e68790ecbb7d265ab30e9018"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W3/neutral/trades.parquet": {
+    "size": 18320,
+    "sha256": "fbd78097dbabd96637e0171a21f431f47c5c39141256913eac5ccc60801e4866"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W3/neutral/original_orders.parquet": {
+    "size": 6809,
+    "sha256": "96cf4628544ca1fb352f15d69936d7ba133f82ca4c8252488a4b5b77e380c5bb"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W3/neutral/positions.parquet": {
+    "size": 207321,
+    "sha256": "e72d5964e9a9f06a614da4f8f564ee817de0f24ec720ea5853c633ecbb1bee13"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W3/neutral/reconciliation_audit.json": {
+    "size": 311,
+    "sha256": "ea33c4e63718b809e5e48c07184b2e1a24cd5b5dd2c25a0d0ad58c77facccf61"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W3/cap_vol/order_execution_audit.parquet": {
+    "size": 47436,
+    "sha256": "4a2abe180b85001635f8f9c5e17d87b3a0fcfc5292383007ea5eb75a53549447"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W3/cap_vol/market_requests.jsonl": {
+    "size": 542,
+    "sha256": "788016e35119a4fc90843a261c3db9e5d534e559f668e35d2e142184ac5ccd4b"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W3/cap_vol/reconciliation_residuals.csv": {
+    "size": 6773,
+    "sha256": "a6bdc530c2311c8d367d0b787ccfc4f0ed153a24583245280ea416013d9aedfc"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W3/cap_vol/order_audit.parquet": {
+    "size": 38026,
+    "sha256": "0b8bba974f190e556589387a8bf001899d16941df8dbec3ff2b36b49c4c96557"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W3/cap_vol/report.parquet": {
+    "size": 8470,
+    "sha256": "6971bd89c3e134bb0fed5901bd050738cc3571f6704394066754cdca836cd4c4"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W3/cap_vol/actual_cap_exceedances.csv": {
+    "size": 59837,
+    "sha256": "1ab40a4595f761a5190ae623937847fed2604418029f726ff753c9bbdc0c7ba9"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W3/cap_vol/final_orders.parquet": {
+    "size": 6973,
+    "sha256": "cacd78e38b96fd9387dd7bb3084f7ecd661318fa47d1aaefe0e7112b3f06e007"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W3/cap_vol/complete.json": {
+    "size": 829,
+    "sha256": "437257ddb69ca79f2d38ebf2b2053565db817215716f73ea51b5292af11d82be"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W3/cap_vol/balances.parquet": {
+    "size": 9337,
+    "sha256": "3a78a026fbd395be4a4bb0dfb70eca40e5570cee1e2f2ebb97682cb3eb6eb2c3"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W3/cap_vol/variance_contributions.csv": {
+    "size": 4161,
+    "sha256": "df6bee76f0565831f4ef99074148fcc324e6c0e0eb5fc15fe62b8c80508ac08b"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W3/cap_vol/stock_daily_contributions.parquet": {
+    "size": 178840,
+    "sha256": "58ee1617c5e30d8f7b2861fa40ba6785294e0c4537ade18ecaf48b4f4549bff2"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W3/cap_vol/trades.parquet": {
+    "size": 18775,
+    "sha256": "41c1ff5eff0774c0d8428aa2f3c024eb0472b77b63b5785364613ca30492fc75"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W3/cap_vol/risk_daily.parquet": {
+    "size": 32498,
+    "sha256": "b294803fd724cb27830f295cbaa170afbcb3c31f314f6d48cd2417b079995520"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W3/cap_vol/original_orders.parquet": {
+    "size": 7377,
+    "sha256": "076eb6e39aa336034cdffb035e6840b56d89dea7e4ac2ea37b1adf56f0380398"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W3/cap_vol/positions.parquet": {
+    "size": 207588,
+    "sha256": "af7f260a94b2bb89fd8469d547cb3f3d39475157461956b2e9a6854d62c84329"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W3/cap_vol/risk_summary.json": {
+    "size": 3147,
+    "sha256": "7656c163d7edc747f5dc548c81289bdd28ed45058b3e49cdd8fde95e636f446b"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W3/cap_vol/reconciliation_audit.json": {
+    "size": 310,
+    "sha256": "eeb59357dd6a400c80a2ccb256a1edcd5ba4d367f9652c30d051cf57d999781c"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W3/cap_only/market_requests.jsonl": {
+    "size": 542,
+    "sha256": "788016e35119a4fc90843a261c3db9e5d534e559f668e35d2e142184ac5ccd4b"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W3/cap_only/reconciliation_residuals.csv": {
+    "size": 6762,
+    "sha256": "da8f04fa8ca847505bf0a0461a4e5bc6844d82b9200a8a4928ae4948905e542a"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W3/cap_only/order_audit.parquet": {
+    "size": 26389,
+    "sha256": "4d84865af1a99ba0963db7d56d5d6160152a787d8ab0f6449fd8f115d651f8a7"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W3/cap_only/report.parquet": {
+    "size": 8438,
+    "sha256": "a61837e183fb1b9a405ed2eb5d57c177330af1192d86d2a99e422a702333cc6a"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W3/cap_only/final_orders.parquet": {
+    "size": 6855,
+    "sha256": "30bec9d932efc10210f4f20f56b837b3138e90cf2e89fc63645c9ec3a32e8f5f"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W3/cap_only/complete.json": {
+    "size": 829,
+    "sha256": "b3b6244ee3802b9218e1597c952c57df87b4c3699051aa7b4da1165dec1229c8"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W3/cap_only/balances.parquet": {
+    "size": 9305,
+    "sha256": "0e9766e7ad47950ea17b4fdfd458489205b486c4f67a1aee2f52ee2497ae2d11"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W3/cap_only/stock_daily_contributions.parquet": {
+    "size": 178504,
+    "sha256": "269a13a51af990710f0c97fb0bd94bcbd38cd628cfb229aac696e97fb1380cec"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W3/cap_only/trades.parquet": {
+    "size": 18426,
+    "sha256": "496d72849871f9ebd11f37a6db0f0d665836ee90663c6feac159c50b30d133f1"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W3/cap_only/original_orders.parquet": {
+    "size": 6817,
+    "sha256": "c02ab859ff9ec48d8e149f5803a4fda28c5db5cd2b952f03e7026eb8bda8b612"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W3/cap_only/positions.parquet": {
+    "size": 207373,
+    "sha256": "856f8e0e09499594a5b8bac0bb049e21ef930680f6db498e9279c57bd6957da7"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W3/cap_only/reconciliation_audit.json": {
+    "size": 310,
+    "sha256": "c137a5ec44428ac575daa9b40c6dbf6f7ba379a219ecfc5b324436ef1cd2ef8f"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W3/vol_only/market_requests.jsonl": {
+    "size": 542,
+    "sha256": "788016e35119a4fc90843a261c3db9e5d534e559f668e35d2e142184ac5ccd4b"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W3/vol_only/reconciliation_residuals.csv": {
+    "size": 6684,
+    "sha256": "2b5d39c42263f20c175366c8e43a66f3ce55d8b4f05d30be419b7ba657467fb4"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W3/vol_only/order_audit.parquet": {
+    "size": 20072,
+    "sha256": "2ed457d4c9cf64f03ee1af095b845dbfae3ff497f3823e423a393e432b157bb5"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W3/vol_only/report.parquet": {
+    "size": 8406,
+    "sha256": "f089720b318953b5c87da12f437755587a7463fcacff8d40327c3e3e6064e19c"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W3/vol_only/final_orders.parquet": {
+    "size": 6833,
+    "sha256": "1e17540b62863dea75f36d74ff60539830035f63b9081b696ea872606d2b17c8"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W3/vol_only/complete.json": {
+    "size": 826,
+    "sha256": "fe8336175c8af4417fdcbebc2d48fae0ab70d334edd50db7df62e74633513e7f"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W3/vol_only/balances.parquet": {
+    "size": 9273,
+    "sha256": "a97a664fae78e6bfdad48d8e8c1aac062a5e6101d2469f67f590b75a5a9ca290"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W3/vol_only/stock_daily_contributions.parquet": {
+    "size": 178466,
+    "sha256": "b5373763a386b97dd659a607c4f41d8edf408684d16eb86bbe6015ff903c7112"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W3/vol_only/trades.parquet": {
+    "size": 18338,
+    "sha256": "283509f58c60fa714c70bc7ca5dec2b5b6a157e9a2ce4b1fe99a2b94e33a6471"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W3/vol_only/original_orders.parquet": {
+    "size": 7377,
+    "sha256": "01f11d585fafad09f3223e116a66a4bbb9cedf465aa7db5fceea66d5874df6e5"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W3/vol_only/positions.parquet": {
+    "size": 207321,
+    "sha256": "ce6546c5cef8d2ce2bb6889826a90c675e3aafe834326915b4296f3132db3579"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W3/vol_only/reconciliation_audit.json": {
+    "size": 307,
+    "sha256": "d2ab3032f0b98250153b07e9c868761d82283884f5f20695cc8a23041b004c20"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W3/B/market_requests.jsonl": {
+    "size": 542,
+    "sha256": "788016e35119a4fc90843a261c3db9e5d534e559f668e35d2e142184ac5ccd4b"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W3/B/reconciliation_residuals.csv": {
+    "size": 6908,
+    "sha256": "cf3f2e99fe7ee821201a626da873cf27522f7ccfcca9b626044157775fbf88ad"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W3/B/report.parquet": {
+    "size": 8582,
+    "sha256": "3bdfdceb2b538f125ff49d98675addbdc8cb4d90a4973d3520d184537a094687"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W3/B/complete.json": {
+    "size": 830,
+    "sha256": "05a4c04fa0bf99760d2ecfec197f27c6fabe8bb96adba90ae1fb62afeaafe697"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W3/B/balances.parquet": {
+    "size": 9441,
+    "sha256": "7d161e75859c025dec698a15474e53408dcb7e6e86c298562bf3b166e941efcf"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W3/B/stock_daily_contributions.parquet": {
+    "size": 179850,
+    "sha256": "ac67ca7a7cfcad5600c78ab5ea9bced6591ce4ccd4abbfdd18811178f874bdc1"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W3/B/trades.parquet": {
+    "size": 19382,
+    "sha256": "5362011ea0cdeb496ce0ec9228851cfe608ab85db599c68e8334f01b4d926b58"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W3/B/original_orders.parquet": {
+    "size": 7235,
+    "sha256": "7fe3f189644cd1aff964653a119308181cb41234c5a8e4a93d57da393f175432"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W3/B/positions.parquet": {
+    "size": 208914,
+    "sha256": "b63c2991249cd9045d55a317482aebd1e01d9a29f8e4d0650507fa4201e157a3"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W3/B/reconciliation_audit.json": {
+    "size": 311,
+    "sha256": "db08158df8ad06a7e5fd9f22939b94296754045aaa5e6a7e800069efb6cc3c28"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W4/D/market_requests.jsonl": {
+    "size": 542,
+    "sha256": "b66e14eec9d5826b2c2a2e5f8ed1f7615838d5622ed32d55ff8e2d27118bc541"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W4/D/reconciliation_residuals.csv": {
+    "size": 6895,
+    "sha256": "912d1f65e083b5044d96d80be6cad0b0c7d442744838898dd9c89aa0c9908f39"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W4/D/report.parquet": {
+    "size": 8589,
+    "sha256": "72d8414789618fd386abdafe2dee9945c45e45b9651b6746a2ca397edfc42a71"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W4/D/actual_cap_exceedances.csv": {
+    "size": 104,
+    "sha256": "2d096e72942aac64daaaa25b1970297c025670785a7153f2d68e20a47db13407"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W4/D/complete.json": {
+    "size": 831,
+    "sha256": "0d218fbc45f448865adf5a5baceadd2f481043c1a50544b59804a9fb0c4469c3"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W4/D/balances.parquet": {
+    "size": 9487,
+    "sha256": "c55e4833b83ce8e9bc05cbb85057c70a8878e69e164f4489e28ed2b781e0ed06"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W4/D/variance_contributions.csv": {
+    "size": 3676,
+    "sha256": "973a0655a18c3bb8e49b790ebb5bd724b3a88376fe0658829af4f1145399579d"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W4/D/stock_daily_contributions.parquet": {
+    "size": 186669,
+    "sha256": "16e1704ab13cb0fda76cab0a11db868ca10cd5383baf094515e9a8862130fca5"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W4/D/trades.parquet": {
+    "size": 14624,
+    "sha256": "4cda6632008c435e6005e5db9cb660c21172c6eed162a4fa0b81fec26a0c98f3"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W4/D/risk_daily.parquet": {
+    "size": 34064,
+    "sha256": "1295a115f0567d9307e77269578b27eb9899ef9a51fefc2470aa03a84796a6b0"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W4/D/original_orders.parquet": {
+    "size": 6081,
+    "sha256": "bff8626a31faed97f219594030424bd2db049d25074e024a24e0421ab48297be"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W4/D/positions.parquet": {
+    "size": 219676,
+    "sha256": "2327fc7878525a062bbffce3c7c7edcee200f87f0abda8f3999c258e9e3afc18"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W4/D/risk_summary.json": {
+    "size": 2993,
+    "sha256": "bd4e96278a72bf610e05a4d062ded5eb41277b5c178410282fd209193fe2d82b"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W4/D/reconciliation_audit.json": {
+    "size": 312,
+    "sha256": "7a0d38e8151e88ef05c1264104abcfdd287fffddf5d940b43567d79527305c46"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W4/G1_original/market_requests.jsonl": {
+    "size": 542,
+    "sha256": "b66e14eec9d5826b2c2a2e5f8ed1f7615838d5622ed32d55ff8e2d27118bc541"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W4/G1_original/reconciliation_residuals.csv": {
+    "size": 6931,
+    "sha256": "abd54ae8434e572590c3b07d5a29d9db495367418b1550f3b492d16587e52b93"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W4/G1_original/report.parquet": {
+    "size": 8573,
+    "sha256": "f4d4f9e41af8c541463fc28534f1cf74921eb6d04fd441dae447529ce3c46d60"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W4/G1_original/complete.json": {
+    "size": 831,
+    "sha256": "2f316cf2c13bfedf4707808c8119432a7a7b37346676a4adae9e65cbda22dfa9"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W4/G1_original/balances.parquet": {
+    "size": 9471,
+    "sha256": "a1e5bb01ceadc958e39028b933d0947e5d50d69b4f7014d441f261170507b1e7"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W4/G1_original/stock_daily_contributions.parquet": {
+    "size": 185526,
+    "sha256": "08729ef70bb441021080da8c80b70e6914e77c7187202085b4a6003127bc1b3a"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W4/G1_original/trades.parquet": {
+    "size": 14351,
+    "sha256": "ecb1118e6d1a25373e3aa50b683ee53b6d78c9118d026ffccb9cdf6cbd73e517"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W4/G1_original/original_orders.parquet": {
+    "size": 6007,
+    "sha256": "4d63f7f0ce3a1d0c19364e2c9407fcaa9aa73214ba93277f4979254d1f481ac1"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W4/G1_original/positions.parquet": {
+    "size": 218914,
+    "sha256": "3c4008a58f2ebaaf7a032b3b36c2b94389952d38c5a5d327b9fa294f5e7c48b0"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W4/G1_original/reconciliation_audit.json": {
+    "size": 312,
+    "sha256": "8c9f98bb623848a1ce91cced01c954502932751165c072265673fb5832e9d41d"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W4/neutral/market_requests.jsonl": {
+    "size": 542,
+    "sha256": "b66e14eec9d5826b2c2a2e5f8ed1f7615838d5622ed32d55ff8e2d27118bc541"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W4/neutral/reconciliation_residuals.csv": {
+    "size": 6895,
+    "sha256": "912d1f65e083b5044d96d80be6cad0b0c7d442744838898dd9c89aa0c9908f39"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W4/neutral/order_audit.parquet": {
+    "size": 636,
+    "sha256": "2e836d6adff325aede8989ffcbc87094563445f1d0a4ba61dd92764ecca42844"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W4/neutral/report.parquet": {
+    "size": 8589,
+    "sha256": "72d8414789618fd386abdafe2dee9945c45e45b9651b6746a2ca397edfc42a71"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W4/neutral/final_orders.parquet": {
+    "size": 6081,
+    "sha256": "bff8626a31faed97f219594030424bd2db049d25074e024a24e0421ab48297be"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W4/neutral/complete.json": {
+    "size": 831,
+    "sha256": "0d218fbc45f448865adf5a5baceadd2f481043c1a50544b59804a9fb0c4469c3"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W4/neutral/balances.parquet": {
+    "size": 9487,
+    "sha256": "c55e4833b83ce8e9bc05cbb85057c70a8878e69e164f4489e28ed2b781e0ed06"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W4/neutral/stock_daily_contributions.parquet": {
+    "size": 186669,
+    "sha256": "16e1704ab13cb0fda76cab0a11db868ca10cd5383baf094515e9a8862130fca5"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W4/neutral/trades.parquet": {
+    "size": 14624,
+    "sha256": "4cda6632008c435e6005e5db9cb660c21172c6eed162a4fa0b81fec26a0c98f3"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W4/neutral/original_orders.parquet": {
+    "size": 6081,
+    "sha256": "bff8626a31faed97f219594030424bd2db049d25074e024a24e0421ab48297be"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W4/neutral/positions.parquet": {
+    "size": 219676,
+    "sha256": "2327fc7878525a062bbffce3c7c7edcee200f87f0abda8f3999c258e9e3afc18"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W4/neutral/reconciliation_audit.json": {
+    "size": 312,
+    "sha256": "7a0d38e8151e88ef05c1264104abcfdd287fffddf5d940b43567d79527305c46"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W4/cap_vol/order_execution_audit.parquet": {
+    "size": 44972,
+    "sha256": "6dc6902df082c5f367bcf6ec46687b47718eb76ba7f31d4f6e19eee42b0dbd22"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W4/cap_vol/market_requests.jsonl": {
+    "size": 542,
+    "sha256": "b66e14eec9d5826b2c2a2e5f8ed1f7615838d5622ed32d55ff8e2d27118bc541"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W4/cap_vol/reconciliation_residuals.csv": {
+    "size": 6987,
+    "sha256": "31e3f4c7c31e34b74b1b96b7f9f679211c2dcf31bce6631cc667a7ec43530860"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W4/cap_vol/order_audit.parquet": {
+    "size": 36633,
+    "sha256": "f159c3cdc341b6ff85fee3966a7c9c1e15d9cfc9ef7d88feea549e8f53687b6d"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W4/cap_vol/report.parquet": {
+    "size": 8621,
+    "sha256": "4ee65a49e490046cca132cfef7d53f728099b29d07ef15fd0feafc116703a2e2"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W4/cap_vol/actual_cap_exceedances.csv": {
+    "size": 64957,
+    "sha256": "fb138c09108ebbeddbb542f3c3568e0ba5d14369819fab04a8b09b5d7292f084"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W4/cap_vol/final_orders.parquet": {
+    "size": 6318,
+    "sha256": "243c543f84cbd50ba3d19293ac1aabe87c5d68e1725b47a0bca024e6bc75df00"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W4/cap_vol/complete.json": {
+    "size": 830,
+    "sha256": "eef7c0c1d636b103dbed3debf84eea139ec52603e63445fe4fc5c8c88378e3f3"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W4/cap_vol/balances.parquet": {
+    "size": 9519,
+    "sha256": "de24a1a453d20e01b27f65f0fac5c246a15dcf8d7b7c4c7ae3243114fd77e944"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W4/cap_vol/variance_contributions.csv": {
+    "size": 3674,
+    "sha256": "b9f8ff0156beb4030ce57a19d4422921e5818435288477c302a9618ee76548fe"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W4/cap_vol/stock_daily_contributions.parquet": {
+    "size": 187151,
+    "sha256": "0a674df6d155945f416a4ca213dd8802b74a512f4c33f1202fc0d03506b8ab77"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W4/cap_vol/trades.parquet": {
+    "size": 15230,
+    "sha256": "022916db51dd97b9adc58213882b3e42004bb30dc5c28bd8ec2b64bf4074ac7e"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W4/cap_vol/risk_daily.parquet": {
+    "size": 34095,
+    "sha256": "8bfa19fa2fe6c2fea137e80378e28ca26d294ffd1f9996010eeedf38a9da0be5"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W4/cap_vol/original_orders.parquet": {
+    "size": 6449,
+    "sha256": "52a1dd13581607d23de63ee45791ef7653933e56983c90931d8a8995795b364e"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W4/cap_vol/positions.parquet": {
+    "size": 220021,
+    "sha256": "bd1b525e412ebbfc6444411e4617d35a7236f208859095670bbdee392820552d"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W4/cap_vol/risk_summary.json": {
+    "size": 3640,
+    "sha256": "0dbdf56a9cf4989cab1a3b36ecc4443e9cb055ddf3e8e7a1a1957d0225ed8d04"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W4/cap_vol/reconciliation_audit.json": {
+    "size": 311,
+    "sha256": "03dea4a32db6156e9f80eb288da9163fced74280a7f6058faf12eceeb2fb30ca"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W4/cap_only/market_requests.jsonl": {
+    "size": 542,
+    "sha256": "b66e14eec9d5826b2c2a2e5f8ed1f7615838d5622ed32d55ff8e2d27118bc541"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W4/cap_only/reconciliation_residuals.csv": {
+    "size": 6943,
+    "sha256": "02aa5a343362e5a1feb7e4993388ac7e2aeec1a189f314facf9b226eabae4f6e"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W4/cap_only/order_audit.parquet": {
+    "size": 24983,
+    "sha256": "539e7ae2416ecbc0002163941b0bcb4b6e6e1d3c920c1cd8f6f5570712507b7b"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W4/cap_only/report.parquet": {
+    "size": 8621,
+    "sha256": "33aa4d20f0ea1f9e8de6e9a4f432902fd3930151710faf54586f1b5c9373bd38"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W4/cap_only/final_orders.parquet": {
+    "size": 6199,
+    "sha256": "95f18c1061541f85e452296eb2731bdab28e9e78d82b72fa957365b7e7955a9a"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W4/cap_only/complete.json": {
+    "size": 831,
+    "sha256": "371158e034276df536dacb137b51904ef1520e517a58053fbd26119db3f40ab5"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W4/cap_only/balances.parquet": {
+    "size": 9519,
+    "sha256": "c854d7df6be5e8558368be6c767d2b8af7725416da7cf2b5bf82e55dee0c3401"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W4/cap_only/stock_daily_contributions.parquet": {
+    "size": 186919,
+    "sha256": "ab540efa9e8d3a800ef950c06920066c4b86734c46bdec5907a7f475c923612c"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W4/cap_only/trades.parquet": {
+    "size": 14961,
+    "sha256": "0e3e03b2263f88b0935112a3b46112af2838ce6f49648652f8a96e9c84b29f69"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W4/cap_only/original_orders.parquet": {
+    "size": 6097,
+    "sha256": "5becf44ece596bcbb5f460b84a4d9b69ac78730116be80271d38c38e02a2adae"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W4/cap_only/positions.parquet": {
+    "size": 219871,
+    "sha256": "6a80e0a71b7e5dcbb0441d23e999ae4dca7e03dc11f7ba5ef4172c3ea1299f0f"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W4/cap_only/reconciliation_audit.json": {
+    "size": 312,
+    "sha256": "65853b22877d4d1a5028ff3c54acc398046000c0a999d6bad386c0b7029fa64d"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W4/vol_only/market_requests.jsonl": {
+    "size": 542,
+    "sha256": "b66e14eec9d5826b2c2a2e5f8ed1f7615838d5622ed32d55ff8e2d27118bc541"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W4/vol_only/reconciliation_residuals.csv": {
+    "size": 6913,
+    "sha256": "499b2066964827adefa83319cda202479c70012968e795955002843e9905500a"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W4/vol_only/order_audit.parquet": {
+    "size": 17427,
+    "sha256": "e01cbb44b03916feb240425fc0668ca838af9626944a02d158301756d538b5dc"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W4/vol_only/report.parquet": {
+    "size": 8589,
+    "sha256": "c2cfd9debadb4012679cd0e2cfb9ca64800e7f4d2bfd34373439861596c474eb"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W4/vol_only/final_orders.parquet": {
+    "size": 6089,
+    "sha256": "555722c87108360bd01fc65989cbec43d521e7ab6beef0a473a53423393b3175"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W4/vol_only/complete.json": {
+    "size": 830,
+    "sha256": "c26e2a979c911f95ba1cb309bd27c14acaed4007bd33320797b9f63119a3a6f0"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W4/vol_only/balances.parquet": {
+    "size": 9487,
+    "sha256": "c8f77545e1fd1208c5a8b31b6228a2a0a49cd7e2c820eb6cc6ef5a2c854cedd4"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W4/vol_only/stock_daily_contributions.parquet": {
+    "size": 186637,
+    "sha256": "984bbb16dd5b00d8a8f8461db68d41878afbd90470fcd1694c8eb7c553367166"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W4/vol_only/trades.parquet": {
+    "size": 14636,
+    "sha256": "0b22363343a4ca750fc01c458116c33a036ae040604d25dd349a5e983467b85c"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W4/vol_only/original_orders.parquet": {
+    "size": 6433,
+    "sha256": "5b38fb2ff8cd90a8ea0e9177d27a87ec6e5d1ddba2a3096b7ccef4e5275e63d5"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W4/vol_only/positions.parquet": {
+    "size": 219676,
+    "sha256": "2fbdc0a7d368260bff2616e0dc3e22dd2aca6e9951b79984605c33ffce165cc7"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W4/vol_only/reconciliation_audit.json": {
+    "size": 311,
+    "sha256": "367187030eae72a267ee899e55a0eac818c2240ce482d954a4b8781ca833f800"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W4/B/market_requests.jsonl": {
+    "size": 542,
+    "sha256": "b66e14eec9d5826b2c2a2e5f8ed1f7615838d5622ed32d55ff8e2d27118bc541"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W4/B/reconciliation_residuals.csv": {
+    "size": 7107,
+    "sha256": "8d56b0bf034a71fc05405d8c31b97c69ee3becf9aaa6ec45c135b2c765f85b58"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W4/B/report.parquet": {
+    "size": 8732,
+    "sha256": "11cc6d3eb8fcd1ac5cc9247beb97e7954629279aba8fe1a6862beffee7a09dab"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W4/B/complete.json": {
+    "size": 831,
+    "sha256": "28c4caa06c3703f00303545c2da12ca47391e6a9a0c3103577c7c6293251fb8b"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W4/B/balances.parquet": {
+    "size": 9631,
+    "sha256": "a9c2cec3f82b4e32e772bd97721c68e6a290d646b2015bd8492bacb0a4b5ad2e"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W4/B/stock_daily_contributions.parquet": {
+    "size": 190406,
+    "sha256": "83b018381775b5bd7fb24fd77e2bec93eb3d3af90825b269155600906fbf9c85"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W4/B/trades.parquet": {
+    "size": 16919,
+    "sha256": "97c8a011e6ad209531ec1359b65787d5742996eb015871aa445ff0e742fb352d"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W4/B/original_orders.parquet": {
+    "size": 6670,
+    "sha256": "374974c11c96a8381acf78562ce720bf6589a4b56af194689a40c899cb33c73e"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W4/B/positions.parquet": {
+    "size": 223220,
+    "sha256": "b7f92687f6d45acba293f3e41e19776ed54faef0d3f45948e12c32a400d39812"
+  },
+  "artifacts/experiments/limit_unit_audit_20261102/accounts/old/W4/B/reconciliation_audit.json": {
+    "size": 312,
+    "sha256": "698f51514b65d7ee74cef8d44869e45c97071d2e6aa2756e7edceee622dceb26"
+  },
+  "docs/成交限制单位纠偏与冻结方案复核报告_20261102.md": {
+    "size": 16734,
+    "sha256": "ec65c463f33c02edbf957555d9a61caea9edd3b0c6d520b071a84c9b7bf73c28"
+  },
+  "docs/assets/limit_unit_audit_20261102/old_new.png": {
+    "size": 344419,
+    "sha256": "1e8b698a0e9b1fd44cafb1ca52fb879172ea8ee1570dd1b81e13f72ef1ef0d9f"
+  },
+  "docs/assets/limit_unit_audit_20261102/limits_turnover_cash.png": {
+    "size": 477993,
+    "sha256": "d4c9664aeeee07018b4e6b594f4185f90012acbe04eb5f43f0ca50a980365f80"
+  },
+  "docs/assets/limit_unit_audit_20261102/cumulative_all.png": {
+    "size": 339344,
+    "sha256": "a37e35adaae52fff68d21c89cfd310c673bc6ea42ab1f54c433e93021df54821"
+  },
+  "docs/assets/limit_unit_audit_20261102/cumulative_main.png": {
+    "size": 259304,
+    "sha256": "eaf0083e76799b83f314251043bb69f6478fb3668da9d3b8bde20c893bb61162"
+  },
+  "docs/assets/limit_unit_audit_20261102/drawdown.png": {
+    "size": 342438,
+    "sha256": "0e40e41a37715c0885dd587118e6a695362ba79e846bfde7dc62d17f0607ee12"
+  },
+  "state_adapter/limit_unit_audit.py": {
+    "size": 9460,
+    "sha256": "cb7ac2e76f34c440a096d4ddb3351e1a9c79d46d0a216b521c57b094f9e60fe3"
+  },
+  "state_adapter/limit_unit_report.py": {
+    "size": 22388,
+    "sha256": "812e220c71af7ae6fd020bd09890354d0c6db0dae94eafda8e925d7dacd03a11"
+  }
+}

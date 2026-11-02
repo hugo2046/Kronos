@@ -1,0 +1,26 @@
+{
+  "W3/cap_only": {
+    "total": 176,
+    "unit_false_block": 163,
+    "still_blocked": 13,
+    "missing_flags": 0
+  },
+  "W3/cap_vol": {
+    "total": 308,
+    "unit_false_block": 290,
+    "still_blocked": 18,
+    "missing_flags": 0
+  },
+  "W4/cap_only": {
+    "total": 202,
+    "unit_false_block": 178,
+    "still_blocked": 24,
+    "missing_flags": 0
+  },
+  "W4/cap_vol": {
+    "total": 337,
+    "unit_false_block": 301,
+    "still_blocked": 36,
+    "missing_flags": 0
+  }
+}

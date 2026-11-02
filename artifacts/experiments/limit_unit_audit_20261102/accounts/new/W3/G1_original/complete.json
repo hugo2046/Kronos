@@ -1,0 +1,17 @@
+{
+  "delay_execution_supported": false,
+  "qlib_file": "/home/user/workspace/quant-qlib/qlib/__init__.py",
+  "reconciliation": {
+    "gross_max_abs": 8.049116928532385e-16,
+    "cost_max_abs": 4.391018798566293e-18,
+    "gross_residual_sum": 1.2790197503539935e-17,
+    "cost_residual_sum": 9.507097799982267e-18,
+    "exact": true,
+    "observation": "Account.update_bar_end原样执行及透传返回；只读实际trade_info和估值后position"
+  },
+  "execution_id": "new",
+  "signal_sha256": "c8093beb123ae77b6af5d21f77d0d110da1c5163717feccfa66a5680b833d125",
+  "runner_sha256": "cb7ac2e76f34c440a096d4ddb3351e1a9c79d46d0a216b521c57b094f9e60fe3",
+  "protocol_sha256": "e1a74be0f19f897f9148cdd3e2b048977af4ec493c65b82ea72bc1b75b0f2590",
+  "report_sha256": "eb54538131ee75d14584d676f6cb89212b979244a9244524dede1ad98e7b507c"
+}

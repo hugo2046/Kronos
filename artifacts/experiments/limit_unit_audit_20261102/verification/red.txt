@@ -1,0 +1,12 @@
+.F                                                                       [100%]
+=================================== FAILURES ===================================
+______________________________ test_correct_units ______________________________
+
+    def test_correct_units():
+>       from state_adapter.limit_unit_audit import LIMIT
+E       ModuleNotFoundError: No module named 'state_adapter.limit_unit_audit'
+
+tests/test_limit_unit_audit.py:25: ModuleNotFoundError
+=========================== short test summary info ============================
+FAILED tests/test_limit_unit_audit.py::test_correct_units - ModuleNotFoundErr...
+1 failed, 1 passed in 1.12s
