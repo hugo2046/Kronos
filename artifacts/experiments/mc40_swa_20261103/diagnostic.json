@@ -1,0 +1,78 @@
+{
+  "protocol_sha": "11b9544188a1e5bf254fc38598da0278f393bc5f56ae83194c4d7b22a0b9cdca",
+  "weight_sha": "4fa52134a6c69fa84a33fab9e7443c01bebe7713c209424bc52553bd20527415",
+  "config_sha": "4622f7c46cbbdbbce6b1ff2699310b9c9b849e641e24ffa0131c7bd7f2d3a9d6",
+  "ce": {
+    "MC40": 2.448015436530113,
+    "5000": 2.349760517477989,
+    "5500": 2.339173562824726,
+    "6000": 2.321384660899639,
+    "SWA": 2.328026421368122
+  },
+  "numpy_exact": true,
+  "parent_equals_mc40": true,
+  "final_equals_best": true,
+  "parameters": 107712,
+  "weights_l2_distance": {
+    "transformer.10.state_adapter.down.weight": [
+      0.6683857749152112,
+      0.22397729747601047,
+      0.6482369352578701
+    ],
+    "transformer.10.state_adapter.gate.0.bias": [
+      0.09670189963317256,
+      0.007083775081952619,
+      0.09132662813508767
+    ],
+    "transformer.10.state_adapter.gate.0.weight": [
+      0.0418046414203052,
+      0.020360086133086073,
+      0.03904030576080511
+    ],
+    "transformer.10.state_adapter.gate.2.bias": [
+      0.06203268405819876,
+      0.004387704273125852,
+      0.060821632634589846
+    ],
+    "transformer.10.state_adapter.gate.2.weight": [
+      0.2527794654213849,
+      0.025999980314220697,
+      0.2478504372034543
+    ],
+    "transformer.10.state_adapter.up.weight": [
+      0.5191880542296122,
+      0.18126663160614373,
+      0.5114815010940645
+    ],
+    "transformer.11.state_adapter.down.weight": [
+      0.793808444725492,
+      0.21265698051713772,
+      0.7685653948704728
+    ],
+    "transformer.11.state_adapter.gate.0.bias": [
+      0.0842511415407634,
+      0.008468521246906084,
+      0.07863219378367044
+    ],
+    "transformer.11.state_adapter.gate.0.weight": [
+      0.07204268257572347,
+      0.019709606629230804,
+      0.06764147032922165
+    ],
+    "transformer.11.state_adapter.gate.2.bias": [
+      0.06091885788566834,
+      0.007921563112886323,
+      0.05838709806428612
+    ],
+    "transformer.11.state_adapter.gate.2.weight": [
+      0.24727481661972467,
+      0.037765833223402455,
+      0.24021480621455765
+    ],
+    "transformer.11.state_adapter.up.weight": [
+      0.45649613994051946,
+      0.18391599655753862,
+      0.44528340556645757
+    ]
+  }
+}
