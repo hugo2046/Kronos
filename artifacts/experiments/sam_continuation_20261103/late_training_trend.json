@@ -1,0 +1,20 @@
+{
+  "control": {
+    "validation_steps": {
+      "5000": 2.3497252613306046,
+      "5500": 2.3394077867269516,
+      "6000": 2.3214164674282074
+    },
+    "decrease_last1000": 0.028308793902397156,
+    "interpretation": "5000/5500/6000仍下降，未证明收敛；原选点eval_seed随step变化，固定seed端点比较另见fixed_seed_diagnostic"
+  },
+  "sam": {
+    "validation_steps": {
+      "5000": 2.367659531533718,
+      "5500": 2.3494307324290276,
+      "6000": 2.331226333975792
+    },
+    "decrease_last1000": 0.03643319755792618,
+    "interpretation": "5000/5500/6000仍下降，未证明收敛；原选点eval_seed随step变化，固定seed端点比较另见fixed_seed_diagnostic"
+  }
+}

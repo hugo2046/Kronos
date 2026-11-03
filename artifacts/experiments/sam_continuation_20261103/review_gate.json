@@ -1,0 +1,21 @@
+{
+  "passed": true,
+  "reviewed_commit": "ccf5240bad9f4fc2be34725732a6c3ec497feef5",
+  "fix_commit": "a6a0c7b21c7f18b43ac4ebf1752f0ce4a1ae9dc0",
+  "source_sha256": {
+    "/home/user/workspace/Kronos-sam-continuation/state_adapter/sam_continuation.py": "81aea013a6fe49beaa5db45f0665c09061cec65fd888696426aca352f39fc527",
+    "/home/user/workspace/Kronos-sam-continuation/state_adapter/sam_continuation_report.py": "71db20959ef25d72d8433aa55c9cf3d75db0c7ced4b39b0a5aafc973a3927aaf",
+    "/home/user/workspace/Kronos-sam-continuation/state_adapter/sam_continuation_supervisor.py": "e04ed2943ec8410bd57fc104c3033f8dd94267b54c3fd4cd85db7c565fba1473",
+    "/home/user/workspace/Kronos-sam-continuation/state_adapter/train.py": "df88ce847ae41f8be174197375de75b32f84d0ec1917db0c3df2f350bc143284",
+    "/home/user/workspace/Kronos-sam-continuation/state_adapter/sam_train.py": "17b7957971b2dc818ddb5d8130a04df9134a44d90c6d6ac679adff5ae8028cac",
+    "/home/user/workspace/Kronos-sam-continuation/state_adapter/run.py": "e4b9c043ec09e9cf63a81d4a0b127fc62a8bd28d40b5a672d9367c315153fa7b"
+  },
+  "independent_review": "independent_review.md",
+  "important_fixed": [
+    "latest/cadence snapshot resume",
+    "dead training PID detection",
+    "partial signal SHA and prepared journal recovery"
+  ],
+  "regressions": "three original failures plus prepared journal interruption failed before fixes; 54 tests passed",
+  "minor_deferred": "最终交付补末1000步与逐批趋势的实际判断，不凭CE改善宣称收敛或经济获益"
+}

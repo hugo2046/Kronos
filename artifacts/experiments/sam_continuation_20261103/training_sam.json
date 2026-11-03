@@ -1,0 +1,19 @@
+{
+  "family": "dynamic",
+  "seed": 100,
+  "step": 6000,
+  "best_step": 6000,
+  "best_val_ce": 2.331226333975792,
+  "base_hash": "b16a609e4f8a9828a93720ebaa00f95437e64c557b4366b8675d110a65b05636",
+  "trainable_parameters": 107712,
+  "elapsed_seconds": 269.95887376600876,
+  "checkpoint": "/home/user/workspace/Kronos-sam-continuation/artifacts/experiments/sam_continuation_20261103/arms/sam/latest.pt",
+  "best_adapter": "/home/user/workspace/Kronos-sam-continuation/artifacts/experiments/sam_continuation_20261103/arms/sam/best_adapter.pt",
+  "protocol_sha": "543a2d3133152ab196f0f3ef84ee0d20bc5358aee92d40de123ba3fe65fd9d79",
+  "config_sha": "1bc9dab47cd8917047ab55587f001e0b3513db05cb771bf1624beab83604ecb5",
+  "parent_checkpoint_sha": "bd064716e87707224c8bab1732c8f992180d9b87f616b4a37d387565d1cc6c46",
+  "extra_updates": 3000,
+  "adapter_sha256": "fdb342ad9c7d726d428bb5c8ec742aefc3c3b1aa3e13b8238690b7a2fa2018ca",
+  "final_sha256": "127906cfbe895c12b40401259c575c50ea12a33cec58c3be36866cf189238427",
+  "extra_forward_backward_calls": 6000
+}

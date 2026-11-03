@@ -1,0 +1,17 @@
+{
+  "at": 1793667931.0606425,
+  "prior_worker_status": {
+    "status": "needs_recovery",
+    "stage": "infer",
+    "error": "RuntimeError: DOLPHINDB_URI 未配置：请在 Kronos 根目录的 .env 中设置 DOLPHINDB_URI（参照 .env.example），格式 dolphindb://<user>:<password>@<host>:<port>。本数据层绝不静默回退到 localhost 或文件后端，以避免在错误数据上跑完实验还无法察觉。",
+    "pid": 950556
+  },
+  "prior_supervisor_status": {
+    "pid": 950499,
+    "stage": "needs_recovery",
+    "at": 1793667846.1909022,
+    "error": "infer退出码1，检查日志后按冻结身份恢复"
+  },
+  "reason": "新工作树.env缺失，链接原sam-adapter既有配置；不改凭证、数据源、研究协议或预算",
+  "training_verified_complete": true
+}

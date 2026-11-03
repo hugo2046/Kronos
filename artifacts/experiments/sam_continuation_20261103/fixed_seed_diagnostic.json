@@ -1,0 +1,43 @@
+{
+  "protocol_sha": "543a2d3133152ab196f0f3ef84ee0d20bc5358aee92d40de123ba3fe65fd9d79",
+  "eval_seed": 103100,
+  "results": {
+    "control/parent3000": {
+      "step": 3000,
+      "checkpoint_sha": "4ceac3a74d60c5f3297a7167c55983346dcecd4e49238a6c970776a202fd1823",
+      "train_ce": 2.3125746846199036,
+      "validation_ce": 2.448015436530113
+    },
+    "control/best": {
+      "step": 6000,
+      "checkpoint_sha": "ec8668b06f16453d7421a92e8bcb9c6b8c900f8e7487a73f76ad7fedadfb39a0",
+      "train_ce": 2.209741234779358,
+      "validation_ce": 2.321384660899639
+    },
+    "control/final6000": {
+      "step": 6000,
+      "checkpoint_sha": "f7281731410238e60dee82e1bb9db7835c14a9908a298c7fee8d352a4990c669",
+      "train_ce": 2.209741234779358,
+      "validation_ce": 2.321384660899639
+    },
+    "sam/parent3000": {
+      "step": 3000,
+      "checkpoint_sha": "9ed6b8d808276dc1b4d0de20646ed61f41c91638cac07700e36f23085a60ef28",
+      "train_ce": 2.3473750352859497,
+      "validation_ce": 2.4830846562981606
+    },
+    "sam/best": {
+      "step": 6000,
+      "checkpoint_sha": "fdb342ad9c7d726d428bb5c8ec742aefc3c3b1aa3e13b8238690b7a2fa2018ca",
+      "train_ce": 2.22018826007843,
+      "validation_ce": 2.331213064491749
+    },
+    "sam/final6000": {
+      "step": 6000,
+      "checkpoint_sha": "127906cfbe895c12b40401259c575c50ea12a33cec58c3be36866cf189238427",
+      "train_ce": 2.22018826007843,
+      "validation_ce": 2.331213064491749
+    }
+  },
+  "selection": false
+}
