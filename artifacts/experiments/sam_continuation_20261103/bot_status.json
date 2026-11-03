@@ -1,0 +1,23 @@
+{
+  "status": "report_complete_pending_delivery",
+  "stage": "report_complete",
+  "report": "/home/user/workspace/Kronos-sam-continuation/docs/SAM与AdamW等更新续训报告_20261103.md",
+  "verdict": {
+    "AdamW6000": {
+      "historical_return": false,
+      "risk_compatible": false
+    },
+    "SAM6000": {
+      "historical_return": false,
+      "risk_compatible": false
+    }
+  },
+  "validation": {
+    "adamw_improvement": 0.1266307756304741,
+    "sam_improvement": 0.15187159180641174,
+    "gap3000": 0.03506921976804733,
+    "gap6000": 0.00982840359210968,
+    "gap_narrowed": true
+  },
+  "protocol_sha": "543a2d3133152ab196f0f3ef84ee0d20bc5358aee92d40de123ba3fe65fd9d79"
+}

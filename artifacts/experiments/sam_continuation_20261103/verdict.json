@@ -1,0 +1,20 @@
+{
+  "arms": {
+    "AdamW6000": {
+      "historical_return": false,
+      "risk_compatible": false
+    },
+    "SAM6000": {
+      "historical_return": false,
+      "risk_compatible": false
+    }
+  },
+  "validation": {
+    "adamw_improvement": 0.1266307756304741,
+    "sam_improvement": 0.15187159180641174,
+    "gap3000": 0.03506921976804733,
+    "gap6000": 0.00982840359210968,
+    "gap_narrowed": true
+  },
+  "adopted": false
+}

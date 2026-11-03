@@ -1,0 +1,16 @@
+{
+  "delay_execution_supported": false,
+  "qlib_file": "/home/user/workspace/quant-qlib/qlib/__init__.py",
+  "reconciliation": {
+    "gross_max_abs": 6.080205783298709e-16,
+    "cost_max_abs": 4.851804721872632e-18,
+    "gross_residual_sum": 6.084847523849662e-16,
+    "cost_residual_sum": 7.758821796849391e-19,
+    "exact": true,
+    "observation": "Account.update_bar_end\u539f\u6837\u6267\u884c\u53ca\u900f\u4f20\u8fd4\u56de\uff1b\u53ea\u8bfb\u5b9e\u9645trade_info\u548c\u4f30\u503c\u540eposition"
+  },
+  "protocol_sha": "543a2d3133152ab196f0f3ef84ee0d20bc5358aee92d40de123ba3fe65fd9d79",
+  "execution_id": "pctchange_div100_limit095_nextopen_v1",
+  "signal_sha256": "c17c427b8eeaa479ac7cfb3e0765f7ebdf6b10cdc426123be312088e2e74c030",
+  "report_sha256": "ea9604afc9d3b7c3c1eb2ada576d188cef6881dd01f3e13d5c7f6901389434e7"
+}

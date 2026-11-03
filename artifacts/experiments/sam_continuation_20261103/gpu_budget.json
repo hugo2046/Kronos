@@ -1,0 +1,73 @@
+{
+  "version": 1,
+  "limit_seconds": 43200.0,
+  "used_seconds": 34786.21312289033,
+  "initial_used_seconds": 0.0,
+  "stages": [
+    {
+      "name": "resume_smoke",
+      "pid": 942936,
+      "started_at": "2026-11-03T00:51:30.958812+00:00",
+      "ended_at": "2026-11-03T00:51:35.081651+00:00",
+      "elapsed_seconds": 4.118841104209423,
+      "recovered_after_exit": false
+    },
+    {
+      "name": "train_control",
+      "pid": 942936,
+      "started_at": "2026-11-03T00:51:35.088564+00:00",
+      "ended_at": "2026-11-03T00:54:05.093545+00:00",
+      "elapsed_seconds": 150.00422086426988,
+      "recovered_after_exit": false
+    },
+    {
+      "name": "train_sam",
+      "pid": 942936,
+      "started_at": "2026-11-03T00:54:05.098130+00:00",
+      "ended_at": "2026-11-03T00:58:36.280038+00:00",
+      "elapsed_seconds": 271.1811450938694,
+      "recovered_after_exit": false
+    },
+    {
+      "name": "training_probe",
+      "pid": 942936,
+      "started_at": "2026-11-03T00:58:36.283184+00:00",
+      "ended_at": "2026-11-03T00:58:37.187693+00:00",
+      "elapsed_seconds": 0.9036110630258918,
+      "recovered_after_exit": false
+    },
+    {
+      "name": "fixed_seed_loss",
+      "pid": 942936,
+      "started_at": "2026-11-03T00:58:37.188919+00:00",
+      "ended_at": "2026-11-03T00:58:49.808233+00:00",
+      "elapsed_seconds": 12.618466569110751,
+      "recovered_after_exit": false
+    },
+    {
+      "name": "infer_control",
+      "pid": 950556,
+      "started_at": "2026-11-03T01:04:05.586166+00:00",
+      "ended_at": "2026-11-03T01:04:05.888021+00:00",
+      "elapsed_seconds": 0.3010032959282398,
+      "recovered_after_exit": false
+    },
+    {
+      "name": "infer_control",
+      "pid": 951641,
+      "started_at": "2026-11-03T01:05:33.422108+00:00",
+      "ended_at": "2026-11-03T05:41:44.304296+00:00",
+      "elapsed_seconds": 16570.88130345801,
+      "recovered_after_exit": false
+    },
+    {
+      "name": "infer_sam",
+      "pid": 951641,
+      "started_at": "2026-11-03T05:41:44.307998+00:00",
+      "ended_at": "2026-11-03T10:38:00.513407+00:00",
+      "elapsed_seconds": 17776.20453144191,
+      "recovered_after_exit": false
+    }
+  ],
+  "active": null
+}

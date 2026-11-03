@@ -1,0 +1,34 @@
+{
+  "control/42/W3": {
+    "dates": 126,
+    "finite": 37223
+  },
+  "control/42/W4": {
+    "dates": 134,
+    "finite": 39563
+  },
+  "control/100/W3": {
+    "dates": 126,
+    "finite": 37223
+  },
+  "control/100/W4": {
+    "dates": 134,
+    "finite": 39563
+  },
+  "sam/42/W3": {
+    "dates": 126,
+    "finite": 37223
+  },
+  "sam/42/W4": {
+    "dates": 134,
+    "finite": 39563
+  },
+  "sam/100/W3": {
+    "dates": 126,
+    "finite": 37223
+  },
+  "sam/100/W4": {
+    "dates": 134,
+    "finite": 39563
+  }
+}
