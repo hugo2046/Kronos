@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "limit_seconds": 21600.0,
+  "used_seconds": 16559.99208274996,
+  "initial_used_seconds": 0.0,
+  "stages": [
+    {
+      "name": "fixed_cache_ce",
+      "pid": 1273854,
+      "started_at": "2026-11-03T11:32:22.441092+00:00",
+      "ended_at": "2026-11-03T11:32:32.511603+00:00",
+      "elapsed_seconds": 10.069693711120635,
+      "recovered_after_exit": false
+    },
+    {
+      "name": "infer_swa",
+      "pid": 1273854,
+      "started_at": "2026-11-03T11:32:32.516845+00:00",
+      "ended_at": "2026-11-03T16:08:22.439827+00:00",
+      "elapsed_seconds": 16549.92238903884,
+      "recovered_after_exit": false
+    }
+  ],
+  "active": null
+}

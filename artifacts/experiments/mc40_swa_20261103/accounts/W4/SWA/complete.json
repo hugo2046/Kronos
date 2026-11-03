@@ -1,0 +1,14 @@
+{
+  "protocol_sha": "11b9544188a1e5bf254fc38598da0278f393bc5f56ae83194c4d7b22a0b9cdca",
+  "execution_id": "pctchange_div100_limit095_nextopen_v1",
+  "signal_sha256": "f40218bd9353d62334921e8c348e44bacc7e1ab341c13bb081177683030eafa9",
+  "report_sha256": "d1b57eaac33ecb5f677b70f4e3fdf1c55bcdefcf2491937c803db442bced5d27",
+  "reconciliation": {
+    "gross_max_abs": 7.884318198314588e-16,
+    "cost_max_abs": 7.71138795180315e-18,
+    "gross_residual_sum": -2.3462135012586316e-16,
+    "cost_residual_sum": 1.8566962203814263e-17,
+    "exact": true,
+    "observation": "Account.update_bar_end原样执行及透传返回；只读实际trade_info和估值后position"
+  }
+}
