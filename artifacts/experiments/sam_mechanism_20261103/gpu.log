@@ -1,0 +1,10 @@
+2026-11-03 08:31:02.530 | INFO     | __main__:main:224 - 诊断 G1_original
+Loading weights from local directory
+2026-11-03 08:31:04.819 | INFO     | __main__:main:224 - 诊断 MC40
+Loading weights from local directory
+2026-11-03 08:31:20.108 | INFO     | __main__:main:268 - MC40 rho=0.01 fit增量=0.00901515781879425 crosscheck增量=0.008117884397506714
+2026-11-03 08:31:33.663 | INFO     | __main__:main:268 - MC40 rho=0.05 fit增量=0.07680784165859222 crosscheck增量=0.07341217994689941
+2026-11-03 08:31:33.869 | INFO     | __main__:main:224 - 诊断 SAM
+Loading weights from local directory
+2026-11-03 08:31:49.239 | INFO     | __main__:main:268 - SAM rho=0.01 fit增量=0.004149302840232849 crosscheck增量=0.0035009533166885376
+2026-11-03 08:32:02.912 | INFO     | __main__:main:268 - SAM rho=0.05 fit增量=0.0332241952419281 crosscheck增量=0.029906347393989563

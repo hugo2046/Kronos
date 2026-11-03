@@ -1,0 +1,14 @@
+{
+  "cache": {
+    "path": "/home/user/workspace/Kronos-state-adapter/artifacts/experiments/state_adapter_20261030/arms/dynamic/seed_100/validation_batches.pt",
+    "sha256": "99eb3d1b18d06015759c6eb8ed3fba7ebedbb8ec722e4e730e66eab975360eb2"
+  },
+  "MC40": {
+    "path": "/home/user/workspace/Kronos-state-adapter/artifacts/experiments/state_adapter_20261030/arms/dynamic/seed_100/best_adapter.pt",
+    "sha256": "d208a8b9f5359aa81bd6cfff473bf9aae193f0b37542e92b7ae39d00c649c402"
+  },
+  "SAM": {
+    "path": "/home/user/workspace/Kronos-sam-adapter/artifacts/experiments/sam_adapter_20261102/arms/sam/best_adapter.pt",
+    "sha256": "9ed6b8d808276dc1b4d0de20646ed61f41c91638cac07700e36f23085a60ef28"
+  }
+}

@@ -1,0 +1,297 @@
+{
+  "model": "MC40",
+  "clean": {
+    "fit": {
+      "ce": 2.426020473241806,
+      "s1_ce": 3.5973485708236694,
+      "s2_ce": 1.254692368209362,
+      "s1_conditional_kl": 0.0,
+      "s2_conditional_kl": 0.0
+    },
+    "crosscheck": {
+      "ce": 2.4700103998184204,
+      "s1_ce": 3.647520050406456,
+      "s2_ce": 1.2925007194280624,
+      "s1_conditional_kl": 0.0,
+      "s2_conditional_kl": 0.0
+    },
+    "full_ce": 2.448015436530113,
+    "counts": [
+      1024,
+      1024
+    ]
+  },
+  "attacks": [
+    {
+      "rho": 0.01,
+      "path": [
+        {
+          "step": 0,
+          "loss": 2.426020473241806,
+          "norm": 0.0
+        },
+        {
+          "step": 1,
+          "loss": 2.4348840564489365,
+          "norm": 0.010000000707805157
+        },
+        {
+          "step": 2,
+          "loss": 2.4349327385425568,
+          "norm": 0.009999998845160007
+        },
+        {
+          "step": 3,
+          "loss": 2.4349934607744217,
+          "norm": 0.009999999776482582
+        },
+        {
+          "step": 4,
+          "loss": 2.4350161850452423,
+          "norm": 0.009999998845160007
+        },
+        {
+          "step": 5,
+          "loss": 2.4350356310606003,
+          "norm": 0.009999999776482582
+        }
+      ],
+      "best_fit_ce": 2.4350356310606003,
+      "perturbed": {
+        "fit": {
+          "ce": 2.4350356310606003,
+          "s1_ce": 3.6031907349824905,
+          "s2_ce": 1.2668805196881294,
+          "s1_conditional_kl": 0.000368761118807015,
+          "s2_conditional_kl": 0.0012463721359381452
+        },
+        "crosscheck": {
+          "ce": 2.478128284215927,
+          "s1_ce": 3.6525917798280716,
+          "s2_ce": 1.3036647960543633,
+          "s1_conditional_kl": 0.0003622227377491072,
+          "s2_conditional_kl": 0.0012504118276410736
+        },
+        "full_ce": 2.4565819576382637,
+        "counts": [
+          1024,
+          1024
+        ]
+      },
+      "layers": [
+        {
+          "name": "transformer.10.state_adapter.down.weight",
+          "weight_norm": 8.179239273071289,
+          "delta_norm": 0.005064597353339195,
+          "relative_delta": 0.000619201515477545
+        },
+        {
+          "name": "transformer.10.state_adapter.up.weight",
+          "weight_norm": 4.866495609283447,
+          "delta_norm": 0.003383150091394782,
+          "relative_delta": 0.0006951922621569824
+        },
+        {
+          "name": "transformer.10.state_adapter.gate.0.weight",
+          "weight_norm": 2.26273775100708,
+          "delta_norm": 1.8537240976002067e-05,
+          "relative_delta": 8.192394795973007e-06
+        },
+        {
+          "name": "transformer.10.state_adapter.gate.0.bias",
+          "weight_norm": 2.6778218746185303,
+          "delta_norm": 4.547308344626799e-05,
+          "relative_delta": 1.698136977566735e-05
+        },
+        {
+          "name": "transformer.10.state_adapter.gate.2.weight",
+          "weight_norm": 4.713664531707764,
+          "delta_norm": 0.000159194489242509,
+          "relative_delta": 3.37729781514241e-05
+        },
+        {
+          "name": "transformer.10.state_adapter.gate.2.bias",
+          "weight_norm": 1.254366159439087,
+          "delta_norm": 8.958158286986873e-05,
+          "relative_delta": 7.141581602450659e-05
+        },
+        {
+          "name": "transformer.11.state_adapter.down.weight",
+          "weight_norm": 10.622045516967773,
+          "delta_norm": 0.0011174925602972507,
+          "relative_delta": 0.00010520502463599461
+        },
+        {
+          "name": "transformer.11.state_adapter.up.weight",
+          "weight_norm": 3.9989612102508545,
+          "delta_norm": 0.007847823202610016,
+          "relative_delta": 0.001962465447900087
+        },
+        {
+          "name": "transformer.11.state_adapter.gate.0.weight",
+          "weight_norm": 2.230525255203247,
+          "delta_norm": 2.6418490961077623e-05,
+          "relative_delta": 1.184406717630747e-05
+        },
+        {
+          "name": "transformer.11.state_adapter.gate.0.bias",
+          "weight_norm": 2.57071590423584,
+          "delta_norm": 7.113155152183026e-05,
+          "relative_delta": 2.7669938714202075e-05
+        },
+        {
+          "name": "transformer.11.state_adapter.gate.2.weight",
+          "weight_norm": 4.940529823303223,
+          "delta_norm": 0.0001350143429590389,
+          "relative_delta": 2.7327907691642827e-05
+        },
+        {
+          "name": "transformer.11.state_adapter.gate.2.bias",
+          "weight_norm": 1.5054124593734741,
+          "delta_norm": 8.522051211912185e-05,
+          "relative_delta": 5.660941065586046e-05
+        }
+      ],
+      "parameters_restored": true
+    },
+    {
+      "rho": 0.05,
+      "path": [
+        {
+          "step": 0,
+          "loss": 2.426020473241806,
+          "norm": 0.0
+        },
+        {
+          "step": 1,
+          "loss": 2.4915362894535065,
+          "norm": 0.04999999701976776
+        },
+        {
+          "step": 2,
+          "loss": 2.494799479842186,
+          "norm": 0.05000000074505806
+        },
+        {
+          "step": 3,
+          "loss": 2.4977037012577057,
+          "norm": 0.05000000074505806
+        },
+        {
+          "step": 4,
+          "loss": 2.5003468096256256,
+          "norm": 0.05000000819563866
+        },
+        {
+          "step": 5,
+          "loss": 2.5028283149003983,
+          "norm": 0.05000000074505806
+        }
+      ],
+      "best_fit_ce": 2.5028283149003983,
+      "perturbed": {
+        "fit": {
+          "ce": 2.5028283149003983,
+          "s1_ce": 3.629781261086464,
+          "s2_ce": 1.3758753761649132,
+          "s1_conditional_kl": 0.008776412869337946,
+          "s2_conditional_kl": 0.04394708829931915
+        },
+        "crosscheck": {
+          "ce": 2.54342257976532,
+          "s1_ce": 3.677104488015175,
+          "s2_ce": 1.4097407460212708,
+          "s1_conditional_kl": 0.008668724622111768,
+          "s2_conditional_kl": 0.04447201522998512
+        },
+        "full_ce": 2.523125447332859,
+        "counts": [
+          1024,
+          1024
+        ]
+      },
+      "layers": [
+        {
+          "name": "transformer.10.state_adapter.down.weight",
+          "weight_norm": 8.179239273071289,
+          "delta_norm": 0.02952810563147068,
+          "relative_delta": 0.0036101286006740003
+        },
+        {
+          "name": "transformer.10.state_adapter.up.weight",
+          "weight_norm": 4.866495609283447,
+          "delta_norm": 0.015947354957461357,
+          "relative_delta": 0.0032769689398341978
+        },
+        {
+          "name": "transformer.10.state_adapter.gate.0.weight",
+          "weight_norm": 2.26273775100708,
+          "delta_norm": 8.210347732529044e-05,
+          "relative_delta": 3.628501680707299e-05
+        },
+        {
+          "name": "transformer.10.state_adapter.gate.0.bias",
+          "weight_norm": 2.6778218746185303,
+          "delta_norm": 0.00018759137310553342,
+          "relative_delta": 7.005371600090345e-05
+        },
+        {
+          "name": "transformer.10.state_adapter.gate.2.weight",
+          "weight_norm": 4.713664531707764,
+          "delta_norm": 0.0008923322893679142,
+          "relative_delta": 0.00018930755113466289
+        },
+        {
+          "name": "transformer.10.state_adapter.gate.2.bias",
+          "weight_norm": 1.254366159439087,
+          "delta_norm": 0.0005022984114475548,
+          "relative_delta": 0.0004004400211754492
+        },
+        {
+          "name": "transformer.11.state_adapter.down.weight",
+          "weight_norm": 10.622045516967773,
+          "delta_norm": 0.005128328688442707,
+          "relative_delta": 0.0004828004813433211
+        },
+        {
+          "name": "transformer.11.state_adapter.up.weight",
+          "weight_norm": 3.9989612102508545,
+          "delta_norm": 0.03668595850467682,
+          "relative_delta": 0.009173872057232461
+        },
+        {
+          "name": "transformer.11.state_adapter.gate.0.weight",
+          "weight_norm": 2.230525255203247,
+          "delta_norm": 9.58108576014638e-05,
+          "relative_delta": 4.2954392638218944e-05
+        },
+        {
+          "name": "transformer.11.state_adapter.gate.0.bias",
+          "weight_norm": 2.57071590423584,
+          "delta_norm": 0.0002552651276346296,
+          "relative_delta": 9.92972919388028e-05
+        },
+        {
+          "name": "transformer.11.state_adapter.gate.2.weight",
+          "weight_norm": 4.940529823303223,
+          "delta_norm": 0.000566092727240175,
+          "relative_delta": 0.000114581380436175
+        },
+        {
+          "name": "transformer.11.state_adapter.gate.2.bias",
+          "weight_norm": 1.5054124593734741,
+          "delta_norm": 0.0003582692297641188,
+          "relative_delta": 0.00023798742167526903
+        }
+      ],
+      "parameters_restored": true
+    }
+  ],
+  "base_hash": "b16a609e4f8a9828a93720ebaa00f95437e64c557b4366b8675d110a65b05636",
+  "base_restored": true,
+  "checkpoint_identity": {
+    "path": "/home/user/workspace/Kronos-state-adapter/artifacts/experiments/state_adapter_20261030/arms/dynamic/seed_100/best_adapter.pt",
+    "sha256": "d208a8b9f5359aa81bd6cfff473bf9aae193f0b37542e92b7ae39d00c649c402"
+  },
+  "cache_sha256": "99eb3d1b18d06015759c6eb8ed3fba7ebedbb8ec722e4e730e66eab975360eb2"
+}

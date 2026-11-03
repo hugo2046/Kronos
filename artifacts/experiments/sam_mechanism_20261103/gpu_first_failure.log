@@ -1,0 +1,17 @@
+2026-11-03 08:30:08.468 | INFO     | __main__:main:211 - 诊断 G1_original
+Loading weights from local directory
+Traceback (most recent call last):
+  File "<frozen runpy>", line 203, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/user/workspace/Kronos-sam-mechanism/state_adapter/sam_mechanism.py", line 274, in <module>
+    main()
+    ~~~~^^
+  File "/home/user/workspace/Kronos-sam-mechanism/state_adapter/sam_mechanism.py", line 223, in main
+    objective(False, capture=True)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/workspace/Kronos-sam-mechanism/state_adapter/sam_mechanism.py", line 138, in __call__
+    set_state(self.model, b['state'])
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/workspace/Kronos-sam-mechanism/state_adapter/model.py", line 111, in set_state
+    raise ValueError("模型尚未注入状态适配器")
+ValueError: 模型尚未注入状态适配器

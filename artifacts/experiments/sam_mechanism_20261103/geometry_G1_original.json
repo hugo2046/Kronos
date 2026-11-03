@@ -1,0 +1,29 @@
+{
+  "model": "G1_original",
+  "clean": {
+    "fit": {
+      "ce": 3.011588141322136,
+      "s1_ce": 3.5488959699869156,
+      "s2_ce": 2.474280297756195,
+      "s1_conditional_kl": 0.0,
+      "s2_conditional_kl": 0.0
+    },
+    "crosscheck": {
+      "ce": 3.0571945756673813,
+      "s1_ce": 3.5998380333185196,
+      "s2_ce": 2.514551118016243,
+      "s1_conditional_kl": 0.0,
+      "s2_conditional_kl": 0.0
+    },
+    "full_ce": 3.0343913584947586,
+    "counts": [
+      1024,
+      1024
+    ]
+  },
+  "attacks": [],
+  "base_hash": "b16a609e4f8a9828a93720ebaa00f95437e64c557b4366b8675d110a65b05636",
+  "base_restored": true,
+  "checkpoint_identity": null,
+  "cache_sha256": "99eb3d1b18d06015759c6eb8ed3fba7ebedbb8ec722e4e730e66eab975360eb2"
+}
