@@ -1,0 +1,33 @@
+{
+  "protocol_sha": "543a2d3133152ab196f0f3ef84ee0d20bc5358aee92d40de123ba3fe65fd9d79",
+  "arms": {
+    "control": {
+      "repeated_step3001_equal": true,
+      "loss": {
+        "loss": 2.466404676437378,
+        "s1_ce": 3.6238017082214355,
+        "s2_ce": 1.3090077638626099,
+        "grad_norm": 1.0178630352020264
+      },
+      "optimizer_steps": [
+        3001
+      ]
+    },
+    "sam": {
+      "repeated_step3001_equal": true,
+      "loss": {
+        "loss": 2.5170958042144775,
+        "s1_ce": 3.628716230392456,
+        "s2_ce": 1.405475378036499,
+        "grad_norm": 0.835091769695282,
+        "first_loss": 2.5170958042144775,
+        "second_loss": 2.5513663291931152,
+        "first_grad_norm": 0.5760900378227234,
+        "rho": 0.05
+      },
+      "optimizer_steps": [
+        3001
+      ]
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "protocol_sha": "543a2d3133152ab196f0f3ef84ee0d20bc5358aee92d40de123ba3fe65fd9d79",
+  "parent_sha": "bd064716e87707224c8bab1732c8f992180d9b87f616b4a37d387565d1cc6c46",
+  "training_state_equal": true,
+  "parent_step": 3000,
+  "optimizer_states": 12,
+  "initial_copy_sha": "9f3e88e3101dc64a5c99754bd3205a570c36b9eb7579097b7034958bb3358951"
+}
