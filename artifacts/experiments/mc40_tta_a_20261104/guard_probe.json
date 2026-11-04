@@ -1,0 +1,9 @@
+{
+  "synthetic_only": true,
+  "real_market_rows_read": 0,
+  "current_decision": "2025-07-01",
+  "request_after_decision_passed": "2025-07-15 00:00:00",
+  "global_cutoff_actual_end": "2026-07-24 00:00:00",
+  "per_issue_guard_available": false,
+  "global_seal_guard_passed": true
+}

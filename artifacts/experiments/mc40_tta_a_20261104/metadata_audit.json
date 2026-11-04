@@ -1,0 +1,1431 @@
+{
+  "queries": [
+    "schema(loadTable(\"dfs://QlibFeaturesDay\",\"Features\"))",
+    "schema(loadTable(\"dfs://QlibInstruments\",\"csi300\"))",
+    "getDFSDatabases()",
+    "schema(loadTable(\"dfs://QlibFeaturesDayTest\",\"Features\"))"
+  ],
+  "schemas": {
+    "QlibFeaturesDay/Features": [
+      {
+        "name": "date",
+        "typeString": "DATE"
+      },
+      {
+        "name": "code",
+        "typeString": "SYMBOL"
+      },
+      {
+        "name": "open",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "high",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "low",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "close",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "preclose",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "change",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "pctchange",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "volume",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "amount",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "factor",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "vwap",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "tradestatuscode",
+        "typeString": "INT"
+      },
+      {
+        "name": "limit",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "stopping",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "val_mv",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "mv",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "high_52w",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "low_52w",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "pe",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "pb_new",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "pe_ttm",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "pcf_ocf",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "pcf_ocfttm",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "pcf_ncf",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "pcf_ncfttm",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "ps",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "ps_ttm",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "turn",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "freeturnover",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "tot_shr_today",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "float_a_shr_today",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "close_today",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "div_dps",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "adjhigh_52w",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "adjlow_52w",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "free_shares_today",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "net_profit_parent_comp_ttm",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "net_profit_parent_comp_lyr",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "net_assets_today",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "net_cash_flows_oper_act_ttm",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "net_cash_flows_oper_act_lyr",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "oper_rev_ttm",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "oper_rev_lyr",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "net_incr_cash_cash_equ_ttm",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "net_incr_cash_cash_equ_lyr",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "up_down_limit_status",
+        "typeString": "INT"
+      },
+      {
+        "name": "lowest_highest_status",
+        "typeString": "INT"
+      },
+      {
+        "name": "swing",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "avgvolume_3m",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "buy_value_exlarge_order",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "sell_value_exlarge_order",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "buy_value_large_order",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "sell_value_large_order",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "buy_value_med_order",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "sell_value_med_order",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "buy_value_small_order",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "sell_value_small_order",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "buy_volume_exlarge_order",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "sell_volume_exlarge_order",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "buy_volume_large_order",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "sell_volume_large_order",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "buy_volume_med_order",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "sell_volume_med_order",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "buy_volume_small_order",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "sell_volume_small_order",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "trades_count",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "buy_trades_exlarge_order",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "sell_trades_exlarge_order",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "buy_trades_large_order",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "sell_trades_large_order",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "buy_trades_med_order",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "sell_trades_med_order",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "buy_trades_small_order",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "sell_trades_small_order",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "volume_diff_small_trader",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "volume_diff_small_trader_act",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "volume_diff_med_trader",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "volume_diff_med_trader_act",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "volume_diff_large_trader",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "volume_diff_large_trader_act",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "volume_diff_institute",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "volume_diff_institute_act",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "value_diff_small_trader",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "value_diff_small_trader_act",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "value_diff_med_trader",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "value_diff_med_trader_act",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "value_diff_large_trader",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "value_diff_large_trader_act",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "value_diff_institute",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "value_diff_institute_act",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "inflowvolume",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "net_inflow_rate_volume",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "inflow_openvolume",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "open_net_inflow_rate_volume",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "inflow_closevolume",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "close_net_inflow_rate_volume",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "inflow",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "net_inflow_rate_value",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "inflow_open",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "open_net_inflow_rate_value",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "inflow_close",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "close_net_inflow_rate_value",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "tot_volume_bid",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "tot_volume_ask",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "moneyflow_pct_volume",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "open_moneyflow_pct_volume",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "close_moneyflow_pct_volume",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "moneyflow_pct_value",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "open_moneyflow_pct_value",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "close_moneyflow_pct_value",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "inflowvolume_large_order",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "net_inflow_rate_volume_l",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "inflow_large_order",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "net_inflow_rate_value_l",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "moneyflow_pct_volume_l",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "moneyflow_pct_value_l",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "inflow_openvolume_l",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "open_net_inflow_rate_volume_l",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "inflow_open_large_order",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "open_net_inflow_rate_value_l",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "open_moneyflow_pct_volume_l",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "open_moneyflow_pct_value_l",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "inflow_closevolume_l",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "close_net_inflow_rate_volume_l",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "inflow_close_large_order",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "close_net_inflow_rate_valu_l",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "close_moneyflow_pct_volume_l",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "close_moneyflow_pct_value_l",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "buy_value_exlarge_order_act",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "sell_value_exlarge_order_act",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "buy_value_large_order_act",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "sell_value_large_order_act",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "buy_value_med_order_act",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "sell_value_med_order_act",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "buy_value_small_order_act",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "sell_value_small_order_act",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "buy_volume_exlarge_order_act",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "sell_volume_exlarge_order_act",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "buy_volume_large_order_act",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "sell_volume_large_order_act",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "buy_volume_med_order_act",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "sell_volume_med_order_act",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "buy_volume_small_order_act",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "sell_volume_small_order_act",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "tradingbalance",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "purchwithborrowmoney",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "repaymenttobroker",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "seclendingbalance",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "seclendingbalancevol",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "salesofborrowedsec",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "repaymentofborrowsec",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "margintradebalance",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "sl_vol_3d",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "sl_vol_7d",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "sl_vol_14d",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "sl_vol_28d",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "sl_vol_182d",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "sb_vol_3d",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "sb_vol_7d",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "sb_vol_14d",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "sb_vol_28d",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "sb_vol_182d",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "sl_eod_vol",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "sb_eod_vol",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "sl_eop_vol",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "sl_eop_bal",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "repay_vol",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "tradingbalancevolume",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "sale_trading_amount",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "sale_repay_amount",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "ipo_listdays",
+        "typeString": "DOUBLE"
+      }
+    ],
+    "QlibInstruments/csi300": [
+      {
+        "name": "S_INFO_WINDCODE",
+        "typeString": "SYMBOL"
+      },
+      {
+        "name": "S_INFO_LISTDATE",
+        "typeString": "DATE"
+      },
+      {
+        "name": "S_INFO_DELISTDATE",
+        "typeString": "DATE"
+      }
+    ],
+    "QlibFeaturesDayTest/Features": [
+      {
+        "name": "date",
+        "typeString": "DATE"
+      },
+      {
+        "name": "code",
+        "typeString": "SYMBOL"
+      },
+      {
+        "name": "open",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "high",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "low",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "close",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "preclose",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "change",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "pctchange",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "volume",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "amount",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "factor",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "vwap",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "tradestatuscode",
+        "typeString": "INT"
+      },
+      {
+        "name": "limit",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "stopping",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "val_mv",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "mv",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "high_52w",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "low_52w",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "pe",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "pb_new",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "pe_ttm",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "pcf_ocf",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "pcf_ocfttm",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "pcf_ncf",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "pcf_ncfttm",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "ps",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "ps_ttm",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "turn",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "freeturnover",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "tot_shr_today",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "float_a_shr_today",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "close_today",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "div_dps",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "adjhigh_52w",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "adjlow_52w",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "free_shares_today",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "net_profit_parent_comp_ttm",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "net_profit_parent_comp_lyr",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "net_assets_today",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "net_cash_flows_oper_act_ttm",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "net_cash_flows_oper_act_lyr",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "oper_rev_ttm",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "oper_rev_lyr",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "net_incr_cash_cash_equ_ttm",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "net_incr_cash_cash_equ_lyr",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "up_down_limit_status",
+        "typeString": "INT"
+      },
+      {
+        "name": "lowest_highest_status",
+        "typeString": "INT"
+      },
+      {
+        "name": "swing",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "avgvolume_3m",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "buy_value_exlarge_order",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "sell_value_exlarge_order",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "buy_value_large_order",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "sell_value_large_order",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "buy_value_med_order",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "sell_value_med_order",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "buy_value_small_order",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "sell_value_small_order",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "buy_volume_exlarge_order",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "sell_volume_exlarge_order",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "buy_volume_large_order",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "sell_volume_large_order",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "buy_volume_med_order",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "sell_volume_med_order",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "buy_volume_small_order",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "sell_volume_small_order",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "trades_count",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "buy_trades_exlarge_order",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "sell_trades_exlarge_order",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "buy_trades_large_order",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "sell_trades_large_order",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "buy_trades_med_order",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "sell_trades_med_order",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "buy_trades_small_order",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "sell_trades_small_order",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "volume_diff_small_trader",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "volume_diff_small_trader_act",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "volume_diff_med_trader",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "volume_diff_med_trader_act",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "volume_diff_large_trader",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "volume_diff_large_trader_act",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "volume_diff_institute",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "volume_diff_institute_act",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "value_diff_small_trader",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "value_diff_small_trader_act",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "value_diff_med_trader",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "value_diff_med_trader_act",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "value_diff_large_trader",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "value_diff_large_trader_act",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "value_diff_institute",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "value_diff_institute_act",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "inflowvolume",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "net_inflow_rate_volume",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "inflow_openvolume",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "open_net_inflow_rate_volume",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "inflow_closevolume",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "close_net_inflow_rate_volume",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "inflow",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "net_inflow_rate_value",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "inflow_open",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "open_net_inflow_rate_value",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "inflow_close",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "close_net_inflow_rate_value",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "tot_volume_bid",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "tot_volume_ask",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "moneyflow_pct_volume",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "open_moneyflow_pct_volume",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "close_moneyflow_pct_volume",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "moneyflow_pct_value",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "open_moneyflow_pct_value",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "close_moneyflow_pct_value",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "inflowvolume_large_order",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "net_inflow_rate_volume_l",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "inflow_large_order",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "net_inflow_rate_value_l",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "moneyflow_pct_volume_l",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "moneyflow_pct_value_l",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "inflow_openvolume_l",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "open_net_inflow_rate_volume_l",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "inflow_open_large_order",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "open_net_inflow_rate_value_l",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "open_moneyflow_pct_volume_l",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "open_moneyflow_pct_value_l",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "inflow_closevolume_l",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "close_net_inflow_rate_volume_l",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "inflow_close_large_order",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "close_net_inflow_rate_valu_l",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "close_moneyflow_pct_volume_l",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "close_moneyflow_pct_value_l",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "buy_value_exlarge_order_act",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "sell_value_exlarge_order_act",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "buy_value_large_order_act",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "sell_value_large_order_act",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "buy_value_med_order_act",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "sell_value_med_order_act",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "buy_value_small_order_act",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "sell_value_small_order_act",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "buy_volume_exlarge_order_act",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "sell_volume_exlarge_order_act",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "buy_volume_large_order_act",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "sell_volume_large_order_act",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "buy_volume_med_order_act",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "sell_volume_med_order_act",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "buy_volume_small_order_act",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "sell_volume_small_order_act",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "tradingbalance",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "purchwithborrowmoney",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "repaymenttobroker",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "seclendingbalance",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "seclendingbalancevol",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "salesofborrowedsec",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "repaymentofborrowsec",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "margintradebalance",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "sl_vol_3d",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "sl_vol_7d",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "sl_vol_14d",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "sl_vol_28d",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "sl_vol_182d",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "sb_vol_3d",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "sb_vol_7d",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "sb_vol_14d",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "sb_vol_28d",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "sb_vol_182d",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "sl_eod_vol",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "sb_eod_vol",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "sl_eop_vol",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "sl_eop_bal",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "repay_vol",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "tradingbalancevolume",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "sale_trading_amount",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "sale_repay_amount",
+        "typeString": "DOUBLE"
+      },
+      {
+        "name": "ipo_listdays",
+        "typeString": "DOUBLE"
+      }
+    ]
+  },
+  "market_rows_read": 0,
+  "database_catalog": [
+    "dfs://QlibFeaturesDayTest",
+    "dfs://QlibFeaturesDay",
+    "dfs://agent_framework_sys_db",
+    "dfs://orca_sys_db",
+    "dfs://QlibCalendars",
+    "dfs://QlibInstruments"
+  ],
+  "source_hashes": {
+    "/home/user/workspace/quant-qlib/qlib/data/backend/ddb_qlib/schemas.py": "70e3d3560afd45189b269bc3de0991fbf855c4ad0a6e1be08db0f50bc3c57ad5",
+    "/home/user/workspace/quant-qlib/qlib/data/backend/ddb_qlib/ddb_features.py": "24fee0402cdc6398446cb90cb1b8da87e59a8c824eb5f06aa8b996c03192d805",
+    "/home/user/workspace/quant-qlib/qlib/data/backend/ddb_qlib/ddb_client.py": "854fd4d2d7068da59b7a953c1ea3bf5ef87f49b756752a9b53c095e46d419137"
+  },
+  "availability_columns": {
+    "QlibFeaturesDay/Features": [],
+    "QlibInstruments/csi300": [],
+    "QlibFeaturesDayTest/Features": []
+  }
+}

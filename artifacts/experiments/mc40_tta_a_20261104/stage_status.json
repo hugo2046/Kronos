@@ -1,0 +1,12 @@
+{
+  "stage": "A_prerequisite_audit",
+  "status": "data_gate_not_passed",
+  "real_market_rows_read": 0,
+  "B_started": false,
+  "pending": [
+    "historical available_at/vintage source",
+    "adjustment version lineage",
+    "per-issue read guard implementation",
+    "a=1 replay and gradient/RNG integration checks"
+  ]
+}
