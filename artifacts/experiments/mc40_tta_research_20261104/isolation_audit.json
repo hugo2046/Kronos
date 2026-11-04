@@ -1,0 +1,429 @@
+{
+  "status": "recovery_evidence_for_root_review_not_seal_compliance",
+  "at": 1793766958.0594769,
+  "incident": {
+    "file": "sealed_query_incident.json",
+    "sha256": "4f1017c526af08c6a03364c4df506d7cf282985e177002d59ce5555b0e6373ce",
+    "requested_end": "2026-08-09",
+    "actual_returned_max_date": "unknown; not queried again",
+    "exposure": "45-passed summary includes full requested-range consistency assertion; historical non-access requirement failed"
+  },
+  "logs": {
+    "original": "regression_tests.log",
+    "sha256": "6137e7d51ec064bdd263ccbfb6263278b00b093f2a94771f230cf09f2c7983ba",
+    "observed_values_printed": false,
+    "scope": "preserved pytest log contains dots, counts, timing and warning only; no prices/returns/max_diff/row dates",
+    "limitation": "not a reconstruction of uncaptured terminal/server output; native DDB show_output=True"
+  },
+  "old_test_io": {
+    "command": "pytest tests/test_mc40_tta.py tests/test_kronos_qlib.py tests/test_state_adapter.py tests/test_state_adapter_train.py tests/test_state_adapter_inference.py tests/test_mc40.py -q",
+    "source": "tests/test_kronos_qlib.py",
+    "market_reads": [
+      "adjustment_self_consistency: D.features 2024-01-02..2026-08-09; two expressions",
+      "point_in_time_membership: csi300 metadata 2024-06-28 and 2025-12-31",
+      "end_to_end_smoke/determinism: raw windows as of 2025-06-16; future calendar only after windows fix"
+    ],
+    "models_loaded": [
+      "NeoQuasar/Kronos-Tokenizer-base",
+      "NeoQuasar/Kronos-base"
+    ],
+    "model_writes": "no pretrained model/adapter save in legacy integration tests; HF may download/cache pretrained artifacts; only metadata inspected",
+    "other_selected_tests": "synthetic tiny Kronos models; test_state_adapter/train use pytest tmp_path for synthetic checkpoint and corpus roundtrips; no G1/MC40 save path",
+    "possible_writes": [
+      "pytest cache",
+      "HF cache/download lock files",
+      "Python/import/native caches",
+      "Qlib session/memory caches; disk writes not historically instrumented"
+    ],
+    "no_array_handoff": "test source passes no dataframe/model to tta_run; learning direct SQL and frozen G1 paths independent"
+  },
+  "original_identity": {
+    "protocol_file_sha256": "baab5ce56b7bf79c321ed6c251b97f514d5e16fa901925929faaace60dd5f52f",
+    "protocol_bytes_equal_base": true,
+    "reference_files": [
+      {
+        "path": "/home/user/workspace/Kronos-state-mc40/artifacts/experiments/state_mc40_20261101/manifest.json",
+        "before_sha256": "f89afad1c5782fc10f3d03afc11f8342f3538c04ad518de61f447d9845e766bc",
+        "after_sha256": "f89afad1c5782fc10f3d03afc11f8342f3538c04ad518de61f447d9845e766bc",
+        "unchanged": true,
+        "metadata": {
+          "path": "/home/user/workspace/Kronos-state-mc40/artifacts/experiments/state_mc40_20261101/manifest.json",
+          "exists": true,
+          "size": 2656,
+          "mtime_ns": 1793476978933184836,
+          "ctime_ns": 1793476978933184836,
+          "is_file": true
+        }
+      },
+      {
+        "path": "/home/user/workspace/Kronos-canonical-state/artifacts/experiments/canonical_state_20261101/signals/State_dynamic_train100_infer42/W3.parquet",
+        "before_sha256": "1de3ecaec684394d917fbaa0c5bc1a019ccd8f33250a5d55488c89da99a76fb7",
+        "after_sha256": "1de3ecaec684394d917fbaa0c5bc1a019ccd8f33250a5d55488c89da99a76fb7",
+        "unchanged": true,
+        "metadata": {
+          "path": "/home/user/workspace/Kronos-canonical-state/artifacts/experiments/canonical_state_20261101/signals/State_dynamic_train100_infer42/W3.parquet",
+          "exists": true,
+          "size": 327712,
+          "mtime_ns": 1793472221402164295,
+          "ctime_ns": 1793472221406164660,
+          "is_file": true
+        }
+      },
+      {
+        "path": "/home/user/workspace/Kronos-state-adapter/artifacts/experiments/state_adapter_20261030/signals/State_dynamic_100/W3.parquet",
+        "before_sha256": "deae9cc007f0325f4c564d9f2c1512562ca30b5b72a7f497f80955ecbd5dc721",
+        "after_sha256": "deae9cc007f0325f4c564d9f2c1512562ca30b5b72a7f497f80955ecbd5dc721",
+        "unchanged": true,
+        "metadata": {
+          "path": "/home/user/workspace/Kronos-state-adapter/artifacts/experiments/state_adapter_20261030/signals/State_dynamic_100/W3.parquet",
+          "exists": true,
+          "size": 327719,
+          "mtime_ns": 1793393506862222072,
+          "ctime_ns": 1793393506866222462,
+          "is_file": true
+        }
+      },
+      {
+        "path": "/home/user/workspace/Kronos/g5_head/data/daily_signals_2025h2_G1_mean.parquet",
+        "before_sha256": "9352b40302eb34c714bfebd808481b625a21d2f7f4f668ccca15cda0cfe21d66",
+        "after_sha256": "9352b40302eb34c714bfebd808481b625a21d2f7f4f668ccca15cda0cfe21d66",
+        "unchanged": true,
+        "metadata": {
+          "path": "/home/user/workspace/Kronos/g5_head/data/daily_signals_2025h2_G1_mean.parquet",
+          "exists": true,
+          "size": 428518,
+          "mtime_ns": 1786944938641339833,
+          "ctime_ns": 1786944938641339833,
+          "is_file": true
+        }
+      },
+      {
+        "path": "/home/user/workspace/Kronos-state-adapter/artifacts/experiments/state_adapter_20261030/signals/G1_paired_100/W3.parquet",
+        "before_sha256": "0d834347a96e320b4c4252f1455da18409923452b609dc54849d3e1e00e7fd0f",
+        "after_sha256": "0d834347a96e320b4c4252f1455da18409923452b609dc54849d3e1e00e7fd0f",
+        "unchanged": true,
+        "metadata": {
+          "path": "/home/user/workspace/Kronos-state-adapter/artifacts/experiments/state_adapter_20261030/signals/G1_paired_100/W3.parquet",
+          "exists": true,
+          "size": 327383,
+          "mtime_ns": 1793376935895837044,
+          "ctime_ns": 1793376935899837486,
+          "is_file": true
+        }
+      },
+      {
+        "path": "/home/user/workspace/Kronos-limit-audit/artifacts/experiments/limit_unit_audit_20261102/accounts/new/W3/G1_original/report.parquet",
+        "before_sha256": "eb54538131ee75d14584d676f6cb89212b979244a9244524dede1ad98e7b507c",
+        "after_sha256": "eb54538131ee75d14584d676f6cb89212b979244a9244524dede1ad98e7b507c",
+        "unchanged": true,
+        "metadata": {
+          "path": "/home/user/workspace/Kronos-limit-audit/artifacts/experiments/limit_unit_audit_20261102/accounts/new/W3/G1_original/report.parquet",
+          "exists": true,
+          "size": 8710,
+          "mtime_ns": 1793621313262413188,
+          "ctime_ns": 1793621313262413188,
+          "is_file": true
+        }
+      },
+      {
+        "path": "/home/user/workspace/Kronos-limit-audit/artifacts/experiments/limit_unit_audit_20261102/accounts/new/W3/B/report.parquet",
+        "before_sha256": "6e2be3c9079d6af1623726329cb2f18defff2c4444965e7dc7246b1eeccab735",
+        "after_sha256": "6e2be3c9079d6af1623726329cb2f18defff2c4444965e7dc7246b1eeccab735",
+        "unchanged": true,
+        "metadata": {
+          "path": "/home/user/workspace/Kronos-limit-audit/artifacts/experiments/limit_unit_audit_20261102/accounts/new/W3/B/report.parquet",
+          "exists": true,
+          "size": 8710,
+          "mtime_ns": 1793621318982914790,
+          "ctime_ns": 1793621318982914790,
+          "is_file": true
+        }
+      },
+      {
+        "path": "/home/user/workspace/Kronos-canonical-state/artifacts/experiments/canonical_state_20261101/signals/State_dynamic_train100_infer42/W4.parquet",
+        "before_sha256": "b0204e4e7f4c1a6e5ad02f9a4bb17dee61a82c564aa9aa9e02fd53c45a52b056",
+        "after_sha256": "b0204e4e7f4c1a6e5ad02f9a4bb17dee61a82c564aa9aa9e02fd53c45a52b056",
+        "unchanged": true,
+        "metadata": {
+          "path": "/home/user/workspace/Kronos-canonical-state/artifacts/experiments/canonical_state_20261101/signals/State_dynamic_train100_infer42/W4.parquet",
+          "exists": true,
+          "size": 349154,
+          "mtime_ns": 1793476508789602384,
+          "ctime_ns": 1793476508789602384,
+          "is_file": true
+        }
+      },
+      {
+        "path": "/home/user/workspace/Kronos-state-adapter/artifacts/experiments/state_adapter_20261030/signals/State_dynamic_100/W4.parquet",
+        "before_sha256": "d22db3d505e46ff68d4e098bcf33253ffc1e25cef0d3bb0f489f8d64a6b29861",
+        "after_sha256": "d22db3d505e46ff68d4e098bcf33253ffc1e25cef0d3bb0f489f8d64a6b29861",
+        "unchanged": true,
+        "metadata": {
+          "path": "/home/user/workspace/Kronos-state-adapter/artifacts/experiments/state_adapter_20261030/signals/State_dynamic_100/W4.parquet",
+          "exists": true,
+          "size": 349082,
+          "mtime_ns": 1793397790332900958,
+          "ctime_ns": 1793397790336901294,
+          "is_file": true
+        }
+      },
+      {
+        "path": "/home/user/workspace/Kronos/finetune_suite/data/g1/daily_signals_backtest_G1_mean.parquet",
+        "before_sha256": "453e2aeae7fe4bee8ce8fa62a9908da0843d5ad8b52777cd3b299a84cc4a3e36",
+        "after_sha256": "453e2aeae7fe4bee8ce8fa62a9908da0843d5ad8b52777cd3b299a84cc4a3e36",
+        "unchanged": true,
+        "metadata": {
+          "path": "/home/user/workspace/Kronos/finetune_suite/data/g1/daily_signals_backtest_G1_mean.parquet",
+          "exists": true,
+          "size": 452009,
+          "mtime_ns": 1786784318322295262,
+          "ctime_ns": 1786784318322295262,
+          "is_file": true
+        }
+      },
+      {
+        "path": "/home/user/workspace/Kronos-state-adapter/artifacts/experiments/state_adapter_20261030/signals/G1_paired_100/W4.parquet",
+        "before_sha256": "5d19daf0d749b5c00e2c2b031bc8fa80bfaf08e55ef33243902c8f96c264b5c5",
+        "after_sha256": "5d19daf0d749b5c00e2c2b031bc8fa80bfaf08e55ef33243902c8f96c264b5c5",
+        "unchanged": true,
+        "metadata": {
+          "path": "/home/user/workspace/Kronos-state-adapter/artifacts/experiments/state_adapter_20261030/signals/G1_paired_100/W4.parquet",
+          "exists": true,
+          "size": 349440,
+          "mtime_ns": 1793381220465380163,
+          "ctime_ns": 1793381220469380344,
+          "is_file": true
+        }
+      },
+      {
+        "path": "/home/user/workspace/Kronos-limit-audit/artifacts/experiments/limit_unit_audit_20261102/accounts/new/W4/G1_original/report.parquet",
+        "before_sha256": "39b8c45a287bb65a4a03c896c3e9dbd2473453dabbca385a2109f8e9fe0bf9fd",
+        "after_sha256": "39b8c45a287bb65a4a03c896c3e9dbd2473453dabbca385a2109f8e9fe0bf9fd",
+        "unchanged": true,
+        "metadata": {
+          "path": "/home/user/workspace/Kronos-limit-audit/artifacts/experiments/limit_unit_audit_20261102/accounts/new/W4/G1_original/report.parquet",
+          "exists": true,
+          "size": 9119,
+          "mtime_ns": 1793621340236779080,
+          "ctime_ns": 1793621340236779080,
+          "is_file": true
+        }
+      },
+      {
+        "path": "/home/user/workspace/Kronos-limit-audit/artifacts/experiments/limit_unit_audit_20261102/accounts/new/W4/B/report.parquet",
+        "before_sha256": "347de555b608be66ac6161fe3c8a975bbf427d00408004e4ba60d0c2ffb5c593",
+        "after_sha256": "347de555b608be66ac6161fe3c8a975bbf427d00408004e4ba60d0c2ffb5c593",
+        "unchanged": true,
+        "metadata": {
+          "path": "/home/user/workspace/Kronos-limit-audit/artifacts/experiments/limit_unit_audit_20261102/accounts/new/W4/B/report.parquet",
+          "exists": true,
+          "size": 9119,
+          "mtime_ns": 1793621347245394062,
+          "ctime_ns": 1793621347245394062,
+          "is_file": true
+        }
+      },
+      {
+        "path": "/home/user/workspace/Kronos/finetune_suite/outputs/models/finetune_tokenizer_g1/checkpoints/best_model/README.md",
+        "before_sha256": "ec40d6b5978fe1ed22e92abe5f9033b5147fc474209dc245df3b4fb8d4dfbf4c",
+        "after_sha256": "ec40d6b5978fe1ed22e92abe5f9033b5147fc474209dc245df3b4fb8d4dfbf4c",
+        "unchanged": true,
+        "metadata": {
+          "path": "/home/user/workspace/Kronos/finetune_suite/outputs/models/finetune_tokenizer_g1/checkpoints/best_model/README.md",
+          "exists": true,
+          "size": 352,
+          "mtime_ns": 1786772850055923181,
+          "ctime_ns": 1786772850055923181,
+          "is_file": true
+        }
+      },
+      {
+        "path": "/home/user/workspace/Kronos/finetune_suite/outputs/models/finetune_tokenizer_g1/checkpoints/best_model/config.json",
+        "before_sha256": "2366e7ccfec76cbc19cf3c4c1b9c5d901be336ca1e83f2d2292c9bff381b77a2",
+        "after_sha256": "2366e7ccfec76cbc19cf3c4c1b9c5d901be336ca1e83f2d2292c9bff381b77a2",
+        "unchanged": true,
+        "metadata": {
+          "path": "/home/user/workspace/Kronos/finetune_suite/outputs/models/finetune_tokenizer_g1/checkpoints/best_model/config.json",
+          "exists": true,
+          "size": 301,
+          "mtime_ns": 1786773762062750337,
+          "ctime_ns": 1786773762062750337,
+          "is_file": true
+        }
+      },
+      {
+        "path": "/home/user/workspace/Kronos/finetune_suite/outputs/models/finetune_tokenizer_g1/checkpoints/best_model/model.safetensors",
+        "before_sha256": "5ca43492146cd93da2f9dd5528009aa6bd882f2a448ff4c6bd3c1b0ab08609ee",
+        "after_sha256": "5ca43492146cd93da2f9dd5528009aa6bd882f2a448ff4c6bd3c1b0ab08609ee",
+        "unchanged": true,
+        "metadata": {
+          "path": "/home/user/workspace/Kronos/finetune_suite/outputs/models/finetune_tokenizer_g1/checkpoints/best_model/model.safetensors",
+          "exists": true,
+          "size": 15842368,
+          "mtime_ns": 1786773762062750337,
+          "ctime_ns": 1786773762062750337,
+          "is_file": true
+        }
+      },
+      {
+        "path": "/home/user/workspace/Kronos/finetune_suite/outputs/models/finetune_predictor_g1/checkpoints/best_model/README.md",
+        "before_sha256": "ec40d6b5978fe1ed22e92abe5f9033b5147fc474209dc245df3b4fb8d4dfbf4c",
+        "after_sha256": "ec40d6b5978fe1ed22e92abe5f9033b5147fc474209dc245df3b4fb8d4dfbf4c",
+        "unchanged": true,
+        "metadata": {
+          "path": "/home/user/workspace/Kronos/finetune_suite/outputs/models/finetune_predictor_g1/checkpoints/best_model/README.md",
+          "exists": true,
+          "size": 352,
+          "mtime_ns": 1786774465290200647,
+          "ctime_ns": 1786774465290200647,
+          "is_file": true
+        }
+      },
+      {
+        "path": "/home/user/workspace/Kronos/finetune_suite/outputs/models/finetune_predictor_g1/checkpoints/best_model/config.json",
+        "before_sha256": "77ebc3038b647709b92be002f801d72e1a385f4c8c2c5aa1cc6cf21fcfe44eb2",
+        "after_sha256": "77ebc3038b647709b92be002f801d72e1a385f4c8c2c5aa1cc6cf21fcfe44eb2",
+        "unchanged": true,
+        "metadata": {
+          "path": "/home/user/workspace/Kronos/finetune_suite/outputs/models/finetune_predictor_g1/checkpoints/best_model/config.json",
+          "exists": true,
+          "size": 228,
+          "mtime_ns": 1786774465278199565,
+          "ctime_ns": 1786774465278199565,
+          "is_file": true
+        }
+      },
+      {
+        "path": "/home/user/workspace/Kronos/finetune_suite/outputs/models/finetune_predictor_g1/checkpoints/best_model/model.safetensors",
+        "before_sha256": "4f2382138138e85ea1c543d43ade2de2373e4168a995e34fd43cbca2895c2fe2",
+        "after_sha256": "4f2382138138e85ea1c543d43ade2de2373e4168a995e34fd43cbca2895c2fe2",
+        "unchanged": true,
+        "metadata": {
+          "path": "/home/user/workspace/Kronos/finetune_suite/outputs/models/finetune_predictor_g1/checkpoints/best_model/model.safetensors",
+          "exists": true,
+          "size": 409264008,
+          "mtime_ns": 1786774465274199204,
+          "ctime_ns": 1786774465278199565,
+          "is_file": true
+        }
+      },
+      {
+        "path": "/home/user/workspace/Kronos-state-adapter/artifacts/experiments/state_adapter_20261030/arms/dynamic/seed_100/best_adapter.pt",
+        "before_sha256": "d208a8b9f5359aa81bd6cfff473bf9aae193f0b37542e92b7ae39d00c649c402",
+        "after_sha256": "d208a8b9f5359aa81bd6cfff473bf9aae193f0b37542e92b7ae39d00c649c402",
+        "unchanged": true,
+        "metadata": {
+          "path": "/home/user/workspace/Kronos-state-adapter/artifacts/experiments/state_adapter_20261030/arms/dynamic/seed_100/best_adapter.pt",
+          "exists": true,
+          "size": 436419,
+          "mtime_ns": 1793372878969296099,
+          "ctime_ns": 1793372878973296735,
+          "is_file": true
+        }
+      }
+    ],
+    "freeze_events": [
+      {
+        "at": 1793762790.3952515,
+        "command": "freeze",
+        "protocol_sha": "6f4ebabb0dcd46e46ba5e0779c52fb9f896f6d21f5b4141112aac461f1a87016"
+      },
+      {
+        "at": 1793762826.7168226,
+        "command": "grid",
+        "protocol_sha": "6f4ebabb0dcd46e46ba5e0779c52fb9f896f6d21f5b4141112aac461f1a87016"
+      },
+      {
+        "at": 1793763022.1105618,
+        "command": "pilot",
+        "protocol_sha": "6f4ebabb0dcd46e46ba5e0779c52fb9f896f6d21f5b4141112aac461f1a87016"
+      },
+      {
+        "at": 1793763874.718103,
+        "command": "grid",
+        "protocol_sha": "6f4ebabb0dcd46e46ba5e0779c52fb9f896f6d21f5b4141112aac461f1a87016"
+      }
+    ],
+    "incident_recorded_at": 1793763612.7554567,
+    "freeze_precedes_incident": true,
+    "parameters": "single frozen configuration unchanged; no recorded tuning based on accident output in protocol/version history; human cognition and unlogged actions cannot be proven"
+  },
+  "process_evidence": {
+    "file": "host_process_audit.json",
+    "limitation": "no original pytest PID captured; host scan found no live pytest/TTA worker and no configured-port DDB TCP connection; server orphan session state unknown without querying server"
+  },
+  "cache_audit": {
+    "inventory": "cache_metadata_inventory.json",
+    "old_contents": "unknown; not opened, deleted, modified or cleared",
+    "qlib_auto_init_config_search": [
+      {
+        "path": "/home/user/workspace/quant-qlib/qlib/__init__.py/config.yaml",
+        "exists": false
+      },
+      {
+        "path": "/home/user/workspace/quant-qlib/qlib/config.yaml",
+        "exists": false
+      },
+      {
+        "path": "/home/user/workspace/quant-qlib/config.yaml",
+        "exists": false
+      },
+      {
+        "path": "/home/user/workspace/config.yaml",
+        "exists": false
+      },
+      {
+        "path": "/home/user/config.yaml",
+        "exists": false
+      },
+      {
+        "path": "/home/config.yaml",
+        "exists": false
+      },
+      {
+        "path": "/config.yaml",
+        "exists": false
+      }
+    ],
+    "current_static_default": "no ancestor config.yaml found; client defaults dataset_cache=None/expression_cache=None/calendar_cache=None, default_disk_cache=1; H/calendar/member caches exist",
+    "historical_effective_config": "not captured in old test process; current defaults do not prove historical cache absence or no writes",
+    "post_recovery": "evaluation rejects registered/nonempty Qlib state, direct qlib.init explicit disable values checked at runtime; UUID local_cache_path; D.features bypasses DatasetD/ExpressionD; fixed bounded raw SQL; proxy rejects other session SQL/table access; no DDB function scripts or pools loaded; cache trap subprocess verified",
+    "expression_boundary": "shared FeatureEngine.createDSByDate builds unfiltered sql before partition/filter; recovery never calls that engine; fixed expressions run on bounded returned rows only"
+  },
+  "adapter_protocol": {
+    "file": "/home/user/workspace/Kronos-state-adapter/artifacts/experiments/state_adapter_20261030/protocol.json",
+    "file_sha256": "4c4405f0dfb2e050cef5d8df414e12c4ebc1b3cf46074aba0cfed092c5a583b9",
+    "recorded_canonical_sha256": "1c113930fcf3ba2dd75c8e6c8e24bfeaad19f221a76387aba8ec663ffdddd990",
+    "current_canonical_sha256": "1c113930fcf3ba2dd75c8e6c8e24bfeaad19f221a76387aba8ec663ffdddd990",
+    "canonical_matches": true,
+    "metadata": {
+      "path": "/home/user/workspace/Kronos-state-adapter/artifacts/experiments/state_adapter_20261030/protocol.json",
+      "exists": true,
+      "size": 3996,
+      "mtime_ns": 1793372131784144461,
+      "ctime_ns": 1793372131788144792,
+      "is_file": true
+    },
+    "historical_bytes": "not separately in TTA reference_files; recorded canonical identity and mtime retained, source now binds exact bytes"
+  },
+  "budget": {
+    "original": {
+      "first_model_at": 1793763022.565467,
+      "gpu_seconds": 782.072023153305,
+      "active_since": null,
+      "engineering_started": 1793763021.8711963
+    },
+    "sha256": "7d8f42968f93bb44f4df6661f4e8f211637dfd519ee3af27fcb9467e0b639f94",
+    "reset": false
+  },
+  "formal_replay_started": false,
+  "review_gate_created": false,
+  "candidate_economic_results": "not run",
+  "limitations": [
+    "historical sealed non-access failed permanently",
+    "current-final values with assumed 18:00 availability; no true vintage PIT proof",
+    "old cache contents and original returned maximum date remain unknown",
+    "server session cleanup not independently verified",
+    "new evaluation data path needs root review; synthetic tests do not establish live reference-account parity"
+  ]
+}
