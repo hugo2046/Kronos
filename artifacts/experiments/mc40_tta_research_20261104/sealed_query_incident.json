@@ -1,0 +1,29 @@
+{
+  "status": "confirmed_execution_error",
+  "at": 1793763612.7554567,
+  "actor": "implementation agent",
+  "command": "pytest tests/test_mc40_tta.py tests/test_kronos_qlib.py tests/test_state_adapter.py tests/test_state_adapter_train.py tests/test_state_adapter_inference.py tests/test_mc40.py -q",
+  "cause": "Expanded regression command unintentionally selected legacy real-DDB integration tests because DOLPHINDB_URI was configured.",
+  "offending_test": "tests/test_kronos_qlib.py::test_adjustment_self_consistency",
+  "source_lines": [
+    235,
+    239
+  ],
+  "requested_start": "2024-01-02",
+  "requested_end": "2026-08-09",
+  "authorized_cutoff": "2026-07-24",
+  "fields": [
+    "$close/$preclose-1",
+    "$close/Ref($close,1)-1"
+  ],
+  "evidence": "regression_tests.log: 45 passed and explicit warning emitted inside offending test; source confirms real D.features call; no query reissued to inspect affected rows",
+  "actual_returned_max_date": "not captured; not re-queried",
+  "scope": "Separate finished regression process. TTA GPU pilot is a separate PID with its own bounded raw reader; no regression arrays or predictions are inputs to that worker.",
+  "limitations": "Cannot claim whole experiment preserved sealed-data non-access. Successful legacy tests are excluded from acceptance evidence. Independent root review must assess this recorded breach; no clean PIT/seal claim.",
+  "actions": [
+    "Preserve original regression log",
+    "Disable real database init in safe_test_runner.py and exclude integration marker",
+    "Record incident in report/progress/review readiness",
+    "No candidate economic replay has run; root gate remains absent"
+  ]
+}
