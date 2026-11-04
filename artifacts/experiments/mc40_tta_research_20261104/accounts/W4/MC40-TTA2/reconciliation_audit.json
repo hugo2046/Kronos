@@ -1,0 +1,8 @@
+{
+  "gross_max_abs": 6.886852199627924e-16,
+  "cost_max_abs": 6.80336863234654e-18,
+  "gross_residual_sum": -2.983453328136987e-16,
+  "cost_residual_sum": -7.948557177034354e-18,
+  "exact": true,
+  "observation": "Account.update_bar_end原样执行及透传返回；只读实际trade_info和估值后position"
+}

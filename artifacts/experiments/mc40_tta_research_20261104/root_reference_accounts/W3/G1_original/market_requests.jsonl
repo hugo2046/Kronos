@@ -1,0 +1,10 @@
+{"pid": 1979287, "fields": ["$close/Ref($close,1)-1"], "start": "2025-07-01", "requested_end": "2025-12-31 00:00:00", "effective_end": "2025-12-31 00:00:00", "guard_version": 1}
+{"pid": 1979287, "fields": ["$pctchange / 100 >= 0.095", "$pctchange / 100 <= -0.095", "$volume", "$factor", "$close", "$change", "$open"], "start": "2025-07-01", "requested_end": "2025-12-31 00:00:00", "effective_end": "2025-12-31 00:00:00", "guard_version": 1}
+{"pid": 1980021, "fields": ["$close/Ref($close,1)-1"], "start": "2025-07-01", "requested_end": "2025-12-31 00:00:00", "effective_end": "2025-12-31 00:00:00", "guard_version": 1}
+{"pid": 1980021, "fields": ["$volume", "$close", "$pctchange / 100 >= 0.095", "$factor", "$change", "$pctchange / 100 <= -0.095", "$open"], "start": "2025-07-01", "requested_end": "2025-12-31 00:00:00", "effective_end": "2025-12-31 00:00:00", "guard_version": 1}
+{"pid": 1981060, "fields": ["$close/Ref($close,1)-1"], "start": "2025-07-01", "requested_end": "2025-12-31 00:00:00", "effective_end": "2025-12-31 00:00:00", "guard_version": 1}
+{"pid": 1981060, "fields": ["$open", "$pctchange / 100 >= 0.095", "$pctchange / 100 <= -0.095", "$change", "$factor", "$close", "$volume"], "start": "2025-07-01", "requested_end": "2025-12-31 00:00:00", "effective_end": "2025-12-31 00:00:00", "guard_version": 1}
+{"pid": 1981060, "fields": ["$close/Ref($close,1)-1"], "start": "2025-07-01", "requested_end": "2025-12-31 00:00:00", "effective_end": "2025-12-31 00:00:00", "guard_version": 1}
+{"pid": 1981925, "fields": ["$close/Ref($close,1)-1"], "start": "2025-07-01", "requested_end": "2025-12-31 00:00:00", "effective_end": "2025-12-31 00:00:00", "guard_version": 1}
+{"pid": 1981925, "fields": ["$change", "$pctchange / 100 <= -0.095", "$factor", "$close", "$pctchange / 100 >= 0.095", "$volume", "$open"], "start": "2025-07-01", "requested_end": "2025-12-31 00:00:00", "effective_end": "2025-12-31 00:00:00", "guard_version": 1}
+{"pid": 1981925, "fields": ["$close/Ref($close,1)-1"], "start": "2025-07-01", "requested_end": "2025-12-31 00:00:00", "effective_end": "2025-12-31 00:00:00", "guard_version": 1}
