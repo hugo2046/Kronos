@@ -1,0 +1,11 @@
+{
+  "date": "2026-11-05",
+  "A_then_train_and_conditional_backtest": true,
+  "Q2_G1_generation_approved": true,
+  "gpu_limit_seconds": 21600,
+  "wall_limit_seconds": 36000,
+  "baseline": "original G1",
+  "reference": "MC40",
+  "sealed_start": "2026-07-25",
+  "W3_W4_reference_regeneration": false
+}
