@@ -1,0 +1,85 @@
+{
+  "transactions": {
+    "train": {
+      "days": 534,
+      "cells": 143058,
+      "labels": 143058
+    },
+    "Q1": {
+      "days": 47,
+      "cells": 13812,
+      "labels": 13812
+    },
+    "Q2": {
+      "days": 60,
+      "cells": 17639,
+      "labels": 14692
+    }
+  },
+  "accounts": {},
+  "metrics": {
+    "W3/G1_original": {
+      "annualized": 0.7379811157295462,
+      "net_sum": 0.28730165661562196,
+      "compound": 0.3183251176130819,
+      "sharpe": 2.76728013870072,
+      "mdd": -0.10196249734285412,
+      "cost": 0.021937117778495205,
+      "turnover": 0.14082834143068523
+    },
+    "W3/MC40": {
+      "annualized": 0.8319597793630715,
+      "net_sum": 0.314992237064521,
+      "compound": 0.3534990873151971,
+      "sharpe": 2.866813541973098,
+      "mdd": -0.10172170258322455,
+      "cost": 0.021472280810922027,
+      "turnover": 0.13787508326554684
+    },
+    "W4/G1_original": {
+      "annualized": 0.014885992188677921,
+      "net_sum": 0.029071596012616045,
+      "compound": 0.007888179001410922,
+      "sharpe": 0.19298050189994595,
+      "mdd": -0.1938936911628799,
+      "cost": 0.022192982842427635,
+      "turnover": 0.13394940657044654
+    },
+    "W4/MC40": {
+      "annualized": 0.05218621581639793,
+      "net_sum": 0.04076916184667749,
+      "compound": 0.02741915092870917,
+      "sharpe": 0.3360452792092778,
+      "mdd": -0.1432410195897298,
+      "cost": 0.023810078542136653,
+      "turnover": 0.14360494481860425
+    }
+  },
+  "requests": {
+    "market_requests.jsonl": {
+      "rows": 1288,
+      "max_end": "2026-07-24 00:00:00"
+    },
+    "coverage/market_requests.jsonl": {
+      "rows": 260,
+      "max_end": "2026-07-24 00:00:00"
+    },
+    "parity_requests.jsonl": {
+      "rows": 12,
+      "max_end": "2026-07-24 00:00:00"
+    }
+  },
+  "prediction": {
+    "learned": {
+      "pinball": 0.012875797224665348,
+      "p10": 0.009763680878781711
+    },
+    "volatility": {
+      "pinball": 0.012875797224665348,
+      "p10": 0.009763680878781711
+    }
+  },
+  "mechanism_passed": false,
+  "calibration_intervals_passed": true,
+  "passed": true
+}

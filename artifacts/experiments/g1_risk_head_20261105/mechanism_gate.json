@@ -1,0 +1,1759 @@
+{
+  "calibration": {
+    "all": {
+      "learned": {
+        "dates": 50,
+        "samples": 14692,
+        "block": 20,
+        "resamples": 5000,
+        "seed": 100,
+        "pinball": {
+          "mean": 0.012875797224665348,
+          "ci95": [
+            0.011486806727136716,
+            0.014214505360964915
+          ]
+        },
+        "p10": {
+          "mean": 0.009763680878781711,
+          "ci95": [
+            0.007808716019918078,
+            0.011633880815338614
+          ]
+        },
+        "coverage10": {
+          "mean": 0.057727008892294124,
+          "ci95": [
+            0.027210884353741496,
+            0.08481608274709199
+          ]
+        },
+        "coverage50": {
+          "mean": 0.45446495321678154,
+          "ci95": [
+            0.3887738095238096,
+            0.5206679146061154
+          ]
+        },
+        "coverage90": {
+          "mean": 0.9372930742262775,
+          "ci95": [
+            0.9069108448840285,
+            0.9659863945578229
+          ]
+        }
+      },
+      "volatility": {
+        "dates": 50,
+        "samples": 14692,
+        "block": 20,
+        "resamples": 5000,
+        "seed": 100,
+        "pinball": {
+          "mean": 0.012875797224665348,
+          "ci95": [
+            0.011486806727136716,
+            0.014214505360964915
+          ]
+        },
+        "p10": {
+          "mean": 0.009763680878781711,
+          "ci95": [
+            0.007808716019918078,
+            0.011633880815338614
+          ]
+        },
+        "coverage10": {
+          "mean": 0.057727008892294124,
+          "ci95": [
+            0.027210884353741496,
+            0.08481608274709199
+          ]
+        },
+        "coverage50": {
+          "mean": 0.45446495321678154,
+          "ci95": [
+            0.3887738095238096,
+            0.5206679146061154
+          ]
+        },
+        "coverage90": {
+          "mean": 0.9372930742262775,
+          "ci95": [
+            0.9069108448840285,
+            0.9659863945578229
+          ]
+        }
+      }
+    },
+    "G1_top50": {
+      "learned": {
+        "dates": 50,
+        "samples": 2500,
+        "block": 20,
+        "resamples": 5000,
+        "seed": 100,
+        "pinball": {
+          "mean": 0.014318361656474462,
+          "ci95": [
+            0.012499900830923068,
+            0.016211592371782733
+          ]
+        },
+        "p10": {
+          "mean": 0.011089703257328682,
+          "ci95": [
+            0.008799760411897527,
+            0.01336542121548624
+          ]
+        },
+        "coverage10": {
+          "mean": 0.054000000000000006,
+          "ci95": [
+            0.0228,
+            0.084
+          ]
+        },
+        "coverage50": {
+          "mean": 0.41759999999999997,
+          "ci95": [
+            0.35960000000000003,
+            0.4764000000000001
+          ]
+        },
+        "coverage90": {
+          "mean": 0.932,
+          "ci95": [
+            0.8992,
+            0.964
+          ]
+        }
+      },
+      "volatility": {
+        "dates": 50,
+        "samples": 2500,
+        "block": 20,
+        "resamples": 5000,
+        "seed": 100,
+        "pinball": {
+          "mean": 0.014318361656474462,
+          "ci95": [
+            0.012499900830923068,
+            0.016211592371782733
+          ]
+        },
+        "p10": {
+          "mean": 0.011089703257328682,
+          "ci95": [
+            0.008799760411897527,
+            0.01336542121548624
+          ]
+        },
+        "coverage10": {
+          "mean": 0.054000000000000006,
+          "ci95": [
+            0.0228,
+            0.084
+          ]
+        },
+        "coverage50": {
+          "mean": 0.41759999999999997,
+          "ci95": [
+            0.35960000000000003,
+            0.4764000000000001
+          ]
+        },
+        "coverage90": {
+          "mean": 0.932,
+          "ci95": [
+            0.8992,
+            0.964
+          ]
+        }
+      }
+    },
+    "vol_1": {
+      "learned": {
+        "dates": 50,
+        "samples": 4220,
+        "block": 20,
+        "resamples": 5000,
+        "seed": 100,
+        "pinball": {
+          "mean": 0.008560840905399818,
+          "ci95": [
+            0.007599287034806752,
+            0.009556116010353695
+          ]
+        },
+        "p10": {
+          "mean": 0.006212962499501459,
+          "ci95": [
+            0.005375928735471192,
+            0.00715185271156083
+          ]
+        },
+        "coverage10": {
+          "mean": 0.10321638300993151,
+          "ci95": [
+            0.0837581299121757,
+            0.1241201102180025
+          ]
+        },
+        "coverage50": {
+          "mean": 0.4115271993054786,
+          "ci95": [
+            0.3053520766997809,
+            0.5178333269237556
+          ]
+        },
+        "coverage90": {
+          "mean": 0.90542856390112,
+          "ci95": [
+            0.8551559697539469,
+            0.9540160264025783
+          ]
+        }
+      },
+      "volatility": {
+        "dates": 50,
+        "samples": 4220,
+        "block": 20,
+        "resamples": 5000,
+        "seed": 100,
+        "pinball": {
+          "mean": 0.008560840905399818,
+          "ci95": [
+            0.007599287034806752,
+            0.009556116010353695
+          ]
+        },
+        "p10": {
+          "mean": 0.006212962499501459,
+          "ci95": [
+            0.005375928735471192,
+            0.00715185271156083
+          ]
+        },
+        "coverage10": {
+          "mean": 0.10321638300993151,
+          "ci95": [
+            0.0837581299121757,
+            0.1241201102180025
+          ]
+        },
+        "coverage50": {
+          "mean": 0.4115271993054786,
+          "ci95": [
+            0.3053520766997809,
+            0.5178333269237556
+          ]
+        },
+        "coverage90": {
+          "mean": 0.90542856390112,
+          "ci95": [
+            0.8551559697539469,
+            0.9540160264025783
+          ]
+        }
+      }
+    },
+    "vol_2": {
+      "learned": {
+        "dates": 50,
+        "samples": 3205,
+        "block": 20,
+        "resamples": 5000,
+        "seed": 100,
+        "pinball": {
+          "mean": 0.01063831123824669,
+          "ci95": [
+            0.009792586928685723,
+            0.011610948876643426
+          ]
+        },
+        "p10": {
+          "mean": 0.0078054369429120364,
+          "ci95": [
+            0.006855835285124339,
+            0.009019565536412064
+          ]
+        },
+        "coverage10": {
+          "mean": 0.054849440640898556,
+          "ci95": [
+            0.033109482669342175,
+            0.07251889561324505
+          ]
+        },
+        "coverage50": {
+          "mean": 0.4529155202797571,
+          "ci95": [
+            0.36433427022184484,
+            0.5439223939713478
+          ]
+        },
+        "coverage90": {
+          "mean": 0.9458805483710283,
+          "ci95": [
+            0.9372210082011516,
+            0.9541075689790248
+          ]
+        }
+      },
+      "volatility": {
+        "dates": 50,
+        "samples": 3205,
+        "block": 20,
+        "resamples": 5000,
+        "seed": 100,
+        "pinball": {
+          "mean": 0.01063831123824669,
+          "ci95": [
+            0.009792586928685723,
+            0.011610948876643426
+          ]
+        },
+        "p10": {
+          "mean": 0.0078054369429120364,
+          "ci95": [
+            0.006855835285124339,
+            0.009019565536412064
+          ]
+        },
+        "coverage10": {
+          "mean": 0.054849440640898556,
+          "ci95": [
+            0.033109482669342175,
+            0.07251889561324505
+          ]
+        },
+        "coverage50": {
+          "mean": 0.4529155202797571,
+          "ci95": [
+            0.36433427022184484,
+            0.5439223939713478
+          ]
+        },
+        "coverage90": {
+          "mean": 0.9458805483710283,
+          "ci95": [
+            0.9372210082011516,
+            0.9541075689790248
+          ]
+        }
+      }
+    },
+    "vol_3": {
+      "learned": {
+        "dates": 50,
+        "samples": 2445,
+        "block": 20,
+        "resamples": 5000,
+        "seed": 100,
+        "pinball": {
+          "mean": 0.013319493322566272,
+          "ci95": [
+            0.011537665538200313,
+            0.01532045916815252
+          ]
+        },
+        "p10": {
+          "mean": 0.009680990754502931,
+          "ci95": [
+            0.008492576410115332,
+            0.011196748258814969
+          ]
+        },
+        "coverage10": {
+          "mean": 0.03648291483500498,
+          "ci95": [
+            0.016652207385769134,
+            0.06264241818465209
+          ]
+        },
+        "coverage50": {
+          "mean": 0.47199275375376204,
+          "ci95": [
+            0.4288727823086621,
+            0.5121852877273245
+          ]
+        },
+        "coverage90": {
+          "mean": 0.9500219715038662,
+          "ci95": [
+            0.9264364196976332,
+            0.9733117984935572
+          ]
+        }
+      },
+      "volatility": {
+        "dates": 50,
+        "samples": 2445,
+        "block": 20,
+        "resamples": 5000,
+        "seed": 100,
+        "pinball": {
+          "mean": 0.013319493322566272,
+          "ci95": [
+            0.011537665538200313,
+            0.01532045916815252
+          ]
+        },
+        "p10": {
+          "mean": 0.009680990754502931,
+          "ci95": [
+            0.008492576410115332,
+            0.011196748258814969
+          ]
+        },
+        "coverage10": {
+          "mean": 0.03648291483500498,
+          "ci95": [
+            0.016652207385769134,
+            0.06264241818465209
+          ]
+        },
+        "coverage50": {
+          "mean": 0.47199275375376204,
+          "ci95": [
+            0.4288727823086621,
+            0.5121852877273245
+          ]
+        },
+        "coverage90": {
+          "mean": 0.9500219715038662,
+          "ci95": [
+            0.9264364196976332,
+            0.9733117984935572
+          ]
+        }
+      }
+    },
+    "vol_4": {
+      "learned": {
+        "dates": 50,
+        "samples": 3126,
+        "block": 20,
+        "resamples": 5000,
+        "seed": 100,
+        "pinball": {
+          "mean": 0.01728079440813405,
+          "ci95": [
+            0.01448701236320463,
+            0.02021500783809473
+          ]
+        },
+        "p10": {
+          "mean": 0.012568778933691188,
+          "ci95": [
+            0.010582321652078007,
+            0.014667092557351668
+          ]
+        },
+        "coverage10": {
+          "mean": 0.025551506133952975,
+          "ci95": [
+            0.009305741949460542,
+            0.046855701063906297
+          ]
+        },
+        "coverage50": {
+          "mean": 0.43427898953959343,
+          "ci95": [
+            0.373364249478219,
+            0.5008524178746376
+          ]
+        },
+        "coverage90": {
+          "mean": 0.9452632158971177,
+          "ci95": [
+            0.9090023919547066,
+            0.9770927988890565
+          ]
+        }
+      },
+      "volatility": {
+        "dates": 50,
+        "samples": 3126,
+        "block": 20,
+        "resamples": 5000,
+        "seed": 100,
+        "pinball": {
+          "mean": 0.01728079440813405,
+          "ci95": [
+            0.01448701236320463,
+            0.02021500783809473
+          ]
+        },
+        "p10": {
+          "mean": 0.012568778933691188,
+          "ci95": [
+            0.010582321652078007,
+            0.014667092557351668
+          ]
+        },
+        "coverage10": {
+          "mean": 0.025551506133952975,
+          "ci95": [
+            0.009305741949460542,
+            0.046855701063906297
+          ]
+        },
+        "coverage50": {
+          "mean": 0.43427898953959343,
+          "ci95": [
+            0.373364249478219,
+            0.5008524178746376
+          ]
+        },
+        "coverage90": {
+          "mean": 0.9452632158971177,
+          "ci95": [
+            0.9090023919547066,
+            0.9770927988890565
+          ]
+        }
+      }
+    },
+    "vol_5": {
+      "learned": {
+        "dates": 50,
+        "samples": 1696,
+        "block": 20,
+        "resamples": 5000,
+        "seed": 100,
+        "pinball": {
+          "mean": 0.024295990637177595,
+          "ci95": [
+            0.01986839891257355,
+            0.029269955743889308
+          ]
+        },
+        "p10": {
+          "mean": 0.01769258055868893,
+          "ci95": [
+            0.016198916547817993,
+            0.019224961547709113
+          ]
+        },
+        "coverage10": {
+          "mean": 0.014352963716380316,
+          "ci95": [
+            0.0,
+            0.03721074815595344
+          ]
+        },
+        "coverage50": {
+          "mean": 0.4284170568012577,
+          "ci95": [
+            0.37835863419018145,
+            0.48139574005942287
+          ]
+        },
+        "coverage90": {
+          "mean": 0.9205692005823307,
+          "ci95": [
+            0.8374205163883736,
+            0.9908642437744328
+          ]
+        }
+      },
+      "volatility": {
+        "dates": 50,
+        "samples": 1696,
+        "block": 20,
+        "resamples": 5000,
+        "seed": 100,
+        "pinball": {
+          "mean": 0.024295990637177595,
+          "ci95": [
+            0.01986839891257355,
+            0.029269955743889308
+          ]
+        },
+        "p10": {
+          "mean": 0.01769258055868893,
+          "ci95": [
+            0.016198916547817993,
+            0.019224961547709113
+          ]
+        },
+        "coverage10": {
+          "mean": 0.014352963716380316,
+          "ci95": [
+            0.0,
+            0.03721074815595344
+          ]
+        },
+        "coverage50": {
+          "mean": 0.4284170568012577,
+          "ci95": [
+            0.37835863419018145,
+            0.48139574005942287
+          ]
+        },
+        "coverage90": {
+          "mean": 0.9205692005823307,
+          "ci95": [
+            0.8374205163883736,
+            0.9908642437744328
+          ]
+        }
+      }
+    }
+  },
+  "passed": false,
+  "selected_epoch": 0,
+  "history": [
+    {
+      "epoch": 0,
+      "Q1": 0.013658371320344967
+    },
+    {
+      "epoch": 1,
+      "Q1": 0.013952622922347693,
+      "train_Z": 0.28977599782603125
+    },
+    {
+      "epoch": 2,
+      "Q1": 0.01425014488534549,
+      "train_Z": 0.28612801390034814
+    },
+    {
+      "epoch": 3,
+      "Q1": 0.014306886415110635,
+      "train_Z": 0.28436524868011476
+    }
+  ],
+  "train_samples": 143058,
+  "Q1_samples": 13812,
+  "Q2_samples": 14692,
+  "metrics": {
+    "learned": {
+      "pinball": 0.012875797224665347,
+      "p10": 0.009763680878781707,
+      "coverage10": 0.05772700889229413,
+      "coverage50": 0.4544649532167814,
+      "coverage90": 0.9372930742262777
+    },
+    "volatility": {
+      "pinball": 0.012875797224665347,
+      "p10": 0.009763680878781707,
+      "coverage10": 0.05772700889229413,
+      "coverage50": 0.4544649532167814,
+      "coverage90": 0.9372930742262777
+    }
+  },
+  "highscore_auc_delta": 0.0,
+  "auc_valid_dates": 37,
+  "train_bad_threshold": -0.08065682307245749,
+  "train_vol_bins": [
+    0.04116832560772219,
+    0.05596799045083692,
+    0.07234285115196358,
+    0.09636153169537745
+  ],
+  "conditional_groups": {
+    "1": {
+      "learned": {
+        "pinball": 0.00856084090539982,
+        "p10": 0.00621296249950146,
+        "coverage10": 0.10321638300993151,
+        "coverage50": 0.41152719930547854,
+        "coverage90": 0.90542856390112
+      },
+      "volatility": {
+        "pinball": 0.00856084090539982,
+        "p10": 0.00621296249950146,
+        "coverage10": 0.10321638300993151,
+        "coverage50": 0.41152719930547854,
+        "coverage90": 0.90542856390112
+      }
+    },
+    "2": {
+      "learned": {
+        "pinball": 0.010638311238246694,
+        "p10": 0.007805436942912034,
+        "coverage10": 0.05484944064089855,
+        "coverage50": 0.45291552027975707,
+        "coverage90": 0.9458805483710286
+      },
+      "volatility": {
+        "pinball": 0.010638311238246694,
+        "p10": 0.007805436942912034,
+        "coverage10": 0.05484944064089855,
+        "coverage50": 0.45291552027975707,
+        "coverage90": 0.9458805483710286
+      }
+    },
+    "3": {
+      "learned": {
+        "pinball": 0.013319493322566272,
+        "p10": 0.009680990754502933,
+        "coverage10": 0.03648291483500497,
+        "coverage50": 0.471992753753762,
+        "coverage90": 0.950021971503866
+      },
+      "volatility": {
+        "pinball": 0.013319493322566272,
+        "p10": 0.009680990754502933,
+        "coverage10": 0.03648291483500497,
+        "coverage50": 0.471992753753762,
+        "coverage90": 0.950021971503866
+      }
+    },
+    "4": {
+      "learned": {
+        "pinball": 0.017280794408134046,
+        "p10": 0.012568778933691183,
+        "coverage10": 0.025551506133952972,
+        "coverage50": 0.4342789895395935,
+        "coverage90": 0.9452632158971177
+      },
+      "volatility": {
+        "pinball": 0.017280794408134046,
+        "p10": 0.012568778933691183,
+        "coverage10": 0.025551506133952972,
+        "coverage50": 0.4342789895395935,
+        "coverage90": 0.9452632158971177
+      }
+    },
+    "5": {
+      "learned": {
+        "pinball": 0.024295990637177592,
+        "p10": 0.01769258055868893,
+        "coverage10": 0.014352963716380318,
+        "coverage50": 0.42841705680125763,
+        "coverage90": 0.9205692005823306
+      },
+      "volatility": {
+        "pinball": 0.024295990637177592,
+        "p10": 0.01769258055868893,
+        "coverage10": 0.014352963716380318,
+        "coverage50": 0.42841705680125763,
+        "coverage90": 0.9205692005823306
+      }
+    }
+  },
+  "head_sha": "50b068883d69cf299c01a1cb7b89e4849b833d103d7c96f7284b79d20670273d",
+  "identity": {
+    "protocol": "e8f0c9ef6b418960cf7354a64a8055b2714e7a82887ca55a0a821deacde0adaf",
+    "sources": {
+      "/home/user/workspace/Kronos-state-adapter/artifacts/experiments/state_adapter_20261030/protocol.json": "4c4405f0dfb2e050cef5d8df414e12c4ebc1b3cf46074aba0cfed092c5a583b9",
+      "/home/user/workspace/Kronos-state-adapter/artifacts/experiments/state_adapter_20261030/protocol.json.sha256": "5819d768d037066c406015868dbdaf34eb5e70f32ec08ddfc89f84996ad10a65",
+      "/home/user/workspace/quant-qlib/qlib/__init__.py": "5141233aa7f31a20dac3595e1d2082424a207527c1c4e2bb3514137c86219d7e",
+      "/home/user/workspace/quant-qlib/qlib/backtest/__init__.py": "4c1e4c2ad84492c2935e49c09e5eddc70a942edd9ad2914a2fe95062196673ba",
+      "/home/user/workspace/quant-qlib/qlib/backtest/account.py": "0247a065ee00f0656320fcfe4db5e26e23cc10f57afeb1e063941cf4011bf10e",
+      "/home/user/workspace/quant-qlib/qlib/backtest/backtest.py": "f792772f81f3c8973f1a91351cda4a8c43fd5bafc791c2b04eabd9e4663cf961",
+      "/home/user/workspace/quant-qlib/qlib/backtest/decision.py": "15c546f1420f2e1646be954bc5c7a20b24d6f329cb8059060ac3b85c7fcd459c",
+      "/home/user/workspace/quant-qlib/qlib/backtest/exchange.py": "7c33192af125850e6d96f736dcf619a2dbefec598dac404a597f085543d853ef",
+      "/home/user/workspace/quant-qlib/qlib/backtest/executor.py": "83c2596f569906663c18df6dc48033e57f0a365f706f963d47f6e6301c53ea1c",
+      "/home/user/workspace/quant-qlib/qlib/backtest/high_performance_ds.py": "32179caec833176a3ff16d767357b86d875161f9dbfab4a6baa37ec89dce8e88",
+      "/home/user/workspace/quant-qlib/qlib/backtest/position.py": "9849739a72923337a75a5492ad5b333344bf90379be9a1eb82866e435c1407e1",
+      "/home/user/workspace/quant-qlib/qlib/backtest/profit_attribution.py": "00be046ff6ebaa59305f44f0d7accf85b0db32fbfce6b4b42e4123813f7674a2",
+      "/home/user/workspace/quant-qlib/qlib/backtest/report.py": "345c612e15224445be5a7076f4a92ae2cd39cb5d0522c34f4790e4b4af01615c",
+      "/home/user/workspace/quant-qlib/qlib/backtest/signal.py": "160f5cead8c0095adce25b560b8bccfa6f8a04c721a72142bda7f5dbd659fe6e",
+      "/home/user/workspace/quant-qlib/qlib/backtest/utils.py": "b7c81b55d630af02c168c342416040bdd5fe062de416c4882e8f7416f57eccce",
+      "/home/user/workspace/quant-qlib/qlib/config.py": "78ced9f416a06ba3a6835552ded9f8fcd16748c04c101be6e89ecddf0b882833",
+      "/home/user/workspace/quant-qlib/qlib/constant.py": "92b0cc8d027742591558bbaee935909be9a58aa9c5541b714f41f0e1338fde94",
+      "/home/user/workspace/quant-qlib/qlib/contrib/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "/home/user/workspace/quant-qlib/qlib/contrib/data/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "/home/user/workspace/quant-qlib/qlib/contrib/data/data.py": "42b186eb7056acd38c086726cc08b74bd32ec7c7cc47a194af290e71250167ef",
+      "/home/user/workspace/quant-qlib/qlib/contrib/data/dataset.py": "cd37c169d20c464a4fffd8c371ef4b8f2661b46f2f4e3237a5b71b278384b275",
+      "/home/user/workspace/quant-qlib/qlib/contrib/data/handler.py": "15a117751c3a54fa5d27fd8314580fdc2c0bddf587d1315def083d172f09910d",
+      "/home/user/workspace/quant-qlib/qlib/contrib/data/highfreq_handler.py": "7206323473f3453495bf81bb4a093b758dec2ef2b753db05c0abb081eb1d604d",
+      "/home/user/workspace/quant-qlib/qlib/contrib/data/highfreq_processor.py": "dfce249f3a6ecee1d5dbcd997fba9a80a99055808133c0e2c6b22dcd2d64c632",
+      "/home/user/workspace/quant-qlib/qlib/contrib/data/highfreq_provider.py": "ccc08be6a383840cd4bbc551846b256ef201fae8e4fa7466b2292d997f970d9a",
+      "/home/user/workspace/quant-qlib/qlib/contrib/data/loader.py": "6af73b10b596ec2ebd0b6dbb537977a0e6c366b1c79206ae1b7d00e65865600d",
+      "/home/user/workspace/quant-qlib/qlib/contrib/data/processor.py": "959c5db87ffa3fc110bf1778194777747e634ae168ebe89e8d71d005c42a7e7f",
+      "/home/user/workspace/quant-qlib/qlib/contrib/data/utils/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "/home/user/workspace/quant-qlib/qlib/contrib/data/utils/sepdf.py": "448cb07cec9017a2a7860703776f2a29e6cdc4d48c2d23e9d3d82038356c1dd1",
+      "/home/user/workspace/quant-qlib/qlib/contrib/eva/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "/home/user/workspace/quant-qlib/qlib/contrib/eva/alpha.py": "302fb0db9cacce5c82aa6b69c9fb07e43ff481b6adda8750606b67b66d98d913",
+      "/home/user/workspace/quant-qlib/qlib/contrib/evaluate.py": "ee0e2a75989e3b80d27f06096278d675b6568a17a90a82843f2091bd6f1cf58e",
+      "/home/user/workspace/quant-qlib/qlib/contrib/evaluate_portfolio.py": "9815dbdff5349fa0769aa644c67f0c645c0f1efdc981435e8167839ab4c6b845",
+      "/home/user/workspace/quant-qlib/qlib/contrib/meta/__init__.py": "b28041f864a0edf345ff16c29b213990026d9f7902328c9a94fab9e4a9227345",
+      "/home/user/workspace/quant-qlib/qlib/contrib/meta/data_selection/__init__.py": "bc58be06355746664a67aac7fac6097c24d69b031551472e07fa1aa50abd8c59",
+      "/home/user/workspace/quant-qlib/qlib/contrib/meta/data_selection/dataset.py": "a1791ff8c9978c843d6fb4a36a9bce0fd3233039b4d20e5f8ab79dc54c65c4fa",
+      "/home/user/workspace/quant-qlib/qlib/contrib/meta/data_selection/model.py": "f4bfd7d718a915c69d28ad29bd276440e8be992c9a606f9844ef364fa1168e95",
+      "/home/user/workspace/quant-qlib/qlib/contrib/meta/data_selection/net.py": "3f35cdc067720f1d3787be2159377efb55cf6977919c5c88aaed5ccf4cad7a31",
+      "/home/user/workspace/quant-qlib/qlib/contrib/meta/data_selection/utils.py": "40b9e35f95dabbee77e09ebe9f1b0d330b7a53caf441af2314bd11ea40fc2dec",
+      "/home/user/workspace/quant-qlib/qlib/contrib/model/__init__.py": "8f679e3fd0998515a64b291fea3e7d42cd2eb1819290058f4cf0621b36cb2386",
+      "/home/user/workspace/quant-qlib/qlib/contrib/model/catboost_model.py": "87e1dcac5927d68570bb5231331e63b76ce3000c716fe3094b9c21a473398ebe",
+      "/home/user/workspace/quant-qlib/qlib/contrib/model/double_ensemble.py": "7e21c36f58535dcf6dc440bd5c85079ed23f056cfa20d1d3f8cc79babafb697a",
+      "/home/user/workspace/quant-qlib/qlib/contrib/model/gbdt.py": "2c1dd86b85af7730595a7657039c35a3a119d1c0af738d58e38a2357af5763a5",
+      "/home/user/workspace/quant-qlib/qlib/contrib/model/highfreq_gdbt_model.py": "d7097808e64f6a5a17289d4d7d64ba48f78d5b26fb89f7ddfff0c3132468a6df",
+      "/home/user/workspace/quant-qlib/qlib/contrib/model/kronos/__init__.py": "4f3a6480eeec97fc39bed6f60dfd3ce0e4def291babbb8ed92f552d2ba66642f",
+      "/home/user/workspace/quant-qlib/qlib/contrib/model/kronos/_arch.py": "9ee3be34ef0cc604f712ce590b419f8eb922de6da63f061947e91b2f4ffd9654",
+      "/home/user/workspace/quant-qlib/qlib/contrib/model/kronos/_net.py": "2c9e288508bfa1dccbde169f99c6761ad628f04bd7d444e167038142a7d35517",
+      "/home/user/workspace/quant-qlib/qlib/contrib/model/kronos/model.py": "231389d4d7c7b2c44bf7185afb35d11fb60e06be27df4fff87ecedb29a73d46e",
+      "/home/user/workspace/quant-qlib/qlib/contrib/model/kronos/tokenizer_finetune.py": "226935530a62e341994a2ad63cab3ad6b6ca5ed4ef90b72352759eba52b018ea",
+      "/home/user/workspace/quant-qlib/qlib/contrib/model/linear.py": "9a846b5733dcdf69c24d330bbde50f0922eb422322dae8e5771abce56afd7e55",
+      "/home/user/workspace/quant-qlib/qlib/contrib/model/pytorch_act_ts.py": "9e3cbcdebfb1a05cd4b9cb1013ada46339489dc70fca8d1f71bae7a409686b88",
+      "/home/user/workspace/quant-qlib/qlib/contrib/model/pytorch_adarnn.py": "3a555b6e8a69bc2ed7a3402c5b1d1787294470c86e50b82a6649631587bcc554",
+      "/home/user/workspace/quant-qlib/qlib/contrib/model/pytorch_add.py": "72deb11e783a41d33fe4528fff0ad009971ee2508221232f0020c4df35d3074c",
+      "/home/user/workspace/quant-qlib/qlib/contrib/model/pytorch_alstm.py": "f7a19f9a2a6551f0659cc821cce30aaaa865a703874e7e83c4fbc8e0d1275a6b",
+      "/home/user/workspace/quant-qlib/qlib/contrib/model/pytorch_alstm_ts.py": "74b554a66203dfb81110b71556ace92d73d8102892ce85bb0fabfc2bf3256362",
+      "/home/user/workspace/quant-qlib/qlib/contrib/model/pytorch_gats.py": "19d789805098bb96f27ca1784f5fd954e0f45ebb7906a070517802b7a5e68eaf",
+      "/home/user/workspace/quant-qlib/qlib/contrib/model/pytorch_gats_ts.py": "335a480547756b8aeaf8adda96a8328270d49a6529cbb470f11860f545cb04c8",
+      "/home/user/workspace/quant-qlib/qlib/contrib/model/pytorch_general_nn.py": "be37cb1a4f4d749d11223b3ce54309b8c84d31d94a2537c522cb397ef723f8d2",
+      "/home/user/workspace/quant-qlib/qlib/contrib/model/pytorch_gru.py": "75cc1c38dcbc4dfda90105d203f60399aec60c154360eac8eddb38f605efda7e",
+      "/home/user/workspace/quant-qlib/qlib/contrib/model/pytorch_gru_ts.py": "d92bdbaceb46d8e7311b3a50abd122ee931b84f8a9f457ffd99afbacd6d57d2c",
+      "/home/user/workspace/quant-qlib/qlib/contrib/model/pytorch_hist.py": "66ca639732f534b524f7f3bd5158fa034306dece7dc4542760b644008cdf8987",
+      "/home/user/workspace/quant-qlib/qlib/contrib/model/pytorch_igmtf.py": "04b247be841c2970c4cae768f38d3ce76cd8572bf854012d3f5ac0e51f444f24",
+      "/home/user/workspace/quant-qlib/qlib/contrib/model/pytorch_krnn.py": "5ae971c3343740bc8dd750762a43849ff1cc294a011f9488a59d479271b0b73c",
+      "/home/user/workspace/quant-qlib/qlib/contrib/model/pytorch_kronos_ts.py": "31b02bf8d03b4fd832e1f2de7e902cc9fb3e2fed0bf94e577e24e1a0046aa67e",
+      "/home/user/workspace/quant-qlib/qlib/contrib/model/pytorch_localformer.py": "28518144b3eb744702e6d6e8ea03bcb37ddda772b4074ff873bf4e14b09d49f0",
+      "/home/user/workspace/quant-qlib/qlib/contrib/model/pytorch_localformer_ts.py": "3001ae5c2b82e47c241134b9ed5ced6c8f0c8fc6275c2f032fc5c59d3ce46b53",
+      "/home/user/workspace/quant-qlib/qlib/contrib/model/pytorch_lstm.py": "b72dc20f4c51aacdc97030da1c29d61ee7a57c0945b1dfddd0f757363ea313f0",
+      "/home/user/workspace/quant-qlib/qlib/contrib/model/pytorch_lstm_ts.py": "4496a8bd0f2b8812523676f17bf50fdf18268ab66a5869e8f9b44c5cb4b4e230",
+      "/home/user/workspace/quant-qlib/qlib/contrib/model/pytorch_nn.py": "d4c7fec9a79ee3fecc8b467369a078d3e7d61b5a6c0bbe29e188192c2d8c7c21",
+      "/home/user/workspace/quant-qlib/qlib/contrib/model/pytorch_sandwich.py": "a0d8b1d95a5cbe4c37270ea2768a52f8b3c8d71489548dda2e63f6806bb37118",
+      "/home/user/workspace/quant-qlib/qlib/contrib/model/pytorch_sfm.py": "43dc5f5e5c92565dfedff8099ae937bbc51769ab7714bfbb58be0979691a48fc",
+      "/home/user/workspace/quant-qlib/qlib/contrib/model/pytorch_tabnet.py": "402e80f2aea3085e5e06bad565e0989d2d18c5da125bbd5dfd306f7d9d1b7488",
+      "/home/user/workspace/quant-qlib/qlib/contrib/model/pytorch_tcn.py": "0ebf9d5d9d9deac237b4d0f06a214f71286cac285551ddba2414e51fa84b22e7",
+      "/home/user/workspace/quant-qlib/qlib/contrib/model/pytorch_tcn_ts.py": "649b759156843909db2e79a19819c5f496eb06f4fba75a58f75255ca8abcc76a",
+      "/home/user/workspace/quant-qlib/qlib/contrib/model/pytorch_tcts.py": "09b7df90fb1013e8be084add434a9b7de43931529d0ae2ad9e7d795b05daf5be",
+      "/home/user/workspace/quant-qlib/qlib/contrib/model/pytorch_tra.py": "58e902b918abc56051a8e27e1ce0807ff35daac6d6066166c5d6b950c14f950a",
+      "/home/user/workspace/quant-qlib/qlib/contrib/model/pytorch_transformer.py": "e87271b46a1128ad889bb614d8e1fd4bc85ce7b766be5f53a0ec3316bfe640a2",
+      "/home/user/workspace/quant-qlib/qlib/contrib/model/pytorch_transformer_ts.py": "053bed36b9d712275fd1cd4735cc897a0adde196e2646f83b7773257d040d79f",
+      "/home/user/workspace/quant-qlib/qlib/contrib/model/pytorch_utils.py": "267abfd2f2453c0c6c264f876a5d0c2201a32f24f6dc06c7ded03efd83ef62c7",
+      "/home/user/workspace/quant-qlib/qlib/contrib/model/tcn.py": "052640a3f48c323e4d375adc303a206d2219814f27d71f2542161a7886893c3f",
+      "/home/user/workspace/quant-qlib/qlib/contrib/model/xgboost.py": "9ec9cca61facd7108f9bc910d19916163cb95f902b2ea03581c6db079efb1273",
+      "/home/user/workspace/quant-qlib/qlib/contrib/online/__init__.py": "a8e914cb3b809f66b0bfaa78e556629edb5d96c123102dade76268e8a6daa59d",
+      "/home/user/workspace/quant-qlib/qlib/contrib/online/manager.py": "7e05012c4e55e5b71e1e32e7b371e7d030aa6c66ac4db1cf3f8b10ad77c25440",
+      "/home/user/workspace/quant-qlib/qlib/contrib/online/online_model.py": "369dbad6add1efcf69d71e89b202029a4e37c7814ca4c24f2f5859ac5c90395c",
+      "/home/user/workspace/quant-qlib/qlib/contrib/online/operator.py": "9a7d96efea6504059204a4fc2a5ccf784f8260ec9893333596dde4586f91ebdf",
+      "/home/user/workspace/quant-qlib/qlib/contrib/online/user.py": "570f54da1214eedea03968304f80f6e8c4596f1aa2704b833cad40023dfcbfe4",
+      "/home/user/workspace/quant-qlib/qlib/contrib/online/utils.py": "6f571df00625d8cbc529c60acc5c18bb95eb3c30809f877b969bcb329e4f98ee",
+      "/home/user/workspace/quant-qlib/qlib/contrib/ops/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "/home/user/workspace/quant-qlib/qlib/contrib/ops/high_freq.py": "9565a5ab9a5346090193bff4293d252b236339d837d1d20539fc6a066d466ee9",
+      "/home/user/workspace/quant-qlib/qlib/contrib/report/__init__.py": "c052c0a1dfb55457b2db01f54f281903af5e55a175568ff4e99117ec6a3e5323",
+      "/home/user/workspace/quant-qlib/qlib/contrib/report/analysis_alpha/factor_stats.py": "2d0aefe54d8b363ce0e4a100f0bb30efb77df07d8c8f28484cc53484f378f4b6",
+      "/home/user/workspace/quant-qlib/qlib/contrib/report/analysis_alpha/tests/test_factor_stats.py": "ee13ba226206b31e77117e208b6102c66e08b030a2af78a50c25124176255c1b",
+      "/home/user/workspace/quant-qlib/qlib/contrib/report/analysis_model/__init__.py": "5bb2c6d9b7b037683f745676564c1b74683f5b05bdc8ccbdd97558f8e9c03dcd",
+      "/home/user/workspace/quant-qlib/qlib/contrib/report/analysis_model/analysis_model_performance.py": "3a3a81dbbae82e575b24d6a4457dad762552f867ee55970aa216b084130f8909",
+      "/home/user/workspace/quant-qlib/qlib/contrib/report/analysis_model/analysis_model_performance_bak.py": "a836ceeea99c25c2c0e526bf3798d812b574dc7cc26fec55cb177f0e9ebe4d2a",
+      "/home/user/workspace/quant-qlib/qlib/contrib/report/analysis_position/__init__.py": "50ad13734e68707ab5260b3d609f76406306c27b765331c520bc14a252731b07",
+      "/home/user/workspace/quant-qlib/qlib/contrib/report/analysis_position/cumulative_return.py": "a9bd7fdf75504c7c6e65113e043fe3e98d518a5516c7c6f25b1c8c4d0f631fa4",
+      "/home/user/workspace/quant-qlib/qlib/contrib/report/analysis_position/parse_position.py": "acfa139ccb37eb1c78a972d93c28ceb76a1678d430824decbb2cd5baad1550f8",
+      "/home/user/workspace/quant-qlib/qlib/contrib/report/analysis_position/rank_label.py": "a212666ce2842e17fe6864e033d1d2e996a6b3a87bee64163aabdc5037baf0a5",
+      "/home/user/workspace/quant-qlib/qlib/contrib/report/analysis_position/report.py": "f5ef933d640052fd193289af5633486acdc308a3698009bcedadc3804a21d9fc",
+      "/home/user/workspace/quant-qlib/qlib/contrib/report/analysis_position/report_bak.py": "d9efdf5de909cb3ee84bfc0777dde0de0e2295907a7467bd1a6c0c06d14e66d6",
+      "/home/user/workspace/quant-qlib/qlib/contrib/report/analysis_position/risk_analysis.py": "775ebe7113ff857e7e98c1f2da9ea58be2b92e5307beac178e636a73a2c55d16",
+      "/home/user/workspace/quant-qlib/qlib/contrib/report/analysis_position/risk_analysis_bak.py": "cacf0bc5a07219b87210a75a06fc2a22e8db78ea574ef63728da922a3864b0f9",
+      "/home/user/workspace/quant-qlib/qlib/contrib/report/analysis_position/score_ic.py": "bafd22eb14a9ce6159db7d9044a89e253fb15aa5fa15772c05c4cd0f4b45821e",
+      "/home/user/workspace/quant-qlib/qlib/contrib/report/analysis_position/score_ic_bak.py": "4db368c578f0e6c1abe7aeb59b50dcbc313a5d7fd0abf10c216947a92879f50a",
+      "/home/user/workspace/quant-qlib/qlib/contrib/report/data/__init__.py": "4ec607e0b837ff598265b350c14530808a1609b55e0a87643b83be3cdd6f0163",
+      "/home/user/workspace/quant-qlib/qlib/contrib/report/data/ana.py": "56076c762bf125ecdfeb285cac96b63fb3f7473ab2c35e4f41851294fa874878",
+      "/home/user/workspace/quant-qlib/qlib/contrib/report/data/base.py": "9638935126505344c69358592b38ac11c1b640927d95de636b7d805d6d406fa4",
+      "/home/user/workspace/quant-qlib/qlib/contrib/report/display_config.py": "6f49260bb52462dd71f38d009e4f32e4742f24281d2ef283c81ed7e6a84122ef",
+      "/home/user/workspace/quant-qlib/qlib/contrib/report/graph.py": "cd49f479d491b1046b7e320f46dd22cf998ebc2dea5999fb4f9cc5a118e05e26",
+      "/home/user/workspace/quant-qlib/qlib/contrib/report/graph_bak.py": "b37d5aa4901f2bbe16efc731512ea6b1e8df825b12abcb0350cb2aaecb443318",
+      "/home/user/workspace/quant-qlib/qlib/contrib/report/utils.py": "b2e7c7a945ff95dac8acb2b003facb671bb88357ea36e696e1985c35fa4a0ec2",
+      "/home/user/workspace/quant-qlib/qlib/contrib/rolling/__init__.py": "ac645c890a6f7098bab358203cba3e3cd1c0d7b378c6e2ce87a0365b4fa10229",
+      "/home/user/workspace/quant-qlib/qlib/contrib/rolling/__main__.py": "34fd8edc071fdee2194003bf753c8bc5a6b874f9be0c24e35341787592d4a539",
+      "/home/user/workspace/quant-qlib/qlib/contrib/rolling/base.py": "c5bb5aef7dc7224de4e12e6482a9b215a2ab2c8c92c0281016aa0bbdee3df660",
+      "/home/user/workspace/quant-qlib/qlib/contrib/rolling/ddgda.py": "69ce8c17d6d574ec3d761cdeffca417f96a29f9cbc4d7790daed75011786bdca",
+      "/home/user/workspace/quant-qlib/qlib/contrib/strategy/__init__.py": "54800cd7092699a067676009a2f8c50f2f54b6cdf1c28693394af7e0b4bd831a",
+      "/home/user/workspace/quant-qlib/qlib/contrib/strategy/cost_control.py": "1f4387c6589a3359256f9d110ad9a0d1f04df5aa223e8bb1cf1f5ff67894bd9b",
+      "/home/user/workspace/quant-qlib/qlib/contrib/strategy/optimizer/__init__.py": "688bdbd619bd13904e024a92f278a6dbfb0fff25a35727dbae463453255a7f41",
+      "/home/user/workspace/quant-qlib/qlib/contrib/strategy/optimizer/base.py": "c299274d1343c3551306a71e1269ae2ee9c958f44d91c318262fe8dc35baa26c",
+      "/home/user/workspace/quant-qlib/qlib/contrib/strategy/optimizer/enhanced_indexing.py": "88c8397646af1e1b5596ee3f281a85abacce06116d313b789adf4cdab5dc81c1",
+      "/home/user/workspace/quant-qlib/qlib/contrib/strategy/optimizer/optimizer.py": "283cb365211731a7a92487b80a0938c5229926dac6034033838fb0759c81edb5",
+      "/home/user/workspace/quant-qlib/qlib/contrib/strategy/order_generator.py": "1834e75c513c283ad9e0093b5175e9bddb40165daffb8a17a8c7282c6005ac21",
+      "/home/user/workspace/quant-qlib/qlib/contrib/strategy/rule_strategy.py": "7660b4c9db3ddddcf8d06d79d9e251321c43782e73f8b25f406d0ff089673983",
+      "/home/user/workspace/quant-qlib/qlib/contrib/strategy/signal_strategy.py": "92f982ce6e9cca2548f9d02b2e5f93c2ef83085b40366e8f8975663f6ac8ec8b",
+      "/home/user/workspace/quant-qlib/qlib/contrib/torch.py": "30f6f51b48c9371955e096f4dcf96bbe075c9ac3209ba73b1baaa386ab1ac25a",
+      "/home/user/workspace/quant-qlib/qlib/contrib/tuner/__init__.py": "1e8820010b2f2d4f2ded0c4ea5ca1040fa706d5dab0150cad2144851dd0ce062",
+      "/home/user/workspace/quant-qlib/qlib/contrib/tuner/config.py": "b0aea21d2112496e4a86bb86e0b36732c02ebc4fbbf6a0fb0dfe540e08a5c94b",
+      "/home/user/workspace/quant-qlib/qlib/contrib/tuner/launcher.py": "1708a8687cfd5e2f5f8b1c88df8c5fd1a29113ba21c883b704828ebebe6ebbf6",
+      "/home/user/workspace/quant-qlib/qlib/contrib/tuner/pipeline.py": "deff34ea2ced905d5db75593fc64af55fdf9f373a8bd2b1b6e1600d67a32db51",
+      "/home/user/workspace/quant-qlib/qlib/contrib/tuner/space.py": "06d459b44d489b870f62a6f1fb36d37a2b747bc088f7a35a76c976cc8a05c3cd",
+      "/home/user/workspace/quant-qlib/qlib/contrib/tuner/tuner.py": "ccddc4b7ee6f867338c7b280624b62ea00c7f587d91a8531db69fdde6d943cfc",
+      "/home/user/workspace/quant-qlib/qlib/contrib/workflow/__init__.py": "7e4cbacfac331c788ec03e12bcd648f3e372e8fcf0ab8eabfceec49e79e217e0",
+      "/home/user/workspace/quant-qlib/qlib/contrib/workflow/record_temp.py": "da64a946244ef3a052c42a028661a38c22ebc37d36de0c3e3a961605ca8c34ef",
+      "/home/user/workspace/quant-qlib/qlib/data/__init__.py": "7421b891142ee5d83e41518ac4ad9b51387ac5f58de70f6cf6a2c5a9e2835935",
+      "/home/user/workspace/quant-qlib/qlib/data/_libs/__init__.py": "1c8a20fa5b81a909cb9336b543c6f7e11af5415bbab6e880cb9b0eaf2d2f20f8",
+      "/home/user/workspace/quant-qlib/qlib/data/_libs/expanding.cpython-313-x86_64-linux-gnu.so": "ab7bd4c7fa156168fed62dd027a5b10c6d81e8474e515de3788edb94c4aa68d1",
+      "/home/user/workspace/quant-qlib/qlib/data/_libs/rolling.cpython-313-x86_64-linux-gnu.so": "5cd3581ee0290ff75160e99ed46b9cde323b421b47e3959b3f73ec441d0948ad",
+      "/home/user/workspace/quant-qlib/qlib/data/backend/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "/home/user/workspace/quant-qlib/qlib/data/backend/ddb_qlib/__init__.py": "db07722632199dccc71650a4a771eabc4ce0d1ce7ca621ed79c2baa9819d4584",
+      "/home/user/workspace/quant-qlib/qlib/data/backend/ddb_qlib/ddb_client.py": "854fd4d2d7068da59b7a953c1ea3bf5ef87f49b756752a9b53c095e46d419137",
+      "/home/user/workspace/quant-qlib/qlib/data/backend/ddb_qlib/ddb_features.py": "24fee0402cdc6398446cb90cb1b8da87e59a8c824eb5f06aa8b996c03192d805",
+      "/home/user/workspace/quant-qlib/qlib/data/backend/ddb_qlib/ddb_mysql_bridge.py": "8d4d377d8eac2c968722778baf564bccbde24a812363338f97d4661f17766328",
+      "/home/user/workspace/quant-qlib/qlib/data/backend/ddb_qlib/ddb_operator.py": "edaafc942bcd6c44691e7bc5c0906f1c4ef845d1744dbdbe7e3cea34bf49f6d9",
+      "/home/user/workspace/quant-qlib/qlib/data/backend/ddb_qlib/ddb_scripts/featureEngineering.dos": "0d64ab638939c5aea8e1381cbb5f330a2f67faabd28a4b77e39e445f01986de2",
+      "/home/user/workspace/quant-qlib/qlib/data/backend/ddb_qlib/ddb_scripts/gtja191Alpha.dos": "07d2921ca97572711e51cb490070f95e30fb485ea74e54958cb86951cf5ffbbb",
+      "/home/user/workspace/quant-qlib/qlib/data/backend/ddb_qlib/ddb_scripts/ops.dos": "9281438a8e0288d9bd374b76bb782ac0a308208843ff143c97e1f3a005506b6c",
+      "/home/user/workspace/quant-qlib/qlib/data/backend/ddb_qlib/ddb_scripts/prepareInstruments.dos": "240126c0d0baab9549a6b008e490471c6101ffe6759820c99dc4cfe713132e39",
+      "/home/user/workspace/quant-qlib/qlib/data/backend/ddb_qlib/ddb_scripts/qlib158Alpha.dos": "41a4dd5c8d32c4ff9a72e1ceba54a253763e9ef5238641f1a7373f6fdd3c92cc",
+      "/home/user/workspace/quant-qlib/qlib/data/backend/ddb_qlib/ddb_scripts/wq101alpha.dos": "28dfbd279cb5360c660fa086adbabea0f793c99fb6346444ecd899b80b246f33",
+      "/home/user/workspace/quant-qlib/qlib/data/backend/ddb_qlib/schemas.py": "70e3d3560afd45189b269bc3de0991fbf855c4ad0a6e1be08db0f50bc3c57ad5",
+      "/home/user/workspace/quant-qlib/qlib/data/backend/ddb_qlib/utils.py": "1ed6c09dfa9b506250f6f81650275d496f597b5540c5b8bd28b69a4fc005f40c",
+      "/home/user/workspace/quant-qlib/qlib/data/backend/utils.py": "dfa7f09c34c3f3abe5a19e06a5734a5b91b3b83cd19778424295360c77878d5f",
+      "/home/user/workspace/quant-qlib/qlib/data/base.py": "5618e6bd7239f4634566a65076209c40a7219d88940c0e7b038381e983432ffc",
+      "/home/user/workspace/quant-qlib/qlib/data/cache.py": "f11fc02f9a8b160a219dbc3acaf409664fe9911d78f1b80dfb93925382222694",
+      "/home/user/workspace/quant-qlib/qlib/data/client.py": "0ba657cc488a0d4a2cfa5689f192e146338d92ff1e8121edeb644d100c31e03d",
+      "/home/user/workspace/quant-qlib/qlib/data/data.py": "ae6d4235cfd70b2d26b4e771dd9934439d9866cba787e1e31043256b31954f81",
+      "/home/user/workspace/quant-qlib/qlib/data/dataset/__init__.py": "9faf4541c4b0505d87d5de72bf013add25369732e69c5621619e8f08503b68b8",
+      "/home/user/workspace/quant-qlib/qlib/data/dataset/handler.py": "7f66971ad43a0d1faaa3032a299ff2c8a43daa85ee4e54e9c8f6cb490d0a1f18",
+      "/home/user/workspace/quant-qlib/qlib/data/dataset/loader.py": "33e17b4d38fd02aa072e557b39bce59fe33a39ed589360886eafbdbfca1a4056",
+      "/home/user/workspace/quant-qlib/qlib/data/dataset/processor.py": "fd85dbba59b8ec9bdc478e3b1245177db368c9c7cabec5ec987c96c776805f0f",
+      "/home/user/workspace/quant-qlib/qlib/data/dataset/storage.py": "0fb5c2f34afe7d6a7612e2fa3c2d8b918f52df8f5ade4213195598b4ac9a87b8",
+      "/home/user/workspace/quant-qlib/qlib/data/dataset/utils.py": "c556538a0de06597390001b2e9de361f87af11c96853c67ba9e8af4a88b40024",
+      "/home/user/workspace/quant-qlib/qlib/data/dataset/weight.py": "14a8c3868ceedc5ccce31bb689a59c7445d7f0ca9ac8a78a4cb4ad3104e6a85a",
+      "/home/user/workspace/quant-qlib/qlib/data/filter.py": "edce4fc8ee8201b1e7fdd0720dd2be9a9cd033a6d87120f10b9fd55238675878",
+      "/home/user/workspace/quant-qlib/qlib/data/inst_processor.py": "495881d4968ec4226116450442d89525f6fad166be0776bc6653ee80fd032ed2",
+      "/home/user/workspace/quant-qlib/qlib/data/ops.py": "6f648355725a85a9f17528d864281fc065f8a4f887261a9909f7495d5db42760",
+      "/home/user/workspace/quant-qlib/qlib/data/pit.py": "1a1c3cea3655c38d27b3b3d3d373d915b3e3e08fff99ba2a7eb2fbc0da61894b",
+      "/home/user/workspace/quant-qlib/qlib/data/storage/__init__.py": "aed7cef87fa20ab07cf1606b52e322ccecfd3936356e0e0d8246fa125db98fda",
+      "/home/user/workspace/quant-qlib/qlib/data/storage/dolphindb_storage.py": "221bfda85730a4525f6f402b82d8a51a3020dc2218dd19a6bd03637f98a42490",
+      "/home/user/workspace/quant-qlib/qlib/data/storage/file_storage.py": "7261420971a2b6cc3de9a9dbac6288216fdc9653e2d99f269df01d1cf5ec55c0",
+      "/home/user/workspace/quant-qlib/qlib/data/storage/postgresql_storage.py": "efa69c1f571e1db72cdf91598fae6802299824c4f107a8a4582f91a4a88bd5b4",
+      "/home/user/workspace/quant-qlib/qlib/data/storage/storage.py": "7d9644214e72acadbe845e78c2752de92885a686c4c58077a6503e595382aabb",
+      "/home/user/workspace/quant-qlib/qlib/log.py": "903a023ca94d3e3cf8e64c1cc7abe2d66743cbc77ebf8c105a0791daa54449d2",
+      "/home/user/workspace/quant-qlib/qlib/model/__init__.py": "f2c97c1f9e0f21c9997c7acc106bcfd2668ebd7fe53c92a756fdecee9a0d51f6",
+      "/home/user/workspace/quant-qlib/qlib/model/base.py": "31d75140ff788f7a4f846f0f5e6bd6fe076babe83f93f8e4072376f532a4ad2e",
+      "/home/user/workspace/quant-qlib/qlib/model/ens/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "/home/user/workspace/quant-qlib/qlib/model/ens/ensemble.py": "20b4f0e65c42678064d7e464c0ada5997ba908f6c2eb4aa7982846cf5de85140",
+      "/home/user/workspace/quant-qlib/qlib/model/ens/group.py": "93cf7982e26c4f8316837f87872d6facb862c5bbdd7ec359d8f4a1f9d267f36d",
+      "/home/user/workspace/quant-qlib/qlib/model/interpret/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "/home/user/workspace/quant-qlib/qlib/model/interpret/base.py": "1329ac090db02f59542fe8f5662744bbd26c7f6e887bb7a7bcd5ac453b893787",
+      "/home/user/workspace/quant-qlib/qlib/model/meta/__init__.py": "d9ad6ba40084276f1e1c7bca3a2187ad9c2051bbaeac1e3bba89034758d2f341",
+      "/home/user/workspace/quant-qlib/qlib/model/meta/dataset.py": "b20cf14187a70443c774d6cfcfbbf2d10e85ed629074ae8a9354a215b84cf620",
+      "/home/user/workspace/quant-qlib/qlib/model/meta/model.py": "e4e260a1a2bc05fe5924cad42664e28f6017a4e7c5079f0d1c23d08707a1f90c",
+      "/home/user/workspace/quant-qlib/qlib/model/meta/task.py": "d3bbb5489e80ab76fd8ca6590ceea4ad386d3efb6267d70eb1e11a0c6fddef16",
+      "/home/user/workspace/quant-qlib/qlib/model/riskmodel/__init__.py": "b37533aa00319c4ffbb99b637cb0ac748321336a3a2985f790a3613acf2ed6db",
+      "/home/user/workspace/quant-qlib/qlib/model/riskmodel/base.py": "e015c9183ba49288ccfdfab34572025c2e54987db9fe6dee88ebc7891ec51938",
+      "/home/user/workspace/quant-qlib/qlib/model/riskmodel/poet.py": "ae0ef7c6bd08658c790cf375271dcef58e03fc217502864a062c5c248e547471",
+      "/home/user/workspace/quant-qlib/qlib/model/riskmodel/shrink.py": "353296322169d0edaabecb4c062f8294b520c48910d649dc884db0d6bcc65940",
+      "/home/user/workspace/quant-qlib/qlib/model/riskmodel/structured.py": "5e8150d2f723fb62208c0d94f0082c5b2d70f209360167877315795acea6303e",
+      "/home/user/workspace/quant-qlib/qlib/model/trainer.py": "1cf78f6cc3b450540c30f47f37044d1d5cad4102363ac78edb3c82885f28261c",
+      "/home/user/workspace/quant-qlib/qlib/model/utils.py": "e775183f5b3d7b7485c203307d2a8aca7dc7e8ce8bd9434f9e8029173ab12331",
+      "/home/user/workspace/quant-qlib/qlib/rl/__init__.py": "d7243e5a102bf8ca60d0cfd45108488337921f7bd798aaadc5d1e48ad2d0f4ac",
+      "/home/user/workspace/quant-qlib/qlib/rl/aux_info.py": "288a0de7a2771ce1b3e957d00256d40a2a0d1906effcb3bb70a13ac0fae1fc0c",
+      "/home/user/workspace/quant-qlib/qlib/rl/contrib/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "/home/user/workspace/quant-qlib/qlib/rl/contrib/backtest.py": "25fcc97c63bc455b05cd80409b518c5efdd0d77157a4bdce500beb61a6f694b5",
+      "/home/user/workspace/quant-qlib/qlib/rl/contrib/naive_config_parser.py": "e6e196795e99af8d3d8b244a9b699fb772eeb0ba5016b0cf83f5ee033e8f9e7b",
+      "/home/user/workspace/quant-qlib/qlib/rl/contrib/train_onpolicy.py": "980332f74543936b20fd3dea15d38dcf778f4305b708677e290bad853e9f8860",
+      "/home/user/workspace/quant-qlib/qlib/rl/contrib/utils.py": "ceb58c84bd38e45a8bcd8d14cae9cb5cb5d0754f46fb41dd762e8872037fed0b",
+      "/home/user/workspace/quant-qlib/qlib/rl/data/__init__.py": "02ab10890ecc978621d423a5a464dc6981c1192faba06f0db659ce1b511879dd",
+      "/home/user/workspace/quant-qlib/qlib/rl/data/base.py": "314a4d754cb9297846b593c886a395a50c2ff01ae4f43775fed38c4bd5abf8e8",
+      "/home/user/workspace/quant-qlib/qlib/rl/data/integration.py": "181047c23fe29dc5780733068b504188464fff36b67d7362676f1ad127f81656",
+      "/home/user/workspace/quant-qlib/qlib/rl/data/native.py": "2a79cb22829168d76e960c775db8b6659a5df512aeae251930be6859d40eff40",
+      "/home/user/workspace/quant-qlib/qlib/rl/data/pickle_styled.py": "66cab7700b5ef56fd3f4819c0eda4b8c54ae1aa1b101ba42bc24c20141868657",
+      "/home/user/workspace/quant-qlib/qlib/rl/interpreter.py": "f2a130fc9fa0b1e8e09c48ec444e2bc83e37216e108ffc2318f4f8e6130c19a9",
+      "/home/user/workspace/quant-qlib/qlib/rl/order_execution/__init__.py": "bc4c7c150dc36efdc1aaee34e3655f508fa6e0accab42fde5f75a3b4dd569772",
+      "/home/user/workspace/quant-qlib/qlib/rl/order_execution/interpreter.py": "330eb35c0a4ca0ee1d437f15b914b4145fbe453e00c745cc083614d7d49c988d",
+      "/home/user/workspace/quant-qlib/qlib/rl/order_execution/network.py": "9584035858943652bde930bac5128a26122b3fe1083d26a2ecfea7ed1202210c",
+      "/home/user/workspace/quant-qlib/qlib/rl/order_execution/policy.py": "3bb01e9f9d82bcbf430bf62bf42209ce8cc3aec6dec8e5a8c0d409764db16dc3",
+      "/home/user/workspace/quant-qlib/qlib/rl/order_execution/reward.py": "f7d86dcfb9860252ef9dffefbb14c8785116e1e0ac0d6dc9346674cc9ee8ccd1",
+      "/home/user/workspace/quant-qlib/qlib/rl/order_execution/simulator_qlib.py": "4114b7f7a636f1898fe60d4762c7a5d60db65689f0f30c27c3cb25fd1f95a85d",
+      "/home/user/workspace/quant-qlib/qlib/rl/order_execution/simulator_simple.py": "0845dbf163ea728fc1de8481e1c0bd6187538a12ef78513ce54e1037c83ceafb",
+      "/home/user/workspace/quant-qlib/qlib/rl/order_execution/state.py": "893f310da013a1000698aea175cc7a597d7af27684d3ffcbcd77a25638237745",
+      "/home/user/workspace/quant-qlib/qlib/rl/order_execution/strategy.py": "ebdef1f809e40e1e87240da65c607f77dacaa429933ac1ccd33717c6dadb9d46",
+      "/home/user/workspace/quant-qlib/qlib/rl/order_execution/utils.py": "4a3b4236d4330041c6673881fa524733a7c3fd4a632e5114c5bb64ecb32c1f8a",
+      "/home/user/workspace/quant-qlib/qlib/rl/reward.py": "52688ed94133acb7efe25a0c619fb18d74fe0a7313136746019287d6e41c99b3",
+      "/home/user/workspace/quant-qlib/qlib/rl/seed.py": "04c718bceae70a46a3e13d53c4b973dd5d2d5533808d7dc50a255920aec15c79",
+      "/home/user/workspace/quant-qlib/qlib/rl/simulator.py": "9b8528bbf8696eca8a2725a969df361bf5128409398783680504379bc50819ed",
+      "/home/user/workspace/quant-qlib/qlib/rl/strategy/__init__.py": "d69b0d73196219b44bd4275b3fa7f60dd84438f3e14ac1d32f90479b8cd660e2",
+      "/home/user/workspace/quant-qlib/qlib/rl/strategy/single_order.py": "e90c9ecef1427bf2f232d45c73b12d3dd0e0127dfb768bc9acbb1e84bf1d7940",
+      "/home/user/workspace/quant-qlib/qlib/rl/trainer/__init__.py": "e3fd3f9879a8188c6d0fddd96f1e8ec66bf2170189f835a6299023c6d109b6ea",
+      "/home/user/workspace/quant-qlib/qlib/rl/trainer/api.py": "d3a0dd51cfe2fbbffbc188c44100d31be9921112373131395f5d8099f1e71687",
+      "/home/user/workspace/quant-qlib/qlib/rl/trainer/callbacks.py": "898f4cd9becd2fcd5a53b130431351dc3ac6704ffd5923a13877058a58f39a44",
+      "/home/user/workspace/quant-qlib/qlib/rl/trainer/trainer.py": "fdff0c10efc0f2663376a054157228720fb1365a02584a34221a80e1c6d2a6b1",
+      "/home/user/workspace/quant-qlib/qlib/rl/trainer/vessel.py": "2909cbe9e2a1188b1843f0fb5678ef96fc542a4b55cbb8820c6393f208cc0fee",
+      "/home/user/workspace/quant-qlib/qlib/rl/utils/__init__.py": "7254606c22ec85b61740ff9d46cab34507ae89220643d008d870eb8590a66a05",
+      "/home/user/workspace/quant-qlib/qlib/rl/utils/data_queue.py": "8964209cc53bc3aef4f683bdbae337e605992627138567207cd0d7e3e6003095",
+      "/home/user/workspace/quant-qlib/qlib/rl/utils/env_wrapper.py": "813aaaf7897d314f5c9f9487dc944fba919a70e7b9ce0c07adf435e83505b8b3",
+      "/home/user/workspace/quant-qlib/qlib/rl/utils/finite_env.py": "2179ca052c4dcb29890ec3d5ea83b052ea3e7145fd2aeeb0d2d3aa48a37ec682",
+      "/home/user/workspace/quant-qlib/qlib/rl/utils/log.py": "c4e2e30b9f48496311940627f552268d297cad4ef99507461028e969fce46c5f",
+      "/home/user/workspace/quant-qlib/qlib/run/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "/home/user/workspace/quant-qlib/qlib/run/get_data.py": "838209483a9c8b1b5fbcca1d9ba9d702b2255e823e0843758c532be54cdf103b",
+      "/home/user/workspace/quant-qlib/qlib/strategy/__init__.py": "1c8a20fa5b81a909cb9336b543c6f7e11af5415bbab6e880cb9b0eaf2d2f20f8",
+      "/home/user/workspace/quant-qlib/qlib/strategy/base.py": "c141e029bf96b13f6340856ae3ce9a2fae1ee873f9f274b17ba0e639b75baee0",
+      "/home/user/workspace/quant-qlib/qlib/tests/__init__.py": "a35d100c24554730071214b6f9b63e81829b5b91b09aa85babc9d697d7e1e2d3",
+      "/home/user/workspace/quant-qlib/qlib/tests/config.py": "b2d8727fd1641f17197f9410fb6097c5ddecb786eac8182e81f098acced7e7b6",
+      "/home/user/workspace/quant-qlib/qlib/tests/data.py": "53abbe19beebb29da47806a574d31f393cc963e0acdc5c7e41efac092f8f044c",
+      "/home/user/workspace/quant-qlib/qlib/typehint.py": "c51048818e8a9c05c903c97a4fd79591f401df46b8586b16c729ae997907dc3e",
+      "/home/user/workspace/quant-qlib/qlib/utils/__init__.py": "af722eb7132cdcb4ef2282c24da2f23131be0a6120131a4c845477a177ecd12c",
+      "/home/user/workspace/quant-qlib/qlib/utils/data.py": "a73fbffafab77a046a709496bd38745c6b34fccb1c32e5bed8d001bd78b394d1",
+      "/home/user/workspace/quant-qlib/qlib/utils/exceptions.py": "936677e843644277f8bbcda627bc011ecbfc2eb056c715fbc62ed79fad4276cf",
+      "/home/user/workspace/quant-qlib/qlib/utils/file.py": "b808f89dfd867c5569e73663885e7e42e9c60fd98cd44c40276b8d554285dfd2",
+      "/home/user/workspace/quant-qlib/qlib/utils/index_data.py": "a3c767642e31731de7a0347070bdd696c12e2bec40956b523adc63fa9b9218af",
+      "/home/user/workspace/quant-qlib/qlib/utils/mod.py": "a32f0aa2c7eb3fe4a8ce50bb6468dc8e4e4e0f03cc67209061d9fc49e1977aa5",
+      "/home/user/workspace/quant-qlib/qlib/utils/objm.py": "2691e6f5f139196daca3b44dde9128855a4f22ee64661b4d866ac79f243991f2",
+      "/home/user/workspace/quant-qlib/qlib/utils/paral.py": "9c12abddd8162e6aacb3e135ae90bf115d2f9c4a45eece46e8297546769a9bd0",
+      "/home/user/workspace/quant-qlib/qlib/utils/pickle_utils.py": "a3a297a3385cbaa5c6c200a8803190fdbdcc40a8f318aba1da8e6ed1529e51d9",
+      "/home/user/workspace/quant-qlib/qlib/utils/resam.py": "1615654ad2286b3a9227b199157476174319eb4aad05048bc4bc693da61671b4",
+      "/home/user/workspace/quant-qlib/qlib/utils/serial.py": "153fad06ee6c256974c4b8c7c54ea86ed77dc4c1d331cf894e7354e18dcb469c",
+      "/home/user/workspace/quant-qlib/qlib/utils/time.py": "c12d6a3ea521f87030f5cb3429427bc9e98b846425b31b187f7bcf71d6be566c",
+      "/home/user/workspace/quant-qlib/qlib/workflow/__init__.py": "e14c1181b5123e871b3a41abde3d3d8ebfc3c4e8e6292790b4e83f66ace4421e",
+      "/home/user/workspace/quant-qlib/qlib/workflow/cli.py": "bd1ceeb4818873978964d878f08abdfc0a74cd45d04917d8553f0f104e31597a",
+      "/home/user/workspace/quant-qlib/qlib/workflow/exp.py": "be89850cc256dfc7ba493c77f7ab301411049b108181e1e3edaefdf36ae27050",
+      "/home/user/workspace/quant-qlib/qlib/workflow/expm.py": "3e0066c65336845340e1787ef61d797d48ea3e089a7bf234d13e261cefb64c7c",
+      "/home/user/workspace/quant-qlib/qlib/workflow/online/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "/home/user/workspace/quant-qlib/qlib/workflow/online/manager.py": "eef102410434d9d604b99c6e5b11f45d2a4ea78145940174449fab6d64c5c332",
+      "/home/user/workspace/quant-qlib/qlib/workflow/online/strategy.py": "b606149e78d502a7d863bdde1a93e0b78e2f73ff371ec040ecfb0d6973150519",
+      "/home/user/workspace/quant-qlib/qlib/workflow/online/update.py": "ba358656d64a7f9b8380af358e2f5a961a23d5606adc35a4a069c2e7f9d6c59a",
+      "/home/user/workspace/quant-qlib/qlib/workflow/online/utils.py": "d1234362d14c95021d5ba170d2a86d405b598ea0498c513a005191e3f90ba631",
+      "/home/user/workspace/quant-qlib/qlib/workflow/record_temp.py": "ca1cf7d7a1973039ef62372eb37757fd93bd3623dd09d71496f20b49aee291b0",
+      "/home/user/workspace/quant-qlib/qlib/workflow/recorder.py": "9b4fb98b06954c18ce5234fdf99c85232ca29eab6f0193b7de2ece4835ea5e40",
+      "/home/user/workspace/quant-qlib/qlib/workflow/task/__init__.py": "475df68bc86dd477d57a33c5d755360e3110889f4147b2307ba49212ad062e3a",
+      "/home/user/workspace/quant-qlib/qlib/workflow/task/collect.py": "ed7d3cb73fb330753f214825b0fb65038da634889e2038c9cd2539f1659cd8a5",
+      "/home/user/workspace/quant-qlib/qlib/workflow/task/gen.py": "b03016cc2d48a291d74a8ae7f9f754e2f4f4c535ac6eaeee6319241793f2ad8a",
+      "/home/user/workspace/quant-qlib/qlib/workflow/task/manage.py": "cb32cc74b13649bbe95eae6f63753ca1070b2d7a0d655be91b44f6f29f803f4d",
+      "/home/user/workspace/quant-qlib/qlib/workflow/task/utils.py": "87def2ea08acd7c20ed5cc1fd891fd30aa59327433c60a9f50879cc828249778",
+      "/home/user/workspace/quant-qlib/qlib/workflow/utils.py": "e44f1705ecd7ae577e09f4cf327f5bff78ea928327f45e79c1094c08af866cba",
+      "kronos_qlib/__init__.py": "a2f2acda5842673d4dfd971e5480054170fcf035e43a7a8aefca7e58f89cbbd0",
+      "kronos_qlib/provider.py": "3373bf831584f4255c4860c13ba6bbe24af6a7f1c33f2e4a8b002e621a01dd4f",
+      "kronos_qlib/windows.py": "d546a07b0e872e5831aa617c4d506951af227ca3962d1aaaea095246575650df",
+      "lora_mean_pilot/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "lora_mean_pilot/adapter.py": "c81e1615ddc8bc0328052322f4359675686981ba3899716523a9215f52470c12",
+      "lora_mean_pilot/config.py": "fd79dc7e3b67ea4b458e357de2995aae6c05920d9435eccbaba8f66484f6662e",
+      "lora_mean_pilot/evaluate.py": "a7411881144cb388bba4774bc14ee2bc2c92e8b45807ec96239c4f76b5fa5bef",
+      "lora_mean_pilot/run.py": "6e3fb681b2822a9f2bc8c8d6a8bcab97a75307025d587606ec1d6f4dd5d6e0ae",
+      "lora_mean_pilot/train.py": "6ac8e406700ff03d34b81c907a7443e11f520aed4c068945ae25879a2dd69d76",
+      "model/__init__.py": "f8f856ca3fedadcaac97e196be23d1aeda1c3c9ffe8903d66d43ea3bcac6240c",
+      "model/kronos.py": "0a5f90282e2039c2de0771473419715c845def154896dbd0f5747837e6241032",
+      "model/module.py": "a07edbadc0e96804c8158c021bbc6063bb7cc43b34d7fc470d5c8ff2005a409f",
+      "paper_replication/benchmark.py": "740c7beb87513bc96c73526d45554c6175f8edcf00eb111667365baaeda17b0d",
+      "paper_replication/common.py": "d6242125c88847268283cd2652faa2e183fb86c82d0dac23364fbe5b0d25229a",
+      "paper_replication/disclose_commit.py": "553d575256813e7ba8447a72a97a80b40a68dd9b32f31807a8691e75c9be694b",
+      "paper_replication/engine.py": "18df43793fb07c90cc714844d1d06233a19e656ad4f84bc35c5ac044345d6ac7",
+      "paper_replication/engine_v2.py": "391ecb551684c1cbd002fdd3a511df28b83c3f26844d64c4226d91717fbd0cae",
+      "paper_replication/gen_v2_doc.py": "e1edc8f645379352f8e77450ea374f06b88a9dc3ad2c2694fe2e6ec6af4c0bb0",
+      "paper_replication/ic_horizon_cum.py": "5f378cea6f50cd011f6d3d67f1fc2ef7c0c57faae81e9da92cf9d661b5a310e8",
+      "paper_replication/ic_horizon_profile.py": "5d170c55f31a5e03e9050cf9ca31a55272e2394ae1429993c2ccabe735ef4a69",
+      "paper_replication/ic_multiwindow.py": "1f3aa22ba40c0733e60222144c2e65ef04db1df07aaded83532271082fa55d80",
+      "paper_replication/pipeline.py": "f940add20e87d1bc91b9f8558600209742d9d331b41e839e9f8cca8de6cec117",
+      "paper_replication/qlib_crosscheck_v2.py": "b572d998518315bfe6ed29e7d62cf82246b3050e64086e6d1b5a630e23843083",
+      "paper_replication/replay_v2.py": "2e7f6e5794947438c7cd1763c7b663cc0f25535e9ff360f35d12b99acab740cd",
+      "paper_replication/run_backtest.py": "e48b287aea3e871c85e22b7f06e32c7c3fda47e67af742b9f014eb43a54bcabb",
+      "paper_replication/run_signals.py": "81c2c1143e0a077bd84f515c8d1f63f61ee2eeddd51a2c9f622bbdb5b3b39e35",
+      "paper_replication/signal.py": "8154ca0bdce86c71bc198c219e9ac6045ca7eafdbb8824f4d03137971207f242",
+      "qlib_mean_comparison/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "qlib_mean_comparison/run.py": "a619ac9e89cac53a05378425c0cf2693678814c8764059ec5cfbc71ed57c7340",
+      "state_adapter/__init__.py": "bfbab7947449a52ac3ed1744ef81d7de567497d24943d34c8b5b43f64e947743",
+      "state_adapter/data.py": "b18d3e286369fd00e75d0c3febb1b2c10688846b782c50e3ced5bda37da75452",
+      "state_adapter/date_balanced.py": "c36fddd421d73642b6eabc23bdbaab2ed8a960a5baf9c6b470c935c59e510094",
+      "state_adapter/date_balanced_report.py": "46c3badbff5d686175e5d7c92b2a141cabb3d3920828e6003ef321e0e5965c82",
+      "state_adapter/date_balanced_run.py": "0688975ee2bf9a5843add125e69794e90b73f62221feee1dca443e8e0fcfd066",
+      "state_adapter/factorial_report.py": "74469ddc5d41ec79e2d2c55444e47a0594fd79f3069500a3617b6eb38d89cb95",
+      "state_adapter/factorial_run.py": "51753bc5625f3599a45debc11709f75ce2228f62b379405ef208e567b6864504",
+      "state_adapter/gpu_budget.py": "d005b7818ead1fb38dfaf121834220f11e15448de7b2f21753855c8ad7cfb76e",
+      "state_adapter/inference.py": "1d180bed8e8f1dc7c1d397325b0c5090d474cdb138781c69eb9356e048ff0b45",
+      "state_adapter/limit_unit_audit.py": "cb7ac2e76f34c440a096d4ddb3351e1a9c79d46d0a216b521c57b094f9e60fe3",
+      "state_adapter/limit_unit_report.py": "812e220c71af7ae6fd020bd09890354d0c6db0dae94eafda8e925d7dacd03a11",
+      "state_adapter/market_guard.py": "cfa86b4ed5c89a5affe0f00a4d10ce4a7074312d6d5a3ef28aef30bbee8fc920",
+      "state_adapter/mc40.py": "4d6e2d4ca2e7e0a15a5e9631d99349f33bae8c2f2fd898bb5bf0af4c258407a2",
+      "state_adapter/model.py": "427cfaa51e4e8b8fe7f019497df58625abaa5515db5902947f53b33d132eb465",
+      "state_adapter/risk_attribution.py": "3be8e0965c68e8b9aa8d7f46814a9562dc4fa1b1024249bb4dcf45d607ba3878",
+      "state_adapter/risk_overlay.py": "3381a6ce9121e384f04e985ae766c821396c81c4dcbd69f1ff9f64915a64689b",
+      "state_adapter/risk_overlay_report.py": "6b5c965d4e84b7d07b055590e809544d3b4bd9abf41a288d6914f05e381d143c",
+      "state_adapter/risk_overlay_run.py": "b43d56be5106fd7b68705ba00fab087540349f007bfb346031cda2acf7dd1f67",
+      "state_adapter/run.py": "e4b9c043ec09e9cf63a81d4a0b127fc62a8bd28d40b5a672d9367c315153fa7b",
+      "state_adapter/sam_diagnostics.py": "572e6ee7fa6de2c333334cb2a807c44a7edca168cef8e572ac23df70942cc816",
+      "state_adapter/sam_report.py": "6a81111dc3374d1714b7de71c58c8776b797876946456d2553edfd40b498e7fc",
+      "state_adapter/sam_run.py": "245ceb96f81e9a6fd36ed989358cb36636ef7ac26ab6b563325dd6d17a86a288",
+      "state_adapter/sam_train.py": "17b7957971b2dc818ddb5d8130a04df9134a44d90c6d6ac679adff5ae8028cac",
+      "state_adapter/train.py": "df88ce847ae41f8be174197375de75b32f84d0ec1917db0c3df2f350bc143284",
+      "state_adapter/tta.py": "a701d7401bc92e6279a86c0445fd7264c76abc934804c39e128391bb4aaac43f",
+      "state_adapter/tta_report.py": "a3f5d777aba6543e47201b51cc13fe0cdbb03c29e7da898dd5cf87bb7a4658b3",
+      "state_adapter/tta_run.py": "a2c154b0cc78b89b7f8cec965892ce523fd714a22de96e9cfd7939bc52c0d69f",
+      "state_adapter/tta_runtime.py": "06d05b401cd4c0a9768b2bd35a3da3bcf5bebf45a8d585b182f5998f36a0c37f",
+      "tests/test_mc40_tta.py": "0116c5216685cfe499b8c3cd66e04aaf8b3ae99d892f389f8f241892fca929f1",
+      "tests/test_tta_recovery.py": "10cdbe4e2a2da3dacc4a79ea119122a30f1b9f3ab22ee87d29bc9fde29524e51",
+      "tools/recovery/account_probe.py": "62db56376d1cb0f625ed0cb02a8962c6b03402c4f6d9e192bf00e5c2e9fb8f61",
+      "tools/recovery/host_audit.py": "6ab5529005ad5f4cd80beb035a32cf78261976f1a2009564d619b44643494770",
+      "tools/recovery/offline_tests.py": "84750e76605c50426428ba4c86b3599cac4926f45696f893c7c7146fdeb497aa",
+      "tools/recovery/prepare_evidence.py": "5efa2db58255217f3af057c847f525d2dc8acc334852611f7a7fb4283e9e56b4",
+      "tools/recovery/qlib_probe.py": "2c4df9be3c417b7c20001065673b0e0b27495d581e40fb524d09368c53612c19",
+      "tools/recovery/review_ready.py": "0a7f1544b9c4a69f8c607f9b1caba8862c70b5b69ba1f4fe948b5f1de4cb2d34",
+      "g1_risk_head/model.py": "ead70c8834a55eb5514b90e45e4900acaed52910e64ac7b2aab659bfd8dfa6e1",
+      "g1_risk_head/report.py": "802a4843f21cec3828fbdbecdf645d7f47d2f61cd01a20bbbb6b7fbb9d107586",
+      "g1_risk_head/pipeline.py": "dd574a08c89227680be26679101604ac230315a609a62dc0f6b363f790e4f82d",
+      "g1_risk_head/runtime.py": "c8e6a22f3c9e458152edc860ba3ecac025bf0ae1e295bb259d5fb85a49aa8512",
+      "g1_risk_head/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "g1_risk_head/train.py": "df698562ff94a1b38e778f48cbda8ffa2006956d20023d98a68b2d6351edde9a",
+      "g1_risk_head/accounts.py": "03e6a378df4e91aac8bcbb65bc2954f1ad711ae6ef2a855714e72bb0d999355d",
+      "g1_risk_head/evaluate.py": "849fe8c4f6bd30024fe2391d148bb4a98fc9bcd736726b6f51d736bb63a3d0b5",
+      "g1_risk_head/run.py": "46aa7987b70d1871a1e126b587ab2674c5a44caf4e945602e8947ee015e531be",
+      "g1_risk_head/diagnostics.py": "0024b2bf0f5d5deaf17ec8223f27d247cf6be828b53e5ddd05d04dfc4a68bafc",
+      "g1_risk_head/features.py": "efb544c5c9348b100d4fbec75acd7de4ec0bac0faf22b8509141abca87ab23f9",
+      "g1_risk_head/data.py": "cbab90a7a1b0d12281ad634c671439912633f361f22ff2b5e131f48b49179df1",
+      "cross_section_kda/run_final_validation.py": "bb5606a720c24825e27f9dac302d577dad762171a062b573d0b5f62675a7ac24",
+      "cross_section_kda/kda_modules.py": "66614ba62b082080301069f075b27374821c033b6934189fb4045005d4959373",
+      "cross_section_kda/evaluate_arms.py": "57ec0fb7784a03e0b6b02be28d96722638fb212d8716380efabaacbb9d313610",
+      "cross_section_kda/__init__.py": "272cdbee418b0826f4700869a68a7601a0f0ae038af73d4c5c8577d28c79d0bb",
+      "cross_section_kda/train.py": "2ff377b6f1f40cc6f90fb8cad569f75eb6ca4f748f08c5a3a704cb56bd6c28bc",
+      "cross_section_kda/run_train_eval.py": "998a9d06628d532689cf27607c935450920b769f44307d6d79de136405b637ff",
+      "cross_section_kda/data.py": "91becb688fd4800d3a527d4627d641c8568f3d19b68a2d4d9879c8d2ab9a09d3",
+      "cross_section_kda/models.py": "68fb66e84a39433cd6f3fbadc73f80259d1ade5c421d619fed725efdcfbbbb28",
+      "cross_section_kda/kda_reference.py": "654bb635e9f384da71b397c1846f246f861beb1761e793971880e2c58ddce9c7",
+      "cross_section_kda/backbone.py": "152f3811ce7a2a97c286e7812afc71d8b6f0a331e08d939b6049f1754f43fa28",
+      "g5_head/run_g5_eval.py": "36e26d067abd82aca44c5183b7a45260cbdd1cd40c7b768691709fd6279559cc",
+      "g5_head/holdings.py": "83f15b0d074c60b9d252bef22f7c43276d8368cc8a617774faec41d9e38d815c",
+      "g5_head/backbone_g1.py": "e3c945e4359d7b419748911f6b6d699be541036fa3affde8ee00d8822e419921",
+      "g5_head/run_g5_head.py": "5d24b3703d750ac3ea9ca8dcda4b16fef90193bb801d7192361a34ef6b597ed8",
+      "g5_head/heads.py": "8e7a4237bb197d6ce88de40dfebd758bccbc9665ada1e010adae99c8d541b887",
+      "g5_head/__init__.py": "ca35f0917b1323c8d761ce7f3226703f14cb3dbbc1678dac91403b36ea4ceb22",
+      "g5_head/gen_g1_2025h2.py": "1d879516cbf21f1d4c4b70291f93f1bfabbdf612563e3f17d38a5995dacd6fb5",
+      "g5_head/run_attribution.py": "0735e61aecf36eb4b6c6b948b238b375a512d5bd77f0d15ce0a149ae449e9dfa",
+      "tools/risk/preflight.py": "648f4c2da22f076543bf6829d562447f50964b62879b967a212642fd12397fb3",
+      "tools/risk/offline_tests.py": "4f5993707130190aaf88736e33dc8c4aab472729cd5715b7a75e31037731661c",
+      "tests/test_g1_risk_score.py": "cebeb8d9f15fffb4e642c53ab90c7ad66ca9c8be864c7d0d94ab81c714b635b2",
+      "tests/test_g1_risk_model.py": "dfc115f26587f1e68ed862221682b440886b8b1eca07d0aca1b7c63bc992d84a",
+      "tests/test_g1_risk_data.py": "e2a3d8930c32729ee35590c1349805805d7e69a7db9c17826eb21d8c22acfc73",
+      "tests/test_g1_risk_training.py": "709a157b79b658202f5226d7b78ebb7b67ef6b36bc179df9efa9fd6e6c40221f"
+    },
+    "feature_sha": {
+      "features/train/2022-11-24.json": "2d2f72231c7c380a00b8fa0ab539d597d519e0e92166df553257d50ab240c1fe",
+      "features/train/2020-09-01.json": "18565d11c97532e5e79c4947fb36eab8c12b011f6d3009b71df76c967bcf2f53",
+      "features/train/2017-08-24.json": "ae37deea85eab849e886e69338ec16aaab136a2c76c641925649da0ee0a7ff3c",
+      "features/train/2019-07-10.json": "2aaa64fbfd4afd4335e7684bec1a4f453264bc7f9386ca3c24315a4fc1e1e8eb",
+      "features/train/2018-06-07.json": "51d5664f95aa0eec2ce7ec097e92e9fbd0db6352588a3d36b68b037142a4a4d3",
+      "features/train/2018-10-22.json": "66aca5ff701d249830ec089b29f6e335580e94c1bd8d6d536e54b5383e21247c",
+      "features/train/2023-09-18.json": "9ab193a002a3da6510f9b6c1c35a57f5ed1a0d565b5adc5978de96e2b4389302",
+      "features/train/2021-04-16.json": "0e2212f2f687d897e6627bab749c5b2ea5d170538b8e1c4471c1b2ba95774f5c",
+      "features/train/2022-09-29.json": "5e1444ce81127e215698e8076749824615c068152f0fb5167c5b3e3d949c27a1",
+      "features/train/2021-07-01.json": "44d86a2409f6e1d49e41dff3a89534f5d24960b936f49a36d6e27ce8e4de0738",
+      "features/train/2017-09-14.json": "89c3e96178124f9024c1f6b8288faeb60c4c04de5d9395f779637bfd0564d027",
+      "features/train/2014-10-30.json": "ead4d7f2c7b33f15ccfd22c6099be384b3556af3eda3852126ffe6d6b69e3ca0",
+      "features/train/2015-04-21.json": "84d34729e91f6966dbaa47f11b9be36831316ec253a6cf7e84a209ea4a333703",
+      "features/train/2020-11-25.json": "7d8f3483cceb4ef895cb40c5cf8a8c02905f9bbc1be36cb52782fb672a971e52",
+      "features/train/2016-05-19.json": "b774ecb1dbf27de67cdd7390d0f4f6addfe7a8b1a4ac1007f24687fcfd1a98be",
+      "features/train/2019-04-18.json": "0ac346a82924bff51d7e7ab9ab1b169cc82b23885e25c1975d47ef97886d6044",
+      "features/train/2020-08-18.json": "fbd10bd0ece65d941931258253f3be6cd74d84cf713e569f3a0c2a9b8b92fc17",
+      "features/train/2021-04-30.json": "70cc0e77a88ff4dea3c162347a879a53d99a105f4b1824141fd9863921c3b82b",
+      "features/train/2019-10-10.json": "2c42ee6cb62c934ede1c016b1615a24b1a30e2b66bcefcddaaff08f2c29121ce",
+      "features/train/2022-04-21.json": "7ede6eb0dae98f6da7ef4b1eee6d2c45a9e69ad97ac14dd2423879f43412d690",
+      "features/train/2020-04-14.json": "a3d517a00e41d77fbd9db39b0627ea86e6ee2d86429ab21127d7ed1b58a6299b",
+      "features/train/2024-11-12.json": "b657936b939b1c7df10cb1dd83163721b6f05e225ea3704c1902492f726cfb59",
+      "features/train/2014-01-02.json": "e4a8af70f28f44cea581ad94281b0af55d5884b35294a6ce98c0ef86e4bb59fa",
+      "features/train/2014-12-11.json": "de9e3d9bbc7ec8ea3af137beec48acee364c1c5fe4e9ae9bce87e05e4e39f3de",
+      "features/train/2017-11-02.json": "813f0fbd6d6fea7999642e9e4b2c5eb4bff8fdaed5a323564a01d7315c49807d",
+      "features/train/2021-12-06.json": "9023c399f4e605e57227c5ef1c5904ca79810e2bd84bab14d0ef3139943c128e",
+      "features/train/2018-02-23.json": "3a1caaa3bdec477a690c1885a4634c4b10c097d47fc1345c6fc4a08fab8307d2",
+      "features/train/2020-06-19.json": "7ded0d0ddf587c21671f1552feabfa110c2972da2c15f806069064d236e10451",
+      "features/train/2022-04-07.json": "0f9180490ab86db19386446f6cccc7ca9845c119b278553d23c05914c5a60020",
+      "features/train/2014-02-20.json": "e34dea33c6f9811e4b7667f340681b3e9e80e08ccd7415bfec14975260740d0c",
+      "features/train/2022-12-08.json": "dc7b47e215751f5b21da191656b178bb8dc1570d1a6dfc8bbf04d211c4ebccf6",
+      "features/train/2023-12-05.json": "98b63ea05af68c8760fbde3ae5767a35563e8ed39f2d7947145f069b7431b682",
+      "features/train/2023-03-10.json": "81cadaeeffbcc9bd270c22ac38728cfb419f0bb5b03d655f06d24472bd3a75e3",
+      "features/train/2022-01-11.json": "cda104eabb0243535c0d97d35f6f8fae9f0f4983fe786cb29e0ca1708499e0b5",
+      "features/train/2016-01-05.json": "e9cab0747762e12bfd59e25302bf0fd73c8866654b18840128ac709b724079e4",
+      "features/train/2018-05-03.json": "d69c4b2659320a7a4d1e94322644370f7e6bb1372093c02442876bd4dc8b3416",
+      "features/train/2022-11-17.json": "e4941159a8480397a1c9181e7c4edf5ecc4a42f6eb6f0e54b54a2bb14d472ead",
+      "features/train/2018-11-05.json": "2241efd10df3745aa58ca16fab46887a83a9e8485f17cc4cea5df33d7cbae6b8",
+      "features/train/2023-07-10.json": "3aa6916624382fd7b1a2252502184a915c7168293bae33303e36a183d9170e53",
+      "features/train/2022-08-03.json": "52035d99355de1ab2b701d83d6698aa4b9b33b6cab0bd5099e6b9ba84231fce9",
+      "features/train/2016-08-15.json": "bd8e0849fdc17919924256006fa20406c0904ef8a1a67ee1579c330ef24dd5de",
+      "features/train/2018-03-30.json": "1f063320ce12fd1de740631896431674ca88f72f8a644f1e8c174d686132a4c3",
+      "features/train/2023-07-17.json": "f1635d9bb2493ce6dcce99e729cd8070810fd0cf2a9fd046fcb15f4f99356390",
+      "features/train/2019-08-28.json": "43167e61e1a7db686561d5ca4baf8e8096a48dd78c4dc1f172eadf4124c0c254",
+      "features/train/2016-04-20.json": "7027b5aeedbf5d7b923222c4b6e93a88dcf6dc3a086e95b3c9651bbaf998ef25",
+      "features/train/2021-01-07.json": "d6d267a7c9838350b6fb75959a3886ea66c2facc12e7c0ed1a69a845cab71537",
+      "features/train/2016-09-21.json": "b8bdb42008b6ecc2dce96e066f70dc2a58b80c08edbc43b130cb2baabc89f64f",
+      "features/train/2016-01-12.json": "eac0663dbc6612fb268751c1c8babc875049c51af043008b1fcb3c5aa2031020",
+      "features/train/2019-10-24.json": "bfccc653d1ae468effebfebb0c272071da6ae0880a7705e12f88edee82769306",
+      "features/train/2021-09-02.json": "31eb1dd5738796d0da9f2ce5656c329bb21a8811dff37641305ac3fd80821e48",
+      "features/train/2018-09-21.json": "1f4bc922b62fbbe2fb9e17eacc388bf0cce21e20f5e0b44a8db912c3ba577f57",
+      "features/train/2024-11-19.json": "cdb47f0db0096d879b22f93cda04a70058b5f88351b4d9baa9df261538f2b208",
+      "features/train/2023-11-21.json": "2a9e859d15089fe9e589e4fb59544d9372f3d2d79f3116408b6791a3dc25a64b",
+      "features/train/2022-12-15.json": "153992f85abb5f950dd4d5c9eac9fa605ed05414495fc37da4bbeaf652cc153d",
+      "features/train/2022-03-29.json": "fbc248ade2cdf932d9c23358ac9ba42623950b6c47d59b97a7c5194c17594017",
+      "features/train/2019-11-28.json": "03c2e00c79aee3d35561ecb5d2958c6e7d9d5a07c997d89e88ba081796fb5814",
+      "features/train/2020-09-08.json": "b35b7f664d38a4ebce84c34e7364461521db33ce48df2a03b0b46821d2426b37",
+      "features/train/2024-08-16.json": "a2c0d14b8b0677c5b96c0b63987e41f9883e41acbc32e957df0b0c5b0e4db4a2",
+      "features/train/2017-11-30.json": "8b51a19f10e5daa834135390f1d7183c3b92f5f33d046c2361dd5defa6b6de76",
+      "features/train/2015-03-02.json": "27cb9bf346d3a47a3d26bf62fd2cdb03485567b990cdd31ab2039b3535969b47",
+      "features/train/2016-06-02.json": "a4d69fc38061ee884c75d97652e70155a1117ea05952aa9e57c36f914fdae724",
+      "features/train/2022-01-25.json": "211de930afd31346069acbe121a8ac2aa574f6e40834a19eaec53a246bb97f2d",
+      "features/train/2020-09-29.json": "1870c50d1dfffe03866530444f5b4ab740568f948a83d365284f23b54813a213",
+      "features/train/2015-12-28.json": "6f6dfb91de494c9ec9a86706111c0727ddbca2360e265dd604cb9f6a9c0d639b",
+      "features/train/2020-01-17.json": "7b91c3b6b2444a67ec7da92b753d721395fbe370a45118e74b571d5cee86407a",
+      "features/train/2016-06-13.json": "f69c9611e3c8390df37e9761dc41e1bf44574ad1f61c5a7defe4ffedd442b18b",
+      "features/train/2017-04-17.json": "275040af119a41a2650112b227e99775fc3c20723978457b75c4c9869955ec3c",
+      "features/train/2020-11-11.json": "1a70246264f1f6b6a8f7a29291325e35d4754ed1a458b98c11056c921d523a29",
+      "features/train/2019-07-31.json": "5151d53bd4c918ddd9640b73f07f6dcb119529d35bfa5a77b882f072c60de7ec",
+      "features/train/2021-04-01.json": "38e1b14262280088adcb29667fc8552690208e6945013dd6da19c7f211688d7a",
+      "features/train/2024-07-12.json": "cda7b169096196e25f67e66290469d71823bfb060994dffb612ba475a2dc9a8e",
+      "features/train/2021-01-14.json": "a6917b339c6a557d1e54bfcdf6550df9d776763731f63bd999da2a82c039bb65",
+      "features/train/2021-08-12.json": "1efb43ab4b0468d0cc696cd81e8e183764a001f1629032a480cce38b24112256",
+      "features/train/2024-08-23.json": "c2e8f61f8e811c7a3077d19a75637249d6c19440e4b53b8c9f08218f891cd72a",
+      "features/train/2015-05-27.json": "291d82d9ce332bb78a8cc78656883e6186c3ed71f029ece129d75c498d104668",
+      "features/train/2020-02-10.json": "f520aec79ee5cd72cd63dfb260b7a1419eb69f125e02185b0f6fd4f700821193",
+      "features/train/2018-02-02.json": "4e74cebafdfdc28670ce9b671dd9a1ecf3f99b7843431e04ab3bdd7cc155286e",
+      "features/train/2014-05-27.json": "cbd8117662693a1ddc60d12e507cea98d7e13c5155de1940143f973d0e9b31d5",
+      "features/train/2021-07-22.json": "8fc6acf6b96420938156f35ac7485ff2dcdd755e1ff1b482d80287ea80b41b17",
+      "features/train/2020-07-07.json": "1e71dc2f2aaf2c534bae201b62f9d0df2015ff0e41da86b917bdff692268d0f0",
+      "features/train/2016-03-22.json": "8dcfe1fcabc7a46d172c8260d697817af0a7deb4bed9ae9cf5d2bc360099e20c",
+      "features/train/2023-10-31.json": "63b27d2ff743a4576ede3c46d9ef94bb2a0e326b651d8c669531f204002111da",
+      "features/train/2019-01-09.json": "0564161bc997aa092f0a6ab73a2903a7b793ed8467bd11f6c806e9f62bcb32ca",
+      "features/train/2021-12-13.json": "5a85e2274dc686f03850206cfc7e6254ada125d1ed5fa5185831e68635551a45",
+      "features/train/2018-07-06.json": "75d21a6aebbe0032b7ac64a66a02826d437453b9059b10a7536aa523734c1a19",
+      "features/train/2016-08-22.json": "7e309f29e1c94a287ca8265c847371721d6044e27ab7b2d5e874940683895d9f",
+      "features/train/2024-09-24.json": "ee69b14c6b91fe6a0f32f8ae284b683e865a2b5b077a7c492686390df569fad7",
+      "features/train/2024-07-05.json": "4b899103695455fb5e0ecaba4e59e15b1f2613e0cb6fb0b7fd8f62e19f04d6e1",
+      "features/train/2015-04-14.json": "6b3b40acf6a714cc1ef85e0ad97d711f72b8df317242f1245ed5092dc98fe77e",
+      "features/train/2018-07-27.json": "bb76ef8b06780192605bc36518df1c373a1ee18005e23dfa84155c9cb1a14241",
+      "features/train/2021-02-04.json": "8b3da34e2c24912e3d0fb00fb66011ea2a5f5812aabf5d3d04e6ae11f84f24e1",
+      "features/train/2014-11-13.json": "5afbf1084494452a20cfc5f84beabff4f2f0e38279f08f4977b686220b3c080d",
+      "features/train/2020-10-14.json": "cf73282ccbcbdd60e1d1db677fdbd39ffe9748660db02abd62ca64d44914f01b",
+      "features/train/2019-01-30.json": "f6c37a148b181ea7830096e8b8fac00fb7ec8a1c3af5d964a9306acd84d5a54f",
+      "features/train/2017-04-10.json": "a860e27dcd5905a4f023999f9b3d3a74e8e1e45706b5f64bbd86cd4cdbed6543",
+      "features/train/2024-01-17.json": "bcff5a12a010010d64fd414aa7889a7090633f054b358ce14bdc0d237f515cd5",
+      "features/train/2016-01-19.json": "03bbc67149ec6e0e2ba88a98577d99d678c4b64a4881218e6f145f4156edff43",
+      "features/train/2015-06-03.json": "2c5a61d62378f67d42ec20ded80a396c2f10266f7420e258e65efaf6d5708da3",
+      "features/train/2023-07-03.json": "acfd5fdbcb2f17f3dbdd361d2c3a50e3b2c4b0952216e62ba1080fd2c7484ae1",
+      "features/train/2021-02-18.json": "f41d6410f873ae0ec572ce3d6ff20e128cce72d7bea190c6ee736657fc6c26bd",
+      "features/train/2018-06-14.json": "e05e444fe9bf5302878e3a882027b4831bf1e519a8a367a9cfc5f3785ffb1ad0",
+      "features/train/2016-04-13.json": "093e057ac41690802a9e20485234644f6b7fb555f9449bfcfb5467135b262f55",
+      "features/train/2019-08-14.json": "9bc65bc98965a5144de979eba712a8a1be129823860271f3da024ee0325f50d6",
+      "features/train/2020-01-10.json": "59924bafcbb7138303487757047f4b07053246ef905a8b36ba17d4ecc4434756",
+      "features/train/2022-06-29.json": "916e138d1ed00d13826725310f4d1686e559fa3b40d7014bb60f604a6f0683b1",
+      "features/train/2014-04-11.json": "eb05d07c3aaf253ffa222f31a58f5ee643c77ed4d8def207f4d6bbdf17926eb2",
+      "features/train/2020-05-29.json": "9d4b2f1dcff626ddd41a677c3b39882019672deadb31afcd07bcb81e70d88d01",
+      "features/train/2017-12-14.json": "af0f1c81db1552af194519ca7aaf31f8b764faa24f078c7f35e0e361e45c36fb",
+      "features/train/2021-04-09.json": "b4f30e7f32edc81b17f9f25a7d2de4f7bd3f225d36eef6daed9356a929d08649",
+      "features/train/2017-01-26.json": "d71416772a9aa28603dd5c1a19671a69584fe8e6ec1c799d29538c1edc7a4711",
+      "features/train/2022-09-22.json": "9a4fa8a9d42724f70b2c6ececd4d603029330ee667e56e10225ef3c88d43b28e",
+      "features/train/2015-11-23.json": "b9bad220c446906c4df259cd00013fff9fb47f7be4708e0571768f63b574c43d",
+      "features/train/2016-11-23.json": "474a0de77fbbc96bb6b700caf7e35cc5e0aa17042e344b1dc6d9a555df1f6d70",
+      "features/train/2024-06-14.json": "852bb01cbeed337a0da45a1e634d6eadbef71db731c732b5921d18a41e21334c",
+      "features/train/2023-09-25.json": "22b6f5573e303200c7604b5d161ab162014a066b6d86d4b4ca9944779bd250ba",
+      "features/train/2017-12-28.json": "eeb350d65f8bb3c862b3bd5829e94aa158a2f890528c8dcacb97103204a0591d",
+      "features/train/2016-01-26.json": "17bb75f015255fa8bd6999673e50b6d42f4f62f48725e14387e405c55b0b11c7",
+      "features/train/2023-06-26.json": "332e3ad6c3fb236197f85773e3f548217381fe1bfd8b2b22538aaf6b85ae86c4",
+      "features/train/2017-07-06.json": "cc8fd279b32826a98eab35e919727324fb514e42473e5e4c630473c872d55105",
+      "features/train/2015-07-16.json": "c388f4fae60c2c31d79b5e64ae35f3f67cc2694a0c4e04b6d108fb54674d4315",
+      "features/train/2021-05-26.json": "9209f07d892d6135ee9c050829d387359031e5eae1dbd418e98bd6b8487b9bde",
+      "features/train/2023-09-04.json": "574b72b7588ddb38a472cb5fe6117668fe5845d00be3b6082b7f16d8ab285a7f",
+      "features/train/2016-03-08.json": "5c348c13b75859e9cae71c832049d1d365d8657391c7220a2196d067b41e2075",
+      "features/train/2022-07-20.json": "eb269520938f15abbd66e43907b6d51135a2f47873db737ae5a2dfdb57008ce2",
+      "features/train/2014-01-09.json": "42b8a55887cce6d7e92c9b355a44fa16e3c458356eb39d86202fbffe48bf6876",
+      "features/train/2024-06-21.json": "ec26b33996f417e80e8920847ee7903a2e994b2b0c9b1664dff0b125453cd986",
+      "features/train/2020-11-04.json": "89a2bde43449a2809144ab5e9318572498d8aa7749ca3e4b40d6f7f81961d5a6",
+      "features/train/2021-09-09.json": "a08bba04011bef0a25b2ae335c442ac7dded0414dd28cbe949c08c5741ec2d19",
+      "features/train/2014-04-18.json": "a6fffea7c68818807b88ad6496d758c15fd66d31e8a0a5b0a5887b8b0555d57e",
+      "features/train/2020-10-28.json": "847e9483a297a88e94df2a1a2dc13e0114e92f4b76bcf00257f6f1843e59c830",
+      "features/train/2015-04-28.json": "ed4fad65e321365e935144119060aad4b393897c15251e50a6cc69ad2c0c1227",
+      "features/train/2016-08-01.json": "f8de8b5365a2bd8c47df825b9ebb4feeaa6fc2a6387aef4987fa9436f79e73c2",
+      "features/train/2019-03-27.json": "8d7e5cff806882840abaaf1c36b0d89c91a7a1bb62cbb3b5d95bf661517b28f0",
+      "features/train/2024-08-30.json": "100b2b35c6979aeef227dd8afa88d258a87fd3b3ea4c170a2ded5ae5ae03cae9",
+      "features/train/2020-12-02.json": "8a4ec82e975469237d291d9eacb4c53149f47e575df9f3a617e13c1c8ea3c60e",
+      "features/train/2024-10-08.json": "5391ea8bc8ab3617164edc14dca94cc462798d540668d4c6b4b8db7273ac5200",
+      "features/train/2022-05-10.json": "df03c3e634b18a75b0ffd2ce7b51c1fe58bcbf967a48addf88f0f10e2b51c806",
+      "features/train/2018-08-10.json": "50284275cc2f1edc9dee66b4a0f7cd235b720b1cc1d280fb91510b433270348b",
+      "features/train/2019-09-04.json": "b73af646dceba8c5bf8f1e380ef5776d61c05e0664a0e43a6a3b4c80b7398a25",
+      "features/train/2018-01-12.json": "328a009414091a7971356e57701c7943771cc0dcea32b240a3994288d516713f",
+      "features/train/2019-10-17.json": "feb9163ac787b37b2048af7516b8903be9aa761245d03889453ec84839d73c22",
+      "features/train/2015-01-19.json": "31ad4b87981371deb5a1cf99e7c812bc388c9ecac63a13e88116ccb2bf4d2b54",
+      "features/train/2017-09-07.json": "973ef7d61df889e68a4fc196b752aa8e51f444894254c2a163bdb7526bf4fb6a",
+      "features/train/2020-01-03.json": "c4e3223fafcd0e7c904784aa664b647dcf52ec2d1d41320eb6c36324790a3f16",
+      "features/train/2022-11-03.json": "d59dc0fbb702fb716536666d03d5629be3fe8e0360f7a0983e399d7be51dbd8a",
+      "features/train/2016-03-01.json": "85fb6b1d3beda2f5ea07c31b0e2b3a3009c999febb0e7f7fb5045bf60c1f1c0e",
+      "features/train/2024-09-13.json": "409a078f81d31f43a1d83ebc904fb778fb459c3e90cc622f7027a43603aec79b",
+      "features/train/2023-01-13.json": "96bb856783ce5b969942e62a749617ba4dc65b5e47381998b68f584af4d43566",
+      "features/train/2023-02-03.json": "32702389afd38ea4f1c1e33132cca078824bc4a56f06e052df2f4feb85e569ee",
+      "features/train/2024-04-15.json": "0f9ea2e8f1e1fe10b53f7eeb9fd154db3bbde70797a9c23dcaa3d4c723d53ea2",
+      "features/train/2014-04-25.json": "f4290bd8b56a944343d06585e03641124f7d13d81e39879f2b7a340b2a45bb4b",
+      "features/train/2017-08-03.json": "c6a421a272f32720c2490b807305020681b74db74b42089106e61666721f14ce",
+      "features/train/2019-12-19.json": "7fcde69887a87aeba593bd8312604af75705dfc5e648d6faa4e7f9d0c011d197",
+      "features/train/2019-12-05.json": "aac0edaaed88d5017f0c0b76daff57c00e74ea63d8898172c92b65c3b8dec10b",
+      "features/train/2019-05-07.json": "43c28c3e4a4211004b238c6434a5e50f89de933487d0d3379961114965ade982",
+      "features/train/2014-05-13.json": "b112ad55134a607fdad201bca4a609352d71e5f43c18b72118298fcb3149eeff",
+      "features/train/2019-08-21.json": "ac2918fd9cb2b91b52158a30d6978040f0023baa578a4ec5b80e92c4e1b8588f",
+      "features/train/2023-11-28.json": "f0c6453cfccbc50d27838b95b879a1ba511a618ecc273da9d7327c59b00b6907",
+      "features/train/2016-11-09.json": "8e9fd63ab8dfa3e32cefcfb9a722574d14af87b6124c168f1e1e8260cc5c9cc7",
+      "features/train/2018-06-29.json": "161d633efb971a7bdcd425b0d3c02698919b22db284fe7f39afe86578571762a",
+      "features/train/2021-12-27.json": "a972f3f372815d99d92ee4b9c38e70da2ed87b2c474937aa9c29133cb48e74eb",
+      "features/train/2021-08-19.json": "da7357342b625f2ec298bcbf3425a21b56b1eba382d87b346e6294533573370f",
+      "features/train/2023-04-10.json": "a4f37917e7272918a5bf053ddfd484df1559a7103bb919a67b43de6d2547b62c",
+      "features/train/2024-05-09.json": "82dd489ffb3ee548b5073765784d8c4dde62bf0ee690b1ea257a0bc62ef3e2fc",
+      "features/train/2017-11-09.json": "7607e073390a07b15d769e1cae16273e6981fd08e1de15fd1ba536d203fc5e5f",
+      "features/train/2021-09-16.json": "4006f18d4ed3859ba52ee159971c6122b6d4cd2e75b49f90e049a5b10fc4f20a",
+      "features/train/2019-05-28.json": "5521f1eb1af533ad45d58078a23e6a160bae9ea17e49280a63d4018f255ce153",
+      "features/train/2021-10-11.json": "6845dd6c4a37eb5afa0a943e649d328323cb7cc47a1f41615b52077c11eed57c",
+      "features/train/2014-05-06.json": "fceedb4dad297c6d9d40bd781cbec5b275daaacbc69f136e992da6dfbed7f61c",
+      "features/train/2017-06-22.json": "0d4bd13390313914289c0aa3c003028bd1d70c98252675de95fbbb3cf4fc23d5",
+      "features/train/2021-06-17.json": "48d922622b78d2d25d6975b5e40a415b3086c65193165fbe413aa83b91c73731",
+      "features/train/2020-04-21.json": "b805aa0d86a96b6e000d2526cad5a7d4bb70e943f8cd605ebb39b53ab551e593",
+      "features/train/2018-08-03.json": "b1bb0826c28e7e4eb1b4eb60546b71658bdac58950be7400c351710537420ecd",
+      "features/train/2019-07-03.json": "87c6ec152bda5c01efe418ed8b67b71a541f0b723c3b579cb19993167c182d7a",
+      "features/train/2017-03-16.json": "41f53f8f1fc7a96473af86237d29d31e7747088289531a29fbd099561d9f583d",
+      "features/train/2014-02-13.json": "f7d316d3cd00cb059ebfdee37203c1c146d6dd07a46716f3b17f24111b2d769e",
+      "features/train/2018-05-17.json": "71253f0850550d5bd897cc83916bdbf184b483dc5a1123fa319e3e76fee39db7",
+      "features/train/2023-03-03.json": "9d44f4ed565ffdcda1fdd9f928802c90682ee17322b7936172a526a8b7460b98",
+      "features/train/2017-02-09.json": "42210701f68e07b71f77ec8a1525056bc1c418637548f1680bd1e7d67fc698ef",
+      "features/train/2017-01-19.json": "20de44d2e63ce56e28ba6b48269afde573da93ab005d24b5f2a4709fa68bb8ab",
+      "features/train/2021-02-25.json": "4d7bafa2300101c1783db0bf8a8b5bfc3f1e6a9059cd5b1f6c838d21d60b0296",
+      "features/train/2017-10-19.json": "3a4f687b001960d5bbfb549a20069dce42a8894b6efe524a07feeb76186c650d",
+      "features/train/2016-07-11.json": "f2056832254112b6b397c558952f7678c9bb02f33c3c48cd1fcc2bc106c6061f",
+      "features/train/2017-06-01.json": "d423ee54c9189370471c2095ee96227ff2f834ec81329550459d688892a2a517",
+      "features/train/2022-04-28.json": "7d18f9eb1110a153b0e2ca7221bdcd166ddcaf3274bf27be17c87e7339962b20",
+      "features/train/2014-03-27.json": "92e04256997383d0d32757650c23dd05fe2c63d860cccee6a7bcd3a20ef18b03",
+      "features/train/2022-05-24.json": "14cca17e7706d8654d88c6094bc8f501bc1e5042fd58540592d1507a726c0f32",
+      "features/train/2018-10-15.json": "9933b27b9030c733a002fb1da3fbaa46b0d25c6e6c389f020cc7af74d73227f0",
+      "features/train/2021-07-29.json": "a3f5a5bcc6cfeed1ccf473d0a571fc9b61efe623687db59e977083e28568cef7",
+      "features/train/2018-03-02.json": "93779132d5d78fa6c6e4f1a288d68f5e2d3c43bf5c7ddec70084556d21cedfd4",
+      "features/train/2024-12-10.json": "65c71cd62b29682da1d2618db97b8c58dcec1b4374a8f91b312a24d9afd20010",
+      "features/train/2014-01-30.json": "42949dc0af221252b8f29f1e814eaf5fd6c1f781f2f63ee0ecda5681c6922f46",
+      "features/train/2018-08-24.json": "7ae15098931f0547e43060622378898f92eee2764175a0aed9ae1c7deb9d2504",
+      "features/train/2020-08-04.json": "d297b9a9b81740760f00c37c53094c4fe4765ee2a6d55757eee4bc65d88d317a",
+      "features/train/2014-08-13.json": "57801005cec9357c8bdb5015e5249fc50fea43b882dd76c3f1c03a146b249c71",
+      "features/train/2016-09-28.json": "7f25aae7059c3c3714bc882fd2a12c4abe797d885cc326cc93a340d3c042f896",
+      "features/train/2014-09-18.json": "a1f4439d1711a9a5a2c7e11ab6deed6ad1c40d4bc1de79a3b5a3e536070fbf5d",
+      "features/train/2020-02-03.json": "ec02c2438d90c0b07048e63548cc5ee822240adcba37c223e74b9a1f7d572651",
+      "features/train/2018-04-17.json": "e4fdf6215e5368b861fafecc7f017178810a4ece6eb10d3178cf42ef8f37deac",
+      "features/train/2022-03-08.json": "ba381f38e5d69a28b688fcee82b1f46f52d816671e43d2c5d712737c9c2123d5",
+      "features/train/2018-09-07.json": "50e3bec733383092bf73220fe660904dc0bd806108c34162347c83c94ef2f2df",
+      "features/train/2019-08-07.json": "e8c68b373916debf3b231435d28c48668586e3f1e0191a707993cfe260db6437",
+      "features/train/2023-06-15.json": "2be0a1e826bfab7e6f723c695d09f07bf1135d4afa6d017b6e00008c0366145d",
+      "features/train/2017-12-07.json": "fa653d953ca84228d3e67f114c3bd826672edf9216682c080240cd3339a355b2",
+      "features/train/2024-10-29.json": "5e6d958c1de9e99f3e5e681de1ac6cf2e829f34b9a6cabfd57e5fe5317088b25",
+      "features/train/2020-08-11.json": "1aa6b9f09be8fed19daf61b68ea6ff31adb25d6b3d1bc8280c9b35f54c525c5e",
+      "features/train/2024-03-21.json": "b27f2a4838fb698448ae7f45abb8af4f883f908de0d471bd0aa81e778098d7cc",
+      "features/train/2017-11-16.json": "8bae2cccb9d50ffeef31d1b4519590a1878f94bc14295a313f35fd6728b6a570",
+      "features/train/2015-11-30.json": "01e001d54c503512bc8f24abb9fff3d3b8e2a115441aa8aa1bd11b8c94739bd2",
+      "features/train/2015-06-10.json": "e99b96f3ba9fddbd5df811bd69cef4b622a8b0d39100c58e3a1efd7630104cad",
+      "features/train/2015-02-09.json": "37a9108d2a941e8fbd32dc4f919110903e7042798ac6ca15311aa74b599448dc",
+      "features/train/2020-07-21.json": "bb9b7b90ac06973d17b389878e62c4a734bf033b26d3f904b454832fb97dcf6e",
+      "features/train/2017-10-26.json": "4f4dcfb4b3003b0d9d1f3932b17282ed8d31e1e3c3a55ee69cf1780cfef07fa7",
+      "features/train/2017-10-12.json": "374c0a777a126b6377739fb379a1fb1c73f40f9e845107e9712da0c969ae6379",
+      "features/train/2016-09-05.json": "c7fba9aa5591e00f54746f63fa2d5f7708cc7a54fa934972e3e34521bce212d0",
+      "features/train/2018-12-03.json": "a1ada99a558030274ffebdbec7f411d2e74591231193c9954588d25226610297",
+      "features/train/2014-07-02.json": "a5a7a29ab89a62b141ef8af3dfbcbb4ed331ee5e4c779cb9f5c1dede045e62bc",
+      "features/train/2023-08-07.json": "353221da21c5f343a912a62739d62220081a53530d59a719d4d4678842f1e52b",
+      "features/train/2022-02-15.json": "71a32b91c85e5e2b892ee0f7e358550d29136aa5e9cbc7d573396d81aae15ed4",
+      "features/train/2021-08-26.json": "a3c37c94da07915a921c247495df8554f94c1f448d5570f18408533fefafff9b",
+      "features/train/2021-01-21.json": "7932358be13410596878d6cb5a5351cce9c69909740ff97210ca1b26fe1b3f87",
+      "features/train/2019-11-21.json": "bd91f3303f52fc0749234dbd6787b9a47f4a5742e34b5192d4449ef13e244b85",
+      "features/train/2015-03-30.json": "fb64757ae623de867f352b727ac6a3c74a39006a8ce271d6f4bf0527af9dc951",
+      "features/train/2022-07-06.json": "54a81eae43f90f3789bea4f0416c58fe82fa4215e2887c82cd1caf5f3f99896c",
+      "features/train/2016-04-27.json": "103ff42ebc04f511af4ab0c381d5b493f23b13781650a925c35fc69546d4a537",
+      "features/train/2022-08-17.json": "b77c04ba4aeda9433c3c85c6960858f26eb130ff91dd913eba0c01a489b0cbf5",
+      "features/train/2023-12-26.json": "4940f6d8f2284d926158663574cc503f33d2ff176716a61698fb0359d4853cf4",
+      "features/train/2016-02-23.json": "a471f3af08aa230b80d4e50995c3d61dac4219ee002e4733c296a1b18effc1a2",
+      "features/train/2019-06-26.json": "c7207e08db04e21819c19db2cff252327935e36ad5aaa2f746ca3bd2a8c2a732",
+      "features/train/2019-04-25.json": "4096299737e5983f7fc1bf2c2516964b5dbfbfa2a07d1f6363f3d5f615a472db",
+      "features/train/2019-07-17.json": "0f31e0bd3023ee3477ba01f89d2f311e0129f71f4d5facec9017c65b2a7ef217",
+      "features/train/2024-06-06.json": "39ea277bd49fd94b4e2631bf0a4e460bdc4eb485dd52994aa9dafad8e8ff2fac",
+      "features/train/2018-03-23.json": "fbb78511eb0ff172b423e39ed84ce517c3a0feb94c8eadc5ec1d5fc944933a1f",
+      "features/train/2017-03-30.json": "e2042ec8ec20bd12a9e8559cb0f49487140db7c86c54ab58286bb39d5d718d9d",
+      "features/train/2017-04-24.json": "f3548eae226b16c4ed74dd55f015409ef67cb4d854e261976d43ac97f1be7bd5",
+      "features/train/2021-01-28.json": "856c141bc4c6cc5a99d5cac2ac1ad006465263299878ed8ed5260d057ee56510",
+      "features/train/2015-03-16.json": "2ef843dc0832aa330d53522a484a230cfa425be4e4a721ec516791f0dcf3a405",
+      "features/train/2020-09-15.json": "6c907f44420f43e9eb6ef1edc447f1ebca34d36ad46c69d3742880d647a3a668",
+      "features/train/2016-12-14.json": "31175ca1be3fe0ba6419e4ea93cc1944359a52474775655a31ccaaf79cdfd854",
+      "features/train/2022-03-15.json": "f7c0e61fb1136403d1cf04969d18590de2ef9869f87274a8b06f46c4301aacb6",
+      "features/train/2015-03-23.json": "8e0aaef1b7e1b7812f342aab9108dce8b5f5ed116253c825e5322bf676f05e23",
+      "features/train/2024-03-14.json": "313d3becdf8bed9289021350a73e15d84754e7ef3626e3881bf6f2459f2669a7",
+      "features/train/2024-04-29.json": "29d5139011839342abdc8430d11ee8311e5ecfc96b05e0a6a22c4ba1a641b7dd",
+      "features/train/2022-07-27.json": "911701b027858fd7c99830c7b34f9aa4eb174763f1cc419bf1211fd05a1d53a9",
+      "features/train/2023-09-11.json": "62456ba57c181f311e8e44faa64f09ff021d124b273aff60897f4247bac57c1e",
+      "features/train/2020-02-17.json": "4f447f1a9ad18cecb068e09a530c8035144e930882caf70952bb9723e9be59a9",
+      "features/train/2020-08-25.json": "18ed14dfca94ded6ca52b8f9d9c2a86da5e45d251acfe101fcc09c17e48f2064",
+      "features/train/2017-08-10.json": "23350f53cb39e5eb611da4ed82e89f8c63747de5084442807db6db34f8e2190e",
+      "features/train/2018-05-10.json": "efbaa2893f0b5ca6a0cd4fc83afed840271f8b8ea7e301b4ef16ed51bb29bbc3",
+      "features/train/2020-06-30.json": "b4f4f4e9fe2536c0dabcb44fc0ed6280cfb80ac29c00fc0ac915060d1748ad54",
+      "features/train/2017-08-31.json": "26ecb2a522c1e6a09e99333c46ed0b99d2bc7e8538b83be1cfebcf654604b307",
+      "features/train/2021-04-23.json": "62079bc63f38950b6567163025e8743d77bc122613d6700c50633bc885af7df7",
+      "features/train/2021-06-24.json": "b0ceaad9dde09676da09f2b1af3611c25e6571a4820b1c5c1c0791ff023823eb",
+      "features/train/2014-07-23.json": "85691caa11bd6b30180ff7aa849a11345ab99877651afb24f42c0a5bdf50ff3c",
+      "features/train/2017-02-23.json": "94f2a381aa5536556a51497b2bc095b685bfd4eeeacb815681b6a999554520df",
+      "features/train/2015-07-30.json": "c23204ac00c4751a2a79c33e74f9f72071d288f6a83f19fcc5b121676a705aac",
+      "features/train/2015-09-14.json": "97cbf2876169fae90ebfa150059b2e839ebd9c1f802d55d18d2a987bcf499568",
+      "features/train/2020-12-09.json": "e8e4ee76a7529d88ad4df50d7be5b3b12c7593e8fdce32e5965edf8e50e3768e",
+      "features/train/2022-05-31.json": "2a7c1ea1f4cae41ae24740d681a6dd9f928b2c3b454bf463b058520a1e4bced8",
+      "features/train/2024-09-06.json": "ff3785bb94b66cf40a10442151f154a4b1acfa3797214df1302b562f92dfc163",
+      "features/train/2020-09-22.json": "12e0981abe017bdedcb47085d6701547276c78b76b073a6f41eab02dc74d5305",
+      "features/train/2014-09-25.json": "29cd265c116d5dcf7d464cb093cb5b5903bdb19a1d03a0b4b3dac19410ecc680",
+      "features/train/2021-06-02.json": "d9a360cbd51c221b4975a5cc88ae7f448b6d51ee1122e38cdffbc6d0b2541ccf",
+      "features/train/2024-02-07.json": "54de92fd178353cc1330c6b9dae13bd605367344e567facb37c5007ed8608637",
+      "features/train/2014-07-16.json": "67abb1f4a4bc468777f4e65863feff00e9ef98ef48dffdc869e595d108d7f925",
+      "features/train/2015-07-02.json": "0b0b0735c383891d262a7d02ad3c2dc9693776740c69ecfa871aa999750382e9",
+      "features/train/2022-10-20.json": "41ebe7856f2f4d0391e5733438e492b5c9aca15cb977d2bdda8731b73e6a8e2d",
+      "features/train/2024-10-22.json": "7608d61da75456005f9b02ab9ee6c2a855d30f2a098578b789c0bab9409d8511",
+      "features/train/2024-03-07.json": "0b9ff721b37e393b2efeb041d53cfb29b942ac476879536d3f21c51858b47934",
+      "features/train/2018-08-17.json": "63f0f2fb3b4463705dca3c36165dcbe947b19522c84af481630acdb4e56d6c52",
+      "features/train/calendar.json": "4f6fd8772d02272fca031fe7f42a70af2c2fcab02e41c2cdb2b0289a62955eac",
+      "features/train/2015-12-07.json": "ccb58a1f5f28b109ea718df3f818a5c014f72593ed3dc0fd162096d794808c6d",
+      "features/train/2015-08-20.json": "bc575b797c62dfbc69e9b4cb017e321730343fb4c735fed58f3a8be3a639cab2",
+      "features/train/2022-02-22.json": "2a4aaef077a969a16f623f7c493b1353af3b1a98e38837fd30f56f9210ba25d8",
+      "features/train/2019-02-13.json": "b777eae7c30d66e9e28ff8ef4bf42f992c1965b8d42f38a752abd48db9434c20",
+      "features/train/2018-11-12.json": "77f93c48c07084c92904950051231afe49de4ae9302e561b97029640dd38d44b",
+      "features/train/2022-11-10.json": "dc09c2cd008486f35573ee12d5357d98d1b600b63036237a8e7648acaeabe405",
+      "features/train/2017-12-21.json": "a59023c898f29e45350b7cb4785d100e058fe1e9bf91ea0bacd32152a410587b",
+      "features/train/2019-01-23.json": "3e9322877bd23f68da74984227ff0320a39ea7dd18226596727675b5328d896f",
+      "features/train/2018-01-05.json": "12a6e121c796bd840fc70198b87ab9708692ed0c21c38fac8e0dfbe2d7601c04",
+      "features/train/2017-01-12.json": "a5bccfc198cf491fb71fc8206dea803a89a484e8010d5acecca887321d82a87f",
+      "features/train/2018-04-24.json": "f087296a9fd457771a8811179fbc16c13481c2b15bdf3c97021c3d1b89ec906c",
+      "features/train/2015-01-12.json": "5ba507a5b2f36af54bf718084281f05333b6ecda2655f75deb73b030936b2db4",
+      "features/train/2020-07-14.json": "17752eb708a5479eaba9931fdb173c138a753a85f3f7578b2d06078d560ca147",
+      "features/train/2015-06-25.json": "b73f0dbc2d7da30116e5c7c87f5e95fefe51de1db2d3a2bcfe55bebc2738c3df",
+      "features/train/2017-03-09.json": "47f143edfd7ee9f4f97c4c3d7c306cbd0b9474bb5572b7cf5ce244032711accb",
+      "features/train/2016-10-12.json": "a00f3ec1c541cd1d01a15c65876bccb4ce79ed70d1e537fae4d1045c12fcb52f",
+      "features/train/2024-05-16.json": "6ba713a17dfbae6805c41bfa7289ea40839a66769c14afb9aca7c367ce52d9a1",
+      "features/train/2021-03-25.json": "6dea70b1dedbdeef2b6ee83ce75952da59b0eace700cd4c66308cdce19bae37d",
+      "features/train/2020-05-22.json": "1bd8cce2addfd1c11fca37b88f1c7ffe85a8ae6b5ab65933becb52d81b036f52",
+      "features/train/2018-01-19.json": "6c8205afb25e3d192e3df39b83b033272218efb73383c7efa1183ee294aa5565",
+      "features/train/2023-10-24.json": "af35af702df64f17f0a3efc89abe983631a74ffa9dd87a28ba8dd21d6b8bc130",
+      "features/train/2019-06-19.json": "b4e360d52869d60aca1c2cc8f3ba1af1426e4d4c91b96eaec3f17300e101f51b",
+      "features/train/2015-12-14.json": "009e31da6012c92dbe7e19dbc900d7dccdbc1fac4792c3ea227f97adf089291d",
+      "features/train/2014-03-13.json": "6796b78594a64a43251cbde8f253fb3883be67e07e065bdc33e85e650e67e457",
+      "features/train/2021-10-25.json": "7a484f5fc1b24ead9570cf261b75c978ff5ce2bfbc9ad6aefff9ed3b11e5946c",
+      "features/train/2017-07-20.json": "3bd859e413d7ec3358ef61a5d8be63c07823bcca4bea80bfadb19472b18cbe08",
+      "features/train/2022-06-08.json": "d8a182c23ccb6038a29639a71557b8bc28f1e3d32a0f4f8e6042155e8ff69b98",
+      "features/train/2023-08-14.json": "1427fbd46b8c0a5c333d4f02140b7040bc700dc01e0d5ecf617a7b1c6b9f485e",
+      "features/train/2014-03-06.json": "892e5fbafc6b77a1db09e42841e4329870ec6e6432f3d5902b6476a9ca678563",
+      "features/train/2023-10-10.json": "b80f9c218bea89778b32512960c4c8f270828d41213d195238487f907da0ce0a",
+      "features/train/2020-03-09.json": "af3b2e6b6b2f25c2c5c473d16211b5ff6f3100c5c8084882c571b768fe08bc18",
+      "features/train/2014-06-25.json": "e0fd28dc0191e4ec0a1b651d74be0305532d54404dfc347114bb731cc0765e06",
+      "features/train/2023-08-28.json": "6cbeabd1518d3a2ff1a89e25e5affe4b1fd6c0725386128f10478db8d7f39428",
+      "features/train/2022-12-01.json": "fc120e2600d0352712fcf8350ec5fae81e9e90cf9d94e374bc308a969959ecb8",
+      "features/train/2015-02-16.json": "c86a7df095fb68ada7b2a5160382724dba1ba66c7598d81ee11e01bf61400183",
+      "features/train/2020-05-08.json": "5d25c9ba25a76b9a474d694fa39ebb6f4035ac15ce6c01bf177e7df961e30172",
+      "features/train/2017-05-09.json": "3b42b2ddf429fb404ecd1e6be1197fb36422810945588aef985d4585b4b18441",
+      "features/train/2022-05-17.json": "e25e5dc7971e5e22e8be0e14608be8a82003fbb251c4697a37f385da8f96f7cb",
+      "features/train/2016-10-19.json": "e274bf77a19d26588b42f8065ee46ae08320931e05725b40786770520160fc6e",
+      "features/train/2015-08-27.json": "d05f739e2ea894b6d1b5a2a61805bf4f777ed13afe3c331a8a2a271511fe5a32",
+      "features/train/2019-06-04.json": "0cd61c22d5362d30fc144e8945b53fe555225bfd9f8bf5c7ebf40cb6dd749633",
+      "features/train/2019-03-13.json": "4b96b4765767e75d8fb5381ad3eaf52f7c041f7eb2341b9f24eceea66f1981bb",
+      "features/train/2015-09-28.json": "e5e1fea7591f0ae0c7bda2fe1d9562a35ced3ffd12a3422b73c23108f62da455",
+      "features/train/2019-05-21.json": "1fc7ee121fb91f35c2c39a7469afa63f3cfc06fdd8ba31a1d89601c389e041eb",
+      "features/train/2019-03-06.json": "0e3d00bef50afa09fb693467e0a40f1ff782ec2bf7a46fdca3d25200f8fc544b",
+      "features/train/2023-07-24.json": "becfab0f72062eb1d0c30195643fcaec5c947adb2155ae896378eb798c905e3c",
+      "features/train/2015-10-12.json": "041579f989aaf8c3afcf9b6ef2c8ca2f792901d2a8ce203180be4c2e48d33344",
+      "features/train/2018-12-10.json": "6cfa236f680ded9c9995255f285922c6e466a86543c5af080cf534cf6ecf82b8",
+      "features/train/2015-05-20.json": "6995d1e0e4d06347f3569849c42284f3a2f649ceb030e1e17f1b618e863722fe",
+      "features/train/2019-05-14.json": "bfac45998ffc0d4ef83535dde0f51e86f882de5ba405a0757f215c2f2e27360f",
+      "features/train/2022-06-15.json": "55cc839f0fff4779f99b1f6ed6c437d44f0a0a7326e372f0d65d10977968bc6a",
+      "features/train/2015-03-09.json": "269aaee064bee63dcc4daed427bff1c3c6a910a8511446835f3d8b41b7790458",
+      "features/train/2024-04-08.json": "1db04cc447b345c6b1194b0cb6049759e915090f88e6d45f3b975af755d32f88",
+      "features/train/2014-02-27.json": "3709c5c268ba615a76c1f728059bb656adeaecc80fc3eea038fbb9e778dd8962",
+      "features/train/2015-11-09.json": "b05a3dc2684750687849ffa4e87b64078fdd014fe7406f272e710f07f205ebae",
+      "features/train/2016-12-07.json": "f28f7e72648503f7ed9f94c7b009d4658acbbee7dfe15a5c96a85f4e4e08e7cb",
+      "features/train/2016-06-27.json": "559b65505ea35d42eb04a82f7753d69d48d663929a87a11588ede62f4e5aced3",
+      "features/train/2015-08-06.json": "dee70e0aec1c3142b151a262f3d985855caceb9d9015b9f0ddff325985a22e3e",
+      "features/train/2017-06-15.json": "420b1ffd51eaa71821c6ce2bec234b0f5cc6688eff3f4b333cdbb7c311c8ec42",
+      "features/train/2019-04-11.json": "b8607cab3f0e5ce1a94095905e7078deb83a5c15122c4d6308d439a4ce802d5a",
+      "features/train/2019-07-24.json": "e850e054956ecf0142a388a8b2822eeca8caf557df720fbfcef264a22e4238f4",
+      "features/train/2022-01-04.json": "0953bc8ce5937162add55aa358e33085f68598d901be2a1bb65afca25b912406",
+      "features/train/2019-01-02.json": "50a3dd09dfe34d4f3ade1d18847bc5c53d79919b5be23383bf76a1c86ea67fd1",
+      "features/train/2022-10-13.json": "9c01207f4622ac457ac9acff4bf86805eae6f103dc6c909f2f14c7735915a0e6",
+      "features/train/2018-11-19.json": "879a60d58b103970e50ad5977b1a3a4216c630079683f0c05751e564e3a3b038",
+      "features/train/2023-02-10.json": "c1bd0020e6912713a9e8b10756e2dc25a5a91da392bf5add90e04c2d9149d4aa",
+      "features/train/2015-05-13.json": "1b0ae639c139b6fb98149976fa2cf13a2ce38ffffe66ccf0fd59b6fef681f5e1",
+      "features/train/2020-04-28.json": "e8ff6f08b2f5ca36996898955eebf050df9df579b392323810a6bdd1e1b82602",
+      "features/train/2016-12-21.json": "a585adad810045dc2cef4cc24cbe430ac7e70116bc74e71cb044903e17ed648b",
+      "features/train/2023-10-17.json": "9ff51f7dce63cf8536bb602c09652a15afd89b143d12b6c7332c0569f70df6f1",
+      "features/train/2020-06-05.json": "666146b53b5638e60536b68af92bbe864320fa2c17a1545769cdfb28e68a8545",
+      "features/train/2017-09-28.json": "f6187430c7e7e811283c804f9b6443ed955085cdadaebf8b7f07c8c19d37c81e",
+      "features/train/2015-02-02.json": "5caec1b7019bb000c27365f63684b73def9ceedaefd4d7b8f111d9d4003d8f43",
+      "features/train/2023-04-17.json": "77400c727b2b762e20f88303529bc80b3379bcd4cbcbc66103895608a40be06f",
+      "features/train/2017-05-23.json": "e755e1f78716cad4dac4eb7e717b2b86bea2170448a10a802bd1ccc2c016d465",
+      "features/train/2021-03-11.json": "e771b5b7ce2c405bd8b2f16e1c908255d170191a184f3dd782c15d743ec27b76",
+      "features/train/2023-01-20.json": "6da9d5c0b4b4c921788563c8398730b6eb497a22b892303d4c879f7bf5ef313e",
+      "features/train/2017-06-29.json": "04c0ea28ce3f8cedf070d5711680ec7796dad4982a6419ea7397b78664d17664",
+      "features/train/2014-11-20.json": "881131c3be4ec62d7ca9e6c19dd266325a9e3657d3a68c6ce0b4025e2bfaecc9",
+      "features/train/2014-09-03.json": "168c8f0b9a665962952062f1b402ba09d2fabb70c35461bc309d76099356f330",
+      "features/train/2015-04-07.json": "1779f0a782cfb7a62a091173f630d1e816c85ccf8dcfebd76ccf09f86d55d695",
+      "features/train/2024-08-02.json": "5c8cb816d37d4181d48a4c862d1bfc67933fbe930af18de3f69abb2d422eaf27",
+      "features/train/2016-11-02.json": "7852178fac5a4c60f1e9810c37bc69748f235eb57ce71fa282fbc411bedb82f6",
+      "features/train/2024-01-24.json": "36d3be448d34c4f097595d594bd9b5647d3669b7a1bd1e3c8eff56ed30d22c01",
+      "features/train/2014-03-20.json": "6c845f64589001753bacb36bf33b898aaf94caf587d56694335d3cb77d319824",
+      "features/train/2017-03-02.json": "3c6f9242beed3e593ae4af8703de9de6236bab744706d2313b482480d5fb6bb2",
+      "features/train/2018-03-09.json": "fbc147afeb5d8c42a1635b9f808ef831f8fe7ec05452beede5008f6202262d23",
+      "features/train/2017-06-08.json": "8ff44b3ba09eae4bc97c541dcc450f1ebc2339089e61985f85efe26e342efd43",
+      "features/train/2019-11-07.json": "8516e209797b645600a0ed52f2a409ee99ec60a3f6e70cf9413ea2f3bc82ca3f",
+      "features/train/2022-06-22.json": "c87ed88577551c0df8988118029abd06c32875943781c98345674931c7d02a8f",
+      "features/train/2021-07-08.json": "69cf64b202099bcf2050c6b7838c7c77d5edad2830092a82488a64ae46388feb",
+      "features/train/2023-01-06.json": "d424fb9ee9772ab1b00d603b129ecb1e036e7dbbdeb1b3b3136d8e9f8d630afa",
+      "features/train/2019-09-26.json": "73e82928e9613d7d68347a8d6cb51a34a3d6d8c411d424b28a4f09c24a01c0b4",
+      "features/train/2021-09-27.json": "057163fe69acbd95d36ee321897361a371c92322bb1306d4813f9f5dbf9039e3",
+      "features/train/2017-08-17.json": "22f2ab6ef1e0de497deb88c879c4a82e9b20ca7b3bfb842c5bf6ba1d6a5021bd",
+      "features/train/2016-11-30.json": "c943fbcead52262b00e1d739ff8ec20f99ea8e41d2aab3c85a2a92ebb4e35d33",
+      "features/train/2021-03-04.json": "9d5f6c82c9fa400ca684e752ba9d12e09362cec18c82912d55156bf953d27a10",
+      "features/train/2016-10-26.json": "6cadf3567ce9f8d0e7a2a6fbabddde72a2a27a95d472457da36e6b05549b897d",
+      "features/train/2023-03-31.json": "13d4834653ef14fabfc6c88fd3c24a18f04cdf75c07a639a04301e4e5b11e40c",
+      "features/train/2021-03-18.json": "696393f911224a291b5189c5eebc769c28593eb7204ad6e4b8dd61204f9df157",
+      "features/train/2019-10-31.json": "3a08b585e4d1aeb4487eb82e1afcf0d9f409bffec5acb2160d319abaab035abb",
+      "features/train/2014-07-09.json": "1373acccbde041abc7cb2b4b1247db6d647f0398bfbab9ab154a6949894e264f",
+      "features/train/2018-05-24.json": "11c95799e3547600a7765895877af5d5103a67320a596a6aec6fedb0466950e6",
+      "features/train/2016-07-04.json": "8861d1a1456bb2780a8dabf3caf8eb93021bf647c87d049edcfdc02849fbdfc2",
+      "features/train/2024-11-26.json": "38c2fa5b502487f1cb25825779c201de2d7d1cdd2802c177decdeef38952fcda",
+      "features/train/2019-02-20.json": "99272dfa67abe10a44022ae4524731312845fb2ba87d858ae4bce453db8e4665",
+      "features/train/2021-05-12.json": "02f01920b9c616faae65f6772a9a68f91ceec6505218de388c43482540fccc45",
+      "features/train/2024-03-28.json": "ac0de5b98fc07b0320c5da2f95427cc312f80c67df9134e4f62532c4f9b5a51c",
+      "features/train/2024-12-03.json": "a5daf327652c7e4f01e40b42432330f90e5191bb33c5134e67c26ccc6a78553c",
+      "features/train/2024-06-28.json": "b86fff3159bcce0b2f0ac13729d89763a04c188dd4a0dfecb724dad31c85b478",
+      "features/train/2020-12-23.json": "ffb034367c4e1edd8372c8a37d8c710cd33d7f461282cca91df0a8b5d46b5e13",
+      "features/train/2020-03-16.json": "8b5295870f6b8146076fed9871dfdfcc17250132d536a5fd1f1f13e536c46753",
+      "features/train/2018-07-20.json": "72fd9f0b2128412809b83576f9ee06399b84c720cdbe7b0a4eef6fe302f277ac",
+      "features/train/2024-04-22.json": "b5eda19350568725b626e1f42f1ea639d908b0c899566ddf37e7610c4dbbdc88",
+      "features/train/2015-10-26.json": "3f47383db35d22ca0434c8374d821c8a73282f81249150bbfe492edcc276680a",
+      "features/train/2016-05-05.json": "0380276a816ee03645a50913b9593c7a45b5e5880c9895b9a3921b6e0b0f598f",
+      "features/train/2023-12-12.json": "71fd782498991f1c46ace9ddf8f5e28309b19350df6d9edd61fc25357bf1c516",
+      "features/train/2024-05-30.json": "1016596c10002855817d87a0bfbfbeb6f2db04412bc1e5e8b60c0d10e8afff67",
+      "features/train/2016-02-02.json": "c40f66878aa4944e57f7da3b5bbe3a79401079f26b7c185865c5b3a800b095b7",
+      "features/train/2014-06-18.json": "d8e494eee18b34ca6e586db1fcc23f00471e76790c721d61260e9c7ddfa86f03",
+      "features/train/2017-02-16.json": "ba09fe881154dff5a04d970a4a88a0f57525c382885f5f0d46b228fdd5e2ef0e",
+      "features/train/2015-07-09.json": "9c73447710042e2b76b54b3f5483142d8276c37df584ca992c70eeac2dc55e4f",
+      "features/train/2020-02-24.json": "38d627da13d504983bf445602879a519126ee483ac4551f94a0481ff17502446",
+      "features/train/2024-01-31.json": "c21e504229c83f90e56dcfcd39072fd61785048df003b08e555ca930ef9436f3",
+      "features/train/2015-12-21.json": "0abe44aa38767be5932d393f6d0fe2205983bf2fcbd7a1756d1346744b70a229",
+      "features/train/2021-10-18.json": "82a752757448697e12b5d85d232def8da129bbb91eda64f25bea8d85c4cf77c1",
+      "features/train/2016-05-26.json": "b4ac20aaec34485049937146869cff0cc7f1e9e6744ce9cdbcb9c7df1859cb6f",
+      "features/train/2015-01-05.json": "36017139cad096364ca822a0a851137595302e7e09c4da7736486a4dfd40a31f",
+      "features/train/2021-12-20.json": "7a4c0daab22110a55d6bb3f33128fd8f58276a9411e5a79a10eddb245d422c3a",
+      "features/train/2020-03-23.json": "865cfd611520ec9fb6870dec923d96efcd50fc54094c05da27bac1306bbaf049",
+      "features/train/2014-09-11.json": "b76be3958e7816d4cb11813d449bdf6dcae3472dd7db2ac2d9c81373bb5c3529",
+      "features/train/2024-10-15.json": "601a2868a740f0a9513bc33e1beb2549be4714ea8b799de06a571383a9ec551f",
+      "features/train/2018-04-10.json": "8fa2ea49ca8085f709799dc2254939b32f3721766154597f71c7eeae99a6033a",
+      "features/train/2022-10-27.json": "e3bc4fbba2e01da323eb5313808c32fc4df02151de2e38ea81bc7602cd7821e3",
+      "features/train/2017-11-23.json": "d3f3b3580693b93600e669713911715a25cda1e777e054e6a0a31a04632584c7",
+      "features/train/2016-08-08.json": "9a4fc456292b0673a11f5f1cba98161e46db0e1edb886bb7924e58ada24071d0",
+      "features/train/2017-01-05.json": "e9b2752e530f87bdbd679ed43b051e3f01620ff792ca8d615f4560107b50dbd5",
+      "features/train/2019-09-19.json": "5556b3c8dd6cb93edb69b3e6d0fa7e812fa81f9bf6d08b2301c3cb66083d3627",
+      "features/train/2018-02-09.json": "995dd3d8f120e497e8cbd523e0706e0b174764258480ed25888efa9bbbe3446d",
+      "features/train/2017-03-23.json": "2ac3107fe787108175bdd2839d819252a58d5f0c3356083bee6b3059db4b6560",
+      "features/train/2020-07-28.json": "9fa6efc860e456f688932a948fab9f4427a6df119c65e61f3ec4d0b1d6932c28",
+      "features/train/2014-11-27.json": "621d2e1552ff22a3b7f28e390129607f584fe9e43c8d6ecb36a0dc8edea23104",
+      "features/train/2017-07-27.json": "bb9b835e7d09714cd5abc6e25d5232aba9e3ad490e600516f76edb2824ec01fe",
+      "features/train/2014-05-20.json": "971a16a539a3972fc76bb2b3eb49ae8ecc03c63f0bc609709fc61dd4c6c50cbc",
+      "features/train/2018-03-16.json": "38e18aa99d3875df684d5bd3206f8c4532b41cfed45856a97e0deb1215e61cfe",
+      "features/train/2014-10-16.json": "190bd7542e4856659de35d08167c57010535fe4dc16ac91b7dafed88c4f24058",
+      "features/train/2024-12-17.json": "b154bd9a943a453e316a8b724ebb78a1f662a3c6f3a531353543e5a2c6cf2cef",
+      "features/train/2024-01-10.json": "f8cedc3a63dc03218552aff661e5394bce53fa016a04077d77aa776196d93203",
+      "features/train/2022-07-13.json": "fce735ea6cd9ccff25a8f49b21cc4ed0c425b64031593d25f9e7b6febbbfab1c",
+      "features/train/2018-01-26.json": "9836fbe7979271685932c7df9c6760a0b7e8145e8e3e01eab64f34926fa5df94",
+      "features/train/2022-12-29.json": "c03c13290e2a844ee7a1f532e95b6b37de33db8cf11c641d30071535ed283899",
+      "features/train/2023-06-01.json": "6179c5993a6b64dba72b3aeac9631117ea94a7bdfd484b5a8343bd97b46ce2ab",
+      "features/train/2019-06-12.json": "8d905ea8e9fefcd985d2aefe2dacc3f759f57054b82e3ad268feb06edb6f1a05",
+      "features/train/2018-12-17.json": "6b3bd1504bd63cea86755a0f44cfd6195412f98797c6313dcd0f3e242cf5feb8",
+      "features/train/2023-03-17.json": "a92a21f12aaeae64613c389f3aeaab927e478f9636ad835da72b091b76dc3d11",
+      "features/train/2016-11-16.json": "dda59c9c70bb6189a42f601ab981b8a1829f62f3c966a3dda41bbbdefdc06b1b",
+      "features/train/2016-03-15.json": "52d8d4d71acce330182623868d3f2a2ef25d6711bf1bef2451033ef67c7f9775",
+      "features/train/2021-11-08.json": "b8100e6ce1bc4303a3e00b5e8af18cee46b52a8819aaf00af51157397d94a97f",
+      "features/train/2014-12-25.json": "b3e8787f219fd166d48bf48911d24a3eea40a32cbb47afec5a56bacab21904ef",
+      "features/train/2014-06-04.json": "40eecd6dd02072698050d8b921cdd132b9f9bfb8330078483bfeda7f0780084c",
+      "features/train/2016-12-28.json": "092f23d546b57c60c8aa1b7f2c094946bf8524aca53c06adad5a3ac43a368998",
+      "features/train/2021-07-15.json": "688a6566df26bb7ef883daf82cea5c6996f7b47ee5b82ebe95297740d80bb3f7",
+      "features/train/2020-06-12.json": "6f0eb8ec70614c2bb6a52519aeced377c9a5c8e1f9ea3b04964f2934dba4e3d3",
+      "features/train/2015-07-23.json": "1c85bf49895bfd448dd73f135e53df4a551dcb634e60ded58721315e9b959dd7",
+      "features/train/2022-04-14.json": "c0ba80af45da6c0b590884ef6b06256f0544c62833567cfb344f4804dbf007c0",
+      "features/train/2015-08-13.json": "1f6765a3555c7659db039969705d169b0ffebe3d3e3b4fd688a45d52f019e82a",
+      "features/train/2024-02-29.json": "f60e78e5a29a2014cc90f4dbee4a99011fa57028ba4ec4ea2da33a73178a70ce",
+      "features/train/2023-05-18.json": "051bf8d988a7c2543dedf146631f860ed7ea551d37b15025ddcc0b380e851d0f",
+      "features/train/2021-11-29.json": "f643ab22ba56baefb03bcc7891501a7486d85f8e613cd99a943262843ae32ff0",
+      "features/train/2014-10-09.json": "6881a38d851958477514d227c45dde622c62cec8f50578209bccd574197d04c9",
+      "features/train/2015-10-19.json": "725542d9bac6ee0037986a434abe965c3b733587d651e470db1d2144efd30000",
+      "features/train/2023-02-24.json": "aed3a93fe5633f354d9c693a75ca2e423244a80690b80e453d86991501b3970c",
+      "features/train/2017-05-16.json": "58aa4ed7560adb864a32594adc3dbe40a5cd317608a697b6393a3a296709585c",
+      "features/train/2022-02-08.json": "86b0cea6718e333ea9f9f6e6d108896dcb096074bacddaaab275dcd931cf1c8b",
+      "features/train/2015-05-06.json": "d6d346bf512e95bccd7b6a7b71e7aaffba04de9a7d472d42b0caebaedc0710b3",
+      "features/train/2024-01-03.json": "c626fee050868b33226dc0072ce38631da50d46f58f060cafbe1bad799dfcac8",
+      "features/train/2024-08-09.json": "bd61c23e8789c4cb1f372adebcd0ec29370f7908944a5ab8d8013fcaae254f94",
+      "features/train/2021-08-05.json": "c1268754f73e321dede3c3114f305595b70a63271c5c5e3faf27764ab4513ff2",
+      "features/train/2023-05-11.json": "54c88abe9f39eee0be0eb7007d5ccfe762e9a016569121bbbc186d5567ac705a",
+      "features/train/2014-12-18.json": "6160d09861eba05ea8dad100f59843fe427334c6e97c771191f7470878c3c11e",
+      "features/train/2023-05-04.json": "d33eb25135c39a0303620e9701d368e55f7809c0f8a20af98f575d598d2383d6",
+      "features/train/2020-12-16.json": "de9cb4145ecc92b5a1a1a2482f891fc870da1e60892ffd5458877eaf0d234268",
+      "features/train/2024-07-19.json": "e96eb24f3bb7f770814502d9937a2757edefbcba9f0924452446c246a8bbd00a",
+      "features/train/2022-03-22.json": "a925817a23d703625f18aaffcc133ea8609e33d127468d4841aefb61799bf62b",
+      "features/train/2014-08-20.json": "e21a903935927e6c49b13396d9ba7cccd5f70628eb01b71656c9bba72936e441",
+      "features/train/2023-02-17.json": "e1a4082307ba690b4a94b990ec27fa27389d2609185e0deba318885a181edacf",
+      "features/train/2018-12-24.json": "0535435f4fb8a3e188de41849b3767f84e1a272fbdc2aeb234bad42a018a23cf",
+      "features/train/2016-07-18.json": "331b65c3fdcd00312451ad2a6cd11b9c5b2ac9581199f20fdf7b677197f56025",
+      "features/train/2020-04-07.json": "677f3187cd87cab818381767ed73588f6ccdada49d70281b062b01aceea79c94",
+      "features/train/2015-01-26.json": "1f96feec26eb33eed6e8d5550027d2eea3de907c7103a332882b9da3c62f7498",
+      "features/train/2014-11-06.json": "834667e73c51866aa87245cc4792c629e253a78229fc3961a1db1c55aea9160d",
+      "features/train/2022-09-15.json": "9e7f343c34c67bb17901d90e8ba090a0d91505538216ead15199db9f3c1e39e6",
+      "features/train/2015-11-02.json": "8cec699f10bb4041e3f3eb11e642b11fd849a928cb0a5f2ee7a262b6e90bd747",
+      "features/train/2018-06-22.json": "972c3eaa90b4928088da95b322dd04b4462e3c93f0895704bc826f859f496630",
+      "features/train/2020-05-15.json": "5721a871c0026601f120556515d57e90467bbdeaf5dadd80624f0844437c9c5f",
+      "features/train/2021-11-15.json": "ae403edf7d632270d4e379baf1162b9910cc5698b58a8ce70a282e04cfa60fc2",
+      "features/train/2023-08-21.json": "d6341ebeede48f585ba1e413884f65615e0562643448d3e337c28380de589316",
+      "features/train/2023-07-31.json": "872888de79c15e289d81329a493eaf257f7e29028939ec42cd4679e74dce76c6",
+      "features/train/2017-07-13.json": "952b4067d9eef00220534d2a5939b2a7cd5837d229b35cd69e5aae9890f01ac4",
+      "features/train/2022-09-07.json": "4c0868bfa77168509a29c77276e4ac9cae1c18289d63931b70b3ce2c94c40c98",
+      "features/train/2014-07-30.json": "1389a2d57f3311e0081f07fb8fab6561ebc6266ba9bac79fca7b36ffd9c91215",
+      "features/train/2018-07-13.json": "9c28a095d8d4d237c64b4d6307788b83bfe669acb3736b300a7a74bdbd2fc3b8",
+      "features/train/2015-09-21.json": "8c1395c4e2c7305fca0d7fcee83d02e7e874284ecb27fd4e21133e5ffd0476d5",
+      "features/train/2015-09-07.json": "fb9a0dbd5154ef20ba47c7e8c730b8591a65c399045a1a9f90bc09eabac3ebfd",
+      "features/train/2023-11-14.json": "a42d46267c8feafd23009d814eb5bc2c8302c64fed7aab391c69c025027cf8cf",
+      "features/train/2022-01-18.json": "6af97cfced7fc3556a763c356a6c2c94b9a2f78f574e1a2aa914464b84d4e3a2",
+      "features/train/2019-12-26.json": "d629756640f2276e4587c5b1ef3c6f623f12569d51b6b91f3e9e35dc19d3b6e4",
+      "features/train/2014-10-23.json": "edb060c1e745d51712c72d6901adf1b24c24849b50ea8ef21963781a962cfa12",
+      "features/train/2018-10-08.json": "dc522affdbd85b8c8b5b823a80b1e5c256db503edfe6d89c276cad43aa943c27",
+      "features/train/2017-05-02.json": "43ed7d64d7eec43bfbe420f010c5d57dc45f0ed2e7e5900f049c58b9035423a3",
+      "features/train/2021-11-01.json": "339f4a4f4aefc97ae61f7688884165c8c599df4b72160441e994fdb2f583b1be",
+      "features/train/2023-05-25.json": "4dd17239fd22de62b6ec3130187954a28fea57591d83cc737d82eb0c65308722",
+      "features/train/2020-11-18.json": "0d941746f9450d2ccde5477e4c1d057ffe1586b072a289fb77028159409f793c",
+      "features/train/2016-06-20.json": "be2443cc8bfb46e6205fbd040dacf4188ab9154b82da0688480ce3eacaa4e602",
+      "features/train/2022-08-24.json": "e43a6a016662c51c9f144e70f812df52c3ddc49650feb01bb47bb6e025b59069",
+      "features/train/2014-08-27.json": "e315465eb04168febd0d858907bf10f70e4bc78d11d5283a84e41b8026d4ffa8",
+      "features/train/2023-04-24.json": "bb9ca28276d95de246bc0e602081c65d41f485b25e4da8a87a7f17b135a96ec5",
+      "features/train/2020-03-30.json": "26f28504ff8b944270c912165029c2deb8de16a845b7c6c9595cf73fd6c51aae",
+      "features/train/2014-01-16.json": "0a351d21b0676819436c851564072047ef7655428b74faa85299f94eac6c9c94",
+      "features/train/2020-10-21.json": "6ac48a291838d428ba19ec3a2502f9037c13ad1e867205279ea52c98c344c27b",
+      "features/train/2017-09-21.json": "88f082661d7e3968f14bf00ca082dd5f301c8ea93e4161a2bd0f1c6a82e69a7f",
+      "features/train/2022-03-01.json": "d3572be1a83b73e634c36825cd0042f6d1e23bc63beed372a885dd98792fc772",
+      "features/train/2021-05-19.json": "362d4ce9ca0b75076f72e705dc5242ac69f74e1b15de72c436390ed4b95e264c",
+      "features/train/2014-01-23.json": "5211761637627f0127ce316d62917a518fa281913feec3017bc1b9a0047d7992",
+      "features/train/2018-08-31.json": "a09889966d8fd55b3dff258649831654e19319a39d125c060052afeec74ec9fa",
+      "features/train/2016-09-12.json": "2af53fa00565c001dee7c8c892c4be9ed3724537c7494bd668933e303f6bde57",
+      "features/train/2024-11-05.json": "213b37e7c2fc4e2813371c183e4fc82b85bb477c02c912c0967b12634ce20a5f",
+      "features/train/2016-07-25.json": "cb15f47916b4f4514bc7a1e6a29953e6bbadc9ced3f19682c0cae72f72e8bc50",
+      "features/train/2022-12-22.json": "fce62b6f63414a80c639e62a92c8e5bcd5f2382cd92e5bc261bf102956dcb4ab",
+      "features/train/2023-11-07.json": "8e9d9098ed68b0d84b1cd8d8f0ef32f2ef4fbeeb04a0323c744c40a948d35ce0",
+      "features/train/2018-11-26.json": "6a2d339f0b85dd919bd16d094aed071cb8de6272470f7c71abc6478511ac7703",
+      "features/train/2023-03-24.json": "7209eb0d7a60b6c5cfa998980c8a585a1b95160cb159383578c13ffa81c859db",
+      "features/train/2016-05-12.json": "21b872b4620414f88c24ef1478d51e6b2181b420af898b060dc93cedd2c0ef99",
+      "features/train/2016-03-29.json": "872e55dd7826d97c819d8632eaa74c3f7966f52889d6e4f046a0986fda3da5a7",
+      "features/train/2018-09-14.json": "278c3190eee17ba18fdf3f82c3e55e967fd5e8641e56e331d43f9c8bab4941e1",
+      "features/train/2019-12-12.json": "45d56aa9c21523779b793f0bc12587f453e95fdd6a105a08250ab38d6da6918b",
+      "features/train/2018-10-29.json": "ef17a83fe1e252ca156dafda0d56f96c688dbb183671c99056761bd77d21b36e",
+      "features/train/2024-07-26.json": "b7707b80dbc113ab99d8e3adcd146509d68d0b43a5f3dc506fd98199ed7220f1",
+      "features/train/2014-12-04.json": "e29176863fc3fbcf2c5d8e6abe513b37979e9cca97f57e4405b5b18d2de2fcff",
+      "features/train/2024-05-23.json": "101a00c5157f9515a5af3d8f0efc1ab2e8ef1156ecbc0613426bf8c848f46ec6",
+      "features/train/2014-08-06.json": "f837fd29bf65deaa57ea96e46ecc785d06224262084dbdfe78382589e1b93fa0",
+      "features/train/2022-08-31.json": "4209e9d355813fc95b726e7f6affb27663a34d6f72ce694f06c04299fbd60004",
+      "features/train/2024-02-22.json": "7be5e2725e509527d926874f97d225698788b9a6939526966aea9c65fef1be48",
+      "features/train/2015-06-17.json": "368b7fe9df56ad03da813bfd74e4ece9c598b8a8c60b13d0c6d91792d92d7d96",
+      "features/train/2021-11-22.json": "09ddf9e15f608fb925f21c89765a162fbdf162ef7965a5dc6cbc93f88191cc49",
+      "features/train/2014-06-11.json": "84bd267eb650cbb76778e1cf356a4bb94cf1769911770c4fda001983d0899000",
+      "features/train/2016-04-06.json": "3ed4cdcaf4c6d5dfd51a703e61f1cfb762016b4cf653d8aca6fb9fb4874ad268",
+      "features/train/2019-04-03.json": "4387337468595d55562ee5e763bc2a54ac698d482d8ff8363cc0859e46054387",
+      "features/train/2021-06-09.json": "eb18ab0c80e9a62a7642a46dd5f31933a8757d072920dabbcf982b3b83b9638e",
+      "features/train/2019-01-16.json": "3c0703ea71a78f000ce97dec9401832f1ea4d92916f779dfcd8016557f1854a9",
+      "features/train/2023-06-08.json": "dd0fe041892495bce185ddd81943d033df974ac562f7027a0029bcb098ee9298",
+      "features/train/2018-05-31.json": "909c1fc8c7c9d651199c2957aafac033dbb54a056d5d17094155cf9f0d9ee7a1",
+      "features/train/2019-03-20.json": "1b2a6b57b3a559a6d6f42582605b0e185966c82bdd2edbb92c6f7f41a0ce8431",
+      "features/train/2019-09-11.json": "507aeb2331ef3c9dd6db2b726d8c05c7a92c48a704cdbd421f40a2280ce6d51e",
+      "features/train/2020-03-02.json": "c70979a4205419de87b847aceee640b770e342663c5a5ce1922e8b2e9f8e13a6",
+      "features/train/2016-02-16.json": "be59d6f7e81dc7f2a8cd613d90e1bf8597175021ccbe49a2078569060ba21386",
+      "features/train/2019-11-14.json": "070aeb77c875efa3a64d325d137bcca336076cac1937eb4a34063aaa33ae26c3",
+      "features/train/2019-02-27.json": "f6dfed44a6855cf1137a5e4dd66faaaf95e74c92d05919ba43130ebe2a6245be",
+      "features/train/2020-12-30.json": "fa2d1a0e33bdbd42153406d8ddd85f9ca9f2cb33ede6d397396e648a8934f44b",
+      "features/train/2015-11-16.json": "d244627e5a9086f36852550f79b3a647352784bedcc84c02bf857cbed67ee2e3",
+      "features/train/2023-12-19.json": "ad79224cb12bac63ee45fbd6e832c311cd89db4e61c132bcd7088e181608c51d",
+      "features/train/2016-08-29.json": "2c0332ba9f18718338c26fdaa2c7e399aef2bb68234529a3701432d857716921",
+      "features/train/2014-04-03.json": "391ec4c308af0b23b90ce0d0a766947b23c12581ce84810001032ab41cbf7925",
+      "features/train/2022-08-10.json": "2fa81f2f3456da80314aa2ff2f989b27291783d0a7d1c1584e9d12c6a0459499",
+      "features/Q1/2025-03-07.json": "4538599d16fd4ea4cd12a490b381d25104a722947c5ef56b1ac7ee85240c2900",
+      "features/Q1/2025-02-12.json": "27c85e8001e8d79af9ac7d652f5618a9160317ac83d27529c29145f2457824a4",
+      "features/Q1/2025-03-13.json": "e8cb757ee926c2f51e341fc1c631365e67cdc6f74f7e90eac09c45743b7353f9",
+      "features/Q1/2025-01-14.json": "2302a812f9cd55841859bdbb82f66cdf706cc2e083af0e261a2aaefcca7d9b64",
+      "features/Q1/2025-01-15.json": "617d64beff5a43aa62f2c51ec81d7474f039113348666081fb53b4e38d33495c",
+      "features/Q1/2025-01-24.json": "6c8310f1ca46fc588b836aac7f5d4e5c56f730e007c8340410983214c635e561",
+      "features/Q1/2025-01-17.json": "853f5bdcb09e25b1e0e9ce835d570ff9c68bda480917e1eae3fd74b35f44cdf2",
+      "features/Q1/2025-02-06.json": "b53a9cc96fbc54095b79a2bcf99f1a1e45007e09101bb4710f2926ac75729623",
+      "features/Q1/2025-01-20.json": "370a0c11e7a7454941a47654d5394b1ccc47c731e91a8c666cdfa7e974211944",
+      "features/Q1/2025-02-18.json": "ac8e4038f98e1933828d6e65fd8d22e32b5fa54b5cc58f2c588030ae05575e3e",
+      "features/Q1/2025-02-11.json": "17f636d5e4d9e8162c79ba5c263f9b86ad5155d209ac696119efcfc59018e17c",
+      "features/Q1/2025-03-03.json": "e35eaf897d6e3074002c60d08e9781d67a3bb4abeb70e0295007f9e50d7d63b7",
+      "features/Q1/2025-01-10.json": "d9c3a245fd0ac4f45fd3d2ae6f2a6940a597cad996398d06f4cee16bff974373",
+      "features/Q1/2025-02-25.json": "4f962cbaedf328d553201983a37747a9d6f689ac2abace4fba10eefdb3da6ee3",
+      "features/Q1/2025-03-04.json": "69515dd7707227218acb0433b0e21680a3d4f736e36d138dd1400bc0d45028c0",
+      "features/Q1/2025-01-02.json": "798d734cf7bf4aef26f3f0732858a2dcdde780c25c29fddbcce9ab27d86b92c9",
+      "features/Q1/2025-03-05.json": "829074485f635df17e0311b3f1f405bbc3d49f74b3d3195d0d7ff26f07e80bc0",
+      "features/Q1/2025-02-20.json": "cf005e3ede92652d1fde605606b05db88b6a22118dee014530ca03d765914a0e",
+      "features/Q1/2025-01-22.json": "66c4c5ca8bf804ec2ff247796fc559e51240126dc7a2302dc7f3fb87e332f4a3",
+      "features/Q1/2025-02-14.json": "b7f3e562232a190654cc20723c232a63a1638af7eb9b48ab5fbaab0f9f5ce74f",
+      "features/Q1/2025-01-03.json": "0d95810db587688f94b678abb0cadb62cf1541b300b1b242387aaca00fadf82f",
+      "features/Q1/2025-01-09.json": "a6b1b6e713361c3ef7b1a53c8e09f0298707d2eb87243869c25b5ec6f8fd74b1",
+      "features/Q1/2025-02-13.json": "96035432f0f12895db7d171ebd245df83c295e10fb9a5d73443bd26ec3cdc2e9",
+      "features/Q1/calendar.json": "683292106d629e245ece645482beb487a56a8f61931be223fc3d277935708383",
+      "features/Q1/2025-01-08.json": "f1712c0e1a10874bce6235fe45f6eeb3657c4800e8187ceb0b4cb9c05389ea8c",
+      "features/Q1/2025-01-13.json": "b7f1c54ba63ab160fbcdf7eae1920f874d0d413c7ca2845bcc1b3f055f963801",
+      "features/Q1/2025-02-28.json": "902bfadb0375fa746433b6b6edeed0a3d68d34b4e450de9d2593208a6c22511c",
+      "features/Q1/2025-02-07.json": "7c80a14fda58bb19d1cfeaa64fdff8ff3425c14b7e7fe102097f0cc429a6a249",
+      "features/Q1/2025-03-10.json": "af9d598eaea2614bd78b7aa3eccf111e604754f60b790b28ffb50cef8f146dd6",
+      "features/Q1/2025-03-12.json": "791558c062672cf034121435ea608eacd95a4685860c818a5fd9950a2e9a57d6",
+      "features/Q1/2025-02-24.json": "da42bf1bae58f2d7c532727a8eb556865cd13f321cb5288510760f0b34c0d393",
+      "features/Q1/2025-03-06.json": "246c8391ee863300f9021b361ac10e88318347722b17d05c0df8f68c9b43f79f",
+      "features/Q1/2025-01-21.json": "14c3cd5dbd5775417cb32115493edc468cc726f1d609b4de66bdbfa5e30aa0a4",
+      "features/Q1/2025-01-06.json": "fdd63990d2e40e5d7f0d60e4048142c23aacee37d79a9586c8f539c1cf0330e1",
+      "features/Q1/2025-02-27.json": "62fc3ac50dea4e2027478b86f3aac7439a890b5d0172bec2053e1c9fab6d3580",
+      "features/Q1/2025-02-19.json": "7228de42227395bc67591ba5b59dd44eb96faf80e27115c399760698aee32716",
+      "features/Q1/2025-02-26.json": "70c935b9185a1df70e5b51667712fe5aee0d73afc4e9a2cd1034312e12e9c6f3",
+      "features/Q1/2025-02-05.json": "d9f6dadf8317e6d29fd2cff612d34c3d508735bb4b771ccb68ee68a24e50f494",
+      "features/Q1/2025-01-07.json": "d3f0d958024b92fc20bc7d7df80cedcb77544db8ff9765875609597e9696ba41",
+      "features/Q1/2025-01-16.json": "1bd3e11c9cdc01350f7983297dc6431ce497fcab233a3fedd72e37764d42efaa",
+      "features/Q1/2025-03-11.json": "293b119855beb93a1d0cf91f7631a2812bcf735d8f3d75833cb5f2b68acc2423",
+      "features/Q1/2025-02-17.json": "48f473ddcd2e69f126016810ac8cb27bedf39538ece6d50e67e313e84d80d005",
+      "features/Q1/2025-01-23.json": "1e956577575a6ba68be5719df84752558be5f3e9217ac65df79b8c22546d39b0",
+      "features/Q1/2025-01-27.json": "67589a3bb97040964382ba21099addc702300c39741e186393b9f2a849fe5c72",
+      "features/Q1/2025-03-17.json": "e4dd41003f432a87e4bb4dbf0d213167c710e4dec0d6842c5afa266714bc77af",
+      "features/Q1/2025-03-14.json": "6434825429daff05a79449ab051561cf28aec1a62a6c45fe34ec3c51977b794d",
+      "features/Q1/2025-02-10.json": "4ce1c9e3a6d70f6052b0f45701eef9eb8b572324620e4735edc123e62a419c08",
+      "features/Q1/2025-02-21.json": "f077aed6080776318505741fac029efef5848c855d981284d4651c272d72456d",
+      "features/Q2/2025-04-21.json": "19cb6db0d49d2ded4d76153cb72927b216ce6b5fbaa6c224e1994b2954a34734",
+      "features/Q2/2025-06-30.json": "5a4f074fd8d13c7010e07bd07b54a87f6333c1953e950ce5278aacfa681ab504",
+      "features/Q2/2025-06-23.json": "c68c147a16e2066775b49606184a5ff084dc630f08abb722fa3dc291b04ece97",
+      "features/Q2/2025-06-19.json": "3f9340dca7edeaaa7e1651df453c04bc7bf0b52d50672361adf71aa7cd1dd0b4",
+      "features/Q2/2025-04-25.json": "e501c007f9f3459dafc2c828ef6e33bbc37b91b347d1a1e8168645fec62095a3",
+      "features/Q2/2025-05-14.json": "76a9a4e7e94d725eac8fc0157ce876d62e602f1d31cb5d26f3b2ddc0ef527d64",
+      "features/Q2/2025-06-06.json": "f7718301c824ab096f9c876d7170e4637a323d294667f14a784d45f12b4d93af",
+      "features/Q2/2025-04-22.json": "1828de1613636f2a6af5199c5b4a56fccfaeb357b09915f3bcd4a936c6cbc56a",
+      "features/Q2/2025-05-09.json": "f30e5860370102b125bc0dcbbe19e0a4e3d4dea4c5388dd8177ee540c047914e",
+      "features/Q2/2025-04-11.json": "d454cada10d3e7039b3218c7a805de5b0a3b83adfad605f2a27ce873bb6472e0",
+      "features/Q2/2025-04-07.json": "2eab165e0547aa25e7839a1d5d35c802afa2add91d7e8c39b3bbd8c2f9b2a5f1",
+      "features/Q2/2025-06-24.json": "6449a60f8189ee4d137076dd424b3ddf849eb223d7b72a8c9904d9125f772471",
+      "features/Q2/2025-05-28.json": "e0986030c083b6c1e1ef9935c1629a189dd66258bb2450e174fc2ef121a3e160",
+      "features/Q2/2025-04-08.json": "ddc726208c905487e2edf7e50e751448b6f9e830e86abdec10bfaa4f96487fd3",
+      "features/Q2/2025-06-17.json": "98fbb8038b36488ad420173ffdaba00f90e9348756ac6c04670bf36957b7b0db",
+      "features/Q2/2025-06-12.json": "4e38d6767ad2af7a65513b1f24c460547cfb67aa089f0bef81a41a0f06b4f4df",
+      "features/Q2/2025-06-09.json": "22cafb1ae3787d4964b4f9bfb2ed58a5acdf26d27fbcd6cd216aaccb8663a58d",
+      "features/Q2/2025-05-26.json": "09a5fdced31ead31fb51ec32d0e6deea74a7cb34868b42b7496695d03fbf6be6",
+      "features/Q2/2025-06-25.json": "2415afa6137dfd9856a2d65cdb044011536394aed15e7b76e854661a0ea31db8",
+      "features/Q2/2025-04-24.json": "5e3c6eddc7456ca3c443cc05e03bf09794711c8135a17360725d74106cebebef",
+      "features/Q2/2025-06-26.json": "23d701c08800e931a188a8268dd8fbcd390e9722eab1bcf22abfee8ec8cb088c",
+      "features/Q2/2025-06-27.json": "7baca0f8c51c9b86986e862d744ddab4cb8c57c592b2c4e8b6c814d57a0e1c05",
+      "features/Q2/2025-06-11.json": "ccb7c4406ec2bea42b830789f1c6f3d3a5b24160a672f7d591fead66963cf910",
+      "features/Q2/2025-05-29.json": "5b76ca452f76c9d8ac4e2df956b127a0067aadc2f8063631751fc08928edccb9",
+      "features/Q2/2025-04-03.json": "54ec6261db35022bad750f6c93d5f80db8380887ae8fdbc4e5cb0fc95fe683f6",
+      "features/Q2/2025-04-10.json": "855489aed380ce74894f012f5082d032203b7464da864c9ae89b84f601d31ec4",
+      "features/Q2/2025-06-20.json": "06c33e91ac1cae4267560a857a5bd1f351b607aca14958cb894ac55b1c6769f9",
+      "features/Q2/2025-05-27.json": "ae090174ef6e70a7d1abd6e7b9b4927ca3efc09b3fc89919f2372e2e57e35268",
+      "features/Q2/2025-04-18.json": "3c869c3ab0a87a5c398ce8b4db9ea2a5a1d363a65725f5b0c703b62d62d11f5d",
+      "features/Q2/2025-04-15.json": "20c4522dc787ea1700246ae0488d4dbb9b7478d1387db456428e3d4b4d316952",
+      "features/Q2/2025-04-28.json": "91028f8ebbcd3203ce39c9e14cc9c62a19aa51d3981e3626ed69d58731342cd0",
+      "features/Q2/calendar.json": "6bc9bb775c91fb0b75987d68829b6f9a606fc0205d34efa6b698e6ad3ba90eb0",
+      "features/Q2/2025-04-14.json": "c13abed0bd0d8b20b3f3a70290f3f9bcb0e6c18883add2c7758aa9dfb93bf57e",
+      "features/Q2/2025-05-15.json": "90f67ccdf95cdd1bbb219797153335658d5cc3fbc7c50cd5c0ad588b104d4607",
+      "features/Q2/2025-05-22.json": "40ea14e16ea5d24ded484e3e3368c88e88602d28cf9d46e2eb7301b21bb71baf",
+      "features/Q2/2025-04-17.json": "111134909545fcd07d0a8ca9d8649b3533ebb61ff37fa1a4997c0914d5b1682f",
+      "features/Q2/2025-05-21.json": "3c2f42d7391b2f85cc9fdb0456a6891e56f357a2b83ce309fd6d647819e042b8",
+      "features/Q2/2025-04-01.json": "b566b93db687b22aee2c10f390875c47bb5c7c3a488127bbbdc00613b7116b80",
+      "features/Q2/2025-06-05.json": "be8e8ff8d508ef8d3f33d1c13b16920d94a5f68b9ffe32423e8554eee97f3309",
+      "features/Q2/2025-04-29.json": "3da28dc6345ee4e331415140476c1924fac618c759b570f53c842d2d1b748db0",
+      "features/Q2/2025-05-30.json": "a08caea56769230e413d8bdc0189a6237ae8d84800160d2cdc17816a5a546daf",
+      "features/Q2/2025-05-08.json": "f27b5c44e80d05232af28bea743894a1fbb387cd740c96f4bdee3b9e78b04b57",
+      "features/Q2/2025-06-18.json": "435d15924455e912b5615fa3657d20d95127a81920895894410c6d0ac18b526c",
+      "features/Q2/2025-06-13.json": "40f8ee7197d233b2bf3751f97c647d749a793169bc69361e4a42c80e5fce042d",
+      "features/Q2/2025-06-10.json": "2340a82b43203364be3489edbba07c1cd5ba21eca6be22ccd156a924d4b3c016",
+      "features/Q2/2025-05-23.json": "3aec31dcd2e77cd621d509ccbbb6fbfde2fe2feb409003a5dc8dedc8c9009a8c",
+      "features/Q2/2025-06-04.json": "b228ac291096a29fd9d87a275cd7bd4baae8f451ec8a98a0cb3ea80164ddb449",
+      "features/Q2/2025-05-20.json": "5fe7172c6177da59be9f54f8fe3bea3409c5e2953c500415f84a026ae558f007",
+      "features/Q2/2025-04-30.json": "7d3064f702cb38d1f4b48122155aee9ee4d2feb71316a29f0971f4cf7f5edf17",
+      "features/Q2/2025-05-13.json": "9172a80ef9f815db0d992b2b8614ba54ccbd2adfaa15cca283e4c199c6236750",
+      "features/Q2/2025-05-07.json": "86079b8590ccc6959fa1c392e876a071f130ff6ba17e40da3e6c7179133e80aa",
+      "features/Q2/2025-05-06.json": "6c23760b871b7e9e562cac2b856b73f84d9d564ec83cfe19da6ad830a145add7",
+      "features/Q2/2025-04-09.json": "8381122cdb560f2d3bebd52c839b00b15ca1bf651e4ce60bdab638bd56387cd6",
+      "features/Q2/2025-05-16.json": "3b0ad41ccefca587e240117f0cfb458deb93f471177dc4f311b6a77df43c815b",
+      "features/Q2/2025-05-12.json": "7b8bd058d6ab01566ab5bcbc8ae818d1f7b38550090a216950e97a71b4c46afc",
+      "features/Q2/2025-05-19.json": "df5ddb89efefa39e631459018a10b3d79a74da654661d7b1474a862bcc1d60f1",
+      "features/Q2/2025-04-23.json": "75d81bdd11ca9c21100aa1aa73a5e3725313ef6409273d625e68223ea1417039",
+      "features/Q2/2025-04-16.json": "3139be3c6b9dc5a9f5da50020a9aa650b889e6d5642716f62c49e728d812d786",
+      "features/Q2/2025-04-02.json": "62e456bd59ef01446359e156cdb52412723dfef89bd777eb99f1b645fb270fbf",
+      "features/Q2/2025-06-03.json": "bec6a3ef3ae84f136be8b6d5306a1952eb1ccdba53e21a68404e47b0c4dc6651",
+      "features/Q2/2025-06-16.json": "8500bfd24f07f359441807ecb154ba9cf6abee4e3bed8661eeaaac5715044bcf"
+    }
+  }
+}

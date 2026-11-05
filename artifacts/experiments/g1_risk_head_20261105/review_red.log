@@ -1,0 +1,85 @@
+.............FFF..FFF                                                    [100%]
+=================================== FAILURES ===================================
+___________________ test_result_identity_rejects_stale_stage ___________________
+
+    def test_result_identity_rejects_stale_stage():
+     p=Path(__file__).resolve().parents[1]/'g1_risk_head/train.py'
+     spec=importlib.util.spec_from_file_location('risk_train_identity',p);m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m)
+>    assert hasattr(m,'validate_result_identity'),'B-to-C identity check missing'
+E    AssertionError: B-to-C identity check missing
+E    assert False
+E     +  where False = hasattr(<module 'risk_train_identity' from '/home/user/workspace/Kronos-g1-risk-head/g1_risk_head/train.py'>, 'validate_result_identity')
+
+tests/test_g1_risk_training.py:54: AssertionError
+______________________ test_calibration_top50_date_blocks ______________________
+
+    def test_calibration_top50_date_blocks():
+>    m=module();assert hasattr(m,'calibration_by_day'),'conditional calibration missing'
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E    AssertionError: conditional calibration missing
+E    assert False
+E     +  where False = hasattr(<module 'risk_diag' from '/home/user/workspace/Kronos-g1-risk-head/g1_risk_head/diagnostics.py'>, 'calibration_by_day')
+
+tests/test_g1_risk_training.py:63: AssertionError
+_____________________ test_long_call_guard_watchdog_exits ______________________
+
+tmp_path = PosixPath('/tmp/g1-risk-tests/test_long_call_guard_watchdog_0')
+
+    def test_long_call_guard_watchdog_exits(tmp_path):
+     import subprocess,sys
+     root=Path(__file__).resolve().parents[1]
+     code='''from pathlib import Path
+    import time
+    from g1_risk_head import runtime as r
+    import state_adapter.run as old
+    r.parent.OUT=Path(__import__('sys').argv[1]);r.OUT=r.parent.OUT
+    old.in_registry_guard=lambda:True
+    b=r.Budget();b.begin();b.watchdog();time.sleep(4)
+    '''
+     result=subprocess.run([sys.executable,'-c',code,str(tmp_path)],cwd=root,timeout=10)
+>    assert result.returncode==75,'long calls must yield at reserved window'
+E    AssertionError: long calls must yield at reserved window
+E    assert 0 == 75
+E     +  where 0 = CompletedProcess(args=['/home/user/miniconda3/envs/quant/bin/python', '-c', "from pathlib import Path\nimport time\nfr....Budget();b.begin();b.watchdog();time.sleep(4)\n", '/tmp/g1-risk-tests/test_long_call_guard_watchdog_0'], returncode=0).returncode
+
+tests/test_g1_risk_training.py:83: AssertionError
+______________ test_execution_new_ties_use_code_not_sort_backend _______________
+
+    def test_execution_new_ties_use_code_not_sort_backend():
+     m=module();s=pd.Series([1.,1.,2.],index=['000002.SZ','000001.SZ','000003.SZ'])
+>    assert hasattr(m,'execution_score'),'explicit stable tie-break missing'
+E    AssertionError: explicit stable tie-break missing
+E    assert False
+E     +  where False = hasattr(<module 'risk_eval' from '/home/user/workspace/Kronos-g1-risk-head/g1_risk_head/evaluate.py'>, 'execution_score')
+
+tests/test_g1_risk_score.py:29: AssertionError
+___________ test_report_distinguishes_strategy_and_learned_increment ___________
+
+    def test_report_distinguishes_strategy_and_learned_increment():
+>    p=Path(__file__).resolve().parents[1]/'g1_risk_head/report.py';assert p.exists(),'report gates missing'
+                                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E    AssertionError: report gates missing
+E    assert False
+E     +  where False = exists()
+E     +    where exists = PosixPath('/home/user/workspace/Kronos-g1-risk-head/g1_risk_head/report.py').exists
+
+tests/test_g1_risk_score.py:36: AssertionError
+__________________ test_bootstrap_recomputes_risk_statistics ___________________
+
+    def test_bootstrap_recomputes_risk_statistics():
+>    p=Path(__file__).resolve().parents[1]/'g1_risk_head/report.py';assert p.exists(),'risk interval implementation missing'
+                                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E    AssertionError: risk interval implementation missing
+E    assert False
+E     +  where False = exists()
+E     +    where exists = PosixPath('/home/user/workspace/Kronos-g1-risk-head/g1_risk_head/report.py').exists
+
+tests/test_g1_risk_score.py:44: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_g1_risk_training.py::test_result_identity_rejects_stale_stage
+FAILED tests/test_g1_risk_training.py::test_calibration_top50_date_blocks - A...
+FAILED tests/test_g1_risk_training.py::test_long_call_guard_watchdog_exits - ...
+FAILED tests/test_g1_risk_score.py::test_execution_new_ties_use_code_not_sort_backend
+FAILED tests/test_g1_risk_score.py::test_report_distinguishes_strategy_and_learned_increment
+FAILED tests/test_g1_risk_score.py::test_bootstrap_recomputes_risk_statistics
+6 failed, 15 passed in 6.29s

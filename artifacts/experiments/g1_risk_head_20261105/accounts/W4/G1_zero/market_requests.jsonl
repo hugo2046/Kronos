@@ -1,0 +1,3 @@
+{"pid": 3097275, "fields": ["$close/Ref($close,1)-1"], "start": "2026-01-05", "requested_end": "2026-07-24 00:00:00", "effective_end": "2026-07-24 00:00:00", "guard_version": 1}
+{"pid": 3097275, "fields": ["$open", "$change", "$close", "$pctchange / 100 >= 0.095", "$volume", "$factor", "$pctchange / 100 <= -0.095"], "start": "2026-01-05", "requested_end": "2026-07-24 00:00:00", "effective_end": "2026-07-24 00:00:00", "guard_version": 1}
+{"pid": 3097275, "fields": ["$close/Ref($close,1)-1"], "start": "2026-01-05", "requested_end": "2026-07-24 00:00:00", "effective_end": "2026-07-24 00:00:00", "guard_version": 1}

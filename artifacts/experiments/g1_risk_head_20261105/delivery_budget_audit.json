@@ -1,0 +1,13 @@
+{
+  "first_model_at": 1793865905.2164943,
+  "gpu_billed_seconds": 3131.55508351326,
+  "gpu_limit_seconds": 21600,
+  "pipeline_completed_at": 1793869345.7610583,
+  "pipeline_wall_seconds": 3440.5445640087128,
+  "verification_finished_at": 1793870663.325418,
+  "wall_to_verification_seconds": 4758.10892367363,
+  "wall_limit_seconds": 36000,
+  "no_reset": true,
+  "budget_passed": true,
+  "gpu_billing_note": "includes conservatively charged unsettled resource-guard interval"
+}

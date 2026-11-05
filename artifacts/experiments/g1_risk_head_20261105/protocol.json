@@ -1,0 +1,121 @@
+{
+  "candidate": "G1-downside-quantile",
+  "reference_files": {
+    "/home/user/workspace/Kronos-state-mc40/artifacts/experiments/state_mc40_20261101/manifest.json": "f89afad1c5782fc10f3d03afc11f8342f3538c04ad518de61f447d9845e766bc",
+    "/home/user/workspace/Kronos-canonical-state/artifacts/experiments/canonical_state_20261101/signals/State_dynamic_train100_infer42/W3.parquet": "1de3ecaec684394d917fbaa0c5bc1a019ccd8f33250a5d55488c89da99a76fb7",
+    "/home/user/workspace/Kronos-state-adapter/artifacts/experiments/state_adapter_20261030/signals/State_dynamic_100/W3.parquet": "deae9cc007f0325f4c564d9f2c1512562ca30b5b72a7f497f80955ecbd5dc721",
+    "/home/user/workspace/Kronos/g5_head/data/daily_signals_2025h2_G1_mean.parquet": "9352b40302eb34c714bfebd808481b625a21d2f7f4f668ccca15cda0cfe21d66",
+    "/home/user/workspace/Kronos-state-adapter/artifacts/experiments/state_adapter_20261030/signals/G1_paired_100/W3.parquet": "0d834347a96e320b4c4252f1455da18409923452b609dc54849d3e1e00e7fd0f",
+    "/home/user/workspace/Kronos-limit-audit/artifacts/experiments/limit_unit_audit_20261102/accounts/new/W3/G1_original/report.parquet": "eb54538131ee75d14584d676f6cb89212b979244a9244524dede1ad98e7b507c",
+    "/home/user/workspace/Kronos-limit-audit/artifacts/experiments/limit_unit_audit_20261102/accounts/new/W3/B/report.parquet": "6e2be3c9079d6af1623726329cb2f18defff2c4444965e7dc7246b1eeccab735",
+    "/home/user/workspace/Kronos-canonical-state/artifacts/experiments/canonical_state_20261101/signals/State_dynamic_train100_infer42/W4.parquet": "b0204e4e7f4c1a6e5ad02f9a4bb17dee61a82c564aa9aa9e02fd53c45a52b056",
+    "/home/user/workspace/Kronos-state-adapter/artifacts/experiments/state_adapter_20261030/signals/State_dynamic_100/W4.parquet": "d22db3d505e46ff68d4e098bcf33253ffc1e25cef0d3bb0f489f8d64a6b29861",
+    "/home/user/workspace/Kronos/finetune_suite/data/g1/daily_signals_backtest_G1_mean.parquet": "453e2aeae7fe4bee8ce8fa62a9908da0843d5ad8b52777cd3b299a84cc4a3e36",
+    "/home/user/workspace/Kronos-state-adapter/artifacts/experiments/state_adapter_20261030/signals/G1_paired_100/W4.parquet": "5d19daf0d749b5c00e2c2b031bc8fa80bfaf08e55ef33243902c8f96c264b5c5",
+    "/home/user/workspace/Kronos-limit-audit/artifacts/experiments/limit_unit_audit_20261102/accounts/new/W4/G1_original/report.parquet": "39b8c45a287bb65a4a03c896c3e9dbd2473453dabbca385a2109f8e9fe0bf9fd",
+    "/home/user/workspace/Kronos-limit-audit/artifacts/experiments/limit_unit_audit_20261102/accounts/new/W4/B/report.parquet": "347de555b608be66ac6161fe3c8a975bbf427d00408004e4ba60d0c2ffb5c593",
+    "/home/user/workspace/Kronos/finetune_suite/outputs/models/finetune_tokenizer_g1/checkpoints/best_model/README.md": "ec40d6b5978fe1ed22e92abe5f9033b5147fc474209dc245df3b4fb8d4dfbf4c",
+    "/home/user/workspace/Kronos/finetune_suite/outputs/models/finetune_tokenizer_g1/checkpoints/best_model/config.json": "2366e7ccfec76cbc19cf3c4c1b9c5d901be336ca1e83f2d2292c9bff381b77a2",
+    "/home/user/workspace/Kronos/finetune_suite/outputs/models/finetune_tokenizer_g1/checkpoints/best_model/model.safetensors": "5ca43492146cd93da2f9dd5528009aa6bd882f2a448ff4c6bd3c1b0ab08609ee",
+    "/home/user/workspace/Kronos/finetune_suite/outputs/models/finetune_predictor_g1/checkpoints/best_model/README.md": "ec40d6b5978fe1ed22e92abe5f9033b5147fc474209dc245df3b4fb8d4dfbf4c",
+    "/home/user/workspace/Kronos/finetune_suite/outputs/models/finetune_predictor_g1/checkpoints/best_model/config.json": "77ebc3038b647709b92be002f801d72e1a385f4c8c2c5aa1cc6cf21fcfe44eb2",
+    "/home/user/workspace/Kronos/finetune_suite/outputs/models/finetune_predictor_g1/checkpoints/best_model/model.safetensors": "4f2382138138e85ea1c543d43ade2de2373e4168a995e34fd43cbca2895c2fe2",
+    "/home/user/workspace/Kronos-state-adapter/artifacts/experiments/state_adapter_20261030/arms/dynamic/seed_100/best_adapter.pt": "d208a8b9f5359aa81bd6cfff473bf9aae193f0b37542e92b7ae39d00c649c402"
+  },
+  "reference_paths": {
+    "W3": {
+      "state42": "/home/user/workspace/Kronos-canonical-state/artifacts/experiments/canonical_state_20261101/signals/State_dynamic_train100_infer42/W3.parquet",
+      "state100": "/home/user/workspace/Kronos-state-adapter/artifacts/experiments/state_adapter_20261030/signals/State_dynamic_100/W3.parquet",
+      "g142": "/home/user/workspace/Kronos/g5_head/data/daily_signals_2025h2_G1_mean.parquet",
+      "g1100": "/home/user/workspace/Kronos-state-adapter/artifacts/experiments/state_adapter_20261030/signals/G1_paired_100/W3.parquet"
+    },
+    "W4": {
+      "state42": "/home/user/workspace/Kronos-canonical-state/artifacts/experiments/canonical_state_20261101/signals/State_dynamic_train100_infer42/W4.parquet",
+      "state100": "/home/user/workspace/Kronos-state-adapter/artifacts/experiments/state_adapter_20261030/signals/State_dynamic_100/W4.parquet",
+      "g142": "/home/user/workspace/Kronos/finetune_suite/data/g1/daily_signals_backtest_G1_mean.parquet",
+      "g1100": "/home/user/workspace/Kronos-state-adapter/artifacts/experiments/state_adapter_20261030/signals/G1_paired_100/W4.parquet"
+    }
+  },
+  "windows": {
+    "W3": [
+      "2025-07-01",
+      "2025-12-31"
+    ],
+    "W4": [
+      "2026-01-05",
+      "2026-07-24"
+    ]
+  },
+  "expected": {
+    "W3": [
+      126,
+      37223
+    ],
+    "W4": [
+      134,
+      39563
+    ]
+  },
+  "cutoff": "2026-07-24",
+  "train": [
+    "2014-01-02",
+    "2024-12-31"
+  ],
+  "Q1": [
+    "2025-01-01",
+    "2025-03-31"
+  ],
+  "Q2": [
+    "2025-04-01",
+    "2025-06-30"
+  ],
+  "train_stride": 5,
+  "lookback": 90,
+  "horizon": 10,
+  "label": "adjusted close[t+10]/adjusted open[t+1]-1",
+  "scale": "max(std(last20 close returns,ddof=1)*sqrt(10),1e-4)",
+  "head": "Linear(h_norm_last,3); sorted outputs",
+  "quantiles": [
+    0.1,
+    0.5,
+    0.9
+  ],
+  "seed": 100,
+  "lr": 0.001,
+  "betas": [
+    0.9,
+    0.999
+  ],
+  "weight_decay": 0.01,
+  "batch": 2048,
+  "epochs": 20,
+  "patience": 3,
+  "selection": "Q1 raw-Y date-equal pinball; include epoch0; earliest tie",
+  "penalty": 0.25,
+  "Q2_G1_generation": {
+    "authorized": true,
+    "seed": 42,
+    "paths": 20,
+    "chunk": 32,
+    "T": 1,
+    "top_p": 0.9,
+    "top_k": 0,
+    "max_context": 512,
+    "signal": "mean(predicted close[1:10])/close[t]-1",
+    "scope": "Q2 only; W3/W4 immutable"
+  },
+  "trading": {
+    "topk": 50,
+    "n_drop": 5,
+    "hold_thresh": 5,
+    "deal_price": "open",
+    "shift": 1,
+    "limit": "pctchange/100 +/- .095",
+    "buy_cost": 0.001,
+    "sell_cost": 0.0015,
+    "min_cost": 5
+  },
+  "gpu_seconds": 21600,
+  "wall_seconds": 36000,
+  "availability": "current-final assumed; historical vintage unavailable; old sealed-query incident retained"
+}

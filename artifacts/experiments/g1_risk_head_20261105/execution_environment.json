@@ -1,0 +1,9 @@
+{
+  "python": "3.13.14 | packaged by conda-forge | (main, Jun 12 2026, 09:50:25) [GCC 14.3.0]",
+  "numpy": "2.4.6",
+  "pandas": "2.3.3",
+  "torch": "2.13.0+cu130",
+  "torch_cuda": "13.0",
+  "qlib": "0.9.6.99",
+  "gpu": "NVIDIA GeForce RTX 5090, 595.84, 32607 MiB"
+}

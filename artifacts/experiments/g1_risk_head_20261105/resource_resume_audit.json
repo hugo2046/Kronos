@@ -1,0 +1,15 @@
+{
+  "observer": "root coordinator; process states observed in tool outputs",
+  "guard_exit_at": 1793867100.2380989,
+  "old_worker_pid": 3097476,
+  "resumed_at": 1793868300.3470802,
+  "new_worker_pid": 3119654,
+  "calendar_sha_unchanged": true,
+  "calendar_sha": {
+    "features/Q2/calendar.json": "6bc9bb775c91fb0b75987d68829b6f9a606fc0205d34efa6b698e6ad3ba90eb0",
+    "features/Q1/calendar.json": "683292106d629e245ece645482beb487a56a8f61931be223fc3d277935708383",
+    "features/train/calendar.json": "4f6fd8772d02272fca031fe7f42a70af2c2fcab02e41c2cdb2b0289a62955eac"
+  },
+  "first_model_at_unchanged": true,
+  "budget_policy": "unsettled active interval conservatively charged through recovery; no reset"
+}

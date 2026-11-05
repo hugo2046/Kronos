@@ -1,0 +1,174 @@
+{
+  "at": 1793863724.1764486,
+  "source_commit": "047ac95",
+  "frozen_references": {
+    "/home/user/workspace/Kronos-state-mc40/artifacts/experiments/state_mc40_20261101/manifest.json": "f89afad1c5782fc10f3d03afc11f8342f3538c04ad518de61f447d9845e766bc",
+    "/home/user/workspace/Kronos-canonical-state/artifacts/experiments/canonical_state_20261101/signals/State_dynamic_train100_infer42/W3.parquet": "1de3ecaec684394d917fbaa0c5bc1a019ccd8f33250a5d55488c89da99a76fb7",
+    "/home/user/workspace/Kronos-state-adapter/artifacts/experiments/state_adapter_20261030/signals/State_dynamic_100/W3.parquet": "deae9cc007f0325f4c564d9f2c1512562ca30b5b72a7f497f80955ecbd5dc721",
+    "/home/user/workspace/Kronos/g5_head/data/daily_signals_2025h2_G1_mean.parquet": "9352b40302eb34c714bfebd808481b625a21d2f7f4f668ccca15cda0cfe21d66",
+    "/home/user/workspace/Kronos-state-adapter/artifacts/experiments/state_adapter_20261030/signals/G1_paired_100/W3.parquet": "0d834347a96e320b4c4252f1455da18409923452b609dc54849d3e1e00e7fd0f",
+    "/home/user/workspace/Kronos-limit-audit/artifacts/experiments/limit_unit_audit_20261102/accounts/new/W3/G1_original/report.parquet": "eb54538131ee75d14584d676f6cb89212b979244a9244524dede1ad98e7b507c",
+    "/home/user/workspace/Kronos-limit-audit/artifacts/experiments/limit_unit_audit_20261102/accounts/new/W3/B/report.parquet": "6e2be3c9079d6af1623726329cb2f18defff2c4444965e7dc7246b1eeccab735",
+    "/home/user/workspace/Kronos-canonical-state/artifacts/experiments/canonical_state_20261101/signals/State_dynamic_train100_infer42/W4.parquet": "b0204e4e7f4c1a6e5ad02f9a4bb17dee61a82c564aa9aa9e02fd53c45a52b056",
+    "/home/user/workspace/Kronos-state-adapter/artifacts/experiments/state_adapter_20261030/signals/State_dynamic_100/W4.parquet": "d22db3d505e46ff68d4e098bcf33253ffc1e25cef0d3bb0f489f8d64a6b29861",
+    "/home/user/workspace/Kronos/finetune_suite/data/g1/daily_signals_backtest_G1_mean.parquet": "453e2aeae7fe4bee8ce8fa62a9908da0843d5ad8b52777cd3b299a84cc4a3e36",
+    "/home/user/workspace/Kronos-state-adapter/artifacts/experiments/state_adapter_20261030/signals/G1_paired_100/W4.parquet": "5d19daf0d749b5c00e2c2b031bc8fa80bfaf08e55ef33243902c8f96c264b5c5",
+    "/home/user/workspace/Kronos-limit-audit/artifacts/experiments/limit_unit_audit_20261102/accounts/new/W4/G1_original/report.parquet": "39b8c45a287bb65a4a03c896c3e9dbd2473453dabbca385a2109f8e9fe0bf9fd",
+    "/home/user/workspace/Kronos-limit-audit/artifacts/experiments/limit_unit_audit_20261102/accounts/new/W4/B/report.parquet": "347de555b608be66ac6161fe3c8a975bbf427d00408004e4ba60d0c2ffb5c593",
+    "/home/user/workspace/Kronos/finetune_suite/outputs/models/finetune_tokenizer_g1/checkpoints/best_model/README.md": "ec40d6b5978fe1ed22e92abe5f9033b5147fc474209dc245df3b4fb8d4dfbf4c",
+    "/home/user/workspace/Kronos/finetune_suite/outputs/models/finetune_tokenizer_g1/checkpoints/best_model/config.json": "2366e7ccfec76cbc19cf3c4c1b9c5d901be336ca1e83f2d2292c9bff381b77a2",
+    "/home/user/workspace/Kronos/finetune_suite/outputs/models/finetune_tokenizer_g1/checkpoints/best_model/model.safetensors": "5ca43492146cd93da2f9dd5528009aa6bd882f2a448ff4c6bd3c1b0ab08609ee",
+    "/home/user/workspace/Kronos/finetune_suite/outputs/models/finetune_predictor_g1/checkpoints/best_model/README.md": "ec40d6b5978fe1ed22e92abe5f9033b5147fc474209dc245df3b4fb8d4dfbf4c",
+    "/home/user/workspace/Kronos/finetune_suite/outputs/models/finetune_predictor_g1/checkpoints/best_model/config.json": "77ebc3038b647709b92be002f801d72e1a385f4c8c2c5aa1cc6cf21fcfe44eb2",
+    "/home/user/workspace/Kronos/finetune_suite/outputs/models/finetune_predictor_g1/checkpoints/best_model/model.safetensors": "4f2382138138e85ea1c543d43ade2de2373e4168a995e34fd43cbca2895c2fe2",
+    "/home/user/workspace/Kronos-state-adapter/artifacts/experiments/state_adapter_20261030/arms/dynamic/seed_100/best_adapter.pt": "d208a8b9f5359aa81bd6cfff473bf9aae193f0b37542e92b7ae39d00c649c402"
+  },
+  "sampled_inputs": [
+    {
+      "date": "2014-01-02",
+      "stocks": 242,
+      "input_end": "2014-01-02 00:00:00",
+      "scale_min": 0.01299833649429676,
+      "target_end": "2014-01-16",
+      "label_boundary": "2024-12-31",
+      "mature_labels": 242,
+      "stats": {
+        "n_pool": 300,
+        "n_kept": 242,
+        "skipped_short": 1,
+        "skipped_halt": 57
+      },
+      "code_sha": "0c113eb10d500e5ed1889e66e80742ab044e41f936618276ba7f23cdc9d57a06"
+    },
+    {
+      "date": "2024-12-17",
+      "stocks": 294,
+      "input_end": "2024-12-17 00:00:00",
+      "scale_min": 0.02172847694974005,
+      "target_end": "2024-12-31",
+      "label_boundary": "2024-12-31",
+      "mature_labels": 294,
+      "stats": {
+        "n_pool": 300,
+        "n_kept": 294,
+        "skipped_short": 0,
+        "skipped_halt": 6
+      },
+      "code_sha": "1ba23151bd014d2f82af11a6b0f2ce75fe4d093f90e985d0497b402c5387a37f"
+    },
+    {
+      "date": "2025-02-05",
+      "stocks": 293,
+      "input_end": "2025-02-05 00:00:00",
+      "scale_min": 0.03056716468562049,
+      "target_end": "2025-02-19",
+      "label_boundary": "2025-03-31",
+      "mature_labels": 293,
+      "stats": {
+        "n_pool": 300,
+        "n_kept": 293,
+        "skipped_short": 0,
+        "skipped_halt": 7
+      },
+      "code_sha": "24ce6e1e5c7a2a4df1a20b392cf9259db498ec93b9230f345e23e607d9466dd4"
+    },
+    {
+      "date": "2025-04-01",
+      "stocks": 294,
+      "input_end": "2025-04-01 00:00:00",
+      "scale_min": 0.01478106780553592,
+      "target_end": "2025-04-16",
+      "label_boundary": "2025-06-30",
+      "mature_labels": 294,
+      "stats": {
+        "n_pool": 300,
+        "n_kept": 294,
+        "skipped_short": 0,
+        "skipped_halt": 6
+      },
+      "code_sha": "039ea810618669afcd99b4269d11fc28ba0af0af31f5ad77ef3b16a5b900dab9"
+    },
+    {
+      "date": "2025-07-01",
+      "stocks": 295,
+      "input_end": "2025-07-01 00:00:00",
+      "scale_min": 0.010249080821723539,
+      "target_end": "2025-07-15",
+      "label_boundary": "2025-12-31",
+      "mature_labels": 295,
+      "stats": {
+        "n_pool": 300,
+        "n_kept": 295,
+        "skipped_short": 0,
+        "skipped_halt": 5
+      },
+      "code_sha": "3937f5d859122a80402e5be0fa64b9f9fd19458299ca70aad7ea9b0461293493",
+      "original_grid_exact": true
+    },
+    {
+      "date": "2025-12-31",
+      "stocks": 295,
+      "input_end": "2025-12-31 00:00:00",
+      "scale_min": 0.008001758494566052,
+      "target_end": "2026-01-16",
+      "label_boundary": "2025-12-31",
+      "mature_labels": null,
+      "stats": {
+        "n_pool": 300,
+        "n_kept": 295,
+        "skipped_short": 0,
+        "skipped_halt": 5
+      },
+      "code_sha": "b408081e28e7a4c18252706827ac1777178f9cd3fa52327d3bdb0cbbd7efc519",
+      "original_grid_exact": true
+    },
+    {
+      "date": "2026-01-05",
+      "stocks": 295,
+      "input_end": "2026-01-05 00:00:00",
+      "scale_min": 0.011138637533464307,
+      "target_end": "2026-01-19",
+      "label_boundary": "2026-07-24",
+      "mature_labels": 295,
+      "stats": {
+        "n_pool": 300,
+        "n_kept": 295,
+        "skipped_short": 0,
+        "skipped_halt": 5
+      },
+      "code_sha": "b408081e28e7a4c18252706827ac1777178f9cd3fa52327d3bdb0cbbd7efc519",
+      "original_grid_exact": true
+    },
+    {
+      "date": "2026-07-24",
+      "stocks": 298,
+      "input_end": "2026-07-24 00:00:00",
+      "scale_min": 0.03133836463079221,
+      "target_end": "2026-08-07",
+      "label_boundary": "2026-07-24",
+      "mature_labels": null,
+      "stats": {
+        "n_pool": 300,
+        "n_kept": 298,
+        "skipped_short": 0,
+        "skipped_halt": 2
+      },
+      "code_sha": "5b9970921ff6390c7ebea8758872f025a5376f99933393069e7c5b3286038630",
+      "original_grid_exact": true
+    }
+  ],
+  "max_read": "2026-07-24 00:00:00",
+  "shared_market_cache_used": false,
+  "model_loaded": false,
+  "gpu_used": false,
+  "availability": "current-final assumed; historical vintage not verified",
+  "pending": [
+    "Q2 complete original G1 score source unresolved; request permission for bounded generation",
+    "full grid/feature identity/lambda0 account parity and independent code review not yet passed"
+  ],
+  "independent_request_audit": {
+    "requests": 14,
+    "max_end": "2026-07-24",
+    "asof_violations": 0
+  }
+}

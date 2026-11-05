@@ -1,0 +1,4492 @@
+{
+  "scope": "full feature npz retained on dev-debian; all independently verified",
+  "entries": [
+    {
+      "stage": "train",
+      "date": "2014-01-02",
+      "data_sha256": "f5c1ed1fb45ca8377ecd70542d62729dab05c188d2a4213f5d429d8d89fc98be",
+      "metadata_sha256": "e4a8af70f28f44cea581ad94281b0af55d5884b35294a6ce98c0ef86e4bb59fa",
+      "stocks": 242
+    },
+    {
+      "stage": "train",
+      "date": "2014-01-09",
+      "data_sha256": "eba172943cf74e212c6b44fce35825cd98d6c746022c4724fcccc956e4fac876",
+      "metadata_sha256": "42b8a55887cce6d7e92c9b355a44fa16e3c458356eb39d86202fbffe48bf6876",
+      "stocks": 246
+    },
+    {
+      "stage": "train",
+      "date": "2014-01-16",
+      "data_sha256": "1978d0dbc8b60c65a4a32132fb8a796f711c4d8bb39a271f93b70000380e325c",
+      "metadata_sha256": "0a351d21b0676819436c851564072047ef7655428b74faa85299f94eac6c9c94",
+      "stocks": 250
+    },
+    {
+      "stage": "train",
+      "date": "2014-01-23",
+      "data_sha256": "18fbd2bd2ee6df554157909b0885d50e75177bc4a73b27019a295ba6c285490a",
+      "metadata_sha256": "5211761637627f0127ce316d62917a518fa281913feec3017bc1b9a0047d7992",
+      "stocks": 252
+    },
+    {
+      "stage": "train",
+      "date": "2014-01-30",
+      "data_sha256": "3894a2dea9e98e302ecb80f22c413b622699d8ed390abc9208964428b40c0692",
+      "metadata_sha256": "42949dc0af221252b8f29f1e814eaf5fd6c1f781f2f63ee0ecda5681c6922f46",
+      "stocks": 257
+    },
+    {
+      "stage": "train",
+      "date": "2014-02-13",
+      "data_sha256": "87124e08191d732ec6412421672cf434ebf406f6ce47f40a581fe65849d21d56",
+      "metadata_sha256": "f7d316d3cd00cb059ebfdee37203c1c146d6dd07a46716f3b17f24111b2d769e",
+      "stocks": 260
+    },
+    {
+      "stage": "train",
+      "date": "2014-02-20",
+      "data_sha256": "2fc9821a86082a0fa3ca6cded0b5e36afbaf55ebf4f1d21d8fec2f0f432f42b6",
+      "metadata_sha256": "e34dea33c6f9811e4b7667f340681b3e9e80e08ccd7415bfec14975260740d0c",
+      "stocks": 258
+    },
+    {
+      "stage": "train",
+      "date": "2014-02-27",
+      "data_sha256": "f8db70fe47b23e76a020c4551a50bdc73bb02bea493ac265656c0309341db433",
+      "metadata_sha256": "3709c5c268ba615a76c1f728059bb656adeaecc80fc3eea038fbb9e778dd8962",
+      "stocks": 259
+    },
+    {
+      "stage": "train",
+      "date": "2014-03-06",
+      "data_sha256": "46de631de576579d238802334831e0ab355de93fbc07a9d2abc75556a35ceb1c",
+      "metadata_sha256": "892e5fbafc6b77a1db09e42841e4329870ec6e6432f3d5902b6476a9ca678563",
+      "stocks": 259
+    },
+    {
+      "stage": "train",
+      "date": "2014-03-13",
+      "data_sha256": "6c8d774daada0eb9f8f0bc60ed40bba771cc9854452bdb613acdc8edefd2cedb",
+      "metadata_sha256": "6796b78594a64a43251cbde8f253fb3883be67e07e065bdc33e85e650e67e457",
+      "stocks": 259
+    },
+    {
+      "stage": "train",
+      "date": "2014-03-20",
+      "data_sha256": "02b238f89f2b26885483a8b1f7e3847117a555b1bb0d31c0ad4ee765dd8a2067",
+      "metadata_sha256": "6c845f64589001753bacb36bf33b898aaf94caf587d56694335d3cb77d319824",
+      "stocks": 256
+    },
+    {
+      "stage": "train",
+      "date": "2014-03-27",
+      "data_sha256": "199423066174ba0ca6374c5fa2e94252ab309bcb5f3c26aea0be2088ae568743",
+      "metadata_sha256": "92e04256997383d0d32757650c23dd05fe2c63d860cccee6a7bcd3a20ef18b03",
+      "stocks": 253
+    },
+    {
+      "stage": "train",
+      "date": "2014-04-03",
+      "data_sha256": "f70119ded81ee53d7bc390be3e568fb6ac5a8fe3767d23c4109a0b0fa1ee4065",
+      "metadata_sha256": "391ec4c308af0b23b90ce0d0a766947b23c12581ce84810001032ab41cbf7925",
+      "stocks": 253
+    },
+    {
+      "stage": "train",
+      "date": "2014-04-11",
+      "data_sha256": "fcc61fb8de2b74017810db3737bf2013058490f29a32d374e8cafb4e192b7111",
+      "metadata_sha256": "eb05d07c3aaf253ffa222f31a58f5ee643c77ed4d8def207f4d6bbdf17926eb2",
+      "stocks": 248
+    },
+    {
+      "stage": "train",
+      "date": "2014-04-18",
+      "data_sha256": "60ba9eb15d7c82d538e2d93a40fed6a88bdb40f1dff4c6f8f392883914e451e4",
+      "metadata_sha256": "a6fffea7c68818807b88ad6496d758c15fd66d31e8a0a5b0a5887b8b0555d57e",
+      "stocks": 243
+    },
+    {
+      "stage": "train",
+      "date": "2014-04-25",
+      "data_sha256": "6760c161f640fe30ba90e4d3abcf82c6e2ef50654d81bc1d7d9155885ad530c2",
+      "metadata_sha256": "f4290bd8b56a944343d06585e03641124f7d13d81e39879f2b7a340b2a45bb4b",
+      "stocks": 242
+    },
+    {
+      "stage": "train",
+      "date": "2014-05-06",
+      "data_sha256": "7164ea5baa5361e00d153cdbcea1903e0b0ee0fb788464e8c1627fbb994670e5",
+      "metadata_sha256": "fceedb4dad297c6d9d40bd781cbec5b275daaacbc69f136e992da6dfbed7f61c",
+      "stocks": 236
+    },
+    {
+      "stage": "train",
+      "date": "2014-05-13",
+      "data_sha256": "679527e0a2b7ec7742bc0ff65179b9f0c2f6dafd1f04490ee3f4636d89856324",
+      "metadata_sha256": "b112ad55134a607fdad201bca4a609352d71e5f43c18b72118298fcb3149eeff",
+      "stocks": 239
+    },
+    {
+      "stage": "train",
+      "date": "2014-05-20",
+      "data_sha256": "254aa511bae25d508c70a1a4187f617a03e69716a4c59cec8ad37251f9da95b5",
+      "metadata_sha256": "971a16a539a3972fc76bb2b3eb49ae8ecc03c63f0bc609709fc61dd4c6c50cbc",
+      "stocks": 241
+    },
+    {
+      "stage": "train",
+      "date": "2014-05-27",
+      "data_sha256": "535de364853a20bd28a9cc71288d125c4a64261246c22cd5162be1c98ae53322",
+      "metadata_sha256": "cbd8117662693a1ddc60d12e507cea98d7e13c5155de1940143f973d0e9b31d5",
+      "stocks": 242
+    },
+    {
+      "stage": "train",
+      "date": "2014-06-04",
+      "data_sha256": "ae88ff8420bcf3e414a6a2e169ad9f33da1faa9f0417227a45cbf02e20b58159",
+      "metadata_sha256": "40eecd6dd02072698050d8b921cdd132b9f9bfb8330078483bfeda7f0780084c",
+      "stocks": 238
+    },
+    {
+      "stage": "train",
+      "date": "2014-06-11",
+      "data_sha256": "2f935ff3179885ba7c53e8cff82e63c74c90adf22e44ff9bba4f4a456a7fbc03",
+      "metadata_sha256": "84bd267eb650cbb76778e1cf356a4bb94cf1769911770c4fda001983d0899000",
+      "stocks": 237
+    },
+    {
+      "stage": "train",
+      "date": "2014-06-18",
+      "data_sha256": "3283558ab0db45ad19564a2b59ae777fd284e04307a2da6606b63d65aeff72e8",
+      "metadata_sha256": "d8e494eee18b34ca6e586db1fcc23f00471e76790c721d61260e9c7ddfa86f03",
+      "stocks": 232
+    },
+    {
+      "stage": "train",
+      "date": "2014-06-25",
+      "data_sha256": "fd3b7519842e17f141ec2b88a7c6937d17a8f9f7e1c265f271ff04c43d56afdc",
+      "metadata_sha256": "e0fd28dc0191e4ec0a1b651d74be0305532d54404dfc347114bb731cc0765e06",
+      "stocks": 232
+    },
+    {
+      "stage": "train",
+      "date": "2014-07-02",
+      "data_sha256": "5caffb9ea57b853d53be0b39ac886f630ea695ac17aef521041d48d1dd5d070d",
+      "metadata_sha256": "a5a7a29ab89a62b141ef8af3dfbcbb4ed331ee5e4c779cb9f5c1dede045e62bc",
+      "stocks": 232
+    },
+    {
+      "stage": "train",
+      "date": "2014-07-09",
+      "data_sha256": "21be5fae7f0067042553aceb5b5e886153ce5ff69b7ae2a653d614b99ddc6bfa",
+      "metadata_sha256": "1373acccbde041abc7cb2b4b1247db6d647f0398bfbab9ab154a6949894e264f",
+      "stocks": 231
+    },
+    {
+      "stage": "train",
+      "date": "2014-07-16",
+      "data_sha256": "8b8463b127fd9e90d0470f24692e3f1e60dc7a986079fd9ad08306a8297a5277",
+      "metadata_sha256": "67abb1f4a4bc468777f4e65863feff00e9ef98ef48dffdc869e595d108d7f925",
+      "stocks": 230
+    },
+    {
+      "stage": "train",
+      "date": "2014-07-23",
+      "data_sha256": "3c6fa53b78d5a8f2bbe7017901aa5115fe11027f893fc5fa5b0af32d20db32cb",
+      "metadata_sha256": "85691caa11bd6b30180ff7aa849a11345ab99877651afb24f42c0a5bdf50ff3c",
+      "stocks": 229
+    },
+    {
+      "stage": "train",
+      "date": "2014-07-30",
+      "data_sha256": "04de150407b01b9ddf9091e983382d20e774a54c99010ac7be9d2e304d80ecaa",
+      "metadata_sha256": "1389a2d57f3311e0081f07fb8fab6561ebc6266ba9bac79fca7b36ffd9c91215",
+      "stocks": 230
+    },
+    {
+      "stage": "train",
+      "date": "2014-08-06",
+      "data_sha256": "b9a9aa686576596d56c6ab2e372bca58f9b00595b93c1e668e3d2f4cb7b445f2",
+      "metadata_sha256": "f837fd29bf65deaa57ea96e46ecc785d06224262084dbdfe78382589e1b93fa0",
+      "stocks": 229
+    },
+    {
+      "stage": "train",
+      "date": "2014-08-13",
+      "data_sha256": "dfef1a51dbf903a438a513f90fd08c64592c4c4e8f3c885c734d782e4ff1c833",
+      "metadata_sha256": "57801005cec9357c8bdb5015e5249fc50fea43b882dd76c3f1c03a146b249c71",
+      "stocks": 226
+    },
+    {
+      "stage": "train",
+      "date": "2014-08-20",
+      "data_sha256": "03e965224416d1dba57e8d37babb7402d00ee89b8c91107c896b2beb3c03ae2a",
+      "metadata_sha256": "e21a903935927e6c49b13396d9ba7cccd5f70628eb01b71656c9bba72936e441",
+      "stocks": 228
+    },
+    {
+      "stage": "train",
+      "date": "2014-08-27",
+      "data_sha256": "4e2c3c2b23a2fe8227637799abc7a5eb4edc96242a0adb9d54a997c430ef5ed6",
+      "metadata_sha256": "e315465eb04168febd0d858907bf10f70e4bc78d11d5283a84e41b8026d4ffa8",
+      "stocks": 228
+    },
+    {
+      "stage": "train",
+      "date": "2014-09-03",
+      "data_sha256": "eae5b91af0dab9eaeaf7c427a898d6a0453b912642bcf3d3d6d7afd8286cd183",
+      "metadata_sha256": "168c8f0b9a665962952062f1b402ba09d2fabb70c35461bc309d76099356f330",
+      "stocks": 230
+    },
+    {
+      "stage": "train",
+      "date": "2014-09-11",
+      "data_sha256": "a1ff8b9519fda5e8e45f07a3b1399f0f9237246f85059fb45e30b595368e92bc",
+      "metadata_sha256": "b76be3958e7816d4cb11813d449bdf6dcae3472dd7db2ac2d9c81373bb5c3529",
+      "stocks": 232
+    },
+    {
+      "stage": "train",
+      "date": "2014-09-18",
+      "data_sha256": "874e3f230436159000fecbab5a66c9fbd5f06089116e67fe7ddd7c7dd9bf9a2d",
+      "metadata_sha256": "a1f4439d1711a9a5a2c7e11ab6deed6ad1c40d4bc1de79a3b5a3e536070fbf5d",
+      "stocks": 234
+    },
+    {
+      "stage": "train",
+      "date": "2014-09-25",
+      "data_sha256": "f13665def77e822ebcd03c0024b9edf63de6ffdab7fd6189f1cb3031f1b0ec02",
+      "metadata_sha256": "29cd265c116d5dcf7d464cb093cb5b5903bdb19a1d03a0b4b3dac19410ecc680",
+      "stocks": 231
+    },
+    {
+      "stage": "train",
+      "date": "2014-10-09",
+      "data_sha256": "b0f6ce3f4e7829f7ff9dcbd3a7824b0b447a28adc7022776608755f1a2363df6",
+      "metadata_sha256": "6881a38d851958477514d227c45dde622c62cec8f50578209bccd574197d04c9",
+      "stocks": 233
+    },
+    {
+      "stage": "train",
+      "date": "2014-10-16",
+      "data_sha256": "961c67a6240840f579fb57d7fbfe8bfcd133a36d839465d2b40e037e04fe15b8",
+      "metadata_sha256": "190bd7542e4856659de35d08167c57010535fe4dc16ac91b7dafed88c4f24058",
+      "stocks": 231
+    },
+    {
+      "stage": "train",
+      "date": "2014-10-23",
+      "data_sha256": "eb7cacadf6b91554cb7c8fae28db03d9f1faffbb43ca1a2ae6ff173ceda03ff8",
+      "metadata_sha256": "edb060c1e745d51712c72d6901adf1b24c24849b50ea8ef21963781a962cfa12",
+      "stocks": 227
+    },
+    {
+      "stage": "train",
+      "date": "2014-10-30",
+      "data_sha256": "a01c22b66a9050689f29dcb1f2e653c9a28e361e59c31c0ce7bf16f6fea7353c",
+      "metadata_sha256": "ead4d7f2c7b33f15ccfd22c6099be384b3556af3eda3852126ffe6d6b69e3ca0",
+      "stocks": 231
+    },
+    {
+      "stage": "train",
+      "date": "2014-11-06",
+      "data_sha256": "69c5c23d7e31e261a34277788eef594d7859415cc603fcb4e25464a594fc3633",
+      "metadata_sha256": "834667e73c51866aa87245cc4792c629e253a78229fc3961a1db1c55aea9160d",
+      "stocks": 231
+    },
+    {
+      "stage": "train",
+      "date": "2014-11-13",
+      "data_sha256": "1058c1597064474a1737f68116f9c3474498709fec2b693b1066dfd2c9c27f33",
+      "metadata_sha256": "5afbf1084494452a20cfc5f84beabff4f2f0e38279f08f4977b686220b3c080d",
+      "stocks": 232
+    },
+    {
+      "stage": "train",
+      "date": "2014-11-20",
+      "data_sha256": "9920d063f500059dd5a0d9a13d2aaa9fa71eabb644fe5a9851cdef2ffefe9ad3",
+      "metadata_sha256": "881131c3be4ec62d7ca9e6c19dd266325a9e3657d3a68c6ce0b4025e2bfaecc9",
+      "stocks": 229
+    },
+    {
+      "stage": "train",
+      "date": "2014-11-27",
+      "data_sha256": "851bfd0bb193e6b88f876acfbbb1427cbb968aa1a36838517e96227ef07e5af7",
+      "metadata_sha256": "621d2e1552ff22a3b7f28e390129607f584fe9e43c8d6ecb36a0dc8edea23104",
+      "stocks": 231
+    },
+    {
+      "stage": "train",
+      "date": "2014-12-04",
+      "data_sha256": "f55fd6c8153b26fd5daad2fc6eff471784524de58e5ee17dadc4ffcedb9c95b7",
+      "metadata_sha256": "e29176863fc3fbcf2c5d8e6abe513b37979e9cca97f57e4405b5b18d2de2fcff",
+      "stocks": 230
+    },
+    {
+      "stage": "train",
+      "date": "2014-12-11",
+      "data_sha256": "37b020d4e6ddebb170851f45d36c3d7a3f4b28e17d5c8ffd654d73a5259db79a",
+      "metadata_sha256": "de9e3d9bbc7ec8ea3af137beec48acee364c1c5fe4e9ae9bce87e05e4e39f3de",
+      "stocks": 227
+    },
+    {
+      "stage": "train",
+      "date": "2014-12-18",
+      "data_sha256": "0215ebcae3812d2eac69ea8e03262f64a7c2e8920cfd2eb9e7c644d6f8f6a7e2",
+      "metadata_sha256": "6160d09861eba05ea8dad100f59843fe427334c6e97c771191f7470878c3c11e",
+      "stocks": 226
+    },
+    {
+      "stage": "train",
+      "date": "2014-12-25",
+      "data_sha256": "35239ddd672fe9419f4bc7c7c518261b2e9897165956ebc580b9df9280063248",
+      "metadata_sha256": "b3e8787f219fd166d48bf48911d24a3eea40a32cbb47afec5a56bacab21904ef",
+      "stocks": 227
+    },
+    {
+      "stage": "train",
+      "date": "2015-01-05",
+      "data_sha256": "3d589591d31e3bdd6660804ca12889dedf65ec2ff42cb2a2d361e6a2d0997380",
+      "metadata_sha256": "36017139cad096364ca822a0a851137595302e7e09c4da7736486a4dfd40a31f",
+      "stocks": 227
+    },
+    {
+      "stage": "train",
+      "date": "2015-01-12",
+      "data_sha256": "5d3912353d232bfd17f2d7e4126d0b1dbf0559caa25c9017d07bb50fe8ed124b",
+      "metadata_sha256": "5ba507a5b2f36af54bf718084281f05333b6ecda2655f75deb73b030936b2db4",
+      "stocks": 226
+    },
+    {
+      "stage": "train",
+      "date": "2015-01-19",
+      "data_sha256": "e6399cb7cb15d77073527f5bfa9487c1ba5c4e54f7f7701025997b2c5bfc4b53",
+      "metadata_sha256": "31ad4b87981371deb5a1cf99e7c812bc388c9ecac63a13e88116ccb2bf4d2b54",
+      "stocks": 228
+    },
+    {
+      "stage": "train",
+      "date": "2015-01-26",
+      "data_sha256": "4e0e2a47b86e7a43bdaaf5e69fddd44a7b10f2865758340deaf1acc427de6ee8",
+      "metadata_sha256": "1f96feec26eb33eed6e8d5550027d2eea3de907c7103a332882b9da3c62f7498",
+      "stocks": 230
+    },
+    {
+      "stage": "train",
+      "date": "2015-02-02",
+      "data_sha256": "989bef54374d80b4bf392e771ae122e1909fd101aa7b169636906aa588f4af03",
+      "metadata_sha256": "5caec1b7019bb000c27365f63684b73def9ceedaefd4d7b8f111d9d4003d8f43",
+      "stocks": 228
+    },
+    {
+      "stage": "train",
+      "date": "2015-02-09",
+      "data_sha256": "7e7c146b1f46ae902f44722e3c770a99ed8b1613502f29929ca69fce342d53db",
+      "metadata_sha256": "37a9108d2a941e8fbd32dc4f919110903e7042798ac6ca15311aa74b599448dc",
+      "stocks": 228
+    },
+    {
+      "stage": "train",
+      "date": "2015-02-16",
+      "data_sha256": "a6022636713c5662c68a8ac86663c1f7aea6c3e5e9ca333d1c289e64abdefbee",
+      "metadata_sha256": "c86a7df095fb68ada7b2a5160382724dba1ba66c7598d81ee11e01bf61400183",
+      "stocks": 232
+    },
+    {
+      "stage": "train",
+      "date": "2015-03-02",
+      "data_sha256": "18454b4b82ef57f2b993c60a7aaf1aa21aecb0a46f54b7dd4ec447fbd7acaec2",
+      "metadata_sha256": "27cb9bf346d3a47a3d26bf62fd2cdb03485567b990cdd31ab2039b3535969b47",
+      "stocks": 231
+    },
+    {
+      "stage": "train",
+      "date": "2015-03-09",
+      "data_sha256": "fdb6ff74b1ad098f8a0dd881bb5045c42f1e9b692c460cf8cbd8c3de1eec1182",
+      "metadata_sha256": "269aaee064bee63dcc4daed427bff1c3c6a910a8511446835f3d8b41b7790458",
+      "stocks": 229
+    },
+    {
+      "stage": "train",
+      "date": "2015-03-16",
+      "data_sha256": "683c48af3dc0caca17b5ce00109ac929a2c195ce2b1e0e12c3e285518139de2d",
+      "metadata_sha256": "2ef843dc0832aa330d53522a484a230cfa425be4e4a721ec516791f0dcf3a405",
+      "stocks": 228
+    },
+    {
+      "stage": "train",
+      "date": "2015-03-23",
+      "data_sha256": "5f4a1c9236ad26923c58f91c64eb690b1126e08ecde274008120f870c4e79c73",
+      "metadata_sha256": "8e0aaef1b7e1b7812f342aab9108dce8b5f5ed116253c825e5322bf676f05e23",
+      "stocks": 228
+    },
+    {
+      "stage": "train",
+      "date": "2015-03-30",
+      "data_sha256": "8a0862da30914fbd16321e9c29dd51f0cfdcfe36e357083bc7795db698da6ffd",
+      "metadata_sha256": "fb64757ae623de867f352b727ac6a3c74a39006a8ce271d6f4bf0527af9dc951",
+      "stocks": 227
+    },
+    {
+      "stage": "train",
+      "date": "2015-04-07",
+      "data_sha256": "8100564636ddb8ee4b5d1324dfb174ae6cbdadb273b73bb5f9e258041c051f0b",
+      "metadata_sha256": "1779f0a782cfb7a62a091173f630d1e816c85ccf8dcfebd76ccf09f86d55d695",
+      "stocks": 226
+    },
+    {
+      "stage": "train",
+      "date": "2015-04-14",
+      "data_sha256": "b8a5c3f3ddc6c4869b44c76ef46b9ddd4c80128910f82cb089ea61b868977b4f",
+      "metadata_sha256": "6b3b40acf6a714cc1ef85e0ad97d711f72b8df317242f1245ed5092dc98fe77e",
+      "stocks": 227
+    },
+    {
+      "stage": "train",
+      "date": "2015-04-21",
+      "data_sha256": "bb01793cac7287772d66161d5b970912097723ca63c670f19e49c6803192be2a",
+      "metadata_sha256": "84d34729e91f6966dbaa47f11b9be36831316ec253a6cf7e84a209ea4a333703",
+      "stocks": 227
+    },
+    {
+      "stage": "train",
+      "date": "2015-04-28",
+      "data_sha256": "84d3c92588fd5daabd122706ae95f8cbaec03ed6e7b36ebc937011b62ae911aa",
+      "metadata_sha256": "ed4fad65e321365e935144119060aad4b393897c15251e50a6cc69ad2c0c1227",
+      "stocks": 224
+    },
+    {
+      "stage": "train",
+      "date": "2015-05-06",
+      "data_sha256": "f9344a26f60b8d5c29843c6db5f442129f23ab341c1383a38d39b8260e42b7b6",
+      "metadata_sha256": "d6d346bf512e95bccd7b6a7b71e7aaffba04de9a7d472d42b0caebaedc0710b3",
+      "stocks": 221
+    },
+    {
+      "stage": "train",
+      "date": "2015-05-13",
+      "data_sha256": "75725bfc769456cf186e3ac774b015361b4070f6a8c60c5caae17cbdaba8dbfb",
+      "metadata_sha256": "1b0ae639c139b6fb98149976fa2cf13a2ce38ffffe66ccf0fd59b6fef681f5e1",
+      "stocks": 219
+    },
+    {
+      "stage": "train",
+      "date": "2015-05-20",
+      "data_sha256": "5dc3d59ffafe1a5956a5ca6b6d0f8f472fb0328c91a64cbcb6ccf913286e9bff",
+      "metadata_sha256": "6995d1e0e4d06347f3569849c42284f3a2f649ceb030e1e17f1b618e863722fe",
+      "stocks": 219
+    },
+    {
+      "stage": "train",
+      "date": "2015-05-27",
+      "data_sha256": "a5c9b751afb92878ccf85a57dd38323b7d1955816a4d1b8e9f68be9cc703bbe7",
+      "metadata_sha256": "291d82d9ce332bb78a8cc78656883e6186c3ed71f029ece129d75c498d104668",
+      "stocks": 214
+    },
+    {
+      "stage": "train",
+      "date": "2015-06-03",
+      "data_sha256": "b919d67a531ab8f7a1e05dbcba0847a712c240734de679fc1077c2e39bde2aff",
+      "metadata_sha256": "2c5a61d62378f67d42ec20ded80a396c2f10266f7420e258e65efaf6d5708da3",
+      "stocks": 208
+    },
+    {
+      "stage": "train",
+      "date": "2015-06-10",
+      "data_sha256": "4b256704f5691b010c824bc41e2bb6b5cbd78a187580012d0e4feacb42b9e6a1",
+      "metadata_sha256": "e99b96f3ba9fddbd5df811bd69cef4b622a8b0d39100c58e3a1efd7630104cad",
+      "stocks": 200
+    },
+    {
+      "stage": "train",
+      "date": "2015-06-17",
+      "data_sha256": "51344d0d782c2b552f1ab190cf1819b2da9dfd2aec3b4d9b3d969d3393724105",
+      "metadata_sha256": "368b7fe9df56ad03da813bfd74e4ece9c598b8a8c60b13d0c6d91792d92d7d96",
+      "stocks": 197
+    },
+    {
+      "stage": "train",
+      "date": "2015-06-25",
+      "data_sha256": "e70e7340493aa445b1f23a57930afe87d4dd3fbf2941b01eba60c496bc294914",
+      "metadata_sha256": "b73f0dbc2d7da30116e5c7c87f5e95fefe51de1db2d3a2bcfe55bebc2738c3df",
+      "stocks": 196
+    },
+    {
+      "stage": "train",
+      "date": "2015-07-02",
+      "data_sha256": "9c38cda857ff6d48df3c8e33b189ef713753f9c93f3404e5e95af0ef0601d2f3",
+      "metadata_sha256": "0b0b0735c383891d262a7d02ad3c2dc9693776740c69ecfa871aa999750382e9",
+      "stocks": 192
+    },
+    {
+      "stage": "train",
+      "date": "2015-07-09",
+      "data_sha256": "a4a03fd658e06184cf107dcc319b8cb3c20bc06ef06d10ba9b07b4c657655e9b",
+      "metadata_sha256": "9c73447710042e2b76b54b3f5483142d8276c37df584ca992c70eeac2dc55e4f",
+      "stocks": 153
+    },
+    {
+      "stage": "train",
+      "date": "2015-07-16",
+      "data_sha256": "8c80612cf8d9c8c1d1dea76913c5f653e1cfa43510c487f7a1f477bce6deb9ff",
+      "metadata_sha256": "c388f4fae60c2c31d79b5e64ae35f3f67cc2694a0c4e04b6d108fb54674d4315",
+      "stocks": 155
+    },
+    {
+      "stage": "train",
+      "date": "2015-07-23",
+      "data_sha256": "59511ac9424e907885d35c4afd80c53fee66c08a637c2162d771d68e9c47707c",
+      "metadata_sha256": "1c85bf49895bfd448dd73f135e53df4a551dcb634e60ded58721315e9b959dd7",
+      "stocks": 156
+    },
+    {
+      "stage": "train",
+      "date": "2015-07-30",
+      "data_sha256": "3897479de23b7dc5c9b9d014d628a72159076ccbf64b4e248779d8af68f5bfed",
+      "metadata_sha256": "c23204ac00c4751a2a79c33e74f9f72071d288f6a83f19fcc5b121676a705aac",
+      "stocks": 157
+    },
+    {
+      "stage": "train",
+      "date": "2015-08-06",
+      "data_sha256": "80c454b27c77891339219a8bf1b6c7604fa9b1add1834dab037546a94b0692f5",
+      "metadata_sha256": "dee70e0aec1c3142b151a262f3d985855caceb9d9015b9f0ddff325985a22e3e",
+      "stocks": 158
+    },
+    {
+      "stage": "train",
+      "date": "2015-08-13",
+      "data_sha256": "32a8e167336765026fc324eb27404859ca709ccf23b2b40b2cd1d2d2db59f7fd",
+      "metadata_sha256": "1f6765a3555c7659db039969705d169b0ffebe3d3e3b4fd688a45d52f019e82a",
+      "stocks": 154
+    },
+    {
+      "stage": "train",
+      "date": "2015-08-20",
+      "data_sha256": "d9d862cb761a1f7647cacd97e4de0e42851b3cc1ccba4e9f13602f8ea998628c",
+      "metadata_sha256": "bc575b797c62dfbc69e9b4cb017e321730343fb4c735fed58f3a8be3a639cab2",
+      "stocks": 150
+    },
+    {
+      "stage": "train",
+      "date": "2015-08-27",
+      "data_sha256": "3da77c409596f4b0eea5da5c22a91e09c11c32d6eba5b96965affeebc06be076",
+      "metadata_sha256": "d05f739e2ea894b6d1b5a2a61805bf4f777ed13afe3c331a8a2a271511fe5a32",
+      "stocks": 150
+    },
+    {
+      "stage": "train",
+      "date": "2015-09-07",
+      "data_sha256": "bd11f6b36a898cefc746dd3db0a49cb15d7336aa419ffa632d1518d4d426505a",
+      "metadata_sha256": "fb9a0dbd5154ef20ba47c7e8c730b8591a65c399045a1a9f90bc09eabac3ebfd",
+      "stocks": 157
+    },
+    {
+      "stage": "train",
+      "date": "2015-09-14",
+      "data_sha256": "0af230aea7f585957174b7bf93fc9aeec0fea6c63255b506a9257dfadb067baa",
+      "metadata_sha256": "97cbf2876169fae90ebfa150059b2e839ebd9c1f802d55d18d2a987bcf499568",
+      "stocks": 157
+    },
+    {
+      "stage": "train",
+      "date": "2015-09-21",
+      "data_sha256": "69ce13e98a51e2fb8cb67e262c5ec50a13e4bcb5def5d9fe4c47e902b5e4a269",
+      "metadata_sha256": "8c1395c4e2c7305fca0d7fcee83d02e7e874284ecb27fd4e21133e5ffd0476d5",
+      "stocks": 160
+    },
+    {
+      "stage": "train",
+      "date": "2015-09-28",
+      "data_sha256": "b5bf074d05460f8d0497da4b9247117eddd70c7f08e445cea414eacc2c927827",
+      "metadata_sha256": "e5e1fea7591f0ae0c7bda2fe1d9562a35ced3ffd12a3422b73c23108f62da455",
+      "stocks": 161
+    },
+    {
+      "stage": "train",
+      "date": "2015-10-12",
+      "data_sha256": "d4273104aa70dfa37b36cedde3da126bd05ac0eb07d6378c671099f1aaab3fe3",
+      "metadata_sha256": "041579f989aaf8c3afcf9b6ef2c8ca2f792901d2a8ce203180be4c2e48d33344",
+      "stocks": 159
+    },
+    {
+      "stage": "train",
+      "date": "2015-10-19",
+      "data_sha256": "b30ff038997c620ddf4f34a9d5346c996735c6067ca9fa8054009166b4a29e60",
+      "metadata_sha256": "725542d9bac6ee0037986a434abe965c3b733587d651e470db1d2144efd30000",
+      "stocks": 163
+    },
+    {
+      "stage": "train",
+      "date": "2015-10-26",
+      "data_sha256": "9ebfd5f948d85e019d110c307c6b921253535b77f9fef189b175c584fa9dfa43",
+      "metadata_sha256": "3f47383db35d22ca0434c8374d821c8a73282f81249150bbfe492edcc276680a",
+      "stocks": 165
+    },
+    {
+      "stage": "train",
+      "date": "2015-11-02",
+      "data_sha256": "8751afa6fca9420b11ba22dd478105ee1d78b7ee05ac0babd344636fb4a2d61f",
+      "metadata_sha256": "8cec699f10bb4041e3f3eb11e642b11fd849a928cb0a5f2ee7a262b6e90bd747",
+      "stocks": 169
+    },
+    {
+      "stage": "train",
+      "date": "2015-11-09",
+      "data_sha256": "d51e37b138aae358cddf64ac088eea49333ede9dd4658c2e2b09d477128aa128",
+      "metadata_sha256": "b05a3dc2684750687849ffa4e87b64078fdd014fe7406f272e710f07f205ebae",
+      "stocks": 169
+    },
+    {
+      "stage": "train",
+      "date": "2015-11-16",
+      "data_sha256": "60a77374de85624edb7b1c818796bde75ac421fe533ae8b58436a444c43fbdff",
+      "metadata_sha256": "d244627e5a9086f36852550f79b3a647352784bedcc84c02bf857cbed67ee2e3",
+      "stocks": 168
+    },
+    {
+      "stage": "train",
+      "date": "2015-11-23",
+      "data_sha256": "2a7e431f9fa2c11a29f336bb2bc8f67796431c85ad855b93f1f406408d09c932",
+      "metadata_sha256": "b9bad220c446906c4df259cd00013fff9fb47f7be4708e0571768f63b574c43d",
+      "stocks": 176
+    },
+    {
+      "stage": "train",
+      "date": "2015-11-30",
+      "data_sha256": "e1e06c5ab31ad1f6c9d3c66b83e2f11532a145b61e147a7f0e3eee9ac82d7a0e",
+      "metadata_sha256": "01e001d54c503512bc8f24abb9fff3d3b8e2a115441aa8aa1bd11b8c94739bd2",
+      "stocks": 216
+    },
+    {
+      "stage": "train",
+      "date": "2015-12-07",
+      "data_sha256": "5c21fbf5d1e291bb14252c4eba9152ee337d9323d1bda5e4feaeea1abff20bce",
+      "metadata_sha256": "ccb58a1f5f28b109ea718df3f818a5c014f72593ed3dc0fd162096d794808c6d",
+      "stocks": 222
+    },
+    {
+      "stage": "train",
+      "date": "2015-12-14",
+      "data_sha256": "b4f3ca4aac3691b3ae02fa224935418616fbcae86c6a5075ad146b0c15338c32",
+      "metadata_sha256": "009e31da6012c92dbe7e19dbc900d7dccdbc1fac4792c3ea227f97adf089291d",
+      "stocks": 218
+    },
+    {
+      "stage": "train",
+      "date": "2015-12-21",
+      "data_sha256": "c8bf3bf80fc104801c40e0b5431cb1e3f730ec765a2720e0023bc3892fb99127",
+      "metadata_sha256": "0abe44aa38767be5932d393f6d0fe2205983bf2fcbd7a1756d1346744b70a229",
+      "stocks": 219
+    },
+    {
+      "stage": "train",
+      "date": "2015-12-28",
+      "data_sha256": "bfbe4d3fe6213a921957ab91d2694d413445e202b8aabcca483019c11dc6ee90",
+      "metadata_sha256": "6f6dfb91de494c9ec9a86706111c0727ddbca2360e265dd604cb9f6a9c0d639b",
+      "stocks": 223
+    },
+    {
+      "stage": "train",
+      "date": "2016-01-05",
+      "data_sha256": "9610a51823129ac1a14ce9aa7cfbee06c2af629d42db87a3497ed3bf85edbc01",
+      "metadata_sha256": "e9cab0747762e12bfd59e25302bf0fd73c8866654b18840128ac709b724079e4",
+      "stocks": 224
+    },
+    {
+      "stage": "train",
+      "date": "2016-01-12",
+      "data_sha256": "d62cfcf2905b659ec3331689ed072429a893f367c3b45ae5eb77ad986715f218",
+      "metadata_sha256": "eac0663dbc6612fb268751c1c8babc875049c51af043008b1fcb3c5aa2031020",
+      "stocks": 227
+    },
+    {
+      "stage": "train",
+      "date": "2016-01-19",
+      "data_sha256": "e7db4c817e6eefa313e5daa515d610896516cfa6b3a9017f01f55374dd042619",
+      "metadata_sha256": "03bbc67149ec6e0e2ba88a98577d99d678c4b64a4881218e6f145f4156edff43",
+      "stocks": 224
+    },
+    {
+      "stage": "train",
+      "date": "2016-01-26",
+      "data_sha256": "826be8e162c585abf5a8b90bc11a46b059cdee1d4254eb61c7210b38f39d1c5e",
+      "metadata_sha256": "17bb75f015255fa8bd6999673e50b6d42f4f62f48725e14387e405c55b0b11c7",
+      "stocks": 225
+    },
+    {
+      "stage": "train",
+      "date": "2016-02-02",
+      "data_sha256": "5b5cf4429ddfce77ddffa0eba6799b14d103aff4cdbf8cc8053d2cf6872a4c68",
+      "metadata_sha256": "c40f66878aa4944e57f7da3b5bbe3a79401079f26b7c185865c5b3a800b095b7",
+      "stocks": 225
+    },
+    {
+      "stage": "train",
+      "date": "2016-02-16",
+      "data_sha256": "1221b4c0a2abdf8842123c9771927f914afc1a1ffbc324feac43521039eaae00",
+      "metadata_sha256": "be59d6f7e81dc7f2a8cd613d90e1bf8597175021ccbe49a2078569060ba21386",
+      "stocks": 227
+    },
+    {
+      "stage": "train",
+      "date": "2016-02-23",
+      "data_sha256": "fa2ec9b60cb04e633f57636d8692a9cc5b24133e71c25fb2e590294727b47e9c",
+      "metadata_sha256": "a471f3af08aa230b80d4e50995c3d61dac4219ee002e4733c296a1b18effc1a2",
+      "stocks": 230
+    },
+    {
+      "stage": "train",
+      "date": "2016-03-01",
+      "data_sha256": "4bde6997323db15b59047bde2c53574a2eeaaec1ec528122f6d4644c1475dc27",
+      "metadata_sha256": "85fb6b1d3beda2f5ea07c31b0e2b3a3009c999febb0e7f7fb5045bf60c1f1c0e",
+      "stocks": 230
+    },
+    {
+      "stage": "train",
+      "date": "2016-03-08",
+      "data_sha256": "c439d7a8c3b3744f38316c836be186d7e1760aca1a9660b13535b4e034427bb4",
+      "metadata_sha256": "5c348c13b75859e9cae71c832049d1d365d8657391c7220a2196d067b41e2075",
+      "stocks": 230
+    },
+    {
+      "stage": "train",
+      "date": "2016-03-15",
+      "data_sha256": "795edc84cb73ef094ab1e7ab883820b29548b5c73ed3393259058629ef0d12a9",
+      "metadata_sha256": "52d8d4d71acce330182623868d3f2a2ef25d6711bf1bef2451033ef67c7f9775",
+      "stocks": 232
+    },
+    {
+      "stage": "train",
+      "date": "2016-03-22",
+      "data_sha256": "23789a1c3e24858c4095923ffd18e7cb6242e5069022dc7f75e81446abfc78d5",
+      "metadata_sha256": "8dcfe1fcabc7a46d172c8260d697817af0a7deb4bed9ae9cf5d2bc360099e20c",
+      "stocks": 231
+    },
+    {
+      "stage": "train",
+      "date": "2016-03-29",
+      "data_sha256": "bcc174c8e70d1b9c7104be64308a26a9e4b2bb1a9236f222abad448baf95a428",
+      "metadata_sha256": "872e55dd7826d97c819d8632eaa74c3f7966f52889d6e4f046a0986fda3da5a7",
+      "stocks": 230
+    },
+    {
+      "stage": "train",
+      "date": "2016-04-06",
+      "data_sha256": "1c30b5f5b938e1cb233e40a8c5f2a766ac1c2ad0adcabfa3733ec98caf4d6c2c",
+      "metadata_sha256": "3ed4cdcaf4c6d5dfd51a703e61f1cfb762016b4cf653d8aca6fb9fb4874ad268",
+      "stocks": 230
+    },
+    {
+      "stage": "train",
+      "date": "2016-04-13",
+      "data_sha256": "9648b73008b227a2c9ba3ca0c275df658ea6d7cc6e914f4bb152224198250c2f",
+      "metadata_sha256": "093e057ac41690802a9e20485234644f6b7fb555f9449bfcfb5467135b262f55",
+      "stocks": 226
+    },
+    {
+      "stage": "train",
+      "date": "2016-04-20",
+      "data_sha256": "65038e5ebe70062f52ae930fa442e42bd36e3992d12cc9741d8740cffab089d9",
+      "metadata_sha256": "7027b5aeedbf5d7b923222c4b6e93a88dcf6dc3a086e95b3c9651bbaf998ef25",
+      "stocks": 227
+    },
+    {
+      "stage": "train",
+      "date": "2016-04-27",
+      "data_sha256": "12b49dd8ba4a59a766d69693116a8c18f9e8f6a613ff643ebbc2c6b5f6814277",
+      "metadata_sha256": "103ff42ebc04f511af4ab0c381d5b493f23b13781650a925c35fc69546d4a537",
+      "stocks": 223
+    },
+    {
+      "stage": "train",
+      "date": "2016-05-05",
+      "data_sha256": "044ba5f092bc01f3fd2e14f7d9ed01dbf8a89d1b9bfae73cf646a5aef208ace7",
+      "metadata_sha256": "0380276a816ee03645a50913b9593c7a45b5e5880c9895b9a3921b6e0b0f598f",
+      "stocks": 224
+    },
+    {
+      "stage": "train",
+      "date": "2016-05-12",
+      "data_sha256": "22ae8a642ebdb23f471dff62c14c4f2bc72d172400009b8c8394efebb422c8a1",
+      "metadata_sha256": "21b872b4620414f88c24ef1478d51e6b2181b420af898b060dc93cedd2c0ef99",
+      "stocks": 227
+    },
+    {
+      "stage": "train",
+      "date": "2016-05-19",
+      "data_sha256": "dd0a42cbbdb7531f6fcdbf5706028c4a3582aeac15bff9a0e8bf3225523a8f74",
+      "metadata_sha256": "b774ecb1dbf27de67cdd7390d0f4f6addfe7a8b1a4ac1007f24687fcfd1a98be",
+      "stocks": 228
+    },
+    {
+      "stage": "train",
+      "date": "2016-05-26",
+      "data_sha256": "dfb3eaadf6ef53603d0e185dae2358aaaacd1902a55c25233d4de5a599b249c0",
+      "metadata_sha256": "b4ac20aaec34485049937146869cff0cc7f1e9e6744ce9cdbcb9c7df1859cb6f",
+      "stocks": 227
+    },
+    {
+      "stage": "train",
+      "date": "2016-06-02",
+      "data_sha256": "00587073e834f8c3d4881ce18df8b5a401178e2d365293b5b2b0208eb21d348b",
+      "metadata_sha256": "a4d69fc38061ee884c75d97652e70155a1117ea05952aa9e57c36f914fdae724",
+      "stocks": 230
+    },
+    {
+      "stage": "train",
+      "date": "2016-06-13",
+      "data_sha256": "6a738f45616774e2c8b97e6d1ac8e612f05da9c85c068bf9a7fb88e418ded85a",
+      "metadata_sha256": "f69c9611e3c8390df37e9761dc41e1bf44574ad1f61c5a7defe4ffedd442b18b",
+      "stocks": 231
+    },
+    {
+      "stage": "train",
+      "date": "2016-06-20",
+      "data_sha256": "6309b43bf2dd7b88de85bb0b96194e95ed56b8216ddf74254d208439b507a0cf",
+      "metadata_sha256": "be2443cc8bfb46e6205fbd040dacf4188ab9154b82da0688480ce3eacaa4e602",
+      "stocks": 229
+    },
+    {
+      "stage": "train",
+      "date": "2016-06-27",
+      "data_sha256": "d55348fbb5cbb93ec0d4539b9f43a7096063fff0b18fd7ba509c3a1a580263b2",
+      "metadata_sha256": "559b65505ea35d42eb04a82f7753d69d48d663929a87a11588ede62f4e5aced3",
+      "stocks": 229
+    },
+    {
+      "stage": "train",
+      "date": "2016-07-04",
+      "data_sha256": "f9d9b36f90ff3b9a8c60797067531ddab4d567f1ff5bdfcdff2761c424309c67",
+      "metadata_sha256": "8861d1a1456bb2780a8dabf3caf8eb93021bf647c87d049edcfdc02849fbdfc2",
+      "stocks": 231
+    },
+    {
+      "stage": "train",
+      "date": "2016-07-11",
+      "data_sha256": "3b4d2bf4402c75c79bdab72e536ba5088f4efa2669fbc1ad881ab68115172eed",
+      "metadata_sha256": "f2056832254112b6b397c558952f7678c9bb02f33c3c48cd1fcc2bc106c6061f",
+      "stocks": 233
+    },
+    {
+      "stage": "train",
+      "date": "2016-07-18",
+      "data_sha256": "2460dedbc544576a7e39bd78efc28183a6bd8a8d263abad3578b4d1b22609a4f",
+      "metadata_sha256": "331b65c3fdcd00312451ad2a6cd11b9c5b2ac9581199f20fdf7b677197f56025",
+      "stocks": 233
+    },
+    {
+      "stage": "train",
+      "date": "2016-07-25",
+      "data_sha256": "3faee6738e57c1b62a798ae5a62d2e0fbdee5a5ec06db6427fd4d2619455205d",
+      "metadata_sha256": "cb15f47916b4f4514bc7a1e6a29953e6bbadc9ced3f19682c0cae72f72e8bc50",
+      "stocks": 233
+    },
+    {
+      "stage": "train",
+      "date": "2016-08-01",
+      "data_sha256": "e278446a9950f31ab5e1bb5fae8ffb4c38a9ab945ff2f0e19e761adf6a9503fc",
+      "metadata_sha256": "f8de8b5365a2bd8c47df825b9ebb4feeaa6fc2a6387aef4987fa9436f79e73c2",
+      "stocks": 229
+    },
+    {
+      "stage": "train",
+      "date": "2016-08-08",
+      "data_sha256": "2e734e7a108f176eb2ceaf22e4174953438596d8e407335c71ba499e82f11d31",
+      "metadata_sha256": "9a4fc456292b0673a11f5f1cba98161e46db0e1edb886bb7924e58ada24071d0",
+      "stocks": 230
+    },
+    {
+      "stage": "train",
+      "date": "2016-08-15",
+      "data_sha256": "15e09979b4d629024d69f8d289108b4357a4da7dbea9a5845f72ef64e55c085d",
+      "metadata_sha256": "bd8e0849fdc17919924256006fa20406c0904ef8a1a67ee1579c330ef24dd5de",
+      "stocks": 233
+    },
+    {
+      "stage": "train",
+      "date": "2016-08-22",
+      "data_sha256": "260f9471f8e552d378bc7ca59d38d649495ed1cd71af7b580f6885f74078d79b",
+      "metadata_sha256": "7e309f29e1c94a287ca8265c847371721d6044e27ab7b2d5e874940683895d9f",
+      "stocks": 237
+    },
+    {
+      "stage": "train",
+      "date": "2016-08-29",
+      "data_sha256": "b0670c568826f43f9f9eb18d7ea6311c286bdd0cff12654f3c47fe61d2e0ef6c",
+      "metadata_sha256": "2c0332ba9f18718338c26fdaa2c7e399aef2bb68234529a3701432d857716921",
+      "stocks": 239
+    },
+    {
+      "stage": "train",
+      "date": "2016-09-05",
+      "data_sha256": "d7739c0c4811de28520eccb265d289e8ed4c35dd66fa96fffd305abfdb80edf5",
+      "metadata_sha256": "c7fba9aa5591e00f54746f63fa2d5f7708cc7a54fa934972e3e34521bce212d0",
+      "stocks": 244
+    },
+    {
+      "stage": "train",
+      "date": "2016-09-12",
+      "data_sha256": "2d3a286cd6856d7b6ad6dca46123f2e45d0bc240345485655747b44f9cc91e1b",
+      "metadata_sha256": "2af53fa00565c001dee7c8c892c4be9ed3724537c7494bd668933e303f6bde57",
+      "stocks": 245
+    },
+    {
+      "stage": "train",
+      "date": "2016-09-21",
+      "data_sha256": "52582aa1ba09b69763455e3ef31edcccc87e60a38055f70db1ff35faa752b7fb",
+      "metadata_sha256": "b8bdb42008b6ecc2dce96e066f70dc2a58b80c08edbc43b130cb2baabc89f64f",
+      "stocks": 242
+    },
+    {
+      "stage": "train",
+      "date": "2016-09-28",
+      "data_sha256": "0de68d825c0ee94ed727f6c80257b536f3a55e0c3c94e72d09cb425929ece502",
+      "metadata_sha256": "7f25aae7059c3c3714bc882fd2a12c4abe797d885cc326cc93a340d3c042f896",
+      "stocks": 243
+    },
+    {
+      "stage": "train",
+      "date": "2016-10-12",
+      "data_sha256": "42b505dc17b6f9c3e266f0dfe02798bfa6c78b4a6b3aabfdee0a3f728631db4f",
+      "metadata_sha256": "a00f3ec1c541cd1d01a15c65876bccb4ce79ed70d1e537fae4d1045c12fcb52f",
+      "stocks": 243
+    },
+    {
+      "stage": "train",
+      "date": "2016-10-19",
+      "data_sha256": "1abeefeda643100ddd9e8c6f2be983c39752dfc3a9f67f72928c941f2b889477",
+      "metadata_sha256": "e274bf77a19d26588b42f8065ee46ae08320931e05725b40786770520160fc6e",
+      "stocks": 246
+    },
+    {
+      "stage": "train",
+      "date": "2016-10-26",
+      "data_sha256": "a4e0c31396dfed4038c61127d9feeee694750408a5ea3e3bcc5757a523da68a3",
+      "metadata_sha256": "6cadf3567ce9f8d0e7a2a6fbabddde72a2a27a95d472457da36e6b05549b897d",
+      "stocks": 249
+    },
+    {
+      "stage": "train",
+      "date": "2016-11-02",
+      "data_sha256": "9997b01ff49b494bd4b11d208840d18993c059baf374830a4638fe9fe017c6a7",
+      "metadata_sha256": "7852178fac5a4c60f1e9810c37bc69748f235eb57ce71fa282fbc411bedb82f6",
+      "stocks": 250
+    },
+    {
+      "stage": "train",
+      "date": "2016-11-09",
+      "data_sha256": "dc94f945457a26f0851eb8b363dd291016372e26571e2f63d0b7adc03de38557",
+      "metadata_sha256": "8e9fd63ab8dfa3e32cefcfb9a722574d14af87b6124c168f1e1e8260cc5c9cc7",
+      "stocks": 254
+    },
+    {
+      "stage": "train",
+      "date": "2016-11-16",
+      "data_sha256": "1c0f154e00e6d6fba23d865706e5baabcedd983b00b3f0a2ba4937524c436b88",
+      "metadata_sha256": "dda59c9c70bb6189a42f601ab981b8a1829f62f3c966a3dda41bbbdefdc06b1b",
+      "stocks": 256
+    },
+    {
+      "stage": "train",
+      "date": "2016-11-23",
+      "data_sha256": "0fae8a747e976ce268837de8f709deb2118d00fbb955584fa6196eab76571e36",
+      "metadata_sha256": "474a0de77fbbc96bb6b700caf7e35cc5e0aa17042e344b1dc6d9a555df1f6d70",
+      "stocks": 256
+    },
+    {
+      "stage": "train",
+      "date": "2016-11-30",
+      "data_sha256": "84025361f758a5a832bf7ec1d6036c2aec1292ae48fb6c2aac01e46537dfc261",
+      "metadata_sha256": "c943fbcead52262b00e1d739ff8ec20f99ea8e41d2aab3c85a2a92ebb4e35d33",
+      "stocks": 256
+    },
+    {
+      "stage": "train",
+      "date": "2016-12-07",
+      "data_sha256": "84dfb8db84863a4cc8bdd191d5b1828579b2441fc8f98f558d1ac69df6946e31",
+      "metadata_sha256": "f28f7e72648503f7ed9f94c7b009d4658acbbee7dfe15a5c96a85f4e4e08e7cb",
+      "stocks": 254
+    },
+    {
+      "stage": "train",
+      "date": "2016-12-14",
+      "data_sha256": "4496b385d18ab9394e7da08c8ba3cd63b3bdbd0b1c4c98267222acacd6ac34e6",
+      "metadata_sha256": "31175ca1be3fe0ba6419e4ea93cc1944359a52474775655a31ccaaf79cdfd854",
+      "stocks": 256
+    },
+    {
+      "stage": "train",
+      "date": "2016-12-21",
+      "data_sha256": "cc0ec23412a275002aa735f1f6b112bc0824c69088a2f8ca735feb73ab3522a8",
+      "metadata_sha256": "a585adad810045dc2cef4cc24cbe430ac7e70116bc74e71cb044903e17ed648b",
+      "stocks": 252
+    },
+    {
+      "stage": "train",
+      "date": "2016-12-28",
+      "data_sha256": "bb76e692982502b56246196a30769be70cd9411745aa35de75933869e440fbcf",
+      "metadata_sha256": "092f23d546b57c60c8aa1b7f2c094946bf8524aca53c06adad5a3ac43a368998",
+      "stocks": 252
+    },
+    {
+      "stage": "train",
+      "date": "2017-01-05",
+      "data_sha256": "4452c83c518e521a3f58310f8b3bf59f440d850f26d421854b1e85b8cfbd2bd2",
+      "metadata_sha256": "e9b2752e530f87bdbd679ed43b051e3f01620ff792ca8d615f4560107b50dbd5",
+      "stocks": 251
+    },
+    {
+      "stage": "train",
+      "date": "2017-01-12",
+      "data_sha256": "20c9a1fe0119442b065d538013dbec200bba52f50bc3785b2fd1e3044f2679dd",
+      "metadata_sha256": "a5bccfc198cf491fb71fc8206dea803a89a484e8010d5acecca887321d82a87f",
+      "stocks": 252
+    },
+    {
+      "stage": "train",
+      "date": "2017-01-19",
+      "data_sha256": "8127a3e21dc51b10e12073cceee55f25b17e17985b74f9c8af33b7c8d861439d",
+      "metadata_sha256": "20de44d2e63ce56e28ba6b48269afde573da93ab005d24b5f2a4709fa68bb8ab",
+      "stocks": 249
+    },
+    {
+      "stage": "train",
+      "date": "2017-01-26",
+      "data_sha256": "65d80771afe044bd23e31fe08e8b6945ba4324f09c42e26b8cab39c91dd22af7",
+      "metadata_sha256": "d71416772a9aa28603dd5c1a19671a69584fe8e6ec1c799d29538c1edc7a4711",
+      "stocks": 251
+    },
+    {
+      "stage": "train",
+      "date": "2017-02-09",
+      "data_sha256": "663bfb9315f189c4338d2b1d86641fa3e74b6f436504f97d9aaed49ba5beb5c0",
+      "metadata_sha256": "42210701f68e07b71f77ec8a1525056bc1c418637548f1680bd1e7d67fc698ef",
+      "stocks": 250
+    },
+    {
+      "stage": "train",
+      "date": "2017-02-16",
+      "data_sha256": "06fb1d80278c28f6adbd181644cbe245e09b9d89f7b175642d6695a9880f2bd0",
+      "metadata_sha256": "ba09fe881154dff5a04d970a4a88a0f57525c382885f5f0d46b228fdd5e2ef0e",
+      "stocks": 249
+    },
+    {
+      "stage": "train",
+      "date": "2017-02-23",
+      "data_sha256": "e74e5d04eee5682746a2c6acf7f545e2175e226e69788e35422db02ea8284272",
+      "metadata_sha256": "94f2a381aa5536556a51497b2bc095b685bfd4eeeacb815681b6a999554520df",
+      "stocks": 249
+    },
+    {
+      "stage": "train",
+      "date": "2017-03-02",
+      "data_sha256": "1acaa940696620a1aaea38b83392ec0016bd25a47b11698af507f05a9c90ffc5",
+      "metadata_sha256": "3c6f9242beed3e593ae4af8703de9de6236bab744706d2313b482480d5fb6bb2",
+      "stocks": 252
+    },
+    {
+      "stage": "train",
+      "date": "2017-03-09",
+      "data_sha256": "562955a26ff917cd08c58bfec9c82c9e7eec4456e72b0ac080c1898a957be5b8",
+      "metadata_sha256": "47f143edfd7ee9f4f97c4c3d7c306cbd0b9474bb5572b7cf5ce244032711accb",
+      "stocks": 252
+    },
+    {
+      "stage": "train",
+      "date": "2017-03-16",
+      "data_sha256": "2002219d97e6ce8642bbece1e1207bacfc8d7e56e9bf986102ca2d9e84a63297",
+      "metadata_sha256": "41f53f8f1fc7a96473af86237d29d31e7747088289531a29fbd099561d9f583d",
+      "stocks": 250
+    },
+    {
+      "stage": "train",
+      "date": "2017-03-23",
+      "data_sha256": "d55dec790a9bf01ddcc75ce2e295eb7bc0a2b8c3073c1f3b3f909e78b11f3efd",
+      "metadata_sha256": "2ac3107fe787108175bdd2839d819252a58d5f0c3356083bee6b3059db4b6560",
+      "stocks": 250
+    },
+    {
+      "stage": "train",
+      "date": "2017-03-30",
+      "data_sha256": "42b11facaab8edf2baf01df44716ba74a79ecfe99e3ed66224c15fcdfe96ee89",
+      "metadata_sha256": "e2042ec8ec20bd12a9e8559cb0f49487140db7c86c54ab58286bb39d5d718d9d",
+      "stocks": 250
+    },
+    {
+      "stage": "train",
+      "date": "2017-04-10",
+      "data_sha256": "8720698d01bc35ac978819071886c15a4b669deb64b442b9ec2d51ac8ca6880b",
+      "metadata_sha256": "a860e27dcd5905a4f023999f9b3d3a74e8e1e45706b5f64bbd86cd4cdbed6543",
+      "stocks": 246
+    },
+    {
+      "stage": "train",
+      "date": "2017-04-17",
+      "data_sha256": "b9f9219d0fbfed3d596662f08395cd552cd7695e0ee7126af45ea5a19a28ffd9",
+      "metadata_sha256": "275040af119a41a2650112b227e99775fc3c20723978457b75c4c9869955ec3c",
+      "stocks": 247
+    },
+    {
+      "stage": "train",
+      "date": "2017-04-24",
+      "data_sha256": "bdafe8bc202a92e350dbbb6d9a3b31cf7883024986400a18409be8626d921c26",
+      "metadata_sha256": "f3548eae226b16c4ed74dd55f015409ef67cb4d854e261976d43ac97f1be7bd5",
+      "stocks": 244
+    },
+    {
+      "stage": "train",
+      "date": "2017-05-02",
+      "data_sha256": "d0c8f742200992ceb89a14baf6c2d8b9cfaf48e0457dbea07b97673b237d81bb",
+      "metadata_sha256": "43ed7d64d7eec43bfbe420f010c5d57dc45f0ed2e7e5900f049c58b9035423a3",
+      "stocks": 246
+    },
+    {
+      "stage": "train",
+      "date": "2017-05-09",
+      "data_sha256": "2ea5f7f838c04dac4d6e2d1a51ae007c766a4fcac87b2a0ab8935f0c2a73f422",
+      "metadata_sha256": "3b42b2ddf429fb404ecd1e6be1197fb36422810945588aef985d4585b4b18441",
+      "stocks": 248
+    },
+    {
+      "stage": "train",
+      "date": "2017-05-16",
+      "data_sha256": "2f58e8ec8c65ff45867673b3690d34f7354afece94ca66e03c6e5d47b2e8f2c2",
+      "metadata_sha256": "58aa4ed7560adb864a32594adc3dbe40a5cd317608a697b6393a3a296709585c",
+      "stocks": 246
+    },
+    {
+      "stage": "train",
+      "date": "2017-05-23",
+      "data_sha256": "d44b6531688db9d3a6755939bec775b5c5ec32f2fe0aa988ca25ddaa17078bc5",
+      "metadata_sha256": "e755e1f78716cad4dac4eb7e717b2b86bea2170448a10a802bd1ccc2c016d465",
+      "stocks": 246
+    },
+    {
+      "stage": "train",
+      "date": "2017-06-01",
+      "data_sha256": "4e0b27e44006ab034c5ba091d3faa0b564b9d1fb242d111c51f9ceb9423b14a7",
+      "metadata_sha256": "d423ee54c9189370471c2095ee96227ff2f834ec81329550459d688892a2a517",
+      "stocks": 244
+    },
+    {
+      "stage": "train",
+      "date": "2017-06-08",
+      "data_sha256": "08327727f8a20e25f11b23545be9d9eb894aa356915c0918326e4d0f050d7c5f",
+      "metadata_sha256": "8ff44b3ba09eae4bc97c541dcc450f1ebc2339089e61985f85efe26e342efd43",
+      "stocks": 240
+    },
+    {
+      "stage": "train",
+      "date": "2017-06-15",
+      "data_sha256": "d97befbf81e1c2f7ef094b20ae9475defe79a18a9340d4f8ec048d7a620c515c",
+      "metadata_sha256": "420b1ffd51eaa71821c6ce2bec234b0f5cc6688eff3f4b333cdbb7c311c8ec42",
+      "stocks": 244
+    },
+    {
+      "stage": "train",
+      "date": "2017-06-22",
+      "data_sha256": "8a8910e99f89c9d48ee23437ba44de85845563da03712271fdfed3a96b4091cb",
+      "metadata_sha256": "0d4bd13390313914289c0aa3c003028bd1d70c98252675de95fbbb3cf4fc23d5",
+      "stocks": 243
+    },
+    {
+      "stage": "train",
+      "date": "2017-06-29",
+      "data_sha256": "e5ef9454e187a2723b453ee90097bd1867c7132f373382a9cf0e4334eea5afc3",
+      "metadata_sha256": "04c0ea28ce3f8cedf070d5711680ec7796dad4982a6419ea7397b78664d17664",
+      "stocks": 245
+    },
+    {
+      "stage": "train",
+      "date": "2017-07-06",
+      "data_sha256": "c617278f352c98a34721ee72fc0b2e973a51c112ead7de9ba48e0fafcd528779",
+      "metadata_sha256": "cc8fd279b32826a98eab35e919727324fb514e42473e5e4c630473c872d55105",
+      "stocks": 243
+    },
+    {
+      "stage": "train",
+      "date": "2017-07-13",
+      "data_sha256": "4a376b3d6047537573abde0fed881533afa1fe419f8c362807c0c194916335cb",
+      "metadata_sha256": "952b4067d9eef00220534d2a5939b2a7cd5837d229b35cd69e5aae9890f01ac4",
+      "stocks": 244
+    },
+    {
+      "stage": "train",
+      "date": "2017-07-20",
+      "data_sha256": "9216d90ac544fb6cee74d6aefa2cdee65fbd3c2e39f52a204cc7a94381515a6b",
+      "metadata_sha256": "3bd859e413d7ec3358ef61a5d8be63c07823bcca4bea80bfadb19472b18cbe08",
+      "stocks": 245
+    },
+    {
+      "stage": "train",
+      "date": "2017-07-27",
+      "data_sha256": "2ae138629352c6c11ef32ad5f776caae19bcae235c86c6958846936aeee2ca14",
+      "metadata_sha256": "bb9b835e7d09714cd5abc6e25d5232aba9e3ad490e600516f76edb2824ec01fe",
+      "stocks": 246
+    },
+    {
+      "stage": "train",
+      "date": "2017-08-03",
+      "data_sha256": "d3ec6012c269ba01906908856c95b1a0211bdbf00831c284adc287dd3dd0d925",
+      "metadata_sha256": "c6a421a272f32720c2490b807305020681b74db74b42089106e61666721f14ce",
+      "stocks": 245
+    },
+    {
+      "stage": "train",
+      "date": "2017-08-10",
+      "data_sha256": "ca12d1767c9ef7154c834d885258960823a1a4424abf278c0b966c10911bb0c6",
+      "metadata_sha256": "23350f53cb39e5eb611da4ed82e89f8c63747de5084442807db6db34f8e2190e",
+      "stocks": 247
+    },
+    {
+      "stage": "train",
+      "date": "2017-08-17",
+      "data_sha256": "b4d711291f212d788ceb3c105f00c5aa016a555c7373596b433ab2cc3873078d",
+      "metadata_sha256": "22f2ab6ef1e0de497deb88c879c4a82e9b20ca7b3bfb842c5bf6ba1d6a5021bd",
+      "stocks": 245
+    },
+    {
+      "stage": "train",
+      "date": "2017-08-24",
+      "data_sha256": "58d1500c50b43687dd2d75e2f658553b465c482ca80c66ffb6d99fd1abf8dd95",
+      "metadata_sha256": "ae37deea85eab849e886e69338ec16aaab136a2c76c641925649da0ee0a7ff3c",
+      "stocks": 246
+    },
+    {
+      "stage": "train",
+      "date": "2017-08-31",
+      "data_sha256": "bafe3ca8b454bbb7242b6e5333d1017ef244594e6f28be47f7e91f77f5681aa3",
+      "metadata_sha256": "26ecb2a522c1e6a09e99333c46ed0b99d2bc7e8538b83be1cfebcf654604b307",
+      "stocks": 246
+    },
+    {
+      "stage": "train",
+      "date": "2017-09-07",
+      "data_sha256": "95d67454d599afae77e060e131e5b5e8a5db2892b30a6e075190c4e358e57cea",
+      "metadata_sha256": "973ef7d61df889e68a4fc196b752aa8e51f444894254c2a163bdb7526bf4fb6a",
+      "stocks": 249
+    },
+    {
+      "stage": "train",
+      "date": "2017-09-14",
+      "data_sha256": "39cf10eed4f61c062fca54e29790d664b9034533f4aa130c1cb9ecf4ee56c685",
+      "metadata_sha256": "89c3e96178124f9024c1f6b8288faeb60c4c04de5d9395f779637bfd0564d027",
+      "stocks": 247
+    },
+    {
+      "stage": "train",
+      "date": "2017-09-21",
+      "data_sha256": "9a452f7b771650cb25c1455149cf01ffb521a1c2f79061799e5228a46b343e8f",
+      "metadata_sha256": "88f082661d7e3968f14bf00ca082dd5f301c8ea93e4161a2bd0f1c6a82e69a7f",
+      "stocks": 244
+    },
+    {
+      "stage": "train",
+      "date": "2017-09-28",
+      "data_sha256": "8dc79fddb66d4b78ed18a47fa52d9a58e023f41928ac02b46b5b66e1e82f8e9d",
+      "metadata_sha256": "f6187430c7e7e811283c804f9b6443ed955085cdadaebf8b7f07c8c19d37c81e",
+      "stocks": 244
+    },
+    {
+      "stage": "train",
+      "date": "2017-10-12",
+      "data_sha256": "a422207ae72cce5ddd8184cb05e8dbab8102ed0a4823ef28ac017e9afa2baebd",
+      "metadata_sha256": "374c0a777a126b6377739fb379a1fb1c73f40f9e845107e9712da0c969ae6379",
+      "stocks": 244
+    },
+    {
+      "stage": "train",
+      "date": "2017-10-19",
+      "data_sha256": "4291d1910ccaae22afc56763cbb27a9a12623ea22e0cb733ae9bc7f80649057f",
+      "metadata_sha256": "3a4f687b001960d5bbfb549a20069dce42a8894b6efe524a07feeb76186c650d",
+      "stocks": 245
+    },
+    {
+      "stage": "train",
+      "date": "2017-10-26",
+      "data_sha256": "4021e914838a9d0ff30e1eef7dbde4fb8e2f7ae2f828f5ec29cd49ca2fb596dc",
+      "metadata_sha256": "4f4dcfb4b3003b0d9d1f3932b17282ed8d31e1e3c3a55ee69cf1780cfef07fa7",
+      "stocks": 246
+    },
+    {
+      "stage": "train",
+      "date": "2017-11-02",
+      "data_sha256": "9db3d7bd1383728a6a58cd0b17e1d3f25c5f482e4d1c96ed76fc3d159c865874",
+      "metadata_sha256": "813f0fbd6d6fea7999642e9e4b2c5eb4bff8fdaed5a323564a01d7315c49807d",
+      "stocks": 246
+    },
+    {
+      "stage": "train",
+      "date": "2017-11-09",
+      "data_sha256": "5cb711c492dae29db8f70288152bbcc2333476c462877421e1af61b125447bbe",
+      "metadata_sha256": "7607e073390a07b15d769e1cae16273e6981fd08e1de15fd1ba536d203fc5e5f",
+      "stocks": 247
+    },
+    {
+      "stage": "train",
+      "date": "2017-11-16",
+      "data_sha256": "fa603bf54187976350cc1d959de61334a7372f7bf215d96c441ffd708e573cb5",
+      "metadata_sha256": "8bae2cccb9d50ffeef31d1b4519590a1878f94bc14295a313f35fd6728b6a570",
+      "stocks": 248
+    },
+    {
+      "stage": "train",
+      "date": "2017-11-23",
+      "data_sha256": "cb58a0b8af9c6bc11f207cb51dfec26f34b8c96e7fdc1e3159260f139bb91628",
+      "metadata_sha256": "d3f3b3580693b93600e669713911715a25cda1e777e054e6a0a31a04632584c7",
+      "stocks": 247
+    },
+    {
+      "stage": "train",
+      "date": "2017-11-30",
+      "data_sha256": "7f6ed51b55f59af3f66534f15ca01ce1f3b9dc96e95a413dfbd1903218ceeae5",
+      "metadata_sha256": "8b51a19f10e5daa834135390f1d7183c3b92f5f33d046c2361dd5defa6b6de76",
+      "stocks": 250
+    },
+    {
+      "stage": "train",
+      "date": "2017-12-07",
+      "data_sha256": "fa1c142a29ce33feafc059b6ab4bf3a636238c1c6c9d47bca5d28cace00ef53d",
+      "metadata_sha256": "fa653d953ca84228d3e67f114c3bd826672edf9216682c080240cd3339a355b2",
+      "stocks": 250
+    },
+    {
+      "stage": "train",
+      "date": "2017-12-14",
+      "data_sha256": "2dd8b03bb870ba653a4e6ed1ded20ee340eeab0c101fe51481b9f9019eb2a4ce",
+      "metadata_sha256": "af0f1c81db1552af194519ca7aaf31f8b764faa24f078c7f35e0e361e45c36fb",
+      "stocks": 250
+    },
+    {
+      "stage": "train",
+      "date": "2017-12-21",
+      "data_sha256": "6d1ba6f9f9b50af4a8a66c977497a3ce8d2315d4cdeb8798a7c2351620b8aff3",
+      "metadata_sha256": "a59023c898f29e45350b7cb4785d100e058fe1e9bf91ea0bacd32152a410587b",
+      "stocks": 248
+    },
+    {
+      "stage": "train",
+      "date": "2017-12-28",
+      "data_sha256": "83f4e11e6b32d8ddef0dcbcff8031f52da64ad76798598b9e9ca5b3223a13ab1",
+      "metadata_sha256": "eeb350d65f8bb3c862b3bd5829e94aa158a2f890528c8dcacb97103204a0591d",
+      "stocks": 248
+    },
+    {
+      "stage": "train",
+      "date": "2018-01-05",
+      "data_sha256": "32f8171f55f260231b92d5028438c1f3aa4bfcfc73914f877bc8fc8ab5d2ce92",
+      "metadata_sha256": "12a6e121c796bd840fc70198b87ab9708692ed0c21c38fac8e0dfbe2d7601c04",
+      "stocks": 254
+    },
+    {
+      "stage": "train",
+      "date": "2018-01-12",
+      "data_sha256": "fa7c5ed643681fd2db3b6bef35edfb3c59cbd02c4e923b99a554c53090bcd0fd",
+      "metadata_sha256": "328a009414091a7971356e57701c7943771cc0dcea32b240a3994288d516713f",
+      "stocks": 256
+    },
+    {
+      "stage": "train",
+      "date": "2018-01-19",
+      "data_sha256": "178bc5658c820048332a010917d7c0a9b787eca33278f3662d16acf138c1ddcb",
+      "metadata_sha256": "6c8205afb25e3d192e3df39b83b033272218efb73383c7efa1183ee294aa5565",
+      "stocks": 257
+    },
+    {
+      "stage": "train",
+      "date": "2018-01-26",
+      "data_sha256": "02d5f11b1c0165497678f7ee2af6fd435f3e9cfc949784ebde66888dc3ac8cf4",
+      "metadata_sha256": "9836fbe7979271685932c7df9c6760a0b7e8145e8e3e01eab64f34926fa5df94",
+      "stocks": 257
+    },
+    {
+      "stage": "train",
+      "date": "2018-02-02",
+      "data_sha256": "bcaa2a7d55e84ef7b6cc12330dc0973be087401a0cefc346f688d085ffad10e0",
+      "metadata_sha256": "4e74cebafdfdc28670ce9b671dd9a1ecf3f99b7843431e04ab3bdd7cc155286e",
+      "stocks": 264
+    },
+    {
+      "stage": "train",
+      "date": "2018-02-09",
+      "data_sha256": "febf0ab0f4da98d99b0c7a3672d7ea0554a29954ca19c9343724e9c52272f7e5",
+      "metadata_sha256": "995dd3d8f120e497e8cbd523e0706e0b174764258480ed25888efa9bbbe3446d",
+      "stocks": 263
+    },
+    {
+      "stage": "train",
+      "date": "2018-02-23",
+      "data_sha256": "b368ef1aaf8d054cdf86ae5adf63e6fea14395c8cbc7cff6dbb5cfe97fbb3580",
+      "metadata_sha256": "3a1caaa3bdec477a690c1885a4634c4b10c097d47fc1345c6fc4a08fab8307d2",
+      "stocks": 262
+    },
+    {
+      "stage": "train",
+      "date": "2018-03-02",
+      "data_sha256": "2955aae15e7d21e24f41b20d875951f3113304ed3a4707f5443a84911739833b",
+      "metadata_sha256": "93779132d5d78fa6c6e4f1a288d68f5e2d3c43bf5c7ddec70084556d21cedfd4",
+      "stocks": 263
+    },
+    {
+      "stage": "train",
+      "date": "2018-03-09",
+      "data_sha256": "00d528b8ecd142eb8548f4a76cf42e794c8d413ae243054f77d2ef0a49fe5661",
+      "metadata_sha256": "fbc147afeb5d8c42a1635b9f808ef831f8fe7ec05452beede5008f6202262d23",
+      "stocks": 266
+    },
+    {
+      "stage": "train",
+      "date": "2018-03-16",
+      "data_sha256": "43df4ec5d39351574521fe5a26fec68ee71475a988755fc4689d0d8decf640fe",
+      "metadata_sha256": "38e18aa99d3875df684d5bd3206f8c4532b41cfed45856a97e0deb1215e61cfe",
+      "stocks": 267
+    },
+    {
+      "stage": "train",
+      "date": "2018-03-23",
+      "data_sha256": "17e050b6cf0f985c8b840dc3479087baf8ebcd93659208b9d26d8cfca48e6575",
+      "metadata_sha256": "fbb78511eb0ff172b423e39ed84ce517c3a0feb94c8eadc5ec1d5fc944933a1f",
+      "stocks": 269
+    },
+    {
+      "stage": "train",
+      "date": "2018-03-30",
+      "data_sha256": "11e156b1f1fc0cf9b3c9d52d309b345ed82c11502d7bddbfb59eef388396541f",
+      "metadata_sha256": "1f063320ce12fd1de740631896431674ca88f72f8a644f1e8c174d686132a4c3",
+      "stocks": 267
+    },
+    {
+      "stage": "train",
+      "date": "2018-04-10",
+      "data_sha256": "5411162193468a18409dc5bfa5f47faf813ad82f60b590ed415bd3f38926a754",
+      "metadata_sha256": "8fa2ea49ca8085f709799dc2254939b32f3721766154597f71c7eeae99a6033a",
+      "stocks": 267
+    },
+    {
+      "stage": "train",
+      "date": "2018-04-17",
+      "data_sha256": "8bfaf038d2a6b84eeb757a4f00c0449c98e50e633c6bd9529f732378b09bb286",
+      "metadata_sha256": "e4fdf6215e5368b861fafecc7f017178810a4ece6eb10d3178cf42ef8f37deac",
+      "stocks": 264
+    },
+    {
+      "stage": "train",
+      "date": "2018-04-24",
+      "data_sha256": "5478accf520dff7e4968d2d47ae9bb8f01df3a40c172330c587dd08ffa9da228",
+      "metadata_sha256": "f087296a9fd457771a8811179fbc16c13481c2b15bdf3c97021c3d1b89ec906c",
+      "stocks": 265
+    },
+    {
+      "stage": "train",
+      "date": "2018-05-03",
+      "data_sha256": "cad92d94ab61ab44ca38675c656db9e566b49526b39bb9677b5838e4e6f25579",
+      "metadata_sha256": "d69c4b2659320a7a4d1e94322644370f7e6bb1372093c02442876bd4dc8b3416",
+      "stocks": 266
+    },
+    {
+      "stage": "train",
+      "date": "2018-05-10",
+      "data_sha256": "927ea164e98018c25ff2759e56d24b8fb7a0a70c5b6212bb16023d01f4ca1b59",
+      "metadata_sha256": "efbaa2893f0b5ca6a0cd4fc83afed840271f8b8ea7e301b4ef16ed51bb29bbc3",
+      "stocks": 265
+    },
+    {
+      "stage": "train",
+      "date": "2018-05-17",
+      "data_sha256": "70aa0bb061e226246978b6f2b82e66867feb099fc11aa7a6ac97751769daf431",
+      "metadata_sha256": "71253f0850550d5bd897cc83916bdbf184b483dc5a1123fa319e3e76fee39db7",
+      "stocks": 267
+    },
+    {
+      "stage": "train",
+      "date": "2018-05-24",
+      "data_sha256": "f2076e7aa70fcb85c4aa58e1cf296ca3fdc47a191c35ab8ac5e9fb26f87d340d",
+      "metadata_sha256": "11c95799e3547600a7765895877af5d5103a67320a596a6aec6fedb0466950e6",
+      "stocks": 267
+    },
+    {
+      "stage": "train",
+      "date": "2018-05-31",
+      "data_sha256": "1350391159a16ca683f2c9a07cc3766c3f36aa7e81579d57f00d0682b26c211d",
+      "metadata_sha256": "909c1fc8c7c9d651199c2957aafac033dbb54a056d5d17094155cf9f0d9ee7a1",
+      "stocks": 265
+    },
+    {
+      "stage": "train",
+      "date": "2018-06-07",
+      "data_sha256": "39984d6bf0d567f7a1c68c4078c47e3bf6002b2b2990b3002a0df40c8d5d9b68",
+      "metadata_sha256": "51d5664f95aa0eec2ce7ec097e92e9fbd0db6352588a3d36b68b037142a4a4d3",
+      "stocks": 264
+    },
+    {
+      "stage": "train",
+      "date": "2018-06-14",
+      "data_sha256": "992897d072ba815f7218122faa956e966c08be8684a10ad32377338a429a5ecc",
+      "metadata_sha256": "e05e444fe9bf5302878e3a882027b4831bf1e519a8a367a9cfc5f3785ffb1ad0",
+      "stocks": 263
+    },
+    {
+      "stage": "train",
+      "date": "2018-06-22",
+      "data_sha256": "569bbab55e80ad823cf8c1fc119e76500293f7108ecaf7a782be39bda34e7b10",
+      "metadata_sha256": "972c3eaa90b4928088da95b322dd04b4462e3c93f0895704bc826f859f496630",
+      "stocks": 266
+    },
+    {
+      "stage": "train",
+      "date": "2018-06-29",
+      "data_sha256": "6166c57a1d279be6e79475b63606814fc99587b21f9226bae9e53da5b3f467bd",
+      "metadata_sha256": "161d633efb971a7bdcd425b0d3c02698919b22db284fe7f39afe86578571762a",
+      "stocks": 266
+    },
+    {
+      "stage": "train",
+      "date": "2018-07-06",
+      "data_sha256": "8b0891a35e4fbbb0eef4f19bb979df080623cb7c348e9e92ab358bd8beab55eb",
+      "metadata_sha256": "75d21a6aebbe0032b7ac64a66a02826d437453b9059b10a7536aa523734c1a19",
+      "stocks": 267
+    },
+    {
+      "stage": "train",
+      "date": "2018-07-13",
+      "data_sha256": "140f43b54bd35dd22a1f5aff3637120117befc993e859d90b539bc6dff3cfdcf",
+      "metadata_sha256": "9c28a095d8d4d237c64b4d6307788b83bfe669acb3736b300a7a74bdbd2fc3b8",
+      "stocks": 267
+    },
+    {
+      "stage": "train",
+      "date": "2018-07-20",
+      "data_sha256": "10895457f13e877b71ad5027ba139a030ac7029d8e8a0848c80278ae1cd2b412",
+      "metadata_sha256": "72fd9f0b2128412809b83576f9ee06399b84c720cdbe7b0a4eef6fe302f277ac",
+      "stocks": 269
+    },
+    {
+      "stage": "train",
+      "date": "2018-07-27",
+      "data_sha256": "087f3485d0bece9fb1c4514d85af304eeb0c668a6cf3d4eb84fc8c19c39c9b25",
+      "metadata_sha256": "bb76ef8b06780192605bc36518df1c373a1ee18005e23dfa84155c9cb1a14241",
+      "stocks": 270
+    },
+    {
+      "stage": "train",
+      "date": "2018-08-03",
+      "data_sha256": "e48789229bb9376ab4fe05d9954fc04ff09282e63aba62730cb0f2eab325e9db",
+      "metadata_sha256": "b1bb0826c28e7e4eb1b4eb60546b71658bdac58950be7400c351710537420ecd",
+      "stocks": 270
+    },
+    {
+      "stage": "train",
+      "date": "2018-08-10",
+      "data_sha256": "e1b2b6ca0e8a0c1cef048f16a729de19e05825b96eff8524b87bfbfee215d6ed",
+      "metadata_sha256": "50284275cc2f1edc9dee66b4a0f7cd235b720b1cc1d280fb91510b433270348b",
+      "stocks": 269
+    },
+    {
+      "stage": "train",
+      "date": "2018-08-17",
+      "data_sha256": "45e40e42fe85266f88c9d8d673f4c6d5985ffb6f388e03d2dd7e1cdbb91639e4",
+      "metadata_sha256": "63f0f2fb3b4463705dca3c36165dcbe947b19522c84af481630acdb4e56d6c52",
+      "stocks": 270
+    },
+    {
+      "stage": "train",
+      "date": "2018-08-24",
+      "data_sha256": "1f9665a71d483af0cdde14f21455d8a9f867c19d946dd06ee30ca4a11f6a1c3a",
+      "metadata_sha256": "7ae15098931f0547e43060622378898f92eee2764175a0aed9ae1c7deb9d2504",
+      "stocks": 270
+    },
+    {
+      "stage": "train",
+      "date": "2018-08-31",
+      "data_sha256": "d9f963ad25fca54334dd54a963d665649f1868d0efe905d6e32230d0e59925da",
+      "metadata_sha256": "a09889966d8fd55b3dff258649831654e19319a39d125c060052afeec74ec9fa",
+      "stocks": 273
+    },
+    {
+      "stage": "train",
+      "date": "2018-09-07",
+      "data_sha256": "1e2b15877af6f64e26f803853a065ef32243d75c283d7519686bfad6680d80e7",
+      "metadata_sha256": "50e3bec733383092bf73220fe660904dc0bd806108c34162347c83c94ef2f2df",
+      "stocks": 274
+    },
+    {
+      "stage": "train",
+      "date": "2018-09-14",
+      "data_sha256": "a736a67a6d0358b805d01de9c1bcfb238b8b67effcf77d7326467d9c2eecb914",
+      "metadata_sha256": "278c3190eee17ba18fdf3f82c3e55e967fd5e8641e56e331d43f9c8bab4941e1",
+      "stocks": 275
+    },
+    {
+      "stage": "train",
+      "date": "2018-09-21",
+      "data_sha256": "9a9655fa7424fa1802cf3847c749f25a0df1a649c0239aebf093f58167a9be0d",
+      "metadata_sha256": "1f4bc922b62fbbe2fb9e17eacc388bf0cce21e20f5e0b44a8db912c3ba577f57",
+      "stocks": 276
+    },
+    {
+      "stage": "train",
+      "date": "2018-10-08",
+      "data_sha256": "2aa017190e079a3bbd5569f3f7d393704e9531e275779abbb342f38fb8d97125",
+      "metadata_sha256": "dc522affdbd85b8c8b5b823a80b1e5c256db503edfe6d89c276cad43aa943c27",
+      "stocks": 276
+    },
+    {
+      "stage": "train",
+      "date": "2018-10-15",
+      "data_sha256": "e7205260f0b89a096bfaa21040fd2188e92bfe33a1359ab8f2633ed9efab3885",
+      "metadata_sha256": "9933b27b9030c733a002fb1da3fbaa46b0d25c6e6c389f020cc7af74d73227f0",
+      "stocks": 277
+    },
+    {
+      "stage": "train",
+      "date": "2018-10-22",
+      "data_sha256": "87d5fea16549427ad9cea02c4d528fb6700b370ced1428f5a1784fff3b379745",
+      "metadata_sha256": "66aca5ff701d249830ec089b29f6e335580e94c1bd8d6d536e54b5383e21247c",
+      "stocks": 277
+    },
+    {
+      "stage": "train",
+      "date": "2018-10-29",
+      "data_sha256": "34ec3e41688c78303d3cbefef8048555483c476954764d587f9c226496fc61d7",
+      "metadata_sha256": "ef17a83fe1e252ca156dafda0d56f96c688dbb183671c99056761bd77d21b36e",
+      "stocks": 277
+    },
+    {
+      "stage": "train",
+      "date": "2018-11-05",
+      "data_sha256": "24fad2f361b3be5df4315c9f7db2bcf2e730162c706a96fe7eb6d4efcae84dcc",
+      "metadata_sha256": "2241efd10df3745aa58ca16fab46887a83a9e8485f17cc4cea5df33d7cbae6b8",
+      "stocks": 280
+    },
+    {
+      "stage": "train",
+      "date": "2018-11-12",
+      "data_sha256": "3c3960a5255e7280aea6277d6fd72cf59afaad6570e1decdbb63c054715e28b9",
+      "metadata_sha256": "77f93c48c07084c92904950051231afe49de4ae9302e561b97029640dd38d44b",
+      "stocks": 279
+    },
+    {
+      "stage": "train",
+      "date": "2018-11-19",
+      "data_sha256": "4a605e0aa672f7cb8742307ad8b8ea1487d4d2e82367ec7bbcca6fb52e51dcd0",
+      "metadata_sha256": "879a60d58b103970e50ad5977b1a3a4216c630079683f0c05751e564e3a3b038",
+      "stocks": 279
+    },
+    {
+      "stage": "train",
+      "date": "2018-11-26",
+      "data_sha256": "81b79cf7215319fb1356238c7c0c8368a78410f175635e278f8887e7d624426f",
+      "metadata_sha256": "6a2d339f0b85dd919bd16d094aed071cb8de6272470f7c71abc6478511ac7703",
+      "stocks": 278
+    },
+    {
+      "stage": "train",
+      "date": "2018-12-03",
+      "data_sha256": "ad900be89c16bb8fb8340643a72306b8188a428940fdf9d524480b921a65b723",
+      "metadata_sha256": "a1ada99a558030274ffebdbec7f411d2e74591231193c9954588d25226610297",
+      "stocks": 280
+    },
+    {
+      "stage": "train",
+      "date": "2018-12-10",
+      "data_sha256": "5d58ab8fe3ce2316c96369b2b1e51940c488f8d218ae405d8a35c93fe351950d",
+      "metadata_sha256": "6cfa236f680ded9c9995255f285922c6e466a86543c5af080cf534cf6ecf82b8",
+      "stocks": 280
+    },
+    {
+      "stage": "train",
+      "date": "2018-12-17",
+      "data_sha256": "d82f52a0f036e67c46fb825e4af39e13363b190fbcd8972d984d94aa4cfc2871",
+      "metadata_sha256": "6b3bd1504bd63cea86755a0f44cfd6195412f98797c6313dcd0f3e242cf5feb8",
+      "stocks": 281
+    },
+    {
+      "stage": "train",
+      "date": "2018-12-24",
+      "data_sha256": "6ab915eb7c70f9f8d209be2d7c0b8472eba2582ef70c86f8f74d977c269deb0b",
+      "metadata_sha256": "0535435f4fb8a3e188de41849b3767f84e1a272fbdc2aeb234bad42a018a23cf",
+      "stocks": 282
+    },
+    {
+      "stage": "train",
+      "date": "2019-01-02",
+      "data_sha256": "6888cc89f7e02b0efd9946f4d706ef6d0e2530de58181a84884d454b4438811d",
+      "metadata_sha256": "50a3dd09dfe34d4f3ade1d18847bc5c53d79919b5be23383bf76a1c86ea67fd1",
+      "stocks": 282
+    },
+    {
+      "stage": "train",
+      "date": "2019-01-09",
+      "data_sha256": "af8f2c255c5a4cebd965734ae79fb8d3a4088c795349cd3d19943927dd7b66d1",
+      "metadata_sha256": "0564161bc997aa092f0a6ab73a2903a7b793ed8467bd11f6c806e9f62bcb32ca",
+      "stocks": 283
+    },
+    {
+      "stage": "train",
+      "date": "2019-01-16",
+      "data_sha256": "a11af4eda3675abdbcc142ee5f07870ecc057914da6a1720c3b1ea77681b7672",
+      "metadata_sha256": "3c0703ea71a78f000ce97dec9401832f1ea4d92916f779dfcd8016557f1854a9",
+      "stocks": 283
+    },
+    {
+      "stage": "train",
+      "date": "2019-01-23",
+      "data_sha256": "287210ed1a5ca152401c65d5a1fb272101e67acab81bba8cf90e6f0662cf2c50",
+      "metadata_sha256": "3e9322877bd23f68da74984227ff0320a39ea7dd18226596727675b5328d896f",
+      "stocks": 282
+    },
+    {
+      "stage": "train",
+      "date": "2019-01-30",
+      "data_sha256": "1d657c70b92fb47959fe3099388fa4bf60efe2e393a9249f6f881fed0c08d4af",
+      "metadata_sha256": "f6c37a148b181ea7830096e8b8fac00fb7ec8a1c3af5d964a9306acd84d5a54f",
+      "stocks": 282
+    },
+    {
+      "stage": "train",
+      "date": "2019-02-13",
+      "data_sha256": "c162a42052f49522be8125eb4fb0b856e738829f092754d8c21a959b59144653",
+      "metadata_sha256": "b777eae7c30d66e9e28ff8ef4bf42f992c1965b8d42f38a752abd48db9434c20",
+      "stocks": 282
+    },
+    {
+      "stage": "train",
+      "date": "2019-02-20",
+      "data_sha256": "eae29cd3589314b2f83fbe2740dc3f38faa4e6fd894df259cb1cfc2045baa81c",
+      "metadata_sha256": "99272dfa67abe10a44022ae4524731312845fb2ba87d858ae4bce453db8e4665",
+      "stocks": 283
+    },
+    {
+      "stage": "train",
+      "date": "2019-02-27",
+      "data_sha256": "df8a991dccedd8927963fbb3229567ce0c98720a4d793a2178d8be29ef642ed8",
+      "metadata_sha256": "f6dfed44a6855cf1137a5e4dd66faaaf95e74c92d05919ba43130ebe2a6245be",
+      "stocks": 282
+    },
+    {
+      "stage": "train",
+      "date": "2019-03-06",
+      "data_sha256": "ae4a68fd885ed7577b5c9de182e613daf6442ba09069691e6f73090c3b4274ff",
+      "metadata_sha256": "0e3d00bef50afa09fb693467e0a40f1ff782ec2bf7a46fdca3d25200f8fc544b",
+      "stocks": 282
+    },
+    {
+      "stage": "train",
+      "date": "2019-03-13",
+      "data_sha256": "658b0fe2c51cec7f6c4a6d179e9911d775a48e19a734d37e97e431a7dfaccf5e",
+      "metadata_sha256": "4b96b4765767e75d8fb5381ad3eaf52f7c041f7eb2341b9f24eceea66f1981bb",
+      "stocks": 283
+    },
+    {
+      "stage": "train",
+      "date": "2019-03-20",
+      "data_sha256": "ddf86108d32f683c7b1ed4c74a8ec1623ad948371543fc12d7d7615be27284d9",
+      "metadata_sha256": "1b2a6b57b3a559a6d6f42582605b0e185966c82bdd2edbb92c6f7f41a0ce8431",
+      "stocks": 287
+    },
+    {
+      "stage": "train",
+      "date": "2019-03-27",
+      "data_sha256": "d72088e34c42f1f5f657c23de4b7f981cc739bb954612946439c1417a7012e76",
+      "metadata_sha256": "8d7e5cff806882840abaaf1c36b0d89c91a7a1bb62cbb3b5d95bf661517b28f0",
+      "stocks": 284
+    },
+    {
+      "stage": "train",
+      "date": "2019-04-03",
+      "data_sha256": "8555756212318e1d9fe18fc42ef7652ca5a860174ca045f7cec39d59be45a339",
+      "metadata_sha256": "4387337468595d55562ee5e763bc2a54ac698d482d8ff8363cc0859e46054387",
+      "stocks": 282
+    },
+    {
+      "stage": "train",
+      "date": "2019-04-11",
+      "data_sha256": "473761c81de9d8ac630a7f11f3ea962ac9bcb9ca647e89e380e72a5f698383be",
+      "metadata_sha256": "b8607cab3f0e5ce1a94095905e7078deb83a5c15122c4d6308d439a4ce802d5a",
+      "stocks": 282
+    },
+    {
+      "stage": "train",
+      "date": "2019-04-18",
+      "data_sha256": "f30f01caffccd9cb11a7be225b3fa904e8b83f66240aebfb6110ebfada7ba788",
+      "metadata_sha256": "0ac346a82924bff51d7e7ab9ab1b169cc82b23885e25c1975d47ef97886d6044",
+      "stocks": 283
+    },
+    {
+      "stage": "train",
+      "date": "2019-04-25",
+      "data_sha256": "c61fe80c20e82f76101ed04e46ed06b46b495bf149d9eb7fd95ecbbb8695df82",
+      "metadata_sha256": "4096299737e5983f7fc1bf2c2516964b5dbfbfa2a07d1f6363f3d5f615a472db",
+      "stocks": 284
+    },
+    {
+      "stage": "train",
+      "date": "2019-05-07",
+      "data_sha256": "6385bc06de992b6b4f56640b09e467482c80a8a778c22e10f70e570c2bdf2d76",
+      "metadata_sha256": "43c28c3e4a4211004b238c6434a5e50f89de933487d0d3379961114965ade982",
+      "stocks": 281
+    },
+    {
+      "stage": "train",
+      "date": "2019-05-14",
+      "data_sha256": "0f16954b461e9ec0bf79791812ec2f9d3041cf57e6f628a570cb2d24d1711dba",
+      "metadata_sha256": "bfac45998ffc0d4ef83535dde0f51e86f882de5ba405a0757f215c2f2e27360f",
+      "stocks": 281
+    },
+    {
+      "stage": "train",
+      "date": "2019-05-21",
+      "data_sha256": "b9d2b83d6d95770ef1399b8057aee789fdc8ce54a40fa6e630abc2485f0b6a3d",
+      "metadata_sha256": "1fc7ee121fb91f35c2c39a7469afa63f3cfc06fdd8ba31a1d89601c389e041eb",
+      "stocks": 281
+    },
+    {
+      "stage": "train",
+      "date": "2019-05-28",
+      "data_sha256": "7658f315b1d3e2a5598b72f212753d1a2e2daafb48d906ae7bc6795e9fb5f950",
+      "metadata_sha256": "5521f1eb1af533ad45d58078a23e6a160bae9ea17e49280a63d4018f255ce153",
+      "stocks": 282
+    },
+    {
+      "stage": "train",
+      "date": "2019-06-04",
+      "data_sha256": "4ade663225b196c984be5fbfd66859aa744ee4bd91c1f7717d22b505045013dd",
+      "metadata_sha256": "0cd61c22d5362d30fc144e8945b53fe555225bfd9f8bf5c7ebf40cb6dd749633",
+      "stocks": 281
+    },
+    {
+      "stage": "train",
+      "date": "2019-06-12",
+      "data_sha256": "c467adb046fedbbfdba30de9f75202d20189a4b1000100aad6b123c7728ac3ea",
+      "metadata_sha256": "8d905ea8e9fefcd985d2aefe2dacc3f759f57054b82e3ad268feb06edb6f1a05",
+      "stocks": 281
+    },
+    {
+      "stage": "train",
+      "date": "2019-06-19",
+      "data_sha256": "88bc7f57f2ad872fde9f78fc4d2b9e4fc899499c2405d0d45b7eb4365f7cef9f",
+      "metadata_sha256": "b4e360d52869d60aca1c2cc8f3ba1af1426e4d4c91b96eaec3f17300e101f51b",
+      "stocks": 284
+    },
+    {
+      "stage": "train",
+      "date": "2019-06-26",
+      "data_sha256": "655e6cba6eab72e270494e0b1ac6173f4ffb0cc933b575020860cc99b00f8537",
+      "metadata_sha256": "c7207e08db04e21819c19db2cff252327935e36ad5aaa2f746ca3bd2a8c2a732",
+      "stocks": 283
+    },
+    {
+      "stage": "train",
+      "date": "2019-07-03",
+      "data_sha256": "4773237c96648930043d642a3511efa70aa3aa1d156fc046617e2db1e1f18bf2",
+      "metadata_sha256": "87c6ec152bda5c01efe418ed8b67b71a541f0b723c3b579cb19993167c182d7a",
+      "stocks": 284
+    },
+    {
+      "stage": "train",
+      "date": "2019-07-10",
+      "data_sha256": "8f890ff38e07a24f3955ee634f23f44e2480d21db10b1996205d11576040ac8c",
+      "metadata_sha256": "2aaa64fbfd4afd4335e7684bec1a4f453264bc7f9386ca3c24315a4fc1e1e8eb",
+      "stocks": 284
+    },
+    {
+      "stage": "train",
+      "date": "2019-07-17",
+      "data_sha256": "7f49c81af7eaa4d2bdafd34e36540852add95f78daf8fa91587faa9b2f8ef2df",
+      "metadata_sha256": "0f31e0bd3023ee3477ba01f89d2f311e0129f71f4d5facec9017c65b2a7ef217",
+      "stocks": 284
+    },
+    {
+      "stage": "train",
+      "date": "2019-07-24",
+      "data_sha256": "33c75063a0e25190a1b38b3d28e70b5aacea7470437c91052e9c3d1115e712d9",
+      "metadata_sha256": "e850e054956ecf0142a388a8b2822eeca8caf557df720fbfcef264a22e4238f4",
+      "stocks": 285
+    },
+    {
+      "stage": "train",
+      "date": "2019-07-31",
+      "data_sha256": "c478133d8dea129c029fa17085bc0f5577b312305fcf0de22ae922c1b91bb760",
+      "metadata_sha256": "5151d53bd4c918ddd9640b73f07f6dcb119529d35bfa5a77b882f072c60de7ec",
+      "stocks": 284
+    },
+    {
+      "stage": "train",
+      "date": "2019-08-07",
+      "data_sha256": "a75bb92eb89de7c58352322e5e079ecbb62bb23f3a1c0c56fdd800e3e3584ba7",
+      "metadata_sha256": "e8c68b373916debf3b231435d28c48668586e3f1e0191a707993cfe260db6437",
+      "stocks": 284
+    },
+    {
+      "stage": "train",
+      "date": "2019-08-14",
+      "data_sha256": "a4bfd9a9e8b3805893f83e782111778a6d5c822b16d61e193ab290e942dc99b6",
+      "metadata_sha256": "9bc65bc98965a5144de979eba712a8a1be129823860271f3da024ee0325f50d6",
+      "stocks": 286
+    },
+    {
+      "stage": "train",
+      "date": "2019-08-21",
+      "data_sha256": "0ab76289afcc33eb327fc637a9e02b80dbdfa910a2563432ead902d6dc218930",
+      "metadata_sha256": "ac2918fd9cb2b91b52158a30d6978040f0023baa578a4ec5b80e92c4e1b8588f",
+      "stocks": 287
+    },
+    {
+      "stage": "train",
+      "date": "2019-08-28",
+      "data_sha256": "5802c1ed7f7bbdb5c4893c08c8151431325dc8ad325877b1e949bc74d6275217",
+      "metadata_sha256": "43167e61e1a7db686561d5ca4baf8e8096a48dd78c4dc1f172eadf4124c0c254",
+      "stocks": 288
+    },
+    {
+      "stage": "train",
+      "date": "2019-09-04",
+      "data_sha256": "290b6ee8b7da63e0d0b7e8c23bcd9e0b33a7f9e3fd37013e1892067e4c556327",
+      "metadata_sha256": "b73af646dceba8c5bf8f1e380ef5776d61c05e0664a0e43a6a3b4c80b7398a25",
+      "stocks": 289
+    },
+    {
+      "stage": "train",
+      "date": "2019-09-11",
+      "data_sha256": "d576a4f4118398f9e86a5a24c742df655efb1a3361385e66112331bec9e3fca2",
+      "metadata_sha256": "507aeb2331ef3c9dd6db2b726d8c05c7a92c48a704cdbd421f40a2280ce6d51e",
+      "stocks": 287
+    },
+    {
+      "stage": "train",
+      "date": "2019-09-19",
+      "data_sha256": "d9d84d6ee117429eccb5e2a6ccf9e71fab95dce6f84d273b8e296d8df59b185b",
+      "metadata_sha256": "5556b3c8dd6cb93edb69b3e6d0fa7e812fa81f9bf6d08b2301c3cb66083d3627",
+      "stocks": 288
+    },
+    {
+      "stage": "train",
+      "date": "2019-09-26",
+      "data_sha256": "b99ff47676266782fdb922d0da43bb1e9e747bde727d54d5c82067cc7658fb4e",
+      "metadata_sha256": "73e82928e9613d7d68347a8d6cb51a34a3d6d8c411d424b28a4f09c24a01c0b4",
+      "stocks": 289
+    },
+    {
+      "stage": "train",
+      "date": "2019-10-10",
+      "data_sha256": "7ace95493964eb264cb722f47adff937ced8bc291ebafc36b86adf09920a6415",
+      "metadata_sha256": "2c42ee6cb62c934ede1c016b1615a24b1a30e2b66bcefcddaaff08f2c29121ce",
+      "stocks": 288
+    },
+    {
+      "stage": "train",
+      "date": "2019-10-17",
+      "data_sha256": "6cbe4ba3332a3164bce2f95e04edfa33ef49d6e7d6850bc9248051a2fcf72452",
+      "metadata_sha256": "feb9163ac787b37b2048af7516b8903be9aa761245d03889453ec84839d73c22",
+      "stocks": 288
+    },
+    {
+      "stage": "train",
+      "date": "2019-10-24",
+      "data_sha256": "175f4ed4cae4e562f873c40f5ff8409e92e2970bc604660a867b83f9b3e83d4f",
+      "metadata_sha256": "bfccc653d1ae468effebfebb0c272071da6ae0880a7705e12f88edee82769306",
+      "stocks": 287
+    },
+    {
+      "stage": "train",
+      "date": "2019-10-31",
+      "data_sha256": "c6d0bc3fe48ab0e0b21ea1231de53aea231ab64bea928108d2d3f03ecde635e6",
+      "metadata_sha256": "3a08b585e4d1aeb4487eb82e1afcf0d9f409bffec5acb2160d319abaab035abb",
+      "stocks": 288
+    },
+    {
+      "stage": "train",
+      "date": "2019-11-07",
+      "data_sha256": "7b0289e98bd96d68860bbcf8af1c68c60bc01ca89ff20bd590ee668beb1d23cc",
+      "metadata_sha256": "8516e209797b645600a0ed52f2a409ee99ec60a3f6e70cf9413ea2f3bc82ca3f",
+      "stocks": 290
+    },
+    {
+      "stage": "train",
+      "date": "2019-11-14",
+      "data_sha256": "69bea194687662cdeb3a3746666434fc9e4371cf728def5c3fea813e42814f2f",
+      "metadata_sha256": "070aeb77c875efa3a64d325d137bcca336076cac1937eb4a34063aaa33ae26c3",
+      "stocks": 289
+    },
+    {
+      "stage": "train",
+      "date": "2019-11-21",
+      "data_sha256": "477817448993f1489db5a05c2d5a270e8d6c2dd67dcc9d06c678b8ab8c53e27a",
+      "metadata_sha256": "bd91f3303f52fc0749234dbd6787b9a47f4a5742e34b5192d4449ef13e244b85",
+      "stocks": 287
+    },
+    {
+      "stage": "train",
+      "date": "2019-11-28",
+      "data_sha256": "33f7c8c1f43879ffa49ae3dbacdd5d24be17a406d477b135d5a83c98fcfb4e14",
+      "metadata_sha256": "03c2e00c79aee3d35561ecb5d2958c6e7d9d5a07c997d89e88ba081796fb5814",
+      "stocks": 286
+    },
+    {
+      "stage": "train",
+      "date": "2019-12-05",
+      "data_sha256": "963fe70a68ac5d3c3684b1ea96c84cf8854c30b14a663f457aaa4809da0acac7",
+      "metadata_sha256": "aac0edaaed88d5017f0c0b76daff57c00e74ea63d8898172c92b65c3b8dec10b",
+      "stocks": 286
+    },
+    {
+      "stage": "train",
+      "date": "2019-12-12",
+      "data_sha256": "578a21b79d71fbd6b818051c94f3a1a57b5b2e30d3131a7fe44cab3956f8baa9",
+      "metadata_sha256": "45d56aa9c21523779b793f0bc12587f453e95fdd6a105a08250ab38d6da6918b",
+      "stocks": 285
+    },
+    {
+      "stage": "train",
+      "date": "2019-12-19",
+      "data_sha256": "bac796ff709e2a0da70241059fb85fd3000302f0ce2877729c4268ec6c20b2e0",
+      "metadata_sha256": "7fcde69887a87aeba593bd8312604af75705dfc5e648d6faa4e7f9d0c011d197",
+      "stocks": 284
+    },
+    {
+      "stage": "train",
+      "date": "2019-12-26",
+      "data_sha256": "b8f38da385a58bc6c0782fa47fb2412101651d0aaf9d39ed49a7658030ddee52",
+      "metadata_sha256": "d629756640f2276e4587c5b1ef3c6f623f12569d51b6b91f3e9e35dc19d3b6e4",
+      "stocks": 284
+    },
+    {
+      "stage": "train",
+      "date": "2020-01-03",
+      "data_sha256": "517750f3aaf5c450b3053617ca11995ffcaa507940b97fdfe74e893733c397b5",
+      "metadata_sha256": "c4e3223fafcd0e7c904784aa664b647dcf52ec2d1d41320eb6c36324790a3f16",
+      "stocks": 283
+    },
+    {
+      "stage": "train",
+      "date": "2020-01-10",
+      "data_sha256": "bdb5187243ad147ec53d5d32e5c1e335228c648d810b78cb699685d70556abaa",
+      "metadata_sha256": "59924bafcbb7138303487757047f4b07053246ef905a8b36ba17d4ecc4434756",
+      "stocks": 285
+    },
+    {
+      "stage": "train",
+      "date": "2020-01-17",
+      "data_sha256": "119974ec81a87d44bf02da6b368b16f4bc5b96b32e2a2f15d17e2427d9cd8b9b",
+      "metadata_sha256": "7b91c3b6b2444a67ec7da92b753d721395fbe370a45118e74b571d5cee86407a",
+      "stocks": 285
+    },
+    {
+      "stage": "train",
+      "date": "2020-02-03",
+      "data_sha256": "28e7b48fab2c58283321d36185450f285fea501fe28541288940e21716d57f0d",
+      "metadata_sha256": "ec02c2438d90c0b07048e63548cc5ee822240adcba37c223e74b9a1f7d572651",
+      "stocks": 287
+    },
+    {
+      "stage": "train",
+      "date": "2020-02-10",
+      "data_sha256": "5b9ea93d0d04d0bd63fe6d607f4a51826c727cca10d7ba7145fb9c92549f72e0",
+      "metadata_sha256": "f520aec79ee5cd72cd63dfb260b7a1419eb69f125e02185b0f6fd4f700821193",
+      "stocks": 287
+    },
+    {
+      "stage": "train",
+      "date": "2020-02-17",
+      "data_sha256": "802cb11cadfe99d382731c9dda0fbafba10c3abd7d979660976cc3a6fcc31f2c",
+      "metadata_sha256": "4f447f1a9ad18cecb068e09a530c8035144e930882caf70952bb9723e9be59a9",
+      "stocks": 287
+    },
+    {
+      "stage": "train",
+      "date": "2020-02-24",
+      "data_sha256": "2d05cc2d84eea298b0d889c3295d2f1fc2b45a25c694afd9aeae131d1f84521c",
+      "metadata_sha256": "38d627da13d504983bf445602879a519126ee483ac4551f94a0481ff17502446",
+      "stocks": 289
+    },
+    {
+      "stage": "train",
+      "date": "2020-03-02",
+      "data_sha256": "3c6101ab275012f96de1ab80983f78592e6599598a16e7c9bbb7885cc24409b4",
+      "metadata_sha256": "c70979a4205419de87b847aceee640b770e342663c5a5ce1922e8b2e9f8e13a6",
+      "stocks": 289
+    },
+    {
+      "stage": "train",
+      "date": "2020-03-09",
+      "data_sha256": "568427dbc97189d3a6629f24a47c25854a1a2270d3fc6c89d4bd2943d8c89d45",
+      "metadata_sha256": "af3b2e6b6b2f25c2c5c473d16211b5ff6f3100c5c8084882c571b768fe08bc18",
+      "stocks": 288
+    },
+    {
+      "stage": "train",
+      "date": "2020-03-16",
+      "data_sha256": "914083879336e81ef873016d69e80b18b908dddcab5752c21f7290a697449cc8",
+      "metadata_sha256": "8b5295870f6b8146076fed9871dfdfcc17250132d536a5fd1f1f13e536c46753",
+      "stocks": 288
+    },
+    {
+      "stage": "train",
+      "date": "2020-03-23",
+      "data_sha256": "2d9ca66cd42f0075558f59f79376dfd4af917f7adcba3a92b45af287bde21fb5",
+      "metadata_sha256": "865cfd611520ec9fb6870dec923d96efcd50fc54094c05da27bac1306bbaf049",
+      "stocks": 288
+    },
+    {
+      "stage": "train",
+      "date": "2020-03-30",
+      "data_sha256": "41c6f31021e8d58f2db73cade84499fc783f43b0443736aa959f1c611b9df60e",
+      "metadata_sha256": "26f28504ff8b944270c912165029c2deb8de16a845b7c6c9595cf73fd6c51aae",
+      "stocks": 288
+    },
+    {
+      "stage": "train",
+      "date": "2020-04-07",
+      "data_sha256": "8dd435e141939875f89414b2501b12043c122c6f0b2d276a35b046bd0c1f108e",
+      "metadata_sha256": "677f3187cd87cab818381767ed73588f6ccdada49d70281b062b01aceea79c94",
+      "stocks": 289
+    },
+    {
+      "stage": "train",
+      "date": "2020-04-14",
+      "data_sha256": "f2ff3893a4bec485f1faae3214422de09dc8178c221387de6751f555859d2e18",
+      "metadata_sha256": "a3d517a00e41d77fbd9db39b0627ea86e6ee2d86429ab21127d7ed1b58a6299b",
+      "stocks": 290
+    },
+    {
+      "stage": "train",
+      "date": "2020-04-21",
+      "data_sha256": "3cbf49dfb7e8b155e990b0d154d5d89d29990cbcafddd8f24fd14f3f3f5b0df5",
+      "metadata_sha256": "b805aa0d86a96b6e000d2526cad5a7d4bb70e943f8cd605ebb39b53ab551e593",
+      "stocks": 291
+    },
+    {
+      "stage": "train",
+      "date": "2020-04-28",
+      "data_sha256": "ea479fb1b66c2c2f0237ee0bea34da94f861c33e478cf6a534030a55c271a8f8",
+      "metadata_sha256": "e8ff6f08b2f5ca36996898955eebf050df9df579b392323810a6bdd1e1b82602",
+      "stocks": 292
+    },
+    {
+      "stage": "train",
+      "date": "2020-05-08",
+      "data_sha256": "d46eb15a15ea831a11e47a0e79e4af60d702dc25965f790ce8bcbeb1f9ddc8cc",
+      "metadata_sha256": "5d25c9ba25a76b9a474d694fa39ebb6f4035ac15ce6c01bf177e7df961e30172",
+      "stocks": 293
+    },
+    {
+      "stage": "train",
+      "date": "2020-05-15",
+      "data_sha256": "e9129068b47a8f0edbd53b0a904c19a8ea3de6a34ea5b3fc4ba9750ed49c26fc",
+      "metadata_sha256": "5721a871c0026601f120556515d57e90467bbdeaf5dadd80624f0844437c9c5f",
+      "stocks": 293
+    },
+    {
+      "stage": "train",
+      "date": "2020-05-22",
+      "data_sha256": "00942ef2123b6fe6085d5c0ab757621882fd2e782e7386f5a1d6a7a60d0e7d5e",
+      "metadata_sha256": "1bd8cce2addfd1c11fca37b88f1c7ffe85a8ae6b5ab65933becb52d81b036f52",
+      "stocks": 294
+    },
+    {
+      "stage": "train",
+      "date": "2020-05-29",
+      "data_sha256": "8e513fd65a3f73f134c82b81655c2105f084939e4841adb7977b423c3cc0dbce",
+      "metadata_sha256": "9d4b2f1dcff626ddd41a677c3b39882019672deadb31afcd07bcb81e70d88d01",
+      "stocks": 294
+    },
+    {
+      "stage": "train",
+      "date": "2020-06-05",
+      "data_sha256": "edde0359131bb43ddcdd355909feddd302fcf29dea6953ce64b76d4aea1b52a1",
+      "metadata_sha256": "666146b53b5638e60536b68af92bbe864320fa2c17a1545769cdfb28e68a8545",
+      "stocks": 293
+    },
+    {
+      "stage": "train",
+      "date": "2020-06-12",
+      "data_sha256": "2285c4b066cdf4cdbf84268d6ea178905d193a832022d5f80a3b7f4dbeec4827",
+      "metadata_sha256": "6f0eb8ec70614c2bb6a52519aeced377c9a5c8e1f9ea3b04964f2934dba4e3d3",
+      "stocks": 292
+    },
+    {
+      "stage": "train",
+      "date": "2020-06-19",
+      "data_sha256": "17055d6f2823da3d28b830a485c30f70cff14a380d6e7f464a08319bcced2029",
+      "metadata_sha256": "7ded0d0ddf587c21671f1552feabfa110c2972da2c15f806069064d236e10451",
+      "stocks": 291
+    },
+    {
+      "stage": "train",
+      "date": "2020-06-30",
+      "data_sha256": "bfcac95b132ce6bd515fb71e525b73c1775f4b34c6e86069615ce3c0b8e89ceb",
+      "metadata_sha256": "b4f4f4e9fe2536c0dabcb44fc0ed6280cfb80ac29c00fc0ac915060d1748ad54",
+      "stocks": 291
+    },
+    {
+      "stage": "train",
+      "date": "2020-07-07",
+      "data_sha256": "60975758062c8ab4a2157bfd62058a41bade5cbf582444d4b963bb84a8516957",
+      "metadata_sha256": "1e71dc2f2aaf2c534bae201b62f9d0df2015ff0e41da86b917bdff692268d0f0",
+      "stocks": 291
+    },
+    {
+      "stage": "train",
+      "date": "2020-07-14",
+      "data_sha256": "bce6db94fe749afcc0decba7b594112dde04af0eca5fde3d385f012ab2bce34b",
+      "metadata_sha256": "17752eb708a5479eaba9931fdb173c138a753a85f3f7578b2d06078d560ca147",
+      "stocks": 290
+    },
+    {
+      "stage": "train",
+      "date": "2020-07-21",
+      "data_sha256": "7c0e1ff7ebb0f20428b736b5cca5172a4343923aa0292208335ed1f9cff15e41",
+      "metadata_sha256": "bb9b7b90ac06973d17b389878e62c4a734bf033b26d3f904b454832fb97dcf6e",
+      "stocks": 289
+    },
+    {
+      "stage": "train",
+      "date": "2020-07-28",
+      "data_sha256": "961cdaf1481572394f19ddfed9ea93c20cf9c650404357afea0b43c0788c397b",
+      "metadata_sha256": "9fa6efc860e456f688932a948fab9f4427a6df119c65e61f3ec4d0b1d6932c28",
+      "stocks": 289
+    },
+    {
+      "stage": "train",
+      "date": "2020-08-04",
+      "data_sha256": "6c03449367839bd6a00103dd3418ae0b368d50c47122818a3dcffc2e6ff193ab",
+      "metadata_sha256": "d297b9a9b81740760f00c37c53094c4fe4765ee2a6d55757eee4bc65d88d317a",
+      "stocks": 291
+    },
+    {
+      "stage": "train",
+      "date": "2020-08-11",
+      "data_sha256": "a8a7ffee29273037b794097aa8739a5484085d4d83cc4764fb05e18505f97f87",
+      "metadata_sha256": "1aa6b9f09be8fed19daf61b68ea6ff31adb25d6b3d1bc8280c9b35f54c525c5e",
+      "stocks": 292
+    },
+    {
+      "stage": "train",
+      "date": "2020-08-18",
+      "data_sha256": "4d398b6d688c8196eb2fa52133a2a422bd5172d1c1c5bb74a502ad536723c07f",
+      "metadata_sha256": "fbd10bd0ece65d941931258253f3be6cd74d84cf713e569f3a0c2a9b8b92fc17",
+      "stocks": 292
+    },
+    {
+      "stage": "train",
+      "date": "2020-08-25",
+      "data_sha256": "dab42b6fe8832565147a66e2ae6b9a25e1abb3d6358d09b64544144f05b0d0d8",
+      "metadata_sha256": "18ed14dfca94ded6ca52b8f9d9c2a86da5e45d251acfe101fcc09c17e48f2064",
+      "stocks": 292
+    },
+    {
+      "stage": "train",
+      "date": "2020-09-01",
+      "data_sha256": "637cff442b310e21ec5f88b332d3b94f0a246c8676a914ff9cb8ab9419db66aa",
+      "metadata_sha256": "18565d11c97532e5e79c4947fb36eab8c12b011f6d3009b71df76c967bcf2f53",
+      "stocks": 292
+    },
+    {
+      "stage": "train",
+      "date": "2020-09-08",
+      "data_sha256": "dc13e04b3cd5062374c819e954475dad57e2ec997a9a3c85dbe347e471a20543",
+      "metadata_sha256": "b35b7f664d38a4ebce84c34e7364461521db33ce48df2a03b0b46821d2426b37",
+      "stocks": 293
+    },
+    {
+      "stage": "train",
+      "date": "2020-09-15",
+      "data_sha256": "110572267be688e8a6a10717f54d0fc52632553bafc16cd5729f3e8cbfb1f668",
+      "metadata_sha256": "6c907f44420f43e9eb6ef1edc447f1ebca34d36ad46c69d3742880d647a3a668",
+      "stocks": 293
+    },
+    {
+      "stage": "train",
+      "date": "2020-09-22",
+      "data_sha256": "06e62a3ae09e5bc2cd971096b52ca3ff8c29c453333284938673a7a828106773",
+      "metadata_sha256": "12e0981abe017bdedcb47085d6701547276c78b76b073a6f41eab02dc74d5305",
+      "stocks": 292
+    },
+    {
+      "stage": "train",
+      "date": "2020-09-29",
+      "data_sha256": "f6dcdc348df3464dc4a2ad83645e8e0c4d479c604b6cb42961919ed6179127b0",
+      "metadata_sha256": "1870c50d1dfffe03866530444f5b4ab740568f948a83d365284f23b54813a213",
+      "stocks": 292
+    },
+    {
+      "stage": "train",
+      "date": "2020-10-14",
+      "data_sha256": "ad48e24d2150f3ce3957d3eb87562cbfafa23e88f233d96ff8708319e646cb81",
+      "metadata_sha256": "cf73282ccbcbdd60e1d1db677fdbd39ffe9748660db02abd62ca64d44914f01b",
+      "stocks": 289
+    },
+    {
+      "stage": "train",
+      "date": "2020-10-21",
+      "data_sha256": "647db8b5904002e4686ab97acd8213ce48f7262e18ca07d41ffdc67b86c12dbe",
+      "metadata_sha256": "6ac48a291838d428ba19ec3a2502f9037c13ad1e867205279ea52c98c344c27b",
+      "stocks": 289
+    },
+    {
+      "stage": "train",
+      "date": "2020-10-28",
+      "data_sha256": "f0fd727af662ce1dbf3dc5d634a3bdc609da0d06ee4a30e344c3dea45064abc9",
+      "metadata_sha256": "847e9483a297a88e94df2a1a2dc13e0114e92f4b76bcf00257f6f1843e59c830",
+      "stocks": 291
+    },
+    {
+      "stage": "train",
+      "date": "2020-11-04",
+      "data_sha256": "72f4357b99e05a8f30c422174314177e523be887292a7420907ac1e86b5e6bd2",
+      "metadata_sha256": "89a2bde43449a2809144ab5e9318572498d8aa7749ca3e4b40d6f7f81961d5a6",
+      "stocks": 291
+    },
+    {
+      "stage": "train",
+      "date": "2020-11-11",
+      "data_sha256": "fb54a83cda9db5a462ce9fc43a8d119203a6b155aaf2b7bf5ddbe14f2f73fea5",
+      "metadata_sha256": "1a70246264f1f6b6a8f7a29291325e35d4754ed1a458b98c11056c921d523a29",
+      "stocks": 291
+    },
+    {
+      "stage": "train",
+      "date": "2020-11-18",
+      "data_sha256": "92464635e19bf384fe52193c33b5ea230910ecbfae51cb2bcbee755adf1fc8b2",
+      "metadata_sha256": "0d941746f9450d2ccde5477e4c1d057ffe1586b072a289fb77028159409f793c",
+      "stocks": 291
+    },
+    {
+      "stage": "train",
+      "date": "2020-11-25",
+      "data_sha256": "cf13d92e6525ab96696cd7a3369a2f22ba7e4ab1a1c83a78ffb6397456b2a83b",
+      "metadata_sha256": "7d8f3483cceb4ef895cb40c5cf8a8c02905f9bbc1be36cb52782fb672a971e52",
+      "stocks": 291
+    },
+    {
+      "stage": "train",
+      "date": "2020-12-02",
+      "data_sha256": "5227697ead793f20f4046caf8e5554ec8a9dd21edc4317da602e9275d3ff4258",
+      "metadata_sha256": "8a4ec82e975469237d291d9eacb4c53149f47e575df9f3a617e13c1c8ea3c60e",
+      "stocks": 291
+    },
+    {
+      "stage": "train",
+      "date": "2020-12-09",
+      "data_sha256": "f860bcc869a20ae47c7b98e158340c90fbfa2e59af8173c55fbfeafefe28b4d8",
+      "metadata_sha256": "e8e4ee76a7529d88ad4df50d7be5b3b12c7593e8fdce32e5965edf8e50e3768e",
+      "stocks": 291
+    },
+    {
+      "stage": "train",
+      "date": "2020-12-16",
+      "data_sha256": "a3c7d2e6f137a8958f2ef4c661bfd649ed7782f3f9f883946169aa7b231d384f",
+      "metadata_sha256": "de9cb4145ecc92b5a1a1a2482f891fc870da1e60892ffd5458877eaf0d234268",
+      "stocks": 292
+    },
+    {
+      "stage": "train",
+      "date": "2020-12-23",
+      "data_sha256": "f2ae1564aec8a4f24ee4139ae30080cd971855b638f20f9ee73a8da4c2383486",
+      "metadata_sha256": "ffb034367c4e1edd8372c8a37d8c710cd33d7f461282cca91df0a8b5d46b5e13",
+      "stocks": 292
+    },
+    {
+      "stage": "train",
+      "date": "2020-12-30",
+      "data_sha256": "41dd392d50c190cd2a32341e57a08bb301f831152dc00c3165fc357c5e714ec8",
+      "metadata_sha256": "fa2d1a0e33bdbd42153406d8ddd85f9ca9f2cb33ede6d397396e648a8934f44b",
+      "stocks": 292
+    },
+    {
+      "stage": "train",
+      "date": "2021-01-07",
+      "data_sha256": "e753b63b6072e8d7355c30fc0d4204689a648064b581a54f5fef1f4442fe9eda",
+      "metadata_sha256": "d6d267a7c9838350b6fb75959a3886ea66c2facc12e7c0ed1a69a845cab71537",
+      "stocks": 292
+    },
+    {
+      "stage": "train",
+      "date": "2021-01-14",
+      "data_sha256": "4e5b0d75fd8e0fb0ebd4cb4e23a35c7b462b1df486753d564bbe1f9acb99c0f5",
+      "metadata_sha256": "a6917b339c6a557d1e54bfcdf6550df9d776763731f63bd999da2a82c039bb65",
+      "stocks": 292
+    },
+    {
+      "stage": "train",
+      "date": "2021-01-21",
+      "data_sha256": "64107c66acb6d1f08ad4932cad10f3d56b8bbc1091ee043f62b0ef712ec4c336",
+      "metadata_sha256": "7932358be13410596878d6cb5a5351cce9c69909740ff97210ca1b26fe1b3f87",
+      "stocks": 292
+    },
+    {
+      "stage": "train",
+      "date": "2021-01-28",
+      "data_sha256": "7fbabb5a314241f6fe08e7e8274c5e770294abc8fb484aedb98b873af42eec5d",
+      "metadata_sha256": "856c141bc4c6cc5a99d5cac2ac1ad006465263299878ed8ed5260d057ee56510",
+      "stocks": 292
+    },
+    {
+      "stage": "train",
+      "date": "2021-02-04",
+      "data_sha256": "336ad764f5f4ea7ae4e8cd1ae1199f0fd4cad02609937b363ae5837ecc5c7095",
+      "metadata_sha256": "8b3da34e2c24912e3d0fb00fb66011ea2a5f5812aabf5d3d04e6ae11f84f24e1",
+      "stocks": 292
+    },
+    {
+      "stage": "train",
+      "date": "2021-02-18",
+      "data_sha256": "d7e828149c67523aa2c13c1ea9594753020f65bba0a57edf6bf5fd55ec5feb2f",
+      "metadata_sha256": "f41d6410f873ae0ec572ce3d6ff20e128cce72d7bea190c6ee736657fc6c26bd",
+      "stocks": 292
+    },
+    {
+      "stage": "train",
+      "date": "2021-02-25",
+      "data_sha256": "28322033edd2b7de2136597a22d67b82b36730b12f3d14e543447e26a88423d9",
+      "metadata_sha256": "4d7bafa2300101c1783db0bf8a8b5bfc3f1e6a9059cd5b1f6c838d21d60b0296",
+      "stocks": 293
+    },
+    {
+      "stage": "train",
+      "date": "2021-03-04",
+      "data_sha256": "b2702eab7215c9f80da7d5d72c85b9ae527a9b0237c5e548c80397855c222b33",
+      "metadata_sha256": "9d5f6c82c9fa400ca684e752ba9d12e09362cec18c82912d55156bf953d27a10",
+      "stocks": 294
+    },
+    {
+      "stage": "train",
+      "date": "2021-03-11",
+      "data_sha256": "d13e1403a705cf166e7aa17df0a64987a2b77a73b3c53c98f04ddc8f10969441",
+      "metadata_sha256": "e771b5b7ce2c405bd8b2f16e1c908255d170191a184f3dd782c15d743ec27b76",
+      "stocks": 295
+    },
+    {
+      "stage": "train",
+      "date": "2021-03-18",
+      "data_sha256": "9ae605fa3fad371566660151bbf833bc72950611090dc067daefcbd9bf1c09c4",
+      "metadata_sha256": "696393f911224a291b5189c5eebc769c28593eb7204ad6e4b8dd61204f9df157",
+      "stocks": 295
+    },
+    {
+      "stage": "train",
+      "date": "2021-03-25",
+      "data_sha256": "f8ff19411d481c0f38d299e71b0fb19b7a05ed8673d715092b2d50ad65b2cc6a",
+      "metadata_sha256": "6dea70b1dedbdeef2b6ee83ce75952da59b0eace700cd4c66308cdce19bae37d",
+      "stocks": 295
+    },
+    {
+      "stage": "train",
+      "date": "2021-04-01",
+      "data_sha256": "714c23a6cce56b837004810b4faadf25a66948222e65a63d379b546881241a2c",
+      "metadata_sha256": "38e1b14262280088adcb29667fc8552690208e6945013dd6da19c7f211688d7a",
+      "stocks": 294
+    },
+    {
+      "stage": "train",
+      "date": "2021-04-09",
+      "data_sha256": "4970630d0eff4e2a8a4e8d8fecd34b073642fdaf5382238c44a0a5453624857e",
+      "metadata_sha256": "b4f30e7f32edc81b17f9f25a7d2de4f7bd3f225d36eef6daed9356a929d08649",
+      "stocks": 293
+    },
+    {
+      "stage": "train",
+      "date": "2021-04-16",
+      "data_sha256": "75efb7998df59b9716d567bded86872d44bd33752ed26180bd94129431ff74be",
+      "metadata_sha256": "0e2212f2f687d897e6627bab749c5b2ea5d170538b8e1c4471c1b2ba95774f5c",
+      "stocks": 293
+    },
+    {
+      "stage": "train",
+      "date": "2021-04-23",
+      "data_sha256": "c0fbd857606141a9dd2c7bfe2395917e6452a9340189d380f7ba50d36a985242",
+      "metadata_sha256": "62079bc63f38950b6567163025e8743d77bc122613d6700c50633bc885af7df7",
+      "stocks": 293
+    },
+    {
+      "stage": "train",
+      "date": "2021-04-30",
+      "data_sha256": "d35dff4e6f415fa49e2271ef3b36e247f87afeac01f8a2138a27637d6328b811",
+      "metadata_sha256": "70cc0e77a88ff4dea3c162347a879a53d99a105f4b1824141fd9863921c3b82b",
+      "stocks": 295
+    },
+    {
+      "stage": "train",
+      "date": "2021-05-12",
+      "data_sha256": "c531f0a95e0c2a7497d5cd1b675c5f0ff270d16ad1694dc2090c1151eff7c215",
+      "metadata_sha256": "02f01920b9c616faae65f6772a9a68f91ceec6505218de388c43482540fccc45",
+      "stocks": 294
+    },
+    {
+      "stage": "train",
+      "date": "2021-05-19",
+      "data_sha256": "396f2efa83577a32673e13a1dcf0ff05eeaab4b54c87528edb60e2e6870f030c",
+      "metadata_sha256": "362d4ce9ca0b75076f72e705dc5242ac69f74e1b15de72c436390ed4b95e264c",
+      "stocks": 294
+    },
+    {
+      "stage": "train",
+      "date": "2021-05-26",
+      "data_sha256": "39a8962968c0fd634899aa769cd6e5f3870936e5fff3c68e4cda07d8be21e076",
+      "metadata_sha256": "9209f07d892d6135ee9c050829d387359031e5eae1dbd418e98bd6b8487b9bde",
+      "stocks": 294
+    },
+    {
+      "stage": "train",
+      "date": "2021-06-02",
+      "data_sha256": "a7f2c0ed0031ee13ff64384ba11acdd7969da896e5b0fc70717941462427cfb2",
+      "metadata_sha256": "d9a360cbd51c221b4975a5cc88ae7f448b6d51ee1122e38cdffbc6d0b2541ccf",
+      "stocks": 294
+    },
+    {
+      "stage": "train",
+      "date": "2021-06-09",
+      "data_sha256": "5c4001587e1006f809d0a506a87fd745011104b3084fba9bc66c670b76162422",
+      "metadata_sha256": "eb18ab0c80e9a62a7642a46dd5f31933a8757d072920dabbcf982b3b83b9638e",
+      "stocks": 294
+    },
+    {
+      "stage": "train",
+      "date": "2021-06-17",
+      "data_sha256": "31dc8eeecdd073f0b4f6d392ce033785ea3ea7371c59e6a0838372c557129f02",
+      "metadata_sha256": "48d922622b78d2d25d6975b5e40a415b3086c65193165fbe413aa83b91c73731",
+      "stocks": 292
+    },
+    {
+      "stage": "train",
+      "date": "2021-06-24",
+      "data_sha256": "034c0e21acb657b8f9dafb5d18bc0c8f1c155bd7403f2d3fdb8ee8c0e14b6b77",
+      "metadata_sha256": "b0ceaad9dde09676da09f2b1af3611c25e6571a4820b1c5c1c0791ff023823eb",
+      "stocks": 292
+    },
+    {
+      "stage": "train",
+      "date": "2021-07-01",
+      "data_sha256": "4b6562112dcc2e75373779ed792d35f821a07712ba2966bc8a209a85772b174b",
+      "metadata_sha256": "44d86a2409f6e1d49e41dff3a89534f5d24960b936f49a36d6e27ce8e4de0738",
+      "stocks": 294
+    },
+    {
+      "stage": "train",
+      "date": "2021-07-08",
+      "data_sha256": "a9f89e58631710b84e874a2e846286cd6465d473a4c6db5bece0ed09bfcfb418",
+      "metadata_sha256": "69cf64b202099bcf2050c6b7838c7c77d5edad2830092a82488a64ae46388feb",
+      "stocks": 294
+    },
+    {
+      "stage": "train",
+      "date": "2021-07-15",
+      "data_sha256": "8f410a05d86a8683a03f56799a167d4d024ae4718c19c3f8e83baca567f35e1c",
+      "metadata_sha256": "688a6566df26bb7ef883daf82cea5c6996f7b47ee5b82ebe95297740d80bb3f7",
+      "stocks": 294
+    },
+    {
+      "stage": "train",
+      "date": "2021-07-22",
+      "data_sha256": "4d12e8755e91dc5aed2b6bdf730ee551ea54598becc944c80c585c5060114f53",
+      "metadata_sha256": "8fc6acf6b96420938156f35ac7485ff2dcdd755e1ff1b482d80287ea80b41b17",
+      "stocks": 294
+    },
+    {
+      "stage": "train",
+      "date": "2021-07-29",
+      "data_sha256": "f7b3eb6f780dad02916b7cc2f9ac0ced51862995236bc185b7c7a362126af600",
+      "metadata_sha256": "a3f5a5bcc6cfeed1ccf473d0a571fc9b61efe623687db59e977083e28568cef7",
+      "stocks": 293
+    },
+    {
+      "stage": "train",
+      "date": "2021-08-05",
+      "data_sha256": "fc9da9caa9ad66db596753e71c361d384ab602fad86a1e01bbf1592010e8b559",
+      "metadata_sha256": "c1268754f73e321dede3c3114f305595b70a63271c5c5e3faf27764ab4513ff2",
+      "stocks": 293
+    },
+    {
+      "stage": "train",
+      "date": "2021-08-12",
+      "data_sha256": "10fada8593b4133c29e18bb808d1a42f92d546b6f53298ee23d0408413f7a3e3",
+      "metadata_sha256": "1efb43ab4b0468d0cc696cd81e8e183764a001f1629032a480cce38b24112256",
+      "stocks": 294
+    },
+    {
+      "stage": "train",
+      "date": "2021-08-19",
+      "data_sha256": "91c6f08a34141b7cfbbf034599dc2f37cae8571579a0f3be29501ebf59b8c51f",
+      "metadata_sha256": "da7357342b625f2ec298bcbf3425a21b56b1eba382d87b346e6294533573370f",
+      "stocks": 294
+    },
+    {
+      "stage": "train",
+      "date": "2021-08-26",
+      "data_sha256": "4a521990a89a3653dc6345d3dcdfbf0601bf109c9260d3d103e1b33a277f62af",
+      "metadata_sha256": "a3c37c94da07915a921c247495df8554f94c1f448d5570f18408533fefafff9b",
+      "stocks": 294
+    },
+    {
+      "stage": "train",
+      "date": "2021-09-02",
+      "data_sha256": "e305ea442774bc2be09d347d1f673f91773ad5ed528ebcead7e22e8fd72b6e77",
+      "metadata_sha256": "31eb1dd5738796d0da9f2ce5656c329bb21a8811dff37641305ac3fd80821e48",
+      "stocks": 295
+    },
+    {
+      "stage": "train",
+      "date": "2021-09-09",
+      "data_sha256": "83ddd50ba0d715f62da15a563961de73cdbc33a95c051381225ed3cac5911e95",
+      "metadata_sha256": "a08bba04011bef0a25b2ae335c442ac7dded0414dd28cbe949c08c5741ec2d19",
+      "stocks": 295
+    },
+    {
+      "stage": "train",
+      "date": "2021-09-16",
+      "data_sha256": "aea4300670bbea8fcd832a40ecb8b5f474febd3725b457a30cdcb543ec0cebe2",
+      "metadata_sha256": "4006f18d4ed3859ba52ee159971c6122b6d4cd2e75b49f90e049a5b10fc4f20a",
+      "stocks": 296
+    },
+    {
+      "stage": "train",
+      "date": "2021-09-27",
+      "data_sha256": "0c3581274e97ca180dcc1c739ee9fdd7061de0ef180d423b2bd552487bdf8c66",
+      "metadata_sha256": "057163fe69acbd95d36ee321897361a371c92322bb1306d4813f9f5dbf9039e3",
+      "stocks": 295
+    },
+    {
+      "stage": "train",
+      "date": "2021-10-11",
+      "data_sha256": "e7f1257224fd18ec76f640db7736cc889b04e95c35312e7752feaf7907f95958",
+      "metadata_sha256": "6845dd6c4a37eb5afa0a943e649d328323cb7cc47a1f41615b52077c11eed57c",
+      "stocks": 295
+    },
+    {
+      "stage": "train",
+      "date": "2021-10-18",
+      "data_sha256": "4e32875d9f3579942e057a316ebc23dd5f4dc2e5c1d6a122d39dffa1867dbd4f",
+      "metadata_sha256": "82a752757448697e12b5d85d232def8da129bbb91eda64f25bea8d85c4cf77c1",
+      "stocks": 295
+    },
+    {
+      "stage": "train",
+      "date": "2021-10-25",
+      "data_sha256": "beea63c75fcbfd122fe73597827d35eacb66da4feb6ba7d3ef7413b99572a1dc",
+      "metadata_sha256": "7a484f5fc1b24ead9570cf261b75c978ff5ce2bfbc9ad6aefff9ed3b11e5946c",
+      "stocks": 295
+    },
+    {
+      "stage": "train",
+      "date": "2021-11-01",
+      "data_sha256": "b3fc31124794af7fc7debfb0cb9115c2b89dbc09377c361a327622b4fa2598fd",
+      "metadata_sha256": "339f4a4f4aefc97ae61f7688884165c8c599df4b72160441e994fdb2f583b1be",
+      "stocks": 295
+    },
+    {
+      "stage": "train",
+      "date": "2021-11-08",
+      "data_sha256": "5a641ebf87e9d8300627662eda46e50db8f823e8582116d0d0f2f21b16555750",
+      "metadata_sha256": "b8100e6ce1bc4303a3e00b5e8af18cee46b52a8819aaf00af51157397d94a97f",
+      "stocks": 297
+    },
+    {
+      "stage": "train",
+      "date": "2021-11-15",
+      "data_sha256": "9dd29eb560ac5bd8e4518ecf357057d78c5055aeed25574685d947353a847b67",
+      "metadata_sha256": "ae403edf7d632270d4e379baf1162b9910cc5698b58a8ce70a282e04cfa60fc2",
+      "stocks": 297
+    },
+    {
+      "stage": "train",
+      "date": "2021-11-22",
+      "data_sha256": "d9405169c22165cd6d1fa098643fefd0eb8c7c9e6daf02278e7912a3c8eb286a",
+      "metadata_sha256": "09ddf9e15f608fb925f21c89765a162fbdf162ef7965a5dc6cbc93f88191cc49",
+      "stocks": 298
+    },
+    {
+      "stage": "train",
+      "date": "2021-11-29",
+      "data_sha256": "c7c2c0800a52d2a7f8ebef5b36dd365caa17dd6a0366170d0f214a064c17887a",
+      "metadata_sha256": "f643ab22ba56baefb03bcc7891501a7486d85f8e613cd99a943262843ae32ff0",
+      "stocks": 296
+    },
+    {
+      "stage": "train",
+      "date": "2021-12-06",
+      "data_sha256": "33cb167fe6dc4d89f8b10bf5f8086bb297100331ce45e7526e713166e3e3149b",
+      "metadata_sha256": "9023c399f4e605e57227c5ef1c5904ca79810e2bd84bab14d0ef3139943c128e",
+      "stocks": 296
+    },
+    {
+      "stage": "train",
+      "date": "2021-12-13",
+      "data_sha256": "7251873916cf1464ae5e85f61a8bf5a18812ef0b67386db7104b78e610832cc0",
+      "metadata_sha256": "5a85e2274dc686f03850206cfc7e6254ada125d1ed5fa5185831e68635551a45",
+      "stocks": 295
+    },
+    {
+      "stage": "train",
+      "date": "2021-12-20",
+      "data_sha256": "6f15828465f3ca44f982d3f7d920a8acc318af837af0a8d8900f78b256a27e9e",
+      "metadata_sha256": "7a4c0daab22110a55d6bb3f33128fd8f58276a9411e5a79a10eddb245d422c3a",
+      "stocks": 296
+    },
+    {
+      "stage": "train",
+      "date": "2021-12-27",
+      "data_sha256": "10cb76ac76541dce32af1ecf253b8ec212151862930cbf338578cabb7e45d1db",
+      "metadata_sha256": "a972f3f372815d99d92ee4b9c38e70da2ed87b2c474937aa9c29133cb48e74eb",
+      "stocks": 295
+    },
+    {
+      "stage": "train",
+      "date": "2022-01-04",
+      "data_sha256": "896f8e91312a8b78b83c86e16cad8a5e5c11b1e802dce39c375732a25feeb26e",
+      "metadata_sha256": "0953bc8ce5937162add55aa358e33085f68598d901be2a1bb65afca25b912406",
+      "stocks": 296
+    },
+    {
+      "stage": "train",
+      "date": "2022-01-11",
+      "data_sha256": "af497b18250fc4be41624ae6b70570bf6cc89dc477c2d41faf594939c6a31511",
+      "metadata_sha256": "cda104eabb0243535c0d97d35f6f8fae9f0f4983fe786cb29e0ca1708499e0b5",
+      "stocks": 296
+    },
+    {
+      "stage": "train",
+      "date": "2022-01-18",
+      "data_sha256": "b867181e9a46be901f7750069c20a55a6959aadd8dea1c34a9f0325c90f4d5b9",
+      "metadata_sha256": "6af97cfced7fc3556a763c356a6c2c94b9a2f78f574e1a2aa914464b84d4e3a2",
+      "stocks": 296
+    },
+    {
+      "stage": "train",
+      "date": "2022-01-25",
+      "data_sha256": "7afaeeb9f2b4140e097951bbaeb62a10f188b0ce9cc591c649e485dde2430ca7",
+      "metadata_sha256": "211de930afd31346069acbe121a8ac2aa574f6e40834a19eaec53a246bb97f2d",
+      "stocks": 295
+    },
+    {
+      "stage": "train",
+      "date": "2022-02-08",
+      "data_sha256": "10d92776e923680a42bda15839853795e35751cd2ace4593733d38ca8ca8be23",
+      "metadata_sha256": "86b0cea6718e333ea9f9f6e6d108896dcb096074bacddaaab275dcd931cf1c8b",
+      "stocks": 295
+    },
+    {
+      "stage": "train",
+      "date": "2022-02-15",
+      "data_sha256": "569c17fd03708b7cbd3eaad6056754c63806090f356eb191dc6cc951d6c528db",
+      "metadata_sha256": "71a32b91c85e5e2b892ee0f7e358550d29136aa5e9cbc7d573396d81aae15ed4",
+      "stocks": 296
+    },
+    {
+      "stage": "train",
+      "date": "2022-02-22",
+      "data_sha256": "d6c588b28a2ddc3204e68c243871cc71db36f4e73fd0697f42160519fc764b46",
+      "metadata_sha256": "2a4aaef077a969a16f623f7c493b1353af3b1a98e38837fd30f56f9210ba25d8",
+      "stocks": 296
+    },
+    {
+      "stage": "train",
+      "date": "2022-03-01",
+      "data_sha256": "6ee0f41da29c9fc9fd30a7a03c3cc9bb6a306aa8bdf7864ae837487c68a09175",
+      "metadata_sha256": "d3572be1a83b73e634c36825cd0042f6d1e23bc63beed372a885dd98792fc772",
+      "stocks": 296
+    },
+    {
+      "stage": "train",
+      "date": "2022-03-08",
+      "data_sha256": "89833967c901f7106ee79c91c53682cdeeac81842dbe6cce7899314eb666a311",
+      "metadata_sha256": "ba381f38e5d69a28b688fcee82b1f46f52d816671e43d2c5d712737c9c2123d5",
+      "stocks": 296
+    },
+    {
+      "stage": "train",
+      "date": "2022-03-15",
+      "data_sha256": "1bdab56fdace8e9da7b4a1e8e681ff6882305a06bf47761590b38f771725e95c",
+      "metadata_sha256": "f7c0e61fb1136403d1cf04969d18590de2ef9869f87274a8b06f46c4301aacb6",
+      "stocks": 296
+    },
+    {
+      "stage": "train",
+      "date": "2022-03-22",
+      "data_sha256": "2375e2a1a13a855ad2a11fe11fdf11f5ca6e294e6ea881abedf3e74504dc79dc",
+      "metadata_sha256": "a925817a23d703625f18aaffcc133ea8609e33d127468d4841aefb61799bf62b",
+      "stocks": 296
+    },
+    {
+      "stage": "train",
+      "date": "2022-03-29",
+      "data_sha256": "e442691d75e131360ffa012408c42972b0023a67b15a8ae7f4d4dfcdd5f8871a",
+      "metadata_sha256": "fbc248ade2cdf932d9c23358ac9ba42623950b6c47d59b97a7c5194c17594017",
+      "stocks": 296
+    },
+    {
+      "stage": "train",
+      "date": "2022-04-07",
+      "data_sha256": "07ba72cb26c560abbad073b266a1259c70e6e649d3eace600d3ab799032c7b22",
+      "metadata_sha256": "0f9180490ab86db19386446f6cccc7ca9845c119b278553d23c05914c5a60020",
+      "stocks": 295
+    },
+    {
+      "stage": "train",
+      "date": "2022-04-14",
+      "data_sha256": "e221baf2dfc06c3b8903a45bc361dfbc7cf5a4a3a4778481d58ba2d4ff9834bf",
+      "metadata_sha256": "c0ba80af45da6c0b590884ef6b06256f0544c62833567cfb344f4804dbf007c0",
+      "stocks": 294
+    },
+    {
+      "stage": "train",
+      "date": "2022-04-21",
+      "data_sha256": "53a37aa3a50e76f40c6447e75eea5086290cc4cb46c54c99ea4c360f14d913f8",
+      "metadata_sha256": "7ede6eb0dae98f6da7ef4b1eee6d2c45a9e69ad97ac14dd2423879f43412d690",
+      "stocks": 294
+    },
+    {
+      "stage": "train",
+      "date": "2022-04-28",
+      "data_sha256": "620051b56450cfcf56711d6314b05683978d48fcaa2c8b34b4cfe30751de6d85",
+      "metadata_sha256": "7d18f9eb1110a153b0e2ca7221bdcd166ddcaf3274bf27be17c87e7339962b20",
+      "stocks": 295
+    },
+    {
+      "stage": "train",
+      "date": "2022-05-10",
+      "data_sha256": "036068fc27243c81f484a28e2bab544fbb0284272fd3cf768b1eab9bafc502e2",
+      "metadata_sha256": "df03c3e634b18a75b0ffd2ce7b51c1fe58bcbf967a48addf88f0f10e2b51c806",
+      "stocks": 294
+    },
+    {
+      "stage": "train",
+      "date": "2022-05-17",
+      "data_sha256": "dbee5d17c602d58a14ae41471f20a8732e484c8cf8d42abdac68cc71a8befde3",
+      "metadata_sha256": "e25e5dc7971e5e22e8be0e14608be8a82003fbb251c4697a37f385da8f96f7cb",
+      "stocks": 295
+    },
+    {
+      "stage": "train",
+      "date": "2022-05-24",
+      "data_sha256": "3da05b002d1407e52492ffaa28db8b08b0c76a8cc5f84a299b6b328dd04518b9",
+      "metadata_sha256": "14cca17e7706d8654d88c6094bc8f501bc1e5042fd58540592d1507a726c0f32",
+      "stocks": 295
+    },
+    {
+      "stage": "train",
+      "date": "2022-05-31",
+      "data_sha256": "7daef53fb1961f28c5823c8f18e4ac77314165f7f9a8ff9d32144833a58791f1",
+      "metadata_sha256": "2a7c1ea1f4cae41ae24740d681a6dd9f928b2c3b454bf463b058520a1e4bced8",
+      "stocks": 294
+    },
+    {
+      "stage": "train",
+      "date": "2022-06-08",
+      "data_sha256": "171a03bdca47a8c90e966a6358c8e15fdbce140dd3da92ad73f28abf4bb3755c",
+      "metadata_sha256": "d8a182c23ccb6038a29639a71557b8bc28f1e3d32a0f4f8e6042155e8ff69b98",
+      "stocks": 294
+    },
+    {
+      "stage": "train",
+      "date": "2022-06-15",
+      "data_sha256": "5fa20479f2aa5db811bf9ea351da3929e360b3070a36be8149f95d66299321c1",
+      "metadata_sha256": "55cc839f0fff4779f99b1f6ed6c437d44f0a0a7326e372f0d65d10977968bc6a",
+      "stocks": 296
+    },
+    {
+      "stage": "train",
+      "date": "2022-06-22",
+      "data_sha256": "d8d69f2b3d4cb15d489a0927142b522db217c41f9a4196693fc40197ec37885f",
+      "metadata_sha256": "c87ed88577551c0df8988118029abd06c32875943781c98345674931c7d02a8f",
+      "stocks": 297
+    },
+    {
+      "stage": "train",
+      "date": "2022-06-29",
+      "data_sha256": "dc0d8299e0494f891e4ccdf89cef0bbaa5b768a707d47c37cd4e44fcdb6afff8",
+      "metadata_sha256": "916e138d1ed00d13826725310f4d1686e559fa3b40d7014bb60f604a6f0683b1",
+      "stocks": 297
+    },
+    {
+      "stage": "train",
+      "date": "2022-07-06",
+      "data_sha256": "fce242e7be7111a6e2930d2629f34f831c70ad34862ea5beadbd192dec75bcb6",
+      "metadata_sha256": "54a81eae43f90f3789bea4f0416c58fe82fa4215e2887c82cd1caf5f3f99896c",
+      "stocks": 297
+    },
+    {
+      "stage": "train",
+      "date": "2022-07-13",
+      "data_sha256": "03d05212c7d513cc66cb2cf754373460d47c3e6b0b92d82753d4379dcf83a1ac",
+      "metadata_sha256": "fce735ea6cd9ccff25a8f49b21cc4ed0c425b64031593d25f9e7b6febbbfab1c",
+      "stocks": 297
+    },
+    {
+      "stage": "train",
+      "date": "2022-07-20",
+      "data_sha256": "fc799e1a09cfdf6455e111fce5d23749af67966ecf8ab1166dbce52496820ecb",
+      "metadata_sha256": "eb269520938f15abbd66e43907b6d51135a2f47873db737ae5a2dfdb57008ce2",
+      "stocks": 297
+    },
+    {
+      "stage": "train",
+      "date": "2022-07-27",
+      "data_sha256": "d3a31c0bac74c573582d2c1f9bb0109934b47cb1516f2829676c7cc9910882dc",
+      "metadata_sha256": "911701b027858fd7c99830c7b34f9aa4eb174763f1cc419bf1211fd05a1d53a9",
+      "stocks": 297
+    },
+    {
+      "stage": "train",
+      "date": "2022-08-03",
+      "data_sha256": "29044557e29c0ce8a5b710c2e362f440e1fe7ace40d5a68c4f47e61e27dcb4e3",
+      "metadata_sha256": "52035d99355de1ab2b701d83d6698aa4b9b33b6cab0bd5099e6b9ba84231fce9",
+      "stocks": 297
+    },
+    {
+      "stage": "train",
+      "date": "2022-08-10",
+      "data_sha256": "f0e2f1af113aeff8a664dd2974a28811baae3abb84ae54b828876552fa1294db",
+      "metadata_sha256": "2fa81f2f3456da80314aa2ff2f989b27291783d0a7d1c1584e9d12c6a0459499",
+      "stocks": 297
+    },
+    {
+      "stage": "train",
+      "date": "2022-08-17",
+      "data_sha256": "c7a84bcc9a98cc71d6652a3aa4ccb9cee68a0a970888ed54fc94150913aff7ef",
+      "metadata_sha256": "b77c04ba4aeda9433c3c85c6960858f26eb130ff91dd913eba0c01a489b0cbf5",
+      "stocks": 296
+    },
+    {
+      "stage": "train",
+      "date": "2022-08-24",
+      "data_sha256": "1f20cca791ce36df8199682dbe60b2ba80a823a77ea781b1f50df5d9dc840fdb",
+      "metadata_sha256": "e43a6a016662c51c9f144e70f812df52c3ddc49650feb01bb47bb6e025b59069",
+      "stocks": 297
+    },
+    {
+      "stage": "train",
+      "date": "2022-08-31",
+      "data_sha256": "90dd5719b56875ef159ecffe2ae8dccaecd783ae85d22dcb285076d3e806ad9a",
+      "metadata_sha256": "4209e9d355813fc95b726e7f6affb27663a34d6f72ce694f06c04299fbd60004",
+      "stocks": 297
+    },
+    {
+      "stage": "train",
+      "date": "2022-09-07",
+      "data_sha256": "00b9022b892615c9b8e1d746a6fbff7f64669d0bd8a011c532fe502f70fb2b9d",
+      "metadata_sha256": "4c0868bfa77168509a29c77276e4ac9cae1c18289d63931b70b3ce2c94c40c98",
+      "stocks": 298
+    },
+    {
+      "stage": "train",
+      "date": "2022-09-15",
+      "data_sha256": "d95e0dd42296f8339b2c04942fbefba1fee85680ac6746b03e6dd6c5ce6e9f9e",
+      "metadata_sha256": "9e7f343c34c67bb17901d90e8ba090a0d91505538216ead15199db9f3c1e39e6",
+      "stocks": 298
+    },
+    {
+      "stage": "train",
+      "date": "2022-09-22",
+      "data_sha256": "98d995d4432526d74242136723b5bbc3c71367114a48e61a49e8dd9d66962072",
+      "metadata_sha256": "9a4fa8a9d42724f70b2c6ececd4d603029330ee667e56e10225ef3c88d43b28e",
+      "stocks": 298
+    },
+    {
+      "stage": "train",
+      "date": "2022-09-29",
+      "data_sha256": "415091163c174d464d88eb94f12e8579734cf2aee90d6d486ddd169c72e7e508",
+      "metadata_sha256": "5e1444ce81127e215698e8076749824615c068152f0fb5167c5b3e3d949c27a1",
+      "stocks": 298
+    },
+    {
+      "stage": "train",
+      "date": "2022-10-13",
+      "data_sha256": "f401bee25aaaaac72352ea4be5140b6ee44e1b5db402c89ee912d5ade03f5850",
+      "metadata_sha256": "9c01207f4622ac457ac9acff4bf86805eae6f103dc6c909f2f14c7735915a0e6",
+      "stocks": 298
+    },
+    {
+      "stage": "train",
+      "date": "2022-10-20",
+      "data_sha256": "faf7e2b12344c175845402f7b3d69ac90cce634012388d3a9de0ce806ee1e33c",
+      "metadata_sha256": "41ebe7856f2f4d0391e5733438e492b5c9aca15cb977d2bdda8731b73e6a8e2d",
+      "stocks": 298
+    },
+    {
+      "stage": "train",
+      "date": "2022-10-27",
+      "data_sha256": "6379d646818af0aedf499027df6103f125496aa972ca84a388a5b224c1d01473",
+      "metadata_sha256": "e3bc4fbba2e01da323eb5313808c32fc4df02151de2e38ea81bc7602cd7821e3",
+      "stocks": 297
+    },
+    {
+      "stage": "train",
+      "date": "2022-11-03",
+      "data_sha256": "51424249d00ebce8f4dedf3b5739daced03c703db085b82cbc0b39259258a87b",
+      "metadata_sha256": "d59dc0fbb702fb716536666d03d5629be3fe8e0360f7a0983e399d7be51dbd8a",
+      "stocks": 297
+    },
+    {
+      "stage": "train",
+      "date": "2022-11-10",
+      "data_sha256": "dbbce87aecdf58f4b24b546f3813eca86df3eda1c2392bfd2f1183697a916349",
+      "metadata_sha256": "dc09c2cd008486f35573ee12d5357d98d1b600b63036237a8e7648acaeabe405",
+      "stocks": 297
+    },
+    {
+      "stage": "train",
+      "date": "2022-11-17",
+      "data_sha256": "1636a9f0de90e0e667a04152a82d00840605797ec6fa567c7d2922edb1c3d3c9",
+      "metadata_sha256": "e4941159a8480397a1c9181e7c4edf5ecc4a42f6eb6f0e54b54a2bb14d472ead",
+      "stocks": 297
+    },
+    {
+      "stage": "train",
+      "date": "2022-11-24",
+      "data_sha256": "6c0cbd2cc0836f184cd7b06018583f567f5333464e9c1c827390d8827b71c579",
+      "metadata_sha256": "2d2f72231c7c380a00b8fa0ab539d597d519e0e92166df553257d50ab240c1fe",
+      "stocks": 297
+    },
+    {
+      "stage": "train",
+      "date": "2022-12-01",
+      "data_sha256": "19ef01ccbed523e87d237ba5089072c4f9fa78fc9c61dd04c6d6e1b40fe2727e",
+      "metadata_sha256": "fc120e2600d0352712fcf8350ec5fae81e9e90cf9d94e374bc308a969959ecb8",
+      "stocks": 297
+    },
+    {
+      "stage": "train",
+      "date": "2022-12-08",
+      "data_sha256": "6867604190656009cf9de53830b088e16ac03a7cda7866523ba8b6afd9594d41",
+      "metadata_sha256": "dc7b47e215751f5b21da191656b178bb8dc1570d1a6dfc8bbf04d211c4ebccf6",
+      "stocks": 296
+    },
+    {
+      "stage": "train",
+      "date": "2022-12-15",
+      "data_sha256": "46211c2eaff4e27cc7df656879087a319d1184cb329b4e9b4aa40ea62822e8d9",
+      "metadata_sha256": "153992f85abb5f950dd4d5c9eac9fa605ed05414495fc37da4bbeaf652cc153d",
+      "stocks": 295
+    },
+    {
+      "stage": "train",
+      "date": "2022-12-22",
+      "data_sha256": "b4639acf92877b2b68528cd435a0b83c62546ea90a6d0a4ce8312c7fa62c2cec",
+      "metadata_sha256": "fce62b6f63414a80c639e62a92c8e5bcd5f2382cd92e5bc261bf102956dcb4ab",
+      "stocks": 295
+    },
+    {
+      "stage": "train",
+      "date": "2022-12-29",
+      "data_sha256": "b6eb06eae9bda678fc240a93c03d82c069c82afb7e25fd514cfa794e93a6f427",
+      "metadata_sha256": "c03c13290e2a844ee7a1f532e95b6b37de33db8cf11c641d30071535ed283899",
+      "stocks": 296
+    },
+    {
+      "stage": "train",
+      "date": "2023-01-06",
+      "data_sha256": "00ecc29e048cbb46c8559afee28cd84ab0cd74cd8a328bc8e28a8a3e3ecf9d75",
+      "metadata_sha256": "d424fb9ee9772ab1b00d603b129ecb1e036e7dbbdeb1b3b3136d8e9f8d630afa",
+      "stocks": 297
+    },
+    {
+      "stage": "train",
+      "date": "2023-01-13",
+      "data_sha256": "ed3c2080d4ad32abf15de76c624edf0b24232d91450b40c8e0c7b25fe8ed6e94",
+      "metadata_sha256": "96bb856783ce5b969942e62a749617ba4dc65b5e47381998b68f584af4d43566",
+      "stocks": 297
+    },
+    {
+      "stage": "train",
+      "date": "2023-01-20",
+      "data_sha256": "b8e9f8aa37620559b34d516fbd4e98067c17ea4fedb1677103537a744491f335",
+      "metadata_sha256": "6da9d5c0b4b4c921788563c8398730b6eb497a22b892303d4c879f7bf5ef313e",
+      "stocks": 297
+    },
+    {
+      "stage": "train",
+      "date": "2023-02-03",
+      "data_sha256": "1093dade69e60e78869d218528e9f3742066b56ee825a1062861f0022a3e268c",
+      "metadata_sha256": "32702389afd38ea4f1c1e33132cca078824bc4a56f06e052df2f4feb85e569ee",
+      "stocks": 297
+    },
+    {
+      "stage": "train",
+      "date": "2023-02-10",
+      "data_sha256": "336845b417cd4afc6f0245edbf950f8dbcf799e26305f77caba007c8ef774fab",
+      "metadata_sha256": "c1bd0020e6912713a9e8b10756e2dc25a5a91da392bf5add90e04c2d9149d4aa",
+      "stocks": 297
+    },
+    {
+      "stage": "train",
+      "date": "2023-02-17",
+      "data_sha256": "85d7386a9525858b2db1b341abed3805d7bf21f19e583d87b75c56688733bd6f",
+      "metadata_sha256": "e1a4082307ba690b4a94b990ec27fa27389d2609185e0deba318885a181edacf",
+      "stocks": 297
+    },
+    {
+      "stage": "train",
+      "date": "2023-02-24",
+      "data_sha256": "f97a45d961c0be7d7c55b2d337a8a48f97bb67667a9fdd7342003dc7ef05ec73",
+      "metadata_sha256": "aed3a93fe5633f354d9c693a75ca2e423244a80690b80e453d86991501b3970c",
+      "stocks": 297
+    },
+    {
+      "stage": "train",
+      "date": "2023-03-03",
+      "data_sha256": "23427f4a535ca6251370a867ce45ffca04a590478311c6fd685ff289e3aa0d3e",
+      "metadata_sha256": "9d44f4ed565ffdcda1fdd9f928802c90682ee17322b7936172a526a8b7460b98",
+      "stocks": 297
+    },
+    {
+      "stage": "train",
+      "date": "2023-03-10",
+      "data_sha256": "ed2485495c54341113da6979e1620758a22421dae33547023e8eb0229a45326f",
+      "metadata_sha256": "81cadaeeffbcc9bd270c22ac38728cfb419f0bb5b03d655f06d24472bd3a75e3",
+      "stocks": 299
+    },
+    {
+      "stage": "train",
+      "date": "2023-03-17",
+      "data_sha256": "1e2b54e8f53fe8f2a1902a95ad12aa5283db3354f37fbaad26000063fec12bdb",
+      "metadata_sha256": "a92a21f12aaeae64613c389f3aeaab927e478f9636ad835da72b091b76dc3d11",
+      "stocks": 299
+    },
+    {
+      "stage": "train",
+      "date": "2023-03-24",
+      "data_sha256": "3a42626bd414126037271afba616cb95883f9d554ee319c97986b84ef3e0db49",
+      "metadata_sha256": "7209eb0d7a60b6c5cfa998980c8a585a1b95160cb159383578c13ffa81c859db",
+      "stocks": 299
+    },
+    {
+      "stage": "train",
+      "date": "2023-03-31",
+      "data_sha256": "39ec139ef1597203bbb5a5614a77dc49ce3978849bb665867978becd1c6f5799",
+      "metadata_sha256": "13d4834653ef14fabfc6c88fd3c24a18f04cdf75c07a639a04301e4e5b11e40c",
+      "stocks": 299
+    },
+    {
+      "stage": "train",
+      "date": "2023-04-10",
+      "data_sha256": "9108f558ed24c828b19734aaed360e79e7b7e2c1360415bf7a4f41dff590918e",
+      "metadata_sha256": "a4f37917e7272918a5bf053ddfd484df1559a7103bb919a67b43de6d2547b62c",
+      "stocks": 299
+    },
+    {
+      "stage": "train",
+      "date": "2023-04-17",
+      "data_sha256": "7c09fd4d4ad605aeb3b46c4a02436d7d5289ec2712cb2607898ce0cc65ceec9c",
+      "metadata_sha256": "77400c727b2b762e20f88303529bc80b3379bcd4cbcbc66103895608a40be06f",
+      "stocks": 299
+    },
+    {
+      "stage": "train",
+      "date": "2023-04-24",
+      "data_sha256": "9a849f5ebd441fe5b3a34b7b49caf316953f21b650050ecc4cce2186cc7e8dfb",
+      "metadata_sha256": "bb9ca28276d95de246bc0e602081c65d41f485b25e4da8a87a7f17b135a96ec5",
+      "stocks": 299
+    },
+    {
+      "stage": "train",
+      "date": "2023-05-04",
+      "data_sha256": "6119ab8908381fffa72f195d9b65b21e93f829dc560b6045fffeefe6870f8e89",
+      "metadata_sha256": "d33eb25135c39a0303620e9701d368e55f7809c0f8a20af98f575d598d2383d6",
+      "stocks": 299
+    },
+    {
+      "stage": "train",
+      "date": "2023-05-11",
+      "data_sha256": "6ad3d5a8447d819e6dd12f9d3f371d5077c39da8c18b55052b28766bfce2666a",
+      "metadata_sha256": "54c88abe9f39eee0be0eb7007d5ccfe762e9a016569121bbbc186d5567ac705a",
+      "stocks": 300
+    },
+    {
+      "stage": "train",
+      "date": "2023-05-18",
+      "data_sha256": "fa4b0642ac38f892f29707a78d1787fa62f5f7950c41e594abbfb0e3d5e47946",
+      "metadata_sha256": "051bf8d988a7c2543dedf146631f860ed7ea551d37b15025ddcc0b380e851d0f",
+      "stocks": 300
+    },
+    {
+      "stage": "train",
+      "date": "2023-05-25",
+      "data_sha256": "13d856e41fc028641cf7716ff6679ad2afe076a0edd8fc40d946b555b78035e4",
+      "metadata_sha256": "4dd17239fd22de62b6ec3130187954a28fea57591d83cc737d82eb0c65308722",
+      "stocks": 300
+    },
+    {
+      "stage": "train",
+      "date": "2023-06-01",
+      "data_sha256": "aa1724bff903950c42aa5c8c9eab95ca3d3bf6133bf2abfe69e8705b8b86287b",
+      "metadata_sha256": "6179c5993a6b64dba72b3aeac9631117ea94a7bdfd484b5a8343bd97b46ce2ab",
+      "stocks": 300
+    },
+    {
+      "stage": "train",
+      "date": "2023-06-08",
+      "data_sha256": "04ce3c4cd90dab4fe7152181b5d704f7801d47d3393bd58d355ac13278b0fbb3",
+      "metadata_sha256": "dd0fe041892495bce185ddd81943d033df974ac562f7027a0029bcb098ee9298",
+      "stocks": 300
+    },
+    {
+      "stage": "train",
+      "date": "2023-06-15",
+      "data_sha256": "81f65f98ba9db61edb43046c90f750df6488c389fef1362387fd813a9dc6116d",
+      "metadata_sha256": "2be0a1e826bfab7e6f723c695d09f07bf1135d4afa6d017b6e00008c0366145d",
+      "stocks": 300
+    },
+    {
+      "stage": "train",
+      "date": "2023-06-26",
+      "data_sha256": "adf6427e2e4ea1085080415082f723b335b717e6953c26f576b9b3dee6e27eac",
+      "metadata_sha256": "332e3ad6c3fb236197f85773e3f548217381fe1bfd8b2b22538aaf6b85ae86c4",
+      "stocks": 299
+    },
+    {
+      "stage": "train",
+      "date": "2023-07-03",
+      "data_sha256": "0a4966ec0ca8bde115c3121c42d73bdc2f12a20ccf87de8cfa3b859a2ae1810b",
+      "metadata_sha256": "acfd5fdbcb2f17f3dbdd361d2c3a50e3b2c4b0952216e62ba1080fd2c7484ae1",
+      "stocks": 299
+    },
+    {
+      "stage": "train",
+      "date": "2023-07-10",
+      "data_sha256": "b39fd950920ecb265a11d44348b83e533a0946f130954a1c93c7438bc43cf7df",
+      "metadata_sha256": "3aa6916624382fd7b1a2252502184a915c7168293bae33303e36a183d9170e53",
+      "stocks": 299
+    },
+    {
+      "stage": "train",
+      "date": "2023-07-17",
+      "data_sha256": "e9421c990a7588d6fea2e5a6e277b70541e65bf148a8756b40dcb9f5f94274ba",
+      "metadata_sha256": "f1635d9bb2493ce6dcce99e729cd8070810fd0cf2a9fd046fcb15f4f99356390",
+      "stocks": 299
+    },
+    {
+      "stage": "train",
+      "date": "2023-07-24",
+      "data_sha256": "c5a3d4db3d7e4579c5c858e331305b3a3422cec97f27ca924db0614dc9f369f4",
+      "metadata_sha256": "becfab0f72062eb1d0c30195643fcaec5c947adb2155ae896378eb798c905e3c",
+      "stocks": 299
+    },
+    {
+      "stage": "train",
+      "date": "2023-07-31",
+      "data_sha256": "ba86b5529aeac335ab4759d530bec008757f06652945e749fff4d4d02d52b855",
+      "metadata_sha256": "872888de79c15e289d81329a493eaf257f7e29028939ec42cd4679e74dce76c6",
+      "stocks": 299
+    },
+    {
+      "stage": "train",
+      "date": "2023-08-07",
+      "data_sha256": "e4dc544a96e021e37efe7a8ff8161997e9098ad9837ca7c4540b857047111330",
+      "metadata_sha256": "353221da21c5f343a912a62739d62220081a53530d59a719d4d4678842f1e52b",
+      "stocks": 299
+    },
+    {
+      "stage": "train",
+      "date": "2023-08-14",
+      "data_sha256": "93569850e388739a26004504cf6a26125b8662b1a8c90a1ed1ee8be531acc93b",
+      "metadata_sha256": "1427fbd46b8c0a5c333d4f02140b7040bc700dc01e0d5ecf617a7b1c6b9f485e",
+      "stocks": 299
+    },
+    {
+      "stage": "train",
+      "date": "2023-08-21",
+      "data_sha256": "323698482f4623a4f1deb23fc5fb2b9bbb0d1d78d274f9fbd999a079856f35c6",
+      "metadata_sha256": "d6341ebeede48f585ba1e413884f65615e0562643448d3e337c28380de589316",
+      "stocks": 299
+    },
+    {
+      "stage": "train",
+      "date": "2023-08-28",
+      "data_sha256": "0e682c1b4828e281d073ccb4778ed43fd514a0bf78b221df6063267000c262c5",
+      "metadata_sha256": "6cbeabd1518d3a2ff1a89e25e5affe4b1fd6c0725386128f10478db8d7f39428",
+      "stocks": 299
+    },
+    {
+      "stage": "train",
+      "date": "2023-09-04",
+      "data_sha256": "eebde19e70a60ed4bd6a8db44bde1337e298b788df00d36d41c6885cdc735756",
+      "metadata_sha256": "574b72b7588ddb38a472cb5fe6117668fe5845d00be3b6082b7f16d8ab285a7f",
+      "stocks": 299
+    },
+    {
+      "stage": "train",
+      "date": "2023-09-11",
+      "data_sha256": "fdaf97678394a4ea0230f75da3ad07d397fea6a02d8eccf86005ec293a27e89d",
+      "metadata_sha256": "62456ba57c181f311e8e44faa64f09ff021d124b273aff60897f4247bac57c1e",
+      "stocks": 299
+    },
+    {
+      "stage": "train",
+      "date": "2023-09-18",
+      "data_sha256": "8697ffc001097bfdf5431797b12ae208d745a7878570aad9bbf78340447cde17",
+      "metadata_sha256": "9ab193a002a3da6510f9b6c1c35a57f5ed1a0d565b5adc5978de96e2b4389302",
+      "stocks": 299
+    },
+    {
+      "stage": "train",
+      "date": "2023-09-25",
+      "data_sha256": "f5c9841a6b48d6f736ce74f4c074d6ef07d57aff0e1f9ecdae54068008716da4",
+      "metadata_sha256": "22b6f5573e303200c7604b5d161ab162014a066b6d86d4b4ca9944779bd250ba",
+      "stocks": 299
+    },
+    {
+      "stage": "train",
+      "date": "2023-10-10",
+      "data_sha256": "dcc007844071fbfa89d580e6c75b752ba73cc6cebaf336e5af1e0793e1370e4d",
+      "metadata_sha256": "b80f9c218bea89778b32512960c4c8f270828d41213d195238487f907da0ce0a",
+      "stocks": 299
+    },
+    {
+      "stage": "train",
+      "date": "2023-10-17",
+      "data_sha256": "f0cfac0d75412d7ba2b6232113c9e1ca49ad3631b8cf9abbd8f157eabb1266d5",
+      "metadata_sha256": "9ff51f7dce63cf8536bb602c09652a15afd89b143d12b6c7332c0569f70df6f1",
+      "stocks": 299
+    },
+    {
+      "stage": "train",
+      "date": "2023-10-24",
+      "data_sha256": "05825a3c224f6eeb7ab6ebac9c739c372e5a8b6204a8d2b0892f441153d80421",
+      "metadata_sha256": "af35af702df64f17f0a3efc89abe983631a74ffa9dd87a28ba8dd21d6b8bc130",
+      "stocks": 299
+    },
+    {
+      "stage": "train",
+      "date": "2023-10-31",
+      "data_sha256": "84f1d44efb692c7e17657eef123e0fb8aebf44e0239c020822f7542935c4628d",
+      "metadata_sha256": "63b27d2ff743a4576ede3c46d9ef94bb2a0e326b651d8c669531f204002111da",
+      "stocks": 299
+    },
+    {
+      "stage": "train",
+      "date": "2023-11-07",
+      "data_sha256": "be7b2eeea21db983c611a1b33a6135822f774ef9f729cf47b0905ac73c99e1fa",
+      "metadata_sha256": "8e9d9098ed68b0d84b1cd8d8f0ef32f2ef4fbeeb04a0323c744c40a948d35ce0",
+      "stocks": 300
+    },
+    {
+      "stage": "train",
+      "date": "2023-11-14",
+      "data_sha256": "9d2610ca1e2b47cdc965ce7d276791746cb53c5ea640e8b8cddf0085ba77f974",
+      "metadata_sha256": "a42d46267c8feafd23009d814eb5bc2c8302c64fed7aab391c69c025027cf8cf",
+      "stocks": 300
+    },
+    {
+      "stage": "train",
+      "date": "2023-11-21",
+      "data_sha256": "eb5c73eb15eda7cba4aa64a3ce706ba151d02ca4935a6cc3968d656c8d5c0cde",
+      "metadata_sha256": "2a9e859d15089fe9e589e4fb59544d9372f3d2d79f3116408b6791a3dc25a64b",
+      "stocks": 300
+    },
+    {
+      "stage": "train",
+      "date": "2023-11-28",
+      "data_sha256": "b6c792609304de746648e6218db6ed9be049087699699c6bb18801203c7102f2",
+      "metadata_sha256": "f0c6453cfccbc50d27838b95b879a1ba511a618ecc273da9d7327c59b00b6907",
+      "stocks": 300
+    },
+    {
+      "stage": "train",
+      "date": "2023-12-05",
+      "data_sha256": "09b364a68b0e2aedc9890d72457697d84696bed280bd557c4c17217ac0b0f42a",
+      "metadata_sha256": "98b63ea05af68c8760fbde3ae5767a35563e8ed39f2d7947145f069b7431b682",
+      "stocks": 300
+    },
+    {
+      "stage": "train",
+      "date": "2023-12-12",
+      "data_sha256": "a85fab49d8e04686097fd30429d6b9a2629773892726853bdfde2585373afa90",
+      "metadata_sha256": "71fd782498991f1c46ace9ddf8f5e28309b19350df6d9edd61fc25357bf1c516",
+      "stocks": 300
+    },
+    {
+      "stage": "train",
+      "date": "2023-12-19",
+      "data_sha256": "1d3236deb53d6a49595bd2a643a6573f05430f858d616e9a8e1b7382ee20c136",
+      "metadata_sha256": "ad79224cb12bac63ee45fbd6e832c311cd89db4e61c132bcd7088e181608c51d",
+      "stocks": 300
+    },
+    {
+      "stage": "train",
+      "date": "2023-12-26",
+      "data_sha256": "4853726f1257b9844d72b534d7b547bd50ccb1857a56db18967ac6598fbd23ca",
+      "metadata_sha256": "4940f6d8f2284d926158663574cc503f33d2ff176716a61698fb0359d4853cf4",
+      "stocks": 300
+    },
+    {
+      "stage": "train",
+      "date": "2024-01-03",
+      "data_sha256": "d7333d4d501080803006159e2c0a9582b5e7dd186e98679910f96fcced436920",
+      "metadata_sha256": "c626fee050868b33226dc0072ce38631da50d46f58f060cafbe1bad799dfcac8",
+      "stocks": 300
+    },
+    {
+      "stage": "train",
+      "date": "2024-01-10",
+      "data_sha256": "d4dc72e605d43522b30870ca77055309d864772ac4ad815a5662d7d2371798b8",
+      "metadata_sha256": "f8cedc3a63dc03218552aff661e5394bce53fa016a04077d77aa776196d93203",
+      "stocks": 300
+    },
+    {
+      "stage": "train",
+      "date": "2024-01-17",
+      "data_sha256": "278d8a4aa2d948e84ff4b3708db1681c1e298609a64e63e391743028349ac5a2",
+      "metadata_sha256": "bcff5a12a010010d64fd414aa7889a7090633f054b358ce14bdc0d237f515cd5",
+      "stocks": 300
+    },
+    {
+      "stage": "train",
+      "date": "2024-01-24",
+      "data_sha256": "d9659fbfe95e8d1af138ccb898df8ace62fb15572455510cd835410ede287f2b",
+      "metadata_sha256": "36d3be448d34c4f097595d594bd9b5647d3669b7a1bd1e3c8eff56ed30d22c01",
+      "stocks": 300
+    },
+    {
+      "stage": "train",
+      "date": "2024-01-31",
+      "data_sha256": "fdacfc381219b05a7eee9f288702425a420d78fb91e208ef925818e9262f4749",
+      "metadata_sha256": "c21e504229c83f90e56dcfcd39072fd61785048df003b08e555ca930ef9436f3",
+      "stocks": 300
+    },
+    {
+      "stage": "train",
+      "date": "2024-02-07",
+      "data_sha256": "f6daaa734a540f002e3f8436480c8440693aa5c7f1bd97d116a3d9cf7acb708c",
+      "metadata_sha256": "54de92fd178353cc1330c6b9dae13bd605367344e567facb37c5007ed8608637",
+      "stocks": 300
+    },
+    {
+      "stage": "train",
+      "date": "2024-02-22",
+      "data_sha256": "2ae64aa5df2846e7fe8db06d62f2411f9aaea158f1ee979500480ae2f4912ee8",
+      "metadata_sha256": "7be5e2725e509527d926874f97d225698788b9a6939526966aea9c65fef1be48",
+      "stocks": 300
+    },
+    {
+      "stage": "train",
+      "date": "2024-02-29",
+      "data_sha256": "1d2be14628a183beb8200cd4b85f4bf4415642c6df903011c6b239454a3d98e1",
+      "metadata_sha256": "f60e78e5a29a2014cc90f4dbee4a99011fa57028ba4ec4ea2da33a73178a70ce",
+      "stocks": 300
+    },
+    {
+      "stage": "train",
+      "date": "2024-03-07",
+      "data_sha256": "fe30fe34534c6ad48c664f8a12f85a0d2a442b9b5fbb8a8cf4976278d24db3e5",
+      "metadata_sha256": "0b9ff721b37e393b2efeb041d53cfb29b942ac476879536d3f21c51858b47934",
+      "stocks": 300
+    },
+    {
+      "stage": "train",
+      "date": "2024-03-14",
+      "data_sha256": "ea0ffc1025ee1aa8e0035cea7a9157f05313ad97ddacced6563072849af4f490",
+      "metadata_sha256": "313d3becdf8bed9289021350a73e15d84754e7ef3626e3881bf6f2459f2669a7",
+      "stocks": 300
+    },
+    {
+      "stage": "train",
+      "date": "2024-03-21",
+      "data_sha256": "0278cc6686556b37379080d4ca8eda3a9a318fb6cd9e697ff16dece463c7b4fb",
+      "metadata_sha256": "b27f2a4838fb698448ae7f45abb8af4f883f908de0d471bd0aa81e778098d7cc",
+      "stocks": 299
+    },
+    {
+      "stage": "train",
+      "date": "2024-03-28",
+      "data_sha256": "4620a4c415e68393858851d0d5cd25577455c6cf1cfb9d11ff3cd1ecad9dc4f7",
+      "metadata_sha256": "ac0de5b98fc07b0320c5da2f95427cc312f80c67df9134e4f62532c4f9b5a51c",
+      "stocks": 299
+    },
+    {
+      "stage": "train",
+      "date": "2024-04-08",
+      "data_sha256": "c61772372af1403f5553584460db3e6477c873896cd84fc33d37773f1155313f",
+      "metadata_sha256": "1db04cc447b345c6b1194b0cb6049759e915090f88e6d45f3b975af755d32f88",
+      "stocks": 299
+    },
+    {
+      "stage": "train",
+      "date": "2024-04-15",
+      "data_sha256": "89cdf4644e180cd1896acf224be87da67d9c4d7cb07cb0cbbe0e7391a997161c",
+      "metadata_sha256": "0f9ea2e8f1e1fe10b53f7eeb9fd154db3bbde70797a9c23dcaa3d4c723d53ea2",
+      "stocks": 299
+    },
+    {
+      "stage": "train",
+      "date": "2024-04-22",
+      "data_sha256": "417ff294386db84020fea1a7b70ccacf60e489efa611fc4d1f65c024a8decc80",
+      "metadata_sha256": "b5eda19350568725b626e1f42f1ea639d908b0c899566ddf37e7610c4dbbdc88",
+      "stocks": 299
+    },
+    {
+      "stage": "train",
+      "date": "2024-04-29",
+      "data_sha256": "fb6bc3a9f2161974577954020c0c25b55e82131f741c554f266cbd285491cb46",
+      "metadata_sha256": "29d5139011839342abdc8430d11ee8311e5ecfc96b05e0a6a22c4ba1a641b7dd",
+      "stocks": 299
+    },
+    {
+      "stage": "train",
+      "date": "2024-05-09",
+      "data_sha256": "9cacaf8b437d1b4f5c1c69d23f88a77807e9dcc8d9da125dc9926c6d846309b8",
+      "metadata_sha256": "82dd489ffb3ee548b5073765784d8c4dde62bf0ee690b1ea257a0bc62ef3e2fc",
+      "stocks": 299
+    },
+    {
+      "stage": "train",
+      "date": "2024-05-16",
+      "data_sha256": "71bed25c43ce4b15f1b7f687daf4b8eb3a46cd7d6d02aaa11055989448da147f",
+      "metadata_sha256": "6ba713a17dfbae6805c41bfa7289ea40839a66769c14afb9aca7c367ce52d9a1",
+      "stocks": 299
+    },
+    {
+      "stage": "train",
+      "date": "2024-05-23",
+      "data_sha256": "1c2fbe0991096276f1e9095d661f7e9ced3a221702c095136dacafef32f1020b",
+      "metadata_sha256": "101a00c5157f9515a5af3d8f0efc1ab2e8ef1156ecbc0613426bf8c848f46ec6",
+      "stocks": 299
+    },
+    {
+      "stage": "train",
+      "date": "2024-05-30",
+      "data_sha256": "ca566123022295a5abfbf856efeb14306abb4cbfd6e67c00cc72952e3764e644",
+      "metadata_sha256": "1016596c10002855817d87a0bfbfbeb6f2db04412bc1e5e8b60c0d10e8afff67",
+      "stocks": 299
+    },
+    {
+      "stage": "train",
+      "date": "2024-06-06",
+      "data_sha256": "4b96ccf5beac4867448d068a55ba02ac1bf874fc6bfa6493362fab51d200f0f6",
+      "metadata_sha256": "39ea277bd49fd94b4e2631bf0a4e460bdc4eb485dd52994aa9dafad8e8ff2fac",
+      "stocks": 299
+    },
+    {
+      "stage": "train",
+      "date": "2024-06-14",
+      "data_sha256": "f6b162b2e5541481e937fc030354b25e1cc4437389535d8f64a80ce0aa8973c3",
+      "metadata_sha256": "852bb01cbeed337a0da45a1e634d6eadbef71db731c732b5921d18a41e21334c",
+      "stocks": 299
+    },
+    {
+      "stage": "train",
+      "date": "2024-06-21",
+      "data_sha256": "72346b10bfe85885203ffa4bc37b5de389647ecdbdb48b4de7084c7224e9cbc1",
+      "metadata_sha256": "ec26b33996f417e80e8920847ee7903a2e994b2b0c9b1664dff0b125453cd986",
+      "stocks": 299
+    },
+    {
+      "stage": "train",
+      "date": "2024-06-28",
+      "data_sha256": "10e6f00aa7ae786bd582632f9088410b5d5a15c29d37ce71cf969e5f9923584b",
+      "metadata_sha256": "b86fff3159bcce0b2f0ac13729d89763a04c188dd4a0dfecb724dad31c85b478",
+      "stocks": 299
+    },
+    {
+      "stage": "train",
+      "date": "2024-07-05",
+      "data_sha256": "c6b0180c32be6cbdac090d04a5810caed41a73fe9ad6d3a605d93b72a23c21d4",
+      "metadata_sha256": "4b899103695455fb5e0ecaba4e59e15b1f2613e0cb6fb0b7fd8f62e19f04d6e1",
+      "stocks": 299
+    },
+    {
+      "stage": "train",
+      "date": "2024-07-12",
+      "data_sha256": "8a6013c9963a6e56bcb43bf6d9a0541069ae167b5a3ca58681c93004e299ef80",
+      "metadata_sha256": "cda7b169096196e25f67e66290469d71823bfb060994dffb612ba475a2dc9a8e",
+      "stocks": 299
+    },
+    {
+      "stage": "train",
+      "date": "2024-07-19",
+      "data_sha256": "724e3361a32ad48a2fa2b7ac7cfc8a1dd46d074c0ab1dc3aadb486f5775d9a48",
+      "metadata_sha256": "e96eb24f3bb7f770814502d9937a2757edefbcba9f0924452446c246a8bbd00a",
+      "stocks": 298
+    },
+    {
+      "stage": "train",
+      "date": "2024-07-26",
+      "data_sha256": "5ee1a6112d0248414734ddf439c7eb0946870aaa8187bb4190d215eb69118e95",
+      "metadata_sha256": "b7707b80dbc113ab99d8e3adcd146509d68d0b43a5f3dc506fd98199ed7220f1",
+      "stocks": 298
+    },
+    {
+      "stage": "train",
+      "date": "2024-08-02",
+      "data_sha256": "da49bf8871d83349738af43917594ee273628ab68e3657a5744a97e0438fcda9",
+      "metadata_sha256": "5c8cb816d37d4181d48a4c862d1bfc67933fbe930af18de3f69abb2d422eaf27",
+      "stocks": 298
+    },
+    {
+      "stage": "train",
+      "date": "2024-08-09",
+      "data_sha256": "f2e649b2d2fd88fc796fad69e44acc114b3b7a40f2a5dece0a306098bdbe7427",
+      "metadata_sha256": "bd61c23e8789c4cb1f372adebcd0ec29370f7908944a5ab8d8013fcaae254f94",
+      "stocks": 299
+    },
+    {
+      "stage": "train",
+      "date": "2024-08-16",
+      "data_sha256": "9ea2502b6b87adba600dea4f585355a4614eaac6fe2bedc1b24e238e08d4f594",
+      "metadata_sha256": "a2c0d14b8b0677c5b96c0b63987e41f9883e41acbc32e957df0b0c5b0e4db4a2",
+      "stocks": 299
+    },
+    {
+      "stage": "train",
+      "date": "2024-08-23",
+      "data_sha256": "ffa461447a6e9dacd7a7af4bc5d374a3a4aa5729908b1446a0f419fff4d212bd",
+      "metadata_sha256": "c2e8f61f8e811c7a3077d19a75637249d6c19440e4b53b8c9f08218f891cd72a",
+      "stocks": 298
+    },
+    {
+      "stage": "train",
+      "date": "2024-08-30",
+      "data_sha256": "651d986760d029ba6df317bafc84f9dbe0eceae681fdbf54bcb3bf2ab8ebf64f",
+      "metadata_sha256": "100b2b35c6979aeef227dd8afa88d258a87fd3b3ea4c170a2ded5ae5ae03cae9",
+      "stocks": 298
+    },
+    {
+      "stage": "train",
+      "date": "2024-09-06",
+      "data_sha256": "e7bd484a940e4b1aa4de768c8ce3fb694d24e736f04e452f939f018b5faef566",
+      "metadata_sha256": "ff3785bb94b66cf40a10442151f154a4b1acfa3797214df1302b562f92dfc163",
+      "stocks": 294
+    },
+    {
+      "stage": "train",
+      "date": "2024-09-13",
+      "data_sha256": "3500dc43a43f3a2cf435436a72ea98e520f78ffdc134949f27939f32856b5dc2",
+      "metadata_sha256": "409a078f81d31f43a1d83ebc904fb778fb459c3e90cc622f7027a43603aec79b",
+      "stocks": 294
+    },
+    {
+      "stage": "train",
+      "date": "2024-09-24",
+      "data_sha256": "87ae0f27a6240e7e1ee00aa71d5b136c5757ce6ff189caa0c5827c4cedcb401d",
+      "metadata_sha256": "ee69b14c6b91fe6a0f32f8ae284b683e865a2b5b077a7c492686390df569fad7",
+      "stocks": 294
+    },
+    {
+      "stage": "train",
+      "date": "2024-10-08",
+      "data_sha256": "6d159c7a5d29a49ca46df4e1777ab9d9117ca862fd0055bbb0598ffa9bf90464",
+      "metadata_sha256": "5391ea8bc8ab3617164edc14dca94cc462798d540668d4c6b4b8db7273ac5200",
+      "stocks": 294
+    },
+    {
+      "stage": "train",
+      "date": "2024-10-15",
+      "data_sha256": "5783917113ff85b4e17db9261f5dedc8f4f5573a2431d6479a1361b1f30a1a0d",
+      "metadata_sha256": "601a2868a740f0a9513bc33e1beb2549be4714ea8b799de06a571383a9ec551f",
+      "stocks": 294
+    },
+    {
+      "stage": "train",
+      "date": "2024-10-22",
+      "data_sha256": "e42660bec1e1efcbf42c5c10e9f220794855ff488c00bfd77102fa6fd7550c1c",
+      "metadata_sha256": "7608d61da75456005f9b02ab9ee6c2a855d30f2a098578b789c0bab9409d8511",
+      "stocks": 294
+    },
+    {
+      "stage": "train",
+      "date": "2024-10-29",
+      "data_sha256": "586dcbb2942b5e56c980f04d76449273334d0be2cccb4cae453dc790c526adea",
+      "metadata_sha256": "5e6d958c1de9e99f3e5e681de1ac6cf2e829f34b9a6cabfd57e5fe5317088b25",
+      "stocks": 294
+    },
+    {
+      "stage": "train",
+      "date": "2024-11-05",
+      "data_sha256": "6cbb3f407789a5ac4a6c0ba40c3e670f026b62f79cc64a6510044fcaa4bb53e2",
+      "metadata_sha256": "213b37e7c2fc4e2813371c183e4fc82b85bb477c02c912c0967b12634ce20a5f",
+      "stocks": 294
+    },
+    {
+      "stage": "train",
+      "date": "2024-11-12",
+      "data_sha256": "6805408bfc1b09c8109a571e36ccf917e9d68132d670dda9c9d8ac1ea9289b85",
+      "metadata_sha256": "b657936b939b1c7df10cb1dd83163721b6f05e225ea3704c1902492f726cfb59",
+      "stocks": 294
+    },
+    {
+      "stage": "train",
+      "date": "2024-11-19",
+      "data_sha256": "3e51246d179b0b0c6d9395b97cb38ff4e92fa5f609ae11c2605945c35c8eddb9",
+      "metadata_sha256": "cdb47f0db0096d879b22f93cda04a70058b5f88351b4d9baa9df261538f2b208",
+      "stocks": 294
+    },
+    {
+      "stage": "train",
+      "date": "2024-11-26",
+      "data_sha256": "085c460e2a7093b2ead9c8129961a5952da06c349a84489cdeac586920f1e8cc",
+      "metadata_sha256": "38c2fa5b502487f1cb25825779c201de2d7d1cdd2802c177decdeef38952fcda",
+      "stocks": 294
+    },
+    {
+      "stage": "train",
+      "date": "2024-12-03",
+      "data_sha256": "b915f5d84fc4755328c4ab01e32497537ee6b1accefe3701d70d5dd828616d8b",
+      "metadata_sha256": "a5daf327652c7e4f01e40b42432330f90e5191bb33c5134e67c26ccc6a78553c",
+      "stocks": 294
+    },
+    {
+      "stage": "train",
+      "date": "2024-12-10",
+      "data_sha256": "c33c1fe0bbdd73737b9095eec80da6a51e056d0f1156c216854377ff860e1d14",
+      "metadata_sha256": "65c71cd62b29682da1d2618db97b8c58dcec1b4374a8f91b312a24d9afd20010",
+      "stocks": 294
+    },
+    {
+      "stage": "train",
+      "date": "2024-12-17",
+      "data_sha256": "b51183584da270ed88719a588c7b0269e805f188c79280f6a1846cb51e386771",
+      "metadata_sha256": "b154bd9a943a453e316a8b724ebb78a1f662a3c6f3a531353543e5a2c6cf2cef",
+      "stocks": 294
+    },
+    {
+      "stage": "Q1",
+      "date": "2025-01-02",
+      "data_sha256": "274642def56c588fb47107f37ae7c0c31d6ed3597f7e7caae712100a6486d259",
+      "metadata_sha256": "798d734cf7bf4aef26f3f0732858a2dcdde780c25c29fddbcce9ab27d86b92c9",
+      "stocks": 293
+    },
+    {
+      "stage": "Q1",
+      "date": "2025-01-03",
+      "data_sha256": "9b0e983e4c934eba6cb555216aec7dcab0138d9d74f7f81e2cdb2b762f57be9b",
+      "metadata_sha256": "0d95810db587688f94b678abb0cadb62cf1541b300b1b242387aaca00fadf82f",
+      "stocks": 293
+    },
+    {
+      "stage": "Q1",
+      "date": "2025-01-06",
+      "data_sha256": "5dc3937683edd6b256cb325da3bff9717dfd0e497206bed8c4799c0e966a325f",
+      "metadata_sha256": "fdd63990d2e40e5d7f0d60e4048142c23aacee37d79a9586c8f539c1cf0330e1",
+      "stocks": 293
+    },
+    {
+      "stage": "Q1",
+      "date": "2025-01-07",
+      "data_sha256": "ef5e075ff2df7e157236819e94d755f86b80c3818ca2ee2b59f4bb5a530959b2",
+      "metadata_sha256": "d3f0d958024b92fc20bc7d7df80cedcb77544db8ff9765875609597e9696ba41",
+      "stocks": 293
+    },
+    {
+      "stage": "Q1",
+      "date": "2025-01-08",
+      "data_sha256": "c802562de3b651fe928427b78203d61fa045004cf671165ec02101a87d526197",
+      "metadata_sha256": "f1712c0e1a10874bce6235fe45f6eeb3657c4800e8187ceb0b4cb9c05389ea8c",
+      "stocks": 293
+    },
+    {
+      "stage": "Q1",
+      "date": "2025-01-09",
+      "data_sha256": "7324c0359c6893aee2ab0a5a57ea618997ee45b6afee8852a06abdc4abe08ee6",
+      "metadata_sha256": "a6b1b6e713361c3ef7b1a53c8e09f0298707d2eb87243869c25b5ec6f8fd74b1",
+      "stocks": 293
+    },
+    {
+      "stage": "Q1",
+      "date": "2025-01-10",
+      "data_sha256": "e5a9a5abe797a97d915dee9e60d491325106b4ffa55ff2a94fcfb6fb18d577cc",
+      "metadata_sha256": "d9c3a245fd0ac4f45fd3d2ae6f2a6940a597cad996398d06f4cee16bff974373",
+      "stocks": 292
+    },
+    {
+      "stage": "Q1",
+      "date": "2025-01-13",
+      "data_sha256": "8b702a7257d80f9b91f9efc6e4211af3a95dc69d61085108ecc2335b64d45539",
+      "metadata_sha256": "b7f1c54ba63ab160fbcdf7eae1920f874d0d413c7ca2845bcc1b3f055f963801",
+      "stocks": 292
+    },
+    {
+      "stage": "Q1",
+      "date": "2025-01-14",
+      "data_sha256": "019d127338d838dfe0c7d0c405911bd9c19aaef40b05660f34c5a7c6f05e2d85",
+      "metadata_sha256": "2302a812f9cd55841859bdbb82f66cdf706cc2e083af0e261a2aaefcca7d9b64",
+      "stocks": 292
+    },
+    {
+      "stage": "Q1",
+      "date": "2025-01-15",
+      "data_sha256": "fbe96c8e7aaba0d2e80b3fd5e76f786881d783b75d6ed7ce67be8e91a42eab19",
+      "metadata_sha256": "617d64beff5a43aa62f2c51ec81d7474f039113348666081fb53b4e38d33495c",
+      "stocks": 292
+    },
+    {
+      "stage": "Q1",
+      "date": "2025-01-16",
+      "data_sha256": "79294c9ab3ddacfdda6b85e12db6c4ef446f673a94f7fab0ee7eba7304bf41d4",
+      "metadata_sha256": "1bd3e11c9cdc01350f7983297dc6431ce497fcab233a3fedd72e37764d42efaa",
+      "stocks": 292
+    },
+    {
+      "stage": "Q1",
+      "date": "2025-01-17",
+      "data_sha256": "51047d32bff4d2fb51a553fa8efb3c585ba05fcc7ff8915a7a2f1b19e2435681",
+      "metadata_sha256": "853f5bdcb09e25b1e0e9ce835d570ff9c68bda480917e1eae3fd74b35f44cdf2",
+      "stocks": 292
+    },
+    {
+      "stage": "Q1",
+      "date": "2025-01-20",
+      "data_sha256": "fe08db8421461e337f516b89f451bc0a2fddba0ef1926eef19d601482de35427",
+      "metadata_sha256": "370a0c11e7a7454941a47654d5394b1ccc47c731e91a8c666cdfa7e974211944",
+      "stocks": 293
+    },
+    {
+      "stage": "Q1",
+      "date": "2025-01-21",
+      "data_sha256": "5657b7398233ce4609edf348736c0cee19d01e626f61cd66248b8f11dd4029e7",
+      "metadata_sha256": "14c3cd5dbd5775417cb32115493edc468cc726f1d609b4de66bdbfa5e30aa0a4",
+      "stocks": 293
+    },
+    {
+      "stage": "Q1",
+      "date": "2025-01-22",
+      "data_sha256": "a24bd9e72abb1883f18a1c71a919712c20c941699f825f88ec23ad2bceac9078",
+      "metadata_sha256": "66c4c5ca8bf804ec2ff247796fc559e51240126dc7a2302dc7f3fb87e332f4a3",
+      "stocks": 293
+    },
+    {
+      "stage": "Q1",
+      "date": "2025-01-23",
+      "data_sha256": "c887576eeffbe6324f4ed4c8a9807058542981dce334133ad4883b1184155e37",
+      "metadata_sha256": "1e956577575a6ba68be5719df84752558be5f3e9217ac65df79b8c22546d39b0",
+      "stocks": 293
+    },
+    {
+      "stage": "Q1",
+      "date": "2025-01-24",
+      "data_sha256": "9762e7f4ef1fc2a6d8ffe0b9badf93480f41e9f97ca29cb4dd09e8b3a991aba9",
+      "metadata_sha256": "6c8310f1ca46fc588b836aac7f5d4e5c56f730e007c8340410983214c635e561",
+      "stocks": 293
+    },
+    {
+      "stage": "Q1",
+      "date": "2025-01-27",
+      "data_sha256": "d5be5771798d7761e22856d76d9b4fa3d18e7ce5f7a0df33301211bf24cd3681",
+      "metadata_sha256": "67589a3bb97040964382ba21099addc702300c39741e186393b9f2a849fe5c72",
+      "stocks": 293
+    },
+    {
+      "stage": "Q1",
+      "date": "2025-02-05",
+      "data_sha256": "506af753b54dd6eec26a0ced93fa20df3e7c2800efadf31be59e21a0564930b0",
+      "metadata_sha256": "d9f6dadf8317e6d29fd2cff612d34c3d508735bb4b771ccb68ee68a24e50f494",
+      "stocks": 293
+    },
+    {
+      "stage": "Q1",
+      "date": "2025-02-06",
+      "data_sha256": "b036043d47c2729a9cca6183d8a9c54fe199a7d965722da46009f4d0d1452c95",
+      "metadata_sha256": "b53a9cc96fbc54095b79a2bcf99f1a1e45007e09101bb4710f2926ac75729623",
+      "stocks": 293
+    },
+    {
+      "stage": "Q1",
+      "date": "2025-02-07",
+      "data_sha256": "804ec9915736002c71bf6b220b8e9291020f612a8c59bc6c84a004dd106f64de",
+      "metadata_sha256": "7c80a14fda58bb19d1cfeaa64fdff8ff3425c14b7e7fe102097f0cc429a6a249",
+      "stocks": 295
+    },
+    {
+      "stage": "Q1",
+      "date": "2025-02-10",
+      "data_sha256": "0455dfa065be13d5591349692767f11108d2831d76e9ededd65d89f6922488d6",
+      "metadata_sha256": "4ce1c9e3a6d70f6052b0f45701eef9eb8b572324620e4735edc123e62a419c08",
+      "stocks": 295
+    },
+    {
+      "stage": "Q1",
+      "date": "2025-02-11",
+      "data_sha256": "5fb98117cdadebf242876151aed59f96fe1dfbeaf0246ba9b16feed975598317",
+      "metadata_sha256": "17f636d5e4d9e8162c79ba5c263f9b86ad5155d209ac696119efcfc59018e17c",
+      "stocks": 295
+    },
+    {
+      "stage": "Q1",
+      "date": "2025-02-12",
+      "data_sha256": "72e4b8e2255f6a0ee1d791f24ba41c3468bfe338a2d5e30d5c359f92e199e80f",
+      "metadata_sha256": "27c85e8001e8d79af9ac7d652f5618a9160317ac83d27529c29145f2457824a4",
+      "stocks": 295
+    },
+    {
+      "stage": "Q1",
+      "date": "2025-02-13",
+      "data_sha256": "9ea9f78cbee24de24ab5b9c0efbc55b8e0932d26177a81aecf6095e2ebbec12c",
+      "metadata_sha256": "96035432f0f12895db7d171ebd245df83c295e10fb9a5d73443bd26ec3cdc2e9",
+      "stocks": 295
+    },
+    {
+      "stage": "Q1",
+      "date": "2025-02-14",
+      "data_sha256": "03ce9fc08b71f3576e339e16432484155d8503a600f24173a907099a9e1ddc4d",
+      "metadata_sha256": "b7f3e562232a190654cc20723c232a63a1638af7eb9b48ab5fbaab0f9f5ce74f",
+      "stocks": 295
+    },
+    {
+      "stage": "Q1",
+      "date": "2025-02-17",
+      "data_sha256": "9a74967eecff9ad8d395f4be5977cacdf89e57f1d2192598097bb4dfd53b273a",
+      "metadata_sha256": "48f473ddcd2e69f126016810ac8cb27bedf39538ece6d50e67e313e84d80d005",
+      "stocks": 295
+    },
+    {
+      "stage": "Q1",
+      "date": "2025-02-18",
+      "data_sha256": "2da6c52ebe24dcd28f2ab1c7ef7bd3bdc90e9b10606c8954d8674e4f77194c0b",
+      "metadata_sha256": "ac8e4038f98e1933828d6e65fd8d22e32b5fa54b5cc58f2c588030ae05575e3e",
+      "stocks": 295
+    },
+    {
+      "stage": "Q1",
+      "date": "2025-02-19",
+      "data_sha256": "c742f3ee5213e75de05193d469e4344c4baa3a85fdd91390111ac9c05290e4e2",
+      "metadata_sha256": "7228de42227395bc67591ba5b59dd44eb96faf80e27115c399760698aee32716",
+      "stocks": 295
+    },
+    {
+      "stage": "Q1",
+      "date": "2025-02-20",
+      "data_sha256": "090ecaf83054d60e2f887a38acb68f6eefda3a7dcc3a04229e29f35734548e83",
+      "metadata_sha256": "cf005e3ede92652d1fde605606b05db88b6a22118dee014530ca03d765914a0e",
+      "stocks": 295
+    },
+    {
+      "stage": "Q1",
+      "date": "2025-02-21",
+      "data_sha256": "fece457e1b455ab365bd81d5601202f20b30200381045f90dbc9c7b582a04fe7",
+      "metadata_sha256": "f077aed6080776318505741fac029efef5848c855d981284d4651c272d72456d",
+      "stocks": 295
+    },
+    {
+      "stage": "Q1",
+      "date": "2025-02-24",
+      "data_sha256": "00b237a296d4dea0bc63f617803c696b3992520832127ca8cc84445c19da8b72",
+      "metadata_sha256": "da42bf1bae58f2d7c532727a8eb556865cd13f321cb5288510760f0b34c0d393",
+      "stocks": 294
+    },
+    {
+      "stage": "Q1",
+      "date": "2025-02-25",
+      "data_sha256": "d7b44c8f641a719593cd74efad066b0ca78ccbb0f6da3da89451e2e0e76b623c",
+      "metadata_sha256": "4f962cbaedf328d553201983a37747a9d6f689ac2abace4fba10eefdb3da6ee3",
+      "stocks": 294
+    },
+    {
+      "stage": "Q1",
+      "date": "2025-02-26",
+      "data_sha256": "7eba4343496b1099b1f7c93a28aedca73ee86ede0573c3ddfcfef2daa9dc777c",
+      "metadata_sha256": "70c935b9185a1df70e5b51667712fe5aee0d73afc4e9a2cd1034312e12e9c6f3",
+      "stocks": 294
+    },
+    {
+      "stage": "Q1",
+      "date": "2025-02-27",
+      "data_sha256": "d12a626a59c265a4196ae55f7f7a18bb5ee75811c95a9f9e3073d59a4a087632",
+      "metadata_sha256": "62fc3ac50dea4e2027478b86f3aac7439a890b5d0172bec2053e1c9fab6d3580",
+      "stocks": 294
+    },
+    {
+      "stage": "Q1",
+      "date": "2025-02-28",
+      "data_sha256": "30056f7a094c6f2d8bdc68e0a3220461ff6194d98570f07739ffb18236c3c42e",
+      "metadata_sha256": "902bfadb0375fa746433b6b6edeed0a3d68d34b4e450de9d2593208a6c22511c",
+      "stocks": 294
+    },
+    {
+      "stage": "Q1",
+      "date": "2025-03-03",
+      "data_sha256": "784c7c041145d762b090a1a6f934ee992bb97edcfc2d55842c3b7067a00f8d7e",
+      "metadata_sha256": "e35eaf897d6e3074002c60d08e9781d67a3bb4abeb70e0295007f9e50d7d63b7",
+      "stocks": 294
+    },
+    {
+      "stage": "Q1",
+      "date": "2025-03-04",
+      "data_sha256": "a1dc3dfe4684deb468d3845f4edcf31247f8b9b1db506183bfdfbd813260f819",
+      "metadata_sha256": "69515dd7707227218acb0433b0e21680a3d4f736e36d138dd1400bc0d45028c0",
+      "stocks": 295
+    },
+    {
+      "stage": "Q1",
+      "date": "2025-03-05",
+      "data_sha256": "4e3cdb625dda0c4647b06f5a5c42b0b3755603fe32897d1df74fc0ebcdda66f4",
+      "metadata_sha256": "829074485f635df17e0311b3f1f405bbc3d49f74b3d3195d0d7ff26f07e80bc0",
+      "stocks": 295
+    },
+    {
+      "stage": "Q1",
+      "date": "2025-03-06",
+      "data_sha256": "abe70783726fa4e480c1247e1dcc7e4d07aa5ce53feb82bb7dcafdacb3dd92be",
+      "metadata_sha256": "246c8391ee863300f9021b361ac10e88318347722b17d05c0df8f68c9b43f79f",
+      "stocks": 295
+    },
+    {
+      "stage": "Q1",
+      "date": "2025-03-07",
+      "data_sha256": "193f720dc80d47c9703721a4058c0c4f20d7b6fd7c8314733ec3305eef5208fc",
+      "metadata_sha256": "4538599d16fd4ea4cd12a490b381d25104a722947c5ef56b1ac7ee85240c2900",
+      "stocks": 295
+    },
+    {
+      "stage": "Q1",
+      "date": "2025-03-10",
+      "data_sha256": "5e7854e63d159fc86bc3b0072dc7280991fb923bae0cfefe75fe7f00fcbf6d2d",
+      "metadata_sha256": "af9d598eaea2614bd78b7aa3eccf111e604754f60b790b28ffb50cef8f146dd6",
+      "stocks": 295
+    },
+    {
+      "stage": "Q1",
+      "date": "2025-03-11",
+      "data_sha256": "1696bb47b1e01e7ccf6624b32303da1034d5df8691dc7f2b72138ed51f49d4d3",
+      "metadata_sha256": "293b119855beb93a1d0cf91f7631a2812bcf735d8f3d75833cb5f2b68acc2423",
+      "stocks": 295
+    },
+    {
+      "stage": "Q1",
+      "date": "2025-03-12",
+      "data_sha256": "3a92256cb89e31e06df76765bab92d77eb8c7e0bdc38acb2a0264ab09158cb0f",
+      "metadata_sha256": "791558c062672cf034121435ea608eacd95a4685860c818a5fd9950a2e9a57d6",
+      "stocks": 295
+    },
+    {
+      "stage": "Q1",
+      "date": "2025-03-13",
+      "data_sha256": "792ce1a59a396253e9d68ce63e9caf35399dc75b852cb6c66f27ece60e989827",
+      "metadata_sha256": "e8cb757ee926c2f51e341fc1c631365e67cdc6f74f7e90eac09c45743b7353f9",
+      "stocks": 295
+    },
+    {
+      "stage": "Q1",
+      "date": "2025-03-14",
+      "data_sha256": "01cc37fec008e4b859c3fd5edbfd7d4a207773289109376b9c2c90e30d18f590",
+      "metadata_sha256": "6434825429daff05a79449ab051561cf28aec1a62a6c45fe34ec3c51977b794d",
+      "stocks": 295
+    },
+    {
+      "stage": "Q1",
+      "date": "2025-03-17",
+      "data_sha256": "339b6970d31e896447201c17b96aa50f7b66271e715a792738168d103761cc59",
+      "metadata_sha256": "e4dd41003f432a87e4bb4dbf0d213167c710e4dec0d6842c5afa266714bc77af",
+      "stocks": 294
+    },
+    {
+      "stage": "Q2",
+      "date": "2025-04-01",
+      "data_sha256": "c592db237e3362a66404299b75e32c60194ce2b7407d8cc4cf7cef4e29db2861",
+      "metadata_sha256": "b566b93db687b22aee2c10f390875c47bb5c7c3a488127bbbdc00613b7116b80",
+      "stocks": 294
+    },
+    {
+      "stage": "Q2",
+      "date": "2025-04-02",
+      "data_sha256": "7a901fcc02d85026ffff42fe2f1e51df1b27da963fb70822fbd54b9bfee18a75",
+      "metadata_sha256": "62e456bd59ef01446359e156cdb52412723dfef89bd777eb99f1b645fb270fbf",
+      "stocks": 294
+    },
+    {
+      "stage": "Q2",
+      "date": "2025-04-03",
+      "data_sha256": "c73d85ef4e1ecc6a418247127343d417e9b23f27a348fe54d7aa147395fb56ea",
+      "metadata_sha256": "54ec6261db35022bad750f6c93d5f80db8380887ae8fdbc4e5cb0fc95fe683f6",
+      "stocks": 294
+    },
+    {
+      "stage": "Q2",
+      "date": "2025-04-07",
+      "data_sha256": "9a5fc375e37e737bccc938b45b47c7712a05fb94a7b280519282847a8f6eb255",
+      "metadata_sha256": "2eab165e0547aa25e7839a1d5d35c802afa2add91d7e8c39b3bbd8c2f9b2a5f1",
+      "stocks": 294
+    },
+    {
+      "stage": "Q2",
+      "date": "2025-04-08",
+      "data_sha256": "b47f89772a802fd32c4e76ba37dba2258a995a455242481c538f9ea10f7c707b",
+      "metadata_sha256": "ddc726208c905487e2edf7e50e751448b6f9e830e86abdec10bfaa4f96487fd3",
+      "stocks": 294
+    },
+    {
+      "stage": "Q2",
+      "date": "2025-04-09",
+      "data_sha256": "1c8b95c316931c3c80a320d2e986bf1d403f3306ecd096ddaef8d57876f51b79",
+      "metadata_sha256": "8381122cdb560f2d3bebd52c839b00b15ca1bf651e4ce60bdab638bd56387cd6",
+      "stocks": 294
+    },
+    {
+      "stage": "Q2",
+      "date": "2025-04-10",
+      "data_sha256": "ed093271a6b7d5a1e23ea1e602c42bf25113d175da55de648ccc825cfb5fe91f",
+      "metadata_sha256": "855489aed380ce74894f012f5082d032203b7464da864c9ae89b84f601d31ec4",
+      "stocks": 294
+    },
+    {
+      "stage": "Q2",
+      "date": "2025-04-11",
+      "data_sha256": "5cd5d0c0830e7e17fd13473056a545b65dcad9948d23f4f28a96d7f075f41dd3",
+      "metadata_sha256": "d454cada10d3e7039b3218c7a805de5b0a3b83adfad605f2a27ce873bb6472e0",
+      "stocks": 294
+    },
+    {
+      "stage": "Q2",
+      "date": "2025-04-14",
+      "data_sha256": "433da9e232b8f5a8dfb071343f60f962aa1b0d35013c43a0ba3a0882f36b780c",
+      "metadata_sha256": "c13abed0bd0d8b20b3f3a70290f3f9bcb0e6c18883add2c7758aa9dfb93bf57e",
+      "stocks": 294
+    },
+    {
+      "stage": "Q2",
+      "date": "2025-04-15",
+      "data_sha256": "4b7e3e44225a47adb9cf369deb41ed51da38885d6ff2e1fc4feded8e73598a1a",
+      "metadata_sha256": "20c4522dc787ea1700246ae0488d4dbb9b7478d1387db456428e3d4b4d316952",
+      "stocks": 294
+    },
+    {
+      "stage": "Q2",
+      "date": "2025-04-16",
+      "data_sha256": "cd2d229537af5da5da42a4d6cf86a38132e6392c4437c3a592ef225954f10a96",
+      "metadata_sha256": "3139be3c6b9dc5a9f5da50020a9aa650b889e6d5642716f62c49e728d812d786",
+      "stocks": 294
+    },
+    {
+      "stage": "Q2",
+      "date": "2025-04-17",
+      "data_sha256": "ec2ed295feb03d09aa0306b5996eea40c51df7a006253ae372a32c8667299506",
+      "metadata_sha256": "111134909545fcd07d0a8ca9d8649b3533ebb61ff37fa1a4997c0914d5b1682f",
+      "stocks": 294
+    },
+    {
+      "stage": "Q2",
+      "date": "2025-04-18",
+      "data_sha256": "100b7954194cc4585839fd0928d7914e3482094847b79c75865201e38b3ae9da",
+      "metadata_sha256": "3c869c3ab0a87a5c398ce8b4db9ea2a5a1d363a65725f5b0c703b62d62d11f5d",
+      "stocks": 294
+    },
+    {
+      "stage": "Q2",
+      "date": "2025-04-21",
+      "data_sha256": "5ebbd46c37a4b24575539f751fde9e1c83281efd61033754f662ed50a6bc1f82",
+      "metadata_sha256": "19cb6db0d49d2ded4d76153cb72927b216ce6b5fbaa6c224e1994b2954a34734",
+      "stocks": 294
+    },
+    {
+      "stage": "Q2",
+      "date": "2025-04-22",
+      "data_sha256": "a20caab8d80c7e0fe42d07d99429d99b07f0745df143165b08d119b8d9b5357f",
+      "metadata_sha256": "1828de1613636f2a6af5199c5b4a56fccfaeb357b09915f3bcd4a936c6cbc56a",
+      "stocks": 294
+    },
+    {
+      "stage": "Q2",
+      "date": "2025-04-23",
+      "data_sha256": "e9a90bac627b214bff48a9d0667c8c21ad22bbc8b8817a1ef27c2da572c9529c",
+      "metadata_sha256": "75d81bdd11ca9c21100aa1aa73a5e3725313ef6409273d625e68223ea1417039",
+      "stocks": 294
+    },
+    {
+      "stage": "Q2",
+      "date": "2025-04-24",
+      "data_sha256": "50f5d8bbe8010f6530af146306f51a3c5c947b19c36dee21ae217a7d27908442",
+      "metadata_sha256": "5e3c6eddc7456ca3c443cc05e03bf09794711c8135a17360725d74106cebebef",
+      "stocks": 294
+    },
+    {
+      "stage": "Q2",
+      "date": "2025-04-25",
+      "data_sha256": "dcc81bf79a5ed43e8648ef68ad76ee4f3bf4d552493ce8304e8026922a2d01bb",
+      "metadata_sha256": "e501c007f9f3459dafc2c828ef6e33bbc37b91b347d1a1e8168645fec62095a3",
+      "stocks": 294
+    },
+    {
+      "stage": "Q2",
+      "date": "2025-04-28",
+      "data_sha256": "8d21a5e25b10567c326627b2e13dd95396485d7e6b5f0bf5cbc4b035731fcef5",
+      "metadata_sha256": "91028f8ebbcd3203ce39c9e14cc9c62a19aa51d3981e3626ed69d58731342cd0",
+      "stocks": 294
+    },
+    {
+      "stage": "Q2",
+      "date": "2025-04-29",
+      "data_sha256": "0d267ee2dc9c153c64d2fb512512b9aa79ff06cb3ee495d3ffe263155b394037",
+      "metadata_sha256": "3da28dc6345ee4e331415140476c1924fac618c759b570f53c842d2d1b748db0",
+      "stocks": 294
+    },
+    {
+      "stage": "Q2",
+      "date": "2025-04-30",
+      "data_sha256": "8f07f2c14ec966214fca2db4bd4606e18848cd6f2198148d901f63f6abeb1eb3",
+      "metadata_sha256": "7d3064f702cb38d1f4b48122155aee9ee4d2feb71316a29f0971f4cf7f5edf17",
+      "stocks": 294
+    },
+    {
+      "stage": "Q2",
+      "date": "2025-05-06",
+      "data_sha256": "8cbd0d6a9756eb6eb6b235d1d730ebdefe19e45c795151b627122c6aa268e148",
+      "metadata_sha256": "6c23760b871b7e9e562cac2b856b73f84d9d564ec83cfe19da6ad830a145add7",
+      "stocks": 294
+    },
+    {
+      "stage": "Q2",
+      "date": "2025-05-07",
+      "data_sha256": "2b9ea16cf295b7641cd2b149ab0c22ab6af80243331ab197fcac42e2b3e69a11",
+      "metadata_sha256": "86079b8590ccc6959fa1c392e876a071f130ff6ba17e40da3e6c7179133e80aa",
+      "stocks": 294
+    },
+    {
+      "stage": "Q2",
+      "date": "2025-05-08",
+      "data_sha256": "95a1b3758956f48f7f960e4e98789dac15cd0a57d24a46de2b11e55d6f060651",
+      "metadata_sha256": "f27b5c44e80d05232af28bea743894a1fbb387cd740c96f4bdee3b9e78b04b57",
+      "stocks": 294
+    },
+    {
+      "stage": "Q2",
+      "date": "2025-05-09",
+      "data_sha256": "a0f87b24a5ee9cc1db9398ce1e3f68377b669188232cf0b62090eba307137192",
+      "metadata_sha256": "f30e5860370102b125bc0dcbbe19e0a4e3d4dea4c5388dd8177ee540c047914e",
+      "stocks": 294
+    },
+    {
+      "stage": "Q2",
+      "date": "2025-05-12",
+      "data_sha256": "a6b0809483d4917361b191a8287c23f24f34b646157f5e3735495756dc455fd3",
+      "metadata_sha256": "7b8bd058d6ab01566ab5bcbc8ae818d1f7b38550090a216950e97a71b4c46afc",
+      "stocks": 294
+    },
+    {
+      "stage": "Q2",
+      "date": "2025-05-13",
+      "data_sha256": "90a5e37589f064671ccfdf53f2f598f55030b02189ce0129a43dc9415b85db2b",
+      "metadata_sha256": "9172a80ef9f815db0d992b2b8614ba54ccbd2adfaa15cca283e4c199c6236750",
+      "stocks": 294
+    },
+    {
+      "stage": "Q2",
+      "date": "2025-05-14",
+      "data_sha256": "62866f774e93594f005cb4f658dabc74ea63ad07ba9d776609b2c6d24586ed44",
+      "metadata_sha256": "76a9a4e7e94d725eac8fc0157ce876d62e602f1d31cb5d26f3b2ddc0ef527d64",
+      "stocks": 294
+    },
+    {
+      "stage": "Q2",
+      "date": "2025-05-15",
+      "data_sha256": "499fb0e1ec10fe666b1c4d33221c275393f169ba2e0c69d44f4d273df53960fc",
+      "metadata_sha256": "90f67ccdf95cdd1bbb219797153335658d5cc3fbc7c50cd5c0ad588b104d4607",
+      "stocks": 294
+    },
+    {
+      "stage": "Q2",
+      "date": "2025-05-16",
+      "data_sha256": "0a5b57502a20b79694ee4f5a80706327b267def71e7a6006b0ea028d4ca5bb46",
+      "metadata_sha256": "3b0ad41ccefca587e240117f0cfb458deb93f471177dc4f311b6a77df43c815b",
+      "stocks": 294
+    },
+    {
+      "stage": "Q2",
+      "date": "2025-05-19",
+      "data_sha256": "e18d99ef1c4c67d2852af444d5c5f4ecf3a1aefa6d6d356407467feaf9a744e0",
+      "metadata_sha256": "df5ddb89efefa39e631459018a10b3d79a74da654661d7b1474a862bcc1d60f1",
+      "stocks": 294
+    },
+    {
+      "stage": "Q2",
+      "date": "2025-05-20",
+      "data_sha256": "1ac81a2876c89ed23943a84087a68f0d2b7a3534eaddc60e1808a0d6489443a9",
+      "metadata_sha256": "5fe7172c6177da59be9f54f8fe3bea3409c5e2953c500415f84a026ae558f007",
+      "stocks": 294
+    },
+    {
+      "stage": "Q2",
+      "date": "2025-05-21",
+      "data_sha256": "fa2346d68b283366b5bddf4c5178439f9953bd2ac5302bfe6da9ec80b5fa7a7f",
+      "metadata_sha256": "3c2f42d7391b2f85cc9fdb0456a6891e56f357a2b83ce309fd6d647819e042b8",
+      "stocks": 294
+    },
+    {
+      "stage": "Q2",
+      "date": "2025-05-22",
+      "data_sha256": "aac7b42490b886b3bff229bce5fdfb8cf2a1c447e36b585a15e10d5638bfba4b",
+      "metadata_sha256": "40ea14e16ea5d24ded484e3e3368c88e88602d28cf9d46e2eb7301b21bb71baf",
+      "stocks": 294
+    },
+    {
+      "stage": "Q2",
+      "date": "2025-05-23",
+      "data_sha256": "6a22bf346b5911284ca259c81c846916494849cab0a9f9b8c224741b44882521",
+      "metadata_sha256": "3aec31dcd2e77cd621d509ccbbb6fbfde2fe2feb409003a5dc8dedc8c9009a8c",
+      "stocks": 294
+    },
+    {
+      "stage": "Q2",
+      "date": "2025-05-26",
+      "data_sha256": "05436f78ba07bf8c0a12298a43387bfa7c41cfb47280d83ad23409e1ddd60b47",
+      "metadata_sha256": "09a5fdced31ead31fb51ec32d0e6deea74a7cb34868b42b7496695d03fbf6be6",
+      "stocks": 293
+    },
+    {
+      "stage": "Q2",
+      "date": "2025-05-27",
+      "data_sha256": "6e0d22f124fcb6a34cce1c9ec525f4075f228394fff5a6768f4c4c0b3c5a2f5d",
+      "metadata_sha256": "ae090174ef6e70a7d1abd6e7b9b4927ca3efc09b3fc89919f2372e2e57e35268",
+      "stocks": 293
+    },
+    {
+      "stage": "Q2",
+      "date": "2025-05-28",
+      "data_sha256": "486ef408e3543cee7e00c647b81de7d5010e3f7c7825d23de9271a16290969b0",
+      "metadata_sha256": "e0986030c083b6c1e1ef9935c1629a189dd66258bb2450e174fc2ef121a3e160",
+      "stocks": 293
+    },
+    {
+      "stage": "Q2",
+      "date": "2025-05-29",
+      "data_sha256": "c02c51be59440f76af78f3ed61de13686ed157fabfc74ec3aa7f25acb4ae1c83",
+      "metadata_sha256": "5b76ca452f76c9d8ac4e2df956b127a0067aadc2f8063631751fc08928edccb9",
+      "stocks": 293
+    },
+    {
+      "stage": "Q2",
+      "date": "2025-05-30",
+      "data_sha256": "3c705105e0a04af43d031c0af4078f80bc7c5d4565a7339a43953479d03f474a",
+      "metadata_sha256": "a08caea56769230e413d8bdc0189a6237ae8d84800160d2cdc17816a5a546daf",
+      "stocks": 293
+    },
+    {
+      "stage": "Q2",
+      "date": "2025-06-03",
+      "data_sha256": "2a3b43f76924eca3258a00dfd21799b5010718cb8cc63a779da9951315d6d01d",
+      "metadata_sha256": "bec6a3ef3ae84f136be8b6d5306a1952eb1ccdba53e21a68404e47b0c4dc6651",
+      "stocks": 293
+    },
+    {
+      "stage": "Q2",
+      "date": "2025-06-04",
+      "data_sha256": "53034862171c9f09e1ebd3a0abb11112e2dcf5b9c550ce9a9627cd5f3d8ae928",
+      "metadata_sha256": "b228ac291096a29fd9d87a275cd7bd4baae8f451ec8a98a0cb3ea80164ddb449",
+      "stocks": 293
+    },
+    {
+      "stage": "Q2",
+      "date": "2025-06-05",
+      "data_sha256": "e11ca28b9350ec7b0a2851f15b6d0de8295333e454d39be99bcf7d98cb3332f9",
+      "metadata_sha256": "be8e8ff8d508ef8d3f33d1c13b16920d94a5f68b9ffe32423e8554eee97f3309",
+      "stocks": 293
+    },
+    {
+      "stage": "Q2",
+      "date": "2025-06-06",
+      "data_sha256": "2ef3a8ef8f1954c0d410269632b93e3e7fcc2dcdf5dc953514c7aba66add0cf5",
+      "metadata_sha256": "f7718301c824ab096f9c876d7170e4637a323d294667f14a784d45f12b4d93af",
+      "stocks": 294
+    },
+    {
+      "stage": "Q2",
+      "date": "2025-06-09",
+      "data_sha256": "037d31d0d1242df06760628da9053dc47a4083b680c8f65167f528eb593228b0",
+      "metadata_sha256": "22cafb1ae3787d4964b4f9bfb2ed58a5acdf26d27fbcd6cd216aaccb8663a58d",
+      "stocks": 294
+    },
+    {
+      "stage": "Q2",
+      "date": "2025-06-10",
+      "data_sha256": "a4b496970a632b28163f9607c76bda7af20e8dc9e5be539281664fa6c30f0ab8",
+      "metadata_sha256": "2340a82b43203364be3489edbba07c1cd5ba21eca6be22ccd156a924d4b3c016",
+      "stocks": 294
+    },
+    {
+      "stage": "Q2",
+      "date": "2025-06-11",
+      "data_sha256": "11b8f9267926fe3e76d423047708aee92673ca964ce95f960c0e1e5152ba760b",
+      "metadata_sha256": "ccb7c4406ec2bea42b830789f1c6f3d3a5b24160a672f7d591fead66963cf910",
+      "stocks": 294
+    },
+    {
+      "stage": "Q2",
+      "date": "2025-06-12",
+      "data_sha256": "d251b6d56089de45e725ca536fbe9306133604e4bbf47492afec70cdb675245f",
+      "metadata_sha256": "4e38d6767ad2af7a65513b1f24c460547cfb67aa089f0bef81a41a0f06b4f4df",
+      "stocks": 294
+    },
+    {
+      "stage": "Q2",
+      "date": "2025-06-13",
+      "data_sha256": "9cb188eed24e92b9ab8a9c6afeee4910041ee9f58f695a803d0616e1b75513fc",
+      "metadata_sha256": "40f8ee7197d233b2bf3751f97c647d749a793169bc69361e4a42c80e5fce042d",
+      "stocks": 294
+    },
+    {
+      "stage": "Q2",
+      "date": "2025-06-16",
+      "data_sha256": "beb3e2f07803d2bc23df1e51167df00cff56ea8cb177e6e870230ec89838c17b",
+      "metadata_sha256": "8500bfd24f07f359441807ecb154ba9cf6abee4e3bed8661eeaaac5715044bcf",
+      "stocks": 294
+    },
+    {
+      "stage": "Q2",
+      "date": "2025-06-17",
+      "data_sha256": "29c4418fdc97acc67a091e6e9c3b900c42915e89e1f785f266aabd4ceaee203a",
+      "metadata_sha256": "98fbb8038b36488ad420173ffdaba00f90e9348756ac6c04670bf36957b7b0db",
+      "stocks": 294
+    },
+    {
+      "stage": "Q2",
+      "date": "2025-06-18",
+      "data_sha256": "8eee063246de349bb4b66fe936e005216ee0884459e0a7e702909f54ccebbe30",
+      "metadata_sha256": "435d15924455e912b5615fa3657d20d95127a81920895894410c6d0ac18b526c",
+      "stocks": 294
+    },
+    {
+      "stage": "Q2",
+      "date": "2025-06-19",
+      "data_sha256": "196f28c8a002acc0ecca9eac7176f389a2de865085a940ae5434519e783408a2",
+      "metadata_sha256": "3f9340dca7edeaaa7e1651df453c04bc7bf0b52d50672361adf71aa7cd1dd0b4",
+      "stocks": 294
+    },
+    {
+      "stage": "Q2",
+      "date": "2025-06-20",
+      "data_sha256": "cf7845b3c89901c1a1aaf433434f70767b23e49e0d0c1f8120816da2fc3fd6c1",
+      "metadata_sha256": "06c33e91ac1cae4267560a857a5bd1f351b607aca14958cb894ac55b1c6769f9",
+      "stocks": 295
+    },
+    {
+      "stage": "Q2",
+      "date": "2025-06-23",
+      "data_sha256": "a062438e3c098f379ce4fcd1784e5ad66311fa0d25cadcfc91f865a8913ca233",
+      "metadata_sha256": "c68c147a16e2066775b49606184a5ff084dc630f08abb722fa3dc291b04ece97",
+      "stocks": 295
+    },
+    {
+      "stage": "Q2",
+      "date": "2025-06-24",
+      "data_sha256": "286fd6c0cf1ed8835d2913ef0d48f7ef4bdee5af3f107040e73b768b23d8aca6",
+      "metadata_sha256": "6449a60f8189ee4d137076dd424b3ddf849eb223d7b72a8c9904d9125f772471",
+      "stocks": 295
+    },
+    {
+      "stage": "Q2",
+      "date": "2025-06-25",
+      "data_sha256": "75b2d5377875a0bf18322203633f5c257fb44c98274462d0ec567a8287133fd7",
+      "metadata_sha256": "2415afa6137dfd9856a2d65cdb044011536394aed15e7b76e854661a0ea31db8",
+      "stocks": 295
+    },
+    {
+      "stage": "Q2",
+      "date": "2025-06-26",
+      "data_sha256": "9c2ae779dabba80b2d2ff36b3dfefd9a13c56e37b2908c8f4b44ea2e5f00d5a0",
+      "metadata_sha256": "23d701c08800e931a188a8268dd8fbcd390e9722eab1bcf22abfee8ec8cb088c",
+      "stocks": 295
+    },
+    {
+      "stage": "Q2",
+      "date": "2025-06-27",
+      "data_sha256": "4f807f461d9982c94753a3ec9ccc6c81bb682bb30030967c79f2aa3ba0c47cfe",
+      "metadata_sha256": "7baca0f8c51c9b86986e862d744ddab4cb8c57c592b2c4e8b6c814d57a0e1c05",
+      "stocks": 295
+    },
+    {
+      "stage": "Q2",
+      "date": "2025-06-30",
+      "data_sha256": "f925603cdc375ce3beabdcb5b4911bb1f075c219bb27210b84a2b30d358be73a",
+      "metadata_sha256": "5a4f074fd8d13c7010e07bd07b54a87f6333c1953e950ce5278aacfa681ab504",
+      "stocks": 295
+    }
+  ]
+}

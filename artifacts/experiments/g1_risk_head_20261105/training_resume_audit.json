@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "scope": "production train interrupted after epoch1 atomic checkpoint, resumed to epoch3; research outputs untouched",
+  "checks": {
+    "epoch": true,
+    "head": true,
+    "optimizer": true,
+    "rng": true,
+    "history": true,
+    "best": true,
+    "bad": true
+  }
+}
