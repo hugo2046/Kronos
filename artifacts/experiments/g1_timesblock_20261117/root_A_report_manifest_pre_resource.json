@@ -1,0 +1,17 @@
+{
+  "endpoints": {
+    "W3": {
+      "G1_original": 0.2873016566156216,
+      "MC40": 0.3149922370645214,
+      "G1_MC40": 0.26245234122024447
+    },
+    "W4": {
+      "G1_original": 0.02907159601261587,
+      "MC40": 0.040769161846677116,
+      "G1_MC40": 0.07092881790397182
+    }
+  },
+  "report_sha": "b5d75140b23ac86e11161a52bd4225e0f3d3a92e0a8cadc95c55aa70e5f1d99e",
+  "figure_sha": "2a4055a13ab9174e004a65a81c9cef44a604e0c3d3c4edd1d176f806ff8aa5ea",
+  "candidate_results_available": false
+}
