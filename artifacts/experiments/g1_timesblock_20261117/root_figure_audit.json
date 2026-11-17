@@ -1,0 +1,24 @@
+{
+  "passed": true,
+  "endpoints": {
+    "W3": {
+      "G1_original": 0.2873016566156216,
+      "MC40": 0.3149922370645214,
+      "timesblock": 0.2927453606709535,
+      "temporal": 0.3075192999892982,
+      "G1_MC40": 0.26245234122024447
+    },
+    "W4": {
+      "G1_original": 0.02907159601261587,
+      "MC40": 0.040769161846677116,
+      "timesblock": -0.005122922378803848,
+      "temporal": 0.037958759387037265,
+      "G1_MC40": 0.07092881790397182
+    }
+  },
+  "files": {
+    "cumulative_cn.png": "80fb25917fafb1cb627458766f0dc3bfad8e8d705fbc71c6e7c507d2e5c1b3ea",
+    "drawdown_cn.png": "36bfe0acdf6b2256d260d4fc8d3d49fa696514a529c8df795fa60d2c961df9e6",
+    "all_controls_cn.png": "acc0854b8047800532217afe80c72f733bf582b0fa3d373fa181ba611a062d76"
+  }
+}

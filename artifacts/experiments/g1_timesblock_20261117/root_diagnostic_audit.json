@@ -1,0 +1,74 @@
+{
+  "passed": true,
+  "fixed_dates_verified": true,
+  "registered_endpoint_metric_verified": true,
+  "summary": {
+    "G1": {
+      "endpoint_rankic": 0.07976282881434833,
+      "mean_signal_terminal_target_rankic": 0.05269232655784637,
+      "endpoint_valid_days": 12,
+      "signal_valid_days": 12,
+      "top50_overlap": 1.0,
+      "days": 12,
+      "label_samples": 3529
+    },
+    "temporal": {
+      "endpoint_rankic": 0.07365342383338662,
+      "mean_signal_terminal_target_rankic": 0.048412957079977816,
+      "endpoint_valid_days": 12,
+      "signal_valid_days": 12,
+      "top50_overlap": 0.8083333333333332,
+      "days": 12,
+      "label_samples": 3529
+    },
+    "timesblock": {
+      "endpoint_rankic": 0.07838771620198255,
+      "mean_signal_terminal_target_rankic": 0.050860655838677805,
+      "endpoint_valid_days": 12,
+      "signal_valid_days": 12,
+      "top50_overlap": 0.8416666666666667,
+      "days": 12,
+      "label_samples": 3529
+    }
+  },
+  "timesblock_spectrum": {
+    "top_frequency_counts": {
+      "1": 1712,
+      "2": 275,
+      "3": 53,
+      "4": 5,
+      "5": 3
+    },
+    "top_period_counts": {
+      "18": 3,
+      "22": 5,
+      "30": 53,
+      "45": 275,
+      "90": 1712
+    },
+    "dominant_weight_mean": 0.9622666254859258,
+    "dominant_weight_quantiles": [
+      0.5009260167024739,
+      0.9901296301839191,
+      0.9999578522433146,
+      0.9999997489563986,
+      0.9999999999991143
+    ],
+    "weighted_period90_share": 0.8294851761842493,
+    "weighted_period45_share": 0.137193077329951,
+    "note": "折叠尺度不等于稳定市场周期；period90只有一行，部分网格有零填充。Temporal并不使用FFT，不能把其事后谱统计当实际门控。"
+  },
+  "checkpoint_ce_recheck": {
+    "temporal": {
+      "ce": 0.0,
+      "coarse": 0.0,
+      "fine": 0.0
+    },
+    "timesblock": {
+      "ce": 0.0,
+      "coarse": 0.0,
+      "fine": 0.0
+    }
+  },
+  "limitations": "均价信号对terminal目标RankIC为补充分列，未替换预登记endpoint指标，不用于选点；H1开发期12日并非独立泛化验证。"
+}

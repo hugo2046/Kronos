@@ -1,0 +1,33 @@
+{
+  "passed": true,
+  "paired_batch_hashes_equal": true,
+  "updates_paired": 3000,
+  "arms": {
+    "temporal": {
+      "selected_step": 3000,
+      "initial_ce": 3.0352555736899376,
+      "selected_ce": 3.0315515995025635,
+      "best_sha": "053abf29755d01e96fdacd5117719dc2edc41ca9a628343d711b05d663ea90d8",
+      "updates": 3000,
+      "draws": 192000,
+      "parameters": 99616,
+      "base_hash": [
+        "6beed411ae53f01f8c2378b922f85f2a304f7e8adfb7828c64ef926d61ad26a9",
+        "8c9c97829539930e4dfab1ca5ac107a7021e5c3dc7cef8c0d4e92b00afed9323"
+      ]
+    },
+    "timesblock": {
+      "selected_step": 3000,
+      "initial_ce": 3.0352555736899376,
+      "selected_ce": 3.032808057963848,
+      "best_sha": "dc63328eb3b27e105f5c907a1bd4d3fa1f85e8cf1b0eccbd38af67139652189e",
+      "updates": 3000,
+      "draws": 192000,
+      "parameters": 99616,
+      "base_hash": [
+        "6beed411ae53f01f8c2378b922f85f2a304f7e8adfb7828c64ef926d61ad26a9",
+        "8c9c97829539930e4dfab1ca5ac107a7021e5c3dc7cef8c0d4e92b00afed9323"
+      ]
+    }
+  }
+}

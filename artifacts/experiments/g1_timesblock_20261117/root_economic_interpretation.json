@@ -1,0 +1,293 @@
+{
+  "analysis": {
+    "W3": {
+      "timesblock": {
+        "mean_daily_net": 0.002323375878340901,
+        "annual_vol": 0.1820121471523686,
+        "drawdown_peak": "2025-10-29",
+        "drawdown_trough": "2025-11-21",
+        "common_drawdown_interval": {
+          "G1_original": {
+            "net_sum": -0.09185346971747141,
+            "compound": -0.08931613239882175
+          },
+          "G1_MC40": {
+            "net_sum": -0.10924711792632819,
+            "compound": -0.10521697760737625
+          },
+          "MC40": {
+            "net_sum": -0.10552912181528787,
+            "compound": -0.10172170258322466
+          },
+          "temporal": {
+            "net_sum": -0.06640582447485005,
+            "compound": -0.06517848106065349
+          },
+          "timesblock": {
+            "net_sum": -0.08806194214673489,
+            "compound": -0.0854139095135622
+          }
+        },
+        "comparisons": {
+          "G1_original": {
+            "gross_delta_pp": 0.5029140865648525,
+            "cost_saving_pp": 0.04145631896833402,
+            "net_delta_pp": 0.5443704055331862,
+            "reference_mean_daily_net": 0.002280171877901759,
+            "reference_annual_vol": 0.2076419026738035
+          },
+          "MC40": {
+            "gross_delta_pp": -2.219660261567798,
+            "cost_saving_pp": -0.005027377788983389,
+            "net_delta_pp": -2.224687639356784,
+            "reference_mean_daily_net": 0.002499938389400962,
+            "reference_annual_vol": 0.2197507668027316
+          },
+          "G1_MC40": {
+            "gross_delta_pp": 2.910562413762096,
+            "cost_saving_pp": 0.11873953130880312,
+            "net_delta_pp": 3.029301945070901,
+            "reference_mean_daily_net": 0.0020829550890495594,
+            "reference_annual_vol": 0.20889702862343196
+          }
+        },
+        "stock_accounting_delta_vs_MC40_pp": {
+          "worst5": {
+            "300394.SZ": -2.6937976348714585,
+            "002463.SZ": -1.3796969345732368,
+            "000630.SZ": -1.1899047935203495,
+            "300308.SZ": -1.0765084977108919,
+            "002916.SZ": -1.0434007231495352
+          },
+          "best5": {
+            "002600.SZ": 1.0261067845730412,
+            "601698.SH": 1.3768630879936627,
+            "300274.SZ": 1.447769794126356,
+            "300347.SZ": 1.5043628189102567,
+            "600362.SH": 1.5452740392067872
+          },
+          "absolute_top5_share": 0.1519181521570254
+        }
+      },
+      "temporal": {
+        "mean_daily_net": 0.0024406293649944302,
+        "annual_vol": 0.1802905570908068,
+        "drawdown_peak": "2025-11-10",
+        "drawdown_trough": "2025-12-16",
+        "common_drawdown_interval": {
+          "G1_original": {
+            "net_sum": -0.08624293495532696,
+            "compound": -0.08416402959527514
+          },
+          "G1_MC40": {
+            "net_sum": -0.0860048782158897,
+            "compound": -0.08407520660453727
+          },
+          "MC40": {
+            "net_sum": -0.03917090248526284,
+            "compound": -0.04009831359755578
+          },
+          "temporal": {
+            "net_sum": -0.06894025812189876,
+            "compound": -0.06773345477860859
+          },
+          "timesblock": {
+            "net_sum": -0.06840567676528823,
+            "compound": -0.06743486639279517
+          }
+        },
+        "comparisons": {
+          "G1_original": {
+            "gross_delta_pp": 2.001778867038583,
+            "cost_saving_pp": 0.019985470329072164,
+            "net_delta_pp": 2.021764337367655,
+            "reference_mean_daily_net": 0.002280171877901759,
+            "reference_annual_vol": 0.2076419026738035
+          },
+          "MC40": {
+            "gross_delta_pp": -0.7207954810940652,
+            "cost_saving_pp": -0.02649822642824523,
+            "net_delta_pp": -0.7472937075223124,
+            "reference_mean_daily_net": 0.002499938389400962,
+            "reference_annual_vol": 0.2197507668027316
+          },
+          "G1_MC40": {
+            "gross_delta_pp": 4.4094271942358265,
+            "cost_saving_pp": 0.09726868266954138,
+            "net_delta_pp": 4.506695876905368,
+            "reference_mean_daily_net": 0.0020829550890495594,
+            "reference_annual_vol": 0.20889702862343196
+          }
+        },
+        "stock_accounting_delta_vs_MC40_pp": {
+          "worst5": {
+            "300394.SZ": -2.3879862922999644,
+            "002463.SZ": -1.1638733132893375,
+            "600760.SH": -0.931119289154681,
+            "601865.SH": -0.8984862994173395,
+            "002028.SZ": -0.8243461953915713
+          },
+          "best5": {
+            "002709.SZ": 0.8756161555359312,
+            "002466.SZ": 0.913531398806982,
+            "002920.SZ": 1.0593338356966928,
+            "300014.SZ": 1.0884621571726212,
+            "300347.SZ": 1.1471255974399328
+          },
+          "absolute_top5_share": 0.13400450433419106
+        }
+      }
+    },
+    "W4": {
+      "timesblock": {
+        "mean_daily_net": -3.8230764020924006e-05,
+        "annual_vol": 0.2630175378659074,
+        "drawdown_peak": "2026-06-22",
+        "drawdown_trough": "2026-07-20",
+        "common_drawdown_interval": {
+          "G1_original": {
+            "net_sum": -0.18524559350134462,
+            "compound": -0.17498309767325104
+          },
+          "G1_MC40": {
+            "net_sum": -0.16094343146431878,
+            "compound": -0.1542991946909501
+          },
+          "MC40": {
+            "net_sum": -0.15078865475846648,
+            "compound": -0.1432410195897299
+          },
+          "temporal": {
+            "net_sum": -0.15605008098708928,
+            "compound": -0.14837526380650534
+          },
+          "timesblock": {
+            "net_sum": -0.21418198077515854,
+            "compound": -0.19744602600629702
+          }
+        },
+        "comparisons": {
+          "G1_original": {
+            "gross_delta_pp": -3.3227345378434623,
+            "cost_saving_pp": -0.0967173012985053,
+            "net_delta_pp": -3.419451839141969,
+            "reference_mean_daily_net": 0.00021695220904937202,
+            "reference_annual_vol": 0.283303008035432
+          },
+          "MC40": {
+            "gross_delta_pp": -4.6542006912204945,
+            "cost_saving_pp": 0.06499226867239519,
+            "net_delta_pp": -4.589208422548101,
+            "reference_mean_daily_net": 0.00030424747646774005,
+            "reference_annual_vol": 0.2281548613040423
+          },
+          "G1_MC40": {
+            "gross_delta_pp": -7.4563151538652725,
+            "cost_saving_pp": -0.1488588744122978,
+            "net_delta_pp": -7.605174028277576,
+            "reference_mean_daily_net": 0.0005293195365968053,
+            "reference_annual_vol": 0.2811012602363781
+          }
+        },
+        "stock_accounting_delta_vs_MC40_pp": {
+          "worst5": {
+            "601872.SH": -1.3625166075480712,
+            "300661.SZ": -1.3523822175780977,
+            "601100.SH": -1.2862145971250083,
+            "300308.SZ": -1.1967593583032083,
+            "600549.SH": -1.103071359586687
+          },
+          "best5": {
+            "600460.SH": 1.133626207314414,
+            "002466.SZ": 1.1408781733791233,
+            "002384.SZ": 1.215468554910473,
+            "600875.SH": 1.857219476253678,
+            "600522.SH": 2.6094274755279465
+          },
+          "absolute_top5_share": 0.12614289010136204
+        }
+      },
+      "temporal": {
+        "mean_daily_net": 0.00028327432378386053,
+        "annual_vol": 0.2487705128764503,
+        "drawdown_peak": "2026-06-22",
+        "drawdown_trough": "2026-07-20",
+        "common_drawdown_interval": {
+          "G1_original": {
+            "net_sum": -0.18524559350134462,
+            "compound": -0.17498309767325104
+          },
+          "G1_MC40": {
+            "net_sum": -0.16094343146431878,
+            "compound": -0.1542991946909501
+          },
+          "MC40": {
+            "net_sum": -0.15078865475846648,
+            "compound": -0.1432410195897299
+          },
+          "temporal": {
+            "net_sum": -0.15605008098708928,
+            "compound": -0.14837526380650534
+          },
+          "timesblock": {
+            "net_sum": -0.21418198077515854,
+            "compound": -0.19744602600629702
+          }
+        },
+        "comparisons": {
+          "G1_original": {
+            "gross_delta_pp": 0.8231353386650611,
+            "cost_saving_pp": 0.0655809987770812,
+            "net_delta_pp": 0.8887163374421432,
+            "reference_mean_daily_net": 0.00021695220904937202,
+            "reference_annual_vol": 0.283303008035432
+          },
+          "MC40": {
+            "gross_delta_pp": -0.5083308147119686,
+            "cost_saving_pp": 0.22729056874798165,
+            "net_delta_pp": -0.28104024596398713,
+            "reference_mean_daily_net": 0.00030424747646774005,
+            "reference_annual_vol": 0.2281548613040423
+          },
+          "G1_MC40": {
+            "gross_delta_pp": -3.3104452773567536,
+            "cost_saving_pp": 0.013439425663288707,
+            "net_delta_pp": -3.29700585169346,
+            "reference_mean_daily_net": 0.0005293195365968053,
+            "reference_annual_vol": 0.2811012602363781
+          }
+        },
+        "stock_accounting_delta_vs_MC40_pp": {
+          "worst5": {
+            "601100.SH": -1.3744773864751376,
+            "300661.SZ": -1.063763605791151,
+            "600482.SH": -0.9484949016479434,
+            "300308.SZ": -0.9071998073599452,
+            "000630.SZ": -0.8378291014331084
+          },
+          "best5": {
+            "002001.SZ": 0.8778687318400561,
+            "300442.SZ": 0.8884508752156837,
+            "600522.SH": 0.8911811521465914,
+            "002916.SZ": 1.6297639454632629,
+            "600875.SH": 2.1691681740895654
+          },
+          "absolute_top5_share": 0.12645998027971675
+        }
+      }
+    }
+  },
+  "scope": "冻结候选既有账户的后验会计分解，不作干预因果或重新选点",
+  "report_hashes": {
+    "accounts/W4/G1_original/report.parquet": "929fff1d90c6ae20effec08a511e2e431add8aae8f93ce50192cd46601109e35",
+    "accounts/W4/G1_MC40/report.parquet": "96d132846ab2b0b75fcee94cafa02549ea756ef06c61172f37bb4b9cb37a292d",
+    "accounts/W4/timesblock/report.parquet": "779811a19eaa2b8e9066c7ce908a4c2e0658a4947912650f23c104a90e3abe39",
+    "accounts/W4/temporal/report.parquet": "a1b4b496a7f8d6254fc3811c1f680ba760349c2647ae1e1d1cf2abae17ea5896",
+    "accounts/W4/MC40/report.parquet": "c620667690ce439b6ece4ba9c6efb7b74770369feb0d3c4d6a2068ee303d73b5",
+    "accounts/W3/G1_original/report.parquet": "e805e7441ea313329fc65d7cf0e3fb9d46bd78cf45c8c5f38b1b5d46c3cc7ddf",
+    "accounts/W3/G1_MC40/report.parquet": "235273fb818bffbb9e8b04ee467b6f7429f69bb301e81c675c130f27556ba2b1",
+    "accounts/W3/timesblock/report.parquet": "8d842c2db157533e2708263ccc8efed6d96b11c100285386b85dcdfe7324516a",
+    "accounts/W3/temporal/report.parquet": "21558b021a16d87ebbd0dbaa83c05e23ecb92e6486cd7c835d00d9bff43f0127",
+    "accounts/W3/MC40/report.parquet": "1953c0f2ca509c233fafe6c3358b310ab4bd3655448d4b484143e42f751e3a86"
+  }
+}

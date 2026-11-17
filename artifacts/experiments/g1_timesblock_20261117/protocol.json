@@ -1,0 +1,273 @@
+{
+  "experiment": "G1-timesblock",
+  "arms": [
+    "temporal",
+    "timesblock"
+  ],
+  "base": "original G1; no MC40 adapter",
+  "model_paths": {
+    "predictor": "/home/user/workspace/Kronos/finetune_suite/outputs/models/finetune_predictor_g1/checkpoints/best_model",
+    "tokenizer": "/home/user/workspace/Kronos/finetune_suite/outputs/models/finetune_tokenizer_g1/checkpoints/best_model"
+  },
+  "reference_files": {
+    "/home/user/workspace/Kronos-state-mc40/artifacts/experiments/state_mc40_20261101/manifest.json": "f89afad1c5782fc10f3d03afc11f8342f3538c04ad518de61f447d9845e766bc",
+    "/home/user/workspace/Kronos-canonical-state/artifacts/experiments/canonical_state_20261101/signals/State_dynamic_train100_infer42/W3.parquet": "1de3ecaec684394d917fbaa0c5bc1a019ccd8f33250a5d55488c89da99a76fb7",
+    "/home/user/workspace/Kronos-state-adapter/artifacts/experiments/state_adapter_20261030/signals/State_dynamic_100/W3.parquet": "deae9cc007f0325f4c564d9f2c1512562ca30b5b72a7f497f80955ecbd5dc721",
+    "/home/user/workspace/Kronos/g5_head/data/daily_signals_2025h2_G1_mean.parquet": "9352b40302eb34c714bfebd808481b625a21d2f7f4f668ccca15cda0cfe21d66",
+    "/home/user/workspace/Kronos-state-adapter/artifacts/experiments/state_adapter_20261030/signals/G1_paired_100/W3.parquet": "0d834347a96e320b4c4252f1455da18409923452b609dc54849d3e1e00e7fd0f",
+    "/home/user/workspace/Kronos-limit-audit/artifacts/experiments/limit_unit_audit_20261102/accounts/new/W3/G1_original/report.parquet": "eb54538131ee75d14584d676f6cb89212b979244a9244524dede1ad98e7b507c",
+    "/home/user/workspace/Kronos-limit-audit/artifacts/experiments/limit_unit_audit_20261102/accounts/new/W3/B/report.parquet": "6e2be3c9079d6af1623726329cb2f18defff2c4444965e7dc7246b1eeccab735",
+    "/home/user/workspace/Kronos-canonical-state/artifacts/experiments/canonical_state_20261101/signals/State_dynamic_train100_infer42/W4.parquet": "b0204e4e7f4c1a6e5ad02f9a4bb17dee61a82c564aa9aa9e02fd53c45a52b056",
+    "/home/user/workspace/Kronos-state-adapter/artifacts/experiments/state_adapter_20261030/signals/State_dynamic_100/W4.parquet": "d22db3d505e46ff68d4e098bcf33253ffc1e25cef0d3bb0f489f8d64a6b29861",
+    "/home/user/workspace/Kronos/finetune_suite/data/g1/daily_signals_backtest_G1_mean.parquet": "453e2aeae7fe4bee8ce8fa62a9908da0843d5ad8b52777cd3b299a84cc4a3e36",
+    "/home/user/workspace/Kronos-state-adapter/artifacts/experiments/state_adapter_20261030/signals/G1_paired_100/W4.parquet": "5d19daf0d749b5c00e2c2b031bc8fa80bfaf08e55ef33243902c8f96c264b5c5",
+    "/home/user/workspace/Kronos-limit-audit/artifacts/experiments/limit_unit_audit_20261102/accounts/new/W4/G1_original/report.parquet": "39b8c45a287bb65a4a03c896c3e9dbd2473453dabbca385a2109f8e9fe0bf9fd",
+    "/home/user/workspace/Kronos-limit-audit/artifacts/experiments/limit_unit_audit_20261102/accounts/new/W4/B/report.parquet": "347de555b608be66ac6161fe3c8a975bbf427d00408004e4ba60d0c2ffb5c593",
+    "/home/user/workspace/Kronos/finetune_suite/outputs/models/finetune_tokenizer_g1/checkpoints/best_model/README.md": "ec40d6b5978fe1ed22e92abe5f9033b5147fc474209dc245df3b4fb8d4dfbf4c",
+    "/home/user/workspace/Kronos/finetune_suite/outputs/models/finetune_tokenizer_g1/checkpoints/best_model/config.json": "2366e7ccfec76cbc19cf3c4c1b9c5d901be336ca1e83f2d2292c9bff381b77a2",
+    "/home/user/workspace/Kronos/finetune_suite/outputs/models/finetune_tokenizer_g1/checkpoints/best_model/model.safetensors": "5ca43492146cd93da2f9dd5528009aa6bd882f2a448ff4c6bd3c1b0ab08609ee",
+    "/home/user/workspace/Kronos/finetune_suite/outputs/models/finetune_predictor_g1/checkpoints/best_model/README.md": "ec40d6b5978fe1ed22e92abe5f9033b5147fc474209dc245df3b4fb8d4dfbf4c",
+    "/home/user/workspace/Kronos/finetune_suite/outputs/models/finetune_predictor_g1/checkpoints/best_model/config.json": "77ebc3038b647709b92be002f801d72e1a385f4c8c2c5aa1cc6cf21fcfe44eb2",
+    "/home/user/workspace/Kronos/finetune_suite/outputs/models/finetune_predictor_g1/checkpoints/best_model/model.safetensors": "4f2382138138e85ea1c543d43ade2de2373e4168a995e34fd43cbca2895c2fe2",
+    "/home/user/workspace/Kronos-state-adapter/artifacts/experiments/state_adapter_20261030/arms/dynamic/seed_100/best_adapter.pt": "d208a8b9f5359aa81bd6cfff473bf9aae193f0b37542e92b7ae39d00c649c402",
+    "/home/user/workspace/Kronos-limit-audit/artifacts/experiments/limit_unit_audit_20261102/accounts/new/W3/G1_original/positions.parquet": "e8d73f4a9ea78d36be76c4ce7619c2096bc0c1108e0954a49dfd062c3cbf8de2",
+    "/home/user/workspace/Kronos-limit-audit/artifacts/experiments/limit_unit_audit_20261102/accounts/new/W3/G1_original/trades.parquet": "bf9be7d5bd3526fc7f63a58cfdb6d66dde1423e6386622e6279be3f808cd3457",
+    "/home/user/workspace/Kronos-limit-audit/artifacts/experiments/limit_unit_audit_20261102/accounts/new/W3/G1_original/balances.parquet": "64fbc9d73d748a92725f4bcd7444bda8545b4ee96fb1af1879edfdc4fab0bbad",
+    "/home/user/workspace/Kronos-limit-audit/artifacts/experiments/limit_unit_audit_20261102/accounts/new/W3/G1_original/stock_daily_contributions.parquet": "bc077ce35bde0b09b6d6cabf5991c16176dcafa04800fbe61bdd04d5f03a3d61",
+    "/home/user/workspace/Kronos-limit-audit/artifacts/experiments/limit_unit_audit_20261102/accounts/new/W3/B/positions.parquet": "5d783f783f24600b28df384fca4f78bc2d6c5af5eceee35d77fe9ee58b74541e",
+    "/home/user/workspace/Kronos-limit-audit/artifacts/experiments/limit_unit_audit_20261102/accounts/new/W3/B/trades.parquet": "d1bafaf84b91d90783c78ff2905599d2f1b727c911872c01f52ad5e9970aea45",
+    "/home/user/workspace/Kronos-limit-audit/artifacts/experiments/limit_unit_audit_20261102/accounts/new/W3/B/balances.parquet": "ee212da8af8aa3e8be7a8873668c646830efc46701f217f69424a1fd6eca270a",
+    "/home/user/workspace/Kronos-limit-audit/artifacts/experiments/limit_unit_audit_20261102/accounts/new/W3/B/stock_daily_contributions.parquet": "94d20fa35d8dde86a106e4546a6d18196e4dbcdf53a987f87c5003caffd3f49b",
+    "/home/user/workspace/Kronos-limit-audit/artifacts/experiments/limit_unit_audit_20261102/accounts/new/W4/G1_original/positions.parquet": "d55829f7ebd19f8edf623f24d7cb5caf27dba40b95b3df29f8877a5332de73e0",
+    "/home/user/workspace/Kronos-limit-audit/artifacts/experiments/limit_unit_audit_20261102/accounts/new/W4/G1_original/trades.parquet": "f0bb07c14b15d681c4d89d7d1e8ada82053cccedd7719c0f023bee384126f54a",
+    "/home/user/workspace/Kronos-limit-audit/artifacts/experiments/limit_unit_audit_20261102/accounts/new/W4/G1_original/balances.parquet": "545a6559ed806e4486b5f6eb1837f138ff6eba041b3fa70a4c6f4605d10f7d66",
+    "/home/user/workspace/Kronos-limit-audit/artifacts/experiments/limit_unit_audit_20261102/accounts/new/W4/G1_original/stock_daily_contributions.parquet": "e23ad6b90555433b4ff1f294111cbbe00eda84541473d5f1e47435ca9a1df0d9",
+    "/home/user/workspace/Kronos-limit-audit/artifacts/experiments/limit_unit_audit_20261102/accounts/new/W4/B/positions.parquet": "60105f171a407ed3fb332c9dfa3caa41e096d5fbad74e4f46ba7459818d83fa7",
+    "/home/user/workspace/Kronos-limit-audit/artifacts/experiments/limit_unit_audit_20261102/accounts/new/W4/B/trades.parquet": "ce8ab959d1e90e62b47bdd5109ac1cf9f49deec0b41e53e40a7a38abc51ac465",
+    "/home/user/workspace/Kronos-limit-audit/artifacts/experiments/limit_unit_audit_20261102/accounts/new/W4/B/balances.parquet": "4f44838635bbbf161e655fd85640f26f0e353266974378050468f673f363d555",
+    "/home/user/workspace/Kronos-limit-audit/artifacts/experiments/limit_unit_audit_20261102/accounts/new/W4/B/stock_daily_contributions.parquet": "9b381aa03774600aeeb147b25e9b3970031882bf627db59a774198a482e512fc",
+    "/home/user/workspace/Kronos/finetune_suite/data/ashares/train_data.pkl": "df33857e891fc28e40298314cf74def4dcb8ae58dafab822810f34ee96ad4480",
+    "/home/user/workspace/Kronos/finetune_suite/data/ashares/val_data.pkl": "1c7e5436d5c2121b0ca79c69a2e432af33039621f422cb514a9157f890d4473b"
+  },
+  "reference_paths": {
+    "W3": {
+      "state42": "/home/user/workspace/Kronos-canonical-state/artifacts/experiments/canonical_state_20261101/signals/State_dynamic_train100_infer42/W3.parquet",
+      "state100": "/home/user/workspace/Kronos-state-adapter/artifacts/experiments/state_adapter_20261030/signals/State_dynamic_100/W3.parquet",
+      "g142": "/home/user/workspace/Kronos/g5_head/data/daily_signals_2025h2_G1_mean.parquet",
+      "g1100": "/home/user/workspace/Kronos-state-adapter/artifacts/experiments/state_adapter_20261030/signals/G1_paired_100/W3.parquet"
+    },
+    "W4": {
+      "state42": "/home/user/workspace/Kronos-canonical-state/artifacts/experiments/canonical_state_20261101/signals/State_dynamic_train100_infer42/W4.parquet",
+      "state100": "/home/user/workspace/Kronos-state-adapter/artifacts/experiments/state_adapter_20261030/signals/State_dynamic_100/W4.parquet",
+      "g142": "/home/user/workspace/Kronos/finetune_suite/data/g1/daily_signals_backtest_G1_mean.parquet",
+      "g1100": "/home/user/workspace/Kronos-state-adapter/artifacts/experiments/state_adapter_20261030/signals/G1_paired_100/W4.parquet"
+    }
+  },
+  "windows": {
+    "W3": [
+      "2025-07-01",
+      "2025-12-31"
+    ],
+    "W4": [
+      "2026-01-05",
+      "2026-07-24"
+    ]
+  },
+  "expected": {
+    "W3": [
+      126,
+      37223
+    ],
+    "W4": [
+      134,
+      39563
+    ]
+  },
+  "calendar_sha": "0a4b55ce96d590d71f63ac6ec059bcb7eac2e53dde6cc2ad9f60c7916c66dc74",
+  "allowed_corpus": {
+    "/home/user/workspace/Kronos/finetune_suite/data/ashares/train_data.pkl": "df33857e891fc28e40298314cf74def4dcb8ae58dafab822810f34ee96ad4480",
+    "/home/user/workspace/Kronos/finetune_suite/data/ashares/val_data.pkl": "1c7e5436d5c2121b0ca79c69a2e432af33039621f422cb514a9157f890d4473b"
+  },
+  "train_path": "/home/user/workspace/Kronos/finetune_suite/data/ashares/train_data.pkl",
+  "val_path": "/home/user/workspace/Kronos/finetune_suite/data/ashares/val_data.pkl",
+  "train_end": "2024-12-31",
+  "val_start": "2025-01-01",
+  "val_end": "2025-06-30",
+  "cutoff": "2026-07-24",
+  "window": "90 history including t, 10 future, calendar-contiguous; uniform valid-window sample",
+  "normalization": "native DataFrame.copy selected columns float32 layout mean/std axis0; clip5 eps1e-5",
+  "official_sources": {
+    "third_party/timesblock/identity.json": "d8974ca85d50e326707dac1c5c065edc356d15c0cca2801354628ae673167f5d",
+    "third_party/timesblock/TimesNet/LICENSE": "b4fd686c1b32b8d1b5bd26c9811c697a61ec5237ab6b682a58704bd0af036c22",
+    "third_party/timesblock/TimesNet/README.md": "41d7cb0cd723e0febbfa82d27ab145a3cf35aa2de0d4d1cd67d805929e05b6d7",
+    "third_party/timesblock/Time-Series-Library/LICENSE": "8a6caa178ea3f33ebff5d7bb5558628cf5b423305dc30d3630f86564c7db94a2",
+    "third_party/timesblock/Time-Series-Library/README.md": "2d03e4917e41917105ed647c5ea7537e1394f88b0af190e05715457b55dc5be6",
+    "third_party/timesblock/Time-Series-Library/layers/Conv_Blocks.py": "16d9f2d9e4fa094dc357901e32beecda9839709bcca02625e6447186933ce4e1",
+    "third_party/timesblock/Time-Series-Library/models/TimesNet.py": "f64c4bed1fd7347090044a0163bd4209c9f9ec1c1b19ceff47842df36b64bba7"
+  },
+  "architecture": {
+    "history_shape": [
+      90,
+      6
+    ],
+    "history_columns": [
+      "open",
+      "high",
+      "low",
+      "close",
+      "volume",
+      "amount"
+    ],
+    "embedding": {
+      "input": 6,
+      "output": 32,
+      "position": "fixed_sinusoidal_90x32"
+    },
+    "block_layers": 1,
+    "inception_layers": 2,
+    "channels": [
+      32,
+      32,
+      32
+    ],
+    "activation": "GELU_between_inception_layers",
+    "inception_aggregation": "mean_of_three_kernels_each_layer",
+    "block_residual": "add_input_embedding",
+    "timesblock": {
+      "top_k": 2,
+      "frequency_selection": "per_sample rfft; mean_amplitude_over_32_channels; exclude_DC; stable_descending; ties_smaller_frequency",
+      "period": "floor(90/frequency)",
+      "padding": "zeros_to_ceil(90/period)*period",
+      "fold": "[batch,channel,ceil(90/period),period]",
+      "kernels": [
+        [
+          1,
+          1
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          5,
+          5
+        ]
+      ],
+      "restore": "unfold_then_first90",
+      "aggregation": "per_sample_softmax_of_two_selected_amplitudes",
+      "grouping": "same_period_only; unique_sample_slot_index_copy; no_batch_statistics"
+    },
+    "temporal": {
+      "kernels": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          9
+        ],
+        [
+          1,
+          25
+        ]
+      ],
+      "axes": "Conv2d channel,time with singleton_height",
+      "frequency_selection": null
+    },
+    "readout": {
+      "normalization": "LayerNorm(32)",
+      "pool": "mean_over_90",
+      "projection": "Linear(32,d_model), weight=bias=0",
+      "injection": "predictor.norm output, last_position_only"
+    },
+    "fixed_horizon_steps": 10,
+    "paths": "stock_first_repeat_interleave(20)",
+    "condition": "raw_origin_history_only; fixed_for_ten_steps; preserve_branch_autograd",
+    "initialization": "seed100; identical_shared_parameters_and_corresponding_flattened_convolution_draws",
+    "frozen": "all_original_predictor_weights_and_both_generation_heads_and_tokenizer",
+    "dropout": 0,
+    "batch_normalization": false,
+    "token_policy": {
+      "prefixes": [
+        90,
+        91,
+        92,
+        93,
+        94,
+        95,
+        96,
+        97,
+        98,
+        99,
+        100
+      ],
+      "verification": "both_heads_all_positions_against_encode100",
+      "inputs": "fixed_encode_history90 + previously_matured_prefix_last_tokens",
+      "targets": "last_token_of_target_day_prefix",
+      "fallback": "always_safe_append; never_reencode_issued_tokens",
+      "decode": "native_decode_s1_then_decode_s2_for_each_visible_prefix90..99",
+      "coarse_sampling": "detached_softmax; independent_generator_seed100"
+    }
+  },
+  "expected_base_hash": {
+    "model": "6beed411ae53f01f8c2378b922f85f2a304f7e8adfb7828c64ef926d61ad26a9",
+    "tokenizer": "8c9c97829539930e4dfab1ca5ac107a7021e5c3dc7cef8c0d4e92b00afed9323"
+  },
+  "parameters": "equal: 2*(32*32*35+32*3)+6*32+32+64+(32+1)*d_model",
+  "seed": 100,
+  "batch": 64,
+  "steps": 3000,
+  "lr": 0.0003,
+  "betas": [
+    0.9,
+    0.95
+  ],
+  "wd": 0.01,
+  "clip": 1,
+  "validation_samples": 2048,
+  "validation_sampling_seed": 103100,
+  "eval_seed": 103100,
+  "every": 500,
+  "loss": "mean10future coarse/fine CE each1/2; native decode_s1/decode_s2 per observed prefix90..99; coarse sibling sampled unfiltered softmax.detach; eval/dropout off",
+  "selection": "best validation CE, include step0, earliest tie; no economic screening",
+  "inference": {
+    "seeds": [
+      42,
+      100
+    ],
+    "paths": 20,
+    "chunk": 32,
+    "T": 1.0,
+    "top_p": 0.9,
+    "top_k": 0,
+    "max_context": 512,
+    "signal": "mean(pred.close10)/last_close-1"
+  },
+  "diagnostics": {
+    "days": "each quarter first2/middle2/last2 with labels within quarter in 2025H1",
+    "seed": 100,
+    "inference_seed": 42,
+    "paths": 20,
+    "rankic_target": "close[t+10]/close[t]-1"
+  },
+  "trading": {
+    "topk": 50,
+    "n_drop": 5,
+    "hold_thresh": 5,
+    "deal_price": "open",
+    "shift": 1,
+    "limit": "pctchange/100 +/- .095",
+    "buy_cost": 0.001,
+    "sell_cost": 0.0015,
+    "min_cost": 5
+  },
+  "bootstrap": {
+    "block": 20,
+    "n": 5000,
+    "seed": 100
+  },
+  "gpu_seconds": 50400,
+  "wall_seconds": 57600,
+  "limitations": "current-final history assumed; old sealed-query incident retained; repeatedly observed development windows; no automatic adoption"
+}

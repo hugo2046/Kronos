@@ -1,0 +1,33 @@
+{
+  "passed": true,
+  "raw_streams": 1040,
+  "grids": {
+    "W3/temporal": {
+      "days": 126,
+      "finite": 37223,
+      "merge_exact": true
+    },
+    "W4/temporal": {
+      "days": 134,
+      "finite": 39563,
+      "merge_exact": true
+    },
+    "W3/timesblock": {
+      "days": 126,
+      "finite": 37223,
+      "merge_exact": true
+    },
+    "W4/timesblock": {
+      "days": 134,
+      "finite": 39563,
+      "merge_exact": true
+    }
+  },
+  "account_metrics_checked": 10,
+  "paired_groups_checked": 8,
+  "paired_metrics_per_group": 4,
+  "max_metric_abs": 1.3322676295501878e-15,
+  "max_ci_abs": 1.7486012637846216e-15,
+  "original_figure_endpoints_verified": true,
+  "source_protocol": "c8c0b36e08908ca57fe2cf6672cbd5436002420a8fe5e901bf8477f0e08fc6cf"
+}

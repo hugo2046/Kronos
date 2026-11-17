@@ -1,0 +1,725 @@
+{
+  "accounts": {
+    "W3": {
+      "G1_original": {
+        "metrics": {
+          "net_sum": 0.2873016566156217,
+          "compound": 0.31832511761308235,
+          "annualized": 0.737981115729547,
+          "sharpe": 2.767280138700715,
+          "mdd": -0.10196249734285379,
+          "cost": 0.021937117778495205,
+          "turnover": 0.14082834143068504
+        },
+        "residuals": {
+          "gross": 7.606762442158299e-16,
+          "cost": 4.391018798566293e-18,
+          "quantity": 5.820766091346741e-11,
+          "cash": 1.4901161193847656e-08,
+          "nav": 7.450580596923828e-08,
+          "net": 1.1102230246251565e-16,
+          "turnover": 5.315192730392937e-15
+        },
+        "days": 126,
+        "dates": [
+          "2025-07-01 00:00:00",
+          "2025-12-31 00:00:00"
+        ],
+        "hashes": {
+          "report.parquet": "e805e7441ea313329fc65d7cf0e3fb9d46bd78cf45c8c5f38b1b5d46c3cc7ddf",
+          "balances.parquet": "960d254451fad1fad411814374ce3377623e90dee0e8c8a313d4975372b731b0",
+          "stock_daily_contributions.parquet": "1c7f54286e39f353d3fb7bed74b65fbf691cb197c228bea7d27c7e0d40aeb6ed",
+          "trades.parquet": "3cd25b86acce7e57b6abcd35571061bf57f9e67be0070ece23dede193debda88",
+          "positions.parquet": "559d639d7e7d29ff1445f7f081417b84132fdf90d6a967d7e7e57f0a2eea1c5a"
+        }
+      },
+      "G1_MC40": {
+        "metrics": {
+          "net_sum": 0.26245234122024447,
+          "compound": 0.285817838573039,
+          "annualized": 0.6533275139926414,
+          "sharpe": 2.512743651259434,
+          "mdd": -0.10896600317527538,
+          "cost": 0.0227099499018999,
+          "turnover": 0.14572964304054517
+        },
+        "residuals": {
+          "gross": 9.055256544598933e-16,
+          "cost": 5.692061405548898e-18,
+          "quantity": 1.1641532182693481e-10,
+          "cash": 3.725290298461914e-09,
+          "nav": 7.450580596923828e-08,
+          "net": 1.0343288725511712e-16,
+          "turnover": 4.163336342344337e-15
+        },
+        "days": 126,
+        "dates": [
+          "2025-07-01 00:00:00",
+          "2025-12-31 00:00:00"
+        ],
+        "hashes": {
+          "report.parquet": "235273fb818bffbb9e8b04ee467b6f7429f69bb301e81c675c130f27556ba2b1",
+          "balances.parquet": "94e71fd36eb07c52793edfc84ca282b8c022ba8d985a0f7456c27f0b8ad4f8a5",
+          "stock_daily_contributions.parquet": "4ea94cbc116a7fee28eefffdd1cfcd0e81910e2014ec88eb310a88d04ff0624c",
+          "trades.parquet": "3725e93def4b1306be669889c8fe92af4cf10b064c473b7c68762c08f6e1668b",
+          "positions.parquet": "7dea65410139c2c76541e5fda4a32d7870a207354c3e6ad11ebd5ece387d75cc"
+        }
+      },
+      "MC40": {
+        "metrics": {
+          "net_sum": 0.31499223706452123,
+          "compound": 0.35349908731519686,
+          "annualized": 0.8319597793630711,
+          "sharpe": 2.8668135419730945,
+          "mdd": -0.10172170258322466,
+          "cost": 0.021472280810922027,
+          "turnover": 0.1378750832655469
+        },
+        "residuals": {
+          "gross": 7.8236028766554e-16,
+          "cost": 6.071532165918825e-18,
+          "quantity": 5.820766091346741e-11,
+          "cash": 1.4901161193847656e-08,
+          "nav": 5.960464477539063e-08,
+          "net": 1.1015494072452725e-16,
+          "turnover": 2.609024107869118e-15
+        },
+        "days": 126,
+        "dates": [
+          "2025-07-01 00:00:00",
+          "2025-12-31 00:00:00"
+        ],
+        "hashes": {
+          "report.parquet": "1953c0f2ca509c233fafe6c3358b310ab4bd3655448d4b484143e42f751e3a86",
+          "balances.parquet": "06b1d44b25a7cb8f61f7b21bc38e6c3b858b547cb355487ddf87c08713838ddc",
+          "stock_daily_contributions.parquet": "a945039e78b7cab1501f93249358713197f3707a2cdeb6ffb58e1c0b71c178e9",
+          "trades.parquet": "885fdefa89f6281b86030a6903de550c089978fb4efd6d66b3b040f62d6a343c",
+          "positions.parquet": "d51d1f9de2ddab64b2f3b3528a34b3c77c634d9d87b3154d29cfdd8d730b6a19"
+        }
+      },
+      "temporal": {
+        "metrics": {
+          "net_sum": 0.3075192999892982,
+          "compound": 0.3486923929360124,
+          "annualized": 0.8189711707634664,
+          "sharpe": 3.411374449682467,
+          "mdd": -0.06773345477860837,
+          "cost": 0.021737263075204478,
+          "turnover": 0.13955992202739542
+        },
+        "residuals": {
+          "gross": 5.629177679544739e-16,
+          "cost": 5.041540102057596e-18,
+          "quantity": 2.9103830456733704e-11,
+          "cash": 3.725290298461914e-09,
+          "nav": 5.960464477539063e-08,
+          "net": 1.1102230246251565e-16,
+          "turnover": 3.469446951953614e-15
+        },
+        "days": 126,
+        "dates": [
+          "2025-07-01 00:00:00",
+          "2025-12-31 00:00:00"
+        ],
+        "hashes": {
+          "report.parquet": "21558b021a16d87ebbd0dbaa83c05e23ecb92e6486cd7c835d00d9bff43f0127",
+          "balances.parquet": "6d86ebcc4bcb6536fcb2c4222cbf72e83c2e970da373a40842de8bad0d5248e6",
+          "stock_daily_contributions.parquet": "df9356e0439cfb93b98276f8d3d7b4bc05529925ee90eec5331d2185321d338d",
+          "trades.parquet": "21a5ef3580fe2112a82ca183c0ca8c47419ba9c57d01c54780be17d27a0fc019",
+          "positions.parquet": "34801e6f7f8140155aa09b8858f649b284f0320bbc3bd65f1c77ef7135fa3929"
+        }
+      },
+      "timesblock": {
+        "metrics": {
+          "net_sum": 0.2927453606709535,
+          "compound": 0.3287339801500191,
+          "annualized": 0.765533990005311,
+          "sharpe": 3.2167672899972586,
+          "mdd": -0.08541390951356242,
+          "cost": 0.02152255458881186,
+          "turnover": 0.1381998405852971
+        },
+        "residuals": {
+          "gross": 6.665674956440881e-16,
+          "cost": 5.692061405548898e-18,
+          "quantity": 2.9103830456733704e-11,
+          "cash": 1.4901161193847656e-08,
+          "nav": 5.960464477539063e-08,
+          "net": 1.1102230246251565e-16,
+          "turnover": 3.0531133177191805e-15
+        },
+        "days": 126,
+        "dates": [
+          "2025-07-01 00:00:00",
+          "2025-12-31 00:00:00"
+        ],
+        "hashes": {
+          "report.parquet": "8d842c2db157533e2708263ccc8efed6d96b11c100285386b85dcdfe7324516a",
+          "balances.parquet": "899e32878099089ce681bf6a8800423e2ea0a25449358353ead07c977f47ea6e",
+          "stock_daily_contributions.parquet": "ac6d4cd17734c16c2d5651926872be78c9bb8733c745e036e2167c966a68095a",
+          "trades.parquet": "efcb42265a0c2df1b2f37ed0eb79604348eb017ca5f7d0cdfc205edd86ea9fb9",
+          "positions.parquet": "902a1fd8b0745efe5e723fa60659856a203c0c8a6f2f5c9a25d9b6c9bcd92f9e"
+        }
+      }
+    },
+    "W4": {
+      "G1_original": {
+        "metrics": {
+          "net_sum": 0.02907159601261585,
+          "compound": 0.007888179001411366,
+          "annualized": 0.014885992188678704,
+          "sharpe": 0.1929805018999448,
+          "mdd": -0.19389369116288002,
+          "cost": 0.02219298284242764,
+          "turnover": 0.13394940657044682
+        },
+        "residuals": {
+          "gross": 6.869504964868156e-16,
+          "cost": 7.752045533271357e-18,
+          "quantity": 5.820766091346741e-11,
+          "cash": 2.9802322387695312e-08,
+          "nav": 4.470348358154297e-08,
+          "net": 1.1102230246251565e-16,
+          "turnover": 3.3584246494910985e-15
+        },
+        "days": 134,
+        "dates": [
+          "2026-01-05 00:00:00",
+          "2026-07-24 00:00:00"
+        ],
+        "hashes": {
+          "report.parquet": "929fff1d90c6ae20effec08a511e2e431add8aae8f93ce50192cd46601109e35",
+          "balances.parquet": "82d30a36d3c68dd7c6e7c85ab9dbf5d3ff532b07d507882d7e5b6ce50678818d",
+          "stock_daily_contributions.parquet": "383c7a1ce8f69ec2acc94b73bf238e4c1e8c1ce7cb9e00d486cfef19c42392b5",
+          "trades.parquet": "313131127a57e18de28b2df4d62630d00e234347f438fe982d87a043408f9a51",
+          "positions.parquet": "7f19b2036e82523bb8e780fddf22b5ce1c39c28c640ebf97baf8ae6eb2836796"
+        }
+      },
+      "G1_MC40": {
+        "metrics": {
+          "net_sum": 0.0709288179039719,
+          "compound": 0.051343907519313836,
+          "annualized": 0.09873563565124745,
+          "sharpe": 0.4745212565401825,
+          "mdd": -0.1808345603945981,
+          "cost": 0.02167156711128972,
+          "turnover": 0.13083246955693065
+        },
+        "residuals": {
+          "gross": 9.48026379621325e-16,
+          "cost": 6.884683795282953e-18,
+          "quantity": 5.820766091346741e-11,
+          "cash": 2.3283064365386963e-09,
+          "nav": 5.960464477539063e-08,
+          "net": 1.1102230246251565e-16,
+          "turnover": 4.3021142204224816e-15
+        },
+        "days": 134,
+        "dates": [
+          "2026-01-05 00:00:00",
+          "2026-07-24 00:00:00"
+        ],
+        "hashes": {
+          "report.parquet": "96d132846ab2b0b75fcee94cafa02549ea756ef06c61172f37bb4b9cb37a292d",
+          "balances.parquet": "1883f9d9f18a50b2ba5d0b8f56b23b7ca55002bb90f2100a8300db0f84e9e2b4",
+          "stock_daily_contributions.parquet": "cc6b1996e9fef52856daaa369c2f1302d4aac183a45ca4747a1c7941eca8d3dd",
+          "trades.parquet": "cc2f6e5c4e5fe6720e8cf1384a56587bc494a08e4acac5a6e9db446df81e08d5",
+          "positions.parquet": "0eb883104b70a3ac392ead48f1ab6a9050d1ba403a9f1304d43a3971e513ec64"
+        }
+      },
+      "MC40": {
+        "metrics": {
+          "net_sum": 0.040769161846677164,
+          "compound": 0.027419150928708946,
+          "annualized": 0.05218621581639756,
+          "sharpe": 0.3360452792092758,
+          "mdd": -0.14324101958973,
+          "cost": 0.023810078542136646,
+          "turnover": 0.1436049448186043
+        },
+        "residuals": {
+          "gross": 7.129713486264677e-16,
+          "cost": 6.410345344820545e-18,
+          "quantity": 5.820766091346741e-11,
+          "cash": 3.026798367500305e-09,
+          "nav": 4.470348358154297e-08,
+          "net": 1.0842021724855044e-16,
+          "turnover": 6.189493362285248e-15
+        },
+        "days": 134,
+        "dates": [
+          "2026-01-05 00:00:00",
+          "2026-07-24 00:00:00"
+        ],
+        "hashes": {
+          "report.parquet": "c620667690ce439b6ece4ba9c6efb7b74770369feb0d3c4d6a2068ee303d73b5",
+          "balances.parquet": "56f79a3af1f3297787071073c25b15622cece48d2c2a57123322384c2f67bddd",
+          "stock_daily_contributions.parquet": "a11d8f4cccb82d0924fa7797fa35eb81ad370e6d316663441e2fd185b89b7b4e",
+          "trades.parquet": "c316eccfa61a1e1927e934476b4768c106ec5ca66ddc202b975c6194b29a970c",
+          "positions.parquet": "d8dad407d89338e5b42415aa5e328c602a86a9e96d838c93d0a260bf4f37e742"
+        }
+      },
+      "temporal": {
+        "metrics": {
+          "net_sum": 0.037958759387037314,
+          "compound": 0.02184940661085899,
+          "annualized": 0.041484883017516974,
+          "sharpe": 0.2869517322134784,
+          "mdd": -0.148375263806505,
+          "cost": 0.02153717285465683,
+          "turnover": 0.13003272206672575
+        },
+        "residuals": {
+          "gross": 7.207776042683633e-16,
+          "cost": 5.583641188300348e-18,
+          "quantity": 2.9103830456733704e-11,
+          "cash": 1.4901161193847656e-08,
+          "nav": 5.960464477539063e-08,
+          "net": 1.0928757898653885e-16,
+          "turnover": 4.884981308350689e-15
+        },
+        "days": 134,
+        "dates": [
+          "2026-01-05 00:00:00",
+          "2026-07-24 00:00:00"
+        ],
+        "hashes": {
+          "report.parquet": "a1b4b496a7f8d6254fc3811c1f680ba760349c2647ae1e1d1cf2abae17ea5896",
+          "balances.parquet": "8f0a9aa1f180b9f97c3b4fe2557a689aa52798a4a3634419b9e40f21ca545e8e",
+          "stock_daily_contributions.parquet": "d3fb96dc38688bba032a9d71310ff78bba16d4c425de619110304f328cc126c1",
+          "trades.parquet": "4fd215b3e06066576acff97f7d32a063d79b3ce651cea096712e573bf8725418",
+          "positions.parquet": "ac7d673b012eff09fd7dcd01060cf973fa833b7c59bcaaa7cc4984784327e2cd"
+        }
+      },
+      "timesblock": {
+        "metrics": {
+          "net_sum": -0.005122922378803817,
+          "compound": -0.023139527003194438,
+          "annualized": -0.04307235911311886,
+          "sharpe": -0.03662931609596533,
+          "mdd": -0.19744602600629657,
+          "cost": 0.023160155855412694,
+          "turnover": 0.13971635895664608
+        },
+        "residuals": {
+          "gross": 7.268491364342822e-16,
+          "cost": 5.177065373618284e-18,
+          "quantity": 5.820766091346741e-11,
+          "cash": 2.3283064365386963e-09,
+          "nav": 4.470348358154297e-08,
+          "net": 1.1102230246251565e-16,
+          "turnover": 4.274358644806853e-15
+        },
+        "days": 134,
+        "dates": [
+          "2026-01-05 00:00:00",
+          "2026-07-24 00:00:00"
+        ],
+        "hashes": {
+          "report.parquet": "779811a19eaa2b8e9066c7ce908a4c2e0658a4947912650f23c104a90e3abe39",
+          "balances.parquet": "0d3dd55103465ca88934562ec92ed8cff30f24c2bb54d7f32a1e2acafdabcbbe",
+          "stock_daily_contributions.parquet": "7fe665d8baf28c51836315e4174ae734218d059082fc0a0aeae3dbb9d7a16fb2",
+          "trades.parquet": "faaf3eeb0b2bc64c61ee1ebe2ffcaf9cfc23eca2ad611c6ca73bef98e5f77004",
+          "positions.parquet": "0eb1dc9eb3852bfbc570a600263e1e5852dfdcd8835515b547793f3406785c14"
+        }
+      }
+    }
+  },
+  "paired": {
+    "W3": {
+      "G1_original": {
+        "net_sum": {
+          "ci95": [
+            -0.13765777050000055,
+            0.1103574126136089
+          ],
+          "invalid": 0
+        },
+        "compound": {
+          "ci95": [
+            -0.2218842440479182,
+            0.1401376085856732
+          ],
+          "invalid": 0
+        },
+        "annualized": {
+          "ci95": [
+            -0.7305570160376539,
+            0.3640750216561321
+          ],
+          "invalid": 0
+        },
+        "sharpe": {
+          "ci95": [
+            -0.5731254481225675,
+            1.7903198363215511
+          ],
+          "invalid": 0
+        },
+        "mdd": {
+          "ci95": [
+            -0.004554881778760378,
+            0.03652642534807498
+          ],
+          "invalid": 0
+        }
+      },
+      "G1_MC40": {
+        "net_sum": {
+          "ci95": [
+            -0.02195196358313288,
+            0.08054916329442062
+          ],
+          "invalid": 0
+        },
+        "compound": {
+          "ci95": [
+            -0.028102341941814976,
+            0.10025154972240614
+          ],
+          "invalid": 0
+        },
+        "annualized": {
+          "ci95": [
+            -0.0836803263851824,
+            0.2615523354663699
+          ],
+          "invalid": 0
+        },
+        "sharpe": {
+          "ci95": [
+            0.08639941033909804,
+            1.6056100071118957
+          ],
+          "invalid": 0
+        },
+        "mdd": {
+          "ci95": [
+            0.0035624096886964773,
+            0.04959938831757917
+          ],
+          "invalid": 0
+        }
+      },
+      "MC40": {
+        "net_sum": {
+          "ci95": [
+            -0.11634761361702564,
+            0.07332235274345156
+          ],
+          "invalid": 0
+        },
+        "compound": {
+          "ci95": [
+            -0.15486606217208937,
+            0.10192533466860079
+          ],
+          "invalid": 0
+        },
+        "annualized": {
+          "ci95": [
+            -0.4658584229446055,
+            0.28867148233651524
+          ],
+          "invalid": 0
+        },
+        "sharpe": {
+          "ci95": [
+            -0.6690052315916398,
+            1.4722007067231562
+          ],
+          "invalid": 0
+        },
+        "mdd": {
+          "ci95": [
+            -0.013721644513756476,
+            0.031800655060456304
+          ],
+          "invalid": 0
+        }
+      },
+      "temporal": {
+        "net_sum": {
+          "ci95": [
+            -0.06329725230382018,
+            0.03791626399301506
+          ],
+          "invalid": 0
+        },
+        "compound": {
+          "ci95": [
+            -0.08551520011783925,
+            0.05151942964298199
+          ],
+          "invalid": 0
+        },
+        "annualized": {
+          "ci95": [
+            -0.24775904724377779,
+            0.1423556922470657
+          ],
+          "invalid": 0
+        },
+        "sharpe": {
+          "ci95": [
+            -0.8207392068202085,
+            0.37845342965793605
+          ],
+          "invalid": 0
+        },
+        "mdd": {
+          "ci95": [
+            -0.028811603340901833,
+            0.0075209508824909035
+          ],
+          "invalid": 0
+        }
+      }
+    },
+    "W4": {
+      "G1_original": {
+        "net_sum": {
+          "ci95": [
+            -0.16167319291546225,
+            0.07875638496481567
+          ],
+          "invalid": 0
+        },
+        "compound": {
+          "ci95": [
+            -0.1796671189295918,
+            0.07737740873574445
+          ],
+          "invalid": 0
+        },
+        "annualized": {
+          "ci95": [
+            -0.4012018116795558,
+            0.14557527394675998
+          ],
+          "invalid": 0
+        },
+        "sharpe": {
+          "ci95": [
+            -1.0032971524402043,
+            0.5887198820471641
+          ],
+          "invalid": 0
+        },
+        "mdd": {
+          "ci95": [
+            -0.044347478459627186,
+            0.057023343162424134
+          ],
+          "invalid": 0
+        }
+      },
+      "G1_MC40": {
+        "net_sum": {
+          "ci95": [
+            -0.2369015310277619,
+            0.06987479716070383
+          ],
+          "invalid": 0
+        },
+        "compound": {
+          "ci95": [
+            -0.27162732858557725,
+            0.06938392577001508
+          ],
+          "invalid": 0
+        },
+        "annualized": {
+          "ci95": [
+            -0.6171383896429908,
+            0.12788401604737573
+          ],
+          "invalid": 0
+        },
+        "sharpe": {
+          "ci95": [
+            -1.501148554394369,
+            0.5321153900473405
+          ],
+          "invalid": 0
+        },
+        "mdd": {
+          "ci95": [
+            -0.0722969505427545,
+            0.05842347490231594
+          ],
+          "invalid": 0
+        }
+      },
+      "MC40": {
+        "net_sum": {
+          "ci95": [
+            -0.19161736548522418,
+            0.081427329106299
+          ],
+          "invalid": 0
+        },
+        "compound": {
+          "ci95": [
+            -0.16694180672628436,
+            0.08756622479955939
+          ],
+          "invalid": 0
+        },
+        "annualized": {
+          "ci95": [
+            -0.2961144178973384,
+            0.189968636999951
+          ],
+          "invalid": 0
+        },
+        "sharpe": {
+          "ci95": [
+            -1.1882918497954023,
+            0.5047955986698557
+          ],
+          "invalid": 0
+        },
+        "mdd": {
+          "ci95": [
+            -0.12987584738345714,
+            0.008912235822077692
+          ],
+          "invalid": 0
+        }
+      },
+      "temporal": {
+        "net_sum": {
+          "ci95": [
+            -0.16987243816810652,
+            0.07213537191905783
+          ],
+          "invalid": 0
+        },
+        "compound": {
+          "ci95": [
+            -0.1368484736082753,
+            0.086452059465105
+          ],
+          "invalid": 0
+        },
+        "annualized": {
+          "ci95": [
+            -0.21980298162117165,
+            0.19206050711817527
+          ],
+          "invalid": 0
+        },
+        "sharpe": {
+          "ci95": [
+            -1.035869750433067,
+            0.5380415727237137
+          ],
+          "invalid": 0
+        },
+        "mdd": {
+          "ci95": [
+            -0.11884933318599336,
+            0.004487922343818784
+          ],
+          "invalid": 0
+        }
+      }
+    }
+  },
+  "grids": {
+    "W3": {
+      "days": 126,
+      "finite": 37223,
+      "stocks": 312
+    },
+    "W4": {
+      "days": 134,
+      "finite": 39563,
+      "stocks": 319
+    }
+  },
+  "reads": {
+    "account_requests.jsonl": {
+      "requests": 66,
+      "max_read": "2026-07-24 00:00:00"
+    },
+    "market_requests.jsonl": {
+      "requests": 544,
+      "max_read": "2026-07-24 00:00:00"
+    },
+    "root_final_quote_requests.jsonl": {
+      "requests": 36,
+      "max_read": "2026-07-24 00:00:00"
+    },
+    "accounts/W3/G1_original/market_requests.jsonl": {
+      "requests": 3,
+      "max_read": "2025-12-31 00:00:00"
+    },
+    "accounts/W3/G1_MC40/market_requests.jsonl": {
+      "requests": 3,
+      "max_read": "2025-12-31 00:00:00"
+    },
+    "accounts/W3/timesblock/market_requests.jsonl": {
+      "requests": 3,
+      "max_read": "2025-12-31 00:00:00"
+    },
+    "accounts/W3/temporal/market_requests.jsonl": {
+      "requests": 3,
+      "max_read": "2025-12-31 00:00:00"
+    },
+    "accounts/W3/MC40/market_requests.jsonl": {
+      "requests": 3,
+      "max_read": "2025-12-31 00:00:00"
+    },
+    "accounts/W4/G1_original/market_requests.jsonl": {
+      "requests": 3,
+      "max_read": "2026-07-24 00:00:00"
+    },
+    "accounts/W4/G1_MC40/market_requests.jsonl": {
+      "requests": 3,
+      "max_read": "2026-07-24 00:00:00"
+    },
+    "accounts/W4/timesblock/market_requests.jsonl": {
+      "requests": 3,
+      "max_read": "2026-07-24 00:00:00"
+    },
+    "accounts/W4/temporal/market_requests.jsonl": {
+      "requests": 3,
+      "max_read": "2026-07-24 00:00:00"
+    },
+    "accounts/W4/MC40/market_requests.jsonl": {
+      "requests": 3,
+      "max_read": "2026-07-24 00:00:00"
+    },
+    "failed_account_attempt_01/accounts/W3/G1_original/market_requests.jsonl": {
+      "requests": 3,
+      "max_read": "2025-12-31 00:00:00"
+    },
+    "root_final_quote_check/54aad8be4945466c8433ce0debbc4688/W3/G1_original/market_requests.jsonl": {
+      "requests": 3,
+      "max_read": "2025-12-31 00:00:00"
+    },
+    "root_final_quote_check/54aad8be4945466c8433ce0debbc4688/W3/G1_MC40/market_requests.jsonl": {
+      "requests": 3,
+      "max_read": "2025-12-31 00:00:00"
+    },
+    "root_final_quote_check/54aad8be4945466c8433ce0debbc4688/W3/MC40/market_requests.jsonl": {
+      "requests": 3,
+      "max_read": "2025-12-31 00:00:00"
+    },
+    "root_final_quote_check/54aad8be4945466c8433ce0debbc4688/W4/G1_original/market_requests.jsonl": {
+      "requests": 3,
+      "max_read": "2026-07-24 00:00:00"
+    },
+    "root_final_quote_check/54aad8be4945466c8433ce0debbc4688/W4/G1_MC40/market_requests.jsonl": {
+      "requests": 3,
+      "max_read": "2026-07-24 00:00:00"
+    },
+    "root_final_quote_check/54aad8be4945466c8433ce0debbc4688/W4/MC40/market_requests.jsonl": {
+      "requests": 3,
+      "max_read": "2026-07-24 00:00:00"
+    }
+  },
+  "complete": true
+}

@@ -1,0 +1,16 @@
+{
+  "report_sha": "0bccccabad006c77270e47e19033d7a1fa89a149c1efcbe2a3a99e5a2e2af0b7",
+  "generated_report_sha": "572cc4c8b1f09fc216c57b5c94583efeb8366b6e40379899f87281da69e7fa21",
+  "candidate_adopted": false,
+  "code": "1f5b391",
+  "protocol": "c8c0b36e08908ca57fe2cf6672cbd5436002420a8fe5e901bf8477f0e08fc6cf",
+  "verification_files": {
+    "root_training_audit.json": "2a20ed0203a17674fb49b2653b1ddec05346b5122f35507b4cb9d7a6878f58d9",
+    "root_independent_audit.json": "041b8e31962dd052c675022e4dffb77a9ba4d53605fecb81cadc12347b41e9c3",
+    "root_final_quote_parity.json": "d93a979be9dc53f82c9532a43be9c016b725460c3c38f49d1aa250eac906ad75",
+    "root_signal_ci_audit.json": "0ec882339359ae0e875ab0baed88bdf5930ba2d168a03cd7575bd67222f1966b",
+    "root_diagnostic_audit.json": "63a36783d5006fe467e5b93f0d0ea3d85865ef0e7b30cef5026687e8e9d17948",
+    "root_economic_interpretation.json": "58087d79d045bc914dae5ad661252f0d2e35b14920a0321cfcad72fa89478cb6",
+    "root_figure_audit.json": "c6566455908d3dc89d48989443e4df005bbf0f8ef88d5a5dd9e6190b0f770e46"
+  }
+}
